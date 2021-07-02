@@ -4,7 +4,8 @@ title: Introduction
 ---
 
 ## What is ACAP?
-Content
+Axis Camera Application Platform(ACAP) is a platform to install applications to
+Axis devices.
 
 ## Version history
 Content
