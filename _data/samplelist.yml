@@ -8,3 +8,6 @@ docs:
 
 - title: API documentation
   url: source/apidocs.html
+
+- title: Licenses
+  url: source/licenses.html
