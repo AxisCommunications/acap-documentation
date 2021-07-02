@@ -1,4 +1,6 @@
 #!/bin/bash
+#
+# Helper script to clone, copy and add files to make API documentation to work
 
 #-------------------------------------------------------------------------------
 # Variables
