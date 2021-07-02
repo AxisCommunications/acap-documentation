@@ -11,12 +11,17 @@ description: > # this means to ignore newlines until "baseurl:"
   AXIS ACAP 4 SDK Documentation contains two types
   of SDKs; A Native SDK and a Computer Vision SDK
 baseurl: "" # the subpath of your site, e.g. /blog
+copyright_name: Axis Communications AB
 url: "www.axis.com" # the base hostname & protocol for your site
 github_username:  AxisCommunications
 
 # Build settings
 markdown: kramdown
 
+kramdown:
+  syntax_highlighter: rouge
+
 exclude:
   - README.md
+  - Dockerfile
   - vendor

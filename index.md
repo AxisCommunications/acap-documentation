@@ -3,7 +3,7 @@ layout: default
 title: AXIS ACAP 4 SDK documentation
 ---
 
-# {{ page.title }}
+# Content
 
 [//]: <> # Basic List from https://jekyllrb.com/tutorials/navigation/
 <h2>{{ site.data.samplelist.docs_list_title }}</h2>
