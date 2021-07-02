@@ -1,0 +1,7 @@
+<map id="vdo&#45;map.h" name="vdo&#45;map.h">
+<area shape="rect" id="node1" title="A class representing a dictionary mapping keys to values." alt="" coords="158,5,250,32"/>
+<area shape="rect" id="node2" href="$vdo-frame_8h.html" title="A video frame." alt="" coords="42,80,144,107"/>
+<area shape="rect" id="node3" href="$vdo-stream_8h.html" title="A class representing a stream session." alt="" coords="17,229,126,256"/>
+<area shape="rect" id="node5" href="$vdo-channel_8h.html" title="A class representing a channel." alt="" coords="146,155,261,181"/>
+<area shape="rect" id="node4" href="$vdo-buffer_8h.html" title="A memory buffer." alt="" coords="22,155,122,181"/>
+</map>
