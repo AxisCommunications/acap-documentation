@@ -18,4 +18,5 @@ github_username:  AxisCommunications
 markdown: kramdown
 
 exclude:
-  README.md
+  - README.md
+  - vendor
