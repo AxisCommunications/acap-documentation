@@ -17,3 +17,5 @@ github_username:  AxisCommunications
 # Build settings
 markdown: kramdown
 
+exclude:
+  README.md
