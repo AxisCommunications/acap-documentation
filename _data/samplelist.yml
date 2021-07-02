@@ -8,6 +8,3 @@ docs:
 
 - title: API documentation
   url: source/apidocs.html
-
-- title: ACAP3 documentation
-  url: source/ACAP3_dev_guide.html
