@@ -1,13 +1,28 @@
 docs:
 
-- title: Introduction
+- title: Introduction to ACAP
   url: source/introduction.html
 
 - title: Getting started
   url: source/getting-started.html
 
-- title: API documentation
+- title: Develop applications / Efficient programming
+  url: source/develop.html
+
+- title: API Reference Manual
   url: source/apidocs.html
 
-- title: Licenses
+- title: Licensing
   url: source/licenses.html
+
+- title: Axis devices
+  url: source/devices.html
+
+- title: Service for partners (ACAP signing..)
+  url: source/service.html
+
+- title: FAQ
+  url: source/faq.html
+
+- title: Giving feedback
+  url: source/feedback.html

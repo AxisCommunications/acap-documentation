@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Licenses
+title: Licensing
 ---
 
 # Third party software license

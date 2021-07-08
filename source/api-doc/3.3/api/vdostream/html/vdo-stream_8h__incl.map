@@ -1,9 +1,0 @@
-<map id="vdo&#45;stream.h" name="vdo&#45;stream.h">
-<area shape="rect" id="node1" title="A class representing a stream session." alt="" coords="59,5,168,32"/>
-<area shape="rect" id="node2" href="$vdo-types_8h.html" title="Vdo common type definitions." alt="" coords="240,229,339,256"/>
-<area shape="rect" id="node3" title=" " alt="" coords="16,304,118,331"/>
-<area shape="rect" id="node4" href="$vdo-frame_8h.html" title="A video frame." alt="" coords="125,155,228,181"/>
-<area shape="rect" id="node5" href="$vdo-map_8h.html" title="A class representing a dictionary mapping keys to values." alt="" coords="21,229,113,256"/>
-<area shape="rect" id="node7" href="$vdo-buffer_8h.html" title="A memory buffer." alt="" coords="152,80,252,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="137,229,216,256"/>
-</map>

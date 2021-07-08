@@ -1,8 +1,0 @@
-<map id="vdo&#45;channel.h" name="vdo&#45;channel.h">
-<area shape="rect" id="node1" title="A class representing a channel." alt="" coords="59,5,174,32"/>
-<area shape="rect" id="node2" href="$vdo-types_8h.html" title="Vdo common type definitions." alt="" coords="241,155,339,181"/>
-<area shape="rect" id="node3" title=" " alt="" coords="16,229,119,256"/>
-<area shape="rect" id="node4" href="$vdo-frame_8h.html" title="A video frame." alt="" coords="120,80,223,107"/>
-<area shape="rect" id="node5" href="$vdo-map_8h.html" title="A class representing a dictionary mapping keys to values." alt="" coords="21,155,113,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="137,155,216,181"/>
-</map>
