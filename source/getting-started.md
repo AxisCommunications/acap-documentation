@@ -222,6 +222,7 @@ int main(void)
 
 Makefile containing the build and link instructions for building the ACAP application.
 > Make sure to preserve the tabs below. Recipes in a makefile must be preceded by a single standard tab character.
+
 ```
 TARGET = hello_world
 OBJ = src/$(TARGET).o
