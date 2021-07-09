@@ -15,15 +15,15 @@ Axis Camera Application Platform(ACAP) is a platform to install applications to
 Axis devices.
 
 ## Version history
-new text
+TBD
 
 ## Edge-based applications
 
 ### ACAP CV SDK
-new text
+TBD
 
 ### ACAP native SDK
-new text
+TBD
 
 ### ACAP examples
-new text + can copy some from "more resources" section and https://www.axis.com/developer-community/acap-tutorial
+TBD

@@ -185,11 +185,157 @@ For more information, see the help in AXIS Device Manager/AXIS Camera Station.
 8. After the upgrade has completed, the unit will automatically initiate the system, during which the status LED blinks amber. When initiation is complete and the system is ready for use, the color of the status LED will be green.
 
 ## Choose SDK
-Content
+TBD
 
 ## Hello world example
 ### Native
-Content
+TBD
 
 ### CV SDK
-new text
+
+#### Create a Hello World application
+Create the following folder and file structure in a working directory:
+```bash
+opencv-hello-world-cpp
+├── app
+│   ├── Makefile
+│   └── src
+│       └── hello_world.cpp
+├── docker-compose.yml
+└── Dockerfile
+```
+The files contain the following:
+
+**hello_world.c**
+
+Hello World application which writes to standard out.
+```cpp
+#include <iostream>
+#include <opencv2/core.hpp>
+
+int main(void)
+{
+    std::cout << "Hello World from OpenCV " << CV_VERSION << "\n";
+}
+```
+**Makefile**
+
+Makefile containing the build and link instructions for building the ACAP application.
+> Make sure to preserve the tabs below. Recipes in a makefile must be preceded by a single standard tab character.
+```
+TARGET = hello_world
+OBJ = src/$(TARGET).o
+
+CXX = arm-linux-gnueabihf-gcc
+STRIP = arm-linux-gnueabihf-strip
+
+CXXFLAGS += -I/usr/include -I/axis/opencv/usr/include
+CPPFLAGS = -Os -pipe -std=c++17
+
+BASE := $(abspath $(patsubst %/,%,$(dir $(firstword $(MAKEFILE_LIST)))))
+LDLIBS += -L $(BASE)/lib \
+ -L /usr/lib/gcc-cross/arm-linux-gnueabihf \
+ -L /axis/opencv/usr/lib
+LDLIBS += -lm -lstdc++ -lopencv_core
+
+.PHONY: all clean
+
+all: $(TARGET)
+
+$(TARGET): $(OBJ)
+	$(CXX) $< $(CPPFLAGS) $(LDLIBS) -o $@ && $(STRIP) --strip-unneeded $@
+
+clean:
+	$(RM) *.o $(TARGET)
+```
+**Dockerfile**
+
+Dockerfile based on the [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk).
+```
+# Specify the architecture at build time: mipsis32r2el/armv7hf/aarch64
+ARG ARCH=armv7hf
+ARG REPO=axisecp
+ARG SDK_VERSION=1.0-beta1
+ARG RUNTIME_IMAGE=arm32v7/ubuntu:20.04
+
+FROM ${REPO}/acap-computer-vision-sdk:${SDK_VERSION}-${ARCH}-runtime AS cv-sdk-runtime
+FROM ${REPO}/acap-computer-vision-sdk:${SDK_VERSION}-${ARCH}-devel AS cv-sdk-devel
+
+# Setup proxy configuration
+ARG DOCKER_PROXY
+ENV http_proxy=$DOCKER_PROXY
+ENV https_proxy=$DOCKER_PROXY
+ENV HTTP_PROXY=$DOCKER_PROXY
+ENV HTTPS_PROXY=$DOCKER_PROXY
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+## Install dependencies
+RUN apt-get update && apt-get install -y -f \
+    g++-arm-linux-gnueabihf \
+    make\
+    pkg-config \
+    libglib2.0-dev \
+    libsystemd0
+
+RUN dpkg --add-architecture armhf &&\
+    apt-get update && apt-get install -y  \
+    libglib2.0-dev:armhf \
+    libsystemd0:armhf
+
+COPY app/Makefile /build/
+COPY app/src/ /build/src/
+WORKDIR /build
+RUN make
+
+FROM ${RUNTIME_IMAGE}
+COPY --from=cv-sdk-devel /build/hello_world /usr/bin/
+COPY --from=cv-sdk-runtime /axis/opencv /
+
+CMD ["/usr/bin/hello_world"]
+```
+
+#### Build the Hello World application
+```
+docker build -t <APP_IMAGE> .
+```
+Default architecture is armv7hf. To build for aarch64 it's possible to update the ARCH variable in the Dockerfile or to set it in the docker build command via build argument. It might also be necessary to set a proxy for Docker to use, this is set using the HTTP_PROXY variable:
+```
+docker build -t <APP_IMAGE> --build-arg ARCH=aarch64 --build-arg DOCKER_PROXY=$HTTP_PROXY .
+```
+
+#### Install and run the Hello World application
+
+> Installing and running the Hello World application requires the [Docker ACAP](https://hub.docker.com/r/axisecp/docker-acap) to be installed on the camera.
+
+There are two options to run the capture app, either save the image locally as a .tar and upload it to the camera (*opt 1*),
+or push the image to a container registry and pull the image to the camera from the cloud (*opt 2*).
+
+**[opt 1] Save the image**
+
+```
+docker save -o opencv-app.tar <APP_IMAGE>
+```
+**[opt 1] Load the image**
+
+```
+docker -H tcp://$AXIS_TARGET_IP load -i opencv_app.tar
+```
+**[opt 2] push it to container registry.**
+
+```
+docker push <APP_IMAGE>
+```
+**[opt 2] pull it from a container registry:**
+
+```
+docker -H tcp://$AXIS_TARGET_IP <APP_IMAGE>
+```
+**Run the container**
+```
+docker-compose -H tcp://$AXIS_TARGET_IP:2375 -f docker-compose.yml up
+```
+**The expected output:**
+```bash
+Hello World from OpenCV <CV_VERSION>
+```
