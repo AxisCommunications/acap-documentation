@@ -26,3 +26,6 @@ docs:
 
 - title: Giving feedback
   url: source/feedback.html
+
+- title: Release Notes
+  url: source/releasenotes.html
