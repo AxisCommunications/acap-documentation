@@ -20,6 +20,15 @@ This is the first ACAP 4 beta release (limited availability). It contains:
  * Firmware:
     * AXIS OS build version 21.27.3_1
 #### Limitations
+   * All examples using the larod-inference-server container image currently require the following volume mount to be added to the compose file:
+```/usr/acap-root/lib/liblarod.so.2.2.81:/lib/arm-linux-gnueabihf/liblarod.so.1```
+   e.g. 
+```
+    volumes:
+      - acap_dl-models:/models
+      - /run/dbus/system_bus_socket:/run/dbus/system_bus_socket
+      - /usr/acap-root/lib/liblarod.so.2.2.81:/lib/arm-linux-gnueabihf/liblarod.so.1
+ ```
 
 ### ACAP Native SDK 
 #### Supported architectures
