@@ -44,7 +44,7 @@ ACAP was introduced already in 2009 and is the world’s first camera-based vide
 | ------- | ------------ | ------- | ------- |
 | ACAP 4  | 2021 | Actively developed | See [release notes](releasenotes) in this documentation for more infomation |
 | ACAP 3 | 2020 | Actively maintained | [ACAP 3 documentation]( https://help.axis.com/acap-3-developer-guide) |
-| ACAP 2 | 2014 | End of maintenance Q4 2021 | For older firmware and products see [ACAP 2 documentation](https://www.axis.com/developer-community/acap-sdk-v2) |
+| ACAP 2 | 2014 | No maintenance. End of support: Q4 2021 | For older firmware and products see [ACAP 2 documentation](https://www.axis.com/developer-community/acap-sdk-v2) |
 | ACAP 1 | 2009 | Deprecated | No maintenance |
 
 ## ACAP SDK for edge-based applications
