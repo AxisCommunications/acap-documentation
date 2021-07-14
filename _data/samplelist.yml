@@ -6,7 +6,7 @@ docs:
 - title: Getting started
   url: source/getting-started.html
 
-- title: Develop applications / Efficient programming
+- title: Develop applications
   url: source/develop.html
 
 - title: API Reference Manual
