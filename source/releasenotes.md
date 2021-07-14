@@ -18,12 +18,12 @@ This is the first ACAP 4 beta release (limited availability). It contains:
 * 32 bit, see [Docker repo](https://hub.docker.com/repository/docker/axisecp/acap-computer-vision-sdk)
 
 #### Compatibility
-##### Supported products
 
+**Supported products**
 * Q1615 MkIII
 * P3255 LVE
 
-##### Firmware
+**Firmware**
 * AXIS OS build version 21.27.3_1
 
 
@@ -44,10 +44,11 @@ This is the first ACAP 4 beta release (limited availability). It contains:
 * 32 and 64 bit, see [Docker repo](https://hub.docker.com/repository/docker/axisecp/acap-native-sdk)
 
 #### Compatibility
-##### Supported roducts
+
+**Supported products**
 * All products from ARTPEC-6
 
-##### Firmware
+**Firmware**
 * Minimum AXIS OS version: 10.6
 
 ##### APIs supported in this release
