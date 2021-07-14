@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Develop applications / Efficient programming
+title: Develop applications
 ---
 ## Application project structure
 TBD
 
 ## Build, install, run
 
-### Native SDK
+### ACAP Native SDK
 
 To build, install and run an ACAP application, use the image in the [axisecp/acap-sdk](https://hub.docker.com/r/axisecp/acap-sdk) repository. You can use this image in two ways:
 
@@ -154,7 +154,7 @@ To remove an installed application, run:
 eap-install.sh remove
 ```
 
-### CV SDK inkl. Docker ACAP
+### ACAP Computer Vision SDK inkl. Docker ACAP
 
 #### Build
 The applications are built using the Docker framework which means that building is not always necessary. It's only necessary if your application uses custom images which are not readily available. The Computer Vision functionality can be accessed by basing your image on the [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk). Please see the [hello world example](#hello-world-example) for an example of how to create a custom image using the [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk). For more information on how to build a custom docker image, see https://docs.docker.com/get-started/02_our_app/.
