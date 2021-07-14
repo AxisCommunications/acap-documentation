@@ -185,11 +185,15 @@ For more information, see the help in AXIS Device Manager/AXIS Camera Station.
 8. After the upgrade has completed, the unit will automatically initiate the system, during which the status LED blinks amber. When initiation is complete and the system is ready for use, the color of the status LED will be green.
 
 ## Choose SDK
-TBD
+The ACAP SDK images are based on Ubuntu and contain the environment needed for building an AXIS Camera Application Platform (ACAP) application. All images are available on [Docker Hub](https://hub.docker.com/r/axisecp).
+
+An SDK image can be used as a basis for custom built images to run your application, or as a developer environment inside the container. See examples in sections below for how to do this. 
+
+Depending on your use case, use the [ACAP Native SDK](https://hub.docker.com/repository/docker/axisecp/acap-native-sdk), [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk) or a combination of both. Remember to check [compatibility](devices) for your product before getting started.
 
 ## Hello world example
 
-### Native
+### ACAP Native SDK
 
 #### Create a Hello World application
 
@@ -439,7 +443,7 @@ eap-install.sh --help
 ```
 
 
-### CV SDK
+### ACAP Computer Vision SDK
 
 #### Create a Hello World application
 Create the following folder and file structure in a working directory:
