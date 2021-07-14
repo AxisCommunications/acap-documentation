@@ -2,8 +2,6 @@
 layout: page
 title: Introduction
 ---
-# Introduction to ACAP
-
 ## What is ACAP?
 
 AXIS Camera Application Platform (ACAP) is an open application platform from Axis. It provides a development platform for software-based solutions and systems built around Axis devices. ACAP is available for various types of Axis products such as cameras, speakers and intercoms.
@@ -34,7 +32,7 @@ From ACAP version 3.1, the SDK format relies on the [Docker](https://www.docker.
 
 If you're new to Docker and its many features, check out their [Getting Started guide](https://www.docker.com/get-started). 
 
-Find all ACAP SDK images on the [Axis organization account]( https://hub.docker.com/orgs/axisecp) and follow the instructions in [Getting started](getting-started.md) to start developing your ACAP using Docker and our containerized SDK.
+Find all ACAP SDK images on the [Axis organization account]( https://hub.docker.com/orgs/axisecp) and follow the instructions in [Getting started](getting-started) to start developing your ACAP using Docker and our containerized SDK.
 
 ## Version history
 
@@ -44,7 +42,7 @@ ACAP was introduced already in 2009 and is the world’s first camera-based vide
 
 | Version | Release year | Support | Details |
 | ------- | ------------ | ------- | ------- |
-| ACAP 4  | 2021 | Actively developed | See [release notes](releasenotes.md) in this documentation for version info |
+| ACAP 4  | 2021 | Actively developed | See [release notes](releasenotes) in this documentation for more infomation |
 | ACAP 3 | 2020 | Actively maintained | [ACAP 3 documentation]( https://help.axis.com/acap-3-developer-guide) |
 | ACAP 2 | 2014 | End of maintenance Q4 2021 | For older firmware and products see [ACAP 2 documentation](https://www.axis.com/developer-community/acap-sdk-v2) |
 | ACAP 1 | 2009 | Deprecated | No maintenance |
@@ -71,7 +69,7 @@ See the [ACAP Native SDK repository documentation]( https://github.com/AxisCommu
 
 #### Support ####
 
-ACAP Native SDK is supported by most Axis products from ARTPEC-6 and up. See more information in the section about [compatibility](devices.md).
+ACAP Native SDK is supported by most Axis products from ARTPEC-6 and up. See more information in the section about [compatibility](devices).
 
 ### ACAP Computer Vision SDK
 
@@ -89,11 +87,11 @@ See the [ACAP Computer Vision SDK repository documentation]( https://github.com/
 
 #### Support ####
 
-ACAP Computer Vision SDK is supported by ARTPEC-7 based products with a DLPU. See more information in the section about [compatibility](devices.md).
+ACAP Computer Vision SDK is supported by ARTPEC-7 based products with a DLPU. See more information in the section about [compatibility](devices).
 
 ## ACAP examples
 
-There are several ACAP code examples and tutorials are available under an open-source license for both the ACAP Native SDK and ACAP Computer Vision SDK. Each example has a well-defined README file and example structure which will help you execute the examples on an Axis camera. The README file structure is comprised of:
+There are several ACAP code examples and tutorials available with an open-source license for both the ACAP Native SDK and ACAP Computer Vision SDK. Each example has a well-defined README file and example structure which will help you execute the examples on an Axis camera. The README file structure is comprised of:
 
 * example description
 
@@ -105,4 +103,4 @@ There are several ACAP code examples and tutorials are available under an open-s
 
 * expected output
 
-We are continuously adding new examples and tutorials for both existing as well as for new functionality. Keep checking GitHub to stay updated with the latest changes.
+We are continuously adding new examples and tutorials for both existing as well as for new functionality. Keep checking the Axis [GitHub repo](https://github.com/AxisCommunications) to stay updated with the latest changes.
