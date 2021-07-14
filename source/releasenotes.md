@@ -51,7 +51,7 @@ This is the first ACAP 4 beta release (limited availability). It contains:
 **Firmware**
 * Minimum AXIS OS version: 10.6
 
-##### APIs supported in this release
+**APIs supported in this release**
 * AxEvent
 * AxOverlay
 * Cairo
