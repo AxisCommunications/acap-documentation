@@ -42,8 +42,8 @@ ACAP was introduced already in 2009 and is the world’s first camera-based vide
 
 | Version | Release year | Support | Details |
 | ------- | ------------ | ------- | ------- |
-| ACAP 4  | 2021 | Actively developed | See [release notes](releasenotes) in this documentation for more infomation |
-| ACAP 3 | 2020 | Actively maintained | [ACAP 3 documentation]( https://help.axis.com/acap-3-developer-guide) |
+| ACAP 4 | 2021 | Actively developed | See [release notes](releasenotes) in this documentation for more information |
+| ACAP 3 | 2020 | Actively maintained | [ACAP 3 documentation](https://help.axis.com/acap-3-developer-guide) |
 | ACAP 2 | 2014 | No maintenance. End of support: Q4 2021 | For older firmware and products see [ACAP 2 documentation](https://www.axis.com/developer-community/acap-sdk-v2) |
 | ACAP 1 | 2009 | Deprecated | No maintenance |
 
@@ -94,13 +94,9 @@ ACAP Computer Vision SDK is supported by ARTPEC-7 based products with a DLPU. Se
 There are several ACAP code examples and tutorials available with an open-source license for both the ACAP Native SDK and ACAP Computer Vision SDK. Each example has a well-defined README file and example structure which will help you execute the examples on an Axis camera. The README file structure is comprised of:
 
 * example description
-
 * repository structure
-
 * limitation
-
 * how to build and run the code
-
 * expected output
 
 We are continuously adding new examples and tutorials for both existing as well as for new functionality. Keep checking the Axis [GitHub repo](https://github.com/AxisCommunications) to stay updated with the latest changes.
