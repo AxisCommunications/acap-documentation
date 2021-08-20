@@ -13,4 +13,4 @@ docker pull axisecp/acap-documentation-staging:latest-master
 docker run --rm -p 4000:4000 -it axisecp/acap-documentation-staging:latest-master jekyll serve
 ```
 
-Then open a web browser at `localhost:4000`.
+Then open a web browser at http://localhost:4000.
