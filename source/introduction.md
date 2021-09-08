@@ -42,8 +42,8 @@ ACAP was introduced already in 2009 and is the world’s first camera-based vide
 
 | Version | Release year | Support | Details |
 | ------- | ------------ | ------- | ------- |
-| ACAP 4  | 2021 | Actively developed | See [release notes](releasenotes) in this documentation for more infomation |
-| ACAP 3 | 2020 | Actively maintained | [ACAP 3 documentation]( https://help.axis.com/acap-3-developer-guide) |
+| ACAP 4 | 2021 | Actively developed | See [release notes](releasenotes) in this documentation for more information |
+| ACAP 3 | 2020 | Actively maintained | [ACAP 3 documentation](https://help.axis.com/acap-3-developer-guide) |
 | ACAP 2 | 2014 | No maintenance. End of support: Q4 2021 | For older firmware and products see [ACAP 2 documentation](https://www.axis.com/developer-community/acap-sdk-v2) |
 | ACAP 1 | 2009 | Deprecated | No maintenance |
 
@@ -94,13 +94,29 @@ ACAP Computer Vision SDK is supported by ARTPEC-7 based products with a DLPU. Se
 There are several ACAP code examples and tutorials available with an open-source license for both the ACAP Native SDK and ACAP Computer Vision SDK. Each example has a well-defined README file and example structure which will help you execute the examples on an Axis camera. The README file structure is comprised of:
 
 * example description
-
 * repository structure
-
 * limitation
-
 * how to build and run the code
-
 * expected output
 
 We are continuously adding new examples and tutorials for both existing as well as for new functionality. Keep checking the Axis [GitHub repo](https://github.com/AxisCommunications) to stay updated with the latest changes.
+
+## Integration with other systems
+
+A network camera is, more often than not, part of a solution that aims towards solving a specific use case. You might wish to send commands to the camera, or the camera is controlling another device via one of its I/O ports, or data generated on the camera should be sent over the network to an endpoint that aggregates data from multiple devices? In any of these circumstances we need to create the integration between the camera and its counterpart. And easy integration is key for any successful project that involved more than one part.
+
+This chapter aims to describe various integrations, hopefully covering relevant parts of your solution.
+
+### Integration with cloud
+
+Some use cases will require an integration with the cloud. You might be building a cloud application that reads data streams, and wish to send data generated on the camera to this application? Or you might wish to send an image from the camera when an event is triggered? For those, or other, situation we can provide you with sample examples, serving as building blocks in your solution. We currently have repositories on GitHub, tailored towards the following cloud vendors.
+
+- [Amazon Web Services (AWS)](https://github.com/AxisCommunications/acap-integration-examples-aws) - Integration between Axis devices and Amazon Web Services (AWS)
+- [Microsoft Azure](https://github.com/AxisCommunications/acap-integration-examples-azure) - Integration between Axis devices and Microsoft Azure
+- [Google Cloud Platform (GCP)](https://github.com/AxisCommunications/acap-integration-examples-gcp) - Integration between Axis devices and Google Cloud Platform (GCP)
+
+If you find yourself wishing there was another example more relevant to your use case, please don't hesitate to start a discussion or open a new issue in the relevant GitHub repository.
+
+### Integration with camera
+
+TODO: new text + can copy some from "more resources" section and https://www.axis.com/developer-community/acap-tutorial
