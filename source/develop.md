@@ -169,5 +169,55 @@ docker run -d -H tcp://$CAMERA_IP $IMAGE
 docker compose -H tcp://$CAMERA_IP up
 ```
 
+## Including third party libraries
+### ACAP Native SDK
+TODO
+
+### ACAP Computer Vision SDK
+You can add third party packages to an image based on the ACAP Computer Vision SDK in two main ways:
+**Cross-compiled** - Cross-compiled packages are compiled in a container with one instruction set and built for being run in a container with another instruction set. Cross-compilation commonly requires custom configuration. See [Cross-compilation](#cross-compilation) below for more information.
+**Emulated** - The emulated way of installing packages involves running an emulated container and executing installation commands as usual, for example, using apt-get for OS packages and pip for Python packages. Emulated installations are often slower, due to being emulated, but also easier to set up as the platform's regular toolchain can be used. See [Emulated installation](#emulated-installation) below for more information.
+
+
+#### Cross-compilation
+A common setup is compiling on a desktop with x86_64 for use on armhf, as used by ARTPEC-7-equipped devices. You can find an example, showing the  process of cross-compiling a minimal application and adding it to a runtime image that can be used on ARTPEC-7 products, [in the previous chapter](getting-started.html#acap-computer-vision-sdk). The toolchain used (for example, `crossbuild-essential-armhf`) to cross-compile the application for the target platform is present in the `devel`-tagged corresponding ACAP Computer Vision SDK image. Flags that have been used for compilation of the ACAP Computer Vision SDK packages are available under the `$ARCH_CFLAGS` variable in the `devel`-tagged image.
+
+
+#### Emulated installation
+For Python packages, cross-compiling can be difficult, and being able to use a package manager directly inside the runtime container can be convenient. Luckily, the Python package manager `pip` and other standard utilities such as `apt-get` can be run directly in the runtime container. However, as this container likely has a non-native instruction set, the commands need to be emulated, which requires some setup. One way to allow emulation of `RUN` commands in non-native containers is through the use of [QEMU](https://qemu-project.gitlab.io/qemu/about/index.html). Installation of the necessary components, on which more information can be found in the [multiarch/qemu-user-static](https://github.com/multiarch/qemu-user-static) repository, can conveniently be done by executing:
+
+`docker run --rm --privileged multiarch/qemu-user-static --reset -p yes`
+
+Once this is finished, emulated RUN commands can be executed. The emulation functionality can be tested by building a Dockerfile that performs a `RUN` command in a non-native container, such as the minimal one shown below:
+```Dockerfile
+FROM arm32v7/ubuntu:20.04
+RUN echo "'Hello World!' -an $(uname -m) program"
+```
+
+If your QEMU installation succeeded, this should output `'Hello World!' -an armv7l program`.
+
+With the emulation functionality available, third party packages can be installed. An example of this is shown in the Dockerfile below, in which an armv7hf image with some packages from the ACAP Computer Vision SDK and the third party Python library `pandas` is built.
+
+```Dockerfile
+FROM axisecp/acap-computer-vision-sdk:latest-armv7hf AS cv-sdk
+FROM arm32v7/ubuntu:20.04
+
+# Add the CV SDK packages
+COPY --from=cv-sdk /axis/opencv /
+COPY --from=cv-sdk /axis/python /
+COPY --from=cv-sdk /axis/python-numpy /
+COPY --from=cv-sdk /axis/openblas /
+
+# Add the python package pandas
+RUN pip3 install pandas
+
+# Add your application files     
+COPY app /app
+WORKDIR /app
+CMD ["python3", "some_analytics_script.py"]
+```
+
+Python packages are not commonly distributed as binaries for the arm platforms, so packages downloaded onto runtime images from, for example, [PyPI](https://pypi.org/) will likely have to be compiled from source. An updated list of the ACAP Computer Vision SDK packages, that are precompiled with OpenBLAS (when applicable) and optimized for the AXIS platforms, can be found in [the ACAP Computer Vision SDK repository](https://github.com/AxisCommunications/acap-computer-vision-sdk#contents).
+
 ## Setting up VSCode
 TBD
