@@ -1,0 +1,10 @@
+ARG REPO=
+FROM ${REPO}
+
+# Build HTML pages from markdown files
+RUN pwd && ls -la && jekyll --version && \
+    jekyll build --trace && \
+    pwd && ls -la
+
+# Expose a port
+EXPOSE 4000
