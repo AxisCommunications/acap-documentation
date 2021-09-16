@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Service for partners (ACAP signing..)
+title: Service for partners
+nav_order: 11
 ---
 
 ## Package signing

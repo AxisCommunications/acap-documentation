@@ -1,7 +1,9 @@
 ---
 layout: page
 title: Develop applications
+nav_order: 3
 ---
+
 ## Application project structure
 TBD
 

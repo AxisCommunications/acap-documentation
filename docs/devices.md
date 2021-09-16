@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Axis devices
+nav_order: 10
 ---
 ## HW info
 Compatibility means that if an ACAP can be installed and run on a specific device, then the ACAP is compatible with the device. Compatibility depends on both hardware and software (firmware).

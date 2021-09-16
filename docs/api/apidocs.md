@@ -1,7 +1,12 @@
 ---
-layout: page
-title: Axis ACAP API documentation
+layout: default
+title: API
+nav_order: 5
+has_children: true
 ---
+
+# API
+
 The SDK provides the following APIs:
 
 **Video and audio APIs**

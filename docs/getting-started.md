@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Getting started
+title: Get started
+nav_order: 3
 ---
 ## Pre-requisites
 To develop ACAPs, you need the following:

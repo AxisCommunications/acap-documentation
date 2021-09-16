@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Getting help & giving feedback
+title: Get help & Give feedback
+nav_order: 12
 ---
 # Getting help & giving feedback
 The best way to interact with our team is through GitHub. You can get help and provide feedback by opening an issue for:
