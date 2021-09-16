@@ -13,8 +13,18 @@ COPY ./ /srv/jekyll/
 RUN chown -R jekyll /srv/jekyll/
 WORKDIR /srv/jekyll
 
-# Build HTML pages from markdown files
-RUN jekyll build
+# Install latest changes for theme, from Gemfile
+# Install latest changes for theme, from Gemfile
+RUN [ -f Gemfile.lock ] && { cat Gemfile.lock && \
+    echo "Remove old Gemfile.lock" && rm -f Gemfile.lock ; }
+RUN gem install bundler && \
+    bundle install && \
+    bundle info --path just-the-docs
 
-# Expose a localhost port
+# Build HTML pages from markdown files
+RUN pwd && ls -la && jekyll --version && \
+    jekyll build --trace && \
+    pwd && ls -la
+
+# Expose a port
 EXPOSE 4000
