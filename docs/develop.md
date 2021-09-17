@@ -35,13 +35,13 @@ The script does the following:
 
 The created application package filename has the following format:
 
-```
+```bash
 <PACKAGENAME>_<APPMAJORVERSION>_<APPMINORVERSION>_<APPMICROVERSION>_<SDK_ARCHITECTURE>.eap
 ```
 
 The created copy of `LICENSE` filename has the following format:
 
-```
+```bash
 <PACKAGENAME>_<APPMAJORVERSION>_<APPMINORVERSION>_<APPMICROVERSION>_LICENSE.txt
 ```
 
@@ -82,7 +82,7 @@ The top structure for an ACAP application contains a directory called, for examp
 
 To run the acap-sdk container interactively and mount the application project, go to the directory that contains `app` and run:
 
-```
+```bash
 docker run -v $PWD/app:/opt/app --rm -i -t axisecp/acap-sdk:3.3-armv7hf-ubuntu20.04
 ```
 where:
@@ -96,7 +96,7 @@ where:
 
 You should end up in a container with a prompt similar to:
 
-```
+```bash
 root@1e6b4f3d5a2c:/opt/app#
 ```
 
@@ -119,18 +119,18 @@ To build an application, stand in the application directory inside the container
 The SDK helps with installing a built application on the device from a terminal. You can also install application packages, using the device's web interface. But this method is less convenient during application development.
 
 To install a built application on a device, run:
-```
+```bash
 eap-install.sh
 ```
 Run the command without any options to get help.
 
 To install a built application on a device, run the following command (you must enter the IP address and the root password of the device the first time):
-```
+```bash
 eap-install.sh <device-ip> <password> install
 eap-install.sh 192.168.0.90 pass install
 ```
 The command remembers the device-ip and password after the first successful execution. After this you can simply run:
-```
+```bash
 eap-install.sh install
 ```
 > You must run the command from the application project directory, see [Application project structure](#application-project-structure).
@@ -140,21 +140,21 @@ eap-install.sh install
 Before you continue, make sure that you have done a first successful execution of shell script command `eap-install.sh`, see [Install the application](#install-the-application) for more information.
 
 To start, stop and remove an installed application, run:
-```
+```bash
 eap-install.sh [start|stop|remove]
 ```
 To start an installed application on the device, run:
-```
+```bash
 eap-install.sh start
 ```
 Now you can see the status of the application using the device's web interface.
 
 To stop a running application, run:
-```
+```bash
 eap-install.sh stop
 ```
 To remove an installed application, run:
-```
+```bash
 eap-install.sh remove
 ```
 
@@ -167,7 +167,7 @@ The applications are built using the Docker framework which means that building 
 > Installing and running ACAP4 applications requires the [Docker ACAP](https://hub.docker.com/r/axisecp/docker-acap) to be installed on the camera.
 
 Running and installing is usually done in the same step in the docker framework by using the docker command. Note that this command shall be run from a separate host and not on the camera. The intended way to install and run applications is by supplying the docker command with the IP adress of the camera using the -H parameter. The two commands usually used for this purpose are [docker compose](https://docs.docker.com/compose/) and [docker run](https://docs.docker.com/engine/reference/run/). Below are examples of how to use these commands:
-```
+```bash
 docker run -d -H tcp://$CAMERA_IP $IMAGE
 
 docker compose -H tcp://$CAMERA_IP up
@@ -190,7 +190,9 @@ A common setup is compiling on a desktop with x86_64 for use on armhf, as used b
 #### Emulated installation
 For Python packages, cross-compiling can be difficult, and being able to use a package manager directly inside the runtime container can be convenient. Luckily, the Python package manager `pip` and other standard utilities such as `apt-get` can be run directly in the runtime container. However, as this container likely has a non-native instruction set, the commands need to be emulated, which requires some setup. One way to allow emulation of `RUN` commands in non-native containers is through the use of [QEMU](https://qemu-project.gitlab.io/qemu/about/index.html). Installation of the necessary components, on which more information can be found in the [multiarch/qemu-user-static](https://github.com/multiarch/qemu-user-static) repository, can conveniently be done by executing:
 
-`docker run --rm --privileged multiarch/qemu-user-static --reset -p yes`
+```bash
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+```
 
 Once this is finished, emulated RUN commands can be executed. The emulation functionality can be tested by building a Dockerfile that performs a `RUN` command in a non-native container, such as the minimal one shown below:
 ```Dockerfile
@@ -215,7 +217,7 @@ COPY --from=cv-sdk /axis/openblas /
 # Add the python package pandas
 RUN pip3 install pandas
 
-# Add your application files     
+# Add your application files
 COPY app /app
 WORKDIR /app
 CMD ["python3", "some_analytics_script.py"]

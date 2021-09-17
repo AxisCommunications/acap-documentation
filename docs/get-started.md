@@ -65,27 +65,27 @@ To protect your data we strongly recommend that you:
 To check if device supports ACAP, use VAPIX CGI `http://192.168.0.90/axis-cgi/param.cgi` and check if the device supports EmbeddedDevelopment with a VAPIX GET/POST request and action list.
 
 To extract the value of the parameter, use the CGI as device URL in a browser window:
-```
+```html
 http://192.168.0.90/axis-cgi/param.cgi?action=list&group=Properties.EmbeddedDevelopment.EmbeddedDevelopment
 ```
 
 The following response shows a device that supports ACAP:
-```
+```bash
 root.Properties.EmbeddedDevelopment.EmbeddedDevelopment=yes
 ```
 
 ### Check device properties
 To get basic device information, such as firmware version and architecture, use VAPIX POST request and method **getAllProperties**:
-```
+```html
 http://192.168.0.90/axis-cgi/basicdeviceinfo.cgi
 ```
 To extract the messages, use the CGI from a terminal, using the credentials set in the network configuration:
-```
+```bash
 curl --anyauth "*" -u [username]:[password] 192.168.0.90/axis-cgi/basicdeviceinfo.cgi --data "{\"apiVersion\":\"1.0\",\"context\":\"Client defined request ID\",\"method\":\"getAllProperties\"}"
 ```
 
 The following response contains architecture "Architecture": "armv7hf", and firmware version "Version": "9.50.1":
-```
+```json
 {
 	"apiVersion": "1.0",
 	"context": "Client defined request ID",
@@ -232,7 +232,7 @@ int main(void)
 Makefile containing the build and link instructions for building the ACAP application.
 > Make sure to preserve the tabs below. Recipes in a makefile must be preceded by a single standard tab character.
 
-```
+```make
 TARGET = hello_world
 OBJ = src/$(TARGET).o
 
@@ -261,7 +261,7 @@ clean:
 **Dockerfile**
 
 Dockerfile based on the [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk).
-```
+```Dockerfile
 # Specify the architecture at build time: mipsis32r2el/armv7hf/aarch64
 ARG ARCH=armv7hf
 ARG REPO=axisecp
@@ -306,11 +306,11 @@ CMD ["/usr/bin/hello_world"]
 ```
 
 #### Build the Hello World application
-```
+```bash
 docker build -t <APP_IMAGE> .
 ```
 Default architecture is armv7hf. To build for aarch64 it's possible to update the ARCH variable in the Dockerfile or to set it in the docker build command via build argument. It might also be necessary to set a proxy for Docker to use, this is set using the HTTP_PROXY variable:
-```
+```bash
 docker build -t <APP_IMAGE> --build-arg ARCH=aarch64 --build-arg DOCKER_PROXY=$HTTP_PROXY .
 ```
 
@@ -323,26 +323,26 @@ or push the image to a container registry and pull the image to the camera from 
 
 **[opt 1] Save the image**
 
-```
+```bash
 docker save -o opencv-app.tar <APP_IMAGE>
 ```
 **[opt 1] Load the image**
 
-```
+```bash
 docker -H tcp://$AXIS_TARGET_IP load -i opencv_app.tar
 ```
 **[opt 2] push it to container registry.**
 
-```
+```bash
 docker push <APP_IMAGE>
 ```
 **[opt 2] pull it from a container registry:**
 
-```
+```bash
 docker -H tcp://$AXIS_TARGET_IP <APP_IMAGE>
 ```
 **Run the container**
-```
+```bash
 docker-compose -H tcp://$AXIS_TARGET_IP:2375 -f docker-compose.yml up
 ```
 **The expected output:**

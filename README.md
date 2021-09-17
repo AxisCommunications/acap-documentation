@@ -8,7 +8,7 @@ To view the documentation offline, which is necessary e.g. for versions that hav
 
 In this example, check out the latest version:
 
-``` 
+```bash
 docker pull axisecp/acap-documentation-staging:latest-master
 docker run --rm -p 4000:4000 -it axisecp/acap-documentation-staging:latest-master jekyll serve
 ```
