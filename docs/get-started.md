@@ -3,6 +3,9 @@ layout: page
 title: Get started
 nav_order: 3
 ---
+
+# Get started with ACAP application development
+
 ## Pre-requisites
 To develop ACAPs, you need the following:
 

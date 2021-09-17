@@ -15,9 +15,5 @@ Welcome to the ACAP 4 SDK documentation.
 For information of ACAP and the two new SDKs, start out with the [introduction](docs/introduction.html).
 
 To start development of ACAP applications, continue to [Getting started](docs/getting-started.html).
-
-[comment]: <> Add empty lines to get a nice distance to footer
-<br>
-<br>
-
+{: .pb-8 }
 

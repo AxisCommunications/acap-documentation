@@ -4,6 +4,8 @@ title: Develop applications
 nav_order: 3
 ---
 
+# Develop ACAP applications
+
 ## Application project structure
 TBD
 

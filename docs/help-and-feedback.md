@@ -3,7 +3,8 @@ layout: page
 title: Get help & Give feedback
 nav_order: 12
 ---
-# Getting help & giving feedback
+
+# Get help & Give feedback
 The best way to interact with our team is through GitHub. You can get help and provide feedback by opening an issue for:
 
 * [Native SDK](https://github.com/AxisCommunications/acap-native-sdk/issues)

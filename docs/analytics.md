@@ -4,4 +4,6 @@ title: Analytics
 nav_order: 4
 ---
 
-# TBD
+# Analytics in ACAP applications
+
+## TBD

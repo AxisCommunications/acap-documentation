@@ -3,6 +3,9 @@ layout: page
 title: Release notes
 nav_order: 14
 ---
+
+# Release notes
+
 ## ACAP 4 Beta 1 – July 13 2021
 ### Overview
 This is the first ACAP 4 beta release (limited availability). It contains:
