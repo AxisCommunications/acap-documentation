@@ -1,4 +1,4 @@
-name: Build Reproducible Package Applications
+name: Build documentation from Dockerfiles
 on:
   push:
      paths:
