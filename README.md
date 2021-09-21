@@ -14,3 +14,6 @@ docker run --rm -p 4000:4000 -it axisecp/acap-documentation-staging:latest-maste
 ```
 
 Then open a web browser at http://localhost:4000.
+
+# License
+&copy;2021 Axis Communications AB. All rights reserved. AXIS COMMUNICATIONS, AXIS, ARTPEC and VAPIX are registered trademarks of Axis AB in various jurisdictions. All other trademarks are the property of their respective owners.
