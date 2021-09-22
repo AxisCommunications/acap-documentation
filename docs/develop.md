@@ -184,7 +184,7 @@ You can add third party packages to an image based on the ACAP Computer Vision S
 
 
 #### Cross-compilation
-A common setup is compiling on a desktop with x86_64 for use on armhf, as used by ARTPEC-7-equipped devices. You can find an example, showing the  process of cross-compiling a minimal application and adding it to a runtime image that can be used on ARTPEC-7 products, [in the previous chapter](getting-started.html#acap-computer-vision-sdk). The toolchain used (for example, `crossbuild-essential-armhf`) to cross-compile the application for the target platform is present in the `devel`-tagged corresponding ACAP Computer Vision SDK image. Flags that have been used for compilation of the ACAP Computer Vision SDK packages are available under the `$ARCH_CFLAGS` variable in the `devel`-tagged image.
+A common setup is compiling on a desktop with x86_64 for use on armhf, as used by ARTPEC-7-equipped devices. You can find an example, showing the  process of cross-compiling a minimal application and adding it to a runtime image that can be used on ARTPEC-7 products, [in the previous chapter](get-started.html#acap-computer-vision-sdk). The toolchain used (for example, `crossbuild-essential-armhf`) to cross-compile the application for the target platform is present in the `devel`-tagged corresponding ACAP Computer Vision SDK image. Flags that have been used for compilation of the ACAP Computer Vision SDK packages are available under the `$ARCH_CFLAGS` variable in the `devel`-tagged image.
 
 
 #### Emulated installation
