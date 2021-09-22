@@ -36,7 +36,7 @@ From ACAP version 3.1, the SDK format relies on the [Docker](https://www.docker.
 
 If you're new to Docker and its many features, check out their [Getting Started guide](https://www.docker.com/get-started). 
 
-Find all ACAP SDK images on the [Axis organization account]( https://hub.docker.com/orgs/axisecp) and follow the instructions in [Getting started](getting-started) to start developing your ACAP using Docker and our containerized SDK.
+Find all ACAP SDK images on the [Axis organization account]( https://hub.docker.com/orgs/axisecp) and follow the instructions in [Get started](get-started) to start developing your ACAP using Docker and our containerized SDK.
 
 ## Version history
 
@@ -73,7 +73,7 @@ See the [ACAP Native SDK repository documentation]( https://github.com/AxisCommu
 
 #### Support ####
 
-ACAP Native SDK is supported by most Axis products from ARTPEC-6 and up. See more information in the section about [compatibility](devices).
+ACAP Native SDK is supported by most Axis products from ARTPEC-6 and up. See more information in the section about [compatibility](axis-devices).
 
 ### ACAP Computer Vision SDK
 
@@ -91,7 +91,7 @@ See the [ACAP Computer Vision SDK repository documentation]( https://github.com/
 
 #### Support ####
 
-ACAP Computer Vision SDK is supported by ARTPEC-7 based products with a DLPU. See more information in the section about [compatibility](devices).
+ACAP Computer Vision SDK is supported by ARTPEC-7 based products with a DLPU. See more information in the section about [compatibility](axis-devices).
 
 ## ACAP examples
 
