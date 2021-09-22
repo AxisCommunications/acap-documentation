@@ -18,11 +18,18 @@ $body-text-color: $color-text-01;
 $body-heading-color: $color-text-01;
 $search-result-preview-color: $color-gray-06;
 $nav-child-link-color: $color-gray-06;
-$link-color: $color-text-01;
+$link-color: $color-brand-08;
+
+
+// Left menu changes
 
 // Axis logo
-
 .side-bar .site-header{
 		background-color: $white;
-
 }
+
+// Keep the left menu items as text color
+.side-bar .site-nav .nav-list .nav-list-item .nav-list-link{
+    color: $color-text-01;
+}
+
