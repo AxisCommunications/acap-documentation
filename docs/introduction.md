@@ -120,7 +120,3 @@ Some use cases will require an integration with the cloud. You might be building
 - [Google Cloud Platform (GCP)](https://github.com/AxisCommunications/acap-integration-examples-gcp) - Integration between Axis devices and Google Cloud Platform (GCP)
 
 If you find yourself wishing there was another example more relevant to your use case, please don't hesitate to start a discussion or open a new issue in the relevant GitHub repository.
-
-### Integration with camera
-
-TODO: new text + can copy some from "more resources" section and https://www.axis.com/developer-community/acap-tutorial
