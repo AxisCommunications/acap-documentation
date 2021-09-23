@@ -173,6 +173,12 @@ docker run -d -H tcp://$CAMERA_IP $IMAGE
 docker compose -H tcp://$CAMERA_IP up
 ```
 
+### The Docker Compose ACAP
+
+In addition to the Docker ACAP, there is another similar ACAP: the [Docker Compose ACAP](https://github.com/AxisCommunications/docker-compose-acap). The Docker Compose ACAP not only contains the Docker daemon but also the Docker client, which is why it is significantly larger. When the Docker Compose ACAP is installed, it is possible to run Docker commands directly on the camera instead of using a Docker client on another machine (using the -H flag to specify the IP address of the camera).
+
+The main purpose of the Docker Compose ACAP is to enable running containers as part of native ACAPs, as demonstrated in [this example](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/container-example). This use case requires that there is a Docker client present on the camera since the ACAP itself must be able to start the containers.
+
 ## Including third party libraries
 ### ACAP Native SDK
 TODO
@@ -224,12 +230,6 @@ CMD ["python3", "some_analytics_script.py"]
 ```
 
 Python packages are not commonly distributed as binaries for the arm platforms, so packages downloaded onto runtime images from, for example, [PyPI](https://pypi.org/) will likely have to be compiled from source. An updated list of the ACAP Computer Vision SDK packages, that are precompiled with OpenBLAS (when applicable) and optimized for the AXIS platforms, can be found in [the ACAP Computer Vision SDK repository](https://github.com/AxisCommunications/acap-computer-vision-sdk#contents).
-
-### The Docker Compose ACAP
-
-In addition to the Docker ACAP, there is another similar ACAP: the [Docker Compose ACAP](https://github.com/AxisCommunications/docker-compose-acap). The Docker Compose ACAP not only contains the Docker daemon but also the Docker client, which is why it is significantly larger. When the Docker Compose ACAP is installed, it is possible to run Docker commands directly on the camera instead of using a Docker client on another machine (using the -H flag to specify the IP address of the camera).
-
-The main purpose of the Docker Compose ACAP is to enable running containers as part of native ACAPs, as demonstrated in [this example](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/object-detection). This use case requires that there is a Docker client present on the camera since the ACAP itself must be able to start the containers.
 
 ## Setting up VSCode
 TBD
