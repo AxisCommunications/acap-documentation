@@ -8,7 +8,7 @@ nav_order: 1
 This documentation is in beta until ACAP 4 release date 27 Sept
 
 # AXIS ACAP 4 SDK Documentation
-<img align="right" src="/assets/logos/acap_sdk_symbol.png" alt="ACAP SDK" width="200"/>
+<img align="right" src="assets/logos/acap_sdk_symbol.png" alt="ACAP SDK" width="200"/>
 
 Welcome to the ACAP 4 SDK documentation.
 
