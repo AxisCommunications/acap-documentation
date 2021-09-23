@@ -184,8 +184,12 @@ The main purpose of the Docker Compose ACAP is to enable running containers as p
 TODO
 
 ### ACAP Computer Vision SDK
-You can add third party packages to an image based on the ACAP Computer Vision SDK in two main ways:
+You can add third party packages to an image based on the ACAP Computer Vision SDK in three main ways:
+
+**Supplied packages** - Many common packages are supplied in the ACAP Computer Vision SDK. These have been compiled and tuned for the platform and in some cases, had additions that give them additional functionality, such as capturing video directly from an AXIS camera in the case of the *OpenCV with VDO* package. These packages are available in the ACAP Computer Vision SDK under the `/axis` directory and are currently installed during the `docker build` process simply through copying the package path to the root of the target in the Dockerfile, e.g., in the case of OpenCV: `COPY --from=cv-sdk /axis/opencv /`. In this case, `cv-sdk` is defined as seen in the `Dockerfile` in the [Emulated installation](#emulated-installation) section, which also shows a complete example of adding packages from the ACAP Computer Vision SDK to an application.
+
 **Cross-compiled** - Cross-compiled packages are compiled in a container with one instruction set and built for being run in a container with another instruction set. Cross-compilation commonly requires custom configuration. See [Cross-compilation](#cross-compilation) below for more information.
+
 **Emulated** - The emulated way of installing packages involves running an emulated container and executing installation commands as usual, for example, using apt-get for OS packages and pip for Python packages. Emulated installations are often slower, due to being emulated, but also easier to set up as the platform's regular toolchain can be used. See [Emulated installation](#emulated-installation) below for more information.
 
 
