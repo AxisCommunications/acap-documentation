@@ -1,39 +1,30 @@
 ---
-layout: default
+layout: page
 title: API
 nav_order: 5
 has_children: true
 ---
 
-# API
+# Native SDK API
 
-The SDK provides the following APIs:
+The ACAP Native SDK provides the following APIs:
+* [Video capture API](#video-capture-api)
+* [Machine learning API](#machine-learning-api)
+* [Overlay API](#overlay-api)
+* [Cairo](#cairo)
+* [OpenCL](#opencl)
+* [Event API](#event-api)
+* [License Key API](#license-key-api)
 
-**Video and audio APIs**
+## Compatibility
+The table below shows ACAP Native SDK and firmware version compatibility.
 
-* [Video capture API](#video-capture-api): VdoStream
-* [Machine learning API](#machine-learning-api): Larod
-* [Overlay API](#overlay-api): Axoverlay
-
-**Application support APIs**
-* [Event API](#event-api): Axevent
-* [License API](#license-api): LicenseKey
-
-Go to the [ACAP API documentation](api-doc/3.4/main/html/acap4_api.html) for detailed functional descriptions and examples of the APIs.
-
-## API versions
-The table below shows API and firmware version compatibility.
-
-API version | Available from firmware version
+SDK version | Available from firmware version
 ----------- | -------------------------------
-API 3.0 | 9.70
-API 3.1 | 9.80
-API 3.2 | 10.2
-API 3.3 | 10.5
-API 3.4 | 10.6
+1.0 | 10.7
 
 ## Video capture API
-Go to the [ACAP API documentation](api-doc/3.4/api/vdostream/html/index.html) for detailed functional descriptions and examples of this API.
+Go to the [ACAP API Documentation](/source/api-doc/3.4/api/vdostream/html/index.html) for detailed functional descriptions of this API.
 
 The VdoStream API provides:
 * video and image stream
@@ -46,49 +37,53 @@ The API supports products with the following chips:
 * ARTPEC-6
 * Ambarella S5L
 * Ambarella S5
-* Ambarella S3L
-* Ambarella S2L
 
 ### Version history
-The VdoStream API was introduced in API version 3.0.
+The Video capture API was introduced in Native SDK 1.0.
 
 ### Code Examples
-#### Capture video stream
-This code example on [GitHub](https://github.com/AxisCommunications/acap3-examples/tree/master/vdostream) starts a vdo stream and then illustrates how to continuously capture frames from the vdo service, access the received buffer contents as well as the frame metadata.
-
-#### libvdo and larod combined
-This code example on [GitHub](https://github.com/AxisCommunications/acap3-examples/tree/master/vdo-larod) loads an image classification model to larod and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format and then sent to larod for inference on MODEL.
+* [vdostream](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdostream/)
+  * The example code is written in C which starts a vdo stream and then illustrates how to continuously capture frames from the vdo service, access the received buffer contents as well as the frame metadata.
+* [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod/)
+  * The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format and then sent to larod for inference on MODEL.
+* [vdo-larod-preprocessing](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod-preprocessing/)
+  * The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv
+  format which are sent to larod for preprocessing and inference on MODEL.
+* [vdo-opencl-filtering](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-opencl-filtering/)
+  * This example illustrates how to capture frames from the vdo service, access the received buffer, and finally perform a GPU accelerated Sobel filtering with OpenCL.
 
 ## Machine learning API
-Go to the [ACAP API documentation](api-doc/3.4/api/larod/html/index.html) for detailed functional descriptions and examples of this API.
+Larod provides a simple unified C API for running machine learning and image preprocessing efficiently. Larod is opensource on GitLab, see [Introduction to larod](https://gitlab.com/unimatrix/larod/-/blob/master/doc/introduction-for-app-developers.md)
 
-liblarod lets you communicate with the Larod machine learning service, and use its features. The Machine learning API can be used for deep learning applications.
+Go to the [ACAP API Documentation](/source/api-doc/3.4/api/larod/html/index.html) for detailed functional descriptions of this API.
+
+The Machine learning API can be used for deep learning applications.
 
 ### Compatibility
-The API supports products with the following chips:
+The Larod API supports products with the following chips:
 * ARTPEC-7
 * Ambarella S5L
 
 For products with a DLPU (Deep Learning Processing Unit), inference runs on the DLPU otherwise it runs on the CPU.
 
 ### Version history
-
-Larod API version | ACAP API version | What’s new
------------------ | ---------------- | ----------
-1.0 | 3.1 | Larod API introduced
-2.0 | 3.3 | Preprocessing functionality, Handles TFLite when using firmware version 10.6 and later.
-
-> We recommend using Larod version 2.0. However you can still use Larod version 1.0. To use Larod 1.0, define LAROD_API_VERSION_1 in your application, see Backward compatibility in Introduction to larod for app developers for more information.
+The Machine learning API was introduced in Native SDK 1.0.
 
 ### Code Examples
-#### Extract and analyze output
-This code example on [GitHub](https://github.com/AxisCommunications/acap3-examples/tree/master/larod) connects to larod and loads a model, runs inference on it and then finally deletes the loaded model from larod.
-
-#### libvdo and larod combined
-This code example on [GitHub](https://github.com/AxisCommunications/acap3-examples/tree/master/vdo-larod) loads an image classification model to larod and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format and then sent to larod for inference on MODEL.
+* [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/larod/)
+  * The example code is written in C which connects to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?) and loads a model, runs inference on it and then finally deletes the loaded model from [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?).
+* [tensorflow-to-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/tensorflow-to-larod/)
+  * This example covers model conversion, model quantization, image formats and custom models in greater depth than the [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/larod) and [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod) examples
+* [object-detection](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/object-detection/)
+  * The example code focus on object detection, cropping and saving detected objects into jpeg files.
+* [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod/)
+  * The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format
+* [vdo-larod-preprocessing](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod-preprocessing/)
+  * The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv
+  format which are sent to larod for preprocessing and inference on MODEL.
 
 ## Overlay API
-Go to the [ACAP API documentation](api-doc/3.4/api/axoverlay/html/index.html) for detailed functional descriptions and examples of this API.
+Go to the [ACAP API Documentation](/source/api-doc/3.4/api/axoverlay/html/index.html) for detailed functional descriptions of this API.
 
 The Axoverlay API is a helper library that enables an ACAP to draw overlays in selected video streams. It has built-in support for Cairo as rendering API, as well as an open backend for any other custom rendering.
 
@@ -98,14 +93,43 @@ The API supports products with the following chips:
 * ARTPEC-6
 
 ### Version history
-The Axoverlay API was introduced in API version 3.0.
+The Axoverlay API was introduced in Native SDK 1.0.
 
 ### Code Examples
-#### Draw plain boxes and text
-This code example on [GitHub](https://github.com/AxisCommunications/acap3-examples/tree/master/axoverlay) shows how to draw plain boxes and text as overlays in a stream with the Axoverlay API.
+* [axoverlay](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axoverlay/)
+  * The example code is written in C which illustrates how to draw plain boxes and text as overlays in a stream.
+
+## Cairo
+Open-source rendering library for 2D vector graphics. See [Cairo documentation](https://www.cairographics.org/documentation/)
+
+### Compatibility
+The Cairo API supports products with the following chips:
+* ARTPEC-7
+* ARTPEC-6
+
+### Version history
+The Cairo API was introduced in Native SDK 1.0.
+
+### Code Examples
+* [axoverlay](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axoverlay/)
+  * The example code is written in C which illustrates how to draw plain boxes and text as overlays in a stream.
+
+## OpenCL
+Accelerate parallel compute with GPU. See [OpenCL documentation](https://www.khronos.org/opencl/)
+
+### Compatibility
+The OpenCL API supports products with the following chips:
+* ARTPEC-7
+
+### Version history
+The OpenCL 1.2 was introduced in Native SDK 1.0.
+
+### Code Examples
+* [vdo-opencl-filtering](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-opencl-filtering/)
+  * This example illustrates how to capture frames from the vdo service, access the received buffer, and finally perform a GPU accelerated Sobel filtering with OpenCL.
 
 ## Event API
-Go to the [ACAP API documentation](api-doc/3.4/api/axevent/html/index.html) for detailed functional descriptions and examples of this API.
+Go to the [ACAP API Documentation](/source/api-doc/3.4/api/axevent/html/index.html) for detailed functional descriptions of this API.
 
 The Axevent API provides:
 * an interface to the event system found in Axis products.
@@ -135,26 +159,23 @@ The API supports products with the following chips:
 * ARTPEC-6
 * Ambarella S5L
 * Ambarella S5
-* Ambarella S3L
-* Ambarella S2L
 
 ### Version history
-
-Event API version | ACAP API version | What’s new
------------------ | ---------------- | ----------
-1.0 | ACAP 2 | Event API introduced
-1.1 | 3.2 | New functions: ax_event_new2, ax_event_get_time_stamp2
-
-> **ax_event_new** and **ax_event_get_time_stamp** functions are marked as deprecated from ACAP API version 3.2 because they use [GTimeVal](https://developer.gnome.org/glib/stable/glib-Date-and-Time-Functions.html#GTimeVal), which is deprecated in glib. Use **ax_event_new2** and **ax_event_get_time_stamp2** instead.
+The Axevent API was introduced in Native SDK 1.0.
 
 ### Code Examples
-#### Subscribe to and send event
-This code example on [GitHub](https://github.com/AxisCommunications/acap3-examples/tree/master/axevent) illustrates both how to subscribe to different events and how to send an event.
+* [Send Event](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axevent/send_event/README.md)
+  * The example code is written in C which sends an ONVIF event periodically.
+* [Subscribe to Event](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axevent/subscribe_to_event/README.md)
+  * The example code is written in C which subscribe to the ONVIF event sent from application "send_event".
+* [Subscribe to Events](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axevent/subscribe_to_events/README.md)
+  * The example code is written in C which subscribes to different predefined events.
 
-## License API
-Go to the [ACAP API documentation](api-doc/3.4/api/licensekey/html/index.html) for detailed functional descriptions and examples of this API.
 
-Use the LicenseKey API to validate an application license key.
+## License Key API
+Go to the [ACAP API Documentation](/source/api-doc/3.4/api/licensekey/html/index.html) for detailed functional descriptions of this API.
+
+Use the License Key API to validate an application license key.
 
 A license key is a signed file, generated for a specific device ID and application ID. The ACAP Service Portal maintains both license keys and application IDs.
 
@@ -164,12 +185,10 @@ The API supports products with the following chips:
 * ARTPEC-6
 * Ambarella S5L
 * Ambarella S5
-* Ambarella S3L
-* Ambarella S2L
 
 ### Version history
-This API was introduced in API version earlier than 3.0.
+This API was introduced in API version 1.0
 
 ### Code Examples
-#### Status of a license key
-This code example on [GitHub](https://github.com/AxisCommunications/acap3-examples/tree/master/licensekey) shows how to check the status of a license key.
+* [licensekey](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/licensekey/)
+  * The example code is written in C which illustrates how to check the licensekey status.
