@@ -33,7 +33,7 @@ kramdown:
 
 ##### Theme settings #####
 
-theme: "just-the-docs"
+  #theme: "just-the-docs"
 
 # SCSS overrides
 color_scheme: axis
