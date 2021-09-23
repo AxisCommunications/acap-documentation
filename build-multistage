@@ -1,0 +1,51 @@
+#!/bin/bash
+
+multidir=Dockerfiles-multistage
+d1=$multidir/Dockerfile-1-Gem-Deps
+d2=$multidir/Dockerfile-2-Jekyll-Build-Only
+t1=acapdoc:1
+t2=acapdoc:2
+
+usage() {
+    echo "
+--------------------------------------------------------------------------------
+Helper script for faster rebuild of theme dependencies or _config.yml
+--------------------------------------------------------------------------------
+
+The script builds two Docker container images, the first installs the theme
+dependencies in form of different Gems. This takes a few minutes and should
+not be necessary to rebuild when only changing _config.yml.
+The second container image use the first one and runs jekyll build which is
+necessary to get changes in _config.yml to take action. This takes around 10 sec
+and is handy for fast testing of config updates.
+
+N.b. For developers that only change content of the SDK and not the page layout
+this script is not needed. One build with the main Dockerfile is enough.
+
+$0 [full|conf]
+
+Options:
+    full    Build both containers, for first time and for theme Gem updates
+    conf    Rebuild second container, enough for _config.yml updates
+
+--------------------------------------------------------------------------------
+"
+}
+
+case $1 in
+    full) choice=$1;;
+    conf) choice=$1;;
+    *) usage && exit 0 ;;
+esac
+
+
+
+[ "$choice" = "full" ] && {
+  printf "Build and install Gem dependencies\n"
+  # Build first stage first time and at errors
+  # Installs Gems and takes longer time
+  docker build . --no-cache -f $d1 -t $t1
+}
+
+# Always rebuild the second step, i.e. for _config.yml updates
+docker build . --no-cache -f $d2 --build-arg REPO=$t1 -t $t2

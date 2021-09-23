@@ -1,0 +1,22 @@
+name: Build documentation from Dockerfiles
+on:
+  push:
+     paths:
+      - '**'
+      - '!README.md'
+      - '!CONTRIBUTING.md'
+      - '!LICENSE.*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build and test pages
+      run: |
+        t0=testimage:0
+
+        printf "### Build main Dockerfile\n"
+        docker build . --no-cache -t $t0
+
+        printf "### Build multi stage Dockerfiles\n"
+        ./build-multistage full
