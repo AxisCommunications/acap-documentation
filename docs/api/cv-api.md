@@ -131,7 +131,9 @@ The Computer Vision SDK includes a flexible way of allowing machine learning inf
 
 Through Dockerhub and the Computer Vision SDK, both a model server for _larod_ and a Python client are available. The model server, called `larod-inference-server`, is available on Dockerhub under the [axisecp/larod-inference-server](https://hub.docker.com/r/axisecp/larod-inference-server) repository. The Python client is available in the Computer Vision SDK under `/axis/python-tfserving` and imported in Python as `InferenceClient`, which is available in the `tf_proto_utils` module. The client exposes a single `infer(inputs, model_name)` function that enables easy inference using the model server.
 
-A minimal, but complete, example of how a Python client and a model server running on the same camera could be set up is shown below. The first step is to define our application script, which in this case will be a Python script, `simple_inference.py`, that captures an image using OpenCV and sends it to the model server.
+A minimal, but complete, example of how a Python client and a model server running on the same camera could be set up is shown below. This example is also available as [minimal-ml-inference](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/minimal-ml-inference) in the [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples) repository on Github.
+
+The first step is to define our application script. In this case, this will be a Python script, `simple_inference.py`, that captures an image using OpenCV and sends it to the model server.
 
 **simple_inference.py**
 ```python
@@ -188,7 +190,7 @@ For convenience, a few environment variables will be set to simplify adjusting a
 export APP_NAME=simple-inference-client
 export INFERENCE_SERVER=axisecp/larod-inference-server:2.5.1-api.3.4-armv7hf-ubuntu20.04
 export MODEL_VOLUME=axisecp/acap-dl-models:1.0
-export TARGET_IP=192.168.0.90
+export AXIS_TARGET_IP=192.168.0.90
 ```
 
 The final step of the configuration is to setup the docker-compose file, `docker-compose.yml`, that defines how to run the model server and the client. This file also specifies mounts, devices and environment variables that are needed for OpenCV. The docker-compose file also specifies a volume that holds the model data which is mounted into the containers, but any method of making this data available to the services is fine.
@@ -233,15 +235,15 @@ In order to run the application, the individual containers need to be available 
 
 ```bash
 docker build -t $APP_NAME . && docker-compose pull
-docker save $APP_NAME | docker -H tcp://$TARGET_IP load
-docker save $INFERENCE_SERVER | docker -H tcp://$TARGET_IP load
-docker save $MODEL_VOLUME | docker -H tcp://$TARGET_IP load
+docker save $APP_NAME | docker -H tcp://$AXIS_TARGET_IP load
+docker save $INFERENCE_SERVER | docker -H tcp://$AXIS_TARGET_IP load
+docker save $MODEL_VOLUME | docker -H tcp://$AXIS_TARGET_IP load
 ```
 
 Finally, docker-compose is used to run the application.
 
 ```bash
-docker-compose -H $TARGET_IP:2375 up
+docker-compose -H $AXIS_TARGET_IP:2375 up
 ```
 
 This should output the raw predictions of the model used, as was specified in the `simple_inference.py` application script.

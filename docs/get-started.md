@@ -191,7 +191,7 @@ For more information, see the help in AXIS Device Manager/AXIS Camera Station.
 ## Choose SDK
 The ACAP SDK images are based on Ubuntu and contain the environment needed for building an AXIS Camera Application Platform (ACAP) application. All images are available on [Docker Hub](https://hub.docker.com/r/axisecp).
 
-An SDK image can be used as a basis for custom built images to run your application, or as a developer environment inside the container. See examples in sections below for how to do this. 
+An SDK image can be used as a basis for custom built images to run your application, or as a developer environment inside the container. See examples in sections below for how to do this.
 
 Depending on your use case, use the [ACAP Native SDK](https://hub.docker.com/repository/docker/axisecp/acap-native-sdk), [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk) or a combination of both. Remember to check [compatibility](axis-devices) for your product before getting started.
 
@@ -203,149 +203,91 @@ Create your first ACAP application from the [hello-world](https://github.com/Axi
 ### ACAP Computer Vision SDK
 
 #### Create a Hello World application
-Create the following folder and file structure in a working directory:
-```bash
-opencv-hello-world-cpp
-├── app
-│   ├── Makefile
-│   └── src
-│       └── hello_world.cpp
-├── docker-compose.yml
-└── Dockerfile
+This example demonstrates how to create a simple Python application using the ACAP Computer Vision SDK and run it on an edge device. This example's code is also available in the [hello-world example](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/hello-world-crosscompiled), which is a part of the [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples).
+
+Going from zero to a Python application running on an AXIS device is quite easy. First, the application script is written, as in the hello-world script. Next, the Dockerfile, which specifies the build of the the application image, is constructed. This needs to pull in packages from the ACAP Computer Vision SDK, as is done using the `COPY` commands. Finally, the application needs to be built and uploaded, as is specified below.
+
+##### Requirements
+To ensure compatibility with this example, the following requirements shall be met:
+* Camera: ARTPEC-7 DLPU devices (e.g., Q1615 MkIII)
+* docker-compose version 1.29 or higher
+* Docker version 20.10.8 or higher
+* Firmware: 10.7
+* docker-acap installed on the camera
+* docker-acap set to use external memory card
+
+##### Creating the application
+The first step in the creation of the application is the application script. In the case of this hello-world application, it is kept very simple, as seen in `simply_hello.py` below:
+
+**simply_hello.py**
+```python
+def greet_world():
+    print('Hello World!')
+
+if __name__ == '__main__':
+    greet_world()
 ```
-The files contain the following:
 
-**hello_world.c**
+With the application written, the application image needs to be defined. This is defined as a Dockerfile and specifies what is uploaded and run on the camera. In this Dockerfile, the ACAP Computer Vision SDK is pulled, a runtime image of the `arm32v7` platform is created and the Python package is copied from the SDK to the runtime image. Finally, the application script that was defined earlier is copied to the image and the image's default command specified.
 
-Hello World application which writes to standard out.
-```cpp
-#include <iostream>
-#include <opencv2/core.hpp>
-
-int main(void)
-{
-    std::cout << "Hello World from OpenCV " << CV_VERSION << "\n";
-}
-```
-**Makefile**
-
-Makefile containing the build and link instructions for building the ACAP application.
-> Make sure to preserve the tabs below. Recipes in a makefile must be preceded by a single standard tab character.
-
-```make
-TARGET = hello_world
-OBJ = src/$(TARGET).o
-
-CXX = arm-linux-gnueabihf-gcc
-STRIP = arm-linux-gnueabihf-strip
-
-CXXFLAGS += -I/usr/include -I/axis/opencv/usr/include
-CPPFLAGS = -Os -pipe -std=c++17
-
-BASE := $(abspath $(patsubst %/,%,$(dir $(firstword $(MAKEFILE_LIST)))))
-LDLIBS += -L $(BASE)/lib \
- -L /usr/lib/gcc-cross/arm-linux-gnueabihf \
- -L /axis/opencv/usr/lib
-LDLIBS += -lm -lstdc++ -lopencv_core
-
-.PHONY: all clean
-
-all: $(TARGET)
-
-$(TARGET): $(OBJ)
-	$(CXX) $< $(CPPFLAGS) $(LDLIBS) -o $@ && $(STRIP) --strip-unneeded $@
-
-clean:
-	$(RM) *.o $(TARGET)
-```
 **Dockerfile**
-
-Dockerfile based on the [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk).
 ```Dockerfile
-# Specify the architecture at build time: mipsis32r2el/armv7hf/aarch64
 ARG ARCH=armv7hf
+ARG SDK_VERSION=1.0-beta3
 ARG REPO=axisecp
-ARG SDK_VERSION=1.0-beta1
 ARG RUNTIME_IMAGE=arm32v7/ubuntu:20.04
 
-FROM ${REPO}/acap-computer-vision-sdk:${SDK_VERSION}-${ARCH}-runtime AS cv-sdk-runtime
-FROM ${REPO}/acap-computer-vision-sdk:${SDK_VERSION}-${ARCH}-devel AS cv-sdk-devel
+# Specify which ACAP Computer Vision SDK to use
+FROM $REPO/acap-computer-vision-sdk:$SDK_VERSION-$ARCH AS cv-sdk
 
-# Setup proxy configuration
-ARG DOCKER_PROXY
-ENV http_proxy=$DOCKER_PROXY
-ENV https_proxy=$DOCKER_PROXY
-ENV HTTP_PROXY=$DOCKER_PROXY
-ENV HTTPS_PROXY=$DOCKER_PROXY
-
-ENV DEBIAN_FRONTEND=noninteractive
-
-## Install dependencies
-RUN apt-get update && apt-get install -y -f \
-    g++-arm-linux-gnueabihf \
-    make\
-    pkg-config \
-    libglib2.0-dev \
-    libsystemd0
-
-RUN dpkg --add-architecture armhf &&\
-    apt-get update && apt-get install -y  \
-    libglib2.0-dev:armhf \
-    libsystemd0:armhf
-
-COPY app/Makefile /build/
-COPY app/src/ /build/src/
-WORKDIR /build
-RUN make
-
+# Define the runtime image
 FROM ${RUNTIME_IMAGE}
-COPY --from=cv-sdk-devel /build/hello_world /usr/bin/
-COPY --from=cv-sdk-runtime /axis/opencv /
 
-CMD ["/usr/bin/hello_world"]
+# Get the Python package from the CV SDK
+COPY --from=cv-sdk /axis/python /
+
+WORKDIR /app
+COPY app/* /app
+CMD ["python3", "simply_hello.py"]
 ```
 
-#### Build the Hello World application
-```bash
-docker build -t <APP_IMAGE> .
+
+##### Running the application
+The first thing to do is to setup the environment. Generally, the variables described here can mostly be set to the default value, i.e., as seen below. However, the `AXIS_TARGET_IP` needs to be changed to your device's IP.
+
+```sh
+# Set environment variables
+# The AXIS_TARGET_IP variable needs to be changed to your device's IP
+# REPO defines where to get the ACAP Computer Vision SDK
+# ARCH defines what architecture to use (e.g., armv7hf, aarch64)
+# RUNTIME_IMAGE defines what base image should be used for the application image
+export REPO=axisecp
+export ARCH=armv7hf
+export RUNTIME_IMAGE=arm32v7/ubuntu:20.04
+export APP_NAME=hello-world
+export AXIS_TARGET_IP=<actual camera IP address>
 ```
-Default architecture is armv7hf. To build for aarch64 it's possible to update the ARCH variable in the Dockerfile or to set it in the docker build command via build argument. It might also be necessary to set a proxy for Docker to use, this is set using the HTTP_PROXY variable:
-```bash
-docker build -t <APP_IMAGE> --build-arg ARCH=aarch64 --build-arg DOCKER_PROXY=$HTTP_PROXY .
+
+With the environment setup, the `hello-world` image can be built. The environment variables are supplied as build arguments such that they are made available to docker during the build process:
+
+```sh
+docker build -t $APP_NAME --build-arg REPO --build-arg ARCH --build-arg RUNTIME_IMAGE .
 ```
 
-#### Install and run the Hello World application
+Next, the built image needs to be uploaded to the device. This can be done through a registry or directly. In this case, the direct transfer is used by piping the compressed application directly to the device's docker client:
 
-> Installing and running the Hello World application requires the [Docker ACAP](https://hub.docker.com/r/axisecp/docker-acap) to be installed on the camera.
-
-There are two options to run the capture app, either save the image locally as a .tar and upload it to the camera (*opt 1*),
-or push the image to a container registry and pull the image to the camera from the cloud (*opt 2*).
-
-**[opt 1] Save the image**
-
-```bash
-docker save -o opencv-app.tar <APP_IMAGE>
+```sh
+docker save $APP_NAME | docker -H tcp://$AXIS_TARGET_IP load
 ```
-**[opt 1] Load the image**
 
-```bash
-docker -H tcp://$AXIS_TARGET_IP load -i opencv_app.tar
-```
-**[opt 2] push it to container registry.**
+With the application image on the device, it can be started. As this example does not use e.g., OpenCV, no special mounts are needed, making the run command very simple:
 
-```bash
-docker push <APP_IMAGE>
+```sh
+docker -H tcp://$AXIS_TARGET_IP run -it $APP_NAME
 ```
-**[opt 2] pull it from a container registry:**
 
-```bash
-docker -H tcp://$AXIS_TARGET_IP <APP_IMAGE>
-```
-**Run the container**
-```bash
-docker-compose -H tcp://$AXIS_TARGET_IP:2375 -f docker-compose.yml up
-```
-**The expected output:**
-```bash
-Hello World from OpenCV <CV_VERSION>
+The expected output from the application is simply:
+
+```sh
+Hello World!
 ```
