@@ -2,6 +2,7 @@
 layout: default
 title: Computer Vision SDK
 parent: API
+nav_order: 2
 ---
 # Computer Vision SDK APIs
 ### Introduction

@@ -1,8 +1,8 @@
 ---
 layout: page
-title: API
-nav_order: 5
-has_children: true
+title: Native SDK
+parent: API
+nav_order: 1
 ---
 
 # Native SDK API
