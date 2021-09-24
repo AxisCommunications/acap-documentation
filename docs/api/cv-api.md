@@ -9,14 +9,14 @@ The AXIS Computer Vision SDK contains well-known, open source packages that have
 
 In this page, the AXIS-specific additions are detailed, along with a general inventory of what open source packages are packaged in the SDK. Application examples using the SDK can be found in the [acap-computer-vision-sdk-examples repository](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples). The Dockerfile which builds the SDK can be found in the [acap-computer-vision-sdk repository](https://github.com/AxisCommunications/acap-computer-vision-sdk), which can be useful for e.g., rebuilding OpenCV with other modules or get an idea of how the supplied packages are crosscompiled.
 
-### API index
-**[Packages with AXIS-specific functionality](#packages-with-axis-specific-functionality)**
-* [Video capture API](#video-capture-api): OpenCV
-* [Machine learning API](#machine-learning-api): TensorFlow Serving
+### SDK index
+**[SDK packages with AXIS-specific functionality](#sdk-packages-with-axis-specific-functionality)**
+* [Video capture API](#video-capture-api): [OpenCV with VDO](#opencv-with-vdo)
+* [Machine learning API](#machine-learning-api): [TensorFlow Serving](#tensorflow-serving-inference-client)
 
-**[Open source packages](#open-source-packages)**
+**[SDK package index](#sdk-package-index)**
 * [Python 3](#python3)
-* Python 3 packages
+* [Python 3 packages](#python-3-packages)
   * [pip](#pip)
   * [NumPy](#numpy)
   * [SciPy](#scipy)
@@ -25,14 +25,14 @@ In this page, the AXIS-specific additions are detailed, along with a general inv
   * [TensorFlow Serving inference client](#tensorflow-serving-inference-client)
 * [Tesseract](#tesseract)
 * [OpenBLAS](#openblas)
-* [OpenCV](#opencv)
+* [OpenCV with VDO](#opencv-with-vdo)
 * [OpenCL](#opencl)
 
 ---
 
-## Packages with AXIS-specific functionality
+## SDK packages with AXIS-specific functionality
 ### Video capture API
-The OpenCV package has been extended with functionality for capturing camera images and accessing and modifying video stream and image properties. This has been done by making the [OpenCV VideoCapture-class](https://docs.opencv.org/4.5.3/d8/dfe/classcv_1_1VideoCapture.html) interface with the [AXIS VDO library](api-doc/3.4/api/vdostream/html/index.html), which allows for treating the AXIS camera like any other OpenCV-compatible camera.
+The [OpenCV package](#opencv-with-vdo) has been extended with functionality for capturing camera images and accessing and modifying video stream and image properties. This has been done by making the [OpenCV VideoCapture-class](https://docs.opencv.org/4.5.3/d8/dfe/classcv_1_1VideoCapture.html) interface with the [AXIS VDO library](api-doc/3.4/api/vdostream/html/index.html), which allows for treating the AXIS camera like any other OpenCV-compatible camera.
 
 The parts of the OpenCV API that are affected by this addition are documented below.
 
@@ -127,7 +127,7 @@ services:
 ---
 
 ### Machine learning API
-The Computer Vision SDK includes a flexible way of allowing machine learning inference in the form of TensorFlow Serving. TensorFlow Serving allows for making inference calls over gRPC to another container running a model server. This has several benefits, including exposing a common API for inference and having a single process handle all apps' DLPU communication.
+The Computer Vision SDK includes a flexible way of allowing machine learning inference in the form of TensorFlow Serving and a [TensorFlow Serving client](#tensorflow-serving-inference-client). TensorFlow Serving allows for making inference calls over gRPC to another container running a model server. This has several benefits, including exposing a common API for inference and having a single process handle all apps' DLPU communication.
 
 Through Dockerhub and the Computer Vision SDK, both a model server for _larod_ and a Python client are available. The model server, called `larod-inference-server`, is available on Dockerhub under the [axisecp/larod-inference-server](https://hub.docker.com/r/axisecp/larod-inference-server) repository. The Python client is available in the Computer Vision SDK under `/axis/python-tfserving` and imported in Python as `InferenceClient`, which is available in the `tf_proto_utils` module. The client exposes a single `infer(inputs, model_name)` function that enables easy inference using the model server.
 
@@ -250,7 +250,7 @@ This should output the raw predictions of the model used, as was specified in th
 
 ---
 
-## Open source packages
+## SDK package index
 The Computer Vision SDK includes many packages, some of which are specific to e.g., Python or only available in a certain SDK container. Below is an overview of the packages supplied in the SDK along with their location within the SDK container and a brief description.
 
 ---
