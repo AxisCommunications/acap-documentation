@@ -1,2 +1,7 @@
 source "https://rubygems.org/"
-gem "just-the-docs"
+
+# Github Pages will only load plugins from _config.yml which means that the gems
+# here are only used for local development. Update the versions when needed to
+# match Github Pages, see https://pages.github.com/versions for more info.
+gem "github-pages", "~> 219"
+gem "just-the-docs", "~> 0.3.3"

@@ -1,39 +1,55 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'jekyll serve'. If you change this file, please restart the server process.
 
-##### Site settings #####
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and
-# so on. You can create any custom variable you would like, and they will be
-# accessible in the templates via {{ site.myvariable }}.
+#-------------------------------------------------------------------------------
+# Site settings
 
 title: AXIS ACAP 4 SDK Documentation
 description: > # This means to ignore newlines until "baseurl:"
   AXIS ACAP 4 SDK Documentation contains two types
   of SDKs; A Native SDK and a Computer Vision SDK
-baseurl: "" # The subpath of your site, e.g. /blog
-url: "https://AxisCommunications.github.io" # The base hostname & protocol for
-                                            # your site, e.g. http://example.com
+
+url: "https://axiscommunications.github.io" # The base hostname & protocol
+baseurl: "/acap-documentation" # The subpath of your site
+
 github_username:  AxisCommunications
 copyright_name: Axis Communications AB
 copyright_footer: "&copy;<script>new Date().getFullYear()>document.write(new Date().getFullYear());</script> Axis Communications AB. All rights reserved. AXIS COMMUNICATIONS, AXIS, ARTPEC and VAPIX are registered trademarks of Axis AB in various jurisdictions, and you are not granted any license to use them. All other trademarks are the property of their respective owners."
+
 logo: "/assets/logos/axis-logo.png"
+
+
+#-------------------------------------------------------------------------------
+# Build settings
+
+remote_theme: "pmarsceill/just-the-docs"
 
 exclude: ["Dockerfile",  "Dockerfiles/", "Gemfile", "Gemfile.lock",
 "LICENSE.txt", "README.md", "vendor"]
 
-
-##### General settings #####
-
-# Markdown and highlighting settings
+# It's better to use kramdown than the Github Markdown renderer which works
+# poorly with this theme
 markdown: kramdown
-kramdown:
-  syntax_highlighter: rouge
 
 
-##### Theme settings #####
+#-------------------------------------------------------------------------------
+# Plugins
 
-theme: "just-the-docs"
+#  GitHub Pages does not use bundle to install plugins, which means that only
+#  the ones listed here will be installed on Github Pages.
+#
+#  Github Pages supports a limited set of plugins, see which ones here:
+#  https://pages.github.com/versions
+
+#  jekyll-remote-theme: To load remote theme
+#  jekyll-sitemap: Generates a "sitemap.xml" for search engines.
+plugins:
+  - jekyll-remote-theme
+  - jekyll-sitemap
+
+
+#-------------------------------------------------------------------------------
+# Theme settings
 
 # SCSS overrides
 color_scheme: axis
