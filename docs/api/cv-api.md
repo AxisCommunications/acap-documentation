@@ -132,7 +132,7 @@ The Computer Vision SDK includes a flexible way of allowing machine learning inf
 
 Through Dockerhub and the Computer Vision SDK, both a model server for _larod_ and a Python client are available. The model server, called `larod-inference-server`, is available on Dockerhub under the [axisecp/larod-inference-server](https://hub.docker.com/r/axisecp/larod-inference-server) repository. The Python client is available in the Computer Vision SDK under `/axis/python-tfserving` and imported in Python as `InferenceClient`, which is available in the `tf_proto_utils` module. The client exposes a single `infer(inputs, model_name)` function that enables easy inference using the model server.
 
-A minimal, but complete, example of how a Python client and a model server running on the same camera could be set up is shown below. This example is also available as [minimal-ml-inference](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/minimal-ml-inference) in the [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples) repository on Github.
+A minimal, but complete, example of how a Python client and a model server running on the same camera could be set up is shown below.
 
 The first step is to define our application script. In this case, this will be a Python script, `simple_inference.py`, that captures an image using OpenCV and sends it to the model server.
 

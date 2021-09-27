@@ -203,7 +203,7 @@ Create your first ACAP application from the [Hello World](https://github.com/Axi
 ### ACAP Computer Vision SDK
 
 #### Create a Hello World application
-This example demonstrates how to create a simple Python application using the ACAP Computer Vision SDK and run it on an edge device. This example's code is also available in the [Hello World](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/hello-world-crosscompiled) example, which is a part of the [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples).
+This example demonstrates how to create a simple Python application using the ACAP Computer Vision SDK and run it on an edge device.
 
 Going from zero to a Python application running on an AXIS device is quite easy. First, the application script is written, as in the hello-world script. Next, the Dockerfile, which specifies the build of the the application image, is constructed. This needs to pull in packages from the ACAP Computer Vision SDK, as is done using the `COPY` commands. Finally, the application needs to be built and uploaded, as is specified below.
 
