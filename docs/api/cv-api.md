@@ -2,6 +2,7 @@
 layout: default
 title: Computer Vision SDK
 parent: API
+nav_order: 2
 ---
 # Computer Vision SDK APIs
 ### Introduction
@@ -15,7 +16,7 @@ In this page, the AXIS-specific additions are detailed, along with a general inv
 * [Machine learning API](#machine-learning-api): [TensorFlow Serving](#tensorflow-serving-inference-client)
 
 **[SDK package index](#sdk-package-index)**
-* [Python 3](#python3)
+* [Python 3](#python-3)
 * [Python 3 packages](#python-3-packages)
   * [pip](#pip)
   * [NumPy](#numpy)
@@ -32,7 +33,7 @@ In this page, the AXIS-specific additions are detailed, along with a general inv
 
 ## SDK packages with AXIS-specific functionality
 ### Video capture API
-The [OpenCV package](#opencv-with-vdo) has been extended with functionality for capturing camera images and accessing and modifying video stream and image properties. This has been done by making the [OpenCV VideoCapture-class](https://docs.opencv.org/4.5.3/d8/dfe/classcv_1_1VideoCapture.html) interface with the [AXIS VDO library](api-doc/3.4/api/vdostream/html/index.html), which allows for treating the AXIS camera like any other OpenCV-compatible camera.
+The [OpenCV package](#opencv-with-vdo) has been extended with functionality for capturing camera images and accessing and modifying video stream and image properties. This has been done by making the [OpenCV VideoCapture-class](https://docs.opencv.org/4.5.3/d8/dfe/classcv_1_1VideoCapture.html) interface with the [AXIS VDO library](3.4/api/vdostream/html/index.html), which allows for treating the AXIS camera like any other OpenCV-compatible camera.
 
 The parts of the OpenCV API that are affected by this addition are documented below.
 
@@ -104,7 +105,7 @@ In the table below are properties that are either AXIS-specific or common OpenCV
 
 #### VideoCapture requirements
 
-In order for the all of the AXIS extensions of OpenCV to work properly, some requirements on the container need to be satisfied. This is primarily in the form of file mounts and environment variables that need to be configured. A docker-compose file is a convenient way of making sure that the app container will always be run with the correct setup. Such a setup, for a fictious app called `my-opencv-app`, is shown below, where the `ipc`, `environment`, `volumes` and `devices` keys and their corresponding values are needed for a fully functional OpenCV app:
+In order for all of the AXIS extensions of OpenCV to work properly, some requirements on the container need to be satisfied. This is primarily in the form of file mounts and environment variables that need to be configured. A docker-compose file is a convenient way of making sure that the app container will always be run with the correct setup. Such a setup, for a fictitious app called `my-opencv-app`, is shown below, where the `ipc`, `environment`, `volumes` and `devices` keys and their corresponding values are needed for a fully functional OpenCV app:
 
 **docker-compose.yml**
 ```yml
@@ -231,7 +232,7 @@ volumes:
 ```
 
 
-In order to run the application, the individual containers need to be available to the camera. Methods of doing this is explained in more detail in the [Develop applications](../get-started.html#build-the-hello-world-application). In this case, a simple direct transfer of the containers is used after the images have been built or pulled from Dockerhub.
+In order to run the application, the individual containers need to be available to the camera. Methods of doing this is explained in more detail in the [Develop applications](../develop.html#acap-computer-vision-sdk-inkl-docker-acap). In this case, a simple direct transfer of the containers is used after the images have been built or pulled from Dockerhub.
 
 ```bash
 docker build -t $APP_NAME . && docker-compose pull

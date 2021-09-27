@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Develop applications
-nav_order: 3
+nav_order: 4
 ---
 
 # Develop ACAP applications
@@ -13,10 +13,10 @@ TBD
 
 ### ACAP Native SDK
 
-To build, install and run an ACAP application, use the image in the [axisecp/acap-sdk](https://hub.docker.com/r/axisecp/acap-sdk) repository. You can use this image in two ways:
+To build, install and run an ACAP application, use the image in the [ACAP Native SDK](https://hub.docker.com/r/axisecp/acap-native-sdk) repository. You can use this image in two ways:
 
 * As a base image to build a custom application builder image, see [Build, install and run with custom application image](#build-install-and-run-with-custom-application-image).
-* Interactively inside the container, see [Build, install and run interactively inside container](#build-install-and-run-with-custom-application-image).
+* Interactively inside the container, see [Build, install and run interactively inside container](#build-install-and-run-interactively-inside-container).
 
 To build an application defined by manifest.json, use the acap-build tool, see [Build tool](#build-tool).
 
@@ -67,7 +67,10 @@ For help on using the build tool, run `acap-build -h`.
 > * In the next step of introducing manifest file EAP files, systemd will start and stop the ACAP application. It then assumes execution failure if the main process dies, which means that the process must not fork off to a background process.
 
 #### Build, install and run with custom application image
-For instructions on how to set up your build, to install, and to run with custom application image, use the **Hello World** application example shown in [Set up and verify the SDK](#set-up-and-verify-the-sdk).
+For instructions on how to set up your build, to install, and to run with custom
+application image, use the
+[Hello World](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/hello-world)
+example on Github.
 
 Using the custom application image, all the building and packaging is done inside a Docker container. The application is then copied to a custom directory, meaning that the original application project directory is not changed.
 
@@ -104,17 +107,17 @@ Now you’re ready to build and install the application. See [Build the applicat
 
 > The bind mount means that any changes made inside the container on /opt/app will be made to the host directory `$PWD/app`.
 
-**Build the application**
+##### Build the application
 
-**Using package.conf (ACAP SDK version 3.2 and earlier)**
+**Using package.conf**
 
 To build an application stand in the application directory inside the container and run `create-package.sh`.
 
-**Using manifest.json (ACAP SDK version 3.3 and later)**
+**Using manifest.json**
 
 To build an application, stand in the application directory inside the container and run the **acap-build** tool.
 
-**Install the application**
+##### Install the application
 
 The SDK helps with installing a built application on the device from a terminal. You can also install application packages, using the device's web interface. But this method is less convenient during application development.
 
@@ -161,7 +164,7 @@ eap-install.sh remove
 ### ACAP Computer Vision SDK inkl. Docker ACAP
 
 #### Build
-The applications are built using the Docker framework which means that building is not always necessary. It's only necessary if your application uses custom images which are not readily available. The Computer Vision functionality can be accessed by basing your image on the [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk). Please see the [hello world example](#hello-world-example) for an example of how to create a custom image using the [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk). For more information on how to build a custom docker image, see https://docs.docker.com/get-started/02_our_app/.
+The applications are built using the Docker framework which means that building is not always necessary. It's only necessary if your application uses custom images which are not readily available. The Computer Vision functionality can be accessed by basing your image on the [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk). Please see the [hello world example](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/hello-world) for an example of how to create a custom image using the ACAP Computer Vision SDK. For more information on how to build a custom docker image, see Docker Hub's [sample application](https://docs.docker.com/get-started/02_our_app/).
 
 #### Install and run
 > Installing and running ACAP4 applications requires the [Docker ACAP](https://hub.docker.com/r/axisecp/docker-acap) to be installed on the camera.

@@ -11,7 +11,7 @@ startdir=$PWD
 src=$startdir
 
 # API mainpage
-api_html=apidocs.html
+api_html=native-sdk.html
 
 #-------------------------------------------------------------------------------
 # Functions

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Release notes
-nav_order: 14
+nav_order: 15
 ---
 
 # Release notes

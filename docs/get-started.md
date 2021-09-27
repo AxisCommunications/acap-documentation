@@ -53,7 +53,7 @@ To protect your data we strongly recommend that you:
 - Change the password at a recurring interval, at least once a year.
 
 #### Set a new password for the root account
-> The default administrator username is root. If the password for root is lost, reset the device to factory default settings. See [Reset to factory default settings](https://help.axis.com/#t10001042)
+> The default administrator username is root. If the password for root is lost, reset the device to factory default settings. See [Reset to factory default settings](#set-a-new-password-for-the-root-account)
 
 [![Password security confirmation check](https://www.axis.com/axistube/a5771bce93e200c36f7cd9dfd0e5deaa/38116/640/640.mp4_001.jpg)](https://youtu.be/yZkKTrGelao)
 
@@ -189,21 +189,21 @@ For more information, see the help in AXIS Device Manager/AXIS Camera Station.
 8. After the upgrade has completed, the unit will automatically initiate the system, during which the status LED blinks amber. When initiation is complete and the system is ready for use, the color of the status LED will be green.
 
 ## Choose SDK
-The ACAP SDK images are based on Ubuntu and contain the environment needed for building an AXIS Camera Application Platform (ACAP) application. All images are available on [Docker Hub](https://hub.docker.com/r/axisecp).
+The ACAP SDK images are based on Ubuntu and contain the environment needed for building an AXIS Camera Application Platform (ACAP) application. All images are available on [Docker Hub](https://hub.docker.com/u/axisecp).
 
 An SDK image can be used as a basis for custom built images to run your application, or as a developer environment inside the container. See examples in sections below for how to do this.
 
-Depending on your use case, use the [ACAP Native SDK](https://hub.docker.com/repository/docker/axisecp/acap-native-sdk), [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk) or a combination of both. Remember to check [compatibility](axis-devices) for your product before getting started.
+Depending on your use case, use the [ACAP Native SDK](https://hub.docker.com/r/axisecp/acap-native-sdk), [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk) or a combination of both. Remember to check [compatibility](axis-devices) for your product before getting started.
 
 ## Hello world example
 
 ### ACAP Native SDK
-Create your first ACAP application from the [hello-world](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/hello-world) example on Github.
+Create your first ACAP application from the [Hello World](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/hello-world) example on Github which is a part of the [ACAP Native SDK examples](https://github.com/AxisCommunications/acap-native-sdk-examples).
 
 ### ACAP Computer Vision SDK
 
 #### Create a Hello World application
-This example demonstrates how to create a simple Python application using the ACAP Computer Vision SDK and run it on an edge device. This example's code is also available in the [hello-world example](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/hello-world-crosscompiled), which is a part of the [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples).
+This example demonstrates how to create a simple Python application using the ACAP Computer Vision SDK and run it on an edge device. This example's code is also available in the [Hello World](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/hello-world-crosscompiled) example, which is a part of the [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples).
 
 Going from zero to a Python application running on an AXIS device is quite easy. First, the application script is written, as in the hello-world script. Next, the Dockerfile, which specifies the build of the the application image, is constructed. This needs to pull in packages from the ACAP Computer Vision SDK, as is done using the `COPY` commands. Finally, the application needs to be built and uploaded, as is specified below.
 
@@ -213,8 +213,8 @@ To ensure compatibility with this example, the following requirements shall be m
 * docker-compose version 1.29 or higher
 * Docker version 20.10.8 or higher
 * Firmware: 10.7
-* docker-acap installed on the camera
-* docker-acap set to use external memory card
+* [docker-acap](https://hub.docker.com/u/axisecp/docker-acap) installed on the camera
+* docker-acap set to use external memory card, see [documentation](https://github.com/AxisCommunications/docker-acap)
 
 ##### Creating the application
 The first step in the creation of the application is the application script. In the case of this hello-world application, it is kept very simple, as seen in `simply_hello.py` below:
