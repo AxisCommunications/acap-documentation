@@ -105,7 +105,7 @@ In the table below are properties that are either AXIS-specific or common OpenCV
 
 #### VideoCapture requirements
 
-In order for the all of the AXIS extensions of OpenCV to work properly, some requirements on the container need to be satisfied. This is primarily in the form of file mounts and environment variables that need to be configured. A docker-compose file is a convenient way of making sure that the app container will always be run with the correct setup. Such a setup, for a fictious app called `my-opencv-app`, is shown below, where the `ipc`, `environment`, `volumes` and `devices` keys and their corresponding values are needed for a fully functional OpenCV app:
+In order for all of the AXIS extensions of OpenCV to work properly, some requirements on the container need to be satisfied. This is primarily in the form of file mounts and environment variables that need to be configured. A docker-compose file is a convenient way of making sure that the app container will always be run with the correct setup. Such a setup, for a fictitious app called `my-opencv-app`, is shown below, where the `ipc`, `environment`, `volumes` and `devices` keys and their corresponding values are needed for a fully functional OpenCV app:
 
 **docker-compose.yml**
 ```yml
