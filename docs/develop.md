@@ -171,9 +171,9 @@ The applications are built using the Docker framework which means that building 
 
 Running and installing is usually done in the same step in the docker framework by using the docker command. Note that this command shall be run from a separate host and not on the camera. The intended way to install and run applications is by supplying the docker command with the IP address of the camera using the -H parameter. The two commands usually used for this purpose are [docker compose](https://docs.docker.com/compose/) and [docker run](https://docs.docker.com/engine/reference/run/). Below are examples of how to use these commands:
 ```bash
-docker run -d -H tcp://$CAMERA_IP $IMAGE
+docker -H tcp://$CAMERA_IP run -d $IMAGE
 
-docker compose -H tcp://$CAMERA_IP up
+docker -H tcp://$CAMERA_IP compose up
 ```
 
 ### The Docker Compose ACAP
