@@ -15,5 +15,10 @@ Welcome to the ACAP 4 SDK documentation.
 For information of ACAP and the two new SDKs, start out with the [Introduction](docs/introduction.html).
 
 To start development of ACAP applications, continue to [Get started](docs/get-started.html).
+
+Examples applications are available in
+[ACAP Native SDK Examples](https://github.com/AxisCommunications/acap-native-sdk-examples)
+and
+[ACAP Computer Vision SDK Examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples)
 {: .pb-8 }
 
