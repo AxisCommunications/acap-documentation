@@ -19,7 +19,7 @@ Use the ACAP Service Portal for administrators to register new applications comp
 
 1. Go to [axis.com](https://www.axis.com/) and sign into your personal axis account.
 2. Go to **My Axis > Partner Pages**.
-3. Go to **Software Development > ACAP > Axis ACAP Service Portal**.
+3. Go to **Software Development > ACAP > ACAP Service Portal**.
 
 > All your colleagues with ADP access have access to the ACAP Service Portal per default. You can find out who has ADP access in the [My colleagues tool](https://www.axis.com/partner_pages/colleagues.php). Contact [partner-services@axis.com](partner-services@axis.com) to add or remove colleagues with access to the ACAP Service Portal.
 

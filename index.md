@@ -1,6 +1,6 @@
 ---
 layout: default
-title: AXIS ACAP 4 SDK
+title: ACAP 4 SDK
 nav_order: 1
 ---
 
@@ -9,7 +9,7 @@ ACAP 4 has been released! During the first week you might find broken
 links or missing sections in this documentation that the ACAP SDK team is
 working on to fix as soon as possible.
 
-# AXIS ACAP 4 SDK Documentation
+# ACAP 4 SDK Documentation
 <img align="right" src="assets/logos/acap_sdk_symbol.png" alt="ACAP SDK" width="200"/>
 
 Welcome to the ACAP 4 SDK documentation.
