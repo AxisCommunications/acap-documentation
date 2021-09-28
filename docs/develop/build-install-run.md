@@ -157,7 +157,7 @@ To remove an installed application, run:
 eap-install.sh remove
 ```
 
-### ACAP Computer Vision SDK inkl. Docker ACAP
+### ACAP Computer Vision SDK incl. Docker ACAP
 
 #### Build
 The applications are built using the Docker framework which means that building is not always necessary. It's only necessary if your application uses custom images which are not readily available. The Computer Vision functionality can be accessed by basing your image on the [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk). Please see the [ACAP Computer vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples) for examples of how to create a custom image using the ACAP Computer Vision SDK. For more information on how to build a custom docker image, see Docker Hub's [sample application](https://docs.docker.com/get-started/02_our_app/).
@@ -165,16 +165,37 @@ The applications are built using the Docker framework which means that building 
 #### Install and run
 > Installing and running ACAP4 applications requires the [Docker ACAP](https://hub.docker.com/r/axisecp/docker-acap) to be installed on the camera.
 
-Running and installing is usually done in the same step in the docker framework by using the docker command. Note that this command shall be run from a separate host and not on the camera. The intended way to install and run applications is by supplying the docker command with the IP address of the camera using the -H parameter. The two commands usually used for this purpose are [docker compose](https://docs.docker.com/compose/) and [docker run](https://docs.docker.com/engine/reference/run/). Below are examples of how to use these commands:
-```bash
-docker -H tcp://$CAMERA_IP run -d $IMAGE
+Installing and running a Docker image on an AXIS device is done using the `docker` client. The idea is to get the application image to the device and then run it remotely using the `-H` flag, which lets the docker client connect to a remote docker daemon, such as the one running on your AXIS device.
 
-docker -H tcp://$CAMERA_IP compose up
+Downloading the image to the device is usually done through either a container registry or in a peer-to-peer fashion from another Docker client. The container registry option involves building your application image and then using `docker push $IMAGE_NAME` to make it available on the container registry. This image can then be pulled onto the AXIS device by running:
+
+```sh
+docker -H tcp://$CAMERA_IP pull $IMAGE_NAME
 ```
+
+The direct approach to getting an application image onto the device is to save the image locally and pipe the result to the edge device's docker daemon:
+
+```sh
+docker save $IMAGE_NAME | docker -H tcp://$CAMERA_IP load
+```
+
+Once the images are on the device, they can be started remotely. This is similarly done using the `-H` flag, but with the `docker run` command, i.e., for a single application image:
+
+```sh
+docker -H tcp://$CAMERA_IP run $IMAGE_NAME
+```
+
+If the application has been specified using a `docker-compose.yml` file, which can be useful to preserve required environment variables, mounts and devices, `docker-compose` can be used to start the application:
+
+```sh
+docker-compose -H tcp://$CAMERA_IP:$CAMERA_PORT up
+```
+
+Note that the latter command requires a port to be specified unlike the `docker` client. This port is normally `2375` for unencrypted communication or `2376` for encrypted communication.
+
 
 ### The Docker Compose ACAP
 
 In addition to the Docker ACAP, there is another similar ACAP: the [Docker Compose ACAP](https://github.com/AxisCommunications/docker-compose-acap). The Docker Compose ACAP not only contains the Docker daemon but also the Docker client, which is why it is significantly larger. When the Docker Compose ACAP is installed, it is possible to run Docker commands directly on the camera instead of using a Docker client on another machine, as is necessary when using the regular Docker ACAP.
 
 The main purpose of the Docker Compose ACAP is to enable running containers as part of native ACAPs, as demonstrated in [this example](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/container-example). This use case requires that there is a Docker client present on the camera since the ACAP itself must be able to start the containers.
-
