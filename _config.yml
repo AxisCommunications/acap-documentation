@@ -4,10 +4,10 @@
 #-------------------------------------------------------------------------------
 # Site settings
 
-title: AXIS ACAP 4 SDK Documentation
+title: ACAP 4 SDK Documentation
 description: > # This means to ignore newlines until "baseurl:"
-  AXIS ACAP 4 SDK Documentation contains two types
-  of SDKs; A Native SDK and a Computer Vision SDK
+  ACAP 4 SDK Documentation contains two types of SDKs;
+  a Native SDK and a Computer Vision SDK
 
 url: "https://axiscommunications.github.io" # The base hostname & protocol
 baseurl: "/acap-documentation" # The subpath of your site
@@ -30,7 +30,8 @@ exclude: ["Dockerfile",  "Dockerfiles/", "Gemfile", "Gemfile.lock",
 # It's better to use kramdown than the Github Markdown renderer which works
 # poorly with this theme
 markdown: kramdown
-
+kramdown:
+  syntax_highlighter: rouge
 
 #-------------------------------------------------------------------------------
 # Plugins
