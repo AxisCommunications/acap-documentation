@@ -30,7 +30,8 @@ exclude: ["Dockerfile",  "Dockerfiles/", "Gemfile", "Gemfile.lock",
 # It's better to use kramdown than the Github Markdown renderer which works
 # poorly with this theme
 markdown: kramdown
-
+kramdown:
+  syntax_highlighter: rouge
 
 #-------------------------------------------------------------------------------
 # Plugins
