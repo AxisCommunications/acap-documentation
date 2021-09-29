@@ -121,7 +121,7 @@ RUN echo "'Hello World!' -an $(uname -m) program"
 
 If your QEMU installation succeeded, this should output `'Hello World!' -an armv7l program`.
 
-With the emulation functionality available, third party packages can be installed. An example of this is shown in the Dockerfile below, in which an armv7hf image with some packages from the ACAP Computer Vision SDK and the third party Python library `pandas` is built.
+With the emulation functionality available, third party packages can be installed. An example of this is shown in the Dockerfile below, in which an armv7hf image with some packages from the ACAP Computer Vision SDK and the third party Python library `requests` is built. Some packages require more of the build environment, and in those cases, creating a new environment with the correct toolchains and `-devel` tagged packages and copying the output to the runtime container is recommended.
 
 ```Dockerfile
 FROM axisecp/acap-computer-vision-sdk:latest-armv7hf AS cv-sdk
@@ -133,8 +133,8 @@ COPY --from=cv-sdk /axis/python /
 COPY --from=cv-sdk /axis/python-numpy /
 COPY --from=cv-sdk /axis/openblas /
 
-# Add the python package pandas
-RUN pip3 install pandas
+# Add the python package requests
+RUN pip3 install requests
 
 # Add your application files
 COPY app /app
@@ -143,4 +143,3 @@ CMD ["python3", "some_analytics_script.py"]
 ```
 
 Python packages are not commonly distributed as binaries for the arm platforms, so packages downloaded onto runtime images from, for example, [PyPI](https://pypi.org/) will likely have to be compiled from source. An updated list of the ACAP Computer Vision SDK packages, that are precompiled with OpenBLAS (when applicable) and optimized for the AXIS platforms, can be found in [the ACAP Computer Vision SDK repository](https://github.com/AxisCommunications/acap-computer-vision-sdk#contents).
-
