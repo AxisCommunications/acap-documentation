@@ -163,7 +163,7 @@ eap-install.sh remove
 The applications are built using the Docker framework which means that building is not always necessary. It's only necessary if your application uses custom images which are not readily available. The Computer Vision functionality can be accessed by basing your image on the [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk). Please see the [ACAP Computer vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples) for examples of how to create a custom image using the ACAP Computer Vision SDK. For more information on how to build a custom docker image, see Docker Hub's [sample application](https://docs.docker.com/get-started/02_our_app/).
 
 #### Install and run
-> Installing and running ACAP4 applications requires the [Docker ACAP](https://hub.docker.com/r/axisecp/docker-acap) to be installed on the camera.
+> Installing and running ACAP4 applications requires the [Docker ACAP](https://hub.docker.com/r/axisecp/docker-acap) to be installed on the camera. Note that the Docker ACAP is set to use TLS authentication by default, which means that you are required to add certificates to the camera before it is possible to start the ACAP (see the link above for information on how to do that). There is a setting to disable TLS authentication but please be aware that doing so is extremely insecure.
 
 Installing and running a Docker image on an AXIS device is done using the `docker` client. The idea is to get the application image to the device and then run it remotely using the `-H` flag, which lets the docker client connect to a remote docker daemon, such as the one running on your AXIS device.
 
