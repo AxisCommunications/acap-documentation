@@ -37,12 +37,12 @@ WORKDIR /opt/build/<cloned directory>
 ```
 
 Before building a third-party library:
-
 * Source the cross-compilation environment setup file.
 * Configure output build directory path for custom library build using [--prefix]
 * Include cross compiler flags if any.
 * Run `make`
 * Below is one of the examples with respect to curl:
+
 ```Dockerfile
 #  lib generate
 # - Source the SDK environment script to get links to cross compiler through
@@ -76,15 +76,21 @@ SHLIBS += -lm -l[lib](linking-third-party-lib)
 ```
 #### Importance of setting **RPATH**
 The **RPATH** setting is to change the library search path so that one executable or library can link the desired dependent libraries during run-time.
->Set **RPATH** to the directory where shared libraries are located, with the help of **$ORIGIN**.
->This will tell the linker to search and include libraries under the specified library path, usually used to override the default library paths.
+
+> Set **RPATH** to the directory where shared libraries are located, with the
+> help of **$ORIGIN**.  This will tell the linker to search and include
+> libraries under the specified library path, usually used to override the
+> default library paths.
 
 
 Once all of the above configurations are made you are ready to build and install the application. See [Build, install and run with custom application image](build-install-run#build-install-and-run-with-custom-application-image).
 
 #### Troubleshooting
-> Normally, the Configure file is available when building a custom library for a specific architecture.
-> If the Configure file is not available, then create an output build directory using Makefile, and copy generated lib files to the output library directory as shown in the reference below.
+Normally, the Configure file is available when building a custom library for a
+specific architecture.  If the Configure file is not available, then create an
+output build directory using Makefile, and copy generated lib files to the
+output library directory as shown in the reference below.
+
 ```bash
 mkdir -p build
 mkdir -p build/include
