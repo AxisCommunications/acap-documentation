@@ -1,0 +1,28 @@
+name: Run documentation linter
+on:
+  push:
+     paths:
+      - '**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Check that no private Docker Hub URLs are used
+      run: |
+        priv_url=hub.docker.com/repository/docker/axisecp
+        pub_url=hub.docker.com/r/axisecp
+        ret=0
+
+        # Set +e to not having to handle the grep exit status
+        set +e
+        __docker_grep_res=$(grep -nir "$priv_url" --exclude-dir=.github)
+        [ -z "$__docker_grep_res" ] || {
+            printf "\n\nError: Private Docker Hub URL is used\n"
+            printf "Private: $priv_url\nPublic: $pub_url\n\n"
+            printf "Found following private URLs:\n$__docker_grep_res\n\n"
+            ret=1
+        }
+
+        set -e
+        exit $ret
