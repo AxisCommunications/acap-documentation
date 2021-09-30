@@ -32,7 +32,9 @@ After the reset, secure boot guarantees the state of the device.
 2. Configure and install the device.
 
 #### Secure passwords
-> Axis devices send the initially set password in clear text over the network. To protect your device after the first login, set up a secure and encrypted HTTPS connection and then change the password.
+> Axis devices send the initially set password in clear text over the network.
+> To protect your device after the first login, set up a secure and encrypted
+> HTTPS connection and then change the password.
 
 The device password is the primary protection for your data and services. Axis devices do not impose a password policy as they may be used in various types of installations.
 
@@ -43,7 +45,9 @@ To protect your data we strongly recommend that you:
 - Change the password at a recurring interval, at least once a year.
 
 #### Set a new password for the root account
-> The default administrator username is root. If the password for root is lost, reset the device to factory default settings. See [Reset to factory default settings](#set-a-new-password-for-the-root-account)
+> The default administrator username is root. If the password for root is lost,
+> reset the device to factory default settings. See [Reset to factory default
+> settings](#set-a-new-password-for-the-root-account)
 
 [![Password security confirmation check](https://www.axis.com/axistube/a5771bce93e200c36f7cd9dfd0e5deaa/38116/640/640.mp4_001.jpg)](https://youtu.be/yZkKTrGelao)
 
@@ -102,7 +106,10 @@ The following response contains architecture "Architecture": "armv7hf", and firm
 ### How to upgrade
 Axis offers product firmware management according to the active track or the long-term support (LTS) tracks. Regardless of the track chosen, it is recommended to upgrade the firmware regularly in order to get the latest security updates. The firmware can be upgraded using AXIS Device Manager, AXIS Camera Station, AXIS Companion, HTTP or FTP.
 
-> If using AXIS A1001 in cluster mode, make sure to upgrade all controllers. Either all at a time using AXIS Device Manager or straight after each other using the web interface or FTP. The entire cluster should always be on the same firmware
+> If using AXIS A1001 in cluster mode, make sure to upgrade all controllers.
+> Either all at a time using AXIS Device Manager or straight after each other
+> using the web interface or FTP. The entire cluster should always be on the
+> same firmware
 
 #### AXIS Device Manager or AXIS Camera Station
 1. Go to the **Device Manager Tab** in Axis Device Manager or **Configuration Tab > Devices - Management** in AXIS Camera Station.
@@ -119,12 +126,18 @@ Axis offers product firmware management according to the active track or the lon
 8. Select the firmware to install for each device model.
 9. Click **OK** to start upgrading the devices.
 
-> By default, firmware upgrade is done for all the selected devices at the same time. The upgrade order can be changed in **Configuration > Connected services > Firmware upgrade settings**. Once a firmware update has been started, the devices will be unavailable until the installation and restart of the devices has completed successfully.
+> By default, firmware upgrade is done for all the selected devices at the same
+> time. The upgrade order can be changed in **Configuration > Connected
+> services > Firmware upgrade settings**. Once a firmware update has been
+> started, the devices will be unavailable until the installation and restart
+> of the devices has completed successfully.
 
 For more information, see the help in AXIS Device Manager/AXIS Camera Station.
 
 #### HTTP
-> The procedure to update firmware differs slightly depending on the version of the installed web interface (before and after 7.10.1). For AXIS Q1659, the new web interface was introduced in firmware version 6.55.1.
+> The procedure to update firmware differs slightly depending on the version of
+> the installed web interface (before and after 7.10.1). For AXIS Q1659, the
+> new web interface was introduced in firmware version 6.55.1.
 
 **Upgrade instructions when using the old web interface**
 1. Download the upgrade file to a directory that is accessible from your local computer.
@@ -161,7 +174,10 @@ For more information, see the help in AXIS Device Manager/AXIS Camera Station.
 11 . After the upgrade has completed, the unit will automatically initiate the system, during which the status LED blinks amber. When initiation is complete and the system is ready for use, the status LED will be green.
 
 #### FTP
->   - Starting with firmware version 7.30.1 and onwards, the FTP server is disabled by default. In order to use the instructions below it first needs to be enabled via the web interface: ***Settings > System > PlainConfig > Network > NetworkFTP***
+>   - Starting with firmware version 7.30.1 and onwards, the FTP server is
+>     disabled by default. In order to use the instructions below it first
+>     needs to be enabled via the web interface: ***Settings > System >
+>     PlainConfig > Network > NetworkFTP***
 >   - This section is not applicable for AXIS Companion Line cameras.
 
 1. You must be at the command prompt and in the directory that contains the upgrade file. Example: `C:\Axis\Product\Firmware`

@@ -58,9 +58,19 @@ The acap-build tool does the following:
 
 For help on using the build tool, run `acap-build -h`.
 
-> * If any additional files were previously listed in **OTHERFILES** in the **package.conf** file, these need to be listed as input to the acap-build command using the flag -a, for example `acap-build ./ -a file1 -a file2`.
-> * At some point an EAP will be required to be based on a manifest file instead of a **package.conf** file. For such an ACAP application package to be supported in older firmware, a **package.conf** file is generated and included in the EAP file. Although it’s the manifest file that is the base setup file for the ACAP application when building an EAP package in the SDK.
-> * In the next step of introducing manifest file EAP files, systemd will start and stop the ACAP application. It then assumes execution failure if the main process dies, which means that the process must not fork off to a background process.
+> * If any additional files were previously listed in **OTHERFILES** in the
+>   **package.conf** file, these need to be listed as input to the acap-build
+>   command using the flag -a, for example `acap-build ./ -a file1 -a file2`.
+> * At some point an EAP will be required to be based on a manifest file
+>   instead of a **package.conf** file. For such an ACAP application package to
+>   be supported in older firmware, a **package.conf** file is generated and
+>   included in the EAP file. Although it’s the manifest file that is the base
+>   setup file for the ACAP application when building an EAP package in the
+>   SDK.
+> * In the next step of introducing manifest file EAP files, systemd will start
+>   and stop the ACAP application. It then assumes execution failure if the
+>   main process dies, which means that the process must not fork off to a
+>   background process.
 
 #### Build, install and run with custom application image
 For instructions on how to set up your build, to install, and to run with custom
@@ -101,7 +111,8 @@ root@1e6b4f3d5a2c:/opt/app#
 
 Now you’re ready to build and install the application. See [Build the application](#build-the-application), and [Install the application](#install-the-application)
 
-> The bind mount means that any changes made inside the container on /opt/app will be made to the host directory `$PWD/app`.
+> The bind mount means that any changes made inside the container on /opt/app
+> will be made to the host directory `$PWD/app`.
 
 ##### Build the application
 
@@ -132,7 +143,8 @@ The command remembers the device-ip and password after the first successful exec
 ```bash
 eap-install.sh install
 ```
-> You must run the command from the application project directory, see [Application project structure](app-project-structure).
+> You must run the command from the application project directory, see
+> [Application project structure](app-project-structure).
 
 **Start, stop, and remove the application**
 
@@ -163,7 +175,13 @@ eap-install.sh remove
 The applications are built using the Docker framework which means that building is not always necessary. It's only necessary if your application uses custom images which are not readily available. The Computer Vision functionality can be accessed by basing your image on the [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk). Please see the [ACAP Computer vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples) for examples of how to create a custom image using the ACAP Computer Vision SDK. For more information on how to build a custom docker image, see Docker Hub's [sample application](https://docs.docker.com/get-started/02_our_app/).
 
 #### Install and run
-> Installing and running ACAP4 applications requires the [Docker ACAP](https://hub.docker.com/r/axisecp/docker-acap) to be installed on the camera. Note that the Docker ACAP is set to use TLS authentication by default, which means that you are required to add certificates to the camera before it is possible to start the ACAP (see the link above for information on how to do that). There is a setting to disable TLS authentication but please be aware that doing so is extremely insecure.
+> Installing and running ACAP4 applications requires the [Docker
+> ACAP](https://hub.docker.com/r/axisecp/docker-acap) to be installed on the
+> camera. Note that the Docker ACAP is set to use TLS authentication by
+> default, which means that you are required to add certificates to the camera
+> before it is possible to start the ACAP (see the link above for information
+> on how to do that). There is a setting to disable TLS authentication but
+> please be aware that doing so is extremely insecure.
 
 Installing and running a Docker image on an AXIS device is done using the `docker` client. The idea is to get the application image to the device and then run it remotely using the `-H` flag, which lets the docker client connect to a remote docker daemon, such as the one running on your AXIS device.
 

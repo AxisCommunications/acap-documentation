@@ -25,11 +25,33 @@ $link-color: $color-brand-08;
 
 // Axis logo
 .side-bar .site-header{
-		background-color: $white;
+  background-color: $white;
 }
 
 // Keep the left menu items as text color
 .side-bar .site-nav .nav-list .nav-list-item .nav-list-link{
-    color: $color-text-01;
+  color: $color-text-01;
 }
 
+
+// Blockquotes
+
+.main-content {
+  blockquote:before {
+    content: '!';
+    font-size: 1.5rem;
+    font-style: bold;
+    position: absolute;
+    left: -1.6rem;
+    color: $color-text-01;
+  }
+  blockquote {
+    font-style: italic;
+    position: relative;
+    padding-left: 1rem;
+    border-left-style: solid;
+    border-left-width: 0.5rem;
+    background: $color-warm-gray-01;
+    border-left-color: $color-brand-01;
+  }
+}
