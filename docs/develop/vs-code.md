@@ -2,7 +2,7 @@
 layout: page
 parent: Develop applications
 title: Set up VS Code
-nav_order: 5
+nav_order: 6
 ---
 
 # Setting up VSCode

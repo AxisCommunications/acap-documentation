@@ -2,7 +2,7 @@
 layout: page
 parent: Develop applications
 title: Build, install, run
-nav_order: 2
+nav_order: 3
 ---
 
 # Build, install, run
@@ -26,7 +26,7 @@ The script does the following:
 * Checks that the file `package.conf` exists and does not contain any errors.
 * Asks for missing or invalid parameters and creates `package.conf`.
 * Executes make in the current directory to compile the application source code into an application binary file.
-* Creates an **eap** (embedded application package) package including the application binary, html files (if any) and configuration files.
+* Creates an **EAP** (embedded application package) package with suffix `.eap` including the application binary, html files (if any) and configuration files.
 * Creates a copy of `LICENSE` file.
 
 The created application package filename has the following format:
@@ -89,15 +89,15 @@ To be able to work interactively with your application, you can bind mount the a
 
 The top structure for an ACAP application contains a directory called, for example `app` where the application project files are placed.
 
-To run the acap-sdk container interactively and mount the application project, go to the directory that contains `app` and run:
+To run the acap-native-sdk container interactively and mount the application project, go to the directory that contains `app` and run:
 
 ```bash
-docker run -v $PWD/app:/opt/app --rm -i -t axisecp/acap-sdk:3.3-armv7hf-ubuntu20.04
+docker run -v $PWD/app:/opt/app --rm -i -t axisecp/acap-native-sdk:1.0-armv7hf-ubuntu20.04
 ```
 where:
 
-* `axisecp/acap-sdk` is the Docker hub repostitory
-* `3.3-armv7hf-ubuntu20.04` is the tag that points out which SDK version and architecture to use
+* `axisecp/acap-native-sdk` is the Docker hub repostitory
+* `1.0-armv7hf-ubuntu20.04` is the tag that points out which SDK version and architecture to use
 * `-v $PWD/app:/opt/app` mounts the host directory `$PWD/app` into the container directory `/opt/app`
 * `--rm` removes the container after closing it
 * `-i` is to run the container interactively
