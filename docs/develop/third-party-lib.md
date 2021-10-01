@@ -2,7 +2,7 @@
 layout: page
 parent: Develop applications
 title: Include third party lib
-nav_order: 3
+nav_order: 4
 ---
 
 ## Include third party libraries
