@@ -3,6 +3,8 @@ on:
   push:
      paths:
       - '**'
+      - '.github/workflows/build-dockerfiles.yml'
+      - '!.github/workflows/*'
       - '!README.md'
       - '!CONTRIBUTING.md'
       - '!LICENSE.*'
