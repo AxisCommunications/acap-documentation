@@ -22,7 +22,7 @@ The acap-build tool does the following:
 * Runs make, performing any required cross-compilation as defined in the available Makefile.
 * Validates the manifest file against the manifest schema.
 * Generates a package.conf file and related configuration files for backward compatibility.
-* Creates an EAP (embedded application package) file with suffix .eap including:
+* Creates an EAP (Embedded Application Package) file with suffix .eap including:
     * application executable
     * LICENSE file
     * any available html and lib folder
@@ -31,8 +31,8 @@ The acap-build tool does the following:
 
 For help on using the build tool, run `acap-build -h`.
 
-> * In a previous version of the ACAP framework a file named **package.conf** 
->   contained needed configuration items. It has since been replaced by
+> * In an older version of the ACAP framework a file named **package.conf** 
+>   was used for configuration. It has since been replaced by
 > **manifest.json**. If any additional files were previously listed in **OTHERFILES**
 >   in the package.conf file, these now need to be listed as input to the acap-build
 >   command using the flag -a, for example `acap-build ./ -a file1 -a file2`.
