@@ -14,42 +14,15 @@ To build, install and run an ACAP application, use the image in the [ACAP Native
 * As a base image to build a custom application builder image, see [Build, install and run with custom application image](#build-install-and-run-with-custom-application-image).
 * Interactively inside the container, see [Build, install and run interactively inside container](#build-install-and-run-interactively-inside-container).
 
-To build an application defined by manifest.json, use the acap-build tool, see [Build tool](#build-tool).
-
-To build an application defined by package.conf, use the create-package.sh build script, see [Build script](#build-script).
-
-#### Build script
-For applications defined by `package.conf`, use the build script `create-package.sh`.
-
-The script does the following:
-
-* Checks that the file `package.conf` exists and does not contain any errors.
-* Asks for missing or invalid parameters and creates `package.conf`.
-* Executes make in the current directory to compile the application source code into an application binary file.
-* Creates an **EAP** (embedded application package) package with suffix `.eap` including the application binary, html files (if any) and configuration files.
-* Creates a copy of `LICENSE` file.
-
-The created application package filename has the following format:
-
-```bash
-<PACKAGENAME>_<APPMAJORVERSION>_<APPMINORVERSION>_<APPMICROVERSION>_<SDK_ARCHITECTURE>.eap
-```
-
-The created copy of `LICENSE` filename has the following format:
-
-```bash
-<PACKAGENAME>_<APPMAJORVERSION>_<APPMINORVERSION>_<APPMICROVERSION>_LICENSE.txt
-```
-
 #### Build tool
-For applications defined by **manifest.json**, use the build tool **acap-build**.
+Use the **acap-build** tool to build and package your application.
 
 The acap-build tool does the following:
 
 * Runs make, performing any required cross-compilation as defined in the available Makefile.
 * Validates the manifest file against the manifest schema.
 * Generates a package.conf file and related configuration files for backward compatibility.
-* Creates an EAP file including:
+* Creates an EAP (embedded application package) file with suffix .eap including:
     * application executable
     * LICENSE file
     * any available html and lib folder
@@ -58,19 +31,18 @@ The acap-build tool does the following:
 
 For help on using the build tool, run `acap-build -h`.
 
-> * If any additional files were previously listed in **OTHERFILES** in the
->   **package.conf** file, these need to be listed as input to the acap-build
+> * In a previous version of the ACAP framework a file named **package.conf** 
+>   contained needed configuration items. It has since been replaced by
+> **manifest.json**. If any additional files were previously listed in **OTHERFILES**
+>   in the package.conf file, these now need to be listed as input to the acap-build
 >   command using the flag -a, for example `acap-build ./ -a file1 -a file2`.
-> * At some point an EAP will be required to be based on a manifest file
->   instead of a **package.conf** file. For such an ACAP application package to
->   be supported in older firmware, a **package.conf** file is generated and
->   included in the EAP file. Although it’s the manifest file that is the base
->   setup file for the ACAP application when building an EAP package in the
->   SDK.
-> * In the next step of introducing manifest file EAP files, systemd will start
->   and stop the ACAP application. It then assumes execution failure if the
->   main process dies, which means that the process must not fork off to a
->   background process.
+> * For the ACAP application package to be supported in older firmware, a 
+> **package.conf** file is generated and included in the EAP file. Although it’s
+>   the manifest file that is the base setup file for the ACAP application when 
+>   building an EAP package in the SDK.
+> * Systemd will start and stop the ACAP application. It then assumes execution
+>   failure if the main process dies, which means that the process must not fork
+>   off to a background process.
 
 #### Build, install and run with custom application image
 For instructions on how to set up your build, to install, and to run with custom
@@ -115,12 +87,6 @@ Now you’re ready to build and install the application. See [Build the applicat
 > will be made to the host directory `$PWD/app`.
 
 ##### Build the application
-
-**Using package.conf**
-
-To build an application stand in the application directory inside the container and run `create-package.sh`.
-
-**Using manifest.json**
 
 To build an application, stand in the application directory inside the container and run the **acap-build** tool.
 
