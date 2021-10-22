@@ -1,7 +1,7 @@
 # ACAP 4 SDK Documentation
-The ACAP 4 SDK Documentation is built with
-[Github pages](https://pages.github.com/) and the Jekyll theme
-[Just the Docs](https://pmarsceill.github.io/just-the-docs/).
+Welcome to the ACAP 4 SDK
+[documentation](https://axiscommunications.github.io/acap-documentation), which
+is built with [Github pages](https://pages.github.com/).
 
 ## Contribute
 Have you found an error, want to ask a question or give a suggestion? Then
