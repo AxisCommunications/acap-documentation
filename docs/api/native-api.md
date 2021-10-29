@@ -24,7 +24,7 @@ SDK version | Available from firmware version
 1.0 | 10.7
 
 ## Video capture API
-Go to the [ACAP API Documentation](3.4/api/vdostream/html/index.html) for detailed functional descriptions of this API.
+Go to the [ACAP API Documentation](4.0/api/vdostream/html/index.html) for detailed functional descriptions of this API.
 
 The VdoStream API provides:
 * video and image stream
@@ -55,7 +55,7 @@ The Video capture API was introduced in Native SDK 1.0.
 ## Machine learning API
 Larod provides a simple unified C API for running machine learning and image preprocessing efficiently. Larod is opensource on GitLab, see [Introduction to larod](https://gitlab.com/unimatrix/larod/-/blob/master/doc/introduction-for-app-developers.md)
 
-Go to the [ACAP API Documentation](3.4/api/larod/html/index.html) for detailed functional descriptions of this API.
+Go to the [ACAP API Documentation](4.0/api/larod/html/index.html) for detailed functional descriptions of this API.
 
 The Machine learning API can be used for deep learning applications.
 
@@ -83,7 +83,7 @@ The Machine learning API was introduced in Native SDK 1.0.
   format which are sent to larod for preprocessing and inference on MODEL.
 
 ## Overlay API
-Go to the [ACAP API Documentation](3.4/api/axoverlay/html/index.html) for detailed functional descriptions of this API.
+Go to the [ACAP API Documentation](4.0/api/axoverlay/html/index.html) for detailed functional descriptions of this API.
 
 The Axoverlay API is a helper library that enables an ACAP to draw overlays in selected video streams. It has built-in support for Cairo as rendering API, as well as an open backend for any other custom rendering.
 
@@ -129,7 +129,7 @@ The OpenCL 1.2 was introduced in Native SDK 1.0.
   * This example illustrates how to capture frames from the vdo service, access the received buffer, and finally perform a GPU accelerated Sobel filtering with OpenCL.
 
 ## Event API
-Go to the [ACAP API Documentation](3.4/api/axevent/html/index.html) for detailed functional descriptions of this API.
+Go to the [ACAP API Documentation](4.0/api/axevent/html/index.html) for detailed functional descriptions of this API.
 
 The Axevent API provides:
 * an interface to the event system found in Axis products.
@@ -173,7 +173,7 @@ The Axevent API was introduced in Native SDK 1.0.
 
 
 ## License Key API
-Go to the [ACAP API Documentation](3.4/api/licensekey/html/index.html) for detailed functional descriptions of this API.
+Go to the [ACAP API Documentation](4.0/api/licensekey/html/index.html) for detailed functional descriptions of this API.
 
 Use the License Key API to validate an application license key.
 
