@@ -8,10 +8,7 @@
 
 # Local directories
 startdir=$PWD
-src=$startdir
 
-# API mainpage
-api_html=native-sdk.html
 
 #-------------------------------------------------------------------------------
 # Functions
@@ -41,45 +38,73 @@ echo "
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv='refresh' content='0; url=\"../../../../${api_html}\"' />
+    <meta http-equiv='refresh' content='0; url=\"../../../../${nativepage_html}\"' />
   </head>
   <body>
-    <p>Please follow <a href='../../../../$api_html'>this link</a>.</p>
+    <p>Please follow <a href='../../../../$nativepage_html'>this link</a>.</p>
   </body>
 </html>
 " > $3
+}
+
+replace_acap3_button() {
+  local oldtext="ACAP3 Main Page"
+  local newtext="ACAP Main Page"
+  local matchfiles=
+
+  matchfiles=$(grep -lr "$oldtext")
+  for match in $matchfiles
+  do
+    sed -i "s:$oldtext:$newtext:g" $match
+  done
 }
 
 #-------------------------------------------------------------------------------
 # Main
 #-------------------------------------------------------------------------------
 
-# Move to source directory
-cd $src
-ls -la
+# Release settings
+prevver=3.4
+apiver=4.0
+apis="axevent axoverlay larod licensekey vdostream"
 
 # Check API dirs
-apidir=api-doc
-apidirver=$apidir/3.3
-maindir=$apidirver/main/html
-sdkdir=$apidirver/sdk/html
+nativepage=native-api
+nativepage_md=$nativepage.md
+nativepage_html=api/$nativepage.html
+gitdir=api-doc
+gitdirver=$gitdir/$apiver
+targetdirver=$apiver
+apidir=$targetdirver/api
+maindir=$targetdirver/main/html
+sdkdir=$targetdirver/sdk/html
 
-cd $src
-[ -d $apidir ] || {
-  mkdir $apidir
-  cd $apidir
+# Fetch new API version
+[ -d $gitdir ] || {
+  mkdir -p $apidir
 
 	# Clone to copy out the desired version and then remove git repo
   git clone ssh://$USER@gittools.se.axis.com:29418/teams/rapid/api-doc.git
-  cp -r $apidirver .
-  rm -rf $apidir
+  for api in $apis
+  do
+    cp -r $gitdirver/generated/$api $apidir/
+  done
+  rm -rf $gitdir
 
-	# Rename api directory for links
-	cd $src
-	mv $apidirver/generated $apidirver/api
-
+  # Create help links
 	mkdir -p $maindir $sdkdir
 	add_api_redirect_pages $maindir/index.html $sdkdir/index.html $maindir/acap3_api.html
 }
 
+# Update native page to point to the new version
+sed -i "s:$prevver:$apiver:g" $nativepage_md
+
+# Remove previous API version
+rm -rf $prevver
+
+# Replace ACAP3 button
+cd $targetdirver
+replace_acap3_button
 cd $startdir
+
+printf "\n#Finished API replacement\n"
