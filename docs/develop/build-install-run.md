@@ -31,14 +31,14 @@ The acap-build tool does the following:
 
 For help on using the build tool, run `acap-build -h`.
 
-> * In an older version of the ACAP framework a file named **package.conf** 
+> * In an older version of the ACAP framework a file named **package.conf**
 >   was used for configuration. It has since been replaced by
 > **manifest.json**. If any additional files were previously listed in **OTHERFILES**
 >   in the package.conf file, these now need to be listed as input to the acap-build
 >   command using the flag -a, for example `acap-build ./ -a file1 -a file2`.
-> * For the ACAP application package to be supported in older firmware, a 
+> * For the ACAP application package to be supported in older firmware, a
 > **package.conf** file is generated and included in the EAP file. Although it’s
->   the manifest file that is the base setup file for the ACAP application when 
+>   the manifest file that is the base setup file for the ACAP application when
 >   building an EAP package in the SDK.
 > * Systemd will start and stop the ACAP application. It then assumes execution
 >   failure if the main process dies, which means that the process must not fork
@@ -146,37 +146,39 @@ The applications are built using the Docker framework which means that building 
 > camera. Note that the Docker ACAP is set to use TLS authentication by
 > default, which means that you are required to add certificates to the camera
 > before it is possible to start the ACAP (see the link above for information
-> on how to do that). There is a setting to disable TLS authentication but
-> please be aware that doing so is extremely insecure.
+> on how to do that). It is assumed that TLS authentication is activated in the examples.
+> There is a setting to disable TLS authentication but please be aware that doing so is extremely insecure.
 
 Installing and running a Docker image on an AXIS device is done using the `docker` client. The idea is to get the application image to the device and then run it remotely using the `-H` flag, which lets the docker client connect to a remote docker daemon, such as the one running on your AXIS device.
 
 Downloading the image to the device is usually done through either a container registry or in a peer-to-peer fashion from another Docker client. The container registry option involves building your application image and then using `docker push $IMAGE_NAME` to make it available on the container registry. This image can then be pulled onto the AXIS device by running:
 
 ```sh
-docker -H tcp://$CAMERA_IP pull $IMAGE_NAME
+docker --tlsverify -H tcp://$CAMERA_IP:2376 pull $IMAGE_NAME
 ```
 
 The direct approach to getting an application image onto the device is to save the image locally and pipe the result to the edge device's docker daemon:
 
 ```sh
-docker save $IMAGE_NAME | docker -H tcp://$CAMERA_IP load
+docker save $IMAGE_NAME | docker --tlsverify -H tcp://$CAMERA_IP:2376 load
 ```
 
 Once the images are on the device, they can be started remotely. This is similarly done using the `-H` flag, but with the `docker run` command, i.e., for a single application image:
 
 ```sh
-docker -H tcp://$CAMERA_IP run $IMAGE_NAME
+docker --tlsverify -H tcp://$CAMERA_IP:2376 run $IMAGE_NAME
 ```
 
 If the application has been specified using a `docker-compose.yml` file, which can be useful to preserve required environment variables, mounts and devices, `docker-compose` can be used to start the application:
 
 ```sh
-docker-compose -H tcp://$CAMERA_IP:$CAMERA_PORT up
+docker-compose --tlsverify -H tcp://$CAMERA_IP:2376 up
 ```
 
-Note that the latter command requires a port to be specified unlike the `docker` client. This port is normally `2375` for unencrypted communication or `2376` for encrypted communication.
-
+After running `docker-compose up`, created containers, networks and volumes can be removed by:
+```sh
+docker-compose --tlsverify -H tcp://$CAMERA_IP:2376 down -v
+```
 
 ### The Docker Compose ACAP
 
