@@ -236,15 +236,15 @@ In order to run the application, the individual containers need to be available 
 
 ```bash
 docker build -t $APP_NAME . && docker-compose pull
-docker save $APP_NAME | docker -H tcp://$AXIS_TARGET_IP load
-docker save $INFERENCE_SERVER | docker -H tcp://$AXIS_TARGET_IP load
-docker save $MODEL_VOLUME | docker -H tcp://$AXIS_TARGET_IP load
+docker save $APP_NAME | docker --tlsverify -H tcp://$AXIS_TARGET_IP:2376 load
+docker save $INFERENCE_SERVER | docker --tlsverify -H tcp://$AXIS_TARGET_IP:2376 load
+docker save $MODEL_VOLUME | docker --tlsverify -H tcp://$AXIS_TARGET_IP:2376 load
 ```
 
 Finally, docker-compose is used to run the application.
 
 ```bash
-docker-compose -H $AXIS_TARGET_IP:2375 up
+docker-compose --tlsverify -H tcp://$AXIS_TARGET_IP:2376 up
 ```
 
 This should output the raw predictions of the model used, as was specified in the `simple_inference.py` application script.
