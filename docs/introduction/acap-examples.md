@@ -15,7 +15,7 @@ There are several ACAP code examples and tutorials available with an open-source
 * how to build and run the code
 * expected output
 
-We are continuously adding new examples and tutorials for both existing as well as for new functionality. Keep checking the Axis [GitHub repo](https://github.com/AxisCommunications) to stay updated with the latest changes.
+We are continuously adding new examples and tutorials for both existing as well as for new functionality. Keep checking the Axis [GitHub organization](https://github.com/AxisCommunications) to stay updated with the latest changes.
 
 ### Report issues
 If you have any comments or questions, or if you are having problems with the
