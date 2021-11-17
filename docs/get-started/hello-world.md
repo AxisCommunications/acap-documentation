@@ -43,7 +43,7 @@ With the application written, the application image needs to be defined. This is
 **Dockerfile**
 ```Dockerfile
 ARG ARCH=armv7hf
-ARG SDK_VERSION=1.0-beta3
+ARG SDK_VERSION=latest
 ARG REPO=axisecp
 ARG RUNTIME_IMAGE=arm32v7/ubuntu:20.04
 
