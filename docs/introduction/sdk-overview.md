@@ -23,7 +23,7 @@ The ACAP Native SDK is targeted towards users that want to develop plug-in style
 
 #### Content #### 
 
-See the [ACAP Native SDK repository documentation]( https://github.com/AxisCommunications/acap-native-sdk) for details.
+See the [ACAP Native SDK repository documentation](https://github.com/AxisCommunications/acap-native-sdk) for details.
 
 #### Support ####
 
@@ -41,7 +41,7 @@ The ACAP Computer Vision SDK is targeted towards video analytics application dev
 
 #### Content ####
 
-See the [ACAP Computer Vision SDK repository documentation]( https://github.com/AxisCommunications/acap-computer-vision-sdk) for details.
+See the [ACAP Computer Vision SDK repository documentation](https://github.com/AxisCommunications/acap-computer-vision-sdk) for details.
 
 #### Support ####
 

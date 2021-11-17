@@ -57,8 +57,7 @@ ARTPEC-7 | armv7hf
 S5       | aarch64
 S5L      | aarch64
 
-See detailed information in the [product interface
-guide](https://www.axis.com/developer-community/product-interface-guide).
+See detailed information in the [product interface guide](https://www.axis.com/developer-community/product-interface-guide).
 
 ## Find the right SDK for software compatibility
 Choose the appropriate SDK version based on what AXIS OS version you want
@@ -69,8 +68,7 @@ ACAP SDK version | Compatible with AXIS OS version
 SDK 4.0          | 10.7 and later
 
 How do I know if my device supports a specific AXIS OS version? Please check
-[firmware releases for supported
-products](https://www.axis.com/support/firmware).
+[firmware releases for supported products](https://www.axis.com/support/firmware).
 
 ## Forward compatibility
 The ACAP is forward compatible for the firmware related to a specific SDK
@@ -103,5 +101,4 @@ To support firmware older than AXIS OS 10.7, build your ACAP application with
 [ACAP 3](https://help.axis.com/acap-3-developer-guide).
 
 # Camera loan tool
-Find information about [virtual
-loan](https://www.axis.com/developer-community/virtual-loan-tool).
+Find information about [virtual loan](https://www.axis.com/developer-community/virtual-loan-tool).
