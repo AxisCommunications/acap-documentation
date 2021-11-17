@@ -14,4 +14,4 @@ To develop ACAPs, you need the following:
   - For Windows and macOS, use the automatically upgradable **Docker desktop stable**.
   - For Linux, use **Docker community edition** version 18.09 or later.
 - GIT scm. [GIT downloads](https://git-scm.com/downloads).
-- We also recommend using Microsoft **Visual Studio Code**. But you are free to choose your favorite editor.
+- We also recommend using Microsoft [Visual Studio Code](https://code.visualstudio.com/). But you are free to choose your favorite editor.
