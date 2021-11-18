@@ -58,7 +58,7 @@ To create the manifest file for a simple Hello Glib ACAP application:
 * Version
 
 Example
-```bash
+```json
     "friendlyName": "Hello Glib",
     "appName": "hello_glib",
     "vendor": "Axis Communications",
