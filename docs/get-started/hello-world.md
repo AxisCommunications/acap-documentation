@@ -13,7 +13,7 @@ Create your first ACAP application from the [Hello World](https://github.com/Axi
 ### ACAP Computer Vision SDK
 
 #### Create a Hello World application
-This example demonstrates how to create a simple Python application using the ACAP Computer Vision SDK and run it on an edge device.
+This example, also [available on Github](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples), demonstrates how to create a simple Python application using the ACAP Computer Vision SDK and run it on an edge device.
 
 Going from zero to a Python application running on an AXIS device is quite easy. First, the application script is written, as in the hello-world script. Next, the Dockerfile, which specifies the build of the the application image, is constructed. This needs to pull in packages from the ACAP Computer Vision SDK, as is done using the `COPY` commands. Finally, the application needs to be built and uploaded, as is specified below. It is recommended that the docker-acap on the camera has TLS authentication activated, especially if the camera is connected to an insecure or public network.
 
@@ -26,8 +26,17 @@ To ensure compatibility with this example, the following requirements shall be m
 * [docker-acap](https://hub.docker.com/r/axisecp/docker-acap) installed on the camera
 * docker-acap set to use TLS (recommended) and external memory card, see [documentation](https://github.com/AxisCommunications/docker-acap)
 
+##### File structure
+
+```
+working directory
+├── app
+│   └── simply_hello.py    Python script printing "Hello World!"
+└── Dockerfile             Dockerfile building the application
+```
+
 ##### Creating the application
-The first step in the creation of the application is the application script. In the case of this hello-world application, it is kept very simple, as seen in `simply_hello.py` below:
+The first step in the creation of the application is the application script. In the case of this hello-world application, create a new directory called `app`, and paste the following Python code into a file named `simply_hello.py`.
 
 **simply_hello.py**
 ```python
@@ -57,31 +66,23 @@ FROM ${RUNTIME_IMAGE}
 COPY --from=cv-sdk /axis/python /
 
 WORKDIR /app
-COPY app/* /app
+COPY app/* .
 CMD ["python3", "simply_hello.py"]
 ```
 
-
 ##### Running the application
-The first thing to do is to setup the environment. Generally, the variables described here can mostly be set to the default value, i.e., as seen below. However, the `AXIS_TARGET_IP` needs to be changed to your device's IP.
+The first thing to do is to setup the environment. The variable `APP_NAME` will be used when building the Docker image, and the variable `AXIS_TARGET_IP` will be used when installing the Docker image on the Axis camera.
 
 ```sh
-# Set environment variables
-# The AXIS_TARGET_IP variable needs to be changed to your device's IP
-# REPO defines where to get the ACAP Computer Vision SDK
-# ARCH defines what architecture to use (e.g., armv7hf, aarch64)
-# RUNTIME_IMAGE defines what base image should be used for the application image
-export REPO=axisecp
-export ARCH=armv7hf
-export RUNTIME_IMAGE=arm32v7/ubuntu:20.04
 export APP_NAME=hello-world
+# The AXIS_TARGET_IP variable needs to be changed to your device's IP
 export AXIS_TARGET_IP=<actual camera IP address>
 ```
 
-With the environment setup, the `hello-world` image can be built. The environment variables are supplied as build arguments such that they are made available to docker during the build process:
+With the environment setup, the `hello-world` image can be built.
 
 ```sh
-docker build . -t $APP_NAME --build-arg REPO --build-arg ARCH --build-arg RUNTIME_IMAGE
+docker build . -t $APP_NAME
 ```
 
 Next, the built image needs to be uploaded to the device. This can be done through a registry or directly. In this case, the direct transfer is used by piping the compressed application directly to the device's docker client:
