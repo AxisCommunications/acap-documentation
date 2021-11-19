@@ -117,7 +117,7 @@ The finished manifest.json
       "user": {
         "group": "sdk",
         "username": "sdk"
-      },
+      }
     },
     "configuration": {
       "httpConfig": [
