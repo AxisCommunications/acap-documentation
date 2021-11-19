@@ -210,7 +210,7 @@ start.
 ## License file
 The LICENSE file is included in the application package. It shall contain all
 required open source license information for open source code distributed with
-the application package.  Note
+the application package.
 
 > If LICENSE is empty the build fails.
 
@@ -222,7 +222,7 @@ The localdata directory is owned by APPUSR and the application has write access
 to it, once installed on a device. All content in the localdata directory
 remains after an application upgrade.
 
-> _**Important!**_ Avoid continuous writes to **localdata** as it resides on a
+> _**Important!**_ Avoid continuous writes to **localdata** as it resides on a 
 flash drive with limited write count per block. Internal wear leveling
 minimizes the risk of failure, however, it is still strongly recommended to
 avoid continuous writes.
