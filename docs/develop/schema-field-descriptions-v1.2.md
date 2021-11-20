@@ -11,7 +11,7 @@ All fields that are not marked as **Required** are optional.
 
 - __schemaVersion__ `string` **Required**
 
-    Specifies the application manifest schema version using two dot-separated integer numbers, which follow the [semantic versioning](https://semver.org) rules for MAJOR and MINOR version numbers.
+    Specifies the application manifest schema version using two dot-separated integer numbers, which follow the [semantic versioning](https://semver.org) rules for MAJOR and MINOR version numbers. In this version of the schema it should be set to `1.2`.
 
 - __resources__ `object`
 
