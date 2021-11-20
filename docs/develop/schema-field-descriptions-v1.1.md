@@ -54,11 +54,11 @@ All fields that are not marked as **Required** are optional.
 
         - __appId__ `string`
 
-            Application ID (provided by Axis). To retrieve an application ID, contact the Axis ADP support
+            Application ID (provided by Axis). To retrieve an application ID, contact the Axis ADP support.
 
         - __embeddedSdkVersion__ `string`
 
-            Minimum required SDK version that the device running the application must support. This field must be set to a version less than 3.0 if compatibility with pre-manifest firmware is needed. Otherwise the version should be set to 3.0
+            Minimum required SDK version that the device running the application must support. This field must be set to a version less than 3.0 if compatibility with pre-manifest firmware is needed. Otherwise the version should be set to 3.0.
 
         - __friendlyName__ `string`
 
@@ -82,7 +82,7 @@ All fields that are not marked as **Required** are optional.
 
         - __runOptions__ `string`
 
-            Optional application command line options
+            Optional application command line options.
 
         - __vendor__ `string` **Required**
 
@@ -98,7 +98,7 @@ All fields that are not marked as **Required** are optional.
 
     - __installation__ `object`
 
-        ACAP application installation settings
+        ACAP application installation settings.
 
         - __postInstallScript__ `string`
 
@@ -150,7 +150,7 @@ All fields that are not marked as **Required** are optional.
 
     - __copyProtection__ `object`
 
-        ACAP application copy protection utilization
+        ACAP application copy protection utilization.
 
         - __method__ `string` **Required**
 
