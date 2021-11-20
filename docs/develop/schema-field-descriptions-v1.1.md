@@ -6,7 +6,7 @@ title: Manifest schema v1.1
 ---
 # Field descriptions
 
-All fields that are not marked as **Required** are optional
+All fields that are not marked as **Required** are optional.
 
 - __schemaVersion__ `string` **Required**
 
