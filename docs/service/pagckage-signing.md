@@ -6,7 +6,7 @@ nav_order: 2
 ---
 
 ## Package signing
-The sign package service is available in the ACAP Service Portal, and requires ADP access.
+The sign package service is available in the ACAP Service Portal, and requires Technology Integration Partner Program access.
 
 By signing an ACAP package you make sure that the content of the package is not tampered with between the release and installation on the Axis device.
 
