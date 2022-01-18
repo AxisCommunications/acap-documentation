@@ -23,7 +23,7 @@ To ensure compatibility with this example, the following requirements shall be m
 * docker-compose version 1.29 or higher
 * Docker version 20.10.8 or higher
 * Firmware: 10.7
-* [docker-acap](https://hub.docker.com/u/axisecp/docker-acap) installed on the camera
+* [docker-acap](https://hub.docker.com/r/axisecp/docker-acap) installed on the camera
 * docker-acap set to use TLS (recommended) and external memory card, see [documentation](https://github.com/AxisCommunications/docker-acap)
 
 ##### Creating the application
