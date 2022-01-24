@@ -8,7 +8,7 @@ nav_order: 1
 
 AXIS Camera Application Platform (ACAP) is an open application platform from Axis. It provides a development platform for software-based solutions and systems built around Axis devices. ACAP is available for various types of Axis products such as cameras, speakers and intercoms.
 
-ACAP makes it possible to develop applications for a wide range of applications:
+ACAP makes it possible to develop applications for a wide range of use cases:
 
 * Security and safety applications that improve surveillance systems and facilitate investigation.
 
@@ -16,7 +16,7 @@ ACAP makes it possible to develop applications for a wide range of applications:
 
 * Product feature plug-ins that add value beyond the Axis product's core functionality.
 
-* Address customer specific use cases that cannot be solved with the off-the-shelf products.
+* Address customer specific use cases that can't be solved with off-the-shelf products.
 
 ### Key features
 

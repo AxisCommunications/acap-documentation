@@ -7,7 +7,7 @@ nav_order: 3
 
 # ACAP SDK for edge-based applications
 
-ACAP version 4 contains two complementing SDKs addressing different needs, the ACAP Native SDK and the ACAP Computer Vision SDK.
+AXIS Camera Application Platform (ACAP) version 4 contains two complementing SDKs addressing different needs, the ACAP Native SDK and the ACAP Computer Vision SDK.
 
 ### ACAP Native SDK
 
