@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ACAP 4 SDK
+title: ACAP version 4 SDK
 nav_order: 1
 ---
 
