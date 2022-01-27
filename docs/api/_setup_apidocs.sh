@@ -9,6 +9,50 @@
 # Local directories
 startdir=$PWD
 
+#-------------------------------------------------------------------------------
+# Log functions
+#-------------------------------------------------------------------------------
+
+usage() {
+  echo "
+--------------------------------------------------------------------------------
+API utility script
+--------------------------------------------------------------------------------
+
+Update API documentation
+
+Usage:
+    $SCRIPT -v ver [-u user] [--help]
+
+General options:
+    -v,--version ver      The new ACAP SDK version, e.g. 4.0
+    -u,--user user        Use a different user to clone Gerrit repos
+    -h, --help            Show this help
+
+Example:
+    $SCRIPT -v 4.0
+
+--------------------------------------------------------------------------------
+"
+}
+
+#-------------------------------------------------------------------------------
+# Parse options
+#-------------------------------------------------------------------------------
+
+# Parse the options
+apiuser=$USER
+apiver=
+[ $# -ge 1 ] || {  usage && exit 0 ; }
+while [ "$#" -gt 0 ]; do
+  case $1 in
+    -v|v|-ver|--version|-version) apiver=$2 ; shift ;;
+    -u|u|-user|--user|-user) apiuser=$2 ; shift ;;
+    h|-h|help|--help) usage && exit 0 ;;
+    *) usage && exit 0 ;;
+  esac
+  shift
+done
 
 #-------------------------------------------------------------------------------
 # Functions
@@ -64,8 +108,7 @@ replace_acap3_button() {
 #-------------------------------------------------------------------------------
 
 # Release settings
-prevver=3.4
-apiver=4.0
+prevver=$(find . -maxdepth 1 -name "4.*" | grep -o 4.*)
 apis="axevent axoverlay larod licensekey vdostream"
 
 # Check API dirs
@@ -84,7 +127,7 @@ sdkdir=$targetdirver/sdk/html
   mkdir -p $apidir
 
 	# Clone to copy out the desired version and then remove git repo
-  git clone ssh://$USER@gittools.se.axis.com:29418/teams/rapid/api-doc.git
+  git clone ssh://$apiuser@gittools.se.axis.com:29418/teams/rapid/api-doc.git
   for api in $apis
   do
     cp -r $gitdirver/generated/$api $apidir/
