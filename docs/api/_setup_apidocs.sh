@@ -36,6 +36,12 @@ Example:
 "
 }
 
+error() {
+  printf "\n\nERROR: $*\n"
+  cd $startdir
+  exit 1
+}
+
 #-------------------------------------------------------------------------------
 # Parse options
 #-------------------------------------------------------------------------------
@@ -108,8 +114,31 @@ replace_acap3_button() {
 #-------------------------------------------------------------------------------
 
 # Release settings
-prevver=$(find . -maxdepth 1 -name "4.*" | grep -o 4.*)
 apis="axevent axoverlay larod licensekey vdostream"
+
+# Version strings
+prevver=$(find . -maxdepth 1 -name "4.*" | grep -o 4.*)
+apiver_minor="${apiver#*.}"
+prevver_minor="${prevver#*.}"
+
+# Print variables
+printf "Previous verison: $prevver\n"
+printf "New version:      $apiver\n"
+printf "Previous minor:   $prevver_minor\n"
+printf "New minor:        $apiver_minor\n"
+printf "APIs to update:   $apis\n"
+
+# Control version format
+if [ "${apiver%%.*}" != 4 ]; then
+  error "Version $apiver needs to have major equal to '4'"
+elif [ "$apiver" = "$prevver" ]; then
+  error "Version $apiver already exists"
+fi
+
+# Control that new version minor is larger than current version
+if [ $apiver_minor -lt $prevver_minor ]; then
+  error "Version minor of $apiver should be greater than $prevver minor"
+fi
 
 # Check API dirs
 nativepage=native-api
@@ -124,10 +153,15 @@ sdkdir=$targetdirver/sdk/html
 
 # Fetch new API version
 [ -d $gitdir ] || {
-  mkdir -p $apidir
-
 	# Clone to copy out the desired version and then remove git repo
   git clone ssh://$apiuser@gittools.se.axis.com:29418/teams/rapid/api-doc.git
+
+  [ -d $gitdirver ] || {
+    rm $gitdir -rf
+    error "The specified version $apiver has not been generated in $gitdir repo"
+  }
+  mkdir -p $apidir
+
   for api in $apis
   do
     cp -r $gitdirver/generated/$api $apidir/
