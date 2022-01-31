@@ -2,7 +2,7 @@
 layout: page
 grand_parent: Develop applications
 parent: Manifest schemas
-title: Manifest schema v1.0
+title: Manifest schema v1.3
 ---
 
 # Field descriptions
@@ -12,6 +12,34 @@ All fields that are not marked as **Required** are optional
 - __schemaVersion__ `string` **Required**
 
     Specifies the application manifest schema version using two dot-separated integer numbers, which follow the semantic versioning rules for MAJOR and MINOR version numbers.
+
+- __resources__ `object`
+
+    Host resources the application requires access to.
+
+    - __dbus__ `object`
+
+        D-Bus resources on the host system that the application requires or desires access to.
+
+        - __requiredMethods__ `array`
+
+            A list of D-Bus methods (given as strings) that are required by the application to be part of an API of the host system. If the methods are not present, the application is considered incompatible and will be rejected at installation.
+
+        - __conditionalMethods__ `array`
+
+            A list of D-Bus methods (given as strings) desired by the application that may or may not be part of an API of the host system. If the methods are not present the application will still be installed. It is up to the application to handle the absence of the methods appropriately.
+
+    - __linux__ `object`
+
+        Linux resources on the host system that the application requires or desires access to.
+
+        - __user__ `object`
+
+            Dynamic user the application shall run as. The username of the dynamic user is determined at installation. If the application requires knowledge of the username it shall use the underlying OS functions to read it. Only one of dynamic user and static user (see acapPackageConf > setup > user) may be specified.
+
+            - __groups__ `array`
+
+                A list of secondary groups (given as strings) the application user should belong to.
 
 - __acapPackageConf__ `object` **Required**
 
@@ -29,6 +57,10 @@ All fields that are not marked as **Required** are optional
 
             Application ID (provided by Axis). To retrieve an application ID, contact the Axis Technology Integration Partner Program support
 
+        - __architecture__ `string`
+
+            The target architecture(s) that the ACAP application supports. Will be set at build time if missing.
+
         - __embeddedSdkVersion__ `string`
 
             Minimum required SDK version that the device running the application must support. This field must be set to a version less than 3.0 if compatibility with pre-manifest firmware is needed. Otherwise the version should be set to 3.0
@@ -37,9 +69,9 @@ All fields that are not marked as **Required** are optional
 
             User friendly package name. The name that will be displayed e.g. in the embedded web pages.
 
-        - __user__ `object` **Required**
+        - __user__ `object`
 
-            Name of a user and group already existing on the device.
+            Static user and group the application shall run as. Only one of dynamic user (see resources > linux > user) and static user may be specified.
 
             - __username__ `string` **Required**
 
@@ -76,6 +108,14 @@ All fields that are not marked as **Required** are optional
         - __postInstallScript__ `string`
 
             Optional script that will be run on the Axis product after ACAP package installation completion. This must be a shell script located in the package root.
+
+    - __uninstallation__ `object`
+
+        ACAP application uninstallation settings
+
+        - __preUninstallScript__ `string`
+
+            Optional script that will be run on the Axis product before uninstallation of the ACAP. This must be a shell script located in the package root.
 
     - __configuration__ `object`
 

@@ -22,6 +22,7 @@ The table below shows ACAP Native SDK and firmware version compatibility.
 SDK version | Available from firmware version
 ----------- | -------------------------------
 1.0 | 10.7
+1.1 | 10.9
 
 ## Video capture API
 Go to the [ACAP API Documentation](4.1/api/vdostream/html/index.html) for detailed functional descriptions of this API.

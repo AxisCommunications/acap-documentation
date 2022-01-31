@@ -4,13 +4,23 @@ title: Computer Vision SDK
 parent: API
 nav_order: 2
 ---
+
 # Computer Vision SDK APIs
-### Introduction
+
+## Introduction
 The AXIS Computer Vision SDK contains well-known, open source packages that have been tuned for the AXIS platforms and in some cases tailored to provide additional functionality for AXIS devices. The main focus for the SDK is computer vision applications, and Python computer vision applications in particular, but the foundation in the container-based ACAP framework along with the high-level APIs makes for an incredibly versatile platform that lends itself to almost any concept.
 
 In this page, the AXIS-specific additions are detailed, along with a general inventory of what open source packages are packaged in the SDK. Application examples using the SDK can be found in the [acap-computer-vision-sdk-examples repository](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples). The Dockerfile which builds the SDK can be found in the [acap-computer-vision-sdk repository](https://github.com/AxisCommunications/acap-computer-vision-sdk), which can be useful for e.g., rebuilding OpenCV with other modules or get an idea of how the supplied packages are crosscompiled.
 
-### SDK index
+## Compatibility
+The table below shows ACAP Computer Vision SDK and firmware version compatibility.
+
+SDK version | Available from firmware version
+----------- | -------------------------------
+1.0 | 10.7
+1.1 | 10.9
+
+## SDK index
 **[SDK packages with AXIS-specific functionality](#sdk-packages-with-axis-specific-functionality)**
 * [Video capture API](#video-capture-api): [OpenCV with VDO](#opencv-with-vdo)
 * [Machine learning API](#machine-learning-api): [TensorFlow Serving](#tensorflow-serving-inference-client)
