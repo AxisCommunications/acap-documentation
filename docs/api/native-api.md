@@ -31,6 +31,17 @@ The VdoStream API provides:
 * video and image capture
 * video and image configuration
 
+## Available video compression formats through VDO
+
+The table below shows available subformats for corresponding YUV format.
+
+Sub Formats | Corresponding format
+----------- | -------------------------------
+nv12 | YUV
+y800 | YUV
+
+An application to start a vdo stream can be found at [vdostream](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdostream/) with first argument of the three being a string describing the video compression format. It takes h264 (default), h265, jpeg, nv12, and y800 as inputs. Out of which nv12 and y800 correspond to YUV format of VDO. 
+
 ### Compatibility
 The API supports products with the following chips:
 * ARTPEC-7
