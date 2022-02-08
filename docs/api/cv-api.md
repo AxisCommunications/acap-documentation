@@ -43,7 +43,7 @@ SDK version | Available from firmware version
 
 ## SDK packages with AXIS-specific functionality
 ### Video capture API
-The [OpenCV package](#opencv-with-vdo) has been extended with functionality for capturing camera images and accessing and modifying video stream and image properties. This has been done by making the [OpenCV VideoCapture-class](https://docs.opencv.org/4.5.3/d8/dfe/classcv_1_1VideoCapture.html) interface with the [AXIS VDO library](3.4/api/vdostream/html/index.html), which allows for treating the AXIS camera like any other OpenCV-compatible camera.
+The [OpenCV package](#opencv-with-vdo) has been extended with functionality for capturing camera images and accessing and modifying video stream and image properties. This has been done by making the [OpenCV VideoCapture-class](https://docs.opencv.org/4.5.3/d8/dfe/classcv_1_1VideoCapture.html) interface with the [AXIS VDO library](4.1/api/vdostream/html/index.html), which allows for treating the AXIS camera like any other OpenCV-compatible camera.
 
 The parts of the OpenCV API that are affected by this addition are documented below.
 

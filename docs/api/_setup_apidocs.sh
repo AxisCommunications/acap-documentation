@@ -144,6 +144,8 @@ fi
 nativepage=native-api
 nativepage_md=$nativepage.md
 nativepage_html=api/$nativepage.html
+cvpage=cv-api
+cvpage_md=$nativepage.md
 gitdir=api-doc
 gitdirver=$gitdir/$apiver
 targetdirver=$apiver
@@ -173,8 +175,9 @@ sdkdir=$targetdirver/sdk/html
 	add_api_redirect_pages $maindir/index.html $sdkdir/index.html $maindir/acap3_api.html
 }
 
-# Update native page to point to the new version
+# Update native and cv pages to point to the new version
 sed -i "s:$prevver:$apiver:g" $nativepage_md
+sed -i "s:$prevver:$apiver:g" $cvpage_md
 
 # Remove previous API version
 rm -rf $prevver
