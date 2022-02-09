@@ -25,3 +25,4 @@ Mapping table for schema, firmware and SDK version.
 | 1.0    | 10.7     | 1.0  | Initial basic version |
 | 1.1    | 10.7     | 1.0  | Additional fields, mainly for technical reasons |
 | 1.2    | 10.7     | 1.0  | Enables uninstall functionality which is required by e.g. docker-compose-acap |
+| 1.3    | 10.9     | 1.1  | Architecture will be automatically generated and added to manifest at packaging step |

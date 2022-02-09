@@ -4,6 +4,7 @@ grand_parent: Develop applications
 parent: Manifest schemas
 title: Manifest schema v1.1
 ---
+
 # Field descriptions
 
 All fields that are not marked as **Required** are optional
@@ -40,7 +41,7 @@ All fields that are not marked as **Required** are optional
 
                 A list of secondary groups (given as strings) the application user should belong to.
 
-- __acapPackageConf__ `object`
+- __acapPackageConf__ `object` **Required**
 
     An ACAP package configuration object.
 
@@ -54,7 +55,7 @@ All fields that are not marked as **Required** are optional
 
         - __appId__ `string`
 
-            Application ID (provided by Axis). To retrieve an application ID, contact the Axis ADP support
+            Application ID (provided by Axis). To retrieve an application ID, contact the Axis Technology Integration Partner Program support
 
         - __embeddedSdkVersion__ `string`
 

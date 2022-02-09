@@ -13,7 +13,7 @@ All fields that are not marked as **Required** are optional
 
     Specifies the application manifest schema version using two dot-separated integer numbers, which follow the semantic versioning rules for MAJOR and MINOR version numbers.
 
-- __acapPackageConf__ `object`
+- __acapPackageConf__ `object` **Required**
 
     An ACAP package configuration object.
 
@@ -27,7 +27,7 @@ All fields that are not marked as **Required** are optional
 
         - __appId__ `string`
 
-            Application ID (provided by Axis). To retrieve an application ID, contact the Axis ADP support
+            Application ID (provided by Axis). To retrieve an application ID, contact the Axis Technology Integration Partner Program support
 
         - __embeddedSdkVersion__ `string`
 
