@@ -109,7 +109,7 @@ You can add third party packages to an image based on the ACAP Computer Vision S
 
 
 #### Cross-compilation
-A common setup is compiling on a desktop with x86_64 for use on armhf, as used by ARTPEC-7-equipped devices. Guidance can be found in the [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples). The toolchain used (for example, `crossbuild-essential-armhf`) to cross-compile the application for the target platform is present in the `devel`-tagged corresponding ACAP Computer Vision SDK image. Flags that have been used for compilation of the ACAP Computer Vision SDK packages are available under the `$ARCH_CFLAGS` variable in the `devel`-tagged image.
+A common setup is compiling on a desktop with x86_64 for use on armhf, as is used by ARTPEC-7 devices or arm64 for ARTPEC-8 devices. Guidance can be found in the [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples). The toolchain used (for example, `crossbuild-essential-armhf`) to cross-compile the application for the target platform is present in the `devel`-tagged corresponding ACAP Computer Vision SDK image. Flags that have been used for compilation of the ACAP Computer Vision SDK packages are available under the `$ARCH_CFLAGS` variable in the `devel`-tagged image.
 
 
 #### Emulated installation

@@ -45,6 +45,7 @@ An application to start a vdo stream can be found at [vdostream](https://github.
 
 ### Compatibility
 The API supports products with the following chips:
+* ARTPEC-8
 * ARTPEC-7
 * ARTPEC-6
 * Ambarella S5L
@@ -73,6 +74,7 @@ The Machine learning API can be used for deep learning applications.
 
 ### Compatibility
 The Larod API supports products with the following chips:
+* ARTPEC-8
 * ARTPEC-7
 * Ambarella S5L
 
@@ -167,6 +169,7 @@ When declaring events it is required to set a namespace. Following are the suppo
 
 ### Compatibility
 The API supports products with the following chips:
+* ARTPEC-8
 * ARTPEC-7
 * ARTPEC-6
 * Ambarella S5L
@@ -193,6 +196,7 @@ A license key is a signed file, generated for a specific device ID and applicati
 
 ### Compatibility
 The API supports products with the following chips:
+* ARTPEC-8
 * ARTPEC-7
 * ARTPEC-6
 * Ambarella S5L
