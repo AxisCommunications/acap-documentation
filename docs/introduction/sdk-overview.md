@@ -45,4 +45,4 @@ See the [ACAP Computer Vision SDK repository documentation]( https://github.com/
 
 #### Support ####
 
-ACAP Computer Vision SDK is supported by ARTPEC-7 based products with a DLPU. See more information in the section about [compatibility](../axis-devices).
+ACAP Computer Vision SDK is supported by ARTPEC-7 and ARTPEC-8 based products with a DLPU. See more information in the section about [compatibility](../axis-devices).
