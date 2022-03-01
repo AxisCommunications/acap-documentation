@@ -58,7 +58,7 @@ To create the manifest file for a simple Hello Glib ACAP application:
 * Version
 
 Example
-```bash
+```json
     "friendlyName": "Hello Glib",
     "appName": "hello_glib",
     "vendor": "Axis Communications",
@@ -195,7 +195,6 @@ and are found in the native SDK container under
 You find descriptions of all available manifest fields for each version in
 [Manifest schemas](manifest-schemas).
 
-
 ### Discontinued support when using manifest file
 The following is no longer supported for an ACAP application, when using
 manifest file:
@@ -209,14 +208,12 @@ start.
 > started by systemd, which assumes failure if the main process dies, and writes
 > any output to stdout/stderr to the system log.
 
-
 ## License file
 The LICENSE file is included in the application package. It shall contain all
 required open source license information for open source code distributed with
-the application package.  Note
+the application package. Note
 
 > If LICENSE is empty the build fails.
-
 
 ## Local data
 Application data such as configuration data and images should in runtime be
@@ -231,5 +228,3 @@ minimizes the risk of failure, however, it is still strongly recommended to
 avoid continuous writes.
 
 > The available free space is product dependent.
-
-
