@@ -65,7 +65,7 @@ http://192.168.0.90/axis-cgi/param.cgi?action=list&group=Properties.EmbeddedDeve
 
 The following response shows a device that supports ACAP:
 ```bash
-root.Properties.EmbeddedDevelopment.EmbeddedDevelopment=yes
+Properties.EmbeddedDevelopment.EmbeddedDevelopment=yes
 ```
 
 ### Check device properties
