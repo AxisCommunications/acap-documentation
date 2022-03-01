@@ -46,8 +46,8 @@ To protect your data we strongly recommend that you:
 
 #### Set a new password for the root account
 > The default administrator username is root. If the password for root is lost,
-> reset the device to factory default settings. See [Reset to factory default
-> settings](#set-a-new-password-for-the-root-account)
+> reset the device to factory default settings. See the product’s user manual
+> for information on how to reset to factory default settings.
 
 [![Password security confirmation check](https://www.axis.com/axistube/a5771bce93e200c36f7cd9dfd0e5deaa/38116/640/640.mp4_001.jpg)](https://youtu.be/yZkKTrGelao)
 
