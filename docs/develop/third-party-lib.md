@@ -28,7 +28,7 @@ WORKDIR /opt/build
 
 Now clone the source code to `/opt/build` directory, from which the third-party library is generated:
 ```Dockerfile
-RUN git clone < Third-party source code github path>
+RUN git clone <Third-party source code github path>
 ```
 
 Go to the cloned directory:
