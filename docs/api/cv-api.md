@@ -145,7 +145,7 @@ Through Dockerhub and the ACAP Computer Vision SDK, both a model server for _lar
 A minimal, but complete, example of how a Python client and a model server running on the same camera could be set up is shown in the [minimal-ml-example](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/minimal-ml-inference) on Github which is a part of the [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples).
 
 ## SDK package index
-The Computer Vision SDK includes many packages, some of which are specific to for example, Python or only available in a certain SDK container. Below is an overview of the packages supplied in the SDK along with their location within the SDK container, and a brief description.
+The ACAP Computer Vision SDK includes many packages, some of which are specific to for example, Python or only available in a certain SDK container. Below is an overview of the packages supplied in the SDK along with their location within the SDK container, and a brief description.
 
 ---
 
