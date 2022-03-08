@@ -45,12 +45,21 @@ For more information see:
 * [Discontinued support when using manifest file](#discontinued-support-when-using-manifest-file)
 
 ### Create a manifest file from scratch
-Create a manifest.json file based on the manifest.json schema, see
+Create a manifest.json file based on the
 [Manifest file schema](#manifest-file-schema).
 
-To create the manifest file for a simple Hello Glib ACAP application:
+To create the manifest file for a simple Hello World ACAP application:
 
-**1. Create a minimal manifest.json file with basic metadata:**
+**1. Create a minimal manifest.json file with schema version:**
+
+* Schema version
+
+Example
+```json
+    "schemaVersion": "1.3",
+```
+
+**2. Add basic metadata:**
 
 * Friendly name
 * Identifier and binary
@@ -59,15 +68,15 @@ To create the manifest file for a simple Hello Glib ACAP application:
 
 Example
 ```json
-    "friendlyName": "Hello Glib",
-    "appName": "hello_glib",
+    "friendlyName": "Hello World",
+    "appName": "hello_world",
     "vendor": "Axis Communications",
-    "version": "2.0.0"
+    "version": "1.0.0"
 ```
 
-**2. Define how you want the applications to be executed:**
+**3. Define how you want the applications to be executed:**
 
-* Running mode - the application keeps running at a reboot.
+* Running mode - the application will not start or restart automatically.
 * User and group for execution and file ownership, typically the sdk:sdk.
 * If needed, you could also define special start options for the execution of the binary.
 
@@ -80,53 +89,31 @@ Example
     }
 ```
 
-**3. Add the required embedded development version on the target device.**
+**4. Add the required embedded development version on the target device.**
 
 Example
 ```json
     "embeddedSdkVersion": "3.0"
 ```
 
-**4. Add any supported cgi endpoints.**
+**5. The resulting file.**
 
-Example
-```json
-    "configuration": {
-      "httpConfig": [
-        {
-          "access": "viewer",
-          "name": "example.cgi",
-          "type": "transferCgi"
-        }
-      ]
-    }
-```
-
-The finished manifest.json
+The finished manifest.json, compare to the [Hello World](https://github.com/AxisCommunications/acap-native-sdk-examples/blob/master/hello-world/app/manifest.json) example manifest of the ACAP Native SDK examples.
 ```json
 {
-  "schemaVersion": "1.2",
+  "schemaVersion": "1.3",
   "acapPackageConf": {
     "setup": {
-      "friendlyName": "Hello Glib",
-      "appName": "hello_glib",
+      "friendlyName": "Hello World",
+      "appName": "hello_world",
       "vendor": "Axis Communications",
-      "version": "2.0.0",
+      "version": "1.0.0",
       "embeddedSdkVersion": "3.0",
       "runMode": "never",
       "user": {
         "group": "sdk",
         "username": "sdk"
-      },
-    },
-    "configuration": {
-      "httpConfig": [
-        {
-          "access": "viewer",
-          "name": "example.cgi",
-          "type": "transferCgi"
-        }
-      ]
+      }
     }
   }
 }
