@@ -46,8 +46,8 @@ To protect your data we strongly recommend that you:
 
 #### Set a new password for the root account
 > The default administrator username is root. If the password for root is lost,
-> reset the device to factory default settings. See [Reset to factory default
-> settings](#set-a-new-password-for-the-root-account)
+> reset the device to factory default settings. See the product’s user manual
+> for information on how to reset to factory default settings.
 
 [![Password security confirmation check](https://www.axis.com/axistube/a5771bce93e200c36f7cd9dfd0e5deaa/38116/640/640.mp4_001.jpg)](https://youtu.be/yZkKTrGelao)
 
@@ -65,7 +65,7 @@ http://192.168.0.90/axis-cgi/param.cgi?action=list&group=Properties.EmbeddedDeve
 
 The following response shows a device that supports ACAP:
 ```bash
-root.Properties.EmbeddedDevelopment.EmbeddedDevelopment=yes
+Properties.EmbeddedDevelopment.EmbeddedDevelopment=yes
 ```
 
 ### Check device properties
@@ -75,7 +75,7 @@ http://192.168.0.90/axis-cgi/basicdeviceinfo.cgi
 ```
 To extract the messages, use the CGI from a terminal, using the credentials set in the network configuration:
 ```sh
-curl --anyauth '*' -u '[username]:[password]' 192.168.0.90/axis-cgi/basicdeviceinfo.cgi --data '{"apiVersion":"1.0","context":"Client defined request ID","method":"getAllProperties"}'
+curl --anyauth '*' -u '<username>:<password>' 192.168.0.90/axis-cgi/basicdeviceinfo.cgi --data '{"apiVersion":"1.0","context":"Client defined request ID","method":"getAllProperties"}'
 ```
 
 The following response contains architecture "Architecture": "armv7hf", and firmware version "Version": "9.50.1":
