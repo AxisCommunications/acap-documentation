@@ -8,6 +8,8 @@ on:
       - '!README.md'
       - '!CONTRIBUTING.md'
       - '!LICENSE.*'
+      - '!CODEOWNERS'
+      - '!CODE_OF_CONDUCT.md'
 jobs:
   build:
     runs-on: ubuntu-latest
