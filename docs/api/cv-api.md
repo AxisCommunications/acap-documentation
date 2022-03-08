@@ -8,9 +8,9 @@ nav_order: 2
 # Computer Vision SDK APIs
 
 ## Introduction
-The AXIS Computer Vision SDK contains well-known, open source packages that have been tuned for the AXIS platforms and in some cases tailored to provide additional functionality for AXIS devices. The main focus for the SDK is computer vision applications, and Python computer vision applications in particular, but the foundation in the container-based ACAP framework along with the high-level APIs makes for an incredibly versatile platform that lends itself to almost any concept.
+The ACAP Computer Vision SDK contains well-known, open source packages that have been tuned for the Axis platforms and in some cases tailored to provide additional functionality for Axis devices. The main focus for the SDK is computer vision applications, and Python computer vision applications in particular. But the foundation in the container-based ACAP framework along with the high-level APIs makes for an incredibly versatile platform that lends itself to almost any concept.
 
-In this page, the AXIS-specific additions are detailed, along with a general inventory of what open source packages are packaged in the SDK. Application examples using the SDK can be found in the [acap-computer-vision-sdk-examples repository](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples). The Dockerfile which builds the SDK can be found in the [acap-computer-vision-sdk repository](https://github.com/AxisCommunications/acap-computer-vision-sdk), which can be useful for e.g., rebuilding OpenCV with other modules or get an idea of how the supplied packages are crosscompiled.
+On this page, the Axis-specific additions are detailed, along with a general inventory of the open source packages in the SDK. Application examples using the SDK can be found in the [acap-computer-vision-sdk-examples repository](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples). The Dockerfile that builds the SDK can be found in the [acap-computer-vision-sdk repository](https://github.com/AxisCommunications/acap-computer-vision-sdk), which can be useful when for example, rebuilding OpenCV with other modules or to get an idea of how the supplied packages are crosscompiled.
 
 ## Compatibility
 The table below shows ACAP Computer Vision SDK and firmware version compatibility.
@@ -43,12 +43,12 @@ SDK version | Available from firmware version
 
 ## SDK packages with AXIS-specific functionality
 ### Video capture API
-The [OpenCV package](#opencv-with-vdo) has been extended with functionality for capturing camera images and accessing and modifying video stream and image properties. This has been done by making the [OpenCV VideoCapture-class](https://docs.opencv.org/4.5.3/d8/dfe/classcv_1_1VideoCapture.html) interface with the [AXIS VDO library](4.1/api/vdostream/html/index.html), which allows for treating the AXIS camera like any other OpenCV-compatible camera.
+The [OpenCV package](#opencv-with-vdo) has been extended with functionality for capturing camera images and accessing and modifying video stream and image properties. This was done by making the [OpenCV VideoCapture-class](https://docs.opencv.org/4.5.3/d8/dfe/classcv_1_1VideoCapture.html) interface with the [AXIS VDO library](4.1/api/vdostream/html/index.html), which allows for treating the Axis camera like any other OpenCV-compatible camera.
 
 The parts of the OpenCV API that are affected by this addition are documented below.
 
 #### The VideoCapture object
-Instantiation of a VideoCapture object takes one argument: the channel index, e.g., `0`:
+Instantiation of a VideoCapture object takes one argument: the channel index, for example, `0`:
 
 ```python
 import cv2
@@ -63,7 +63,7 @@ retval, frame = cap.read()
 
 
 #### VideoCapture properties
-Configuration of the video stream can be done through the properties of the VideoCapture object. This includes setting resolution, image format, frames per second and such options. While similar results can be achieved by e.g., resizing the retrieved image manually in OpenCV, the configuration done with VideoCapture properties is performed using hardware acceleration, which can be significantly faster and frees up CPU time.
+Configuration of the video stream can be done through the properties of the VideoCapture object. This includes setting resolution, image format, frames per second and such options. While similar results can be achieved by for example, resizing the retrieved image manually in OpenCV, the configuration done with VideoCapture properties is performed using hardware acceleration, which can be significantly faster and frees up CPU time.
 
 The properties are set or get using the standard VideoCapture `get(PROPERTY_ID)` and `set(PROPERTY_ID, VALUE)` functions. `PROPERTY_ID` is an OpenCV int enum and `VALUE` is a double. Some properties are only readable, while others are writable or both readable and writable. Additionally, certain properties can only be set before the video stream is _initialized_, which is after the first image has been retrieved. Below is an example on how to set a property on a video stream, in this case the frame rate:
 
@@ -84,7 +84,7 @@ cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'RGB3'))
 ```
 
 
-In the table below are properties that are either AXIS-specific or common OpenCV properties that have been integrated with the VDO backend.
+The table below describes properties that are either Axis-specific or common OpenCV properties that have been integrated with the VDO backend.
 
 
  |  Property ID                         | Operations | Default value    |  Description                                   |  Notes                                                           |
@@ -115,7 +115,7 @@ In the table below are properties that are either AXIS-specific or common OpenCV
 
 #### VideoCapture requirements
 
-In order for all of the AXIS extensions of OpenCV to work properly, some requirements on the container need to be satisfied. This is primarily in the form of file mounts and environment variables that need to be configured. A docker-compose file is a convenient way of making sure that the app container will always be run with the correct setup. Such a setup, for a fictitious app called `my-opencv-app`, is shown below, where the `ipc`, `environment`, `volumes` and `devices` keys and their corresponding values are needed for a fully functional OpenCV app:
+For all of the Axis extensions of OpenCV to work properly, some requirements on the container must be satisfied. This is primarily in the form of file mounts and environment variables that need to be configured. A docker-compose file is a convenient way of making sure that the app container is always run with the correct setup. Such a setup, for a fictitious app called `my-opencv-app`, is shown below, where the `ipc`, `environment`, `volumes` and `devices` keys and their corresponding values are needed for a fully functional OpenCV app:
 
 **docker-compose.yml**
 ```yml
@@ -138,14 +138,14 @@ services:
 ---
 
 ### Machine learning API
-The Computer Vision SDK includes a flexible way of allowing machine learning inference in the form of TensorFlow Serving and a [TensorFlow Serving client](#tensorflow-serving-inference-client). TensorFlow Serving allows for making inference calls over gRPC to another container running a model server. This has several benefits, including exposing a common API for inference and having a single process handle all apps' DLPU communication.
+The ACAP Computer Vision SDK provides a flexible way of allowing machine learning inference in the form of TensorFlow Serving and a [TensorFlow Serving client](#tensorflow-serving-inference-client). TensorFlow Serving allows for making inference calls over gRPC to another container running a model server. This has several benefits, including exposing a common API for inference and having a single process handle all apps' DLPU communication.
 
-Through Dockerhub and the Computer Vision SDK, both a model server for _larod_ and a Python client are available. The model server, called `larod-inference-server`, is available on Dockerhub under the [axisecp/larod-inference-server](https://hub.docker.com/r/axisecp/larod-inference-server) repository. The Python client is available in the Computer Vision SDK under `/axis/python-tfserving` and imported in Python as `InferenceClient`, which is available in the `tf_proto_utils` module. The client exposes a single `infer(inputs, model_name)` function that enables easy inference using the model server.
+Through Dockerhub and the ACAP Computer Vision SDK, both a model server for _larod_ and a Python client are available. The model server, called `larod-inference-server`, is available on Dockerhub under the [axisecp/larod-inference-server](https://hub.docker.com/r/axisecp/larod-inference-server) repository. The Python client is available in the ACAP Computer Vision SDK under `/axis/python-tfserving` and imported in Python as `InferenceClient`, which is available in the `tf_proto_utils` module. The client exposes a single `infer(inputs, model_name)` function that enables easy inference using the model server.
 
 A minimal, but complete, example of how a Python client and a model server running on the same camera could be set up is shown in the [minimal-ml-example](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/minimal-ml-inference) on Github which is a part of the [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples).
 
 ## SDK package index
-The Computer Vision SDK includes many packages, some of which are specific to e.g., Python or only available in a certain SDK container. Below is an overview of the packages supplied in the SDK along with their location within the SDK container and a brief description.
+The Computer Vision SDK includes many packages, some of which are specific to for example, Python or only available in a certain SDK container. Below is an overview of the packages supplied in the SDK along with their location within the SDK container, and a brief description.
 
 ---
 
@@ -181,7 +181,7 @@ A Python OpenCV package is included in the `/axis/opencv` package as a module ca
 ---
 
 ### [Tesseract](https://github.com/tesseract-ocr/tesseract)
-`/axis/tesseract`: An OCR engine developed by Google. Requires model from e.g., [tessdata](https://github.com/tesseract-ocr/tessdata) to be downloaded and have its location specified in the application.
+`/axis/tesseract`: An OCR engine developed by Google. Requires model from for example, [tessdata](https://github.com/tesseract-ocr/tessdata) to be downloaded and have its location specified in the application.
 
 ---
 
