@@ -7,8 +7,8 @@ nav_order: 2
 ---
 
 # Manifest schemas
-The pages listed in the Table of contents below contain manifest schema field
-descriptions.
+The pages listed in the Table of contents below contain the generated manifest
+schema field descriptions.
 
 ## Required fields
 The structure of the fields can be seen by the list level. A Required field in

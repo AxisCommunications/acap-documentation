@@ -5,7 +5,20 @@ Contributions to the ACAP documentation can be made by:
 * **Issue tracker** - Suggest a general change or ask a question.
 * **Pull request** - Report typos or errors, or propose a code change.
 
-## Pre-requisites
+## A note on auto-generated content
+Some files in the documentation are automatically generated and should not be
+changed in the acap-documentation but in the upstream source:
+
+* API technical documentation pages: **docs/api/4.X/**
+* Manifest schema field descriptions: **docs/develop/schema-field-descriptions-{VERSION}.md**
+
+To suggest changes to these files/directories, open a new issue.
+
+## Develop and test documentation changes locally
+If you like to propose a code change and see how it looks, you may serve the
+documentation web page locally.
+
+### Pre-requisites
 To test the documentation locally you need:
 - [Docker](https://docs.docker.com/get-docker/)
 - [Git](https://git-scm.com/downloads)
@@ -13,9 +26,6 @@ To test the documentation locally you need:
 To be able to make a pull request you also need:
 - [Github account](https://github.com)
 
-## Develop and test documentation changes locally
-If you like to propose a code change and see how it looks, you may serve the
-documentation web page locally.
 
 ### Build and serve documentation
 In a terminal,
