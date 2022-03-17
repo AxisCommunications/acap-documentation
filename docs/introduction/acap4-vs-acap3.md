@@ -14,8 +14,7 @@ There are both similarities and differences between the two generations.
 The main novelties in ACAP 4 are:
 
 * A new SDK tailored to computer vision applications.
-* The descendant of ACAP SDK, called ACAP Native SDK will replace many of the
-  older APIs.
+* The descendant of ACAP SDK, called ACAP Native SDK, will replace many of the older APIs.
 * Introduction of native ACAP applications with containers.
 
 ## What are the differences between ACAP 3 SDK and ACAP 4 Native SDK?
