@@ -42,10 +42,13 @@ cd acap-documentation
 docker build -t doc:1 .
 
 # Run the Docker image to serve the web page
-docker run --rm -p 4000:4000 -v $PWD:/srv/jekyll -it doc:1 jekyll serve
+# Why this long command? See a longer exaplanation in the troubleshooting link
+ACAPDOC="$(git rev-parse --show-toplevel)" && \
+{ [ "${ACAPDOC##*/}" = "acap-documentation" ] || [ "${ACAPDOC##*/}" = "acap-documentation-staging" ] ; } && \
+docker run --rm -p 4000:4000 -v "$ACAPDOC":/srv/jekyll -it doc:1 jekyll serve || \
+printf "\nERROR: The current directory is not acap-documentation*\n"
 ```
-The web page will be served on `http://0.0.0.0:4000/acap-documentation`. If you
-can't open this page, try `localhost:4000/acap-documentation`.
+The web page will be served on `http://0.0.0.0:4000/acap-documentation`.
 
 Now when you make changes to a Markdown or HTML page and save it - reload the
 web page and the changes will be shown.
@@ -53,6 +56,8 @@ web page and the changes will be shown.
 > In the terminal where you run the `docker run` command, make sure to check
 > the output messages and act on any warnings or errors if you want to make a
 > pull request.
+
+For issues serving the local web page, see [TROUBLESHOOTING](./TROUBLESHOOTING.md).
 
 ## Open a pull request
 To allow developers without write access to contribute, Github recommends
