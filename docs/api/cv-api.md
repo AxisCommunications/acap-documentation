@@ -24,6 +24,9 @@ SDK version | Available from firmware version
 **[SDK packages with AXIS-specific functionality](#sdk-packages-with-axis-specific-functionality)**
 * [Video capture API](#video-capture-api): [OpenCV with VDO](#opencv-with-vdo)
 * [Machine learning API](#machine-learning-api): [TensorFlow Serving](#tensorflow-serving-inference-client)
+* [BETA - ACAP Runtime](#beta---acap-runtime)
+* [BETA - Parameter API](#beta---parameter-api)
+
 
 **[SDK package index](#sdk-package-index)**
 * [Python 3](#python-3)
@@ -144,8 +147,30 @@ Through Dockerhub and the ACAP Computer Vision SDK, both a model server for _lar
 
 A minimal, but complete, example of how a Python client and a model server running on the same camera could be set up is shown in the [minimal-ml-example](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/minimal-ml-inference) on Github which is a part of the [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples).
 
+### BETA - ACAP Runtime
+
+**This API is a [Beta version](./beta-api) and developers are encouraged to
+test and leave feedback.**
+
+The ACAP Runtime service is an installable ACAP application that provides:
+* Inference API - Tensorflow Serving for inference service
+* Parameter API - Axis parameter service
+
+The ACAP Runtime uses [gRPC](https://grpc.io) and a [Unix Socket Domain (UDS)](https://grpc.github.io/grpc/cpp/md_doc_naming.html) socket for access. The access is restricted to applications in the device that belongs to the `sdk` user group. Installable versions for devices equipped with ARTPEC-7 and ARTPEC-8 chips are available [here](https://hub.docker.com/r/axisecp/acap-runtime).
+
+### BETA - Parameter API
+
+**This API is a [Beta version](./beta-api) and developers are encouraged to
+test and leave feedback.**
+
+The Parameter API enables an application to read the parameters of an Axis network device.
+
+#### Code Examples
+* [parameter-api](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/parameter-api)
+  * The example code is written in C++ and shows how to read existing parameters from an Axis network device.
+
 ## SDK package index
-The ACAP Computer Vision SDK includes many packages, some of which are specific to for example, Python or only available in a certain SDK container. Below is an overview of the packages supplied in the SDK along with their location within the SDK container, and a brief description.
+The ACAP Computer Vision SDK includes many packages, some of which are specific to for example, Python or only available in a certain SDK container. Below is an overview of the packages supplied in the SDK along with their location within the SDK container as well as a brief description.
 
 ---
 
