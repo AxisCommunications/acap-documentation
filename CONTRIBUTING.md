@@ -87,6 +87,21 @@ Now, [create a pull request from your fork][pr-from-fork].
   [serving the web page locally](develop-and-test-documentation-changes-locally).
 - Check the [Guidelines for changes](guidelines-for-changes).
 
+## Special markers
+
+### Beta APIs
+
+Beta APIs should be marked with a preceding `BETA -` as in `BETA - Test API`
+in the;
+* overview list, for example `* [BETA - Test API](./beta---test-api)`
+* section title, for example `## BETA - Test API`
+
+The API section should start with a link to the Beta API page:
+```markdown
+**This API is a [Beta version](./beta-api) and developers are encouraged to
+test and leave feedback.**
+```
+If referred to in section text, use *Beta API* with capital letter.
 
 ## Guidelines for changes
 The documentation is generated with [Jekyll](https://jekyllrb.com) and a Jekyll
