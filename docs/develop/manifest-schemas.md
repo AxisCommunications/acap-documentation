@@ -7,14 +7,17 @@ nav_order: 2
 ---
 
 # Manifest schemas
+
 The pages listed in the Table of contents below contain the generated manifest
 schema field descriptions.
 
 ## Required fields
+
 The structure of the fields can be seen by the list level. A Required field in
 a sub-section means it's only required if the section above is chosen.
 
 ## Manifest schema version mapping
+
 Mapping table for schema, firmware and SDK version.
 
 > It's recommended to use the latest manifest version available for the minimum

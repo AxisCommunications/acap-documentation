@@ -5,7 +5,8 @@ nav_order: 1
 ---
 
 # ACAP version 4 SDK Documentation
-<img align="right" src="assets/logos/acap_sdk_symbol.png" alt="ACAP SDK" width="200"/>
+
+![ACAP SDK](assets/logos/acap_sdk_symbol_200x200.png){: .float-right }
 
 Welcome to the AXIS Camera Application Platform (ACAP) version 4 SDK documentation.
 
@@ -18,4 +19,3 @@ Examples applications are available in
 and
 [ACAP Computer Vision SDK Examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples)
 {: .pb-8 }
-
