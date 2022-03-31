@@ -5,16 +5,19 @@ nav_order: 10
 ---
 
 # Axis devices and compatibility
+
 Compatibility means that if an ACAP can be installed and run on a specific
 device, then the ACAP is compatible with the device. Compatibility depends on
 both hardware and software (firmware).
 
 ## Hardware compatibility
+
 ACAP is supported on a large portion of all Axis devices. For an ACAP to be
 hardware compatible with a specific device, the ACAP must be compiled using the
 SDK corresponding to the chip architecture in the device.
 
 ## Software compatibility
+
 An ACAP is software compatible with an AXIS OS firmware if the APIs and other
 ACAP runtime features are available in the specific firmware release. The
 available APIs in a firmware depends on both the firmware version and the
@@ -23,6 +26,7 @@ example, the Video capture API is only available on devices with an image
 sensor.
 
 ## SDK and device compatibility
+
 Depending on which SDK you would like to use, the possible choice of device
 will differ.
 
@@ -38,6 +42,7 @@ See [software compatibility](#find-the-right-sdk-for-software-compatibility)
 table.
 
 ## Find the right SDK for hardware compatibility
+
 Find the right SDK for the hardware architecture of the specific device or
 devices that you want to develop for.
 
@@ -63,6 +68,7 @@ See detailed information in the [product interface
 guide](https://www.axis.com/developer-community/product-interface-guide).
 
 ## Find the right SDK for software compatibility
+
 Choose the appropriate SDK version based on what AXIS OS version you want
 supporting your ACAP.
 
@@ -76,6 +82,7 @@ How do I know if my device supports a specific AXIS OS version? Please check
 products](https://www.axis.com/support/firmware).
 
 ## Forward compatibility
+
 The ACAP is forward compatible for the firmware related to a specific SDK
 version. This means that the ACAP is compatible for the listed firmware version
 and future firmware versions until the next firmware LTS (Long Term Support).
@@ -86,8 +93,8 @@ in advance.
 An ACAP built with an SDK that is based on an older firmware version should
 always work on a newer firmware version within the same LTS window.
 
-
 ## Feature growth between LTS releases
+
 To get new features, always use the latest ACAP SDK release. A new feature
 could be, for example, a new version of an API.
 
@@ -99,6 +106,7 @@ Read more about AXIS OS release tracks and related information
 [here](https://www.axis.com/products/online-manual/00000).
 
 ## Supporting older firmware
+
 If you want an ACAP to be compatible with older firmware, you need to choose an
 SDK for an older firmware.
 
@@ -106,5 +114,6 @@ To support firmware older than AXIS OS 10.7, build your ACAP application with
 [ACAP 3](https://help.axis.com/acap-3-developer-guide).
 
 # Camera loan tool
+
 Find information about [virtual
 loan](https://www.axis.com/developer-community/virtual-loan-tool).

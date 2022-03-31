@@ -7,4 +7,3 @@ permalink: docs/get-started
 ---
 
 # Get started with ACAP application development
-
