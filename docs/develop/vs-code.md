@@ -1,11 +1,11 @@
 ---
 layout: page
 parent: Develop applications
-title: Set up VS Code
+title: Set up Visual Studio Code
 nav_order: 6
 ---
 
-# Setting up VSCode
+# Setting up Visual Studio Code
 
 Visual Studio Code provides access to containerized development tools, without the need for you to install them natively on your development computer.
 

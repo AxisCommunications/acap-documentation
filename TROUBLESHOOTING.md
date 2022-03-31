@@ -47,4 +47,3 @@ ACAPDOC="$(git rev-parse --show-toplevel)" && \
 docker run --rm -p 4000:4000 -v "$ACAPDOC":/srv/jekyll -it doc:1 jekyll serve || \
 printf "\nERROR: The current directory is not acap-documentation*\n"
 ```
-

@@ -10,7 +10,7 @@ A network camera is, more often than not, part of a solution that aims towards s
 
 This chapter aims to describe various integrations, hopefully covering relevant parts of your solution.
 
-### Integration with cloud
+## Integration with cloud
 
 Some use cases will require an integration with the cloud. You might be building a cloud application that reads data streams, and wish to send data generated on the camera to this application? Or you might wish to send an image from the camera when an event is triggered? For those, or other, situation we can provide you with sample examples, serving as building blocks in your solution. We currently have repositories on GitHub, tailored towards the following cloud vendors.
 
@@ -19,4 +19,3 @@ Some use cases will require an integration with the cloud. You might be building
 - [Google Cloud Platform (GCP)](https://github.com/AxisCommunications/acap-integration-examples-gcp) - Integration between Axis devices and Google Cloud Platform (GCP)
 
 If you find yourself wishing there was another example more relevant to your use case, please don't hesitate to start a discussion or open a new issue in the relevant GitHub repository.
-

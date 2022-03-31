@@ -6,6 +6,7 @@ nav_order: 1
 ---
 
 # ACAP Service Portal for administrators
+
 Use the ACAP Service Portal for administrators to register new applications compatible with Axis products, and to manage all related information such as:
 
 - Name and description for applications.
@@ -15,6 +16,7 @@ Use the ACAP Service Portal for administrators to register new applications comp
 - Sign ACAP packages to ensure authenticity, and to prevent tampering.
 
 ## Access the ACAP Service Portal
+
 > You must be a Technology Integration Partner to access the ACAP Service Portal.
 
 1. Go to [axis.com](https://www.axis.com/) and sign into your personal axis account.

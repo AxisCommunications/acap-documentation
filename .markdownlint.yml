@@ -1,0 +1,21 @@
+# Line length
+# Reason: Most editors wrap long lines, and long lines doesn't affect rendered Markdown.
+MD013: false
+
+# Multiple headings with the same content
+# Reason: Documentation structure is sometimes repetitive, having identical chapters but for different versions.
+MD024: false
+
+# Multiple top-level headings in the same document
+# Reason: Documents are composed, i.e. the title might come from one document while the content comes from another document.
+MD025: false
+
+# Blank line inside blockquote
+# Reason: Documentation contains multiple blockquotes listed after each other, not individually related.
+MD028: false
+
+# Inline HTML
+# Reason: Some formatting can only be accomplished using HTML.
+MD033:
+  allowed_elements:
+    - br
