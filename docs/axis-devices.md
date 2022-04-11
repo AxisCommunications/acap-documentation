@@ -116,4 +116,4 @@ To support firmware older than AXIS OS 10.7, build your ACAP application with
 # Camera loan tool
 
 Find information about [virtual
-loan](https://www.axis.com/developer-community/virtual-loan-tool).
+loan](https://www.axis.com/developer-community/axis-virtual-loan-tool).
