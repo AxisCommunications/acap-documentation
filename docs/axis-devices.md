@@ -19,25 +19,24 @@ SDK corresponding to the chip architecture in the device.
 ## Software compatibility
 
 An ACAP is software compatible with an AXIS OS firmware if the APIs and other
-ACAP runtime features are available in the specific firmware release. The
-available APIs in a firmware depends on both the firmware version and the
+ACAP runtime features are available in the specific firmware release. The availability of
+APIs in a firmware depends on both the firmware version and the
 device itself since some APIs are only relevant for certain devices. For
 example, the Video capture API is only available on devices with an image
 sensor.
 
 ## SDK and device compatibility
 
-Depending on which SDK you would like to use, the possible choice of device
-will differ.
+Device compatibility differs depending on which SDK you want to use.
 
 The *ACAP Computer Vision SDK* is supported on a limited set of devices.
-Therefore, for this SDK, it is important to select one of the products listed
+So, for this SDK, it's important to select one of the products listed
 in the [hardware compatibility](#acap-computer-vision-sdk) table.
 
 The *ACAP Native SDK* is supported on all products for the chips listed in the
 [hardware compatibility](#acap-native-sdk) table that support the minimum AXIS
-OS version required. Therefore, for this SDK it is important to make sure that
-the selected product or products supports the minimum required AXIS OS version.
+OS version required. So, for this SDK it is important to make sure that
+the selected product or products support the minimum required AXIS OS version.
 See [software compatibility](#find-the-right-sdk-for-software-compatibility)
 table.
 
@@ -86,7 +85,7 @@ products](https://www.axis.com/support/firmware).
 The ACAP is forward compatible for the firmware related to a specific SDK
 version. This means that the ACAP is compatible for the listed firmware version
 and future firmware versions until the next firmware LTS (Long Term Support).
-After an LTS, there may be breaking changes that breaks compatibility, for
+After an LTS, there may be changes that break compatibility, for
 example when a deprecated API is removed. Breaking changes are always announced
 in advance.
 
@@ -99,7 +98,7 @@ To get new features, always use the latest ACAP SDK release. A new feature
 could be, for example, a new version of an API.
 
 New SDK versions between LTS releases always add functionality in a way that an
-ACAP, built using a previous version, will still compile with the new version
+ACAP built using a previous version will still compile with the new version
 of the SDK.
 
 Read more about AXIS OS release tracks and related information
