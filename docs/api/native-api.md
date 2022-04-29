@@ -29,7 +29,7 @@ SDK version | Available from firmware version
 
 ## Video capture API
 
-Go to the [ACAP API Documentation](4.1/api/vdostream/html/index.html) for detailed functional descriptions of this API.
+Go to the [ACAP API Documentation](src/api/vdostream/html/index.html) for detailed functional descriptions of this API.
 
 The VdoStream API provides:
 
@@ -78,7 +78,7 @@ The Video capture API was introduced in Native SDK 1.0.
 
 Larod provides a simple unified C API for running machine learning and image preprocessing efficiently. Larod is opensource on GitLab, see [Introduction to larod](https://gitlab.com/unimatrix/larod/-/blob/master/doc/introduction-for-app-developers.md)
 
-Go to the [ACAP API Documentation](4.1/api/larod/html/index.html) for detailed functional descriptions of this API.
+Go to the [ACAP API Documentation](src/api/larod/html/index.html) for detailed functional descriptions of this API.
 
 The Machine learning API can be used for deep learning applications.
 
@@ -112,7 +112,7 @@ The Machine learning API was introduced in Native SDK 1.0.
 
 ## Overlay API
 
-Go to the [ACAP API Documentation](4.1/api/axoverlay/html/index.html) for detailed functional descriptions of this API.
+Go to the [ACAP API Documentation](src/api/axoverlay/html/index.html) for detailed functional descriptions of this API.
 
 The Axoverlay API is a helper library that enables an ACAP to draw overlays in selected video streams. It has built-in support for Cairo as rendering API, as well as an open backend for any other custom rendering.
 
@@ -176,7 +176,7 @@ The OpenCL 1.2 was introduced in Native SDK 1.0.
 
 ## Event API
 
-Go to the [ACAP API Documentation](4.1/api/axevent/html/index.html) for detailed functional descriptions of this API.
+Go to the [ACAP API Documentation](src/api/axevent/html/index.html) for detailed functional descriptions of this API.
 
 The Axevent API provides:
 
@@ -226,7 +226,7 @@ The Axevent API was introduced in Native SDK 1.0.
 
 ## License Key API
 
-Go to the [ACAP API Documentation](4.1/api/licensekey/html/index.html) for detailed functional descriptions of this API.
+Go to the [ACAP API Documentation](src/api/licensekey/html/index.html) for detailed functional descriptions of this API.
 
 Use the License Key API to validate an application license key.
 
