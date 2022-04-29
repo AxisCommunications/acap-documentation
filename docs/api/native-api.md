@@ -25,6 +25,7 @@ SDK version | Available from firmware version
 ----------- | -------------------------------
 1.0 | 10.7
 1.1 | 10.9
+1.2 | 10.10
 
 ## Video capture API
 
@@ -119,6 +120,7 @@ The Axoverlay API is a helper library that enables an ACAP to draw overlays in s
 
 The API supports products with the following chips:
 
+- ARTPEC-8
 - ARTPEC-7
 - ARTPEC-6
 
@@ -139,6 +141,7 @@ Open-source rendering library for 2D vector graphics. See [Cairo documentation](
 
 The Cairo API supports products with the following chips:
 
+- ARTPEC-8
 - ARTPEC-7
 - ARTPEC-6
 
@@ -159,6 +162,7 @@ Accelerate parallel compute with GPU. See [OpenCL documentation](https://www.khr
 
 The OpenCL API supports products with the following chips:
 
+- ARTPEC-8
 - ARTPEC-7
 
 ### Version history
