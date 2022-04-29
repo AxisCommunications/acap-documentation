@@ -5,7 +5,7 @@ parent: Manifest schemas
 title: Manifest schema v1.3
 ---
 
-<h2 class="title-attention"><font color='red'>This document is automatically generated from manifest schema</font></h2>
+<h2 class='title-attention'><font color='red'>This document is automatically generated from manifest schema</font></h2>
 
 # Field descriptions
 
