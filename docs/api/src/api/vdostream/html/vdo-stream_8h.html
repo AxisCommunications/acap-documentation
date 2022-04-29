@@ -142,6 +142,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a5a366f51af1a7171a6739d191ca1e113"><td class="memItemLeft" align="right" valign="top">gboolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-stream_8h.html#a5a366f51af1a7171a6739d191ca1e113">vdo_stream_start</a> (<a class="el" href="classVdoStream.html">VdoStream</a> *self, GError **error)</td></tr>
 <tr class="memdesc:a5a366f51af1a7171a6739d191ca1e113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start this video stream.  <a href="#a5a366f51af1a7171a6739d191ca1e113">More...</a><br /></td></tr>
 <tr class="separator:a5a366f51af1a7171a6739d191ca1e113"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6b715a47f7998706514c25261c9b716"><td class="memItemLeft" align="right" valign="top">gboolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-stream_8h.html#ad6b715a47f7998706514c25261c9b716">vdo_stream_play</a> (<a class="el" href="classVdoStream.html">VdoStream</a> *self, <a class="el" href="classVdoMap.html">VdoMap</a> *settings, GError **error)</td></tr>
+<tr class="memdesc:ad6b715a47f7998706514c25261c9b716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play all buffered video and continue streaming live.  <a href="#ad6b715a47f7998706514c25261c9b716">More...</a><br /></td></tr>
+<tr class="separator:ad6b715a47f7998706514c25261c9b716"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e28776ff99b3ecf0b996630eacb4f89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-stream_8h.html#a5e28776ff99b3ecf0b996630eacb4f89">vdo_stream_stop</a> (<a class="el" href="classVdoStream.html">VdoStream</a> *self)</td></tr>
 <tr class="memdesc:a5e28776ff99b3ecf0b996630eacb4f89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop this video stream.  <a href="#a5e28776ff99b3ecf0b996630eacb4f89">More...</a><br /></td></tr>
 <tr class="separator:a5e28776ff99b3ecf0b996630eacb4f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,6 +184,8 @@ Functions</h2></td></tr>
 <th>Name </th><th>Type </th><th>Description  </th></tr>
 <tr>
 <td>"format" </td><td>uint32 </td><td>Video stream format as <a class="el" href="vdo-types_8h.html#a5ed136c302573571bf325c39d6d36246" title="Video formats. ">VdoFormat</a>. </td></tr>
+<tr>
+<td>"buffer.access" </td><td>uint32 </td><td>Access type as <a class="el" href="vdo-types_8h.html#aad3ddf92456cf91539f2f21814083ecf" title="Buffer access definitions. ">VdoBufferAccess</a> </td></tr>
 <tr>
 <td>"buffer.count" </td><td>uint32 </td><td>Hint how many in-flight buffers are desired. </td></tr>
 <tr>
@@ -225,6 +230,8 @@ Functions</h2></td></tr>
 <td>"rc.prio" </td><td>uint32 </td><td>Bitrate control priority as <a class="el" href="vdo-types_8h.html#a33605ce7467e92bc6b3de06a39df21ac" title="Bitrate control priorities. ">VdoRateControlPriority</a>. </td></tr>
 <tr>
 <td>"gop_length" </td><td>uint32 </td><td>Video stream GOP length. </td></tr>
+<tr>
+<td>"overlays" </td><td>string </td><td>Enable/disable overlays (off text image application all) </td></tr>
 </table>
 <p>H.264 Specific Settings</p>
 <table class="doxtable">
@@ -932,6 +939,52 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classVdoStream.html" title="A video stream. ">VdoStream</a> or <code>NULL</code> on error. Free with <code>g_object_unref()</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ad6b715a47f7998706514c25261c9b716"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6b715a47f7998706514c25261c9b716">&#9670;&nbsp;</a></span>vdo_stream_play()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gboolean vdo_stream_play </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classVdoStream.html">VdoStream</a> *&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classVdoMap.html">VdoMap</a> *&#160;</td>
+          <td class="paramname"><em>settings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GError **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Play all buffered video and continue streaming live. </p>
+<p>This function is invoked in order to play buffered video, it requires an already started buffering stream.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>A <a class="el" href="classVdoStream.html" title="A video stream. ">VdoStream</a>. </td></tr>
+    <tr><td class="paramname">settings</td><td>A <a class="el" href="classVdoMap.html" title="A class representing a dictionary mapping keys to values. ">VdoMap</a> controlling play or <code>NULL</code> for default. </td></tr>
+    <tr><td class="paramname">error</td><td>A location to return an error.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>TRUE</code> on success, <code>FALSE</code> if error is set. </dd></dl>
 
 </div>
 </div>

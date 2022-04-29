@@ -172,8 +172,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:a595c8a65aceaa01ddcf25de7c2061553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unmaps the frame from current process memory.  <a href="#a595c8a65aceaa01ddcf25de7c2061553">More...</a><br /></td></tr>
 <tr class="separator:a595c8a65aceaa01ddcf25de7c2061553"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb25e7f390f3e708a9fbc7508b5e0b45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVdoChunk.html">VdoChunk</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-frame_8h.html#adb25e7f390f3e708a9fbc7508b5e0b45">vdo_frame_take_chunk</a> (<a class="el" href="classVdoFrame.html">VdoFrame</a> *self, GError **error)</td></tr>
-<tr class="memdesc:adb25e7f390f3e708a9fbc7508b5e0b45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate buffer contents by chunks.  <a href="#adb25e7f390f3e708a9fbc7508b5e0b45">More...</a><br /></td></tr>
+<tr class="memdesc:adb25e7f390f3e708a9fbc7508b5e0b45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate buffer contents by chunks (with mmap)  <a href="#adb25e7f390f3e708a9fbc7508b5e0b45">More...</a><br /></td></tr>
 <tr class="separator:adb25e7f390f3e708a9fbc7508b5e0b45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa475eeba1bfd653e7eff90a217cc43a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVdoChunk.html">VdoChunk</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-frame_8h.html#afa475eeba1bfd653e7eff90a217cc43a">vdo_frame_take_chunk_ex</a> (<a class="el" href="classVdoFrame.html">VdoFrame</a> *self, <a class="el" href="vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9e">VdoChunkOption</a> options, GError **error)</td></tr>
+<tr class="memdesc:afa475eeba1bfd653e7eff90a217cc43a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate buffer contents by chunks (optional mmap)  <a href="#afa475eeba1bfd653e7eff90a217cc43a">More...</a><br /></td></tr>
+<tr class="separator:afa475eeba1bfd653e7eff90a217cc43a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A video frame. </p>
@@ -804,15 +807,61 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Iterate buffer contents by chunks. </p>
-<div class="fragment"><div class="line"><span class="keywordflow">while</span> (1) {</div><div class="line">  <a class="code" href="structVdoChunk.html">VdoChunk</a> chunk = <a class="code" href="vdo-frame_8h.html#adb25e7f390f3e708a9fbc7508b5e0b45">vdo_frame_take_chunk</a>(frame, NULL);</div><div class="line">  <span class="keywordflow">if</span> (!chunk.data)</div><div class="line">    <span class="keywordflow">break</span>;</div><div class="line">}</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+<p>Iterate buffer contents by chunks (with mmap) </p>
+<div class="fragment"><div class="line"><span class="keywordflow">while</span> (1) {</div><div class="line">  <a class="code" href="structVdoChunk.html">VdoChunk</a> chunk = <a class="code" href="vdo-frame_8h.html#adb25e7f390f3e708a9fbc7508b5e0b45">vdo_frame_take_chunk</a>(frame, NULL);</div><div class="line">  <span class="keywordflow">if</span> (!chunk.size)</div><div class="line">    <span class="keywordflow">break</span>;</div><div class="line">}</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">self</td><td>A <a class="el" href="classVdoFrame.html" title="A video frame. ">VdoFrame</a> </td></tr>
     <tr><td class="paramname">error</td><td>A location to return an error.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>New chunks until VdoChunk.data equals <code>NULL</code> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>New chunks until VdoChunk.size equals 0 </dd></dl>
+
+</div>
+</div>
+<a id="afa475eeba1bfd653e7eff90a217cc43a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa475eeba1bfd653e7eff90a217cc43a">&#9670;&nbsp;</a></span>vdo_frame_take_chunk_ex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVdoChunk.html">VdoChunk</a> vdo_frame_take_chunk_ex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classVdoFrame.html">VdoFrame</a> *&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9e">VdoChunkOption</a>&#160;</td>
+          <td class="paramname"><em>options</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GError **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Iterate buffer contents by chunks (optional mmap) </p>
+<p>Unlike <a class="el" href="vdo-frame_8h.html#adb25e7f390f3e708a9fbc7508b5e0b45" title="Iterate buffer contents by chunks (with mmap) ">vdo_frame_take_chunk</a>, this function will not mmap any buffers by default, instead the <a class="el" href="structVdoChunk.html" title="A video chunk. ">VdoChunk</a> can be directly forwarded to <code>copy_file_range</code>, <code>sendfile</code>, <code>splice</code> or similar functions.</p>
+<div class="fragment"><div class="line"><span class="keywordflow">while</span> (1) {</div><div class="line">  <a class="code" href="structVdoChunk.html">VdoChunk</a> chunk = <a class="code" href="vdo-frame_8h.html#afa475eeba1bfd653e7eff90a217cc43a">vdo_frame_take_chunk_ex</a>(frame, <a class="code" href="vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9eac9477d1c8878d3b7272a0fbf96698182">VDO_CHUNK_OPTION_NONE</a>, NULL);</div><div class="line">  <span class="keywordflow">if</span> (!chunk.size)</div><div class="line">    <span class="keywordflow">break</span>;</div><div class="line">}</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>A <a class="el" href="classVdoFrame.html" title="A video frame. ">VdoFrame</a> </td></tr>
+    <tr><td class="paramname">options</td><td>A <a class="el" href="vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9e" title="Video chunk options. ">VdoChunkOption</a> </td></tr>
+    <tr><td class="paramname">error</td><td>A location to return an error.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New chunks until VdoChunk.size equals 0 </dd></dl>
 
 </div>
 </div>

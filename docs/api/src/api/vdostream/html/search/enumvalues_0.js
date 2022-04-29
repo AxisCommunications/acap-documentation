@@ -17,6 +17,8 @@ var searchData=
   ['vdo_5fbuffer_5fstrategy_5fnone',['VDO_BUFFER_STRATEGY_NONE',['../vdo-types_8h.html#aca96b2ced6d27b9dd74085a5caebfbc4a0a0980cfe5eb8633007e847d7bdb4c00',1,'vdo-types.h']]],
   ['vdo_5fchunk_5ferror',['VDO_CHUNK_ERROR',['../vdo-types_8h.html#a93f6a4da596c1b143aa24fe8d9e67428aba3e81bf71f68af4e564612dac639ccc',1,'vdo-types.h']]],
   ['vdo_5fchunk_5fnone',['VDO_CHUNK_NONE',['../vdo-types_8h.html#a93f6a4da596c1b143aa24fe8d9e67428a198d581eb044cdd457e9139978de3e06',1,'vdo-types.h']]],
+  ['vdo_5fchunk_5foption_5fmmap',['VDO_CHUNK_OPTION_MMAP',['../vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9ea692d304baa9dd52bc960a0077023eaa4',1,'vdo-types.h']]],
+  ['vdo_5fchunk_5foption_5fnone',['VDO_CHUNK_OPTION_NONE',['../vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9eac9477d1c8878d3b7272a0fbf96698182',1,'vdo-types.h']]],
   ['vdo_5ferror_5fbuffer_5ffailure',['VDO_ERROR_BUFFER_FAILURE',['../vdo-error_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba71bc0f390c1e5afe29a6b2b4aad05c1e',1,'vdo-error.h']]],
   ['vdo_5ferror_5fbusy',['VDO_ERROR_BUSY',['../vdo-error_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba8cfed0ddabc1dab1f1742e73f16f4d94',1,'vdo-error.h']]],
   ['vdo_5ferror_5fclosed',['VDO_ERROR_CLOSED',['../vdo-error_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba8101dbfcf1cb0f5623f5381a6196ad88',1,'vdo-error.h']]],

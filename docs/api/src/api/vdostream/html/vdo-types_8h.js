@@ -24,6 +24,10 @@ var vdo_types_8h =
       [ "VDO_BUFFER_STRATEGY_EXPLICIT", "vdo-types_8h.html#aca96b2ced6d27b9dd74085a5caebfbc4ad8497a62d7dbc983c753efd76504e69f", null ],
       [ "VDO_BUFFER_STRATEGY_INFINITE", "vdo-types_8h.html#aca96b2ced6d27b9dd74085a5caebfbc4a6c925db4175c12444a61ddf51b6320da", null ]
     ] ],
+    [ "VdoChunkOption", "vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9e", [
+      [ "VDO_CHUNK_OPTION_NONE", "vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9eac9477d1c8878d3b7272a0fbf96698182", null ],
+      [ "VDO_CHUNK_OPTION_MMAP", "vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9ea692d304baa9dd52bc960a0077023eaa4", null ]
+    ] ],
     [ "VdoChunkType", "vdo-types_8h.html#a93f6a4da596c1b143aa24fe8d9e67428", [
       [ "VDO_CHUNK_NONE", "vdo-types_8h.html#a93f6a4da596c1b143aa24fe8d9e67428a198d581eb044cdd457e9139978de3e06", null ],
       [ "VDO_CHUNK_ERROR", "vdo-types_8h.html#a93f6a4da596c1b143aa24fe8d9e67428aba3e81bf71f68af4e564612dac639ccc", null ]

@@ -156,6 +156,9 @@ Enumerations</h2></td></tr>
 <tr class="memitem:a93f6a4da596c1b143aa24fe8d9e67428"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-types_8h.html#a93f6a4da596c1b143aa24fe8d9e67428">VdoChunkType</a> <tr class="memdesc:a93f6a4da596c1b143aa24fe8d9e67428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Video chunk types.  <a href="vdo-types_8h.html#a93f6a4da596c1b143aa24fe8d9e67428">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:a93f6a4da596c1b143aa24fe8d9e67428"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0ba1560f1b1a09bbbc195de70899e9e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9e">VdoChunkOption</a> <tr class="memdesc:ad0ba1560f1b1a09bbbc195de70899e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Video chunk options.  <a href="vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9e">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:ad0ba1560f1b1a09bbbc195de70899e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a021421f945451240ceba49813b38196d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-types_8h.html#a021421f945451240ceba49813b38196d">VdoStreamTimestamp</a> <tr class="memdesc:a021421f945451240ceba49813b38196d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timestamp types.  <a href="vdo-types_8h.html#a021421f945451240ceba49813b38196d">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:a021421f945451240ceba49813b38196d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -264,9 +267,31 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="aca96b2ced6d27b9dd74085a5caebfbc4ae95f7aee9424e572727a460f7f87a6be"></a>VDO_BUFFER_STRATEGY_EXTERNAL&#160;</td><td class="fielddoc"><p>Lifetime is managed by an external entity. (Not Supported) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aca96b2ced6d27b9dd74085a5caebfbc4ad8497a62d7dbc983c753efd76504e69f"></a>VDO_BUFFER_STRATEGY_EXPLICIT&#160;</td><td class="fielddoc"><p>Lifetime is managed by 'buffer_alloc' and 'buffer_unref'. </p>
+<tr><td class="fieldname"><a id="aca96b2ced6d27b9dd74085a5caebfbc4ad8497a62d7dbc983c753efd76504e69f"></a>VDO_BUFFER_STRATEGY_EXPLICIT&#160;</td><td class="fielddoc"><p>Lifetime is managed by 'buffer_alloc' and 'buffer_unref' i.e the user allocates and deallocates the buffers used. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aca96b2ced6d27b9dd74085a5caebfbc4a6c925db4175c12444a61ddf51b6320da"></a>VDO_BUFFER_STRATEGY_INFINITE&#160;</td><td class="fielddoc"><p>VDO creates a new buffer for every transfer. </p>
+<tr><td class="fieldname"><a id="aca96b2ced6d27b9dd74085a5caebfbc4a6c925db4175c12444a61ddf51b6320da"></a>VDO_BUFFER_STRATEGY_INFINITE&#160;</td><td class="fielddoc"><p>VDO creates a new buffer for every transfer. (Recommended) </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ad0ba1560f1b1a09bbbc195de70899e9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0ba1560f1b1a09bbbc195de70899e9e">&#9670;&nbsp;</a></span>VdoChunkOption</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9e">VdoChunkOption</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Video chunk options. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad0ba1560f1b1a09bbbc195de70899e9eac9477d1c8878d3b7272a0fbf96698182"></a>VDO_CHUNK_OPTION_NONE&#160;</td><td class="fielddoc"><p>No options </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad0ba1560f1b1a09bbbc195de70899e9ea692d304baa9dd52bc960a0077023eaa4"></a>VDO_CHUNK_OPTION_MMAP&#160;</td><td class="fielddoc"><p>Map all chunks </p>
 </td></tr>
 </table>
 

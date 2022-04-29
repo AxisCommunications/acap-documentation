@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.1.28</span>
+   &#160;<span id="projectnumber">3.1.56</span>
    </div>
   </td>
  </tr>
@@ -152,6 +152,7 @@ $(function() {
 <h4>libyuv backend constraints</h4>
 <ul>
 <li>The width, height and row pitch, for both the input and the output image, must be a multiple of 2.</li>
+<li>Converting rgb-planar to rgb-interleaved does not support crop or scaling. The input and output image must have the same width and height.</li>
 </ul>
 <h4>Supported buffer properties for running jobs</h4>
 <p>This backend only supports the fd access types <code>LAROD_FD_PROP_MAP</code> and <code>LAROD_FD_PROP_READWRITE</code>.</p>
@@ -227,7 +228,7 @@ $(function() {
 <tr>
 <th>Backend </th><th>nv12 </th><th>rgb-interleaved </th><th>rgb-planar  </th></tr>
 <tr>
-<td>libyuv </td><td>Yes </td><td>Yes </td><td></td></tr>
+<td>libyuv </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 <tr>
 <td>ACE </td><td>Yes </td><td></td><td></td></tr>
 <tr>

@@ -16,6 +16,7 @@ var vdo_stream_8h =
     [ "vdo_stream_get_info", "vdo-stream_8h.html#a6368c8c989cbea997947d433dce6a3cb", null ],
     [ "vdo_stream_get_settings", "vdo-stream_8h.html#ad1279257f13b9a406a0df2558f10123e", null ],
     [ "vdo_stream_new", "vdo-stream_8h.html#a36fa0021eb58d482c494163db9b22b61", null ],
+    [ "vdo_stream_play", "vdo-stream_8h.html#ad6b715a47f7998706514c25261c9b716", null ],
     [ "vdo_stream_set_framerate", "vdo-stream_8h.html#af43f6acfe327b99037ea1e046788e7b5", null ],
     [ "vdo_stream_set_settings", "vdo-stream_8h.html#affa9aec868d9c2fd1f39f44aa63adaf2", null ],
     [ "vdo_stream_snapshot", "vdo-stream_8h.html#a4b4c0f2124280bde265491c08bd2f47c", null ],

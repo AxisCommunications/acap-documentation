@@ -2,6 +2,7 @@ var searchData=
 [
   ['vdobufferaccess',['VdoBufferAccess',['../vdo-types_8h.html#aad3ddf92456cf91539f2f21814083ecf',1,'vdo-types.h']]],
   ['vdobufferstrategy',['VdoBufferStrategy',['../vdo-types_8h.html#aca96b2ced6d27b9dd74085a5caebfbc4',1,'vdo-types.h']]],
+  ['vdochunkoption',['VdoChunkOption',['../vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9e',1,'vdo-types.h']]],
   ['vdochunktype',['VdoChunkType',['../vdo-types_8h.html#a93f6a4da596c1b143aa24fe8d9e67428',1,'vdo-types.h']]],
   ['vdoformat',['VdoFormat',['../vdo-types_8h.html#a5ed136c302573571bf325c39d6d36246',1,'vdo-types.h']]],
   ['vdoframetype',['VdoFrameType',['../vdo-types_8h.html#aecc7ad4ae90e505eea73c35dd4dd5bdd',1,'vdo-types.h']]],
