@@ -17,7 +17,7 @@ The following instructions are a summary of the steps to follow. For a deeper ex
 
 1. [Create](https://github.com/ethz-asl/kalibr/wiki/calibration-targets#a-aprilgrid) and print an AprilTag grid.
 2. Take sample pictures with the Axis camera pointing towards the AprilTag grid, including different positions and orientations of the grid.
-3. Write the parameters used to create the pattern and the modify the image folder in [`main.cpp`](https://github.com/AxisCommunications/acap-sdk-extras/blob/main/camera-calibration/main.cpp).
+3. Modify the parameters related to pattern creation and update the images directory path in [`main.cpp`](https://github.com/AxisCommunications/acap-sdk-extras/blob/main/camera-calibration/main.cpp).
 4. Build the Docker image that will download and compile all the calibration code.
 
     ```docker build -t calibration-image .```
