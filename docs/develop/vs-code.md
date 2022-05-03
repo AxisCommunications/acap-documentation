@@ -2,7 +2,7 @@
 layout: page
 parent: Develop applications
 title: Set up Visual Studio Code
-nav_order: 6
+nav_order: 7
 ---
 
 # Setting up Visual Studio Code
