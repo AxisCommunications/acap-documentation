@@ -49,9 +49,11 @@ devices that you want to develop for.
 
 Product      | Chip     | Architecture
 :----------- | :------- | :-----------
-Q1615 Mk III | ARTPEC-7 | armv7hf
 P3255-LVE    | ARTPEC-7 | armv7hf
+P3265-LVE    | ARTPEC-8 | aarch64
+Q1615 Mk III | ARTPEC-7 | armv7hf
 Q1656        | ARTPEC-8 | aarch64
+Q3536-LVE    | ARTPEC-8 | aarch64
 
 ### ACAP Native SDK
 
@@ -75,6 +77,7 @@ ACAP SDK version | Compatible with AXIS OS version
 :--------------- | :----------
 SDK 4.0          | 10.7 and later
 SDK 4.1          | 10.9 and later
+SDK 4.2          | 10.10 and later
 
 How do I know if my device supports a specific AXIS OS version? Please check
 [firmware releases for supported
