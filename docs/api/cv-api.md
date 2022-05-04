@@ -21,6 +21,7 @@ SDK version | Available from firmware version
 ----------- | -------------------------------
 1.0 | 10.7
 1.1 | 10.9
+1.2 | 10.10
 
 ## SDK index
 
@@ -29,7 +30,6 @@ SDK version | Available from firmware version
 - [Video capture API](#video-capture-api): [OpenCV with VDO](#opencv-with-vdo)
 - [Machine learning API](#machine-learning-api): [TensorFlow Serving](#tensorflow-serving-inference-client)
 - [BETA - ACAP Runtime](#beta---acap-runtime)
-- [BETA - Parameter API](#beta---parameter-api)
 
 **[SDK package index](#sdk-package-index)**
 
@@ -52,7 +52,7 @@ SDK version | Available from firmware version
 
 ### Video capture API
 
-The [OpenCV package](#opencv-with-vdo) has been extended with functionality for capturing camera images and accessing and modifying video stream and image properties. This was done by making the [OpenCV VideoCapture-class](https://docs.opencv.org/4.5.3/d8/dfe/classcv_1_1VideoCapture.html) interface with the [AXIS VDO library](4.1/api/vdostream/html/index.html), which allows for treating the Axis camera like any other OpenCV-compatible camera.
+The [OpenCV package](#opencv-with-vdo) has been extended with functionality for capturing camera images and accessing and modifying video stream and image properties. This was done by making the [OpenCV VideoCapture-class](https://docs.opencv.org/4.5.3/d8/dfe/classcv_1_1VideoCapture.html) interface with the [AXIS VDO library](src/api/vdostream/html/index.html), which allows for treating the Axis camera like any other OpenCV-compatible camera.
 
 The parts of the OpenCV API that are affected by this addition are documented below.
 
@@ -162,18 +162,6 @@ The ACAP Runtime service is an installable ACAP application that provides:
 - Parameter API - Axis parameter service
 
 The ACAP Runtime uses [gRPC](https://grpc.io) and a [Unix Socket Domain (UDS)](https://grpc.github.io/grpc/cpp/md_doc_naming.html) socket for access. The access is restricted to applications in the device that belongs to the `sdk` user group. Installable versions for devices equipped with ARTPEC-7 and ARTPEC-8 chips are available [here](https://hub.docker.com/r/axisecp/acap-runtime).
-
-### BETA - Parameter API
-
-**This API is a [Beta version](./beta-api) and developers are encouraged to
-test and leave feedback.**
-
-The Parameter API enables an application to read the parameters of an Axis network device.
-
-#### Code Examples
-
-- [parameter-api](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/parameter-api)
-  - The example code is written in C++ and shows how to read existing parameters from an Axis network device.
 
 ## SDK package index
 
