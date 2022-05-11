@@ -20,15 +20,25 @@ The following instructions are a summary of the steps to follow. For a deeper ex
 3. Modify the parameters related to pattern creation and update the images directory path in [`main.cpp`](https://github.com/AxisCommunications/acap-sdk-extras/blob/main/camera-calibration/main.cpp).
 4. Build the Docker image that will download and compile all the calibration code.
 
-    ```docker build -t calibration-image .```
+    ```sh
+    docker build . -t <APP_IMAGE>
+    ```
+
+    where `<APP_IMAGE>` is the desired name of the Docker image, e.g. *calibration*
 
 5. Run the Docker image. The calibration code will automatically run to obtain the estimated calibration parameters, which are saved in `config.cfg`.
 
-    ```docker run -it --name calibration calibration-image```
+    ```sh
+    docker run -it --name <APP_CONTAINER> <APP_IMAGE>
+    ```
+
+    where `<APP_CONTAINER>` is the desired name of the Docker container, e.g. *calibration-container*
 
 6. Copy the calibration parameters.
 
-    ```docker cp calibration:/app/config.cfg .```
+    ```sh
+    docker cp calibration:/app/config.cfg .
+    ```
 
 ## Calibration procedure
 
@@ -79,7 +89,7 @@ In the following table, the overall Root Mean Square (RMS) re-projection error i
 
 | Camera | Wide capturing (No zoom) | Tele (Full zoom) |
 | :- | :- | :- |
-| Q1656 | 1.2 | 0.8 |
+| Q1656 | 0.9 | 1.1 |
 
 ## License
 
