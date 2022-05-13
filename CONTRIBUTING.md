@@ -107,7 +107,7 @@ docker run --rm \
   -it github/super-linter:slim-v4
 ```
 
-Then from the container terminal, the following commands can lint the the code base for different file types:
+Then from the container terminal, the following commands can lint the code base for different file types:
 
 ```sh
 # Lint Markdown files
