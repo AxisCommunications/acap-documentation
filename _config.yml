@@ -29,7 +29,7 @@ exclude: ["Dockerfile",  "Dockerfiles/", "Gemfile", "Gemfile.lock",
 "TROUBLESHOOTING.md", "vendor"]
 
 
-# It's better to use kramdown than the Github Markdown renderer which works
+# It's better to use kramdown than the GitHub Markdown renderer which works
 # poorly with this theme
 markdown: kramdown
 kramdown:
@@ -39,9 +39,9 @@ kramdown:
 # Plugins
 
 #  GitHub Pages does not use bundle to install plugins, which means that only
-#  the ones listed here will be installed on Github Pages.
+#  the ones listed here will be installed on GitHub Pages.
 #
-#  Github Pages supports a limited set of plugins, see which ones here:
+#  GitHub Pages supports a limited set of plugins, see which ones here:
 #  https://pages.github.com/versions
 
 #  jekyll-remote-theme: To load remote theme
@@ -57,7 +57,7 @@ plugins:
 # SCSS overrides
 color_scheme: axis
 
-# Launch Github link on top in new web browser tab
+# Launch GitHub link on top in new web browser tab
 aux_links_new_tab: true
 aux_links:
   "ACAP version 4 SDK documentation on GitHub":

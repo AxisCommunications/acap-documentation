@@ -2,7 +2,7 @@
 
 Welcome to the AXIS Camera Application Platform (ACAP) version 4 SDK
 [documentation](https://axiscommunications.github.io/acap-documentation), which
-is built with [Github pages](https://pages.github.com/).
+is built with [GitHub pages](https://pages.github.com/).
 
 ## Contribute
 

@@ -31,7 +31,7 @@ To test the documentation locally you need:
 
 To be able to make a pull request you also need:
 
-- [Github account](https://github.com)
+- [GitHub account](https://github.com)
 
 ### Build and serve documentation
 
@@ -116,7 +116,7 @@ markdownlint -i docs/develop/schema-field-descriptions-v\* .
 
 ## Open a pull request
 
-To allow developers without write access to contribute, Github recommends
+To allow developers without write access to contribute, GitHub recommends
 using [forks][aboutforks].
 
 ### Work with the change locally
