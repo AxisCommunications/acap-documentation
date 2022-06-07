@@ -1,33 +1,38 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'jekyll serve'. If you change this file, please restart the server process.
 
-#-------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Site settings
 
 title: ACAP version 4 SDK Documentation
-description: > # This means to ignore newlines until "baseurl:"
+description: >
   ACAP version 4 SDK Documentation contains two types of SDKs;
   a Native SDK and a Computer Vision SDK
 
-url: "https://axiscommunications.github.io" # The base hostname & protocol
-baseurl: "/acap-documentation" # The subpath of your site
+url: https://axiscommunications.github.io # The base hostname & protocol
+baseurl: /acap-documentation # The subpath of your site
 
 github_username:  AxisCommunications
 copyright_name: Axis Communications AB
 copyright_footer: "&copy;<script>new Date().getFullYear()>document.write(new Date().getFullYear());</script> Axis Communications AB. All rights reserved. AXIS COMMUNICATIONS, AXIS, ARTPEC and VAPIX are registered trademarks of Axis AB in various jurisdictions, and you are not granted any license to use them. All other trademarks are the property of their respective owners."
 
-logo: "/assets/logos/axis-logo.png"
+logo: /assets/logos/axis-logo.png
 
-
-#-------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Build settings
 
-remote_theme: "pmarsceill/just-the-docs"
+remote_theme: just-the-docs/just-the-docs
 
-exclude: ["Dockerfile",  "Dockerfiles/", "Gemfile", "Gemfile.lock",
-"LICENSE.txt", "README.md", "CONTRIBUTING.md", "CODE_OF_CONDUCT.md",
-"TROUBLESHOOTING.md", "vendor"]
-
+exclude:
+  - build-multistage
+  - CODE_OF_CONDUCT.md
+  - CODEOWNERS
+  - CONTRIBUTING.md
+  - Dockerfile*
+  - Gemfile*
+  - LICENSE
+  - README.md
+  - TROUBLESHOOTING.md
 
 # It's better to use kramdown than the GitHub Markdown renderer which works
 # poorly with this theme
@@ -35,7 +40,7 @@ markdown: kramdown
 kramdown:
   syntax_highlighter: rouge
 
-#-------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Plugins
 
 #  GitHub Pages does not use bundle to install plugins, which means that only
@@ -50,8 +55,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-sitemap
 
-
-#-------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Theme settings
 
 # SCSS overrides
@@ -61,7 +65,7 @@ color_scheme: axis
 aux_links_new_tab: true
 aux_links:
   "ACAP version 4 SDK documentation on GitHub":
-    - "//github.com/AxisCommunications/acap-documentation"
+    - //github.com/AxisCommunications/acap-documentation
 
 search_enabled: true
 heading_anchors: true
@@ -71,4 +75,4 @@ ga_tracking: UA-266925-56
 
 # Back to top link
 back_to_top: true
-back_to_top_text: "Back to top"
+back_to_top_text: Back to top
