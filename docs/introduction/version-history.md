@@ -13,7 +13,7 @@ AXIS Camera Application Platform (ACAP) was introduced already in 2009 and is th
 
 | Version | Release year | Support | Details |
 | ------- | ------------ | ------- | ------- |
-| 4 | 2021 | Actively developed | See [release notes](../release-notes/releasenotes) in this documentation for more information |
-| 3 | 2020 | Actively maintained | [ACAP 3 documentation](https://help.axis.com/acap-3-developer-guide) |
-| 2 | 2014 | No maintenance. End of support: Q4 2021 | For older firmware and products see [ACAP 2 documentation](https://www.axis.com/developer-community/acap-sdk-v2) |
+| 4 | 2021 | Actively developed | See [release notes](../release-notes/releasenotes) for more information |
+| 3 | 2020 | Actively maintained | See [ACAP 3 Developer Guide](https://help.axis.com/acap-3-developer-guide) for more information |
+| 2 | 2014 | End of support: Q4 2021 | No maintenance |
 | 1 | 2009 | Deprecated | No maintenance |
