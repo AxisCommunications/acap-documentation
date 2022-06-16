@@ -16,7 +16,7 @@ container.
 
 ```bash
 docker login
-docker run --rm -p 4000:4000 -it axisecp/acap-documentation-staging:latest-master jekyll serve
+docker run --rm -p 4000:4000 -it axisecp/acap-documentation-staging:latest-main jekyll serve
 ```
 
 Then open a web browser at `http://0.0.0.0:4000/acap-documentation` or if this

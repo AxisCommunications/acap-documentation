@@ -29,7 +29,7 @@ jobs:
           exit $ret
       - uses: github/super-linter/slim@v4
         env:
-          DEFAULT_BRANCH: master
+          DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LINTER_RULES_PATH: /
           VALIDATE_MARKDOWN: true
