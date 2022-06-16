@@ -2,7 +2,7 @@
 
 Welcome to the AXIS Camera Application Platform (ACAP) version 4 SDK
 [documentation](https://axiscommunications.github.io/acap-documentation), which
-is built with [Github pages](https://pages.github.com/).
+is built with [GitHub pages](https://pages.github.com/).
 
 ## Contribute
 
@@ -16,7 +16,7 @@ container.
 
 ```bash
 docker login
-docker run --rm -p 4000:4000 -it axisecp/acap-documentation-staging:latest-master jekyll serve
+docker run --rm -p 4000:4000 -it axisecp/acap-documentation-staging:latest-main jekyll serve
 ```
 
 Then open a web browser at `http://0.0.0.0:4000/acap-documentation` or if this

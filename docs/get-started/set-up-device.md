@@ -23,7 +23,7 @@ For more information about how to find and assign IP addresses, go to [How to as
 
 ### Access the device
 
-1. Open a browser and enter the IP address or host name of the Axis device.
+1. Open a browser and enter the IP address or hostname of the Axis device.
 If you do not know the IP address, use AXIS IP Utility or AXIS Device Manager to find the device on the network.
 2. Enter the username and password. If you access the device for the first time, you must set the root password. See [Set a new password for the root account](#set-a-new-password-for-the-root-account).
 3. The live view page opens in your browser.
@@ -203,7 +203,7 @@ For more information, see the help in AXIS Device Manager/AXIS Camera Station.
 
 1. You must be at the command prompt and in the directory that contains the upgrade file. Example: `C:\Axis\Product\Firmware`
 2. From the command prompt, open an FTP connection to the unit you wish to upgrade.
-(Do not use a Windows based FTP program to do this, use command line FTP programs only.)
+(Do not use a Windows based FTP program to do this, use command-line FTP programs only.)
 3. Log in as “root”. You must be logged in as the root user to upgrade the unit.
 4. Change to binary transfer mode by typing "bin" and press enter.
 5. Type "hash" and press enter. This will allow you to see how the upgrade progresses.
