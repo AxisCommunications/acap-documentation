@@ -18,4 +18,4 @@ You can find the ACAP SDK open source licenses and copyleft source code [here](h
 
 ## GitHub pages and Jekyll theme
 
-This web page is built using the Jekyll theme 'Just the Docs' which is distributed under an [MIT license](https://github.com/pmarsceill/just-the-docs/blob/master/LICENSE.txt).
+This web page is built using the Jekyll theme 'Just the Docs' which is distributed under an [MIT license](https://github.com/just-the-docs/just-the-docs/blob/main/LICENSE.txt).

@@ -168,7 +168,7 @@ If referred to in section text, use *Beta API* with capital letter.
 ## Guidelines for changes
 
 The documentation is generated with [Jekyll](https://jekyllrb.com) and a Jekyll
-theme called [Just the Docs](https://pmarsceill.github.io/just-the-docs/). This
+theme called [Just the Docs](https://just-the-docs.github.io/just-the-docs/). This
 allows documentation to be written in Markdown which will then be built in to a
 page with the layout of the site.
 
@@ -196,9 +196,9 @@ considerations.
 
 #### Jekyll theme "Just the Docs"
 
-This Jekyll theme [Just the Docs](https://pmarsceill.github.io/just-the-docs/)
+This Jekyll theme [Just the Docs](https://just-the-docs.github.io/just-the-docs/)
 has some handy formatting for things like [spacing and
-alignment](https://pmarsceill.github.io/just-the-docs/docs/utilities/layout/).
+alignment](https://just-the-docs.github.io/just-the-docs/docs/utilities/layout/).
 
 #### General format
 
