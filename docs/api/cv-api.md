@@ -11,7 +11,7 @@ nav_order: 2
 
 The ACAP Computer Vision SDK contains well-known, open source packages that have been tuned for the Axis platforms and in some cases tailored to provide additional functionality for Axis devices. The main focus for the SDK is computer vision applications, and Python computer vision applications in particular. But the foundation in the container-based ACAP framework along with the high-level APIs makes for an incredibly versatile platform that lends itself to almost any concept.
 
-On this page, the Axis-specific additions are detailed, along with a general inventory of the open source packages in the SDK. Application examples using the SDK can be found in the [acap-computer-vision-sdk-examples repository](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples). The Dockerfile that builds the SDK can be found in the [acap-computer-vision-sdk repository](https://github.com/AxisCommunications/acap-computer-vision-sdk), which can be useful when for example, rebuilding OpenCV with other modules or to get an idea of how the supplied packages are crosscompiled.
+On this page, the Axis-specific additions are detailed, along with a general inventory of the open source packages in the SDK. Application examples using the SDK can be found in the [acap-computer-vision-sdk-examples repository](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples). The Dockerfile that builds the SDK can be found in the [acap-computer-vision-sdk repository](https://github.com/AxisCommunications/acap-computer-vision-sdk), which can be useful when for example, rebuilding OpenCV with other modules or to get an idea of how the supplied packages are cross-compiled.
 
 ## Compatibility
 
@@ -81,7 +81,7 @@ The properties are set or get using the standard VideoCapture `get(PROPERTY_ID)`
 cap.set(cv2.CAP_PROP_FPS, 10)
 ```
 
-Similarily, a property can be get by doing:
+Similarly, a property can be get by doing:
 
 ```python
 fps = cap.get(cv2.CAP_PROP_FPS)
@@ -147,9 +147,9 @@ services:
 
 The ACAP Computer Vision SDK provides a flexible way of allowing machine learning inference in the form of TensorFlow Serving and a [TensorFlow Serving client](#tensorflow-serving-inference-client). TensorFlow Serving allows for making inference calls over gRPC to another container running a model server. This has several benefits, including exposing a common API for inference and having a single process handle all apps' DLPU communication.
 
-Through Dockerhub and the ACAP Computer Vision SDK, both a model server for _larod_ and a Python client are available. The model server, called `larod-inference-server`, is available on Dockerhub under the [axisecp/larod-inference-server](https://hub.docker.com/r/axisecp/larod-inference-server) repository. The Python client is available in the ACAP Computer Vision SDK under `/axis/python-tfserving` and imported in Python as `InferenceClient`, which is available in the `tf_proto_utils` module. The client exposes a single `infer(inputs, model_name)` function that enables easy inference using the model server.
+Through Docker Hub and the ACAP Computer Vision SDK, both a model server for _larod_ and a Python client are available. The model server, called `larod-inference-server`, is available on Docker Hub under the [axisecp/larod-inference-server](https://hub.docker.com/r/axisecp/larod-inference-server) repository. The Python client is available in the ACAP Computer Vision SDK under `/axis/python-tfserving` and imported in Python as `InferenceClient`, which is available in the `tf_proto_utils` module. The client exposes a single `infer(inputs, model_name)` function that enables easy inference using the model server.
 
-A minimal, but complete, example of how a Python client and a model server running on the same camera could be set up is shown in the [minimal-ml-example](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/minimal-ml-inference) on Github which is a part of the [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples).
+A minimal, but complete, example of how a Python client and a model server running on the same camera could be set up is shown in the [minimal-ml-example](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/minimal-ml-inference) on GitHub which is a part of the [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples).
 
 ### BETA - ACAP Runtime
 

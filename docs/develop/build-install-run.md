@@ -20,14 +20,14 @@ Use the **acap-build** tool to build and package your application.
 
 The acap-build tool does the following:
 
-- Runs make, performing any required cross-compilation as defined in the available Makefile.
+- Runs make, performing any required cross-compilation as defined in the available `Makefile`.
 - Validates the manifest file against the manifest schema.
-- Generates a package.conf file and related configuration files for backward compatibility.
+- Generates a `package.conf` file and related configuration files for backward compatibility.
 - Creates an EAP (Embedded Application Package) file with suffix .eap including:
   - application executable
-  - LICENSE file
-  - any available html and lib folder
-  - other files listed in the acap-build request
+  - `LICENSE` file
+  - any available `html` and `lib` folder
+  - other files listed in the `acap-build` request
   - generated backward compatibility files
 
 For help on using the build tool, run `acap-build -h`.
@@ -50,7 +50,7 @@ For help on using the build tool, run `acap-build -h`.
 For instructions on how to set up your build, to install, and to run with custom
 application image, use the
 [Hello World](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/hello-world)
-example on Github.
+example on GitHub.
 
 Using the custom application image, all the building and packaging is done inside a Docker container. The application is then copied to a custom directory, meaning that the original application project directory is not changed.
 
@@ -72,7 +72,7 @@ docker run -v $PWD/app:/opt/app --rm -i -t axisecp/acap-native-sdk:1.0-armv7hf-u
 
 where:
 
-- `axisecp/acap-native-sdk` is the Docker hub repostitory
+- `axisecp/acap-native-sdk` is the Docker Hub repository
 - `1.0-armv7hf-ubuntu20.04` is the tag that points out which SDK version and architecture to use
 - `-v $PWD/app:/opt/app` mounts the host directory `$PWD/app` into the container directory `/opt/app`
 - `--rm` removes the container after closing it

@@ -15,7 +15,7 @@ The ACAP Native SDK is targeted towards users that want to develop plug-in style
 
 ### Main use cases
 
-- Plug-in style applications generating events and meta-data in a VMS centric system.
+- Plug-in style applications generating events and metadata in a VMS centric system.
 - Extensions to the default camera feature set.
 - Complement to the ACAP Computer Vision SDK for application components that need optimal performance.
 

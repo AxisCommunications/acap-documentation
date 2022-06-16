@@ -37,4 +37,4 @@ The application restarts and is now attached to a container with the SDK and you
 
 You can install different versions of the SDK in separate containers. When you open your source code folder, Visual Studio Code identifies the SDK version defined in the Dockerfile.
 
-The ACAP Native SDK container includes all the SDK tools, Git and some other useful things. But you can add more tools to the Dockerfile and the devcontainer.json configuration. See [Microsofts tutorials on how to use Development Containers](https://code.visualstudio.com/docs/remote/containers) for more information on what this way of working can offer.
+The ACAP Native SDK container includes all the SDK tools, Git and some other useful things. But you can add more tools to the `Dockerfile` and the `devcontainer.json` configuration. See [Microsoft's tutorials on how to use Development Containers](https://code.visualstudio.com/docs/remote/containers) for more information on what this way of working can offer.

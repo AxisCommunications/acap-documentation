@@ -3,5 +3,23 @@
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true
-  }
+  },
+  "cSpell.words": [
+    "acap",
+    "Ambarella",
+    "ARTPEC",
+    "Axevent",
+    "axisecp",
+    "Axoverlay",
+    "backticks",
+    "chipsets",
+    "DLPU",
+    "larod",
+    "ONVIF",
+    "overfitting",
+    "precompiled",
+    "Quickstart",
+    "VAPIX",
+    "videostream"
+  ]
 }

@@ -10,7 +10,7 @@ but if you cannot open this page, try `localhost:4000/acap-documentation`.
 ### Avoid accidental ownership change of sensitive user files
 
 GitHub Pages is based on Jekyll to build and serve web pages. The
-**acap-documentaion** repository builds Docker container images based on the
+**acap-documentation** repository builds Docker container images based on the
 official [Jekyll Docker image](https://hub.docker.com/r/jekyll) to be able to
 test changes without having to install dependencies like Ruby and Jekyll.
 
