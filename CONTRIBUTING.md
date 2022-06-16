@@ -10,9 +10,9 @@ Contributions to the ACAP documentation can be made by:
 ## A note on auto-generated content
 
 Some files in the documentation are automatically generated and should not be
-changed in the acap-documentation but in the upstream source:
+changed in this repository but in the upstream source:
 
-- API technical documentation pages: **docs/api/4.X/**
+- API technical documentation pages: **docs/api/**
 - Manifest schema field descriptions: **docs/develop/schema-field-descriptions-{VERSION}.md**
 
 To suggest changes to these files/directories, open a new issue.
@@ -50,7 +50,7 @@ cd acap-documentation
 docker build -t doc:1 .
 
 # Run the Docker image to serve the web page
-# Why this long command? See a longer exaplanation in the troubleshooting link
+# Why this long command? See a longer explanation in the troubleshooting link
 ACAPDOC="$(git rev-parse --show-toplevel)" && \
 { [ "${ACAPDOC##*/}" = "acap-documentation" ] || [ "${ACAPDOC##*/}" = "acap-documentation-staging" ] ; } && \
 docker run --rm -p 4000:4000 -v "$ACAPDOC":/srv/jekyll -it doc:1 jekyll serve || \
@@ -68,9 +68,9 @@ web page and the changes will be shown.
 
 For issues serving the local web page, see [TROUBLESHOOTING](./TROUBLESHOOTING.md).
 
-### Lint of code base
+### Lint of codebase
 
-A set of different linters test the code base and these must pass in order to get a pull request approved.
+A set of different linters test the codebase and these must pass in order to get a pull request approved.
 
 #### Linters in GitHub Action
 
@@ -80,24 +80,25 @@ In order to fasten up development, it's possible to run linters as part of your 
 
 #### Run super-linter locally
 
-Since super-linter is using a Docker image in GitHub Actions, users of other editors may run it locally to lint the code base. For complete instructions and guidance, see super-linter page for [running locally](https://github.com/github/super-linter/blob/main/docs/run-linter-locally.md).
+Since super-linter is using a Docker image in GitHub Actions, users of other editors may run it locally to lint the codebase. For complete instructions and guidance, see super-linter page for [running locally](https://github.com/github/super-linter/blob/main/docs/run-linter-locally.md).
 
-To run a number of linters on the code base from command line:
+To run a number of linters on the codebase from command-line:
 
 ```sh
 docker run --rm  \
   -v $PWD:/tmp/lint \
   -e RUN_LOCAL=true \
-  -e VALIDATE_MARKDOWN=true \
-  -e FILTER_REGEX_EXCLUDE='docs/develop/schema-field-descriptions-v*' \
   -e LINTER_RULES_PATH=/ \
+  -e FILTER_REGEX_EXCLUDE='docs/develop/schema-field-descriptions-v*' \
+  -e VALIDATE_MARKDOWN=true \
   -e MARKDOWN_CONFIG_FILE=.markdownlint.yml \
+  -e VALIDATE_NATURAL_LANGUAGE=true \
   github/super-linter:slim-v4
 ```
 
 ##### Run super-linter interactively
 
-It might be more convenient to run super-linter interactively. Run container and enter command line:
+It might be more convenient to run super-linter interactively. Run container and enter command-line:
 
 ```sh
 docker run --rm \
@@ -107,7 +108,7 @@ docker run --rm \
   -it github/super-linter:slim-v4
 ```
 
-Then from the container terminal, the following commands can lint the code base for different file types:
+Then from the container terminal, the following commands can lint the codebase for different file types:
 
 ```sh
 # Lint Markdown files
@@ -169,7 +170,7 @@ If referred to in section text, use *Beta API* with capital letter.
 
 The documentation is generated with [Jekyll](https://jekyllrb.com) and a Jekyll
 theme called [Just the Docs](https://just-the-docs.github.io/just-the-docs/). This
-allows documentation to be written in Markdown which will then be built in to a
+allows documentation to be written in Markdown which will then be built-in to a
 page with the layout of the site.
 
 Generally changes can be divided in *content* and *layout*. To make a
@@ -179,7 +180,7 @@ contribution to the content, only knowledge about Markdown is required.
 
 You can find documentation of the Markdown syntax online:
 
-- [markdownguide.org](https://www.markdownguide.org/)
+- [The Markdown Guide](https://www.markdownguide.org/)
 - [Official documentation](https://daringfireball.net/projects/markdown/)
 
 ### Change of content
@@ -210,7 +211,7 @@ To keep a more consistent and easy to read format:
 
 #### Notes and important squares
 
-To add a note, use the Markdown symbol for blockquotes `>` followed by a space
+To add a note, use the Markdown symbol for blockquote (`>`) followed by a space
 on each line that the note consists of, e.g.:
 
 ```markdown
@@ -259,12 +260,14 @@ language in [pygments.org](https://pygments.org/docs/lexers/) and use the
 
 **Some common languages short names:**
 
+<!-- textlint-disable -->
 - bash, sh
 - make
 - dockerfile
 - json
 - c
 - html
+<!-- textlint-enable -->
 
 ### Change of layout
 

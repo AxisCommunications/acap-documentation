@@ -46,7 +46,7 @@ Sub Formats | Corresponding format
 nv12 | YUV
 y800 | YUV
 
-An application to start a vdo stream can be found at [vdostream](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdostream/) with first argument of the three being a string describing the video compression format. It takes h264 (default), h265, jpeg, nv12, and y800 as inputs. Out of which nv12 and y800 correspond to YUV format of VDO.
+An application to start a vdo stream can be found at [vdostream](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdostream/) with first argument of the three being a string describing the video compression format. It takes `h264` (default), `h265`, `jpeg`, `nv12`, and `y800` as inputs. Out of which `nv12` and `y800` correspond to YUV format of VDO.
 
 ### Compatibility
 
@@ -76,7 +76,7 @@ The Video capture API was introduced in Native SDK 1.0.
 
 ## Machine learning API
 
-Larod provides a simple unified C API for running machine learning and image preprocessing efficiently. Larod is opensource on GitLab, see [Introduction to larod](https://gitlab.com/unimatrix/larod/-/blob/master/doc/introduction-for-app-developers.md)
+Larod provides a simple unified C API for running machine learning and image preprocessing efficiently. Larod is open source on GitLab, see [Introduction to larod](https://gitlab.com/unimatrix/larod/-/blob/master/doc/introduction-for-app-developers.md)
 
 Go to the [ACAP API Documentation](src/api/larod/html/index.html) for detailed functional descriptions of this API.
 
@@ -103,7 +103,7 @@ The Machine learning API was introduced in Native SDK 1.0.
 - [tensorflow-to-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/tensorflow-to-larod/)
   - This example covers model conversion, model quantization, image formats and custom models in greater depth than the [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/larod) and [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod) examples
 - [object-detection](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/object-detection/)
-  - The example code focus on object detection, cropping and saving detected objects into jpeg files.
+  - The example code focus on object detection, cropping and saving detected objects into JPEG files.
 - [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod/)
   - The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format
 - [vdo-larod-preprocessing](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod-preprocessing/)

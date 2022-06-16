@@ -32,6 +32,7 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LINTER_RULES_PATH: /
+          FILTER_REGEX_EXCLUDE: docs/develop/schema-field-descriptions-v\d+\.\d+.md
           VALIDATE_MARKDOWN: true
           MARKDOWN_CONFIG_FILE: .markdownlint.yml
-          FILTER_REGEX_EXCLUDE: docs/develop/schema-field-descriptions-v\d+\.\d+.md
+          VALIDATE_NATURAL_LANGUAGE: true

@@ -1,6 +1,6 @@
-# Contributor covenant code of conduct
+# Contributor Covenant Code of Conduct
 
-## Our pledge
+## Our Pledge
 
 In the interest of fostering an open and welcoming environment, we as
 contributors and maintainers pledge to making participation in our project and
@@ -9,7 +9,7 @@ size, disability, ethnicity, sex characteristics, gender identity and expression
 level of experience, education, socio-economic status, nationality, personal
 appearance, race, religion, or sexual identity and orientation.
 
-## Our standards
+## Our Standards
 
 Examples of behavior that contributes to creating a positive environment
 include:
@@ -23,15 +23,15 @@ include:
 Examples of unacceptable behavior by participants include:
 
 - The use of sexualized language or imagery and unwelcome sexual attention or
- advances
+advances
 - Trolling, insulting/derogatory comments, and personal or political attacks
 - Public or private harassment
 - Publishing others' private information, such as a physical or electronic
- address, without explicit permission
+address, without explicit permission
 - Other conduct which could reasonably be considered inappropriate in a
- professional setting
+professional setting
 
-## Our responsibilities
+## Our Responsibilities
 
 Project maintainers are responsible for clarifying the standards of acceptable
 behavior and are expected to take appropriate and fair corrective action in
@@ -67,10 +67,12 @@ members of the project's leadership.
 
 ## Attribution
 
+<!-- textlint-disable -->
 This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
-available at <https://www.contributor-covenant.org/version/1/4/code-of-conduct.html>.
+available at <https://www.contributor-covenant.org/version/1/4/code-of-conduct.html>
+<!-- textlint-enable -->
 
 [homepage]: https://www.contributor-covenant.org
 
 For answers to common questions about this code of conduct, see
-<https://www.contributor-covenant.org/faq>.
+<https://www.contributor-covenant.org/faq>

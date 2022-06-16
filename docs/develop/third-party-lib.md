@@ -86,7 +86,7 @@ SHLIBS += -lm -l[lib](linking-third-party-lib)
 
 ### Importance of setting **RPATH**
 
-The **RPATH** setting is to change the library search path so that one executable or library can link the desired dependent libraries during run-time.
+The **RPATH** setting is to change the library search path so that one executable or library can link the desired dependent libraries during runtime.
 
 > Set **RPATH** to the directory where shared libraries are located, with the
 > help of **$ORIGIN**.  This will tell the linker to search and include

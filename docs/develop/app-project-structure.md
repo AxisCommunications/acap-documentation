@@ -9,7 +9,7 @@ nav_order: 1
 
 An application project contains several files and directories for an application. The mandatory files are:
 
-| File name          | Description|
+| Filename          | Description|
 | :------------------------- | :--------- |
 | [application name].(c/cpp) | Source file/files in C/C++. |
 | LICENSE           | Text file that lists all open source licensed source code distributed with the application. |
@@ -25,7 +25,7 @@ An application project contains several files and directories for an application
 
 Other optional files and directories to include:
 
-| File Name      | Type         | Description |
+| Filename      | Type         | Description |
 | :----------------- | :----------- | :---------- |
 | lib            | Directory    | Shared libraries custom to the application. |
 | Postinstall Script | Shell Script | Executed at the installation of the application. |
@@ -160,15 +160,15 @@ see [Manifest schemas](manifest-schemas).
 |                                  |                               | APPMICROVERSION | A numerical value of the application’s micro version. |
 | User and group for execution and file ownership | acapPackageConf.<br>setup.<br>user.username | APPUSR | The user that the application will run as. The recommended user is **sdk**. |
 |                                                 | acapPackageConf.<br>setup.<br>user.group   |  APPGRP | The group that the application will run as. The recommended group is **sdk**. |
-| Id of the application in Axis ACAP portal | acapPackageConf.<br>setup.<br>appId  | APPID | The application copy protection identifier. Provided by Axis and required when using Axis copy protection solution. |
+| ID of the application in Axis ACAP portal | acapPackageConf.<br>setup.<br>appId  | APPID | The application copy protection identifier. Provided by Axis and required when using Axis copy protection solution. |
 | Application architecture | acapPackageConf.<br>setup.<br>architecture[^1] | APPTYPE | The automatically generated architecture of the application. For architecture-independent applications, this field can be set to `all`. |
 | The execution behavior of the application | acapPackageConf.<br>setup.<br>runMode | STARTMODE | Defines how the application is started. Possible values are:<br>- **respawn** Once started, the application starts automatically when the system starts (at boot). In case the application crashes, it restarts automatically.<br>- **once** Once started, the application starts automatically when the system starts (at boot). In case the application crashes, does not restart.<br>- **never** Application does not start or restart automatically. |
-| Special options for binary execution    | acapPackageConf.<br>setup.<br>runOptions | APPOPTS | Contains the application command line options (may be empty). |
+| Special options for binary execution    | acapPackageConf.<br>setup.<br>runOptions | APPOPTS | Contains the application command-line options (may be empty). |
 | Open source licenses file | file: LICENSE | file: LICENSE | A file containing all open source licenses of the application. |
 | Copy protection solution  | copyProtection.method | LICENSEPAGE | Specifies if a copy protection solution is used by the application. Possible values are:<br>- **axis** Protected by Axis copy protection license solution.<br>- **custom** Protected by a custom copy protection license solution, not provided by Axis.<br>- **none** Not protected by any license copy protection license solution. |
 | Application specific installation script | acapPackageConf.<br>installation.<br>postInstallScript | POSTINSTALLSCRIPT | A script that runs on the device when the installation is completed. |
 | Required embedded development version    | acapPackageConf.<br>setup.<br>embeddedSdkVersion[^2]   | REQEMBDEVVERSION | Specifies the minimum required embedded development version that the device running the application must support. The version is dependent on the set APIs used in the application. |
-| Application specific setting page      | acapPackageConf.<br>configuration.<br>settingPage    | SETTINGSPAGEFILE |  Specifies the html page for custom settings, to be used by for instance device management software, allowing a user to browse the application settings page. The file must be in a directory called html in the application project. |
+| Application specific setting page      | acapPackageConf.<br>configuration.<br>settingPage    | SETTINGSPAGEFILE |  Specifies the HTML page for custom settings, to be used by for instance device management software, allowing a user to browse the application settings page. The file must be in a directory called `html` in the application project. |
 | Supported CGI endpoints | acapPackageConf.<br>configuration.<br>httpConfig[].name  | HTTPCGIPATHS and file | CGI path relative to application web root |
 |             | acapPackageConf.<br>configuration.<br>httpConfig[].type  | | CGI implementation type, e.g. transferCgi |
 |             | acapPackageConf.<br>configuration.<br>httpConfig[].access | | Access policy for calling the CGI  |

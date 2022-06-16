@@ -11,7 +11,7 @@ nav_order: 2
 
 The ACAP Computer Vision SDK contains well-known, open source packages that have been tuned for the Axis platforms and in some cases tailored to provide additional functionality for Axis devices. The main focus for the SDK is computer vision applications, and Python computer vision applications in particular. But the foundation in the container-based ACAP framework along with the high-level APIs makes for an incredibly versatile platform that lends itself to almost any concept.
 
-On this page, the Axis-specific additions are detailed, along with a general inventory of the open source packages in the SDK. Application examples using the SDK can be found in the [acap-computer-vision-sdk-examples repository](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples). The Dockerfile that builds the SDK can be found in the [acap-computer-vision-sdk repository](https://github.com/AxisCommunications/acap-computer-vision-sdk), which can be useful when for example, rebuilding OpenCV with other modules or to get an idea of how the supplied packages are crosscompiled.
+On this page, the Axis-specific additions are detailed, along with a general inventory of the open source packages in the SDK. Application examples using the SDK can be found in the [acap-computer-vision-sdk-examples repository](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples). The Dockerfile that builds the SDK can be found in the [acap-computer-vision-sdk repository](https://github.com/AxisCommunications/acap-computer-vision-sdk), which can be useful when for example, rebuilding OpenCV with other modules or to get an idea of how the supplied packages are cross-compiled.
 
 ## Compatibility
 
@@ -81,7 +81,7 @@ The properties are set or get using the standard VideoCapture `get(PROPERTY_ID)`
 cap.set(cv2.CAP_PROP_FPS, 10)
 ```
 
-Similarily, a property can be get by doing:
+Similarly, a property can be get by doing:
 
 ```python
 fps = cap.get(cv2.CAP_PROP_FPS)
