@@ -19,6 +19,7 @@ RUN [ ! -f "Gemfile.lock" ] || { \
     echo "Remove old Gemfile.lock" && \
     rm -f Gemfile.lock ; }
 RUN gem install bundler
+
 # Run bundle install separately, seems to hang sometimes when using one RUN
 RUN bundle install && \
     bundle info --path just-the-docs
