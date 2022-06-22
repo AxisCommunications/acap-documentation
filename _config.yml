@@ -32,6 +32,7 @@ exclude:
   - Gemfile*
   - LICENSE
   - README.md
+  - renovate.json
   - TROUBLESHOOTING.md
 
 # It's better to use kramdown than the GitHub Markdown renderer which works
