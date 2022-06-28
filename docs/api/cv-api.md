@@ -149,7 +149,7 @@ The ACAP Computer Vision SDK provides a flexible way of allowing machine learnin
 
 Through Docker Hub and the ACAP Computer Vision SDK, both a model server for _larod_ and a Python client are available. The model server, called `larod-inference-server`, is available on Docker Hub under the [axisecp/larod-inference-server](https://hub.docker.com/r/axisecp/larod-inference-server) repository. The Python client is available in the ACAP Computer Vision SDK under `/axis/python-tfserving` and imported in Python as `InferenceClient`, which is available in the `tf_proto_utils` module. The client exposes a single `infer(inputs, model_name)` function that enables easy inference using the model server.
 
-A minimal, but complete, example of how a Python client and a model server running on the same camera could be set up is shown in the [minimal-ml-example](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/minimal-ml-inference) on GitHub which is a part of the [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples).
+A minimal, but complete, example of how a Python client and a model server running on the same camera could be set up is shown in the [minimal-ml-example](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/minimal-ml-inference) on GitHub which is a part of the [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples).
 
 ### BETA - ACAP Runtime
 
@@ -161,7 +161,7 @@ The ACAP Runtime service is an installable ACAP application that provides:
 - Inference API - Tensorflow Serving for inference service
 - Parameter API - Axis parameter service
 
-The ACAP Runtime uses [gRPC](https://grpc.io) and a [Unix Socket Domain (UDS)](https://grpc.github.io/grpc/cpp/md_doc_naming.html) socket for access. The access is restricted to applications in the device that belongs to the `sdk` user group. Installable versions for devices equipped with ARTPEC-7 and ARTPEC-8 chips are available [here](https://hub.docker.com/r/axisecp/acap-runtime).
+The ACAP Runtime uses [gRPC](https://grpc.io) and a [Unix Socket Domain (UDS)](https://grpc.github.io/grpc/cpp/md_doc_naming.html) socket for access. The access is restricted to applications in the device that belongs to the `sdk` user group. Installable Docker images for devices equipped with ARTPEC-7 and ARTPEC-8 chips are available on [Docker Hub](https://hub.docker.com/r/axisecp/acap-runtime).
 
 ## SDK package index
 
@@ -197,7 +197,7 @@ A Python OpenCV package is included in the `/axis/opencv` package as a module ca
 
 `/axis/python-pytesseract`: A Python interface to the Tesseract Optical Character Recognition engine.
 
-#### [TensorFlow Serving inference client](https://github.com/AxisCommunications/acap-computer-vision-sdk/blob/master/sdk/tfserving/tf_proto_utils.py)
+#### [TensorFlow Serving inference client](https://github.com/AxisCommunications/acap-computer-vision-sdk/blob/main/sdk/tfserving/tf_proto_utils.py)
 
 `/axis/python-tfserving`: A Python client for the TensorFlow Serving framework. Detailed in the [Machine Learning API section](#machine-learning-api).
 
@@ -230,5 +230,5 @@ Only available on the `-devel` image as the runtime files are mounted from the c
 
 ### TensorFlow protobuf files
 
-`/axis/tfproto`: TensorFlow and TensorFlow Serving protobuf files for compiling applications that use their API. An example of how they are used is available in the [object-detector-cpp](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/object-detector-cpp) example.
+`/axis/tfproto`: TensorFlow and TensorFlow Serving protobuf files for compiling applications that use their API. An example of how they are used is available in the [object-detector-cpp](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/object-detector-cpp) example.
 Only available on the -devel image as the proto files are only during compilation.
