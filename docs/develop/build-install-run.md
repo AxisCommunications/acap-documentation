@@ -9,7 +9,7 @@ nav_order: 3
 
 ## ACAP Native SDK
 
-To build, install and run an ACAP application, use the image in the [ACAP Native SDK](https://hub.docker.com/r/axisecp/acap-native-sdk) repository. You can use this image in two ways:
+To build, install and run an ACAP application, use the Docker image in the [ACAP Native SDK](https://hub.docker.com/r/axisecp/acap-native-sdk) repository. You can use this image in two ways:
 
 - As a base image to build a custom application builder image, see [Build, install and run with custom application image](#build-install-and-run-with-custom-application-image).
 - Interactively inside the container, see [Build, install and run interactively inside container](#build-install-and-run-interactively-inside-container).

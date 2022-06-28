@@ -17,5 +17,5 @@ The Web Server running in the ACAP application can also be exposed directly to t
 
 - [Native Web Server](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/web-server)
   - An example of an ACAP4 native application using [Monkey web server](https://github.com/monkey/monkey) which exposes an external API with Reverse Proxy configuration in Apache Server.
-- [Computer Vision Web Server](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/web-server)
+- [Computer Vision Web Server](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/web-server)
   - An example of an ACAP4 container based application using [Monkey web server](https://github.com/monkey/monkey) which exposes an external API with Reverse Proxy configuration in Apache Server.
