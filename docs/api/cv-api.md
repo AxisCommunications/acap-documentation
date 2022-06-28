@@ -161,7 +161,7 @@ The ACAP Runtime service is an installable ACAP application that provides:
 - Inference API - Tensorflow Serving for inference service
 - Parameter API - Axis parameter service
 
-The ACAP Runtime uses [gRPC](https://grpc.io) and a [Unix Socket Domain (UDS)](https://grpc.github.io/grpc/cpp/md_doc_naming.html) socket for access. The access is restricted to applications in the device that belongs to the `sdk` user group. Installable versions for devices equipped with ARTPEC-7 and ARTPEC-8 chips are available [here](https://hub.docker.com/r/axisecp/acap-runtime).
+The ACAP Runtime uses [gRPC](https://grpc.io) and a [Unix Socket Domain (UDS)](https://grpc.github.io/grpc/cpp/md_doc_naming.html) socket for access. The access is restricted to applications in the device that belongs to the `sdk` user group. Installable Docker images for devices equipped with ARTPEC-7 and ARTPEC-8 chips are available on [Docker Hub](https://hub.docker.com/r/axisecp/acap-runtime).
 
 ## SDK package index
 
