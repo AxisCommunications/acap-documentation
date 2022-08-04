@@ -4,7 +4,7 @@ title: Get help & give feedback
 nav_order: 13
 ---
 
-# Get help and give feedback
+# Get help & give feedback
 
 The best way to interact with our team is through GitHub. You can get help and provide feedback by creating an issue or a discussion in the following repositories:
 

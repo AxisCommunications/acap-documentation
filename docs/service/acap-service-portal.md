@@ -5,7 +5,7 @@ title: ACAP Service Portal
 nav_order: 1
 ---
 
-# ACAP Service Portal for administrators
+# ACAP Service Portal
 
 Use the ACAP Service Portal for administrators to register new applications compatible with Axis products, and to manage all related information such as:
 

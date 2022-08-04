@@ -1,6 +1,6 @@
 ---
 layout: page
-parent: Develop applications
+parent: Develop ACAP applications
 title: Camera calibration
 nav_order: 6
 ---

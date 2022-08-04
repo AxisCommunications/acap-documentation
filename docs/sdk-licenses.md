@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Licenses
+title: SDK licenses
 nav_order: 7
 ---
 

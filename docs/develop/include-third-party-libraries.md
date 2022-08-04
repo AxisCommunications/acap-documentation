@@ -1,7 +1,7 @@
 ---
 layout: page
-parent: Develop applications
-title: Include third party lib
+parent: Develop ACAP applications
+title: Include third party libraries
 nav_order: 4
 ---
 

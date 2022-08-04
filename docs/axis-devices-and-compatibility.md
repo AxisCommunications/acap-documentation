@@ -4,7 +4,7 @@ title: Axis devices & compatibility
 nav_order: 10
 ---
 
-# Axis devices and compatibility
+# Axis devices & compatibility
 
 Compatibility means that if an ACAP can be installed and run on a specific
 device, then the ACAP is compatible with the device. Compatibility depends on

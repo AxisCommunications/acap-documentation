@@ -1,10 +1,11 @@
 ---
 layout: page
-parent: Develop applications
+parent: Develop ACAP applications
 title: Application project structure
 nav_order: 1
 ---
 
+<!-- omit in toc -->
 # Application project structure
 
 An application project contains several files and directories for an application. The mandatory files are:
@@ -31,6 +32,7 @@ Other optional files and directories to include:
 | Postinstall Script | Shell Script | Executed at the installation of the application. |
 | Preupgrade Script  | Shell Script | Executed before upgrading the application, available from firmware version 9.30. |
 
+<!-- omit in toc -->
 ## Manifest file
 
 The file **manifest.json** defines the application and its configuration.
@@ -147,7 +149,7 @@ The table below shows the package configuration with manifest file, in
 relationship with the package.conf file.
 
 For a list of all manifest fields and information on which that are required,
-see [Manifest schemas](manifest-schemas).
+see [Manifest schemas](manifest-schemas/).
 
 | Setting |  With manifest file | In package conf and files | Description |
 | :---    | :---                | :---                      | :---        |
@@ -175,12 +177,12 @@ see [Manifest schemas](manifest-schemas).
 | Product integrated application parameters | acapPackageConf.<br>configuration.<br>paramConfig[].default | file: param.conf | Parameter default value |
 |                      | acapPackageConf.<br>configuration.<br>paramConfig[].name   | | Name of the parameter |
 |                      | acapPackageConf.<br>configuration.<br>paramConfig[].type   | | Parameter type definition string |
-| Application specific web client pages | folder: html/ | folder: html/ |  |
-| Application specific dynamically linked libraries | folder: lib/ |  folder: lib/ |  |
+| Application specific web client pages | folder: `html/` | folder: `html/` |  |
+| Application specific dynamically linked libraries | folder: `lib/` |  folder: `lib/` |  |
 
 [^1]: This parameter is generated at the build step for architecture-dependent applications and should not be added. For architecture-independent applications, e.g. like a [shell script](https://github.com/AxisCommunications/acap-native-sdk-examples/blob/master/shell-script-example/app/manifest.json), the architecture can be set to `all` in the manifest.json file.
 
-[^2]: `2.0` for manifest.json schema version 1.0 and earlier (for firmware version 10.5 and earlier). `3.0` for manifest.json schema version 1.1 and later. The minor version may need to be stepped up for certain APIs. See [API](../api/native-api) for more information.
+[^2]: `2.0` for manifest.json schema version 1.0 and earlier (for firmware version 10.5 and earlier). `3.0` for manifest.json schema version 1.1 and later. The minor version may need to be stepped up for certain APIs. See [API](../api/) for more information.
 
 ### Manifest file schema
 

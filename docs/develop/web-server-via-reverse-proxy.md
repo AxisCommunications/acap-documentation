@@ -1,11 +1,11 @@
 ---
 layout: page
-parent: Develop applications
+parent: Develop ACAP applications
 title: Web server via Reverse Proxy
 nav_order: 5
 ---
 
-# Setting up a Web Server via Reverse Proxy
+# Web server via Reverse Proxy
 
 [Reverse Proxy configuration](https://httpd.apache.org/docs/2.4/howto/reverse_proxy.html) provides a flexible way for an ACAP application to expose an external API through the Apache Server in AXIS OS system and internally route the requests to a small Web Server running in the ACAP application.
 

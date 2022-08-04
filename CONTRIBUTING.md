@@ -89,7 +89,7 @@ docker run --rm  \
   -v $PWD:/tmp/lint \
   -e RUN_LOCAL=true \
   -e LINTER_RULES_PATH=/ \
-  -e FILTER_REGEX_EXCLUDE='docs/develop/schema-field-descriptions-v*' \
+  -e FILTER_REGEX_EXCLUDE='docs/develop/manifest-schemas/schema-field-descriptions-v*' \
   -e VALIDATE_MARKDOWN=true \
   -e MARKDOWN_CONFIG_FILE=.markdownlint.yml \
   -e VALIDATE_NATURAL_LANGUAGE=true \
