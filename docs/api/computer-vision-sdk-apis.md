@@ -180,7 +180,6 @@ Here are some example parameter names:
 
 ```sh
 root.Properties.Firmware.Version
-root.Image.I0.Enabled
 root.Brand.ProdFullName
 root.Brand.ProdNbr
 ```
