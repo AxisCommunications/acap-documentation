@@ -5,9 +5,9 @@ title: ACAP SDK overview
 nav_order: 4
 ---
 
-# ACAP SDK for edge-based applications
+# ACAP SDK overview
 
-AXIS Camera Application Platform (ACAP) version 4 contains two complementing SDKs addressing different needs, the ACAP Native SDK and the ACAP Computer Vision SDK.
+AXIS Camera Application Platform (ACAP) version 4 is capable of building edge-based applications. It contains two complementing SDKs addressing different needs, the ACAP Native SDK and the ACAP Computer Vision SDK.
 
 ## ACAP Native SDK
 
@@ -25,7 +25,7 @@ See the [ACAP Native SDK repository documentation](https://github.com/AxisCommun
 
 ### Support
 
-ACAP Native SDK is supported by most Axis products from ARTPEC-6 and up. See more information in the section about [compatibility](../axis-devices).
+ACAP Native SDK is supported by most Axis products from ARTPEC-6 and up. See more information in the section about [compatibility](../axis-devices-and-compatibility).
 
 ## ACAP Computer Vision SDK
 
@@ -43,4 +43,4 @@ See the [ACAP Computer Vision SDK repository documentation](https://github.com/A
 
 ### Support
 
-ACAP Computer Vision SDK is supported by ARTPEC-7 and ARTPEC-8 based products with a DLPU. See more information in the section about [compatibility](../axis-devices).
+ACAP Computer Vision SDK is supported by ARTPEC-7 and ARTPEC-8 based products with a DLPU. See more information in the section about [compatibility](../axis-devices-and-compatibility).
