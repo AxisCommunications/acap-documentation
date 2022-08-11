@@ -8,7 +8,7 @@ nav_order: 7
 
 ## End user license agreement
 
-By downloading AXIS Camera Application Platform(ACAP) SDK, you agree to the terms in the [license agreement](https://www.axis.com/techsup/developer_doc/EULA/LICENSE.pdf).
+By downloading AXIS Camera Application Platform (ACAP) SDK, you agree to the terms in the [license agreement](https://www.axis.com/techsup/developer_doc/EULA/LICENSE.pdf).
 
 ## Third party software license
 
