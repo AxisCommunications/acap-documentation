@@ -1,5 +1,6 @@
 ---
 layout: page
+grand_parent: Develop ACAP applications
 parent: Manifest schemas
 title: Manifest schema v1.1
 ---
