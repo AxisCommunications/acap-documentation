@@ -1,6 +1,6 @@
 ---
 layout: page
-parent: Develop applications
+parent: Develop ACAP applications
 title: Supported languages
 nav_order: 8
 ---

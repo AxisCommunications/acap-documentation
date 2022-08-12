@@ -36,7 +36,7 @@ replace many of the APIs from ACAP 3.
 | **Old Capture API<br>(Media capture)** | Will not be moved to Native SDK. |
 
 The complete list of APIs included in the Native SDK is found
-[here](../api/native-api.html).
+[here](../api/native-sdk-api).
 
 ### Container ACAP applications
 
@@ -51,4 +51,4 @@ on GitHub.
 
 Compatibility depends on many things but one minimum requirement for ACAP 4 is
 AXIS OS firmware 10.7. The web page [Axis devices and
-compatibility](../axis-devices.html) explains compatibility in more depth.
+compatibility](../axis-devices-and-compatibility) explains compatibility in more depth.

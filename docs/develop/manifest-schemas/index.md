@@ -1,6 +1,6 @@
 ---
 layout: default
-parent: Develop applications
+parent: Develop ACAP applications
 title: Manifest schemas
 has_children: true
 nav_order: 2

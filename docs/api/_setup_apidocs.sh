@@ -127,10 +127,10 @@ if [ "${apiver%%.*}" != 4 ]; then
 fi
 
 # Check API dirs
-nativepage=native-api
+nativepage=native-sdk-api
 nativepage_md=$nativepage.md
 nativepage_html=api/$nativepage.html
-cvpage=cv-api
+cvpage=computer-vision-sdk-apis
 cvpage_md=$nativepage.md
 gitdir=api-doc
 gitdirver=$gitdir/$apiver

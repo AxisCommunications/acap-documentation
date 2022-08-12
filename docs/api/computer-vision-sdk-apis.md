@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Computer Vision SDK
+title: Computer Vision SDK APIs
 parent: API
 nav_order: 2
 ---
@@ -33,6 +33,7 @@ SDK version | Available from firmware version
 
 **[SDK package index](#sdk-package-index)**
 
+<!-- no toc -->
 - [Python 3](#python-3)
 - [Python 3 packages](#python-3-packages)
   - [pip](#pip)
@@ -41,10 +42,11 @@ SDK version | Available from firmware version
   - [OpenCV](#opencv)
   - [PyTesseract](#pytesseract)
   - [TensorFlow Serving inference client](#tensorflow-serving-inference-client)
+- [OpenCV with VDO](#opencv-with-vdo)
 - [Tesseract](#tesseract)
 - [OpenBLAS](#openblas)
-- [OpenCV with VDO](#opencv-with-vdo)
 - [OpenCL](#opencl)
+- [TensorFlow protobuf files](#tensorflow-protobuf-files)
 
 ---
 
@@ -117,8 +119,6 @@ The table below describes properties that are either Axis-specific or common Ope
  | `CAP_PROP_UNIMATRIX_FD`              | get        | N/A              | Buffer file descriptor                         |                                                                  |
  | `CAP_PROP_UNIMATRIX_FD_OFFSET`       | get        | N/A              | Buffer offset                                  |                                                                  |
  | `CAP_PROP_UNIMATRIX_FD_CAPACITY`     | get        | 3110400          | Buffer capacity                                |                                                                  |
-
-[^1]:
 
 #### VideoCapture requirements
 

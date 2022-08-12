@@ -21,4 +21,4 @@ We are continuously adding new examples and tutorials for both existing as well 
 
 If you have any comments or questions, or if you are having problems with the
 examples, please open an issue in the relevant GitHub repository, see
-[Get help & give feedback](../help-and-feedback).
+[Get help & give feedback](../get-help-and-give-feedback).

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Native SDK
+title: Native SDK API
 parent: API
 nav_order: 1
 ---

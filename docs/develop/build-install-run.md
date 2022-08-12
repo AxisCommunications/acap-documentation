@@ -1,6 +1,6 @@
 ---
 layout: page
-parent: Develop applications
+parent: Develop ACAP applications
 title: Build, install, run
 nav_order: 3
 ---
@@ -120,7 +120,7 @@ eap-install.sh install
 ```
 
 > You must run the command from the application project directory, see
-> [Application project structure](app-project-structure).
+> [Application project structure](application-project-structure).
 
 #### Start, stop, and remove the application
 
