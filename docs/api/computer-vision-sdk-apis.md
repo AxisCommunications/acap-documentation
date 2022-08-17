@@ -170,15 +170,15 @@ test and leave feedback.**
 
 The Parameter API is one of the services of ACAP runtime.
 
-In order to use the parameter API, there is a requirement to install the acap-runtime application on the Axis network device. Detailed instructions for installing acap-runtime can be found [here](https://hub.docker.com/r/axisecp/acap-runtime). The acap-runtime acts as a server that exposes the gRPC parameter API.
+In order to use the Parameter API, there is a requirement to install the acap-runtime application on the Axis network device. Detailed instructions for installing acap-runtime can be found [here](https://hub.docker.com/r/axisecp/acap-runtime). The acap-runtime acts as a server that exposes the gRPC Parameter API.
 
-The Parameter API enables an application to read the parameters of an Axis network device. There are a lot of parameters on an Axis network device in the form of key-value pairs, and the parameter API allows us to pass the name of the parameter as the key, which will return the value of the parameter. This API can be used to read the existing parameters; it can not set any new parameters.
+The Parameter API enables an application to read the parameters of an Axis network device. There are a lot of parameters on an Axis network device in the form of key-value pairs, and the Parameter API allows us to pass the name of the parameter as the key, which will return the value of the parameter. This API can be used to read existing parameters; it can not set any new parameters.
 
-It is necessary to use the exact parameter name to get the expected results. The parameter list can be found using the URL `http://your-ip-address/axis-cgi/param.cgi?action=list` with the IP address of your device.
+It is necessary to use the exact parameter name to get the expected results. The parameter list can be found using the URL `http://<ip address>/axis-cgi/param.cgi?action=list` where `<ip address>` is the IP address of your device.
 
 Here are some example parameter names:
 
-```sh
+```text
 root.Properties.Firmware.Version
 root.Brand.ProdFullName
 root.Brand.ProdNbr
@@ -186,9 +186,8 @@ root.Brand.ProdNbr
 
 #### Code Examples
 
-- [parameter-api-python](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/parameter-api-python)
-- [parameter-api](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/parameter-api)
-  - The example code is written in Python and C++. It shows how to read existing parameters from an Axis network device.
+- [parameter-api-cpp](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/parameter-api-cpp) - A C++ example which reads device parameters using the Parameter-API.
+- [parameter-api-python](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/parameter-api-python) - A Python example which reads device parameters using the Parameter-API.
 
 ## SDK package index
 
