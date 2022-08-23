@@ -161,7 +161,33 @@ The ACAP Runtime service is an installable ACAP application that provides:
 - Inference API - Tensorflow Serving for inference service
 - Parameter API - Axis parameter service
 
-The ACAP Runtime uses [gRPC](https://grpc.io) and a [Unix Socket Domain (UDS)](https://grpc.github.io/grpc/cpp/md_doc_naming.html) socket for access. The access is restricted to applications in the device that belongs to the `sdk` user group. Installable Docker images for devices equipped with ARTPEC-7 and ARTPEC-8 chips are available on [Docker Hub](https://hub.docker.com/r/axisecp/acap-runtime).
+The ACAP Runtime uses [gRPC](https://grpc.io) and a [Unix Socket Domain (UDS)](https://grpc.github.io/grpc/cpp/md_doc_naming.html) socket for access. The access is restricted to applications in the device that belongs to the `sdk` user group. Installable versions for devices equipped with ARTPEC-7 and ARTPEC-8 chips are available [here](https://hub.docker.com/r/axisecp/acap-runtime).
+
+### BETA - Parameter API
+
+**This API is a [Beta version](./beta-api) and developers are encouraged to
+test and leave feedback.**
+
+The Parameter API is one of the services of ACAP runtime.
+
+In order to use the Parameter API, there is a requirement to install the acap-runtime application on the Axis network device. Detailed instructions for installing acap-runtime can be found [here](https://hub.docker.com/r/axisecp/acap-runtime). The acap-runtime acts as a server that exposes the gRPC Parameter API.
+
+The Parameter API enables an application to read the parameters of an Axis network device. There are a lot of parameters on an Axis network device in the form of key-value pairs, and the Parameter API allows us to pass the name of the parameter as the key, which will return the value of the parameter. This API can be used to read existing parameters; it can not set any new parameters.
+
+It is necessary to use the exact parameter name to get the expected results. The parameter list can be found using the URL `http://<ip address>/axis-cgi/param.cgi?action=list` where `<ip address>` is the IP address of your device.
+
+Here are some example parameter names:
+
+```text
+root.Properties.Firmware.Version
+root.Brand.ProdFullName
+root.Brand.ProdNbr
+```
+
+#### Code Examples
+
+- [parameter-api-cpp](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/parameter-api-cpp) - A C++ example which reads device parameters using the Parameter-API.
+- [parameter-api-python](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/parameter-api-python) - A Python example which reads device parameters using the Parameter-API.
 
 ## SDK package index
 
