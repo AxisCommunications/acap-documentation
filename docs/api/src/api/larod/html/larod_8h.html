@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.1.56</span>
+   &#160;<span id="projectnumber">3.1.90</span>
    </div>
   </td>
  </tr>
@@ -112,14 +112,14 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="larod_8h.html#a71bb78ee5a95a9b31657757c6c37420f">LAROD_INVALID_FD</a>&#160;&#160;&#160;(INT_MIN)</td></tr>
 <tr class="memdesc:a71bb78ee5a95a9b31657757c6c37420f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro for invalid tensor file descriptor. <br /></td></tr>
 <tr class="separator:a71bb78ee5a95a9b31657757c6c37420f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac45104db67f68e3fa18e85cee41e8e5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="larod_8h.html#ac45104db67f68e3fa18e85cee41e8e5a">LAROD_FD_PROP_READWRITE</a>&#160;&#160;&#160;(1UL &lt;&lt; 0)</td></tr>
+<tr class="memitem:ac45104db67f68e3fa18e85cee41e8e5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="larod_8h.html#ac45104db67f68e3fa18e85cee41e8e5a">LAROD_FD_PROP_READWRITE</a>&#160;&#160;&#160;(UINT32_C(1) &lt;&lt; 0)</td></tr>
 <tr class="memdesc:ac45104db67f68e3fa18e85cee41e8e5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for specifying how one can access a fd of a <code>larodTensor</code>.  <a href="#ac45104db67f68e3fa18e85cee41e8e5a">More...</a><br /></td></tr>
 <tr class="separator:ac45104db67f68e3fa18e85cee41e8e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a028ccbcce6323e5a812e4486235aee9c"><td class="memItemLeft" align="right" valign="top"><a id="a028ccbcce6323e5a812e4486235aee9c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="larod_8h.html#a028ccbcce6323e5a812e4486235aee9c">LAROD_FD_PROP_MAP</a>&#160;&#160;&#160;(1UL &lt;&lt; 1)</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="larod_8h.html#a028ccbcce6323e5a812e4486235aee9c">LAROD_FD_PROP_MAP</a>&#160;&#160;&#160;(UINT32_C(1) &lt;&lt; 1)</td></tr>
 <tr class="memdesc:a028ccbcce6323e5a812e4486235aee9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Linux mmap syscall can be performed on the fd. <br /></td></tr>
 <tr class="separator:a028ccbcce6323e5a812e4486235aee9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed39dcc2a34acafda2bd771da3ebfc31"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="larod_8h.html#aed39dcc2a34acafda2bd771da3ebfc31">LAROD_FD_PROP_DMABUF</a>&#160;&#160;&#160;(1UL &lt;&lt; 2)</td></tr>
+<tr class="memitem:aed39dcc2a34acafda2bd771da3ebfc31"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="larod_8h.html#aed39dcc2a34acafda2bd771da3ebfc31">LAROD_FD_PROP_DMABUF</a>&#160;&#160;&#160;(UINT32_C(1) &lt;&lt; 2)</td></tr>
 <tr class="separator:aed39dcc2a34acafda2bd771da3ebfc31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad871825f7aa716b34465f0e5be81ca0d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="larod_8h.html#ad871825f7aa716b34465f0e5be81ca0d">LAROD_FD_TYPE_DMA</a>&#160;&#160;&#160;(<a class="el" href="larod_8h.html#aed39dcc2a34acafda2bd771da3ebfc31">LAROD_FD_PROP_DMABUF</a> | <a class="el" href="larod_8h.html#a028ccbcce6323e5a812e4486235aee9c">LAROD_FD_PROP_MAP</a>)</td></tr>
 <tr class="memdesc:ad871825f7aa716b34465f0e5be81ca0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for specifying fd type for a <code>larodTensor</code>.  <a href="#ad871825f7aa716b34465f0e5be81ca0d">More...</a><br /></td></tr>
@@ -454,7 +454,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LAROD_FD_PROP_DMABUF&#160;&#160;&#160;(1UL &lt;&lt; 2)</td>
+          <td class="memname">#define LAROD_FD_PROP_DMABUF&#160;&#160;&#160;(UINT32_C(1) &lt;&lt; 2)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -469,7 +469,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LAROD_FD_PROP_READWRITE&#160;&#160;&#160;(1UL &lt;&lt; 0)</td>
+          <td class="memname">#define LAROD_FD_PROP_READWRITE&#160;&#160;&#160;(UINT32_C(1) &lt;&lt; 0)</td>
         </tr>
       </table>
 </div><div class="memdoc">

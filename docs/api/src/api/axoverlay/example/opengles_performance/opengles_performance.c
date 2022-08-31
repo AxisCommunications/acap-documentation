@@ -19,7 +19,6 @@
 #include <syslog.h>
 #include <glib.h>
 #include <glib-unix.h>
-#include <glib-utils.h>
 #include <sys/types.h>
 #include <unistd.h>
 #include <ctype.h>

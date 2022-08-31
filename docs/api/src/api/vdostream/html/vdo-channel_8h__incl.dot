@@ -12,6 +12,7 @@ digraph "vdo-channel.h"
   Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="vdo-map.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$vdo-map_8h.html",tooltip="A class representing a dictionary mapping keys to values. "];
   Node4 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="gio/gio.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
