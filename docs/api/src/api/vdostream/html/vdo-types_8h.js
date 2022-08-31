@@ -5,6 +5,8 @@ var vdo_types_8h =
     [ "VdoResolution", "structVdoResolution.html", null ],
     [ "VdoResolutionSet", "structVdoResolutionSet.html", null ],
     [ "VdoRect", "structVdoRect.html", null ],
+    [ "VdoPair32i", "unionVdoPair32i.html", null ],
+    [ "VdoPair32u", "unionVdoPair32u.html", null ],
     [ "VdoBufferAccess", "vdo-types_8h.html#aad3ddf92456cf91539f2f21814083ecf", [
       [ "VDO_BUFFER_ACCESS_NONE", "vdo-types_8h.html#aad3ddf92456cf91539f2f21814083ecfad9fa9e9db15d55cfca1ecf2a48fe481d", null ],
       [ "VDO_BUFFER_ACCESS_CPU_RD", "vdo-types_8h.html#aad3ddf92456cf91539f2f21814083ecfad8fd4e66962a1c9b1406edf26eddbafe", null ],
@@ -111,6 +113,9 @@ var vdo_types_8h =
       [ "VDO_STREAM_EVENT_QUOTA_SOFT", "vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16a639c74ec5b2bafedc3c3974550b7f6e3", null ],
       [ "VDO_STREAM_EVENT_QUOTA_HARD", "vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16adc545c3ff5383440e5f7c73da264c4a6", null ],
       [ "VDO_STREAM_EVENT_ZIPSTREAM", "vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16ad6935b2ddb6dd2529850f96bbcc069c9", null ],
+      [ "VDO_STREAM_EVENT_BUFFERING", "vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16acefffea9caf8b87517fe78e062d45870", null ],
+      [ "VDO_STREAM_EVENT_BUFFERING_WARN", "vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16a39ecf3aa1e52b087dd9b041cdcf5e4ca", null ],
+      [ "VDO_STREAM_EVENT_BUFFERING_FAIL", "vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16afc8a96bcc7cab361368ba270c42eff76", null ],
       [ "VDO_STREAM_EVENT_INVALID", "vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16ac25c671243a29698ba3c3bcf6f11166e", null ]
     ] ],
     [ "VdoStreamTimestamp", "vdo-types_8h.html#a021421f945451240ceba49813b38196d", [

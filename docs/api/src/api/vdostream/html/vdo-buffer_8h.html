@@ -190,6 +190,9 @@ Functions</h2></td></tr>
 
 <p>Returns a pointer to the underlying buffer. </p>
 <p>Beware this pointer is only valid for as long as the VdoBuffer itself is valid.</p>
+<p>The layout of the data depends on the <a class="el" href="vdo-types_8h.html#a5ed136c302573571bf325c39d6d36246" title="Video formats. ">VdoFormat</a> and <a class="el" href="vdo-types_8h.html#aecc7ad4ae90e505eea73c35dd4dd5bdd" title="Video frame types. ">VdoFrameType</a>. For H.26x this is always Annex B with long start-code <code>0x00000001</code>.</p>
+<p>For example a single <code>VdoBuffer</code> with format <a class="el" href="vdo-types_8h.html#aecc7ad4ae90e505eea73c35dd4dd5bdda2ded56d42ad2a351c83248f5ae35982d">VDO_FRAME_TYPE_H265_IDR</a> might contain [NAL_VPS][NAL_SPS][NAL_PPS][IDR-Slice].</p>
+<p>In the above example <a class="el" href="vdo-frame_8h.html#a7d465baa94a94919b0090a18ff71f418" title="Returns the size of any H264/H265 headers contained in this frame. ">vdo_frame_get_header_size</a> is the byte offset to the IDR-Slice.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">self</td><td>A VdoBuffer.</td></tr>
@@ -355,8 +358,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Indicates whether the buffer is complete or not. </p>
-<p>As the size of compressed objects is not known in advance they may have to span multiple buffers. As soon as an entire object has arrived it will be indicated by <code>TRUE</code>.</p>
-<div class="fragment"><div class="line"><span class="keywordtype">size_t</span> number_of_frames = 0;</div><div class="line"><span class="keywordflow">while</span> (1) {</div><div class="line">    VdoBuffer *buffer = <a class="code" href="vdo-stream_8h.html#a021f68451699a9ca04aa0e67d9b2917e">vdo_stream_get_buffer</a>(stream, &amp;error);</div><div class="line">    <span class="keywordflow">if</span> (<a class="code" href="vdo-buffer_8h.html#ab0826cd3642b0cf662c69d84cbaaa2a0">vdo_buffer_is_complete</a>(buffer))</div><div class="line">        number_of_frames += 1;</div><div class="line">    g_object_unref(buffer);</div><div class="line">}</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd>All buffers are complete.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">self</td><td>A VdoBuffer.</td></tr>
   </table>

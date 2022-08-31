@@ -118,7 +118,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a4ac5c0ea4f8e0447f888e6d4653a76ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sequence number of this frame.  <a href="#a4ac5c0ea4f8e0447f888e6d4653a76ed">More...</a><br /></td></tr>
 <tr class="separator:a4ac5c0ea4f8e0447f888e6d4653a76ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d44c7416b076907f288473de1ba2f21"><td class="memItemLeft" align="right" valign="top">guint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-frame_8h.html#a4d44c7416b076907f288473de1ba2f21">vdo_frame_get_timestamp</a> (<a class="el" href="classVdoFrame.html">VdoFrame</a> *self)</td></tr>
-<tr class="memdesc:a4d44c7416b076907f288473de1ba2f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the timestamp of this frame.  <a href="#a4d44c7416b076907f288473de1ba2f21">More...</a><br /></td></tr>
+<tr class="memdesc:a4d44c7416b076907f288473de1ba2f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the capture timestamp of this frame.  <a href="#a4d44c7416b076907f288473de1ba2f21">More...</a><br /></td></tr>
 <tr class="separator:a4d44c7416b076907f288473de1ba2f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49b2a8033b4fa5d1408e3e74e239e9e0"><td class="memItemLeft" align="right" valign="top">gint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-frame_8h.html#a49b2a8033b4fa5d1408e3e74e239e9e0">vdo_frame_get_custom_timestamp</a> (<a class="el" href="classVdoFrame.html">VdoFrame</a> *self)</td></tr>
 <tr class="memdesc:a49b2a8033b4fa5d1408e3e74e239e9e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a custom timestamp for this frame.  <a href="#a49b2a8033b4fa5d1408e3e74e239e9e0">More...</a><br /></td></tr>
@@ -199,13 +199,15 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns a custom timestamp for this frame. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>By default, this is equivalent to <code>gettimeofday</code>, with the key difference that the result is converted to a single <code>µs</code> counter. Please consult the operating system documentation for further details.</p>
+<p>It is possible to chose different timestamp formats, see <a class="el" href="vdo-types_8h.html#a021421f945451240ceba49813b38196d" title="Timestamp types. ">VdoStreamTimestamp</a>.</p>
+<div class="fragment"><div class="line">g_autoptr(<a class="code" href="classVdoMap.html">VdoMap</a>) settings = <a class="code" href="vdo-map_8h.html#a98b0e304d19d397003f2cc0c774cc33f">vdo_map_new</a>();</div><div class="line">vdo_map_set_uint16(settings, <span class="stringliteral">&quot;timestamp.type&quot;</span>, <a class="code" href="vdo-types_8h.html#a021421f945451240ceba49813b38196da2363918b518db7dfbbdfcde2b0dad179">VDO_TIMESTAMP_MONO_SERVER</a>);</div><div class="line"></div><div class="line">g_autoptr(<a class="code" href="classVdoStream.html">VdoStream</a>) stream = <a class="code" href="vdo-stream_8h.html#a36fa0021eb58d482c494163db9b22b61">vdo_stream_new</a>(settings, NULL, &amp;error);</div><div class="line"><span class="keywordflow">if</span> (!stream)</div><div class="line">  <span class="keywordflow">return</span>;</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">self</td><td>A <a class="el" href="classVdoFrame.html" title="A video frame. ">VdoFrame</a></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A custom timestamp for this frame as a <code>gint64</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The timestamp of this frame in µs. </dd></dl>
 
 </div>
 </div>
@@ -281,6 +283,10 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the type of this frame. </p>
+<p>For H.26x the following <a class="el" href="vdo-types_8h.html#aecc7ad4ae90e505eea73c35dd4dd5bdd" title="Video frame types. ">VdoFrameType</a> are in use:</p><ul>
+<li>VDO_FRAME_TYPE_H264_IDR, VDO_FRAME_TYPE_H264_P, VDO_FRAME_TYPE_H264_B.</li>
+<li>VDO_FRAME_TYPE_H265_IDR, VDO_FRAME_TYPE_H265_P, VDO_FRAME_TYPE_H265_B.</li>
+</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">self</td><td>A <a class="el" href="classVdoFrame.html" title="A video frame. ">VdoFrame</a></td></tr>
@@ -445,14 +451,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the timestamp of this frame. </p>
+<p>Returns the capture timestamp of this frame. </p>
+<p>This is equivalent to <code>clock_gettime</code> with <code>CLOCK_MONOTONIC</code>, with the key difference that the result is converted to a single <code>µs</code> counter. Please consult the operating system documentation for further details.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">self</td><td>A <a class="el" href="classVdoFrame.html" title="A video frame. ">VdoFrame</a></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp of this frame as a <code>guint64</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The timestamp of this frame in µs. </dd></dl>
 
 </div>
 </div>

@@ -5,6 +5,8 @@ var searchData=
   ['vdoframe',['VdoFrame',['../classVdoFrame.html',1,'']]],
   ['vdomap',['VdoMap',['../classVdoMap.html',1,'']]],
   ['vdomemchunk',['VdoMemChunk',['../structVdoMemChunk.html',1,'']]],
+  ['vdopair32i',['VdoPair32i',['../unionVdoPair32i.html',1,'']]],
+  ['vdopair32u',['VdoPair32u',['../unionVdoPair32u.html',1,'']]],
   ['vdorect',['VdoRect',['../structVdoRect.html',1,'']]],
   ['vdoresolution',['VdoResolution',['../structVdoResolution.html',1,'']]],
   ['vdoresolutionset',['VdoResolutionSet',['../structVdoResolutionSet.html',1,'']]],

@@ -126,6 +126,12 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVdoRect.html">VdoRect</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A rectangle.  <a href="structVdoRect.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionVdoPair32i.html">VdoPair32i</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic object for two signed 32bit values.  <a href="unionVdoPair32i.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionVdoPair32u.html">VdoPair32u</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic object for two unsigned 32bit values.  <a href="unionVdoPair32u.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -589,6 +595,12 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a9bba040fd7d1f8b5d5a104500f136c16ad6935b2ddb6dd2529850f96bbcc069c9"></a>VDO_STREAM_EVENT_ZIPSTREAM&#160;</td><td class="fielddoc"><p>Zipstream settings </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a9bba040fd7d1f8b5d5a104500f136c16acefffea9caf8b87517fe78e062d45870"></a>VDO_STREAM_EVENT_BUFFERING&#160;</td><td class="fielddoc"><p>Likely to reach target (No compromises) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9bba040fd7d1f8b5d5a104500f136c16a39ecf3aa1e52b087dd9b041cdcf5e4ca"></a>VDO_STREAM_EVENT_BUFFERING_WARN&#160;</td><td class="fielddoc"><p>Likely to reach target (With compromises) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9bba040fd7d1f8b5d5a104500f136c16afc8a96bcc7cab361368ba270c42eff76"></a>VDO_STREAM_EVENT_BUFFERING_FAIL&#160;</td><td class="fielddoc"><p>Failed to reach target </p>
+</td></tr>
 <tr><td class="fieldname"><a id="a9bba040fd7d1f8b5d5a104500f136c16ac25c671243a29698ba3c3bcf6f11166e"></a>VDO_STREAM_EVENT_INVALID&#160;</td><td class="fielddoc"><p>Invalid event </p>
 </td></tr>
 </table>
@@ -611,7 +623,7 @@ Functions</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a021421f945451240ceba49813b38196daa0aa3f69f3866dc00af14005372383e4"></a>VDO_TIMESTAMP_NONE&#160;</td><td class="fielddoc"><p>None </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a021421f945451240ceba49813b38196da2440ff65de33ffc2cc4301bf87ba1709"></a>VDO_TIMESTAMP_UTC&#160;</td><td class="fielddoc"><p>Value can be read from custom_timestamp, real_time </p>
+<tr><td class="fieldname"><a id="a021421f945451240ceba49813b38196da2440ff65de33ffc2cc4301bf87ba1709"></a>VDO_TIMESTAMP_UTC&#160;</td><td class="fielddoc"><p>This is equivalent to <code>gettimeofday</code> but uses a single <code>µs</code> counter. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a021421f945451240ceba49813b38196da583e50811ded77c9cefed474a0a2b2b5"></a>VDO_TIMESTAMP_ZIPSTREAM&#160;</td><td class="fielddoc"><p>Value can be read from timestamp. dsp_pts for zipstream and mono_pts for non-zipstream. </p>
 </td></tr>
