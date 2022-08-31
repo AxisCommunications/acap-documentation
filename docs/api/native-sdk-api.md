@@ -26,6 +26,7 @@ SDK version | Available from firmware version
 1.0 | 10.7
 1.1 | 10.9
 1.2 | 10.10
+1.3 | 10.12
 
 ## Video capture API
 
@@ -46,7 +47,7 @@ Sub Formats | Corresponding format
 nv12 | YUV
 y800 | YUV
 
-An application to start a vdo stream can be found at [vdostream](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdostream/) with first argument of the three being a string describing the video compression format. It takes `h264` (default), `h265`, `jpeg`, `nv12`, and `y800` as inputs. Out of which `nv12` and `y800` correspond to YUV format of VDO.
+An application to start a vdo stream can be found at [vdostream](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdostream/), where the first argument is a string describing the video compression format. It takes `h264` (default), `h265`, `jpeg`, `nv12`, and `y800` as inputs. Both `nv12` and `y800` correspond to YUV format of VDO.
 
 ### Compatibility
 
@@ -101,7 +102,8 @@ The Machine learning API was introduced in Native SDK 1.0.
 - [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/larod/)
   - The example code is written in C which connects to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?) and loads a model, runs inference on it and then finally deletes the loaded model from [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?).
 - [tensorflow-to-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/tensorflow-to-larod/)
-  - This example covers model conversion, model quantization, image formats and custom models in greater depth than the [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/larod) and [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod) examples
+  - This example covers model conversion, model quantization, image formats and custom models in greater depth than the [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/larod) and [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod) examples.
+  - A separate example is available for [ARTPEC-8](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod-artpec8) cameras.
 - [object-detection](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/object-detection/)
   - The example code focus on object detection, cropping and saving detected objects into JPEG files.
 - [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod/)
@@ -217,11 +219,11 @@ The Axevent API was introduced in Native SDK 1.0.
 
 ### Code Examples
 
-- [Send Event](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axevent/send_event/README.md)
+- [send_event](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axevent/send_event)
   - The example code is written in C which sends an ONVIF event periodically.
-- [Subscribe to Event](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axevent/subscribe_to_event/README.md)
+- [subscribe_to_event](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axevent/subscribe_to_event)
   - The example code is written in C which subscribe to the ONVIF event sent from application "send_event".
-- [Subscribe to Events](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axevent/subscribe_to_events/README.md)
+- [subscribe_to_event_s](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axevent/subscribe_to_events)
   - The example code is written in C which subscribes to different predefined events.
 
 ## License Key API
