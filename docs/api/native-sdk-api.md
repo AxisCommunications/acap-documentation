@@ -63,6 +63,10 @@ The API supports products with the following chips:
 
 The Video capture API was introduced in Native SDK 1.0.
 
+### Known issues
+
+- A memory leak in VDO was found in firmware versions from 10.10 for Artpec chips, later fixed in 10.11.65. The issue affects function `vdo_buffer_get_data`.
+
 ### Code Examples
 
 - [vdostream](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdostream/)
