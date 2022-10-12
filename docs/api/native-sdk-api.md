@@ -27,6 +27,7 @@ SDK version | Available from firmware version
 1.1 | 10.9
 1.2 | 10.10
 1.3 | 10.12
+1.4 | 11.0
 
 ## Video capture API
 
@@ -56,12 +57,23 @@ The API supports products with the following chips:
 - ARTPEC-8
 - ARTPEC-7
 - ARTPEC-6
+- Ambarella CV25
 - Ambarella S5L
 - Ambarella S5
 
 ### Version history
 
 The Video capture API was introduced in Native SDK 1.0.
+
+Axis OS version | VdoStream API version | New functions added
+-- | -- | --
+10.7 | 6.13.0 | `vdo_frame_take_chunk`
+10.8 | 6.24.1 | `vdo_zipstream_profile_get_type`, `vdo_frame_set_header_size`
+10.9 | 6.34.16 | `vdo_stream_get_event`,`vdo_stream_get_event_fd`, `vdo_map_swap`
+10.10 | 7.5.22 | `vdo_frame_take_chunk`, `vdo_frame_take_chunk_ex`, `vdo_stream_play`
+10.11 | 7.19.2 | -
+10.12 | 8.0.15 | `vdo_map_get_pair32i`, `vdo_map_get_pair32u`, `vdo_map_set_pair32i`, `vdo_map_set_pair32u`
+11.0 | 9.0.4 | -
 
 ### Known issues
 
@@ -93,13 +105,14 @@ The Larod API supports products with the following chips:
 
 - ARTPEC-8
 - ARTPEC-7
+- Ambarella CV25
 - Ambarella S5L
 
 For products with a DLPU (Deep Learning Processing Unit), inference runs on the DLPU otherwise it runs on the CPU.
 
 ### Version history
 
-The Machine learning API was introduced in Native SDK 1.0.
+The Machine learning API was introduced in Native SDK 1.0. All larod API versions are available.
 
 ### Code Examples
 
@@ -107,14 +120,14 @@ The Machine learning API was introduced in Native SDK 1.0.
   - The example code is written in C which connects to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?) and loads a model, runs inference on it and then finally deletes the loaded model from [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?).
 - [tensorflow-to-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/tensorflow-to-larod/)
   - This example covers model conversion, model quantization, image formats and custom models in greater depth than the [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/larod) and [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod) examples.
-  - A separate example is available for [ARTPEC-8](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod-artpec8) cameras.
+  - A separate example is available for [ARTPEC-8](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod-artpec8) cameras and [CV25](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod-cv25) cameras.
 - [object-detection](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/object-detection/)
   - The example code focus on object detection, cropping and saving detected objects into JPEG files.
+  - A separate example is available for [CV25](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/object-detection-cv25) cameras.
 - [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod/)
   - The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format
 - [vdo-larod-preprocessing](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod-preprocessing/)
-  - The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv
-  format which are sent to larod for preprocessing and inference on MODEL.
+  - The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are sent to larod for preprocessing and inference on MODEL.
 
 ## Overlay API
 
@@ -214,6 +227,7 @@ The API supports products with the following chips:
 - ARTPEC-8
 - ARTPEC-7
 - ARTPEC-6
+- Ambarella CV25
 - Ambarella S5L
 - Ambarella S5
 
@@ -245,6 +259,7 @@ The API supports products with the following chips:
 - ARTPEC-8
 - ARTPEC-7
 - ARTPEC-6
+- Ambarella CV25
 - Ambarella S5L
 - Ambarella S5
 
