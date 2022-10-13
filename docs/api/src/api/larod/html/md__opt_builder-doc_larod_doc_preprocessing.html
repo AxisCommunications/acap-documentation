@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.1.90</span>
+   &#160;<span id="projectnumber">3.1.107</span>
    </div>
   </td>
  </tr>
@@ -156,7 +156,7 @@ $(function() {
 </ul>
 <h4>Supported buffer properties for running jobs</h4>
 <p>This backend only supports the fd access types <code>LAROD_FD_PROP_MAP</code> and <code>LAROD_FD_PROP_READWRITE</code>.</p>
-<p>As the name indicates the former fd prop will allow the libyuv backend to map (using <code>mmap</code>) the tensor's file descriptor instead of reading or writing from them. Combined with tensor tracking (e.g. using <code>larodTrackTensor</code>) the libyuv backend may be able to cache a tensor's mapping and thus allow for a very efficient zero-copy map-once memory access pattern.</p>
+<p>As the name indicates the former fd prop will allow the libyuv backend to map (using <code>mmap</code>) the tensor's file descriptor instead of reading or writing from them. Combined with tensor tracking (e.g. using <code><a class="el" href="larod_8h.html#a4c84b8df7f3efc94276ba8cdaf940f85" title="Start tracking a tensor in the service. ">larodTrackTensor()</a></code>) the libyuv backend may be able to cache a tensor's mapping and thus allow for a very efficient zero-copy map-once memory access pattern.</p>
 <p>The access type <code>LAROD_FD_PROP_READWRITE</code> will introduce a memory copy and <code>read()</code>/<code>write()</code> calls for each input and output tensor buffer - these extra operations will degrade performance.</p>
 <h4>Allocation support</h4>
 <p>Tensors allocated using the calls <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> with a model loaded to this backend will have file descriptors that are readable, writable and mappable. Accordingly the tensors will have the fd props <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code> set.</p>
@@ -173,7 +173,7 @@ $(function() {
 </ul>
 <h4>Supported buffer properties for running jobs</h4>
 <p>This backend only supports the fd access types <code>LAROD_FD_PROP_MAP</code> and <code>LAROD_FD_PROP_READWRITE</code>.</p>
-<p>As the name indicates the former fd prop will allow the ACE backend to map (using <code>mmap</code>) the tensor's file descriptor instead of reading or writing directly from it. Combined with tensor tracking (e.g. using <code>larodTrackTensor</code>) the ACE backend may be able to cache a tensor's mapping. The backend does not support zero copy, meaning that data will still be copied from the memory mapping to the actual buffer for the job.</p>
+<p>As the name indicates the former fd prop will allow the ACE backend to map (using <code>mmap</code>) the tensor's file descriptor instead of reading or writing directly from it. Combined with tensor tracking (e.g. using <code><a class="el" href="larod_8h.html#a4c84b8df7f3efc94276ba8cdaf940f85" title="Start tracking a tensor in the service. ">larodTrackTensor()</a></code>) the ACE backend may be able to cache a tensor's mapping. The backend does not support zero copy, meaning that data will still be copied from the memory mapping to the actual buffer for the job.</p>
 <p>The access type <code>LAROD_FD_PROP_READWRITE</code> will do a memory copy through <code>read()</code>/<code>write()</code> calls for each input and output tensor buffer - these extra operations will degrade performance.</p>
 <h4>Allocation support</h4>
 <p>Tensors allocated using the calls <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> with a model loaded to this backend will have file descriptors that are readable, writable and mappable. Accordingly the tensors will have the fd props <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code> set.</p>

@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.1.90</span>
+   &#160;<span id="projectnumber">3.1.107</span>
    </div>
   </td>
  </tr>
@@ -597,7 +597,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Callback used in <a class="el" href="larod_8h.html#ab4073f88052a8b3c4804683903e84001" title="Load a new model asynchronously. ">larodLoadModelAsync()</a>. </p>
-<p>Callback function should not carry out relatively extensive blocking tasks (it will block the main poll thread for the message bus). Especially note that it must not call the synchronous calls <a class="el" href="larod_8h.html#a7c492dcfb18e0a32407dc6078bd50dbe" title="Run a job on a loaded model. ">larodRunJob()</a> and <a class="el" href="larod_8h.html#ae91c59650ac4d2352930137749fc5377" title="Delete a loaded model. ">larodDeleteModel()</a>.</p>
+<p>Callback function should not carry out relatively extensive blocking tasks (it will block the main poll thread for the message bus); furthermore, the following API functions are not allowed to be called from the callback function:</p><ul>
+<li><a class="el" href="larod_8h.html#a7c492dcfb18e0a32407dc6078bd50dbe" title="Run a job on a loaded model. ">larodRunJob()</a></li>
+<li><a class="el" href="larod_8h.html#a41b5e5179aa68b382e024945254a5770" title="Load a new model. ">larodLoadModel()</a></li>
+<li><a class="el" href="larod_8h.html#ae91c59650ac4d2352930137749fc5377" title="Delete a loaded model. ">larodDeleteModel()</a></li>
+<li><a class="el" href="larod_8h.html#afac99dfef68ffe3d513008aaac354ae0" title="Destroy a list of larodTensor. ">larodDestroyTensors()</a></li>
+<li><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></li>
+<li><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></li>
+</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">model</td><td>Handle to the loaded model. Caller must release this handle using <a class="el" href="larod_8h.html#ad36cbc8092e341344179a29b972e8571" title="Free an allocated larodModel handle. ">larodDestroyModel()</a> when it's not needed any more. </td></tr>
@@ -681,7 +688,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Callback used in <a class="el" href="larod_8h.html#a3fa258919ed449acf79cff143bc638f3" title="Run a job on a loaded model asynchronously. ">larodRunJobAsync()</a>. </p>
-<p>Callback function should not carry out relatively extensive blocking tasks (it will block the main poll thread for the message bus). Especially note that it must not call the synchronous calls <a class="el" href="larod_8h.html#a7c492dcfb18e0a32407dc6078bd50dbe" title="Run a job on a loaded model. ">larodRunJob()</a> and <a class="el" href="larod_8h.html#ae91c59650ac4d2352930137749fc5377" title="Delete a loaded model. ">larodDeleteModel()</a>.</p>
+<p>Callback function should not carry out relatively extensive blocking tasks (it will block the main poll thread for the message bus); furthermore, the following API functions are not allowed to be called from the callback function:</p><ul>
+<li><a class="el" href="larod_8h.html#a7c492dcfb18e0a32407dc6078bd50dbe" title="Run a job on a loaded model. ">larodRunJob()</a></li>
+<li><a class="el" href="larod_8h.html#a41b5e5179aa68b382e024945254a5770" title="Load a new model. ">larodLoadModel()</a></li>
+<li><a class="el" href="larod_8h.html#ae91c59650ac4d2352930137749fc5377" title="Delete a loaded model. ">larodDeleteModel()</a></li>
+<li><a class="el" href="larod_8h.html#afac99dfef68ffe3d513008aaac354ae0" title="Destroy a list of larodTensor. ">larodDestroyTensors()</a></li>
+<li><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></li>
+<li><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></li>
+</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userData</td><td>User data. </td></tr>
@@ -723,7 +737,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Enum type for specifying access. </p>
-<p>Models can either be public or private; only the creator can modify private models, while anyone can modify public models. </p>
+<p>Models can either be public or private; only the creator can modify and use private models, while anyone can modify and use public models. Private models can still be listed by anyone. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a41ad6dc8e9f9ffebc03faf115167aba5ad1bbc121e391d6a993b7d9a097cf136e"></a>LAROD_ACCESS_INVALID&#160;</td><td class="fielddoc"><p>Invalid access. </p>
 </td></tr>
@@ -3326,7 +3340,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Load a new model asynchronously. </p>
-<p>This is the asynchronous version of <a class="el" href="larod_8h.html#a41b5e5179aa68b382e024945254a5770" title="Load a new model. ">larodLoadModel()</a>. The callback function <code>callback</code> will be called as soon as the model has been loaded.</p>
+<p>This is the asynchronous version of <a class="el" href="larod_8h.html#a41b5e5179aa68b382e024945254a5770" title="Load a new model. ">larodLoadModel()</a>.</p>
+<p>The user-specified callback function <code>callback</code> will be called as soon as the model has been loaded. <code>userData</code> will be given as input argument to the callback function which enables the user to associate executing callbacks with their corresponding requests. Refer to the documentation of <code>larodLoadModelCallback</code> for additional rules that apply to the callback function.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>An initialized connection handle. </td></tr>
@@ -4143,7 +4158,7 @@ Functions</h2></td></tr>
 <p>Run a job on a loaded model asynchronously. </p>
 <p>This is the asynchronous version of <a class="el" href="larod_8h.html#a7c492dcfb18e0a32407dc6078bd50dbe" title="Run a job on a loaded model. ">larodRunJob()</a>. The same set of parameters as <a class="el" href="larod_8h.html#a7c492dcfb18e0a32407dc6078bd50dbe" title="Run a job on a loaded model. ">larodRunJob()</a> must be explicitly set in <code>jobReq</code>.</p>
 <p>Data will be accessed for read or write using the tensor file descriptors. Offsets into the file descriptors can be configured using <a class="el" href="larod_8h.html#a11e0e2c325e2c96c4d75a9198dd84dbc" title="Set file offset for a tensor. ">larodSetTensorFdOffset()</a>. The maximum number of bytes that the larod service will access (read or write) can be set by <a class="el" href="larod_8h.html#af1cd8a7aea3357fd5f7d6238c1257679" title="Set file descriptor maximum capacity (bytes) for a tensor. ">larodSetTensorFdSize()</a> for each tensor. If the size value for a tensor is 0 (default value) then larod will use file operations to determine the file descriptor size. The larod service will also use file operations to read and write tensor data, thus the current file positions of tensor file descriptors will be updated by the job call. The client should not access the file descriptors while an asynchronous job is running. Furthermore, if any tensor file descriptor is pointing to a dma-buf, make sure to do the proper cache-synchronization steps described in the documentation.</p>
-<p>The callback function <code>callback</code> will be called as soon as the job has finished. The callbacks are not guaranteed to be called in any order; <code>userData</code> can be used to tag different requests.</p>
+<p>The user-specified callback function <code>callback</code> will be called as soon as the job has finished. <code>userData</code> will be given as input argument to the callback function which enables the user to associate executing callbacks with their corresponding requests. Refer to the documentation of <code>larodRunJobCallback</code> for additional rules that apply to the callback function.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>An initialized connection handle. </td></tr>
