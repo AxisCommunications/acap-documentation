@@ -6,3 +6,4 @@
 .DS_Store
 vendor*
 api-doc/
+super-linter.log
