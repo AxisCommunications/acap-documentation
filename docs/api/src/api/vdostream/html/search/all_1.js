@@ -188,6 +188,8 @@ var searchData=
   ['vdo_5fstream_5fevent_5fbuffering',['VDO_STREAM_EVENT_BUFFERING',['../vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16acefffea9caf8b87517fe78e062d45870',1,'vdo-types.h']]],
   ['vdo_5fstream_5fevent_5fbuffering_5ffail',['VDO_STREAM_EVENT_BUFFERING_FAIL',['../vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16afc8a96bcc7cab361368ba270c42eff76',1,'vdo-types.h']]],
   ['vdo_5fstream_5fevent_5fbuffering_5fwarn',['VDO_STREAM_EVENT_BUFFERING_WARN',['../vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16a39ecf3aa1e52b087dd9b041cdcf5e4ca',1,'vdo-types.h']]],
+  ['vdo_5fstream_5fevent_5fclosed',['VDO_STREAM_EVENT_CLOSED',['../vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16a7e4affcc02ec829fa6bf40edf66b1b34',1,'vdo-types.h']]],
+  ['vdo_5fstream_5fevent_5fcreated',['VDO_STREAM_EVENT_CREATED',['../vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16a564510709cb24c37c1061091ae015322',1,'vdo-types.h']]],
   ['vdo_5fstream_5fevent_5finvalid',['VDO_STREAM_EVENT_INVALID',['../vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16ac25c671243a29698ba3c3bcf6f11166e',1,'vdo-types.h']]],
   ['vdo_5fstream_5fevent_5fnone',['VDO_STREAM_EVENT_NONE',['../vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16a2eaecdfa56507e4edc41d734cbced832',1,'vdo-types.h']]],
   ['vdo_5fstream_5fevent_5fquota_5fhard',['VDO_STREAM_EVENT_QUOTA_HARD',['../vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16adc545c3ff5383440e5f7c73da264c4a6',1,'vdo-types.h']]],

@@ -55,6 +55,7 @@ P3265-LVE    | ARTPEC-8 | aarch64
 Q1615 Mk III | ARTPEC-7 | armv7hf
 Q1656        | ARTPEC-8 | aarch64
 Q1715        | ARTPEC-7 | armv7hf
+Q1798-LE     | ARTPEC-7 | armv7hf
 Q3536-LVE    | ARTPEC-8 | aarch64
 
 ### ACAP Native SDK
@@ -64,6 +65,7 @@ Chip     | Architecture
 ARTPEC-6 | armv7hf
 ARTPEC-7 | armv7hf
 ARTPEC-8 | aarch64
+CV25     | aarch64
 S5       | aarch64
 S5L      | aarch64
 
@@ -81,6 +83,7 @@ SDK 4.0          | 10.7 and later
 SDK 4.1          | 10.9 and later
 SDK 4.2          | 10.10 and later
 SDK 4.3          | 10.12 and later
+SDK 4.4          | 11.0 and later
 
 How do I know if my device supports a specific AXIS OS version? Please check
 [firmware releases for supported

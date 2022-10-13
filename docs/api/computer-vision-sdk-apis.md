@@ -23,6 +23,7 @@ SDK version | Available from firmware version
 1.1 | 10.9
 1.2 | 10.10
 1.3 | 10.12
+1.4 | 11.0
 
 ## SDK index
 

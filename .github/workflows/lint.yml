@@ -32,7 +32,7 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LINTER_RULES_PATH: /
-          FILTER_REGEX_EXCLUDE: docs/develop/manifest-schemas/schema-field-descriptions-v\d+\.\d+.md
+          FILTER_REGEX_EXCLUDE: docs/develop/manifest-schemas/schema-field-descriptions-v\d+(\.\d){1,2}(-[a-z0-9]*)*.md
           VALIDATE_MARKDOWN: true
           MARKDOWN_CONFIG_FILE: .markdownlint.yml
           VALIDATE_NATURAL_LANGUAGE: true

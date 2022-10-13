@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.1.90</span>
+   &#160;<span id="projectnumber">3.1.107</span>
    </div>
   </td>
  </tr>
@@ -73,6 +73,10 @@ $(function() {
 <h3>Loading a neural network model and running an inference job</h3>
 <p>Here is an example of loading a model and executing an inference job using the TFLite CPU backend:</p>
 <div class="fragment"><div class="line">larod-client -d -c cpu-tflite -g ./mobilenet_v2_1.0_224_quant.tflite \</div><div class="line">-i ./goldfish_224x224_uint8_RGB.bin -o ./goldfish-result.bin</div></div><!-- fragment --><p>This will load the MobileNetV2 model on the TFLite CPU backend, then perform one inference of the test image <code>goldfish_224x224_uint8_RGB.bin.</code> The binary output from the model is written to the file goldfish-result.bin.</p>
+<h4>Running inferences using random input data</h4>
+<p>It is possible to instruct larod-client to generate random input data for you, instead of having to supply an input file. This can be achieved by passing an empty string as input file for a job:</p>
+<div class="fragment"><div class="line">larod-client -d -c cpu-tflite -g ./mobilenet_v2_1.0_224_quant.tflite -i &quot;&quot; \</div><div class="line">-o ./random-data-output.bin</div></div><!-- fragment --><p>This command will run an inference using random data as input, and write the output from this inference to the file random-data-output.bin.</p>
+<p>The option <code>--random-seed</code> allows you to specify the seed number to use for the random input data. If this option is omitted larod-client will use the system clock as seed. For a given seed the random numbers generated will always be the same. This can be useful for debugging.</p>
 <h3>Benchmarking a model</h3>
 <p><code>larod-client</code> can be used to benchmark job times for a model. Here is an example:</p>
 <div class="fragment"><div class="line">larod-client -R 1000 -c cpu-tflite -g ./mobilenet_v2_1.0_224_quant.tflite \</div><div class="line">-i ./goldfish_224x224_uint8_RGB.bin</div></div><!-- fragment --><p>Command line above loads the model and executes 1000 inference jobs on the model, then reports the average time per job.</p>
