@@ -61,6 +61,10 @@ The API supports products with the following chips:
 - Ambarella S5L
 - Ambarella S5
 
+#### Compatibility limitations
+
+- **Global rotation** - All platforms except ARTPEC-6 support global image source rotation, this feature is designed to utilize the hardware more efficiently. When designing applications for multiple platforms this needs to be taken into consideration. The Video capture API on ARTPEC-6 allows specifying the desired rotation per stream in contrast to other chips where this is a global option chosen at camera installation time and any attempt to specify capture rotation will be ignored.
+
 ### Version history
 
 The Video capture API was introduced in Native SDK 1.0.
