@@ -7,7 +7,7 @@ nav_order: 8
 
 # Supported languages
 
-The [ACAP Native SDK](https://hub.docker.com/r/axisecp/acap-native-sdk) and [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk) are capable of building applications in various languages.
+The [ACAP Native SDK](https://github.com/AxisCommunications/acap-native-sdk) and [ACAP Computer Vision SDK](https://github.com/AxisCommunications/acap-computer-vision-sdk) are capable of building applications in various languages.
 
 ## ACAP Native SDK
 
