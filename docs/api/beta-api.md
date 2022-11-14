@@ -24,5 +24,4 @@ or in the Beta API example if there is one available.
 ### ACAP Runtime and Parameter API
 
 Feedback on the service and API can be given in the [ACAP Computer Vision SDK
-examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/issues)
-issue tracker.
+examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/issues) issue tracker.

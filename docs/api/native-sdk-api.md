@@ -28,6 +28,7 @@ SDK version | Available from firmware version
 1.2 | 10.10
 1.3 | 10.12
 1.4 | 11.0
+1.5 | 11.1
 
 ## Video capture API
 
@@ -78,6 +79,7 @@ Axis OS version | VdoStream API version | New functions added
 10.11 | 7.19.2 | -
 10.12 | 8.0.15 | `vdo_map_get_pair32i`, `vdo_map_get_pair32u`, `vdo_map_set_pair32i`, `vdo_map_set_pair32u`
 11.0 | 9.0.4 | -
+11.1 | 9.8.16 | -
 
 ### Known issues
 
@@ -269,7 +271,7 @@ The API supports products with the following chips:
 
 ### Version history
 
-This API was introduced in API version 1.0
+This API was introduced in Native SDK 1.0.
 
 ### Code Examples
 
