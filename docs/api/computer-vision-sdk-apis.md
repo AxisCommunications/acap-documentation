@@ -24,6 +24,7 @@ SDK version | Available from firmware version
 1.2 | 10.10
 1.3 | 10.12
 1.4 | 11.0
+1.5 | 11.1
 
 ## SDK index
 
@@ -162,6 +163,7 @@ The ACAP Runtime service is an installable ACAP application that provides:
 
 - Inference API - Tensorflow Serving for inference service
 - Parameter API - Axis parameter service
+- Video capture API - Enables capture of images from a camera
 
 The ACAP Runtime uses [gRPC](https://grpc.io) and a [Unix Socket Domain (UDS)](https://grpc.github.io/grpc/cpp/md_doc_naming.html) socket for access. The access is restricted to applications in the device that belongs to the `sdk` user group. Installable versions for devices equipped with ARTPEC-7 and ARTPEC-8 chips are available [here](https://hub.docker.com/r/axisecp/acap-runtime).
 
