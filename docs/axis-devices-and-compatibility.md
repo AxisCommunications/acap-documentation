@@ -50,6 +50,7 @@ devices that you want to develop for.
 Product      | Chip     | Architecture
 :----------- | :------- | :-----------
 M4308-PLE    | ARTPEC-7 | armv7hf
+P1468-LE     | ARTPEC-8 | aarch64
 P3255-LVE    | ARTPEC-7 | armv7hf
 P3265-LVE    | ARTPEC-8 | aarch64
 Q1615 Mk III | ARTPEC-7 | armv7hf
@@ -84,6 +85,7 @@ SDK 4.1          | 10.9 and later
 SDK 4.2          | 10.10 and later
 SDK 4.3          | 10.12 and later
 SDK 4.4          | 11.0 and later
+SDK 4.5          | 11.1 and later
 
 How do I know if my device supports a specific AXIS OS version? Please check
 [firmware releases for supported
