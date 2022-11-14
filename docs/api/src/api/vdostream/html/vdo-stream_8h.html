@@ -178,7 +178,7 @@ Functions</h2></td></tr>
 <p>A <a class="el" href="classVdoStream.html" title="A video stream. ">VdoStream</a> object is created in order to retrieve, control or monitor a video stream from the Vdo video service.</p>
 <p>A <a class="el" href="classVdoStream.html" title="A video stream. ">VdoStream</a> represents video stream or a sequence of images.</p>
 <p>A <a class="el" href="classVdoStream.html" title="A video stream. ">VdoStream</a> supports the following settings in <code><a class="el" href="vdo-stream_8h.html#a36fa0021eb58d482c494163db9b22b61" title="Create a new VdoStream. ">vdo_stream_new()</a></code>, they are also available in <code><a class="el" href="vdo-stream_8h.html#ad1279257f13b9a406a0df2558f10123e" title="Get the settings for this video stream. ">vdo_stream_get_settings()</a></code> and <code><a class="el" href="vdo-stream_8h.html#affa9aec868d9c2fd1f39f44aa63adaf2" title="Update the settings for this video stream. ">vdo_stream_set_settings()</a></code>.</p>
-<p>When one of the values below is set in the settings map it will appear in the info map as well, to reflect that they have been updated internally in vdo. The info value will differ if it has been clamped to within allowed values. Always refer to the info map to see what values are currently used.</p>
+<p>When one of the values below is set in the settings map it may appear in the info map as well, to reflect that they have been updated internally in vdo. The info value will differ if it has been clamped to within allowed values. Always refer to the info map to see what values are currently used.</p>
 <table class="doxtable">
 <tr>
 <th>Name </th><th>Type </th><th>Description  </th></tr>
@@ -290,11 +290,15 @@ Functions</h2></td></tr>
 <tr>
 <td>"statistics.frame_count" </td><td>uint32 </td><td>The number of frames read. </td></tr>
 <tr>
+<td>"statistics.idrframe_count" </td><td>uint32 </td><td>The number of IDR-frames read. </td></tr>
+<tr>
 <td>"statistics.bit_count" </td><td>uint32 </td><td>The number of bits read. </td></tr>
 <tr>
 <td>"statistics.failed_frames" </td><td>uint32 </td><td>The number of frames failed to read. </td></tr>
 <tr>
 <td>"statistics.accumulated_bytes" </td><td>uint64 </td><td>The number of bytes read since stream start </td></tr>
+<tr>
+<td>"statistics.accumulated_idrbytes"</td><td>uint64 </td><td>The number of bytes read from IDR-frames since stream start </td></tr>
 <tr>
 <td>"subformat" </td><td>string </td><td>The subformat for streams in YUV or raw format. </td></tr>
 <tr>
@@ -359,8 +363,6 @@ Functions</h2></td></tr>
 <th>Name </th><th>Description  </th></tr>
 <tr>
 <td><a class="el" href="vdo-types_8h.html#acaa9291dd03e128aa2097c75b0d65ab8a7c19220b80523ced40464b75f92e6b0f">VDO_INTENT_CONTROL</a> </td><td>Grants start, stop, info, settings, keyframe </td></tr>
-<tr>
-<td><a class="el" href="vdo-types_8h.html#acaa9291dd03e128aa2097c75b0d65ab8a9668eddb4acce5e6fd23ee924461d2aa">VDO_INTENT_MONITOR</a> </td><td>Monitor events using g_signal </td></tr>
 <tr>
 <td><a class="el" href="vdo-types_8h.html#acaa9291dd03e128aa2097c75b0d65ab8a76952df68c249b9976580784947717dd">VDO_INTENT_CONSUME</a> </td><td>The client intends to stream </td></tr>
 <tr>
