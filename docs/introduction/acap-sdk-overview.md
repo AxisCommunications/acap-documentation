@@ -11,7 +11,7 @@ AXIS Camera Application Platform (ACAP) version 4 is capable of building edge-ba
 
 ## ACAP Native SDK
 
-The ACAP Native SDK is targeted towards users that want to develop plug-in style, event generating applications that fit well into a VMS centric system. This SDK offers high performance by integrating closely with AXIS OS and hardware. Already existing ACAP users should feel at home using this SDK and migrating from previous version ACAP 3 to this SDK should be straightforward.
+The ACAP Native SDK is targeted towards users that want to develop plug-in style, event generating applications that fit well into a VMS centric system. This SDK offers high performance by integrating closely with AXIS OS and hardware. Already existing ACAP users should feel at home using this SDK and migrating from previous version ACAP version 3 to this SDK should be straightforward.
 
 ### Main use cases
 

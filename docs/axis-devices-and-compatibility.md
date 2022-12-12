@@ -121,7 +121,7 @@ If you want an ACAP to be compatible with older firmware, you need to choose an
 SDK for an older firmware.
 
 To support firmware older than AXIS OS 10.7, build your ACAP application with
-[ACAP 3](https://help.axis.com/acap-3-developer-guide).
+[ACAP version 3](https://help.axis.com/acap-3-developer-guide).
 
 # Camera loan tool
 
