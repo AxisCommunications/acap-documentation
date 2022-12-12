@@ -160,7 +160,7 @@ The applications are built using the Docker framework which means that building 
 
 ### Install and run
 
-> Installing and running ACAP4 applications requires the [Docker
+> Installing and running container based ACAP applications requires the [Docker
 > ACAP](https://github.com/AxisCommunications/docker-acap) to be installed on
 > the camera. Note that the Docker ACAP is set to use TLS authentication by
 > default, which means that you are required to add certificates to the camera
