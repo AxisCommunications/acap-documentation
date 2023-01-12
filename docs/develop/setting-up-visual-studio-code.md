@@ -9,7 +9,7 @@ nav_order: 7
 
 Visual Studio Code provides access to containerized development tools, without the need for you to install them natively on your development computer.
 
-To start developing ACAPs using Visual Studio Code:
+To start developing ACAP applications using Visual Studio Code:
 
 1. Install the **Remote - Containers** extension available in the **Extensions Marketplace** in **Visual Studio Code**.
 2. Create a subfolder called `.devcontainer` in the top directory of the source code project you are working on.
