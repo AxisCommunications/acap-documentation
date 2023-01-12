@@ -1,11 +1,11 @@
 ---
 layout: page
 parent: Service for partners
-title: Package signing
+title: ACAP application signing
 nav_order: 2
 ---
 
-## Package signing
+## ACAP application signing
 
 The sign package service is available in the ACAP Service Portal, and requires Technology Integration Partner Program access.
 
