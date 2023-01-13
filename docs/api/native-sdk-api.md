@@ -29,6 +29,7 @@ SDK version | Available from firmware version
 1.3 | 10.12
 1.4 | 11.0
 1.5 | 11.1
+1.6 | 11.2
 
 ## Video capture API
 
@@ -80,6 +81,7 @@ Axis OS version | VdoStream API version | New functions added
 10.12 | 8.0.15 | `vdo_map_get_pair32i`, `vdo_map_get_pair32u`, `vdo_map_set_pair32i`, `vdo_map_set_pair32u`
 11.0 | 9.0.4 | -
 11.1 | 9.8.16 | -
+11.2 | 9.18.0 | -
 
 ### Known issues
 
@@ -99,7 +101,7 @@ Axis OS version | VdoStream API version | New functions added
 
 ## Machine learning API
 
-Larod provides a simple unified C API for running machine learning and image preprocessing efficiently. Larod is open source on GitLab, see [Introduction to larod](https://gitlab.com/unimatrix/larod/-/blob/master/doc/introduction-for-app-developers.md)
+Larod provides a simple unified C API for running machine learning and image preprocessing efficiently. Larod is open source on GitLab, see [Introduction to larod](https://gitlab.com/unimatrix/larod/-/blob/master/doc/introduction-for-app-developers.md).
 
 Go to the [ACAP API Documentation](src/api/larod/html/index.html) for detailed functional descriptions of this API.
 
@@ -247,7 +249,7 @@ The Axevent API was introduced in Native SDK 1.0.
   - The example code is written in C which sends an ONVIF event periodically.
 - [subscribe_to_event](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axevent/subscribe_to_event)
   - The example code is written in C which subscribe to the ONVIF event sent from application "send_event".
-- [subscribe_to_event_s](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axevent/subscribe_to_events)
+- [subscribe_to_events](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axevent/subscribe_to_events)
   - The example code is written in C which subscribes to different predefined events.
 
 ## License Key API
