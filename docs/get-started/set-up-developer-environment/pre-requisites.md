@@ -8,7 +8,7 @@ nav_order: 1
 
 # Pre-requisites
 
-To develop ACAPs, you need the following:
+To develop ACAP applications, you need the following:
 
 - A computer with Linux, Windows, or macOS.
 - Docker ([download](https://docs.docker.com/get-docker/))
