@@ -21,7 +21,7 @@ The best way to leave feedback is to use the GitHub issue tracker of the Beta
 API implementation (for example if the prototype is an ACAP application image)
 or in the Beta API example if there is one available.
 
-### ACAP Runtime and Parameter API
+### Parameter API
 
 Feedback on the service and API can be given in the [ACAP Computer Vision SDK
 examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/issues) issue tracker.

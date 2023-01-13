@@ -25,14 +25,16 @@ SDK version | Available from firmware version
 1.3 | 10.12
 1.4 | 11.0
 1.5 | 11.1
+1.6 | 11.2
 
 ## SDK index
 
 **[SDK packages with AXIS-specific functionality](#sdk-packages-with-axis-specific-functionality)**
 
+- [ACAP Runtime APIs](#acap-runtime-apis)
 - [Video capture API](#video-capture-api): [OpenCV with VDO](#opencv-with-vdo)
 - [Machine learning API](#machine-learning-api): [TensorFlow Serving](#tensorflow-serving-inference-client)
-- [BETA - ACAP Runtime](#beta---acap-runtime)
+- [BETA - Parameter API](#beta---parameter-api)
 
 **[SDK package index](#sdk-package-index)**
 
@@ -55,7 +57,21 @@ SDK version | Available from firmware version
 
 ## SDK packages with AXIS-specific functionality
 
+### ACAP Runtime APIs
+
+The ACAP Runtime service is an installable ACAP application that provides:
+
+- [Video capture API](#video-capture-api): Enables capture of images from a camera
+- [Machine learning API](#machine-learning-api): Tensorflow Serving for inference service
+- [BETA - Parameter API](#beta---parameter-api): Axis parameter service
+
+The ACAP Runtime uses [gRPC](https://grpc.io) and a [Unix Socket Domain (UDS)](https://grpc.github.io/grpc/cpp/md_doc_naming.html) socket for access. The access is restricted to applications in the device that belongs to the `sdk` user group. Installable versions for devices equipped with ARTPEC-7 and ARTPEC-8 chips are available [here](https://hub.docker.com/r/axisecp/acap-runtime).
+
+In order to use the APIs, there is a requirement to install the acap-runtime application on the Axis network device. Detailed instructions for installing acap-runtime can be found [here](https://hub.docker.com/r/axisecp/acap-runtime). The acap-runtime acts as a server that exposes the gRPC APIs.
+
 ### Video capture API
+
+The Video capture API is one of the services of ACAP runtime.
 
 The [OpenCV package](#opencv-with-vdo) has been extended with functionality for capturing camera images and accessing and modifying video stream and image properties. This was done by making the [OpenCV VideoCapture-class](https://docs.opencv.org/4.5.3/d8/dfe/classcv_1_1VideoCapture.html) interface with the [AXIS VDO library](src/api/vdostream/html/index.html), which allows for treating the Axis camera like any other OpenCV-compatible camera.
 
@@ -148,33 +164,22 @@ services:
 
 ### Machine learning API
 
+The Machine learning API is one of the services of ACAP runtime.
+
 The ACAP Computer Vision SDK provides a flexible way of allowing machine learning inference in the form of TensorFlow Serving and a [TensorFlow Serving client](#tensorflow-serving-inference-client). TensorFlow Serving allows for making inference calls over gRPC to another container running a model server. This has several benefits, including exposing a common API for inference and having a single process handle all apps' DLPU communication.
 
 Through Docker Hub and the ACAP Computer Vision SDK, both a model server for _larod_ and a Python client are available. The model server, called `larod-inference-server`, is available on Docker Hub under the [axisecp/larod-inference-server](https://hub.docker.com/r/axisecp/larod-inference-server) repository. The Python client is available in the ACAP Computer Vision SDK under `/axis/python-tfserving` and imported in Python as `InferenceClient`, which is available in the `tf_proto_utils` module. The client exposes a single `infer(inputs, model_name)` function that enables easy inference using the model server.
 
-A minimal, but complete, example of how a Python client and a model server running on the same camera could be set up is shown in the [minimal-ml-example](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/minimal-ml-inference) on GitHub which is a part of the [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples).
+#### Code Examples
 
-### BETA - ACAP Runtime
-
-**This API is a [Beta version](./beta-api) and developers are encouraged to
-test and leave feedback.**
-
-The ACAP Runtime service is an installable ACAP application that provides:
-
-- Inference API - Tensorflow Serving for inference service
-- Parameter API - Axis parameter service
-- Video capture API - Enables capture of images from a camera
-
-The ACAP Runtime uses [gRPC](https://grpc.io) and a [Unix Socket Domain (UDS)](https://grpc.github.io/grpc/cpp/md_doc_naming.html) socket for access. The access is restricted to applications in the device that belongs to the `sdk` user group. Installable versions for devices equipped with ARTPEC-7 and ARTPEC-8 chips are available [here](https://hub.docker.com/r/axisecp/acap-runtime).
+- [minimal-ml-inference](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/minimal-ml-inference) - A minimal, but complete, example of how a Python client and a model server running on the same camera.
+- [object-detector-cpp](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/object-detector-cpp) - A complete example of how a C++ client and a model server running on the same camera.
 
 ### BETA - Parameter API
 
-**This API is a [Beta version](./beta-api) and developers are encouraged to
-test and leave feedback.**
+**This API is a [Beta version](./beta-api) and developers are encouraged to test and leave feedback.**
 
 The Parameter API is one of the services of ACAP runtime.
-
-In order to use the Parameter API, there is a requirement to install the acap-runtime application on the Axis network device. Detailed instructions for installing acap-runtime can be found [here](https://hub.docker.com/r/axisecp/acap-runtime). The acap-runtime acts as a server that exposes the gRPC Parameter API.
 
 The Parameter API enables an application to read the parameters of an Axis network device. There are a lot of parameters on an Axis network device in the form of key-value pairs, and the Parameter API allows us to pass the name of the parameter as the key, which will return the value of the parameter. This API can be used to read existing parameters; it can not set any new parameters.
 
@@ -190,8 +195,8 @@ root.Brand.ProdNbr
 
 #### Code Examples
 
-- [parameter-api-cpp](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/parameter-api-cpp) - A C++ example which reads device parameters using the Parameter-API.
-- [parameter-api-python](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/parameter-api-python) - A Python example which reads device parameters using the Parameter-API.
+- [parameter-api-cpp](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/parameter-api-cpp) - A C++ example which reads device parameters using the Parameter API.
+- [parameter-api-python](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/parameter-api-python) - A Python example which reads device parameters using the Parameter API.
 
 ## SDK package index
 
@@ -229,13 +234,13 @@ A Python OpenCV package is included in the `/axis/opencv` package as a module ca
 
 #### [TensorFlow Serving inference client](https://github.com/AxisCommunications/acap-computer-vision-sdk/blob/main/sdk/tfserving/tf_proto_utils.py)
 
-`/axis/python-tfserving`: A Python client for the TensorFlow Serving framework. Detailed in the [Machine Learning API section](#machine-learning-api).
+`/axis/python-tfserving`: A Python client for the TensorFlow Serving framework. Detailed in the [Machine learning API section](#machine-learning-api).
 
 ---
 
 ### [OpenCV](https://github.com/opencv/opencv) with VDO
 
-`/axis/opencv`: A computer vision library with functionality that covers many different fields within computer vision. The VDO integration allows accessing the camera's video streams through the OpenCV VideoCapture class, as detailed in [Video Capture API](#video-capture-api). Compiled with OpenBLAS.
+`/axis/opencv`: A computer vision library with functionality that covers many different fields within computer vision. The VDO integration allows accessing the camera's video streams through the OpenCV VideoCapture class, as detailed in [Video capture API](#video-capture-api). Compiled with OpenBLAS.
 
 ---
 
