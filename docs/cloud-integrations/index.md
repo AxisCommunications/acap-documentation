@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Cloud integrations
-nav_order: 11
+nav_order: 8
 ---
 
 # Cloud integrations
