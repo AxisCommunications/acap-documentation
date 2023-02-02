@@ -18,9 +18,8 @@ There are both similarities and differences between the two generations.
 
 ## What are the differences between ACAP version 3 SDK and ACAP version 4 Native SDK?
 
-At the time of the ACAP version 4 launch, the two SDKs are very similar but as we will
-actively develop the ACAP version 4 Native SDK and keep ACAP version 3 SDK in maintenance mode,
-the differences are expected to increase.
+At the time of the ACAP version 4 launch, the two SDKs are very similar, but we'll
+actively develop the ACAP version 4 Native SDK while keeping the ACAP version 3 SDK in maintenance mode.
 
 ### APIs
 

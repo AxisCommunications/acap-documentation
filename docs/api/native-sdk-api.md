@@ -71,7 +71,7 @@ The API supports products with the following chips:
 
 The Video capture API was introduced in Native SDK 1.0.
 
-Axis OS version | VdoStream API version | New functions added
+AXIS OS version | VdoStream API version | New functions added
 -- | -- | --
 10.7 | 6.13.0 | `vdo_frame_take_chunk`
 10.8 | 6.24.1 | `vdo_zipstream_profile_get_type`, `vdo_frame_set_header_size`
@@ -101,9 +101,7 @@ Axis OS version | VdoStream API version | New functions added
 
 ## Machine learning API
 
-Larod provides a simple unified C API for running machine learning and image preprocessing efficiently. Larod is open source on GitLab, see [Introduction to larod](https://gitlab.com/unimatrix/larod/-/blob/master/doc/introduction-for-app-developers.md).
-
-Go to the [ACAP API Documentation](src/api/larod/html/index.html) for detailed functional descriptions of this API.
+Larod provides a simple unified C API for running machine learning and image preprocessing efficiently. Go to the [ACAP API Documentation](src/api/larod/html/index.html) for detailed functional descriptions of this API.
 
 The Machine learning API can be used for deep learning applications.
 
