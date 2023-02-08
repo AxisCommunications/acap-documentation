@@ -57,7 +57,6 @@ P3265-LVE    | ARTPEC-8 | aarch64
 Q1615 Mk III | ARTPEC-7 | armv7hf
 Q1656        | ARTPEC-8 | aarch64
 Q1715        | ARTPEC-7 | armv7hf
-Q1798-LE     | ARTPEC-7 | armv7hf
 Q3536-LVE    | ARTPEC-8 | aarch64
 
 ### ACAP Native SDK
