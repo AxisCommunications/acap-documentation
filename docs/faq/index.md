@@ -286,7 +286,7 @@ There are only three things to consider when deploying an ACAP application using
 
 ## What backbone/architecture do you recommend for TPU/ARTPEC-8/CV25?
 
-The [FAQ in the ACAP Computer Vision example repository](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/discussions/112) explains a lot when it comes to model support for different Axis architectures.
+The [FAQ in the ACAP Computer Vision example repository](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/discussions/112) explains a lot when it comes to model support for different Axis architectures. Additionally, we have the [Axis Model Zoo repository](https://github.com/AxisCommunications/axis-model-zoo) that contains a collection of different models compatible with Axis cameras and some performance measures (accuracy and speed).
 
 ## My model is developed for ARTPEC-7 (TPU). How do I run it on ARTPEC-8?
 
