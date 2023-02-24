@@ -82,6 +82,7 @@ All fields that are not marked as **Required** are optional
     - **runMode** `string` **Required**
 
       If 'respawn' application will be restarted if exited. If 'never' application will never be restarted. If 'once' application will not be restarted if exited but will be restated on reboot of device if application is running.
+      _Possible values:_ `respawn`, `once`, `never`
 
     - **runOptions** `string`
 
@@ -142,6 +143,7 @@ All fields that are not marked as **Required** are optional
       - **type** `string` **Required**
 
         CGI implementation type.
+        _Possible values:_ `transferCgi`, `fastCgi`
 
       - **name** `string` **Required**
 
@@ -150,6 +152,7 @@ All fields that are not marked as **Required** are optional
       - **access** `string` **Required**
 
         Access policy for calling the CGI.
+        _Possible values:_ `admin`, `operator`, `viewer`
 
   - **copyProtection** `object`
 
@@ -158,4 +161,5 @@ All fields that are not marked as **Required** are optional
     - **method** `string` **Required**
 
       Copy protection mechanism.
+      _Possible values:_ `none`, `axis`, `custom`
 
