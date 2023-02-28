@@ -47,17 +47,27 @@ devices that you want to develop for.
 
 ### ACAP Computer vision SDK
 
-Product      | Chip     | Architecture
-:----------- | :------- | :-----------
-M3215-LVE    | ARTPEC-8 | aarch64
-M4308-PLE    | ARTPEC-7 | armv7hf
-P1468-LE     | ARTPEC-8 | aarch64
-P3255-LVE    | ARTPEC-7 | armv7hf
-P3265-LVE    | ARTPEC-8 | aarch64
-Q1615 Mk III | ARTPEC-7 | armv7hf
-Q1656        | ARTPEC-8 | aarch64
-Q1715        | ARTPEC-7 | armv7hf
-Q3536-LVE    | ARTPEC-8 | aarch64
+Product                                                     | Available from | Chip     | Architecture
+:---------------------------------------------------------- | :------------- | :------- | :-----------
+[M3215-LVE](https://www.axis.com/products/axis-m3215-lve)   | 10.12          | ARTPEC-8 | aarch64
+[M3216-LVE](https://www.axis.com/products/axis-m3216-lve)   | 10.12          | ARTPEC-8 | aarch64
+[M4308-PLE](https://www.axis.com/products/axis-m4308-ple)   | 10.8           | ARTPEC-7 | armv7hf
+[P1465-LE](https://www.axis.com/products/axis-p1465-le)     | 11.1           | ARTPEC-8 | aarch64
+[P1467-LE](https://www.axis.com/products/axis-p1467-le)     | 11.1           | ARTPEC-8 | aarch64
+[P1468-LE](https://www.axis.com/products/axis-p1468-le)     | 11.1           | ARTPEC-8 | aarch64
+[P3255-LVE](https://www.axis.com/products/axis-p3255-lve)   | 10.5           | ARTPEC-7 | armv7hf
+[P3265-LV](https://www.axis.com/products/axis-p3265-lv), [P3265-LVE](https://www.axis.com/products/axis-p3265-lve), [P3265-V](https://www.axis.com/products/axis-p3265-v) | 10.10 | ARTPEC-8 | aarch64
+[P3267-LV](https://www.axis.com/products/axis-p3267-lv), [P3267-LVE](https://www.axis.com/products/axis-p3267-lve) | 10.11 | ARTPEC-8 | aarch64
+[P3268-LV](https://www.axis.com/products/axis-p3268-lv), [P3268-LVE](https://www.axis.com/products/axis-p3268-lve) | 10.11 | ARTPEC-8 | aarch64
+[Q1615 Mk III](https://www.axis.com/products/axis-q1615-mk-iii), [Q1615-LE Mk III](https://www.axis.com/products/axis-q1615-le-mk-iii) | 10.4 | ARTPEC-7 | armv7hf
+[Q1656](https://www.axis.com/products/axis-q1656), [Q1656-LE](https://www.axis.com/products/axis-q1656-le) | 10.8 | ARTPEC-8 | aarch64
+[Q1656-B](https://www.axis.com/products/axis-q1656-b), [Q1656-BE](https://www.axis.com/products/axis-q1656-be), [Q1656-BLE](https://www.axis.com/products/axis-q1656-ble) | 10.10 | ARTPEC-8 | aarch64
+[Q1656-DLE](https://www.axis.com/products/axis-q1656-dle)   | 11.2           | ARTPEC-8 | aarch64
+[Q1715](https://www.axis.com/products/axis-q1715)           | 10.8           | ARTPEC-7 | armv7hf
+[Q1961-TE](https://www.axis.com/products/axis-q1961-te)     | 11.2           | ARTPEC-8 | aarch64
+[Q3536-LVE](https://www.axis.com/products/axis-q3536-lve)   | 10.8           | ARTPEC-8 | aarch64
+[Q3538-LVE](https://www.axis.com/products/axis-q3538-lve)   | 10.8           | ARTPEC-8 | aarch64
+[Q3538-SLVE](https://www.axis.com/products/axis-q3538-slve) | 11.1           | ARTPEC-8 | aarch64
 
 ### ACAP Native SDK
 
@@ -87,6 +97,7 @@ SDK 4.3          | 10.12 and later
 SDK 4.4          | 11.0 and later
 SDK 4.5          | 11.1 and later
 SDK 4.6          | 11.2 and later
+SDK 4.7          | 11.3 and later
 
 How do I know if my device supports a specific AXIS OS version? Please check
 [firmware releases for supported
