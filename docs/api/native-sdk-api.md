@@ -16,6 +16,7 @@ The ACAP Native SDK provides the following APIs:
 - [OpenCL](#opencl)
 - [Event API](#event-api)
 - [License Key API](#license-key-api)
+- [FastCGI](#fastcgi)
 
 ## Compatibility
 
@@ -30,6 +31,7 @@ SDK version | Available from firmware version
 1.4 | 11.0
 1.5 | 11.1
 1.6 | 11.2
+1.7 | 11.3
 
 ## Video capture API
 
@@ -82,6 +84,7 @@ AXIS OS version | VdoStream API version | New functions added
 11.0 | 9.0.4 | -
 11.1 | 9.8.16 | -
 11.2 | 9.18.0 | -
+11.3 | 9.32.0 | -
 
 ### Known issues
 
@@ -277,3 +280,24 @@ This API was introduced in Native SDK 1.0.
 
 - [licensekey](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/licensekey/)
   - The example code is written in C which illustrates how to check the licensekey status.
+
+## FastCGI
+
+[FastCGI](https://wikipedia.org/wiki/FastCGI) is a protocol for interfacing interactive programs with a web server.
+
+### Compatibility
+
+The FastCGI API supports products with the following chips:
+
+- ARTPEC-8
+- ARTPEC-7
+- CV25
+
+### Version history
+
+The FastCGI API was introduced in Native SDK 1.6.
+
+### Code Examples
+
+- [web-server-using-fastcgi](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/web-server-using-fastcgi)
+  - This example is written in C and explains how to build an ACAP application that can handle HTTP requests sent to the Axis device, using the device's own web server and FastCGI.
