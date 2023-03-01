@@ -10,12 +10,15 @@ nav_order: 2
 
 To prepare a device for development:
 
-- [Find the device on the network](#find-the-device-on-the-network) to configure IP address and user credentials.
-- [Check device compatibility](#check-device-compatibility) to make sure that you use a device that supports ACAP.
-- [Check device properties](#check-device-properties) and update to the latest firmware if needed, see [How to upgrade](#how-to-upgrade).
-- [Check device properties](#check-device-properties) and identify the device architecture to be able to choose the correct toolchain.
+- [Find the device on the network](#find-the-device-on-the-network) to configure the IP address and the user credentials
+- [Setup the device on the network](#setup-the-device-on-the-network) to make sure it's ready to be connected to the network
+- [Check device compatibility](#check-device-compatibility) to make sure that you use a device that supports ACAP
+- [Check device properties](#check-device-properties) and update to the latest firmware if needed, see [How to upgrade](#how-to-upgrade)
+- [Check device properties](#check-device-properties) and identify the device architecture to be able to choose the correct toolchain
 
 ## Find the device on the network
+
+### Find the device
 
 To find Axis devices on the network and assign them IP addresses in Windows®, use AXIS IP Utility or AXIS Device Manager. Both applications are free and can be downloaded from [axis.com/support](https://www.axis.com/support).
 
@@ -24,9 +27,42 @@ For more information about how to find and assign IP addresses, go to [How to as
 ### Access the device
 
 1. Open a browser and enter the IP address or hostname of the Axis device.
-If you do not know the IP address, use AXIS IP Utility or AXIS Device Manager to find the device on the network.
 2. Enter the username and password. If you access the device for the first time, you must set the root password. See [Set a new password for the root account](#set-a-new-password-for-the-root-account).
 3. The live view page opens in your browser.
+
+#### Access the device through SSH
+
+You can enable SSH on an Axis device either through the device's web interface or by calling a VAPIX API from command-line.
+
+##### Through old web interface
+
+1. Go to the following URL:
+    - AXIS OS < 10.6 `http://192.168.0.90/#settings/system/tools/plainconfig`
+    - AXIS OS >= 10.6 `http://192.168.0.90/aca/index.html#settings/system/tools/plainconfig`
+2. Click on **Network** in the list
+3. Under **SSH** select **Enabled**
+4. Scroll to the bottom of the page and click button **Save**
+
+##### Through new web interface
+
+1. Go to `http://192.168.0.90/camera/index.html#/system/plainConfig`
+2. Select the **Network** group from the drop-down menu
+3. Under **Network / SSH** select **Enabled**
+4. Scroll to the bottom of the page and click button **Save**
+
+##### Through command-line
+
+This is exemplified using `curl`:
+
+```sh
+curl -u '<username>:<password>' "http://192.168.0.90/axis-cgi/admin/param.cgi?action=update&Network.SSH.Enabled=yes"
+```
+
+> More options may be required depending on your network setup.
+
+## Setup the device on the network
+
+Some extra steps can be followed to make sure the device is ready to be used and connected to the network.
 
 ### Verify that no one has tampered with the firmware
 
@@ -36,7 +72,7 @@ To make sure that the device has its original Axis firmware, or to take full con
 After the reset, secure boot guarantees the state of the device.
 2. Configure and install the device.
 
-### Secure passwords
+### Set a secure password
 
 > Axis devices send the initially set password in clear text over the network.
 > To protect your device after the first login, set up a secure and encrypted
@@ -50,7 +86,7 @@ To protect your data we strongly recommend that you:
 - Don’t expose the password.
 - Change the password at a recurring interval, at least once a year.
 
-### Set a new password for the root account
+#### Set a new password for the root account
 
 > The default administrator username is root. If the password for root is lost,
 > reset the device to factory default settings. See the product’s user manual
@@ -58,7 +94,7 @@ To protect your data we strongly recommend that you:
 
 [![Password security confirmation check](https://www.axis.com/axistube/a5771bce93e200c36f7cd9dfd0e5deaa/38116/640/640.mp4_001.jpg)](https://youtu.be/yZkKTrGelao)
 
-1. Type a password. Follow the instructions about secure passwords. See [Secure passwords](#secure-passwords).
+1. Type a password. Follow the instructions about secure passwords, see [Set a secure password](#set-a-secure-password).
 2. Retype the password to confirm the spelling.
 3. Click **Create login**. The password has now been configured.
 

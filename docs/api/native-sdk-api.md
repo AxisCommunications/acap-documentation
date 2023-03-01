@@ -9,8 +9,8 @@ nav_order: 1
 
 The ACAP Native SDK provides the following APIs:
 
-- [Video capture API](#video-capture-api)
-- [Machine learning API](#machine-learning-api)
+- [Video capture API (VDO)](#video-capture-api-vdo)
+- [Machine learning API (Larod)](#machine-learning-api-larod)
 - [Overlay API](#overlay-api)
 - [Cairo](#cairo)
 - [OpenCL](#opencl)
@@ -33,7 +33,7 @@ SDK version | Available from firmware version
 1.6 | 11.2
 1.7 | 11.3
 
-## Video capture API
+## Video capture API (VDO)
 
 Go to the [ACAP API Documentation](src/api/vdostream/html/index.html) for detailed functional descriptions of this API.
 
@@ -52,7 +52,7 @@ Sub Formats | Corresponding format
 nv12 | YUV
 y800 | YUV
 
-An application to start a vdo stream can be found at [vdostream](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdostream/), where the first argument is a string describing the video compression format. It takes `h264` (default), `h265`, `jpeg`, `nv12`, and `y800` as inputs. Both `nv12` and `y800` correspond to YUV format of VDO.
+An application to start a vdo stream can be found at [vdostream](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdostream/), where the first argument is a string describing the video compression format. It takes `h264` (default), `h265`, `jpeg`, `nv12`, and `y800` as inputs. Both `nv12` and `y800` correspond to YUV format of VDO.
 
 ### Compatibility
 
@@ -92,21 +92,21 @@ AXIS OS version | VdoStream API version | New functions added
 
 ### Code Examples
 
-- [vdostream](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdostream/)
+- [vdostream](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdostream/)
   - The example code is written in C which starts a vdo stream and then illustrates how to continuously capture frames from the vdo service, access the received buffer contents as well as the frame metadata.
-- [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod/)
-  - The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format and then sent to larod for inference on MODEL.
-- [vdo-larod-preprocessing](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod-preprocessing/)
-  - The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv
+- [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-larod/)
+  - The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format and then sent to larod for inference on MODEL.
+- [vdo-larod-preprocessing](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-larod-preprocessing/)
+  - The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv
   format which are sent to larod for preprocessing and inference on MODEL.
-- [vdo-opencl-filtering](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-opencl-filtering/)
+- [vdo-opencl-filtering](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-opencl-filtering/)
   - This example illustrates how to capture frames from the vdo service, access the received buffer, and finally perform a GPU accelerated Sobel filtering with OpenCL.
 
-## Machine learning API
+## Machine learning API (Larod)
 
-Larod provides a simple unified C API for running machine learning and image preprocessing efficiently. Go to the [ACAP API Documentation](src/api/larod/html/index.html) for detailed functional descriptions of this API.
+Go to the [ACAP API Documentation](src/api/larod/html/index.html) for detailed functional descriptions of this API.
 
-The Machine learning API can be used for deep learning applications.
+Larod is a service provides a simple unified C API for running machine learning and image preprocessing efficiently. The purpose of Larod is to provide a unified API for all hardware platforms with very little overhead and to arbitrate between different processes (apps) requesting access to the same hardware.
 
 ### Compatibility
 
@@ -125,18 +125,18 @@ The Machine learning API was introduced in Native SDK 1.0. All larod API version
 
 ### Code Examples
 
-- [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/larod/)
-  - The example code is written in C which connects to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?) and loads a model, runs inference on it and then finally deletes the loaded model from [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?).
-- [tensorflow-to-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/tensorflow-to-larod/)
-  - This example covers model conversion, model quantization, image formats and custom models in greater depth than the [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/larod) and [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod) examples.
+- [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/larod/)
+  - The example code is written in C which connects to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/FAQs.md#WhatisLarod?) and loads a model, runs inference on it and then finally deletes the loaded model from [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/FAQs.md#WhatisLarod?).
+- [tensorflow-to-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod/)
+  - This example covers model conversion, model quantization, image formats and custom models in greater depth than the [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/larod) and [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-larod) examples.
   - A separate example is available for [ARTPEC-8](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod-artpec8) cameras and [CV25](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod-cv25) cameras.
-- [object-detection](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/object-detection/)
+- [object-detection](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/object-detection/)
   - The example code focus on object detection, cropping and saving detected objects into JPEG files.
   - A separate example is available for [CV25](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/object-detection-cv25) cameras.
-- [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod/)
-  - The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format
-- [vdo-larod-preprocessing](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-larod-preprocessing/)
-  - The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are sent to larod for preprocessing and inference on MODEL.
+- [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-larod/)
+  - The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format
+- [vdo-larod-preprocessing](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-larod-preprocessing/)
+  - The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are sent to larod for preprocessing and inference on MODEL.
 
 ## Overlay API
 
@@ -158,12 +158,12 @@ The Axoverlay API was introduced in Native SDK 1.0.
 
 ### Code Examples
 
-- [axoverlay](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axoverlay/)
+- [axoverlay](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axoverlay/)
   - The example code is written in C which illustrates how to draw plain boxes and text as overlays in a stream.
 
 ## Cairo
 
-Open-source rendering library for 2D vector graphics. See [Cairo documentation](https://www.cairographics.org/documentation/)
+Open-source rendering library for 2D vector graphics. See [Cairo documentation](https://www.cairographics.org/documentation/).
 
 ### Compatibility
 
@@ -179,12 +179,12 @@ The Cairo API was introduced in Native SDK 1.0.
 
 ### Code Examples
 
-- [axoverlay](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axoverlay/)
+- [axoverlay](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axoverlay/)
   - The example code is written in C which illustrates how to draw plain boxes and text as overlays in a stream.
 
 ## OpenCL
 
-Accelerate parallel compute with GPU. See [OpenCL documentation](https://www.khronos.org/opencl/)
+Accelerate parallel compute with GPU. See [OpenCL documentation](https://www.khronos.org/opencl/).
 
 ### Compatibility
 
@@ -199,7 +199,7 @@ The OpenCL 1.2 was introduced in Native SDK 1.0.
 
 ### Code Examples
 
-- [vdo-opencl-filtering](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/vdo-opencl-filtering/)
+- [vdo-opencl-filtering](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-opencl-filtering/)
   - This example illustrates how to capture frames from the vdo service, access the received buffer, and finally perform a GPU accelerated Sobel filtering with OpenCL.
 
 ## Event API
@@ -246,11 +246,11 @@ The Axevent API was introduced in Native SDK 1.0.
 
 ### Code Examples
 
-- [send_event](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axevent/send_event)
+- [send_event](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axevent/send_event)
   - The example code is written in C which sends an ONVIF event periodically.
-- [subscribe_to_event](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axevent/subscribe_to_event)
+- [subscribe_to_event](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axevent/subscribe_to_event)
   - The example code is written in C which subscribe to the ONVIF event sent from application "send_event".
-- [subscribe_to_events](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/axevent/subscribe_to_events)
+- [subscribe_to_events](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axevent/subscribe_to_events)
   - The example code is written in C which subscribes to different predefined events.
 
 ## License Key API
@@ -278,7 +278,7 @@ This API was introduced in Native SDK 1.0.
 
 ### Code Examples
 
-- [licensekey](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/licensekey/)
+- [licensekey](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/licensekey/)
   - The example code is written in C which illustrates how to check the licensekey status.
 
 ## FastCGI

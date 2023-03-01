@@ -18,11 +18,12 @@ An application project contains several files and directories for an application
 | manifest.json        | Defines the application and its configuration.<br>Used at installation of the package.<br>See [Create a manifest file from scratch](#create-a-manifest-file-from-scratch) and [Create a manifest file from existing package.conf](#create-a-manifest-file-from-existing-packageconf) for more information. |
 
 > - An eap package based on **manifest.json** is similar to one based on
-> package.conf. The features previously configured using **package.conf** and
+> **package.conf**. The features previously configured using **package.conf** and
 > special configuration files are now included in **manifest.json**.
 > - Underneath, **package.conf** is generated from **manifest.json** and you
 > might therefore see it during build time. Note however that the generated
-> **package.conf** might be removed in the future.
+> **package.conf** might be removed in the future. For now, it's generated for
+> compatibility reasons.
 
 Other optional files and directories to include:
 
@@ -97,6 +98,8 @@ Example
       "username": "sdk"
     }
 ```
+
+> It's recommended to not run as a defined user, since it may be deprecated in the future.
 
 **4. Add the required embedded development version on the target device.**
 
