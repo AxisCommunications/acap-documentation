@@ -11,7 +11,7 @@ nav_order: 4
 
 Below is a generic guide on how to build and include a third-party library in your application using the ACAP Native SDK.
 
-The third-party library build is taken care of by the Docker file. So while building the third-party library, update and install all necessary build tools needed to build a specific third-party library. Refer to one of the examples in [utility-libraries](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/utility-libraries) that show how supporting build tools are installed, and how third-party library compilation for **armv7hf** is done using the Docker file.
+The third-party library build is taken care of by the Docker file. So while building the third-party library, update and install all necessary build tools needed to build a specific third-party library. Refer to one of the examples in [utility-libraries](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/utility-libraries) that show how supporting build tools are installed, and how third-party library compilation for **armv7hf** is done using the Docker file.
 
 ### Overview of Docker commands used to build the third-party library and generate an ACAP application
 

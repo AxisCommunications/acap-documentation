@@ -28,7 +28,7 @@ replace many of the APIs from ACAP version 3.
 
 | API | Future in ACAP version 4? |
 | :-- | :-- |
-| **axHTTP** | Replaced by the web-server [example](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/web-server) which describes how to achieve the same functionality. |
+| **axHTTP** | Replaced by the web-server [example](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/web-server) which describes how to achieve the same functionality. |
 | **axParameter**<br>**axAudio** | Will get a new API in a later release. |
 | **axPTZ**<br>**Serialport API** | Not yet decided, i.e. may be replaced or moved as is to Native SDK. |
 | **axStorage**| Will not be moved to Native SDK. |
@@ -43,7 +43,7 @@ In ACAP version 4 the possibility to build native ACAP applications (`.eap`-file
 make use of containers inside has been added. This way, a container application
 can be installed the same way as any other ACAP version 3 application. See the
 [container
-example](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/container-example)
+example](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/container-example)
 on GitHub.
 
 ## Which products are supported for applications built with ACAP version 4?
