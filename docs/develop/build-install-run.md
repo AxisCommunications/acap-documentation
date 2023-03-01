@@ -49,7 +49,7 @@ For help on using the build tool, run `acap-build -h`.
 
 For instructions on how to set up your build, to install, and to run with custom
 application image, use the
-[Hello World](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/hello-world)
+[Hello World](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/hello-world)
 example on GitHub.
 
 Using the custom application image, all the building and packaging is done inside a Docker container. The application is then copied to a custom directory, meaning that the original application project directory is not changed.
@@ -200,8 +200,30 @@ After running `docker-compose up`, created containers, networks and volumes can 
 docker-compose --tlsverify -H tcp://$CAMERA_IP:2376 down -v
 ```
 
+#### Configure network proxy settings
+
+You may need to run the following script on the Axis device depending upon your network requirements.
+
+```sh
+#!/bin/sh
+
+# Setup proxy for dockerd
+
+cat >> /etc/systemd/system/sdkrun_dockerd.service <<EOF
+[Service]
+Environment="HTTP_PROXY=http://<myproxy.com>:<port>"
+Environment="HTTPS_PROXY=http://<myproxy>:<port>"
+Environment="NO_PROXY=localhost,127.0.0.0/8,10.0.0.0/8,192.168.0.0/16,172.16.0.0/12,.<domain>"
+EOF
+
+systemctl daemon-reload
+systemctl restart sdkrun_dockerd
+
+exit
+```
+
 ## The Docker Compose ACAP
 
 In addition to the Docker ACAP, there is another similar ACAP: the [Docker Compose ACAP](https://github.com/AxisCommunications/docker-compose-acap). The Docker Compose ACAP not only contains the Docker daemon but also the Docker client, which is why it is significantly larger. When the Docker Compose ACAP is installed, it is possible to run Docker commands directly on the camera instead of using a Docker client on another machine, as is necessary when using the regular Docker ACAP.
 
-The main purpose of the Docker Compose ACAP is to enable running containers as part of native ACAP applications, as demonstrated in [this example](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/container-example). This use case requires that there is a Docker client present on the camera since the ACAP itself must be able to start the containers.
+The main purpose of the Docker Compose ACAP is to enable running containers as part of native ACAP applications, as demonstrated in [this example](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/container-example). This use case requires that there is a Docker client present on the camera since the ACAP itself must be able to start the containers.

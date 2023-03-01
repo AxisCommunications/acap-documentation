@@ -196,8 +196,8 @@ root.Brand.ProdNbr
 
 #### Code Examples
 
-- [parameter-api-cpp](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/parameter-api-cpp) - A C++ example which reads device parameters using the Parameter API.
-- [parameter-api-python](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/master/parameter-api-python) - A Python example which reads device parameters using the Parameter API.
+- [parameter-api-cpp](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/parameter-api-cpp) - A C++ example which reads device parameters using the Parameter API.
+- [parameter-api-python](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/parameter-api-python) - A Python example which reads device parameters using the Parameter API.
 
 ## SDK package index
 

@@ -9,7 +9,7 @@ nav_order: 3
 
 ## ACAP Native SDK
 
-Create your first ACAP application from the [Hello World](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/master/hello-world) example on GitHub which is a part of the [ACAP Native SDK examples](https://github.com/AxisCommunications/acap-native-sdk-examples).
+Create your first ACAP application from the [Hello World](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/hello-world) example on GitHub which is a part of the [ACAP Native SDK examples](https://github.com/AxisCommunications/acap-native-sdk-examples).
 
 ## ACAP Computer Vision SDK
 
