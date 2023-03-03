@@ -42,5 +42,6 @@
     "tesseract",
     "Docker Hub",
     "GitHub"
-  ]
+  ],
+  "markdown.extension.toc.levels": "2..4"
 }
