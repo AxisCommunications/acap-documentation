@@ -4,14 +4,13 @@ on:
      paths:
       - '**'
       - '.github/workflows/build-dockerfiles.yml'
-      - '!.github/workflows/*'
       - '!README.md'
       - '!CONTRIBUTING.md'
       - '!LICENSE.*'
       - '!CODEOWNERS'
       - '!CODE_OF_CONDUCT.md'
 jobs:
-  build:
+  build-docs-in-docker-image:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
