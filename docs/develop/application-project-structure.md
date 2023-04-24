@@ -158,7 +158,7 @@ see [Manifest schemas](manifest-schemas/).
 | :---    | :---                | :---                      | :---        |
 | Application identifier and main binary | acapPackageConf.<br>setup.<br>appName | APPNAME | The name of the application’s executable binary file. |
 | The user friendly name of the application | acapPackageConf.<br>setup.<br>friendlyName | PACKAGENAME<br>MENUNAME | A user-friendly package name, to be used by for instance device management software, when referring to the application. |
-| Name of the application vendor | acapPackageConf.<br>setup.<br>vendor   |  VENDOR | The name of the vendor that created the application, to be used by for instance device management software, when referring to the vendor. |
+| Name of the application vendor | acapPackageConf.<br>setup.<br>vendor   |  VENDOR | The name of the vendor that created the application, to be used by for instance device management software, when referring to the vendor. Signing an application requires this field be set to the name you registered with as an [Axis Technology Integration Partner](https://www.axis.com/partner/technology-integration-partner-program) |
 |                 | acapPackageConf.<br>setup.<br>vendorUrl | VENDORHOMEPAGELINK | Specifies a link to the vendor’s homepage, to be used by for instance device management software, when referring to the vendor. |
 | Version for the ACAP application | acapPackageConf.<br>setup.<br>version | APPMAJORVERSION | A numerical value of the application’s major version. |
 |                                  |                               | APPMINORVERSION | A numerical value of the application’s minor version. |
