@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint:
+  run-linters:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -27,7 +27,7 @@ jobs:
               ret=1
           }
           exit $ret
-      - uses: github/super-linter/slim@v4
+      - uses: github/super-linter/slim@v5
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

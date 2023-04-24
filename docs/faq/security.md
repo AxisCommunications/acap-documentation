@@ -16,9 +16,9 @@ nav_order: 2
 
 ## Sign ACAP applications
 
-Signing an ACAP application, and having the Axis device verify the signature on installation, is currently in development and has not been officially released.
+Signed ACAP applications, and having the Axis device verify the signature on installation, is supported in Axis devices as of AXIS OS 9.20.
 
-In an upcoming [AXIS OS release](https://help.axis.com/axis-os), the Axis device will, using [VAPIX](https://www.axis.com/vapix-library/subjects/t10102231/section/t10036126/display?section=t10036126-t10185050), only accept signed ACAP applications, improving the device's security posture. As of AXIS OS 11.2, this is an opt-in feature, but at some point, the state of only accepting signed ACAP applications will be the default.
+With AXIS OS 11.2, an interface was added to [VAPIX](https://www.axis.com/vapix-library/subjects/t10102231/section/t10036126/display?section=t10036126-t10185050) to control whether the device will only accept signed ACAP applications or not, improving the device's security posture. As of AXIS OS 11.2, this is an opt-in feature.
 
 We recommend that you disable this check while developing your ACAP application. Once you are ready to use your application in production, you can sign it using the [ACAP Service Portal](../service-for-partners/acap-service-portal.md).
 
