@@ -32,6 +32,7 @@ SDK version | Available from firmware version
 1.5 | 11.1
 1.6 | 11.2
 1.7 | 11.3
+1.8 | 11.4
 
 ## Video capture API (VDO)
 
@@ -85,6 +86,7 @@ AXIS OS version | VdoStream API version | New functions added
 11.1 | 9.8.16 | -
 11.2 | 9.18.0 | -
 11.3 | 9.32.0 | -
+11.4 | 9.41.16 | `vdo_channel_get_ex`
 
 ### Known issues
 
@@ -95,10 +97,7 @@ AXIS OS version | VdoStream API version | New functions added
 - [vdostream](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdostream/)
   - The example code is written in C which starts a vdo stream and then illustrates how to continuously capture frames from the vdo service, access the received buffer contents as well as the frame metadata.
 - [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-larod/)
-  - The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format and then sent to larod for inference on MODEL.
-- [vdo-larod-preprocessing](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-larod-preprocessing/)
-  - The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv
-  format which are sent to larod for preprocessing and inference on MODEL.
+  - The example code is written in C and loads an image classification model to the [Machine learning API (Larod)](#machine-learning-api-larod) and then uses the [Video capture API (VDO)](#video-capture-api-vdo) to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format and then sent to larod for inference on MODEL.
 - [vdo-opencl-filtering](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-opencl-filtering/)
   - This example illustrates how to capture frames from the vdo service, access the received buffer, and finally perform a GPU accelerated Sobel filtering with OpenCL.
 
@@ -125,18 +124,14 @@ The Machine learning API was introduced in Native SDK 1.0. All larod API version
 
 ### Code Examples
 
-- [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/larod/)
-  - The example code is written in C which connects to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/FAQs.md#WhatisLarod?) and loads a model, runs inference on it and then finally deletes the loaded model from [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/FAQs.md#WhatisLarod?).
+- [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-larod/)
+  - The example code is written in C and loads an image classification model to the [Machine learning API (Larod)](#machine-learning-api-larod) and then uses the [Video capture API (VDO)](#video-capture-api-vdo) to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format and then sent to larod for inference on MODEL.
 - [tensorflow-to-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod/)
-  - This example covers model conversion, model quantization, image formats and custom models in greater depth than the [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/larod) and [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-larod) examples.
+  - This example covers model conversion, model quantization, image formats and custom models in greater depth than the [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-larod) examples.
   - A separate example is available for [ARTPEC-8](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod-artpec8) cameras and [CV25](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod-cv25) cameras.
 - [object-detection](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/object-detection/)
   - The example code focus on object detection, cropping and saving detected objects into JPEG files.
   - A separate example is available for [CV25](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/object-detection-cv25) cameras.
-- [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-larod/)
-  - The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format
-- [vdo-larod-preprocessing](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-larod-preprocessing/)
-  - The example code is written in C and loads an image classification model to [larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/FAQs.md#WhatisLarod?) and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are sent to larod for preprocessing and inference on MODEL.
 
 ## Overlay API
 
