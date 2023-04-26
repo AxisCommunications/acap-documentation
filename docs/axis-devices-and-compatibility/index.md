@@ -98,6 +98,7 @@ SDK 4.4          | 11.0 and later
 SDK 4.5          | 11.1 and later
 SDK 4.6          | 11.2 and later
 SDK 4.7          | 11.3 and later
+SDK 4.8          | 11.4 and later
 
 How do I know if my device supports a specific AXIS OS version? Please check
 [firmware releases for supported
