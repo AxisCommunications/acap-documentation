@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['neural_20network_20inference',['Neural Network Inference',['../md__opt_builder-doc_larod_doc_nn-inference.html',1,'']]]
+  ['model_20converter_20tool_20_28deprecated_29',['Model converter tool (DEPRECATED)',['../md__opt_builder-doc_larod_tools_model-converter_README.html',1,'']]]
 ];

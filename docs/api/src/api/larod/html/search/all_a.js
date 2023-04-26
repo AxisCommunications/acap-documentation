@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['working_20with_20dma_2dbuf',['Working with dma-buf',['../md__opt_builder-doc_larod_doc_dma-buf.html',1,'']]]
+  ['the_20larod_2dclient_20tool',['The larod-client tool',['../md__opt_builder-doc_larod_doc_larod-client.html',1,'']]]
 ];

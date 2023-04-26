@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"vdo-types_8h.html#acaa9291dd03e128aa2097c75b0d65ab8ac3db05fc3647260a8408dc0a00636b49":[2,0,6,15,7],
 "vdo-types_8h.html#acaa9291dd03e128aa2097c75b0d65ab8ac4285a061f1f32323096a3609ef7e14e":[2,0,6,15,5],
 "vdo-types_8h.html#acca84d091767d5f50187ce875f7f9c3b":[2,0,6,28],
 "vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9e":[2,0,6,9],
