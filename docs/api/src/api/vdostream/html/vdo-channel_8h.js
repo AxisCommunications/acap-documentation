@@ -3,6 +3,7 @@ var vdo_channel_8h =
     [ "vdo_channel_apply_alpha_blending", "vdo-channel_8h.html#a52f2e5a2fb71346ffd9d99e5511f16f4", null ],
     [ "vdo_channel_get", "vdo-channel_8h.html#ae5223c6a11ae8f3583457c4917a0b820", null ],
     [ "vdo_channel_get_all", "vdo-channel_8h.html#ab1032730452f1617fd004f9aa46ded70", null ],
+    [ "vdo_channel_get_ex", "vdo-channel_8h.html#aa2edc605a6118b377c44d189beb62853", null ],
     [ "vdo_channel_get_filtered", "vdo-channel_8h.html#a045ce99305ee3e07ce2a243a6fd28861", null ],
     [ "vdo_channel_get_id", "vdo-channel_8h.html#a2ba1def293a637c15586eb871a586596", null ],
     [ "vdo_channel_get_info", "vdo-channel_8h.html#a19ca10165dba07f8295cd0933bfcaa49", null ],

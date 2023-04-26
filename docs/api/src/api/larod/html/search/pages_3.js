@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['introduction_20to_20larod_20for_20app_20developers',['Introduction to larod for app developers',['../md__opt_builder-doc_larod_doc_introduction-for-app-developers.html',1,'']]]
+  ['how_20to_20setup_20larod_20to_20use_20powerd',['How to setup larod to use powerd',['../md__opt_builder-doc_larod_doc_how-to-setup-larod-to-use-powerd.html',1,'']]]
 ];

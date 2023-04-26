@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.1.153</span>
+   &#160;<span id="projectnumber">3.2.21</span>
    </div>
   </td>
  </tr>
@@ -783,7 +783,7 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a5d61d65903803a3c587e5830de34df24a0444d4c3c924311308e7bd61479dc99d"></a>LAROD_CHIP_LIBYUV&#160;</td><td class="fielddoc"><p>CPU with libyuv. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a5d61d65903803a3c587e5830de34df24accd9f3c3e794255f671d2946ac4a8597"></a>LAROD_CHIP_TFLITE_ARTPEC8DLPU&#160;</td><td class="fielddoc"><p>ARTPEC-8 DLPU with TensorFlow Lite. WARNING: This is an experimental chip which is subject to change. </p>
+<tr><td class="fieldname"><a id="a5d61d65903803a3c587e5830de34df24accd9f3c3e794255f671d2946ac4a8597"></a>LAROD_CHIP_TFLITE_ARTPEC8DLPU&#160;</td><td class="fielddoc"><p>ARTPEC-8 DLPU with TensorFlow Lite. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a5d61d65903803a3c587e5830de34df24a4884591de82d642d0b72c08d07674200"></a>LAROD_CHIP_OPENCL&#160;</td><td class="fielddoc"><p>Image processing using OpenCL. </p>
 </td></tr>
@@ -838,6 +838,8 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a7ed3c8c2c4b753ea64c806e1bef77574ac1681da88d719f28860d8c331b378cec"></a>LAROD_ERROR_VERSION_MISMATCH&#160;</td><td class="fielddoc"><p>Version mismatch. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a7ed3c8c2c4b753ea64c806e1bef77574acd37a2c386d65f6a5db9f067f8096035"></a>LAROD_ERROR_ALLOC&#160;</td><td class="fielddoc"><p>Error while allocating. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7ed3c8c2c4b753ea64c806e1bef77574aea43c75aea282e1cb64a9104e187eb3e"></a>LAROD_ERROR_POWER_NOT_AVAILABLE&#160;</td><td class="fielddoc"><p>Power not available. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a7ed3c8c2c4b753ea64c806e1bef77574afedc80f788b0495a5f6d0662094eaa03"></a>LAROD_ERROR_MAX_ERRNO&#160;</td><td class="fielddoc"><p>Max errno value (dummy value). </p>
 </td></tr>
@@ -3345,7 +3347,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>An initialized connection handle. </td></tr>
-    <tr><td class="paramname">fd</td><td>File descriptor to the model data. This can be set to a negative value (i.e. invalid) if <code>params</code> is also specified (not NULL). </td></tr>
+    <tr><td class="paramname">inFd</td><td>File descriptor to the model data. This can be set to a negative value (i.e. invalid) if <code>params</code> is also specified (not NULL). </td></tr>
     <tr><td class="paramname">dev</td><td>Device to load model onto. </td></tr>
     <tr><td class="paramname">access</td><td>Access specifier for the model. </td></tr>
     <tr><td class="paramname">name</td><td>Name for the model. </td></tr>

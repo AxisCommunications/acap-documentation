@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.1.153</span>
+   &#160;<span id="projectnumber">3.2.21</span>
    </div>
   </td>
  </tr>
@@ -160,6 +160,8 @@ $(function() {
 <p>The access type <code>LAROD_FD_PROP_READWRITE</code> will introduce a memory copy and <code>read()</code>/<code>write()</code> calls for each input and output tensor buffer - these extra operations will degrade performance.</p>
 <h4>Allocation support</h4>
 <p>Tensors allocated using the calls <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> with a model loaded to this backend will have file descriptors that are readable, writable and mappable. Accordingly the tensors will have the fd props <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code> set.</p>
+<h4>Optional parameter support</h4>
+<p>This backend supports the <code>skip-input-dma-sync</code> and <code>skip-output-dma-sync</code> parameters, see the documentation for dma-buf for more details.</p>
 <h3>ACE</h3>
 <p>The ACE backend uses Axis Compute Engine in Axis ARTPEC series chips. It only supports image format conversion.</p>
 <p>The device name of this backend is <code>"axis-ace-proc"</code>; a device handle can be retrieved by providing this device name to <code><a class="el" href="larod_8h.html#a29a9707a190c2d0c44f7e50f942b2621" title="Get an available device. ">larodGetDevice()</a></code>.</p>
@@ -177,6 +179,8 @@ $(function() {
 <p>The access type <code>LAROD_FD_PROP_READWRITE</code> will do a memory copy through <code>read()</code>/<code>write()</code> calls for each input and output tensor buffer - these extra operations will degrade performance.</p>
 <h4>Allocation support</h4>
 <p>Tensors allocated using the calls <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> with a model loaded to this backend will have file descriptors that are readable, writable and mappable. Accordingly the tensors will have the fd props <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code> set.</p>
+<h4>Optional parameter support</h4>
+<p>This backend supports the <code>skip-input-dma-sync</code> and <code>skip-output-dma-sync</code> parameters, see the documentation for dma-buf for more details.</p>
 <h3>VProc</h3>
 <p>The VProc backend uses VPROC in Ambarella CV series chips. It supports image crop, scale and format conversion.</p>
 <p>The device name of this backend is <code>"ambarella-cvflow-proc"</code>; a device handle can be retrieved by providing this device name to <code><a class="el" href="larod_8h.html#a29a9707a190c2d0c44f7e50f942b2621" title="Get an available device. ">larodGetDevice()</a></code>.</p>

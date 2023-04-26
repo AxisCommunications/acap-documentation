@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.1.153</span>
+   &#160;<span id="projectnumber">3.2.21</span>
    </div>
   </td>
  </tr>
@@ -92,6 +92,7 @@ $(function() {
 <li><a href="#larodjobrequest">larodJobRequest</a></li>
 <li><a href="#asynchronous-calls">Asynchronous calls</a></li>
 <li><a href="#tensor-tracking-for-performance">Tensor tracking for performance</a></li>
+<li><a href="#power-management">Power management</a></li>
 </ul>
 </li>
 <li><a href="#backward-compatibility">Backward compatibility</a><ul>
@@ -101,7 +102,6 @@ $(function() {
 </li>
 <li><a href="#future-features">Future features</a><ul>
 <li><a href="#custom-layers">Custom layers</a></li>
-<li><a href="#power-management">Power management</a></li>
 </ul>
 </li>
 </ul>
@@ -181,6 +181,14 @@ $(function() {
 <h3>Tensor tracking for performance</h3>
 <p>The larod service can track <code>larodTensor</code>s in order to sometimes be able to improve memory access performance. For instance, a <code>larodTensor</code> with the file descriptor property <code>LAROD_FD_PROP_MAP</code> need only be mapped once in the service if it's recurring. This can improve performance a lot.</p>
 <p><code>larodTensor</code>s allocated by larod - e.g. using <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> - are tracked by default. To enable tracking on <code>larodTensor</code>s using buffers not allocated by larod <code><a class="el" href="larod_8h.html#a4c84b8df7f3efc94276ba8cdaf940f85" title="Start tracking a tensor in the service. ">larodTrackTensor()</a></code> should be used.</p>
+<h3>Power management</h3>
+<p>Accelerators/devices such as a DLPU may consume a lot of power when inferences are run on them. Embedded systems often have a tight power budget which dictates power-usage levels that must not be exceeded. Because of this, larod is equipped with a feature called a power-controller. The implementation of the power controller could differ between systems because it is an interchangeable part of the service, but in general, the larod service must always request power from the power controller before doing any of the following:</p>
+<ul>
+<li>Running a job on any backend.</li>
+<li>Loading a model on any backend.</li>
+</ul>
+<p>It is up to the power controller to decide when each backend is allowed to run; however, the power controller may never interrupt an executing backend if the backend was granted power when it started working.</p>
+<p>This feature has a single implication in <em>liblarod</em>'s API, which is that the <code><a class="el" href="structlarodError.html" title="Type containing error information. ">larodError</a></code> code <code>LAROD_ERROR_POWER_NOT_AVAILABLE</code> may be returned by functions when there is currently no power available to carry out the request. Applications should (most likely) handle this error code explicitly. The reason for this is that the error is a result of a downtime that is temporary (by design). For some use cases it would make sense to wait for some time and retry the same API call again until <code>LAROD_ERROR_POWER_NOT_AVAILABLE</code> is no longer returned. Another application might instead skip the job altogether and handle it in some other manner (as a non-fatal error). Refer to <code><a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a></code> for API functions that may return <code>LAROD_ERROR_POWER_NOT_AVAILABLE</code>.</p>
 <h2>Backward compatibility</h2>
 <p>liblarod is versioned using <a href="https://semver.org/">semantic versioning</a> and as such the API is only broken in new major releases of liblarod. Further, ABI and API backward compatibility is maintained a period of time after each liblarod major release in order to ease the transition between API breaks for app developers.</p>
 <h3>ABI backward compatibility</h3>
@@ -193,9 +201,7 @@ $(function() {
 <h2>Future features</h2>
 <p>larod is under active development and the following features are not yet part of larod; however, there are plans to implement them.</p>
 <h3>Custom layers</h3>
-<p>At this stage larod does not support models using custom layers for all devices. However there are plans to implement such support in the future for any hardware that allows custom layers as long as it does not interfere too much with the larod architecture.</p>
-<h3>Power management</h3>
-<p>Many accelerators use a lot of power when running jobs on them. Devices typically have a tight power budget which dictates power usage levels that must not be exceeded. If for example a camera needs to run a power hungry task not related to an accelerator such as switching an IR filter, then jobs on the accelerator must be paused for a while. larod will automatically delay running jobs on the hardware in such a scenario by keeping track of the power usage on the camera, and an application using larod does not have to worry about it at all. </p>
+<p>At this stage larod does not support models using custom layers for all devices. However there are plans to implement such support in the future for any hardware that allows custom layers as long as it does not interfere too much with the larod architecture. </p>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

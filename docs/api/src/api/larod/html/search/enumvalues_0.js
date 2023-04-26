@@ -29,6 +29,7 @@ var searchData=
   ['larod_5ferror_5fmodel_5fnot_5ffound',['LAROD_ERROR_MODEL_NOT_FOUND',['../larod_8h.html#a7ed3c8c2c4b753ea64c806e1bef77574a5fa3b850b53182b182a07d61f08cea59',1,'larod.h']]],
   ['larod_5ferror_5fnone',['LAROD_ERROR_NONE',['../larod_8h.html#a7ed3c8c2c4b753ea64c806e1bef77574a45ad6b0828d9c19ad1d275c5fb947ddf',1,'larod.h']]],
   ['larod_5ferror_5fpermission',['LAROD_ERROR_PERMISSION',['../larod_8h.html#a7ed3c8c2c4b753ea64c806e1bef77574ac90e0e0cc4e9cea71d28418a7085d8d9',1,'larod.h']]],
+  ['larod_5ferror_5fpower_5fnot_5favailable',['LAROD_ERROR_POWER_NOT_AVAILABLE',['../larod_8h.html#a7ed3c8c2c4b753ea64c806e1bef77574aea43c75aea282e1cb64a9104e187eb3e',1,'larod.h']]],
   ['larod_5ferror_5ftensor_5fmismatch',['LAROD_ERROR_TENSOR_MISMATCH',['../larod_8h.html#a7ed3c8c2c4b753ea64c806e1bef77574afce5ab6ba09b6e9d4b1cb786e36718d3',1,'larod.h']]],
   ['larod_5ferror_5fversion_5fmismatch',['LAROD_ERROR_VERSION_MISMATCH',['../larod_8h.html#a7ed3c8c2c4b753ea64c806e1bef77574ac1681da88d719f28860d8c331b378cec',1,'larod.h']]],
   ['larod_5ftensor_5fdata_5ftype_5fbool',['LAROD_TENSOR_DATA_TYPE_BOOL',['../larod_8h.html#a091105f674ae33930d6c4677fd31edbdac04c01136e81890d6bff7a65c3bcf222',1,'larod.h']]],
