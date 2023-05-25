@@ -85,7 +85,7 @@ Since super-linter is using a Docker image in GitHub Actions, users of other edi
 To run a number of linters on the codebase from command-line:
 
 ```sh
-docker run --rm  \
+docker run --rm \
   -v $PWD:/tmp/lint \
   -e RUN_LOCAL=true \
   -e LINTER_RULES_PATH=/ \
