@@ -19,7 +19,7 @@ By signing your ACAP application, you can:
 
 ### How to sign your application
 
-To sign your ACAP application, you'll need access to the [ACAP Service Portal](acap-service-portal), which is currently restricted to members of the [Axis Technology Integration Partner (TIP)](https://www.axis.com/partner/technology-integration-partner-program) program. If you're not a partner, you can apply for access to the ACAP Service Portal if you qualify for the program requirements.
+To sign your ACAP application, you'll need access to the [ACAP Service Portal](acap-service-portal), which is currently restricted to members of the [Axis Technology Integration Partner](https://www.axis.com/partner/technology-integration-partner-program) program. If you're not a partner, you can apply for access to the ACAP Service Portal if you qualify for the program requirements.
 
 To sign your application, you'll need to set some fields in the [manifest](../develop/application-project-structure#manifest-file-content), such as **vendor** and **architecture**. A full list of requirements and other information can be found in the [ACAP Service Portal](acap-service-portal).
 
