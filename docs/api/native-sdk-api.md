@@ -234,6 +234,8 @@ The API supports products with the following chips:
 - Ambarella CV25
 - Ambarella S5L
 - Ambarella S5
+- i.MX 6SoloX
+- i.MX 6ULL
 
 ### Version history
 
@@ -266,6 +268,8 @@ The API supports products with the following chips:
 - Ambarella CV25
 - Ambarella S5L
 - Ambarella S5
+- i.MX 6SoloX
+- i.MX 6ULL
 
 ### Version history
 
@@ -287,6 +291,8 @@ The FastCGI API supports products with the following chips:
 - ARTPEC-8
 - ARTPEC-7
 - CV25
+- i.MX 6SoloX
+- i.MX 6ULL
 
 ### Version history
 
