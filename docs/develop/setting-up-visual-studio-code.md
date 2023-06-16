@@ -31,3 +31,44 @@ The application restarts and is now attached to a container with the SDK and you
 You can install different versions of the SDK in separate containers. When you open your source code folder, Visual Studio Code identifies the SDK version defined in the `devcontainer.json`.
 
 The ACAP Native SDK container includes all the SDK tools, Git and some other useful things. But you can create your own Dev Container Dockerfile or add more tools to the `devcontainer.json` configuration. See [Microsoft's tutorials on how to use Development Containers](https://code.visualstudio.com/docs/remote/containers) for more information on what this way of working can offer.
+
+## Code completion of Axis APIs
+
+To access the header files of the Axis APIs inside the Development container, the following architecture independent path should be added to the VS Code extension configuration of your choice:
+
+```text
+${SDKTARGETSYSROOT}/usr/include/
+```
+
+### Microsoft C/C++ extension
+
+To enhance your development experience in Visual Studio Code, you can install the Microsoft [C/C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools). This extension provides various features that can assist you with code editing and navigation.
+
+To install and setup the extension, follow these steps:
+
+1. Install the [C/C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)  available in the **Extensions Marketplace** in **Visual Studio Code**.
+2. Create a subfolder called `.vscode` in the top directory of the source code project you are working on.
+In `.vscode`, create a `c_cpp_properties.json` with the following content:
+
+   ```json
+   {
+       "configurations": [
+           {
+               "name": "Linux",
+               "includePath": [
+                   "${workspaceFolder}/**",
+                   "${SDKTARGETSYSROOT}/usr/include/**"
+               ]
+           }
+       ],
+       "version": 4
+   }
+   ```
+
+Once the installation is complete, you can benefit from features such as IntelliSense and code browsing.
+You can now, for example get suggestions about Axis libraries as you type or hover over a symbol:
+
+<!-- markdownlint-disable MD033 -->
+<img src="../../assets/images/vs-code-ms-cpp-extension.png" height="240">
+
+For detailed information on how to use the C/C++ extension and its various features, refer to the extension's documentation available in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools).
