@@ -33,6 +33,7 @@ SDK version | Available from firmware version
 1.6 | 11.2
 1.7 | 11.3
 1.8 | 11.4
+1.9 | 11.5
 
 ## Video capture API (VDO)
 
@@ -87,6 +88,7 @@ AXIS OS version | VdoStream API version | New functions added
 11.2 | 9.18.0 | -
 11.3 | 9.32.0 | -
 11.4 | 9.41.16 | `vdo_channel_get_ex`
+11.5 | 9.59.0 | -
 
 ### Known issues
 
@@ -126,9 +128,6 @@ The Machine learning API was introduced in Native SDK 1.0. All larod API version
 
 - [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-larod/)
   - The example code is written in C and loads an image classification model to the [Machine learning API (Larod)](#machine-learning-api-larod) and then uses the [Video capture API (VDO)](#video-capture-api-vdo) to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format and then sent to larod for inference on MODEL.
-- [tensorflow-to-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod/)
-  - This example covers model conversion, model quantization, image formats and custom models in greater depth than the [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-larod) examples.
-  - A separate example is available for [ARTPEC-8](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod-artpec8) cameras and [CV25](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod-cv25) cameras.
 - [object-detection](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/object-detection/)
   - The example code focus on object detection, cropping and saving detected objects into JPEG files.
   - A separate example is available for [CV25](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/object-detection-cv25) cameras.
@@ -234,6 +233,8 @@ The API supports products with the following chips:
 - Ambarella CV25
 - Ambarella S5L
 - Ambarella S5
+- i.MX 6SoloX
+- i.MX 6ULL
 
 ### Version history
 
@@ -266,6 +267,8 @@ The API supports products with the following chips:
 - Ambarella CV25
 - Ambarella S5L
 - Ambarella S5
+- i.MX 6SoloX
+- i.MX 6ULL
 
 ### Version history
 
@@ -287,6 +290,8 @@ The FastCGI API supports products with the following chips:
 - ARTPEC-8
 - ARTPEC-7
 - CV25
+- i.MX 6SoloX
+- i.MX 6ULL
 
 ### Version history
 
