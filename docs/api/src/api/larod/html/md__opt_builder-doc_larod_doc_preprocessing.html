@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.2.21</span>
+   &#160;<span id="projectnumber">3.2.47-dirty</span>
    </div>
   </td>
  </tr>
@@ -205,8 +205,7 @@ $(function() {
 <p>OpenCL is a compute framework which enables programmers to write programs that execute across heterogeneous platforms such as CPUs, GPUs and more. larod contains predefined OpenCL programs which lets a larod user through its OpenCL backend conveniently run image crop, scale and format conversion.</p>
 <p>The platform larod runs on may have several devices supporting the OpenCL framework. larod can run its operations on any of these devices; each OpenCL device has a unique device name.</p>
 <h4>Choosing a specific device</h4>
-<p>There are currently three available OpenCL backends; these are <code>"axis-a7-gpu-proc"</code>, <code>"axis-a8-dlpu-proc"</code> and <code>"axis-a8-gpu-proc"</code>. A device handle to one of these backends can be retrieved by providing the respective device name to <code><a class="el" href="larod_8h.html#a29a9707a190c2d0c44f7e50f942b2621" title="Get an available device. ">larodGetDevice()</a></code>.</p>
-<p>The names of the three device are rather self explanatory; it is possible to run OpenCL on the GPU for Artpec-7 and both GPU and DLPU on Artpec-8 on platforms using one of these SoCs.</p>
+<p>There are currently two available OpenCL backends; these are <code>"axis-a8-dlpu-proc"</code>, which runs on the DLPU on ARTPEC-8, and <code>"axis-a8-gpu-proc"</code>, which runs on the GPU on ARTPEC-8. A device handle to one of these backends can be retrieved by providing the respective device name to <code><a class="el" href="larod_8h.html#a29a9707a190c2d0c44f7e50f942b2621" title="Get an available device. ">larodGetDevice()</a></code>.</p>
 <h4>Supported buffer properties for running jobs</h4>
 <p>The backends only support the fd access type <code>LAROD_FD_PROP_READWRITE</code>.</p>
 <h4>Allocation support</h4>
@@ -263,7 +262,7 @@ $(function() {
 <tr>
 <td>VProc </td><td>Yes </td><td></td><td>Yes </td></tr>
 <tr>
-<td>OpenCL </td><td>Yes </td><td></td><td></td></tr>
+<td>OpenCL </td><td>Yes </td><td></td><td>Yes </td></tr>
 </table>
 <h2>Supported buffer properties</h2>
 <p>This is an overview of what file descriptor properties are supported by the various preprocessing backends. Note that the <code>LAROD_FD_PROP_</code> prefix have been omitted from the table headers in the interest of brevity. Please see <a href="../lib/larod.h"><code>larod.h</code></a> for more info about the <code>LAROD_FD_PROP_*</code> flags.</p>
