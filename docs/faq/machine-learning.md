@@ -25,7 +25,7 @@ The [FAQ in the ACAP Computer Vision example repository](https://github.com/Axis
 
 A few aspects of this question are answered in [ACAP Computer Vision SDK examples #112](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/discussions/112), but in general, a model that works on ARTPEC-7 can also work on ARTPEC-8. The difference is not about the model's architecture but an optimization stage called *quantization*. Make sure to use *quantization by tensor* on ARTPEC-8, since it is the most optimal solution on that platform.
 
-[From Tensorflow model to larod inference on camera](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod-artpec8) in the [ACAP Native SDK examples](https://github.com/AxisCommunications/acap-native-sdk-examples) repository also contains relevant information on model conversion, model quantization and image formats.
+You can also find relevant information on model conversion, model quantization and image formats in the [ACAP Native SDK examples](https://github.com/AxisCommunications/acap-native-sdk-examples) repository, specifically for [ARTPEC-7](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod), [ARTPEC-8](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod-artpec8) and [CV25](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod-cv25).
 
 ## What is the training process for the respective accelerator?
 

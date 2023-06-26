@@ -68,6 +68,8 @@ Product                                                     | Available from | C
 [Q3536-LVE](https://www.axis.com/products/axis-q3536-lve)   | 10.8           | ARTPEC-8 | aarch64
 [Q3538-LVE](https://www.axis.com/products/axis-q3538-lve)   | 10.8           | ARTPEC-8 | aarch64
 [Q3538-SLVE](https://www.axis.com/products/axis-q3538-slve) | 11.1           | ARTPEC-8 | aarch64
+[Q3626-VE](https://www.axis.com/products/axis-q3626-ve)     | 11.4           | ARTPEC-8 | aarch64
+[Q3628-VE](https://www.axis.com/products/axis-q3628-ve)     | 11.4           | ARTPEC-8 | aarch64
 
 ### ACAP Native SDK
 
@@ -101,6 +103,7 @@ SDK 4.5          | 11.1 and later
 SDK 4.6          | 11.2 and later
 SDK 4.7          | 11.3 and later
 SDK 4.8          | 11.4 and later
+SDK 4.9          | 11.5 and later
 
 How do I know if my device supports a specific AXIS OS version? Please check
 [firmware releases for supported
