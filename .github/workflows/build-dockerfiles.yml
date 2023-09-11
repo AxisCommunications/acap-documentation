@@ -13,7 +13,7 @@ jobs:
   build-docs-in-docker-image:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Build and test pages
       run: |
         t0=testimage:0
