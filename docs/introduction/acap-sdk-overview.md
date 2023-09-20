@@ -9,6 +9,19 @@ nav_order: 4
 
 AXIS Camera Application Platform (ACAP) version 4 is capable of building edge-based applications. It contains two complementing SDKs addressing different needs, the ACAP Native SDK and the ACAP Computer Vision SDK.
 
+## Summary Native SDK and ACAP Computer Vision SDK
+
+Here is a summary of the difference between Native SDK and Computer Vision SDK:
+
+| | Native SDK | Computer Vision SDK |
+|--|--|--|
+| Supported Products | ARTPEC-8, ARTPEC-7, ARTPEC-6, CV25, i.MX 6SoloX, i.MX 6ULL, S5L, S5 (see the [full compatibility list](../axis-devices-and-compatibility/#acap-native-sdk)) | ARTPEC-7 with DLPU and ARTPEC-8 (see the [full compatibility list](../axis-devices-and-compatibility/#acap-computer-vision-sdk)) |
+| Requirements | Minimum AXIS OS 10.7 | Minimum AXIS OS 10.7, SD card |
+| Programming Languages | C/C++ | C/C++, Python, .NET <br />  (and other mainstream languages) |
+| App Development | Docker | Docker |
+| App Deployment | Web GUI or Vapix API | Docker |
+| Examples | [Native SDK examples](https://github.com/AxisCommunications/acap-native-sdk-examples) | [Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples) |
+
 ## ACAP Native SDK
 
 The ACAP Native SDK is targeted towards users that want to develop plug-in style, event generating applications that fit well into a VMS centric system. This SDK offers high performance by integrating closely with AXIS OS and hardware. Already existing ACAP users should feel at home using this SDK and migrating from previous version ACAP version 3 to this SDK should be straightforward.
