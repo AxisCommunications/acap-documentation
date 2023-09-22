@@ -2,7 +2,7 @@
 layout: page
 parent: Develop ACAP applications
 title: Setting up Visual Studio Code
-nav_order: 7
+nav_order: 8
 ---
 
 # Setting up Visual Studio Code
