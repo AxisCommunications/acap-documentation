@@ -7,7 +7,7 @@ nav_order: 7
 
 # VAPIX access for ACAP applications - BETA
 
-From AXIS OS 11.6, ACAP applications can acquire VAPIX user credentials in runtime. With these credentials, the ACAP application can call a local virtual host to make VAPIX requests on the device. A username and a password with high complexity are created for every credential acquisition. These credentials are only valid on the local virtual host (127.0.0.12) and aren't stored in any file. It should only be kept in memory by the ACAP application.
+From AXIS OS 11.6, ACAP applications can acquire VAPIX service account credentials in runtime. With these credentials, the ACAP application can call a local virtual host to make VAPIX requests on the device. A username and a password with high complexity are created for every credential acquisition. These credentials are only valid on the local virtual host (127.0.0.12) and aren't stored in any file. It should only be kept in memory by the ACAP application.
 
 The following steps show how to get VAPIX credentials in an ACAP application.
 
@@ -43,7 +43,7 @@ Example Manifest
 
 ## Acquire credentials
 
-An ACAP application can acquire VAPIX user credentials through a D-Bus call. This example uses GDBus, a high-level D-Bus library for working with D-Bus.
+An ACAP application can acquire VAPIX service account credentials through a D-Bus call. This example uses GDBus, a high-level D-Bus library for working with D-Bus.
 
 1. Establish a D-Bus connection to the system bus:
 
@@ -122,7 +122,7 @@ In this example, the [openssl_curl_example](https://github.com/AxisCommunication
 
 ## Test from command-line
 
-SSH into a device and make a D-Bus call using a command-line to get VAPIX user credentials.
+SSH into a device and make a D-Bus call using a command-line to get VAPIX service account credentials.
 
 Example call:
 
@@ -152,7 +152,7 @@ Where `id` and `pass` are the credentials obtained from the GDBus call. This cUR
 
 ## Limitations
 
-- A device can hold a maximum of 200 VAPIX user accounts.
-- There are no VAPIX user accounts after rebooting a device. Restarting the device removes all the created credentials.
+- A device can hold a maximum of 200 VAPIX service accounts.
+- There are no VAPIX service accounts after rebooting a device. Restarting the device removes all the created credentials.
 - The credentials should be re-fetched each time the ACAP application starts and should only be kept in memory by the ACAP application, not stored in any file.
 - We officially support only the specific D-Bus method calls introduced in this feature. Use of other D-Bus methods outside of this feature is not supported and may result in undefined behavior.
