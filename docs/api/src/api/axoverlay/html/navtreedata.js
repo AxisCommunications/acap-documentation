@@ -1,8 +1,7 @@
 var NAVTREE =
 [
   [ "Axoverlay Library", "index.html", [
-    [ "Documentation", "index.html", null ],
-    [ "Axoverlay C API", "axoverlaypage.html", null ],
+    [ "Axoverlay C API version 1.0", "axoverlaypage.html", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],

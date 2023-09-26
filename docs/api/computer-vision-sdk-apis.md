@@ -19,16 +19,17 @@ The table below shows ACAP Computer Vision SDK and firmware version compatibilit
 
 SDK version | Available from firmware version
 ----------- | -------------------------------
-1.0 | 10.7
-1.1 | 10.9
-1.2 | 10.10
-1.3 | 10.12
-1.4 | 11.0
-1.5 | 11.1
-1.6 | 11.2
-1.7 | 11.3
-1.8 | 11.4
-1.9 | 11.5
+1.0  | 10.7
+1.1  | 10.9
+1.2  | 10.10
+1.3  | 10.12
+1.4  | 11.0
+1.5  | 11.1
+1.6  | 11.2
+1.7  | 11.3
+1.8  | 11.4
+1.9  | 11.5
+1.10 | 11.6
 
 ## SDK index
 

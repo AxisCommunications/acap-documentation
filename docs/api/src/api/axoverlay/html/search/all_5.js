@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['height',['height',['../structaxoverlay__stream__data.html#aa940c45118672a025580471a37f271d3',1,'axoverlay_stream_data::height()'],['../structaxoverlay__overlay__data.html#a46ba082e753d485adab2336ae52b5582',1,'axoverlay_overlay_data::height()']]]
+  ['id',['id',['../structaxoverlay__stream__data.html#a347956f69ef6dd2d9999ed96c213870e',1,'axoverlay_stream_data']]],
+  ['is_5fmirrored',['is_mirrored',['../structaxoverlay__stream__data.html#a8e8231382e1cdfcb1b18181d6b449b0e',1,'axoverlay_stream_data']]]
 ];

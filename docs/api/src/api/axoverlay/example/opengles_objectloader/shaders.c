@@ -4,7 +4,7 @@
 
 #include "shaders.h"
 
-#include "error_handler.h"
+#include "../../src/error_handler.h"
 
 #include <stdlib.h>
 #include <stdio.h>

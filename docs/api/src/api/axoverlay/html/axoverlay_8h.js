@@ -13,6 +13,7 @@ var axoverlay_8h =
     [ "axoverlay_adjustment_function", "axoverlay_8h.html#acd597540ddc493c361cf49d425527c9b", null ],
     [ "axoverlay_render_function", "axoverlay_8h.html#af8cda33355d9b1345b4bc97836324a6e", null ],
     [ "axoverlay_stream_select_function", "axoverlay_8h.html#a69680654ad920dd63825debf80db1835", null ],
+    [ "axoverlay_synced_render_function", "axoverlay_8h.html#a837c18c9e89496b8e59c23c9320439aa", null ],
     [ "axoverlay_anchor_point", "axoverlay_8h.html#aa9f8d7e0652223e43d0d80b35fb1b017", [
       [ "AXOVERLAY_ANCHOR_TOP_LEFT", "axoverlay_8h.html#aa9f8d7e0652223e43d0d80b35fb1b017a8d67dcee72751fc14aa2d1bce7600efe", null ],
       [ "AXOVERLAY_ANCHOR_CENTER", "axoverlay_8h.html#aa9f8d7e0652223e43d0d80b35fb1b017a364bf6dd30ca9c71e5e3cb711befd6fc", null ]
@@ -56,6 +57,7 @@ var axoverlay_8h =
     [ "axoverlay_cleanup", "axoverlay_8h.html#a3510c0ea4e04846864603505b3994cf5", null ],
     [ "axoverlay_create_overlay", "axoverlay_8h.html#a95a791a9f63d0c5bad2d403b0d8c7ba3", null ],
     [ "axoverlay_destroy_overlay", "axoverlay_8h.html#aef2581df55e0b9adef9fcb795336c902", null ],
+    [ "axoverlay_enable_cpu_mem_sync", "axoverlay_8h.html#a4f313b61885df524cefe3242527ef1cd", null ],
     [ "axoverlay_get_max_resolution_height", "axoverlay_8h.html#aba18305ff424cfe2dd8c88974da6c700", null ],
     [ "axoverlay_get_max_resolution_width", "axoverlay_8h.html#a2081f1e63d1ccefe40e36b7328d07b05", null ],
     [ "axoverlay_get_number_of_palette_colors", "axoverlay_8h.html#a9039e46539a8ed3e23754e9261b0e793", null ],
@@ -66,7 +68,12 @@ var axoverlay_8h =
     [ "axoverlay_is_backend_supported", "axoverlay_8h.html#ad150141c6187fb915ea263c9824e2114", null ],
     [ "axoverlay_redraw", "axoverlay_8h.html#ac73bea732951f6bdcead8ee248b35b0a", null ],
     [ "axoverlay_reload_streams", "axoverlay_8h.html#a05e917b3d92ca3b5e38dd074aeb7d80c", null ],
+    [ "axoverlay_set_adjustment_callback", "axoverlay_8h.html#af78f0b190338d56da5c6491dfff596d3", null ],
+    [ "axoverlay_set_backend", "axoverlay_8h.html#af9c9390f00f72ac40793d35f0e4392fd", null ],
     [ "axoverlay_set_overlay_position", "axoverlay_8h.html#ade3ed3d327deba171eb679416a28af6e", null ],
     [ "axoverlay_set_overlay_size", "axoverlay_8h.html#aadef178b4a74eb601c095fcb9a0875b3", null ],
-    [ "axoverlay_set_palette_color", "axoverlay_8h.html#ac95c0f4c11509dfae12707aff79eedb8", null ]
+    [ "axoverlay_set_palette_color", "axoverlay_8h.html#ac95c0f4c11509dfae12707aff79eedb8", null ],
+    [ "axoverlay_set_render_callback", "axoverlay_8h.html#a41f1b95d6f4a76bda3795196bee97a2c", null ],
+    [ "axoverlay_set_stream_select_callback", "axoverlay_8h.html#a14986c555fe904ad27e9cee09c5793b1", null ],
+    [ "axoverlay_set_synced_render_callback", "axoverlay_8h.html#aa8ef90e6f67e0523c50f70e195b923e9", null ]
 ];

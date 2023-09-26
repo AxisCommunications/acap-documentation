@@ -52,24 +52,32 @@ Product                                                     | Available from | C
 [M3215-LVE](https://www.axis.com/products/axis-m3215-lve)   | 10.12          | ARTPEC-8 | aarch64
 [M3216-LVE](https://www.axis.com/products/axis-m3216-lve)   | 10.12          | ARTPEC-8 | aarch64
 [M4308-PLE](https://www.axis.com/products/axis-m4308-ple)   | 10.8           | ARTPEC-7 | armv7hf
+[M4317-PLVE](https://www.axis.com/products/axis-m4317-plve), [M4318-PLVE](https://www.axis.com/products/axis-m4318-plve) | 11.5 | ARTPEC-8 | aarch64
+[M4327-P](https://www.axis.com/products/axis-m4327-p), [M4328-P](https://www.axis.com/products/axis-m4328-p) | 11.4 | ARTPEC-8 | aarch64
 [P1465-LE](https://www.axis.com/products/axis-p1465-le)     | 11.1           | ARTPEC-8 | aarch64
+[P1465-LE-3](https://www.axis.com/products/axis-p1465-le-3) | 11.5           | ARTPEC-8 | aarch64
 [P1467-LE](https://www.axis.com/products/axis-p1467-le)     | 11.1           | ARTPEC-8 | aarch64
 [P1468-LE](https://www.axis.com/products/axis-p1468-le)     | 11.1           | ARTPEC-8 | aarch64
+[P1468-XLE](https://www.axis.com/products/axis-p1468-xle)   | 11.5           | ARTPEC-8 | aarch64
 [P3255-LVE](https://www.axis.com/products/axis-p3255-lve)   | 10.5           | ARTPEC-7 | armv7hf
 [P3265-LV](https://www.axis.com/products/axis-p3265-lv), [P3265-LVE](https://www.axis.com/products/axis-p3265-lve), [P3265-V](https://www.axis.com/products/axis-p3265-v) | 10.10 | ARTPEC-8 | aarch64
+[P3265-LVE-3](https://www.axis.com/products/axis-p3265-lve-3) | 11.5           | ARTPEC-8 | aarch64
 [P3267-LV](https://www.axis.com/products/axis-p3267-lv), [P3267-LVE](https://www.axis.com/products/axis-p3267-lve) | 10.11 | ARTPEC-8 | aarch64
 [P3268-LV](https://www.axis.com/products/axis-p3268-lv), [P3268-LVE](https://www.axis.com/products/axis-p3268-lve) | 10.11 | ARTPEC-8 | aarch64
+[P3827-PVE](https://www.axis.com/products/axis-p3827-pve)   | 11.5           | ARTPEC-8 | aarch64
 [Q1615 Mk III](https://www.axis.com/products/axis-q1615-mk-iii), [Q1615-LE Mk III](https://www.axis.com/products/axis-q1615-le-mk-iii) | 10.4 | ARTPEC-7 | armv7hf
 [Q1656](https://www.axis.com/products/axis-q1656), [Q1656-LE](https://www.axis.com/products/axis-q1656-le) | 10.8 | ARTPEC-8 | aarch64
 [Q1656-B](https://www.axis.com/products/axis-q1656-b), [Q1656-BE](https://www.axis.com/products/axis-q1656-be), [Q1656-BLE](https://www.axis.com/products/axis-q1656-ble) | 10.10 | ARTPEC-8 | aarch64
 [Q1656-DLE](https://www.axis.com/products/axis-q1656-dle)   | 11.2           | ARTPEC-8 | aarch64
 [Q1715](https://www.axis.com/products/axis-q1715)           | 10.8           | ARTPEC-7 | armv7hf
 [Q1961-TE](https://www.axis.com/products/axis-q1961-te)     | 11.2           | ARTPEC-8 | aarch64
+[Q2101-TE](https://www.axis.com/products/axis-q2101-te)     | 11.5           | ARTPEC-8 | aarch64
 [Q3536-LVE](https://www.axis.com/products/axis-q3536-lve)   | 10.8           | ARTPEC-8 | aarch64
 [Q3538-LVE](https://www.axis.com/products/axis-q3538-lve)   | 10.8           | ARTPEC-8 | aarch64
 [Q3538-SLVE](https://www.axis.com/products/axis-q3538-slve) | 11.1           | ARTPEC-8 | aarch64
 [Q3626-VE](https://www.axis.com/products/axis-q3626-ve)     | 11.4           | ARTPEC-8 | aarch64
 [Q3628-VE](https://www.axis.com/products/axis-q3628-ve)     | 11.4           | ARTPEC-8 | aarch64
+[XFQ1656](https://www.axis.com/products/axis-xfq1656)       | 11.5           | ARTPEC-8 | aarch64
 
 ### ACAP Native SDK
 
@@ -104,6 +112,7 @@ SDK 4.6          | 11.2 and later
 SDK 4.7          | 11.3 and later
 SDK 4.8          | 11.4 and later
 SDK 4.9          | 11.5 and later
+SDK 4.10         | 11.6 and later
 
 How do I know if my device supports a specific AXIS OS version? Please check
 [firmware releases for supported

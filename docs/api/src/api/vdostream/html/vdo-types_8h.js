@@ -136,7 +136,8 @@ var vdo_types_8h =
       [ "VDO_WDR_MODE_2X", "vdo-types_8h.html#ae575c780c555d7914290feae719fa2a3aa211cda0b04b9923970a58f328e2c4a0", null ],
       [ "VDO_WDR_MODE_3X", "vdo-types_8h.html#ae575c780c555d7914290feae719fa2a3ab018e7619786f9da553894ec56b31196", null ],
       [ "VDO_WDR_MODE_4X", "vdo-types_8h.html#ae575c780c555d7914290feae719fa2a3a848ef4214342a9efe04337401859bcaa", null ],
-      [ "VDO_WDR_MODE_SENSOR", "vdo-types_8h.html#ae575c780c555d7914290feae719fa2a3a6c76a6b34b64789bfcb4758659790a4e", null ]
+      [ "VDO_WDR_MODE_SENSOR", "vdo-types_8h.html#ae575c780c555d7914290feae719fa2a3a6c76a6b34b64789bfcb4758659790a4e", null ],
+      [ "VDO_WDR_MODE_OFF", "vdo-types_8h.html#ae575c780c555d7914290feae719fa2a3a8c5fe8ccf143059780440a3430a7d097", null ]
     ] ],
     [ "VdoZipStreamProfile", "vdo-types_8h.html#a7d42c863f85fae6169685874dbbde1b3", [
       [ "VDO_ZIPSTREAM_PROFILE_NONE", "vdo-types_8h.html#a7d42c863f85fae6169685874dbbde1b3a89f57cfdc17fe2f1e38f2271c184af69", null ],
