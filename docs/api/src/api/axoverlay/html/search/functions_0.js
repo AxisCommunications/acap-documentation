@@ -3,6 +3,7 @@ var searchData=
   ['axoverlay_5fcleanup',['axoverlay_cleanup',['../axoverlay_8h.html#a3510c0ea4e04846864603505b3994cf5',1,'axoverlay.h']]],
   ['axoverlay_5fcreate_5foverlay',['axoverlay_create_overlay',['../axoverlay_8h.html#a95a791a9f63d0c5bad2d403b0d8c7ba3',1,'axoverlay.h']]],
   ['axoverlay_5fdestroy_5foverlay',['axoverlay_destroy_overlay',['../axoverlay_8h.html#aef2581df55e0b9adef9fcb795336c902',1,'axoverlay.h']]],
+  ['axoverlay_5fenable_5fcpu_5fmem_5fsync',['axoverlay_enable_cpu_mem_sync',['../axoverlay_8h.html#a4f313b61885df524cefe3242527ef1cd',1,'axoverlay.h']]],
   ['axoverlay_5fget_5fmax_5fresolution_5fheight',['axoverlay_get_max_resolution_height',['../axoverlay_8h.html#aba18305ff424cfe2dd8c88974da6c700',1,'axoverlay.h']]],
   ['axoverlay_5fget_5fmax_5fresolution_5fwidth',['axoverlay_get_max_resolution_width',['../axoverlay_8h.html#a2081f1e63d1ccefe40e36b7328d07b05',1,'axoverlay.h']]],
   ['axoverlay_5fget_5fnumber_5fof_5fpalette_5fcolors',['axoverlay_get_number_of_palette_colors',['../axoverlay_8h.html#a9039e46539a8ed3e23754e9261b0e793',1,'axoverlay.h']]],
@@ -13,7 +14,12 @@ var searchData=
   ['axoverlay_5fis_5fbackend_5fsupported',['axoverlay_is_backend_supported',['../axoverlay_8h.html#ad150141c6187fb915ea263c9824e2114',1,'axoverlay.h']]],
   ['axoverlay_5fredraw',['axoverlay_redraw',['../axoverlay_8h.html#ac73bea732951f6bdcead8ee248b35b0a',1,'axoverlay.h']]],
   ['axoverlay_5freload_5fstreams',['axoverlay_reload_streams',['../axoverlay_8h.html#a05e917b3d92ca3b5e38dd074aeb7d80c',1,'axoverlay.h']]],
+  ['axoverlay_5fset_5fadjustment_5fcallback',['axoverlay_set_adjustment_callback',['../axoverlay_8h.html#af78f0b190338d56da5c6491dfff596d3',1,'axoverlay.h']]],
+  ['axoverlay_5fset_5fbackend',['axoverlay_set_backend',['../axoverlay_8h.html#af9c9390f00f72ac40793d35f0e4392fd',1,'axoverlay.h']]],
   ['axoverlay_5fset_5foverlay_5fposition',['axoverlay_set_overlay_position',['../axoverlay_8h.html#ade3ed3d327deba171eb679416a28af6e',1,'axoverlay.h']]],
   ['axoverlay_5fset_5foverlay_5fsize',['axoverlay_set_overlay_size',['../axoverlay_8h.html#aadef178b4a74eb601c095fcb9a0875b3',1,'axoverlay.h']]],
-  ['axoverlay_5fset_5fpalette_5fcolor',['axoverlay_set_palette_color',['../axoverlay_8h.html#ac95c0f4c11509dfae12707aff79eedb8',1,'axoverlay.h']]]
+  ['axoverlay_5fset_5fpalette_5fcolor',['axoverlay_set_palette_color',['../axoverlay_8h.html#ac95c0f4c11509dfae12707aff79eedb8',1,'axoverlay.h']]],
+  ['axoverlay_5fset_5frender_5fcallback',['axoverlay_set_render_callback',['../axoverlay_8h.html#a41f1b95d6f4a76bda3795196bee97a2c',1,'axoverlay.h']]],
+  ['axoverlay_5fset_5fstream_5fselect_5fcallback',['axoverlay_set_stream_select_callback',['../axoverlay_8h.html#a14986c555fe904ad27e9cee09c5793b1',1,'axoverlay.h']]],
+  ['axoverlay_5fset_5fsynced_5frender_5fcallback',['axoverlay_set_synced_render_callback',['../axoverlay_8h.html#aa8ef90e6f67e0523c50f70e195b923e9',1,'axoverlay.h']]]
 ];

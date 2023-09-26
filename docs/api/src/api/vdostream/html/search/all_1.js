@@ -231,6 +231,7 @@ var searchData=
   ['vdo_5fwdr_5fmode_5fget_5ftype',['vdo_wdr_mode_get_type',['../vdo-types_8h.html#acca84d091767d5f50187ce875f7f9c3b',1,'vdo-types.h']]],
   ['vdo_5fwdr_5fmode_5flinear',['VDO_WDR_MODE_LINEAR',['../vdo-types_8h.html#ae575c780c555d7914290feae719fa2a3a686227e49fd1e489c0bdd3ef8961522d',1,'vdo-types.h']]],
   ['vdo_5fwdr_5fmode_5fnone',['VDO_WDR_MODE_NONE',['../vdo-types_8h.html#ae575c780c555d7914290feae719fa2a3a544ed8cc91cf9b1f2706101811097b36',1,'vdo-types.h']]],
+  ['vdo_5fwdr_5fmode_5foff',['VDO_WDR_MODE_OFF',['../vdo-types_8h.html#ae575c780c555d7914290feae719fa2a3a8c5fe8ccf143059780440a3430a7d097',1,'vdo-types.h']]],
   ['vdo_5fwdr_5fmode_5fsensor',['VDO_WDR_MODE_SENSOR',['../vdo-types_8h.html#ae575c780c555d7914290feae719fa2a3a6c76a6b34b64789bfcb4758659790a4e',1,'vdo-types.h']]],
   ['vdo_5fzipstream_5fprofile_5fclassic',['VDO_ZIPSTREAM_PROFILE_CLASSIC',['../vdo-types_8h.html#a7d42c863f85fae6169685874dbbde1b3afa0365f868710f079db8042063ce899e',1,'vdo-types.h']]],
   ['vdo_5fzipstream_5fprofile_5fget_5ftype',['vdo_zipstream_profile_get_type',['../vdo-types_8h.html#a97294a2b495a86da118ff5c9330b0605',1,'vdo-types.h']]],
