@@ -24,16 +24,17 @@ The table below shows ACAP Native SDK and firmware version compatibility.
 
 SDK version | Available from firmware version
 ----------- | -------------------------------
-1.0 | 10.7
-1.1 | 10.9
-1.2 | 10.10
-1.3 | 10.12
-1.4 | 11.0
-1.5 | 11.1
-1.6 | 11.2
-1.7 | 11.3
-1.8 | 11.4
-1.9 | 11.5
+1.0  | 10.7
+1.1  | 10.9
+1.2  | 10.10
+1.3  | 10.12
+1.4  | 11.0
+1.5  | 11.1
+1.6  | 11.2
+1.7  | 11.3
+1.8  | 11.4
+1.9  | 11.5
+1.10 | 11.6
 
 ## Video capture API (VDO)
 
@@ -89,6 +90,7 @@ AXIS OS version | VdoStream API version | New functions added
 11.3 | 9.32.0 | -
 11.4 | 9.41.16 | `vdo_channel_get_ex`
 11.5 | 9.59.0 | -
+11.6 | 9.78.12 | `vdo_stream_set_gop_length`, `vdo_error_is_resource_limitation`
 
 ### Known issues
 

@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.2.47-dirty</span>
+   &#160;<span id="projectnumber">3.2.59-dirty</span>
    </div>
   </td>
  </tr>
@@ -182,7 +182,7 @@ $(function() {
 <p>Tensors allocated using the calls <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> with a model loaded to this backend will have file descriptors that are readable, writable and mappable. Accordingly the tensors will have the fd props <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code> set.</p>
 <h4>Model compilation and caching</h4>
 <p>When a model is loaded on the ARTPEC-8 DLPU it is compiled into a different format native to the accelerator, the <code>.nb</code> format, also referred to NBG. Since this conversion takes a lot of time, sometimes up to several minutes depending on the model, the .nb files are subsequently cached in flash after the compilation is complete. Once a file is cached the corresponding <code>.tflite</code> model will be loaded substantially faster, as the entire compilation step will be skipped.</p>
-<p>The cached NBG files are stored in <code>/var/lib/larod/nbg-cache</code>. This cache storage is limited to 30,000 KiB and 10 files. Whenever a new model file is compiled a new NBG file will be created in this location. If the maximum number of models is exceeded, or if the accumulated size of all the cached models exceeds the storage limit, older models will be removed to make space for the new one.</p>
+<p>The cached NBG files are stored in <code>/var/lib/larod/nbg-cache</code>. This cache storage is limited to 64 MiB and 16 files. Whenever a new model file is compiled a new NBG file will be created in this location. If the maximum number of models is exceeded, or if the accumulated size of all the cached models exceeds the storage limit, older models will be removed to make space for the new one.</p>
 <h5>Skipping recompilation of models after flashing a camera</h5>
 <p>When a new firmware is flashed onto an Axis camera there will be no cached models. By default this implies that when a model is loaded it will once again have to be compiled, resulting in a long load time. This can be bypassed by placing a previously compiled .nb file corresponding to the desired model into <code>/var/lib/larod/nbg-cache/</code>. If everything works correctly the .nb file will be correctly identified and no compilation should be required. This is a good way to reduce development cycle times.</p>
 <p><b>NOTE</b> This method of skipping recompiling a model when flashing the firmware assumes that the firmware is the same version as the one that originally compiled the model. There is no guarantee that the <code>.nb</code> format remains the same throughout firmware versions, or that a newer firmware will be backwards compatible with a model compiled on an older firmware.</p>

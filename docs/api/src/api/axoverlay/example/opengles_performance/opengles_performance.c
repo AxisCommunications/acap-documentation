@@ -51,7 +51,7 @@ struct program_struct {
   GLuint fragmentShader;
 };
 
-static program_struct* the_program = NULL;
+static struct program_struct* the_program = NULL;
 
 gboolean render_trigger_redraw(gpointer data)
 {
@@ -292,7 +292,7 @@ main(int argc, char **argv)
     return 1;
   }
 
-  the_program = (program_struct*)g_malloc0(sizeof(program_struct));
+  the_program = (struct program_struct*)g_malloc0(sizeof(*the_program));
 
   init_shaders();
 

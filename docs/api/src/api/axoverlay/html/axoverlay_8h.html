@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Axoverlay Library: src/axoverlay.h File Reference</title>
+<title>Axoverlay Library: axoverlay.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -95,11 +95,12 @@ $(document).ready(function(){initNavTree('axoverlay_8h.html','');});
 <p>Overlay helper library for creating and rendering custom overlays.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;glib.h&gt;</code><br />
+<code>#include &lt;sys/time.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for axoverlay.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="axoverlay_8h__incl.png" border="0" usemap="#src_2axoverlay_8h" alt=""/></div>
-<map name="src_2axoverlay_8h" id="src_2axoverlay_8h">
+<div class="center"><img src="axoverlay_8h__incl.png" border="0" usemap="#axoverlay_8h" alt=""/></div>
+<map name="axoverlay_8h" id="axoverlay_8h">
 </map>
 </div>
 </div>
@@ -139,6 +140,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:acd597540ddc493c361cf49d425527c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8cda33355d9b1345b4bc97836324a6e"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="axoverlay_8h.html#af8cda33355d9b1345b4bc97836324a6e">axoverlay_render_function</a>) (gpointer rendering_context, gint id, struct <a class="el" href="structaxoverlay__stream__data.html">axoverlay_stream_data</a> *stream, enum <a class="el" href="axoverlay_8h.html#a3d9bc98f846c4fa067a5d32e7c86e60c">axoverlay_position_type</a> postype, gfloat overlay_x, gfloat overlay_y, gint overlay_width, gint overlay_height, gpointer user_data)</td></tr>
 <tr class="separator:af8cda33355d9b1345b4bc97836324a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a837c18c9e89496b8e59c23c9320439aa"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="axoverlay_8h.html#a837c18c9e89496b8e59c23c9320439aa">axoverlay_synced_render_function</a>) (gpointer rendering_context, gint id, struct <a class="el" href="structaxoverlay__stream__data.html">axoverlay_stream_data</a> *stream, enum <a class="el" href="axoverlay_8h.html#a3d9bc98f846c4fa067a5d32e7c86e60c">axoverlay_position_type</a> postype, gfloat overlay_x, gfloat overlay_y, gint overlay_width, gint overlay_height, struct timeval *timestamp, gpointer user_data)</td></tr>
+<tr class="separator:a837c18c9e89496b8e59c23c9320439aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -194,6 +197,18 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a4f313b61885df524cefe3242527ef1cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="axoverlay_8h.html#a4f313b61885df524cefe3242527ef1cd">axoverlay_enable_cpu_mem_sync</a> (gboolean sync)</td></tr>
+<tr class="separator:a4f313b61885df524cefe3242527ef1cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af78f0b190338d56da5c6491dfff596d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="axoverlay_8h.html#af78f0b190338d56da5c6491dfff596d3">axoverlay_set_adjustment_callback</a> (<a class="el" href="axoverlay_8h.html#acd597540ddc493c361cf49d425527c9b">axoverlay_adjustment_function</a> adjustment_callback)</td></tr>
+<tr class="separator:af78f0b190338d56da5c6491dfff596d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14986c555fe904ad27e9cee09c5793b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="axoverlay_8h.html#a14986c555fe904ad27e9cee09c5793b1">axoverlay_set_stream_select_callback</a> (<a class="el" href="axoverlay_8h.html#a69680654ad920dd63825debf80db1835">axoverlay_stream_select_function</a> select_callback)</td></tr>
+<tr class="separator:a14986c555fe904ad27e9cee09c5793b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41f1b95d6f4a76bda3795196bee97a2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="axoverlay_8h.html#a41f1b95d6f4a76bda3795196bee97a2c">axoverlay_set_render_callback</a> (<a class="el" href="axoverlay_8h.html#af8cda33355d9b1345b4bc97836324a6e">axoverlay_render_function</a> render_callback)</td></tr>
+<tr class="separator:a41f1b95d6f4a76bda3795196bee97a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8ef90e6f67e0523c50f70e195b923e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="axoverlay_8h.html#aa8ef90e6f67e0523c50f70e195b923e9">axoverlay_set_synced_render_callback</a> (<a class="el" href="axoverlay_8h.html#a837c18c9e89496b8e59c23c9320439aa">axoverlay_synced_render_function</a> render_callback)</td></tr>
+<tr class="separator:aa8ef90e6f67e0523c50f70e195b923e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9c9390f00f72ac40793d35f0e4392fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="axoverlay_8h.html#af9c9390f00f72ac40793d35f0e4392fd">axoverlay_set_backend</a> (const char *backend)</td></tr>
+<tr class="separator:af9c9390f00f72ac40793d35f0e4392fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3564acf79f48af97e2414127696f82d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="axoverlay_8h.html#a3564acf79f48af97e2414127696f82d7">axoverlay_init_axoverlay_settings</a> (struct <a class="el" href="structaxoverlay__settings.html">axoverlay_settings</a> *<a class="el" href="structaxoverlay__settings.html">axoverlay_settings</a>)</td></tr>
 <tr class="separator:a3564acf79f48af97e2414127696f82d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcee514e8d556934e857fd594a471865"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="axoverlay_8h.html#abcee514e8d556934e857fd594a471865">axoverlay_init</a> (struct <a class="el" href="structaxoverlay__settings.html">axoverlay_settings</a> *<a class="el" href="structaxoverlay__settings.html">axoverlay_settings</a>, GError **error)</td></tr>
@@ -406,6 +421,36 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns TRUE if overlays should be rendered for the stream. </dd></dl>
+
+</div>
+</div>
+<a id="a837c18c9e89496b8e59c23c9320439aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a837c18c9e89496b8e59c23c9320439aa">&#9670;&nbsp;</a></span>axoverlay_synced_render_function</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* axoverlay_synced_render_function) (gpointer rendering_context, gint id, struct <a class="el" href="structaxoverlay__stream__data.html">axoverlay_stream_data</a> *stream, enum <a class="el" href="axoverlay_8h.html#a3d9bc98f846c4fa067a5d32e7c86e60c">axoverlay_position_type</a> postype, gfloat overlay_x, gfloat overlay_y, gint overlay_width, gint overlay_height, struct timeval *timestamp, gpointer user_data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Same as <a class="el" href="axoverlay_8h.html#af8cda33355d9b1345b4bc97836324a6e">axoverlay_render_function</a> but also allows you to modify a timestamp for when the overlay should be applied.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rendering_context</td><td>A pointer to the rendering context used by the backend. For the Cairo backend ithas the type 'cairo_t'. </td></tr>
+    <tr><td class="paramname">id</td><td>The id of the overlay </td></tr>
+    <tr><td class="paramname">stream</td><td>Information about the stream that is currently being rendered to, usually you do not need this information unless you want to rotate your overlay when the stream is rotated. </td></tr>
+    <tr><td class="paramname">postype</td><td>The position type. </td></tr>
+    <tr><td class="paramname">overlay_x</td><td>The x coordinate of the overlay, may be changed </td></tr>
+    <tr><td class="paramname">overlay_y</td><td>The y coordinate of the overlay, may be changed </td></tr>
+    <tr><td class="paramname">overlay_width</td><td>The width of the overlay, may be changed </td></tr>
+    <tr><td class="paramname">overlay_height</td><td>The height of the overlay, may be changed </td></tr>
+    <tr><td class="paramname">timestamp</td><td>User sets this timestamp for when the overlay should be applied. timeval contains tv_sec and tv_usec. Time is of type CLOCK_MONOTONIC. </td></tr>
+    <tr><td class="paramname">user_data</td><td>Optional user data associated with this overlay </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -645,6 +690,32 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a4f313b61885df524cefe3242527ef1cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f313b61885df524cefe3242527ef1cd">&#9670;&nbsp;</a></span>axoverlay_enable_cpu_mem_sync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void axoverlay_enable_cpu_mem_sync </td>
+          <td>(</td>
+          <td class="paramtype">gboolean&#160;</td>
+          <td class="paramname"><em>sync</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is set to TRUE by default and is necessary for CPU based rendering. However, known GPU backends like OpenGL will have this feature turned off since the GPU will be responsible for knowing when the buffer is ready, such as using glFinish().</p>
+<p>Note that this option should be set before the first overlay is created, and before <a class="el" href="axoverlay_8h.html#abcee514e8d556934e857fd594a471865">axoverlay_init()</a> is called.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sync</td><td>TRUE if sync of the overlay data should be done after rendering </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aba18305ff424cfe2dd8c88974da6c700"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aba18305ff424cfe2dd8c88974da6c700">&#9670;&nbsp;</a></span>axoverlay_get_max_resolution_height()</h2>
 
@@ -813,10 +884,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Initializes the axoverlay system. This function must be called before any other axoverlay function. The thread that calls this function must have a glib main-loop.</p>
+<p>Initializes the axoverlay system. This function must be called before any other axoverlay function except the one initializing the settings struct. The thread that calls this function must have a glib main-loop.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="structaxoverlay__settings.html">axoverlay_settings</a></td><td>A setting struct where general callbacks. </td></tr>
+    <tr><td class="paramname"><a class="el" href="structaxoverlay__settings.html">axoverlay_settings</a></td><td>A setting struct for general callbacks and backend type. If settings has already been set up with setter functions, this argument should be NULL. </td></tr>
     <tr><td class="paramname">error</td><td>Location to store potential error at. </td></tr>
   </table>
   </dd>
@@ -839,7 +910,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Initializes an <a class="el" href="structaxoverlay__settings.html">axoverlay_settings</a> struct with default values; </p>
+<p>Initializes an <a class="el" href="structaxoverlay__settings.html">axoverlay_settings</a> struct with default values;</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structaxoverlay__settings.html">axoverlay_settings</a></td><td>A setting struct for general callbacks and backend type. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -902,7 +979,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Signals to the system that a redraw should be done. This will in turn call the render function provided in <a class="el" href="axoverlay_8h.html#abcee514e8d556934e857fd594a471865">axoverlay_init()</a>.</p>
+<p>Signals to the system that a redraw should be done. This will in turn call the render function provided in <a class="el" href="axoverlay_8h.html#abcee514e8d556934e857fd594a471865">axoverlay_init()</a>. If the synced_render_callback is set, axoverlay_redraw will do nothing if a buffer is not available. This means in the time synced case, repeated redraws are necessary for desired behaviour.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">error</td><td>Location to store potential error at. </td></tr>
@@ -932,6 +1009,52 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">error</td><td>Location to store potential error at. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af78f0b190338d56da5c6491dfff596d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af78f0b190338d56da5c6491dfff596d3">&#9670;&nbsp;</a></span>axoverlay_set_adjustment_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void axoverlay_set_adjustment_callback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="axoverlay_8h.html#acd597540ddc493c361cf49d425527c9b">axoverlay_adjustment_function</a>&#160;</td>
+          <td class="paramname"><em>adjustment_callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the adjustment callback method. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structaxoverlay__settings.html">axoverlay_settings</a></dd></dl>
+<p>Note that this option should be set before the first overlay is created, and before <a class="el" href="axoverlay_8h.html#abcee514e8d556934e857fd594a471865">axoverlay_init()</a> is called. </p>
+
+</div>
+</div>
+<a id="af9c9390f00f72ac40793d35f0e4392fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9c9390f00f72ac40793d35f0e4392fd">&#9670;&nbsp;</a></span>axoverlay_set_backend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void axoverlay_set_backend </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>backend</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set backend. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structaxoverlay__settings.html">axoverlay_settings</a></dd></dl>
+<p>Note that this option should be set before the first overlay is created, and before <a class="el" href="axoverlay_8h.html#abcee514e8d556934e857fd594a471865">axoverlay_init()</a> is called.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">backend</td><td>The backend to be used. Options are 'opengles', 'open' and 'cairo'. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1088,13 +1211,73 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a41f1b95d6f4a76bda3795196bee97a2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41f1b95d6f4a76bda3795196bee97a2c">&#9670;&nbsp;</a></span>axoverlay_set_render_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void axoverlay_set_render_callback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="axoverlay_8h.html#af8cda33355d9b1345b4bc97836324a6e">axoverlay_render_function</a>&#160;</td>
+          <td class="paramname"><em>render_callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the standard render callback method. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structaxoverlay__settings.html">axoverlay_settings</a></dd></dl>
+<p>Note that this option should be set before the first overlay is created, and before <a class="el" href="axoverlay_8h.html#abcee514e8d556934e857fd594a471865">axoverlay_init()</a> is called. </p>
+
+</div>
+</div>
+<a id="a14986c555fe904ad27e9cee09c5793b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14986c555fe904ad27e9cee09c5793b1">&#9670;&nbsp;</a></span>axoverlay_set_stream_select_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void axoverlay_set_stream_select_callback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="axoverlay_8h.html#a69680654ad920dd63825debf80db1835">axoverlay_stream_select_function</a>&#160;</td>
+          <td class="paramname"><em>select_callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the select callback method. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structaxoverlay__settings.html">axoverlay_settings</a></dd></dl>
+<p>Note that this option should be set before the first overlay is created, and before <a class="el" href="axoverlay_8h.html#abcee514e8d556934e857fd594a471865">axoverlay_init()</a> is called. </p>
+
+</div>
+</div>
+<a id="aa8ef90e6f67e0523c50f70e195b923e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8ef90e6f67e0523c50f70e195b923e9">&#9670;&nbsp;</a></span>axoverlay_set_synced_render_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void axoverlay_set_synced_render_callback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="axoverlay_8h.html#a837c18c9e89496b8e59c23c9320439aa">axoverlay_synced_render_function</a>&#160;</td>
+          <td class="paramname"><em>render_callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the extended render callback method that supports timestamps. Either this one or <a class="el" href="axoverlay_8h.html#a41f1b95d6f4a76bda3795196bee97a2c">axoverlay_set_render_callback</a> must be set to non-NULL, but not both. An external method in order to keep backwards compatibility.</p>
+<p>Note that this option should be set before the first overlay is created, and before <a class="el" href="axoverlay_8h.html#abcee514e8d556934e857fd594a471865">axoverlay_init()</a> is called. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="axoverlay_8h.html">axoverlay.h</a></li>
+    <li class="navelem"><a class="el" href="dir_a6e26b83e1cc01163d742a8b70e154d1.html">v1</a></li><li class="navelem"><a class="el" href="dir_5f95f37867742e27eef5ba25b7140943.html">include</a></li><li class="navelem"><a class="el" href="axoverlay_8h.html">axoverlay.h</a></li>
     <li class="footer">Copyright &copy; 2009-2023 Axis Communications AB. All rights reserved.</li>
   </ul>
 </div>
