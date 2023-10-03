@@ -69,13 +69,13 @@ The ACAP Runtime service is an installable ACAP application that provides:
 - [Machine learning API](#machine-learning-api): Tensorflow Serving for inference service
 - [BETA - Parameter API](#beta---parameter-api): Axis parameter service
 
-The ACAP Runtime uses [gRPC](https://grpc.io) and a [Unix Socket Domain (UDS)](https://grpc.github.io/grpc/cpp/md_doc_naming.html) socket for access. The access is restricted to applications in the device that belongs to the `sdk` user group. Installable versions for devices equipped with ARTPEC-7 and ARTPEC-8 chips are available [here](https://hub.docker.com/r/axisecp/acap-runtime).
+ACAP Runtime acts as a server that exposes the above APIs as gRPC APIs by using [gRPC](https://grpc.io) and a [UNIX domain socket (UDS)](https://grpc.github.io/grpc/cpp/md_doc_naming.html) for access. The access is restricted to applications in the device that belongs to the `sdk` user group.
 
-In order to use the APIs, there is a requirement to install the acap-runtime application on the Axis network device. Detailed instructions for installing acap-runtime can be found [here](https://hub.docker.com/r/axisecp/acap-runtime). The acap-runtime acts as a server that exposes the gRPC APIs.
+In order to use the ACAP Runtime APIs, it's required to install the ACAP Runtime application on the Axis network device. The application is distributed both as an ACAP Native SDK application and as a Docker container, detailed instructions for installation can be found [here](https://github.com/AxisCommunications/acap-runtime/tree/main#installation).
 
 ### Video capture API
 
-The Video capture API is one of the services of ACAP runtime.
+The Video capture API is one of the services of ACAP Runtime.
 
 The [OpenCV package](#opencv-with-vdo) has been extended with functionality for capturing camera images and accessing and modifying video stream and image properties. This was done by making the [OpenCV VideoCapture-class](https://docs.opencv.org/4.5.3/d8/dfe/classcv_1_1VideoCapture.html) interface with the [AXIS VDO library](src/api/vdostream/html/index.html), which allows for treating the Axis camera like any other OpenCV-compatible camera.
 
@@ -168,11 +168,11 @@ services:
 
 ### Machine learning API
 
-The Machine learning API is one of the services of ACAP runtime.
+The Machine learning API is one of the services of ACAP Runtime.
 
-The ACAP Computer Vision SDK provides a flexible way of allowing machine learning inference in the form of TensorFlow Serving and a [TensorFlow Serving client](#tensorflow-serving-inference-client). TensorFlow Serving allows for making inference calls over gRPC to another container running a model server. This has several benefits, including exposing a common API for inference and having a single process handle all apps' DLPU communication.
+The ACAP Computer Vision SDK provides a flexible way of allowing machine learning inference in the form of TensorFlow Serving and a [TensorFlow Serving client](#tensorflow-serving-inference-client). TensorFlow Serving allows for making inference calls over gRPC to another container, the inference server, and a model server. This has several benefits, including exposing a common API for inference and having a single process handle all apps' DLPU communication.
 
-Through Docker Hub and the ACAP Computer Vision SDK, both a model server for _larod_ and a Python client are available. The model server, called `larod-inference-server`, is available on Docker Hub under the [axisecp/larod-inference-server](https://hub.docker.com/r/axisecp/larod-inference-server) repository. The Python client is available in the ACAP Computer Vision SDK under `/axis/python-tfserving` and imported in Python as `InferenceClient`, which is available in the `tf_proto_utils` module. The client exposes a single `infer(inputs, model_name)` function that enables easy inference using the model server.
+The Python client is available in the ACAP Computer Vision SDK under `/axis/python-tfserving` and imported in Python as `InferenceClient`, which is available in the `tf_proto_utils` module. The client exposes a single `infer(inputs, model_name)` function that enables an easy inference from the main application that will also be connected to the model server.
 
 #### Code Examples
 
@@ -183,7 +183,7 @@ Through Docker Hub and the ACAP Computer Vision SDK, both a model server for _la
 
 **This API is a [Beta version](./beta-api) and developers are encouraged to test and leave feedback.**
 
-The Parameter API is one of the services of ACAP runtime.
+The Parameter API is one of the services of ACAP Runtime.
 
 The Parameter API enables an application to read the parameters of an Axis network device. There are a lot of parameters on an Axis network device in the form of key-value pairs, and the Parameter API allows us to pass the name of the parameter as the key, which will return the value of the parameter. This API can be used to read existing parameters; it can not set any new parameters.
 
