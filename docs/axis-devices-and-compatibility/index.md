@@ -19,7 +19,7 @@ SDK corresponding to the chip architecture in the device.
 ## Software compatibility
 
 An ACAP is software compatible with an AXIS OS firmware if the APIs and other
-ACAP runtime features are available in the specific firmware release. The availability of
+ACAP Runtime features are available in the specific firmware release. The availability of
 APIs in a firmware depends on both the firmware version and the
 device itself since some APIs are only relevant for certain devices. For
 example, the Video capture API is only available on devices with an image
