@@ -59,7 +59,7 @@ The ACAP Native SDK container includes all the SDK tools, Git, and some other us
 To access the header files of the Axis APIs inside the Development container, the following architecture independent path should be added to the VS Code extension configuration of your choice:
 
 ```text
-${SDKTARGETSYSROOT}/usr/include/
+${SDKTARGETSYSROOT}/
 ```
 
 ### Microsoft C/C++ extension
