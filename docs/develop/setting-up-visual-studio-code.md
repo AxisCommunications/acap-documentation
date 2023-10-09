@@ -79,7 +79,7 @@ In `.vscode`, create a `c_cpp_properties.json` with the following content:
                "name": "Linux",
                "includePath": [
                    "${workspaceFolder}/**",
-                   "${SDKTARGETSYSROOT}/usr/include/**"
+                   "${SDKTARGETSYSROOT}/**",
                ]
            }
        ],
