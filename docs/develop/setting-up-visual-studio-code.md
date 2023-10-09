@@ -29,7 +29,7 @@ To start developing ACAP applications using Visual Studio Code:
 
    - Option 2:
        Otherwise, you will need to create your own Docker image building the libraries that you need.
-       See as an example [using-opencv](https://github.com/AxisCommunications/acap-native-sdk-examples/blob/main/using-opencv/Dockerfile) which builds OpenCV libraries using the ACAP Native SDK. The application container image will be used as a development container and have access to OpenCV symbols.     Let's build the Docker image with the following command, depending on your architecture:
+       See as an example [using-opencv](https://github.com/AxisCommunications/acap-native-sdk-examples/blob/main/using-opencv/Dockerfile) which builds OpenCV libraries using the ACAP Native SDK. The application container image will be used as a development container and have access to OpenCV symbols. Let's build the Docker image with the following command, depending on your architecture:
 
         ```sh
         docker build --build-arg ARCH=armv7hf -t my-dev-container .
@@ -54,17 +54,9 @@ You can install different versions of the SDK in separate containers. When you o
 
 The ACAP Native SDK container includes all the SDK tools, Git, and some other useful things. But you can create your own Dev Container Dockerfile or add more tools to the `devcontainer.json` configuration. See [Microsoft's tutorials on how to use Development Containers](https://code.visualstudio.com/docs/remote/containers) for more information on what this way of working can offer.
 
-## Code completion of Axis APIs
+## Code completion for Visual Studio Code
 
-To access the header files of the Axis APIs inside the Development container, the following architecture independent path should be added to the VS Code extension configuration of your choice:
-
-```text
-${SDKTARGETSYSROOT}/
-```
-
-### Microsoft C/C++ extension
-
-To enhance your development experience in Visual Studio Code, you can install the Microsoft [C/C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools). This extension provides various features that can assist you with code editing and navigation.
+To enhance your development experience, you can install the Microsoft [C/C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools). This extension provides various features that can assist you with code editing and navigation.
 
 To install and setup the extension, follow these steps:
 
@@ -79,7 +71,7 @@ In `.vscode`, create a `c_cpp_properties.json` with the following content:
                "name": "Linux",
                "includePath": [
                    "${workspaceFolder}/**",
-                   "${SDKTARGETSYSROOT}/**",
+                   "${SDKTARGETSYSROOT}/**"
                ]
            }
        ],
