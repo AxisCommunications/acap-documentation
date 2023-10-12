@@ -53,35 +53,24 @@ An ACAP application can acquire VAPIX service account credentials through a D-Bu
     GDBusConnection *connection = g_bus_get_sync(G_BUS_TYPE_SYSTEM, NULL, &error);
     ```
 
-2. Create a proxy object for your D-Bus interface:
-
-    This proxy allows users to interact with your D-Bus service or interface.
-
-    ```c
-    GDBusProxy *proxy = g_dbus_proxy_new_sync(connection,
-                                                G_DBUS_PROXY_FLAGS_NONE,
-                                                NULL, 
-                                                "com.axis.HTTPConf1",
-                                                "/com/axis/HttpConf1/Auth",
-                                                "com.axis.HTTPConf1.Auth1",
-                                                NULL, 
-                                                &error);
-    ```
-
-3. Invoke the D-Bus method using the proxy:
+2. Invoke the D-Bus method using the D-Bus connection:
 
     The user can effectively call the method that returns the credentials by doing this.
 
     ```c
     GVariant *username = g_variant_new("(s)", "testuser");
 
-    GVariant *result = g_dbus_proxy_call_sync(proxy,
-                                                "com.axis.HTTPConf1.Auth1.GetVapixServiceAccountCredentials",
-                                                username,  
-                                                G_DBUS_CALL_FLAGS_NONE,
-                                                -1,  
-                                                NULL, 
-                                                &error);
+    GVariant *result = g_dbus_connection_call_sync (connection,
+                                                    "com.axis.HTTPConf1",
+                                                    "/com/axis/HttpConf1/Auth",
+                                                    "com.axis.HTTPConf1.Auth1",
+                                                    "GetVapixServiceAccountCredentials",
+                                                    username,
+                                                    NULL,
+                                                    G_DBUS_CALL_FLAGS_NONE,
+                                                    -1,
+                                                    NULL,
+                                                    &error);
     ```
 
     When the `GetVapixServiceAccountCredentials` method is invoked, it generates credentials with the specified username and a random password, which is returned to the ACAP as a string.
