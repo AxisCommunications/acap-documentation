@@ -98,21 +98,31 @@ guide](https://www.axis.com/developer-community/product-interface-guide).
 ## Find the right SDK for software compatibility
 
 Choose the appropriate SDK version based on what AXIS OS version you want
-supporting your ACAP.
+supporting your ACAP application.
 
-ACAP SDK version | Compatible with AXIS OS version
-:--------------- | :----------
-SDK 4.0          | 10.7 and later
-SDK 4.1          | 10.9 and later
-SDK 4.2          | 10.10 and later
-SDK 4.3          | 10.12 and later
-SDK 4.4          | 11.0 and later
-SDK 4.5          | 11.1 and later
-SDK 4.6          | 11.2 and later
-SDK 4.7          | 11.3 and later
-SDK 4.8          | 11.4 and later
-SDK 4.9          | 11.5 and later
-SDK 4.10         | 11.6 and later
+The **Image version** referred to in the
+table below is the Docker image release tag available from Docker Hub:
+
+- [ACAP Native SDK](https://hub.docker.com/r/axisecp/acap-native-sdk/tags)
+- [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk/tags)
+
+The tag format is **`<image-version>-<architecture>-<container-distribution>`**.
+An example of a tag is `acap-native-sdk:1.5-aarch64-ubuntu22.04` where `1.5`
+maps to the image version.
+
+ACAP Release | ACAP Native SDK Image version<br>ACAP CV SDK Image version | Compatible with AXIS OS version
+:------------| :---------------------------- | :-------------------------------------------
+4.0          | 1.0                           | 10.7 and later
+4.1          | 1.1                           | 10.9 and later
+4.2          | 1.2                           | 10.10 and later
+4.3          | 1.3                           | 10.12 and later
+4.4          | 1.4                           | 11.0 and later
+4.5          | 1.5                           | 11.1 and later
+4.6          | 1.6                           | 11.2 and later
+4.7          | 1.7                           | 11.3 and later
+4.8          | 1.8                           | 11.4 and later
+4.9          | 1.9                           | 11.5 and later
+4.10         | 1.10                          | 11.6 and later
 
 How do I know if my device supports a specific AXIS OS version? Please check
 [firmware releases for supported
