@@ -1,14 +1,14 @@
 ---
 layout: default
-title: ACAP version 4 SDK
+title: ACAP SDK
 nav_order: 1
 ---
 
-# ACAP version 4 SDK Documentation
+# ACAP SDK Documentation
 
 ![ACAP SDK](assets/logos/acap_sdk_symbol_200x200.png){: .float-right }
 
-Welcome to the AXIS Camera Application Platform (ACAP) version 4 SDK documentation.
+Welcome to the AXIS Camera Application Platform (ACAP) SDK documentation. This documentation primarily focuses on the latest version of ACAP, version 4. For information in previous versions of ACAP, see [ACAP SDK version 3](./docs/acap-sdk-version-3/).
 
 For information about ACAP and the two new SDKs, start out with the [Introduction](docs/introduction).
 
