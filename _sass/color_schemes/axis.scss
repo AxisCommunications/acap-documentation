@@ -24,12 +24,12 @@ $link-color: $color-brand-08;
 // Left menu changes
 
 // Axis logo
-.side-bar .site-header{
+.side-bar .site-header {
   background-color: $white;
 }
 
 // Keep the left menu items as text color
-.side-bar .site-nav .nav-list .nav-list-item .nav-list-link{
+.side-bar .site-nav .nav-list .nav-list-item .nav-list-link {
   color: $color-text-01;
 }
 
@@ -54,4 +54,10 @@ $link-color: $color-brand-08;
     background: $color-warm-gray-01;
     border-left-color: $color-brand-01;
   }
+}
+
+// Older ACAP SDK versions
+
+.acap-sdk-version-3 {
+  background-color: $color-gray-01;
 }
