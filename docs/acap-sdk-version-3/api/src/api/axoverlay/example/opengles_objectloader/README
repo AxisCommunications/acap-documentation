@@ -1,0 +1,77 @@
+README file for the OpenGL ES example in axoverlay
+--------------------------------------------------
+
+I. Running the example
+
+To run the OpenGL ES backend example for axoverlay:
+
+1. Download the contents of the example/opengles/misc folder to the /tmp
+   folder of the camera
+2. Download the axoverlayexample executable to the /tmp folder
+3. Run ssh to the camera and go to the ./tmp folder
+4. Execute by typing
+
+   ./axoverlaygles -o cube -p rot_angle1 -t rot_angle2 -s scale
+
+   where cube is the object that will be rendered, rot_angle1/rot_angle2
+   are normalised rotation angles (between -1.0 and 1.0) used to rotate
+   the object and scale is the scale factor applied on the object.
+
+5. If you wish to test your own object, then download three files to the /tmp
+   folder of the camera:
+
+   obj_name.obj
+   obj_name.mtl
+   obj_name.bmp
+
+   Under the condition that the .obj file has a reference to the .mtl file, and
+   the .mtl file has a reference to the .bmp file. Then just run
+
+
+    ./axoverlaygles -o obj_name -p rot_angle1 -t rot_angle2 -s scale
+
+
+
+II. Walkthrough of the example code
+
+1. There are three files necessary in order to correctly render the 3D overlay
+in this example:
+
+   a. .OBJ file, which contains the 3D geometrical information of the object that
+   is to be rendered. The data in the obj file is loaded into Open GL ES through
+   the 3rd party tiny_obj loader.
+
+   b. .MTL file, which contains surface shading information of the object to be
+   rendered. The mtl file is referred to in the obj file. In our case, the only
+   important entry in the mtl file is the
+
+     map_Kd cube.bmp
+
+   entry which will lead to the next file:
+
+   c. .BMP file, which contains the texture (color) information for the object to
+   be rendered. The texture file is loaded into Open GL ES through the third
+   party stbi loader. Note that stbi supports additional formats for texture
+   files (for more info, see row 19-33 in stb_image.h header).
+
+
+2. In addition to the existence of the three files mentioned above, and the
+loading of the .obj and .bmp files into OpenGL ES, the shaders are essential.
+in order to correctly render the object. There are two shaders, the vertex
+shader and the fragment shader. They are each implemented in a file:
+
+   a. shader.vert: in short, the vertex shader defines how the object is
+   drawn. Shader.vert operates on a vertex level.
+
+   b. shader.frag: the fragment shader describes how the object is
+   colored. Shader.frag operates on a pixel level.
+
+The shaders.c/h files describe how the shaders are created and loaded into
+OpenGL ES.
+
+
+3. For correct 3D rendering of an object, it is also essential to have a
+mathematical model in order rotate, translate and scale the object in the
+desired direction and size. This model differs between applications.
+In our case, for this example, we have chosen to just rotate the
+object with regard to two normalized rotation angles.

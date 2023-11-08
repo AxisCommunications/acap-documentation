@@ -4,4 +4,4 @@ source "https://rubygems.org/"
 # here are only used for local development. Update the versions when needed to
 # match GitHub Pages, see https://pages.github.com/versions for more info.
 gem "github-pages", "~> 228"
-gem "just-the-docs", "~> 0.6.0"
+gem "just-the-docs", "~> 0.7.0"

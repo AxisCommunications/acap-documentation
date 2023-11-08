@@ -4,10 +4,11 @@
 # ------------------------------------------------------------------------------
 # Site settings
 
-title: ACAP version 4 SDK Documentation
+title: ACAP SDK Documentation
 description: >
-  ACAP version 4 SDK Documentation contains two types of SDKs;
-  a Native SDK and a Computer Vision SDK
+  ACAP SDK Documentation contains three types of SDKs; the Native SDK and the
+  Computer Vision SDK from ACAP version 4, as well as the SDK from ACAP version
+  3.
 
 url: https://axiscommunications.github.io # The base hostname & protocol
 baseurl: /acap-documentation # The subpath of your site
@@ -65,7 +66,7 @@ color_scheme: axis
 # Launch GitHub link on top in new web browser tab
 aux_links_new_tab: true
 aux_links:
-  "ACAP version 4 SDK documentation on GitHub":
+  "ACAP SDK documentation on GitHub":
     - //github.com/AxisCommunications/acap-documentation
 
 search_enabled: true
