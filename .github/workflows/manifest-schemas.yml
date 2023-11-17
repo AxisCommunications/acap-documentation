@@ -1,0 +1,32 @@
+name: Check manifest schemas format and release notes
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'docs/develop/manifest-schemas/*'
+  pull_request:
+    paths:
+      - 'docs/develop/manifest-schemas/*'
+
+jobs:
+  manifest-schemas-release-notes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check manifest schemas format and release notes
+        run: |
+          base_path=$PWD/docs/develop/manifest-schemas
+          release_notes_page=$base_path/index.md
+          new_schema_dummy_description=ADD-MANIFEST-SCHEMA-RELEASE-DESCRIPTION
+          ret=0
+
+          # Set +e to not having to handle the grep exit status
+          new_schema_found=$(grep "$new_schema_dummy_description" $release_notes_page || :)
+          [ -z "$new_schema_found" ] || {
+              printf "\n### One or more new manifest schemas found\n"
+              printf "In file '$release_notes_page',\nreplace string $new_schema_dummy_description with release notes."
+              printf "Contact the responsible for the manifest schema update for information of the content of the new release."
+              ret=1
+          }
+          exit $ret
