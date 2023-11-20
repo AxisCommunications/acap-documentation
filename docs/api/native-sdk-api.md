@@ -18,6 +18,7 @@ The ACAP Native SDK provides the following APIs:
 - [Edge storage API](#edge-storage-api)
 - [License Key API](#license-key-api)
 - [FastCGI](#fastcgi)
+- [Serial port API](#serial-port-api)
 
 ## Compatibility
 
@@ -328,3 +329,32 @@ The FastCGI API was introduced in Native SDK 1.6.
 
 - [web-server-using-fastcgi](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/web-server-using-fastcgi)
   - This example is written in C and explains how to build an ACAP application that can handle HTTP requests sent to the Axis device, using the device's own web server and FastCGI.
+
+## Serial port API
+
+Go to the [ACAP API Documentation](src/api/axserialport/html/index.html) for detailed functional descriptions of this API.
+
+The Serial port API allows the application to configure and control the external serial port on selected Axis products.
+
+### Compatibility
+
+- The API supports the following standards:
+  - RS-232
+  - RS-422
+  - RS-485
+- The API is product dependent since not all Axis products are equipped with a serial port.
+- The API supports products with the following chips:
+  - ARTPEC-8
+  - ARTPEC-7
+
+### Version history
+
+The Serial port API was introduced in Native SDK 1.11.
+
+### Code Examples
+
+- [axserialport](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axserialport)
+  - This example details the creation of an ACAP application utilizing the axserialport API, showcasing the following actions:
+    - Enabling the serial port.
+    - Configuring parameters using the API.
+    - Establishing communication between two available ports in the Axis product using GLib IOChannel methods.
