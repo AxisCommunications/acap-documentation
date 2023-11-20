@@ -15,6 +15,7 @@ The ACAP Native SDK provides the following APIs:
 - [Cairo](#cairo)
 - [OpenCL](#opencl)
 - [Event API](#event-api)
+- [Edge storage API](#edge-storage-api)
 - [License Key API](#license-key-api)
 - [FastCGI](#fastcgi)
 
@@ -237,6 +238,40 @@ The Axevent API was introduced in Native SDK 1.0.
   - The example code is written in C which subscribe to the ONVIF event sent from application "send_event".
 - [subscribe_to_events](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axevent/subscribe_to_events)
   - The example code is written in C which subscribes to different predefined events.
+
+## Edge storage API
+
+Go to the [ACAP API Documentation](src/api/axstorage/html/index.html) for detailed functional descriptions of this API.
+
+The Edge storage API allows the application to save and retrieve data on mounted storage devices such as SD cards and NAS (Network Attached Storage) units. An application can only modify its own files on the storage device.
+An application can both send and receive events.
+
+### Compatibility
+
+The API supports products with the following chips:
+
+- ARTPEC-8
+- ARTPEC-7
+- ARTPEC-6
+- Ambarella CV25
+- Ambarella S5L
+- Ambarella S5
+- i.MX 6SoloX
+- i.MX 6ULL
+
+### Version history
+
+The Edge storage API was introduced in Native SDK 1.11.
+
+### Code Examples
+
+- [axstorage](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axstorage)
+  - This application demonstrates the usage of axstorage APIs, offering the following functionality:
+    - List configured storage devices.
+    - Subscribe to events from all storage devices.
+    - Set up and utilize all available/mounted storage devices.
+    - Continuously write data to two files on all available storage devices.
+    - Automatically release any unmounted storage devices.
 
 ## License Key API
 
