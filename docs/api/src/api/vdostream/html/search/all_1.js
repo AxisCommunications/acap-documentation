@@ -41,6 +41,7 @@ var searchData=
   ['vdo_5fchannel_5fget_5fresolutions',['vdo_channel_get_resolutions',['../vdo-channel_8h.html#ab95177576e046dd6a42c9f87013089ec',1,'vdo-channel.h']]],
   ['vdo_5fchannel_5fget_5fsettings',['vdo_channel_get_settings',['../vdo-channel_8h.html#a13a6f7939f63317f8b8798e9f3a75ea0',1,'vdo-channel.h']]],
   ['vdo_5fchannel_5fget_5fstream_5fprofile',['vdo_channel_get_stream_profile',['../vdo-channel_8h.html#a69e3ce84ef7bf204417794aeb8651ce0',1,'vdo-channel.h']]],
+  ['vdo_5fchannel_5fglobal',['VDO_CHANNEL_GLOBAL',['../vdo-channel_8h.html#ab364b357cef90100a312a14ff945b95d',1,'vdo-channel.h']]],
   ['vdo_5fchannel_5fset_5fframerate',['vdo_channel_set_framerate',['../vdo-channel_8h.html#a44e1103d8690783c53103d326e9da5e0',1,'vdo-channel.h']]],
   ['vdo_5fchannel_5fset_5fsettings',['vdo_channel_set_settings',['../vdo-channel_8h.html#a3e17d1d5abf72b3c826a70284eb1ae99',1,'vdo-channel.h']]],
   ['vdo_5fchunk_5ferror',['VDO_CHUNK_ERROR',['../vdo-types_8h.html#a93f6a4da596c1b143aa24fe8d9e67428aba3e81bf71f68af4e564612dac639ccc',1,'vdo-types.h']]],

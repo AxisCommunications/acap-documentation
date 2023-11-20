@@ -5,7 +5,7 @@ parent: Manifest schemas
 title: Manifest schema v1.3
 ---
 
-<h2 class='title-attention'><font color='red'>This document is automatically generated from manifest schema</font></h2>
+<h2 class="title-attention"><font color="red">This document is automatically generated from manifest schema</font></h2>
 
 # Field descriptions
 
@@ -131,7 +131,7 @@ All fields that are not marked as **Required** are optional
 
     - **paramConfig** `array`
 
-      A list of parameter configuration objects.
+      A list of parameter configuration objects. It is possible to interact with these parameters using the Parameter API (axparameter), the [VAPIX API](https://www.axis.com/vapix-library/subjects/t10175981/section/t10036014/display) or from the settings web page of the ACAP application.
 
       A parameter object.
 

@@ -1,5 +1,6 @@
 var vdo_channel_8h =
 [
+    [ "VDO_CHANNEL_GLOBAL", "vdo-channel_8h.html#ab364b357cef90100a312a14ff945b95d", null ],
     [ "vdo_channel_apply_alpha_blending", "vdo-channel_8h.html#a52f2e5a2fb71346ffd9d99e5511f16f4", null ],
     [ "vdo_channel_get", "vdo-channel_8h.html#ae5223c6a11ae8f3583457c4917a0b820", null ],
     [ "vdo_channel_get_all", "vdo-channel_8h.html#ab1032730452f1617fd004f9aa46ded70", null ],
