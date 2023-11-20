@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.2.59-dirty</span>
+   &#160;<span id="projectnumber">3.2.65-dirty</span>
    </div>
   </td>
  </tr>
@@ -78,6 +78,8 @@ $(function() {
 <li><a href="#tflite-artpec8-dlpu">TFLite ARTPEC-8 DLPU</a></li>
 <li><a href="#native-artpec8-dlpu">Native ARTPEC-8 DLPU</a></li>
 <li><a href="#remote-backends">Remote backends</a></li>
+<li><a href="#tflite-mediatek-dlpu">TFLite MediaTek DLPU</a></li>
+<li><a href="#native-mediatek-dlpu">Native Mediatek DLPU</a></li>
 </ul>
 </li>
 <li><a href="#about-dma-buf">About dma-buf</a></li>
@@ -207,6 +209,32 @@ system") which can perform tasks on behalf of the primary system. The remote bac
 <h4>Allocation support</h4>
 <p>Tensors allocated using the calls <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> with a model loaded to either of these backends will have file descriptors that are mappable. These file descriptors follow the rules and conventions of Linux's <a href="#about-dma-buf">dma-buf</a> API. As such, these tensors will have the fd props <code>LAROD_FD_PROP_MAP</code> and <code>LAROD_FD_PROP_DMABUF</code> set.</p>
 <p>For the remote backends it is possible to select which system <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> should allocate the buffer(s) on; to do this, pass a <code>larodMap</code> containing an integer value with the key <code>"vmem-pinning-device"</code> to the allocation function. Possible values are <code>1</code>, which represents allocating the buffer on the primary system, and <code>2</code>, representing the secondary system. If this option is left unset, the allocation will default to allocating buffers on the secondary system.</p>
+<h3>TFLite MediaTek DLPU</h3>
+<p>This backend executes TFLite models on the DLPU accelerator on MediaTek devices.</p>
+<p>The device name of this backend is <code>"mt-dlpu-tflite"</code>; a device handle can be retrieved by providing this device name to <code><a class="el" href="larod_8h.html#a29a9707a190c2d0c44f7e50f942b2621" title="Get an available device. ">larodGetDevice()</a></code>.</p>
+<h4>Supported format of model data</h4>
+<ul>
+<li>A TFLite model, formally identified by a <code>.tflite</code> file extension.</li>
+<li>A model as listed above converted to the DEPRECATED <code>.larod</code> format is also supported for backwards compatibility.</li>
+</ul>
+<h4>Supported buffer properties for running jobs</h4>
+<p>This backend only supports the fd access types <code>LAROD_FD_PROP_MAP</code> and <code>LAROD_FD_PROP_READWRITE</code>.</p>
+<p>As the name indicates the former fd prop will allow the backend to map (using <code>mmap</code>) the tensor's file descriptor instead of reading or writing from them. Combined with tensor tracking (e.g. using <code><a class="el" href="larod_8h.html#a4c84b8df7f3efc94276ba8cdaf940f85" title="Start tracking a tensor in the service. ">larodTrackTensor()</a></code>) the backend may be able to cache a tensor's mapping and thus allow for a very efficient zero-copy map-once memory access pattern.</p>
+<p>The access type <code>LAROD_FD_PROP_READWRITE</code> will introduce a memory copy and <code>read()</code>/<code>write()</code> calls for each input and output tensor buffer - these extra operations will degrade performance.</p>
+<h4>Allocation support</h4>
+<p>Tensors allocated using the calls <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> with a model loaded to this backend will have file descriptors that are readable, writable and mappable. Accordingly the tensors will have the fd props <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code> set.</p>
+<h3>Native MediaTek DLPU</h3>
+<p>This backend executes models compiled to run natively on the DLPU accelerator on MediaTek devices.</p>
+<p>The device name of this backend is <code>"mt-dlpu-native"</code>; a device handle can be retrieved by providing this device name to <code><a class="el" href="larod_8h.html#a29a9707a190c2d0c44f7e50f942b2621" title="Get an available device. ">larodGetDevice()</a></code>.</p>
+<h4>Supported format of model data</h4>
+<p>A compiled model format native for the MediaTek DLPU, usually identified by a <code>.dla</code> file extension.</p>
+<h4>Supported buffer properties for running jobs</h4>
+<p>This backend supports the fd access types <code>LAROD_FD_PROP_DMABUF</code>, <code>LAROD_FD_PROP_MAP</code>, and <code>LAROD_FD_PROP_READWRITE</code>.</p>
+<p>The access type <code>LAROD_FD_PROP_DMABUF</code> provides less overhead since the buffer will be passed directly to the underlying inference framework without extra copies in larod. The client is responsible for cache maintenance of the buffers when using <code>LAROD_FD_PROP_DMABUF</code>. Refer to <a href="#about-dma-buf">About dma-buf</a> for more info about dma-buf and user space synchronization. Note that the supplied dma-bufs must be allocated with libdmabufheap.</p>
+<p>As the name indicates the former fd prop will allow the backend to map (using <code>mmap</code>) the tensor's file descriptor instead of reading or writing from them. Combined with tensor tracking (e.g. using <code><a class="el" href="larod_8h.html#a4c84b8df7f3efc94276ba8cdaf940f85" title="Start tracking a tensor in the service. ">larodTrackTensor()</a></code>) the backend may be able to cache a tensor's mapping and thus allow for a very efficient zero-copy map-once memory access pattern.</p>
+<p>The access type <code>LAROD_FD_PROP_READWRITE</code> will introduce a memory copy and <code>read()</code>/<code>write()</code> calls for each input and output tensor buffer - these extra operations will degrade performance.</p>
+<h4>Allocation support</h4>
+<p>Tensors allocated using the calls <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> with a model loaded to this backend will have file descriptors that are readable, writable and mappable. Accordingly the tensors will have the fd props <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code> set.</p>
 <h2>About dma-buf</h2>
 <p>The Linux dma-buf framework provides a mechanism for userspace programs to indicate beginning and end of access of a buffer from userspace. This allows the buffer exporter in kernel space to take appropriate actions, e.g. flushing or invalidating CPU caches depending on the type of userspace access. This synchronization is performed by calling <code>ioctl(DMA_BUF_IOCTL_SYNC)</code> on the dma-buf file descriptor. The arguments to the ioctl indicates start/stop and type of userspace access. Details on the dma-buf can be found <a href="https://01.org/linuxgraphics/gfx-docs/drm/driver-api/dma-buf.html">here</a>.</p>
 <p>As mentioned previously, on backends that supports dma-bufs, the user application is responsible for this synchronization. However, if a dma-buf is supplied to a backend that doesn't support it (i.e. by forwarding the dma-buf directly to the underlying runtime API), but supports mapping it (i.e. <code>LAROD_FD_PROP_MAP</code> is set), it will appropriately take care of the synchronization when accessing the buffer through the CPU.</p>
@@ -239,6 +267,10 @@ system") which can perform tasks on behalf of the primary system. The remote bac
 <td>Remote TFLite ARTPEC-8 DLPU </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 <tr>
 <td>Remote Native ARTPEC-8 DLPU </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
+<tr>
+<td>TFLite MediaTek DLPU </td><td>Yes </td><td>Yes </td><td></td></tr>
+<tr>
+<td>Native MediaTek DLPU </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 </table>
 <h4>Output tensors</h4>
 <table class="doxtable">
@@ -264,6 +296,10 @@ system") which can perform tasks on behalf of the primary system. The remote bac
 <td>Remote TFLite ARTPEC-8 DLPU </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 <tr>
 <td>Remote Native ARTPEC-8 DLPU </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
+<tr>
+<td>TFLite MediaTek DLPU </td><td>Yes </td><td>Yes </td><td></td></tr>
+<tr>
+<td>Native MediaTek DLPU </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 </table>
 <h3>When allocating tensors</h3>
 <p>Please note that though several properties may be supported by a backend, it may not be possible to allocate buffers having all the properties at the same time.</p>
@@ -291,6 +327,10 @@ system") which can perform tasks on behalf of the primary system. The remote bac
 <td>Remote TFLite ARTPEC-8 DLPU </td><td></td><td>Yes </td><td>Yes </td></tr>
 <tr>
 <td>Remote Native ARTPEC-8 DLPU </td><td></td><td>Yes </td><td>Yes </td></tr>
+<tr>
+<td>TFLite MediaTek DLPU </td><td>Yes </td><td>Yes </td><td></td></tr>
+<tr>
+<td>Native MediaTek DLPU </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 </table>
 <h4>Output tensors</h4>
 <table class="doxtable">
@@ -316,6 +356,10 @@ system") which can perform tasks on behalf of the primary system. The remote bac
 <td>Remote TFLite ARTPEC-8 DLPU </td><td></td><td>Yes </td><td>Yes </td></tr>
 <tr>
 <td>Remote Native ARTPEC-8 DLPU </td><td></td><td>Yes </td><td>Yes </td></tr>
+<tr>
+<td>TFLite MediaTek DLPU </td><td>Yes </td><td>Yes </td><td></td></tr>
+<tr>
+<td>Native MediaTek DLPU </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 </table>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
