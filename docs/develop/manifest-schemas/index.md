@@ -30,3 +30,4 @@ Mapping table for schema, firmware and SDK version.
 | 1.2    | 10.7     | 1.0  | Enables uninstall functionality which is required by e.g. docker-compose-acap |
 | 1.3    | 10.9     | 1.1  | Architecture will be automatically generated and added to manifest at packaging step |
 | 1.3.1  | 11.0     | 1.4  | Bugfixes; Allow `=` in `runOptions` and `maxLength` of `appName` should be 26 |
+| 1.4.0  | 11.7     | 1.11 | Allow new characters `( ) , . ! ? & '` for `vendor` field |

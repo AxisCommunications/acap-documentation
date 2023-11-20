@@ -2,7 +2,7 @@
 layout: page
 grand_parent: Develop ACAP applications
 parent: Manifest schemas
-title: Manifest schema v1.1
+title: Manifest schema v1.4.0
 ---
 
 <h2 class="title-attention"><font color="red">This document is automatically generated from manifest schema</font></h2>
@@ -13,7 +13,7 @@ All fields that are not marked as **Required** are optional
 
 - **schemaVersion** `string` **Required**
 
-  Specifies the application manifest schema version using two dot-separated integer numbers, which follow the semantic versioning rules for MAJOR and MINOR version numbers.
+  Specifies the application manifest schema version using three dot-separated integer numbers, which follow the semantic versioning rules for MAJOR, MINOR and PATCH version numbers.
 
 - **resources** `object`
 
@@ -58,6 +58,11 @@ All fields that are not marked as **Required** are optional
     - **appId** `string`
 
       Application ID (provided by Axis). To retrieve an application ID, contact the Axis Technology Integration Partner Program support
+
+    - **architecture** `string`
+
+      The target architecture(s) that the ACAP application supports. Will be set at build time if missing.
+      _Possible values:_ `all`, `aarch64`, `armv7hf`
 
     - **embeddedSdkVersion** `string`
 
@@ -107,6 +112,14 @@ All fields that are not marked as **Required** are optional
     - **postInstallScript** `string`
 
       Optional script that will be run on the Axis product after ACAP package installation completion. This must be a shell script located in the package root.
+
+  - **uninstallation** `object`
+
+    ACAP application uninstallation settings
+
+    - **preUninstallScript** `string`
+
+      Optional script that will be run on the Axis product before uninstallation of the ACAP. This must be a shell script located in the package root.
 
   - **configuration** `object`
 
