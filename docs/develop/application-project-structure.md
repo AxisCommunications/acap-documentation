@@ -64,7 +64,7 @@ To create the manifest file for a simple Hello World ACAP application:
 Example
 
 ```json
-    "schemaVersion": "1.3",
+"schemaVersion": "1.3",
 ```
 
 **2. Add basic metadata:**
@@ -77,10 +77,10 @@ Example
 Example
 
 ```json
-    "friendlyName": "Hello World",
-    "appName": "hello_world",
-    "vendor": "Axis Communications",
-    "version": "1.0.0"
+"friendlyName": "Hello World",
+"appName": "hello_world",
+"vendor": "Axis Communications",
+"version": "1.0.0"
 ```
 
 **3. Define how you want the applications to be executed:**
@@ -92,11 +92,11 @@ Example
 Example
 
 ```json
-    "runMode": "never",
-    "user": {
-      "group": "sdk",
-      "username": "sdk"
-    }
+"runMode": "never",
+"user": {
+    "group": "sdk",
+    "username": "sdk"
+}
 ```
 
 > It's recommended to not run as a defined user, since it may be deprecated in the future.
@@ -106,7 +106,7 @@ Example
 Example
 
 ```json
-    "embeddedSdkVersion": "3.0"
+"embeddedSdkVersion": "3.0"
 ```
 
 **5. The resulting file.**
@@ -115,21 +115,21 @@ The finished manifest.json, compare to the [Hello World](https://github.com/Axis
 
 ```json
 {
-  "schemaVersion": "1.3",
-  "acapPackageConf": {
-    "setup": {
-      "friendlyName": "Hello World",
-      "appName": "hello_world",
-      "vendor": "Axis Communications",
-      "version": "1.0.0",
-      "embeddedSdkVersion": "3.0",
-      "runMode": "never",
-      "user": {
-        "group": "sdk",
-        "username": "sdk"
-      }
+    "schemaVersion": "1.3",
+    "acapPackageConf": {
+        "setup": {
+            "friendlyName": "Hello World",
+            "appName": "hello_world",
+            "vendor": "Axis Communications",
+            "version": "1.0.0",
+            "embeddedSdkVersion": "3.0",
+            "runMode": "never",
+            "user": {
+                "group": "sdk",
+                "username": "sdk"
+            }
+        }
     }
-  }
 }
 ```
 
