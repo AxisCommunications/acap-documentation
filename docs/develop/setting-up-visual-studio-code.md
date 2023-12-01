@@ -7,82 +7,84 @@ nav_order: 8
 
 # Setting up Visual Studio Code
 
-Visual Studio Code provides access to containerized development tools, without the need for you to install them natively on your development computer.
+[Visual Studio Code](https://code.visualstudio.com/) is a powerful and versatile editor that supports a wide range of programming languages and platforms. It's highly customizable, allowing you to adjust its appearance and functionality to suit your specific needs. Moreover, it has a [rich ecosystem of extensions](https://marketplace.visualstudio.com/VSCode), which can further enhance your productivity. These extensions can provide additional features like code linting, debugging, version control, and even AI-assisted coding.
 
-## Development container
+## Set up for ACAP Native SDK
 
-To start developing ACAP applications using Visual Studio Code:
+One of the key features of Visual Studio Code is [Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers), which enable the use of a [Docker](https://www.docker.com/) container as a full-featured development environment. The container houses everything required to build your application, encompassing the code, runtime, system tools, libraries, and settings.
 
-1. Install the **[Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)** extension available in the **Extensions Marketplace** in **Visual Studio Code**.
-2. Create a development container
-   - Option 1:
-       If your application does not need  external libraries, you can choose the `acap-native-sdk` image as your development container:
+The benefit of this approach is that you don't need to install these tools directly on your development computer. This not only saves you time and effort but also helps to avoid potential conflicts between different tools or versions. It ensures that your development environment is consistent and reproducible, which is particularly useful when you're working on a team project.
 
-       ```sh
-          # armv7hf
-          docker pull acap-native-sdk:latest-armv7hf-ubuntu22.04
-          docker tag axisecp/acap-native-sdk:latest-armv7hf-ubuntu22.04 my-dev-container
-          # aarch64
-          docker pull acap-native-sdk:latest-aarch64-ubuntu22.04
-          docker tag axisecp/acap-native-sdk:latest-aarch64-ubuntu22.04 my-dev-container
-       ```
+1. Open Visual Studio Code and install the **[Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)** extension.
+2. Create a subfolder called `.devcontainer` in the top directory of the source code project you're working on.
+3. In `.devcontainer`, create `devcontainer.json` with the following content:
 
-   - Option 2:
-       Otherwise, you will need to create your own Docker image building the libraries that you need.
-       See as an example [using-opencv](https://github.com/AxisCommunications/acap-native-sdk-examples/blob/main/using-opencv/Dockerfile) which builds OpenCV libraries using the ACAP Native SDK. The application container image will be used as a development container and have access to OpenCV symbols. Let's build the Docker image with the following command, depending on your architecture:
+    ```json
+    {
+        "name": "ACAP Native (aarch64)",
+        "build": {
+            "dockerfile": "Dockerfile",
+            "args": {
+                "ARCH": "aarch64"
+            }
+        },
+        "customizations": {
+            "vscode": {
+                "extensions": [
+                    "ms-vscode.cpptools-extension-pack",
+                    "ms-vscode.makefile-tools",
+                    "ms-azuretools.vscode-docker"
+                ]
+            }
+        }
+    }
+    ```
 
-        ```sh
-        docker build --build-arg ARCH=armv7hf -t my-dev-container .
-        docker build --build-arg ARCH=aarch64 -t my-dev-container .
-        ```
+    You might need to replace `aarch64` with `armv7hf` as it depends on the device your application targets. Refer to [Axis devices & compatibility](../axis-devices-and-compatibility/) for a list of supported architectures.
+4. In `.devcontainer`, create `Dockerfile` with the following content:
 
-3. Create a subfolder called `.devcontainer` in the top directory of the source code project you are working on.
-In `.devcontainer`, create a `devcontainer.json` with the following content:
+    ```dockerfile
+    ARG ARCH
+    ARG VERSION=latest
+    ARG UBUNTU_VERSION=22.04
+    ARG REPO=axisecp
+    ARG SDK=acap-native-sdk
 
-   ```json
-   {
-      "name": "My acap-native-sdk container",
-      "image": "my-dev-container"
-   }
-   ```
+    FROM ${REPO}/${SDK}:${VERSION}-${ARCH}-ubuntu${UBUNTU_VERSION}
 
-4. In VS Code, press `F1` and type in `Dev Containers: Open Folder in Container`. Choose the directory where the `.devcontainer` directory is placed.
+    RUN apt-get update
+    RUN apt install cppcheck -y
+    ```
 
-The application restarts and is now attached to a container with the SDK and your code. This way, you can interactively edit your source code just as if the tools had been installed natively, including using all the debugging and support features in Visual Studio Code.
+    The ACAP Native SDK image includes SDK tools, Git, and some other useful things. You can add any other tools you want in the container to the `Dockerfile`. Use the `RUN` command, like `cppcheck` above. This also applies to external libraries that your application depends on. See [using-opencv](https://github.com/AxisCommunications/acap-native-sdk-examples/blob/main/using-opencv/Dockerfile) for an example on how to depend on [OpenCV](https://opencv.org/).
 
-You can install different versions of the SDK in separate containers. When you open your source code folder, Visual Studio Code identifies the SDK version defined in the `devcontainer.json`.
+5. Create a new subfolder called `.vscode` in the top directory of the source code project you're working on.
+6. In `.vscode`, create `c_cpp_properties.json` file with the following content:
+.vscode
 
-The ACAP Native SDK container includes all the SDK tools, Git, and some other useful things. But you can create your own Dev Container Dockerfile or add more tools to the `devcontainer.json` configuration. See [Microsoft's tutorials on how to use Development Containers](https://code.visualstudio.com/docs/remote/containers) for more information on what this way of working can offer.
+    ```json
+    {
+        "configurations": [
+            {
+                "name": "Linux",
+                "includePath": [
+                    "${workspaceFolder}/**",
+                    "${SDKTARGETSYSROOT}/**"
+                ]
+            }
+        ],
+        "version": 4
+    }
+    ```
 
-## Code completion for Visual Studio Code
+7. In Visual Studio Code, click **View** > **Command Palette...** and type `Dev Containers: Reopen in Container`. This restarts Visual Studio Code, builds the container if it doesn't exist, and then opens the source code in the container. This might take some time the first time you do it.
 
-To enhance your development experience, you can install the Microsoft [C/C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools). This extension provides various features that can assist you with code editing and navigation.
+After the container is built, you can use features like IntelliSense and code browsing. For example, you can get suggestions about Axis libraries as you type or hover over a symbol:
 
-To install and setup the extension, follow these steps:
+![IntelliSense](../../assets/images/vs-code-ms-cpp-extension-332x240.png)
 
-1. Install the [C/C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)  available in the **Extensions Marketplace** in **Visual Studio Code**.
-2. Create a subfolder called `.vscode` in the top directory of the source code project you are working on.
-In `.vscode`, create a `c_cpp_properties.json` with the following content:
+For detailed information on how to use the C/C++ extension and its features, look at the extension's documentation:
 
-   ```json
-   {
-       "configurations": [
-           {
-               "name": "Linux",
-               "includePath": [
-                   "${workspaceFolder}/**",
-                   "${SDKTARGETSYSROOT}/**"
-               ]
-           }
-       ],
-       "version": 4
-   }
-   ```
-
-Once the installation is complete, you can benefit from features such as IntelliSense and code browsing.
-You can now, for example, get suggestions about Axis libraries as you type or hover over a symbol:
-
-<!-- markdownlint-disable MD033 -->
-<img src="../../assets/images/vs-code-ms-cpp-extension.png" height="240">
-
-For detailed information on how to use the C/C++ extension and its various features, refer to the extension's documentation available in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools).
+- [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack) - Popular extensions for C++ development in Visual Studio Code.
+- [Makefile Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools) - Provides makefile support in VS Code: C/C++ IntelliSense, build, debug/run.
+- [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) - Makes it easy to create, manage, and debug containerized applications.

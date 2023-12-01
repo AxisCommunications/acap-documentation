@@ -132,25 +132,25 @@ The following response contains architecture `"Architecture": "armv7hf"`, and fi
 
 ```json
 {
-  "apiVersion": "1.0",
-  "context": "Client defined request ID",
-  "data": {
-    "propertyList": {
-      "Architecture": "armv7hf",
-      "Brand": "AXIS",
-      "BuildDate": "Nov 07 2019 11:16",
-      "HardwareID": "764",
-      "ProdFullName": "AXIS P1448-LE Network Camera",
-      "ProdNbr": "P1448-LE",
-      "ProdShortName": "AXIS P1448-LE",
-      "ProdType": "Network Camera",
-      "SerialNumber": "ACCC8ED0C9EC",
-      "Soc": "Axis Artpec-6",
-      "SocSerialNumber": "00000000-00000000-442C2402-87C00153",
-      "Version": "9.50.1",
-      "WebURL": "http://www.axis.com"
+    "apiVersion": "1.0",
+    "context": "Client defined request ID",
+    "data": {
+        "propertyList": {
+            "Architecture": "armv7hf",
+            "Brand": "AXIS",
+            "BuildDate": "Nov 07 2019 11:16",
+            "HardwareID": "764",
+            "ProdFullName": "AXIS P1448-LE Network Camera",
+            "ProdNbr": "P1448-LE",
+            "ProdShortName": "AXIS P1448-LE",
+            "ProdType": "Network Camera",
+            "SerialNumber": "ACCC8ED0C9EC",
+            "Soc": "Axis Artpec-6",
+            "SocSerialNumber": "00000000-00000000-442C2402-87C00153",
+            "Version": "9.50.1",
+            "WebURL": "http://www.axis.com"
+        }
     }
-  }
 }
 ```
 
