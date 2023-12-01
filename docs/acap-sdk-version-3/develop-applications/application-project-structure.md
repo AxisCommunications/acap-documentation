@@ -87,8 +87,8 @@ To create the manifest file for a simple Hello Glib ACAP application:
     ```json
     "runMode": "never",
     "user": {
-      "group": "sdk",
-      "username": "sdk"
+        "group": "sdk",
+        "username": "sdk"
     }
     ```
 
@@ -106,13 +106,13 @@ To create the manifest file for a simple Hello Glib ACAP application:
 
     ```json
     "configuration": {
-      "httpConfig": [
-        {
-          "access": "viewer",
-          "name": "example.cgi",
-          "type": "transferCgi"
-        }
-      ]
+        "httpConfig": [
+            {
+                "access": "viewer",
+                "name": "example.cgi",
+                "type": "transferCgi"
+            }
+        ]
     }
     ```
 
@@ -120,30 +120,30 @@ The finished `manifest.json`
 
 ```json
 {
- "schemaVersion": "1.3",
- "acapPackageConf": {
-  "setup": {
-   "friendlyName": "Hello Glib",
-   "appName": "hello_glib",
-   "vendor": "Axis Communications",
-   "version": "2.0.0",
-   "embeddedSdkVersion": "3.0",
-   "runMode": "never",
-   "user": {
-    "group": "sdk",
-    "username": "sdk"
-   },
-  },
-  "configuration": {
-   "httpConfig": [
-    {
-     "access": "viewer",
-     "name": "example.cgi",
-     "type": "transferCgi"
+    "schemaVersion": "1.3",
+    "acapPackageConf": {
+        "setup": {
+            "friendlyName": "Hello Glib",
+            "appName": "hello_glib",
+            "vendor": "Axis Communications",
+            "version": "2.0.0",
+            "embeddedSdkVersion": "3.0",
+            "runMode": "never",
+            "user": {
+                "group": "sdk",
+                "username": "sdk"
+            },
+        },
+        "configuration": {
+            "httpConfig": [
+                {
+                    "access": "viewer",
+                    "name": "example.cgi",
+                    "type": "transferCgi"
+                }
+            ]
+        }
     }
-   ]
-  }
- }
 }
 ```
 

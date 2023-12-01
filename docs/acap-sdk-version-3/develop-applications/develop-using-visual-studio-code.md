@@ -28,10 +28,10 @@ devcontainer.json
 
 ```json
 {
- "name": "ACAP SDK ",
- "build": {
-  "dockerfile": "Dockerfile"
- }
+    "name": "ACAP SDK ",
+    "build": {
+        "dockerfile": "Dockerfile"
+    }
 }
 ```
 
