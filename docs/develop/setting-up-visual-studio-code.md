@@ -60,7 +60,6 @@ The benefit of this approach is that you don't need to install these tools direc
 
 5. Create a new subfolder called `.vscode` in the top directory of the source code project you're working on.
 6. In `.vscode`, create `c_cpp_properties.json` file with the following content:
-.vscode
 
     ```json
     {
