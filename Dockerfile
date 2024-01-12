@@ -18,7 +18,10 @@ RUN [ ! -f "Gemfile.lock" ] || { \
     cat Gemfile.lock && \
     echo "Remove old Gemfile.lock" && \
     rm -f Gemfile.lock ; }
-RUN gem install bundler
+
+# Hold back the Bundler version since latest version has dropped support for
+# this old Ruby version
+RUN gem install bundler -v 2.4.22
 
 # Run bundle install separately, seems to hang sometimes when using one RUN
 RUN bundle install && \
