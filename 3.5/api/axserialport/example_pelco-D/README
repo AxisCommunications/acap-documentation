@@ -1,4 +1,0 @@
-This code demonstrates how to use serial port API (axserialport)
-to control a Pelco Spectra mini PTZ camera connected to the serial port.
-
-Check the SDK documentation for more information about the serial port API.
