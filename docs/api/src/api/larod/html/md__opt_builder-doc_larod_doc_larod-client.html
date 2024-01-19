@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.2.65-dirty</span>
+   &#160;<span id="projectnumber">3.2.85-dirty</span>
    </div>
   </td>
  </tr>
@@ -96,12 +96,12 @@ $(function() {
 <p>The interactive modes uses <code>libreadline</code> to read the commands from <code>stdin</code>. This library is not always present e.g. when building for an embedded target, thus the larod meson files are written to pick up <code>libreadline</code> optionally. If it's present in build environment the interactive mode will be included when building <code>larod-client</code>. Please check that <code>libreadline</code> is present in your build environment if you want to use the interactive mode.</p>
 <h3>Using dma-buf input and output for zero-copy</h3>
 <p>larod supports using dma-buf buffers for input and output. <code>larod-client</code> can allocate and run jobs with such buffers. Here is an example of running a convolutional neural network inference on Ambarella CVFlow using larod-allocated dma-buf for input and output:</p>
-<div class="fragment"><div class="line">larod-client -d -c ambarella-cvflow -g ./tf_mobilenet_v2_cavalry.bin \</div><div class="line">-i ./missile_224x224_uint8_RGB.bin -o ./missile-result.bin -I larod-dma \</div><div class="line">-O larod-dma</div></div><!-- fragment --><p>The options <code>--output-buf-type</code> and <code>--input-buf-type</code> are used to select the types of buffers. When types other than <code>ext-disk</code> are used <code>larod-client</code> will allocate buffers and then copy data into the input buffer(s) before starting the job. Similarly output data in the tempory buffers is written to disk when the job is done. Please refer to dma-buf.md for details on the buffer handling. </p>
+<div class="fragment"><div class="line">larod-client -d -c ambarella-cvflow -g ./tf_mobilenet_v2_cavalry.bin \</div><div class="line">-i ./missile_224x224_uint8_RGB.bin -o ./missile-result.bin -I larod-dma \</div><div class="line">-O larod-dma</div></div><!-- fragment --><p>The options <code>--output-buf-type</code> and <code>--input-buf-type</code> are used to select the types of buffers. When types other than <code>larod-disk</code> are used, <code>larod-client</code> will allocate buffers and then copy data into the input buffer(s) before starting the job. Similarly, output data in the temporary buffers is written to disk when the job is done. Please refer to dma-buf.md for details on the buffer handling. </p>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Copyright &copy; 2009-2023 Axis Communications AB. All rights reserved.
+Copyright &copy; 2009-2024 Axis Communications AB. All rights reserved.
 </small></address>
 </body>
 </html>
