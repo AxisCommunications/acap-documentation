@@ -97,6 +97,7 @@ ACAP Release | ACAP Native SDK Image version<br>ACAP CV SDK Image version | Comp
 4.9          | 1.9                           | 11.5 and later
 4.10         | 1.10                          | 11.6 and later
 4.11         | 1.11                          | 11.7 and later
+4.12         | 1.12                          | 11.8 and later
 
 How do I know if my device supports a specific AXIS OS version? Please check
 [firmware releases for supported

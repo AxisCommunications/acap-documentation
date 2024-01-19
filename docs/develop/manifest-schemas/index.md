@@ -31,3 +31,4 @@ Mapping table for schema, firmware and SDK version.
 | 1.3    | 10.9     | 1.1  | Architecture will be automatically generated and added to manifest at packaging step |
 | 1.3.1  | 11.0     | 1.4  | Bugfixes; Allow `=` in `runOptions` and `maxLength` of `appName` should be 26 |
 | 1.4.0  | 11.7     | 1.11 | Allow new characters `( ) , . ! ? & '` for `vendor` field |
+| 1.5.0  | 11.8     | 1.12 | - Add support for reverse proxy configuration<br> - Add access policy for ACAP application web content<br> - Allow `-` character in secondary groups of `linux` resources<br> - Allow strings in `requiredMethods` and `conditionalMethods` under `dbus` to end with `.*` to match all methods of a D-Bus interface |

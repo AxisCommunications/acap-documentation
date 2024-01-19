@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.2.65-dirty</span>
+   &#160;<span id="projectnumber">3.2.85-dirty</span>
    </div>
   </td>
  </tr>
@@ -743,7 +743,7 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a41ad6dc8e9f9ffebc03faf115167aba5afc936d97349d892279eec5c41c154d41"></a>LAROD_ACCESS_PRIVATE&#160;</td><td class="fielddoc"><p>Private access. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a41ad6dc8e9f9ffebc03faf115167aba5a715ba74abd18b8d73cd1dad0385ea031"></a>LAROD_ACCESS_PUBLIC&#160;</td><td class="fielddoc"><p>Public access. </p>
+<tr><td class="fieldname"><a id="a41ad6dc8e9f9ffebc03faf115167aba5a715ba74abd18b8d73cd1dad0385ea031"></a>LAROD_ACCESS_PUBLIC&#160;</td><td class="fielddoc"><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000027">Deprecated:</a></b></dt><dd>Public access, will be removed in a future release. </dd></dl>
 </td></tr>
 </table>
 
@@ -811,7 +811,7 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a7ed3c8c2c4b753ea64c806e1bef77574abb7821ef54f50647d2a516eb85e5e814"></a>LAROD_ERROR_JOB&#160;</td><td class="fielddoc"><p>General error for job. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a7ed3c8c2c4b753ea64c806e1bef77574a77b53c4e0a2ccd73dfbd24c5e3ba6df7"></a>LAROD_ERROR_INFERENCE&#160;</td><td class="fielddoc"><p>General error for inference.</p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000025">Deprecated:</a></b></dt><dd>Replaced with LAROD_ERROR_JOB in larod 2.0. This type is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included. </dd></dl>
+<tr><td class="fieldname"><a id="a7ed3c8c2c4b753ea64c806e1bef77574a77b53c4e0a2ccd73dfbd24c5e3ba6df7"></a>LAROD_ERROR_INFERENCE&#160;</td><td class="fielddoc"><p>General error for inference.</p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000028">Deprecated:</a></b></dt><dd>Replaced with LAROD_ERROR_JOB in larod 2.0. This type is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included. </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="a7ed3c8c2c4b753ea64c806e1bef77574a6da76196da6f44160235017b9e39395f"></a>LAROD_ERROR_LOAD_MODEL&#160;</td><td class="fielddoc"><p>General error for loading model. </p>
 </td></tr>
@@ -1191,7 +1191,7 @@ Functions</h2></td></tr>
 <p>Create and initialize an inference request handle. </p>
 <p>Creates and initializes an inference request handle with a minimum set of arguments needed to run an inference. The inference request needs to be deallocated with <code><a class="el" href="larod_8h.html#aca458fe1a3c203228c7541483cc3fc26" title="Destroy an inference request handle. ">larodDestroyInferenceRequest()</a></code> when no longer needed.</p>
 <p>The tensor data and model information is copied into the <code>larodInferenceRequest</code> when it is created. The input and output file descriptors specified in the tensors <code>inputTensors</code> and <code>outputTensors</code> must have reading and writing permissions respectively when running the inference. Moreover, <code>inputTensors</code> file descriptors' file offsets will be set to the beginning before reading, while <code>outputTensors</code> file descriptors' file offsets will be untouched before writing (and left at the resulting position after the write).</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000012">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#af25e0293b11b12fb8e296fb20c828159" title="Create and initialize a job request handle. ">larodCreateJobRequest()</a></code> in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000014">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#af25e0293b11b12fb8e296fb20c828159" title="Create and initialize a job request handle. ">larodCreateJobRequest()</a></code> in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">model</td><td>Loaded model to run inference on. </td></tr>
@@ -1522,7 +1522,7 @@ Functions</h2></td></tr>
 
 <p>Destroy an inference request handle. </p>
 <p><code>infReq</code> should not be used after this call.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000013">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a7835f9976056850f52b69638cd722f6d" title="Destroy a request handle. ">larodDestroyJobRequest()</a></code> in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000015">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a7835f9976056850f52b69638cd722f6d" title="Destroy a request handle. ">larodDestroyJobRequest()</a></code> in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">infReq</td><td>Pointer to an initialized handle or NULL. The dereferenced <code>infReq</code> will be set to NULL after the inference request is released. If <code>infReq</code> is NULL this function will nothing. </td></tr>
@@ -1733,7 +1733,7 @@ Functions</h2></td></tr>
 
 <p>Destroy a list of <code>larodTensor</code>. </p>
 <p>Releases the memory associated with a list of <code>larodTensor</code> handles. Neither the pointers in the <code>tensors</code> array nor the array itself can be used after this call.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000024">Deprecated:</a></b></dt><dd>Replaced with <a class="el" href="larod_8h.html#afac99dfef68ffe3d513008aaac354ae0" title="Destroy a list of larodTensor. ">larodDestroyTensors()</a> with an additional input parameters in larod 3.0. This function is still available in larod 3.0 and later if either LAROD_API_VERSION_1 or LAROD_API_VERSION_2 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000026">Deprecated:</a></b></dt><dd>Replaced with <a class="el" href="larod_8h.html#afac99dfef68ffe3d513008aaac354ae0" title="Destroy a list of larodTensor. ">larodDestroyTensors()</a> with an additional input parameters in larod 3.0. This function is still available in larod 3.0 and later if either LAROD_API_VERSION_1 or LAROD_API_VERSION_2 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tensors</td><td>Pointer to array of <code>larodTensor</code> pointers or NULL. The dereferenced <code>tensors</code> will be set to NULL after the list is released. If <code>tensors</code> is NULL, this function will do nothing. </td></tr>
@@ -1816,7 +1816,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get current chip ID in use for the session in larod. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000020">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#aa3ab5cc53e4e83cbebb60d394028ecbc" title="Get chip for a model. ">larodGetModelChip()</a></code> in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000022">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#aa3ab5cc53e4e83cbebb60d394028ecbc" title="Get chip for a model. ">larodGetModelChip()</a></code> in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>An initialized connection handle. </td></tr>
@@ -1862,7 +1862,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get current chip type in use for the session in larod. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000023">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#aa3ab5cc53e4e83cbebb60d394028ecbc" title="Get chip for a model. ">larodGetModelChip()</a></code> in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000025">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#aa3ab5cc53e4e83cbebb60d394028ecbc" title="Get chip for a model. ">larodGetModelChip()</a></code> in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>An initialized connection handle. </td></tr>
@@ -2125,7 +2125,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get chip for a model. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated:</a></b></dt><dd>Replaced with <code>larodGetDevice</code> in larod 3.0. This function is still available in larod 3.0 and later if LAROD_API_VERSION_2 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000007">Deprecated:</a></b></dt><dd>Replaced with <code>larodGetDevice</code> in larod 3.0. This function is still available in larod 3.0 and later if LAROD_API_VERSION_2 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">model</td><td>Pointer to an initialized model handle. </td></tr>
@@ -2248,7 +2248,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get input tensor byte sizes for a model. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#af6859ad6f4fc86281195693d32022507" title="Get byte size of tensor. ">larodGetTensorByteSize()</a></code> in larod 3.1. Will be removed in a future release.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000008">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#af6859ad6f4fc86281195693d32022507" title="Get byte size of tensor. ">larodGetTensorByteSize()</a></code> in larod 3.1. Will be removed in a future release.</dd></dl>
 <p>Allocate input tensors byte sizes based on a <code>larodModel</code>. The array of byte sizes needs to be released when it is no longer needed by calling <code>free()</code>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -2410,7 +2410,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get output tensor byte sizes for a model. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000007">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#af6859ad6f4fc86281195693d32022507" title="Get byte size of tensor. ">larodGetTensorByteSize()</a></code> in larod 3.1. Will be removed in a future release.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000009">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#af6859ad6f4fc86281195693d32022507" title="Get byte size of tensor. ">larodGetTensorByteSize()</a></code> in larod 3.1. Will be removed in a future release.</dd></dl>
 <p>Allocate output tensors byte sizes based on a <code>larodModel</code>. The array of byte sizes needs to be released when it is no longer needed by calling <code>free()</code>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -3121,6 +3121,7 @@ Functions</h2></td></tr>
 
 <p>Load a new model. </p>
 <p>This function returns a model handle. Use this for referencing the loaded model in other functions such as <a class="el" href="larod_8h.html#ae91c59650ac4d2352930137749fc5377">larodDeleteModel()</a>, <a class="el" href="larod_8h.html#af25e0293b11b12fb8e296fb20c828159">larodCreateJobRequest()</a> etcetera. Note that the file descriptor <code>fd</code> for the binary model file must have valid reading permissions.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated:</a></b></dt><dd>Public access type for <code>access</code> is now deprecated and will be removed in a future release.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>An initialized connection handle. </td></tr>
@@ -3183,7 +3184,7 @@ Functions</h2></td></tr>
 
 <p>Load a new model to current chip. </p>
 <p>This function returns a model handle. Use this for referencing the loaded model in other functions such as <a class="el" href="larod_8h.html#ae91c59650ac4d2352930137749fc5377">larodDeleteModel()</a>, <a class="el" href="larod_8h.html#aac485da8e57086172a219d9a3bd3ae4a">larodCreateInferenceRequest()</a> etcetera. Note that the file descriptor <code>fd</code> for the binary model file must have valid reading permissions.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000008">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a41b5e5179aa68b382e024945254a5770" title="Load a new model. ">larodLoadModel()</a></code> in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000010">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a41b5e5179aa68b382e024945254a5770" title="Load a new model. ">larodLoadModel()</a></code> in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>An initialized connection handle. </td></tr>
@@ -3256,7 +3257,7 @@ Functions</h2></td></tr>
 
 <p>Load a new model. </p>
 <p>This function returns a model handle. Use this for referencing the loaded model in other functions such as <a class="el" href="larod_8h.html#ae91c59650ac4d2352930137749fc5377">larodDeleteModel()</a>, <a class="el" href="larod_8h.html#af25e0293b11b12fb8e296fb20c828159">larodCreateJobRequest()</a> etcetera. Note that the file descriptor <code>fd</code> for the binary model file must have valid reading permissions.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000009">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a41b5e5179aa68b382e024945254a5770" title="Load a new model. ">larodLoadModel()</a></code> in larod 3.0. This function is still available in larod 3.0 and later if LAROD_API_VERSION_2 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000011">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a41b5e5179aa68b382e024945254a5770" title="Load a new model. ">larodLoadModel()</a></code> in larod 3.0. This function is still available in larod 3.0 and later if LAROD_API_VERSION_2 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>An initialized connection handle. </td></tr>
@@ -3344,6 +3345,7 @@ Functions</h2></td></tr>
 <p>Load a new model asynchronously. </p>
 <p>This is the asynchronous version of <a class="el" href="larod_8h.html#a41b5e5179aa68b382e024945254a5770" title="Load a new model. ">larodLoadModel()</a>.</p>
 <p>The user-specified callback function <code>callback</code> will be called as soon as the model has been loaded. <code>userData</code> will be given as input argument to the callback function which enables the user to associate executing callbacks with their corresponding requests. Refer to the documentation of <code>larodLoadModelCallback</code> for additional rules that apply to the callback function.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated:</a></b></dt><dd>Public access type for <code>access</code> is now deprecated and will be removed in a future release.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>An initialized connection handle. </td></tr>
@@ -3420,7 +3422,7 @@ Functions</h2></td></tr>
 
 <p>Load a new model to current chip asynchronously. </p>
 <p>This is the asynchronous version of <a class="el" href="larod_8h.html#a41b5e5179aa68b382e024945254a5770" title="Load a new model. ">larodLoadModel()</a>. The callback function <code>callback</code> will be called as soon as the model has been loaded.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000010">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#ab4073f88052a8b3c4804683903e84001" title="Load a new model asynchronously. ">larodLoadModelAsync()</a></code> in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000012">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#ab4073f88052a8b3c4804683903e84001" title="Load a new model asynchronously. ">larodLoadModelAsync()</a></code> in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>An initialized connection handle. </td></tr>
@@ -3507,7 +3509,7 @@ Functions</h2></td></tr>
 
 <p>Load a new model asynchronously. </p>
 <p>This is the asynchronous version of <a class="el" href="larod_8h.html#a41b5e5179aa68b382e024945254a5770" title="Load a new model. ">larodLoadModel()</a>. The callback function <code>callback</code> will be called as soon as the model has been loaded.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000011">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#ab4073f88052a8b3c4804683903e84001" title="Load a new model asynchronously. ">larodLoadModelAsync()</a></code> in larod 3.0. This function is still available in larod 3.0 and later if LAROD_API_VERSION_2 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000013">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#ab4073f88052a8b3c4804683903e84001" title="Load a new model asynchronously. ">larodLoadModelAsync()</a></code> in larod 3.0. This function is still available in larod 3.0 and later if LAROD_API_VERSION_2 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>An initialized connection handle. </td></tr>
@@ -3991,7 +3993,7 @@ Functions</h2></td></tr>
 
 <p>Run inference on a loaded model. </p>
 <p>Data will be read or written using the tensors' file descriptors. The maximum number of bytes that the larod service will access (read or write) can be set by <code><a class="el" href="larod_8h.html#af1cd8a7aea3357fd5f7d6238c1257679" title="Set file descriptor maximum capacity (bytes) for a tensor. ">larodSetTensorFdSize()</a></code> for each tensor. Offsets into the file descriptors can be configured using <code><a class="el" href="larod_8h.html#a11e0e2c325e2c96c4d75a9198dd84dbc" title="Set file offset for a tensor. ">larodSetTensorFdOffset()</a></code>. If the size value for a tensor is 0 (default value) then larod will use file operations to determine the file descriptor size. The larod service will also use file operations to read and write tensor data, thus the current file positions of tensor file descriptors will be updated by the inference call. The client should not access the file descriptors during this call.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000018">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a7c492dcfb18e0a32407dc6078bd50dbe" title="Run a job on a loaded model. ">larodRunJob()</a></code> in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000020">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a7c492dcfb18e0a32407dc6078bd50dbe" title="Run a job on a loaded model. ">larodRunJob()</a></code> in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>An initialized connection handle. </td></tr>
@@ -4052,7 +4054,7 @@ Functions</h2></td></tr>
 <p>This is the asynchronous version of <a class="el" href="larod_8h.html#ada0b064b3752d6f083b6849d6395b379" title="Run inference on a loaded model. ">larodRunInference()</a>. The same set of parameters as <a class="el" href="larod_8h.html#ada0b064b3752d6f083b6849d6395b379" title="Run inference on a loaded model. ">larodRunInference()</a> must be explicitly set in <code>infReq</code>.</p>
 <p>Data will be accessed for read or write using the tensor file descriptors. Offsets into the file descriptors can be configured using <code><a class="el" href="larod_8h.html#a11e0e2c325e2c96c4d75a9198dd84dbc" title="Set file offset for a tensor. ">larodSetTensorFdOffset()</a></code>. The maximum number of bytes that the larod service will access (read or write) can be set by <code><a class="el" href="larod_8h.html#af1cd8a7aea3357fd5f7d6238c1257679" title="Set file descriptor maximum capacity (bytes) for a tensor. ">larodSetTensorFdSize()</a></code> for each tensor. If the size value for a tensor is 0 (default value) then larod will use file operations to determine the file descriptor size. The larod service will also use file operations to read and write tensor data, thus the current file positions of tensor file descriptors will be updated by the inference call. The client should not access the file descriptors while an asynchronous inference in running.</p>
 <p>The callback function <code>callback</code> will be called as soon as the inference has finished. The callbacks are not guaranteed to be called in any order; <code>userData</code> can be used to tag different requests.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000019">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a3fa258919ed449acf79cff143bc638f3" title="Run a job on a loaded model asynchronously. ">larodRunJobAsync()</a></code> in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000021">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a3fa258919ed449acf79cff143bc638f3" title="Run a job on a loaded model asynchronously. ">larodRunJobAsync()</a></code> in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>An initialized connection handle. </td></tr>
@@ -4209,7 +4211,7 @@ Functions</h2></td></tr>
 
 <p>Set current chip using <code>larodChip</code> in use for the session in larod. </p>
 <p>Note: if there is more than one chip on the device corresponding to <code>chip</code> then the one with the smallest chip ID will be chosen.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000022">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a41b5e5179aa68b382e024945254a5770" title="Load a new model. ">larodLoadModel()</a></code> (with chip parameter) in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000024">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a41b5e5179aa68b382e024945254a5770" title="Load a new model. ">larodLoadModel()</a></code> (with chip parameter) in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>An initialized connection handle. </td></tr>
@@ -4255,7 +4257,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set current chip using ID in use for the session in larod. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000021">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a41b5e5179aa68b382e024945254a5770" title="Load a new model. ">larodLoadModel()</a></code> (with chip parameter) in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000023">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a41b5e5179aa68b382e024945254a5770" title="Load a new model. ">larodLoadModel()</a></code> (with chip parameter) in larod 2.0. This function is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>An initialized connection handle. </td></tr>
@@ -4308,7 +4310,7 @@ Functions</h2></td></tr>
 
 <p>Set input tensor array in an inference request. </p>
 <p>Copies the <code>tensors</code> array into the inference request. The existing tensor array in <code>infReq</code> will be overwritten.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000015">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a75661cc81e667c0d9b43e04a08352b70" title="Set input tensor array in a request. ">larodSetJobRequestInputs()</a></code> in larod 2.0. This type is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000017">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a75661cc81e667c0d9b43e04a08352b70" title="Set input tensor array in a request. ">larodSetJobRequestInputs()</a></code> in larod 2.0. This type is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">infReq</td><td>Pointer to an already allocated inference request. </td></tr>
@@ -4356,7 +4358,7 @@ Functions</h2></td></tr>
 
 <p>Set model in an inference request. </p>
 <p>Specifies which model to run the inference request on. Copies the <code>model</code> information into the inference request. The existing model information in <code>infReq</code> will be overwritten.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000014">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a7492143af176034b0861021449d2fa44" title="Set model in a request. ">larodSetJobRequestModel()</a></code> in larod 2.0. This type is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000016">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#a7492143af176034b0861021449d2fa44" title="Set model in a request. ">larodSetJobRequestModel()</a></code> in larod 2.0. This type is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">infReq</td><td>Pointer to an already allocated inference request. </td></tr>
@@ -4409,7 +4411,7 @@ Functions</h2></td></tr>
 
 <p>Set output tensor array in an inference request. </p>
 <p>Copies the <code>tensors</code> array into the inference request. The existing tensor array in <code>infReq</code> will be overwritten.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000016">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#ac1cd0c46a5abb6b76a570f795dbaa4d0" title="Set output tensor array in a job request. ">larodSetJobRequestOutputs()</a></code> in larod 2.0. This type is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000018">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#ac1cd0c46a5abb6b76a570f795dbaa4d0" title="Set output tensor array in a job request. ">larodSetJobRequestOutputs()</a></code> in larod 2.0. This type is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">infReq</td><td>Inference request handle. </td></tr>
@@ -4462,7 +4464,7 @@ Functions</h2></td></tr>
 <p>Note also that priorities are only valid within the set of requests for a given session. The priority does not influence the ordering in different connections! Default priority is 50 when a request is created (</p><dl class="section see"><dt>See also</dt><dd><a class="el" href="larod_8h.html#aac485da8e57086172a219d9a3bd3ae4a" title="Create and initialize an inference request handle. ">larodCreateInferenceRequest()</a> and </dd>
 <dd>
 larodCreateEmptyInferenceRequest()).</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000017">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#ae7740a49cf1ac4b86d23a6721cbcfde8" title="Set an priority of a job request. ">larodSetJobRequestPriority()</a></code> in larod 2.0. This type is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000019">Deprecated:</a></b></dt><dd>Replaced with <code><a class="el" href="larod_8h.html#ae7740a49cf1ac4b86d23a6721cbcfde8" title="Set an priority of a job request. ">larodSetJobRequestPriority()</a></code> in larod 2.0. This type is still available in larod 2.0 and later if LAROD_API_VERSION_1 is defined before <a class="el" href="larod_8h.html" title="Main larod header file. ">larod.h</a> is included.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">infReq</td><td>Pointer to an initialized handle. </td></tr>
@@ -5144,7 +5146,7 @@ larodCreateEmptyInferenceRequest()).</dd></dl>
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Copyright &copy; 2009-2023 Axis Communications AB. All rights reserved.
+Copyright &copy; 2009-2024 Axis Communications AB. All rights reserved.
 </small></address>
 </body>
 </html>

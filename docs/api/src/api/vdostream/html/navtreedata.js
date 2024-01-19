@@ -25,7 +25,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "../../../main/html/acap3_api.html",
-"vdo-types_8h.html#acaa9291dd03e128aa2097c75b0d65ab8a9668eddb4acce5e6fd23ee924461d2aa"
+"vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
