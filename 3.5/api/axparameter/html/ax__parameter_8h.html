@@ -51,7 +51,7 @@ $(function() {
       <div id="nav-sync" class="sync"></div>
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
+  <div id="splitbar" style="-moz-user-select:none;"
        class="ui-resizable-handle">
   </div>
 </div>
@@ -68,7 +68,7 @@ $(document).ready(function(){initNavTree('ax__parameter_8h.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>AXParameter and its associated functions. Contains functions for adding, removing, setting and getting parameters. The interface supports registering callback functions when a parameter value is updated.  
+<p>AXParameter and its associated functions. Contains functions for adding, removing, setting and getting parameters. The interface supports registering callback functions when a parameter value is updated.
 <a href="#details">More...</a></p>
 
 <p><a href="ax__parameter_8h_source.html">Go to the source code of this file.</a></p>
@@ -121,7 +121,95 @@ Parameters</h1>
 <p>Callback functions should avoid blocking calls, i.e. never call any axparameter method as this will very likely lead to a deadlock. In other words, there may only be one axparameter call at the time. A better way to handle updates of other parameters from a callback is to use a global data object that gets updated.</p>
 <h1><a class="anchor" id="parametertypes"></a>
 Parameter Types</h1>
-<p>These are parameter types possible to set with <a class="el" href="ax__parameter_8h.html#a9069e0a2a3c64cacd7d50f1408a9f5fa">ax_parameter_add</a></p>
+<p>These are all the parameter types possible to set with <a class="el" href="ax__parameter_8h.html#a9069e0a2a3c64cacd7d50f1408a9f5fa">ax_parameter_add</a></p>
+<table class="doxtable">
+<tr>
+<th>Name </th><th>Type Format </th><th>Example </th><th>Description  </th></tr>
+<tr>
+<td>Enum </td><td><code>type = "enum:option 1[|nice name 1][,option 2[|nice name 2][,...]]"</code> </td><td><code>type = "enum:TCPIP,HTTP,OFF"</code><br />
+ <code>type = "enum:TCPIP|Generic TCP/IP,HTTP|Generic HTTP,OFF|OFF"</code><br />
+ <code>type = "enum:1|Low,10|Medium,30|High"</code>  </td><td>Rendered as drop-down lists in the ACAP settings interface. <br />
+ Options are separated by commas, and if desired, a <em>nice value</em> can be provided after the '|' symbol.<br />
+ The nice value is displayed as the option in the ACAP settings interface.   </td></tr>
+<tr>
+<td>Bool </td><td><code>type = "bool:no,yes"</code> </td><td><code>type = "bool:no,yes"</code> </td><td>Rendered as Checkbox in the ACAP settings interface.<br />
+ The first value is the unchecked value.   </td></tr>
+<tr>
+<td>String </td><td><code>type = "string[:maxlen=X]"</code> </td><td><code>type = "string:maxlen=64"</code> </td><td>Rendered as a plain text input field for string in the ACAP settings interface.<br />
+ Optional maximum length parameter (maxlen) can be added.<br />
+ All Unicode characters are supported.   </td></tr>
+<tr>
+<td>Int </td><td><code>type = "int[:[maxlen=X;][min=Y;][max=Z]]"</code><br />
+ <code>type = "int[:[maxlen=X;][range=[Y,][A-Z]]]"</code><br />
+  </td><td><code>type = "int"</code><br />
+ <code>type = "int:min=0"</code><br />
+ <code>type = "int:maxlen=3;min=0;max=100"</code><br />
+ <code>type = "int:maxlen=5;range=0,1024-65535"</code>  </td><td>Rendered as a plain text input field for integers in the ACAP settings interface.<br />
+ Optional specifications for maximum length (maxlen), minimum (min), and maximum (max) values.<br />
+ Optional <em>range</em> parameter can be provided with values separated by commas,<br />
+ or in the format <em>min-max</em>.<br />
+ Both methods include the specified minimum and maximum values in the range.   </td></tr>
+<tr>
+<td>Password </td><td><code>type = "password[:maxlen=X]"</code> </td><td><code>type = "password:maxlen=64"</code> </td>
+<td>Rendered as an input field for string in the ACAP settings interface.<br />
+The value of the parameter is masked by '*'.<br />
+Optional maximum length parameter (maxlen) can be added.<br />
+The content of the parameter is readable from axparameter but not via param.cgi.<br />
+Despite the masking, it is not secure as other ACAP applications can read the content.</td></tr>
+</table>
+<h1><a class="anchor" id="controlwords"></a>
+Control Words</h1>
+<p>When creating a new parameter with <a class="el" href="ax__parameter_8h.html#a9069e0a2a3c64cacd7d50f1408a9f5fa">ax_parameter_add</a>, it is also possible to prepend an extra control word, that will impact how the parameter is handled. Here is a list of the possible control words.</p>
+<table class="doxtable">
+<tr>
+<th>Name </th><th>Example </th><th>Description  </th></tr>
+<tr>
+<td>Hidden </td><td><code>type = "hidden:string"</code> </td><td>Hide the parameter in the list of parameters in the ACAP settings interface.  </td></tr>
+<tr>
+<td>NoSync </td><td><code>type = "nosync:string"</code> </td><td>The changes on the parameters last until the ACAP is restarted or the parameter is reloaded.  </td></tr>
+<tr>
+<td>ReadOnly </td><td><code>type = "readonly:string"</code> </td><td>The parameter cannot be modified by axparameter nor param.cgi, and the parameter is grayed out in the ACAP settings interface.  </td></tr>
+</table>
+<h1><a class="anchor" id="deprecatedparametertypes"></a>
+Deprecated Parameter Types</h1>
+<p>These parameter types are deprecated and should not be used.</p>
+<table class="doxtable">
+<tr>
+<th>Name </th><th>Type Format </th><th>Example </th><th>Description  </th></tr>
+<tr>
+<td>Radio </td><td><code>type = "radio:option 1[|nice name 1][,option 2[|nice name 2][,...]]"</code> </td><td><code>type = "radio:TCPIP,HTTP,OFF"</code><br />
+ <code>type = "radio:TCPIP|Generic TCP/IP,HTTP|Generic HTTP,OFF|OFF"</code><br />
+ <code>type = "radio:1|Low,10|Medium,30|High"</code>  </td><td>This type works like an enum but is not supported by the ACAP Setting interface.<br />
+ If used, it will present as a free text box, returning an error if the entered value is not among the options.   </td></tr>
+<tr>
+<td>Checkbox </td><td><code>type = "checkbox:NO,YES"</code> </td><td><code>type = "checkbox:NO,YES"</code> </td><td>The first value is the unchecked value, unless the first value is "YES", "ON", "TRUE", "ENABLE" or "1".<br />
+ It can be expressed with the short form "yes_no" or "on_off".<br />
+ Equivalent to type "bool:no,yes."   </td></tr>
+<tr>
+<td>Text area </td><td><code>type = "textarea"</code> </td><td><code>type = "textarea"</code> </td><td>Plain text input field. Equivalent to type "string".  </td></tr>
+<tr>
+<td>MACADDR </td><td><code>type = "MACADDR"</code> </td><td><code>type = "MACADDR"</code> </td><td>Plain text input field for MAC addresses with a maximum length of 17 characters. No input validation is performed.<br />
+ Equivalent to type "string:maxlen=17".   </td></tr>
+<tr>
+<td>IP </td><td><code>type = "IP" or type = "ip"</code> </td><td><code>type = "IP" or type = "ip"</code> </td><td>Plain text input field for IP addresses with a maximum length of 15 characters. No input validation is performed.<br />
+ Equivalent to type "string:maxlen=15".   </td></tr>
+<tr>
+<td>IP long </td><td><code>type = "IPNAME"</code> </td><td><code>type = "IPNAME"</code> </td><td>Plain text input field for IP addresses or host names with a maximum length of 64 characters. No input validation is performed.<br />
+ Equivalent to type "string:maxlen=64".   </td></tr>
+</table>
+<h1><a class="anchor" id="deprecatedcontrolwords"></a>
+Deprecated Control Words</h1>
+<p>These control words are deprecated and should not be used.</p>
+<table class="doxtable">
+<tr>
+<th>Name </th><th>Example </th><th>Description  </th></tr>
+<tr>
+<td>Internal </td><td><code>type = "internal:string"</code> </td><td>Equivalent to hidden, but only for Axis internal use  </td></tr>
+<tr>
+<td>Const </td><td><code>type = "const:string"</code> </td><td>The parameter can be modified via axparameter and param.cgi, but it is grayed out in the ACAP settings interface.  </td></tr>
+<tr>
+<td>WriteOnly </td><td><code>type = "writeonly:string"</code> </td><td>The parameter can be updated can neither be read by axparameter nor by param.cgi.  </td></tr>
+</table>
 </div><h2 class="groupheader">Typedef Documentation</h2>
 <a id="a82ba0fc58e5e8749b1313825b6a7a670"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a82ba0fc58e5e8749b1313825b6a7a670">&#9670;&nbsp;</a></span>AXParameterCallback</h2>
@@ -576,7 +664,7 @@ Parameter Types</h1>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="ax__parameter_8h.html">ax_parameter.h</a></li>
-    <li class="footer">Copyright &copy; 2009-2022 Axis Communications AB. All rights reserved.</li>
+    <li class="footer">Copyright &copy; 2009-2024 Axis Communications AB. All rights reserved.</li>
   </ul>
 </div>
 </body>
