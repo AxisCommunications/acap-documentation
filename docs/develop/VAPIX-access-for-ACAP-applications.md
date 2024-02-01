@@ -70,7 +70,7 @@ An ACAP application can acquire VAPIX service account credentials through a D-Bu
 
     GVariant *result = g_dbus_connection_call_sync (connection,
                                                     "com.axis.HTTPConf1",
-                                                    "/com/axis/HttpConf1/VAPIXServiceAccounts1",
+                                                    "/com/axis/HTTPConf1/VAPIXServiceAccounts1",
                                                     "com.axis.HTTPConf1.VAPIXServiceAccounts1",
                                                     "GetCredentials",
                                                     username,
@@ -126,7 +126,7 @@ Example call:
 ```bash
 gdbus call --system
             --dest com.axis.HTTPConf1
-            --object-path /com/axis/HttpConf1/VAPIXServiceAccounts1
+            --object-path /com/axis/HTTPConf1/VAPIXServiceAccounts1
             --method com.axis.HTTPConf1.VAPIXServiceAccounts1.GetCredentials
             "testuser"
 ```
