@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Axis devices & compatibility
-nav_order: 6
+nav_order: 7
 ---
 
 # Axis devices & compatibility
