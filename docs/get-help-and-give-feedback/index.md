@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Get help & give feedback
-nav_order: 10
+nav_order: 11
 ---
 
 # Get help & give feedback
