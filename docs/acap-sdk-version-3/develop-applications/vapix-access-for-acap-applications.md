@@ -13,7 +13,15 @@ The following steps show how to get VAPIX credentials in an ACAP application.
 
 ## Modify the manifest file
 
-- Add the required D-Bus method `com.axis.HTTPConf1.Auth1.GetVapixServiceAccountCredentials` in the manifest file under field `resources.dbus.requiredMethods`.
+> [!IMPORTANT]
+>
+> - In AXIS OS 11.6 and 11.7, a first beta version of VAPIX access was provided.
+> - From AXIS OS 11.8, the following updates have been made:
+>   - The D-Bus object path has changed from `/com/axis/HTTPConf1/Auth1` to `/com/axis/HTTPConf1/VAPIXServiceAccounts1`.
+>   - The D-Bus interface has changed from `com.axis.HTTPConf1.Auth1` to `com.axis.HTTPConf1.VAPIXServiceAccounts1`.
+>   - The method name has changed from `GetVapixServiceAccountCredentials` to `GetCredentials`.
+
+- Add the required D-Bus method `com.axis.HTTPConf1.VAPIXServiceAccounts1.GetCredentials` in the manifest file under field `resources.dbus.requiredMethods`.
 
 - Use a dynamic user by removing the `user` section from the manifest. To use this D-Bus service, the ACAP must run as a generated user and it is not available for the general SDK user.
 
@@ -34,7 +42,7 @@ Example Manifest
     "resources": {
         "dbus": {
             "requiredMethods": [
-                "com.axis.HTTPConf1.Auth1.GetVapixServiceAccountCredentials"
+                "com.axis.HTTPConf1.VAPIXServiceAccounts1.GetCredentials"
             ]
         }
     }
@@ -62,9 +70,9 @@ An ACAP application can acquire VAPIX service account credentials through a D-Bu
 
     GVariant *result = g_dbus_connection_call_sync (connection,
                                                     "com.axis.HTTPConf1",
-                                                    "/com/axis/HttpConf1/Auth",
-                                                    "com.axis.HTTPConf1.Auth1",
-                                                    "GetVapixServiceAccountCredentials",
+                                                    "/com/axis/HTTPConf1/VAPIXServiceAccounts1",
+                                                    "com.axis.HTTPConf1.VAPIXServiceAccounts1",
+                                                    "GetCredentials",
                                                     username,
                                                     NULL,
                                                     G_DBUS_CALL_FLAGS_NONE,
@@ -73,7 +81,7 @@ An ACAP application can acquire VAPIX service account credentials through a D-Bu
                                                     &error);
     ```
 
-    When the `GetVapixServiceAccountCredentials` method is invoked, it generates credentials with the specified username and a random password, which is returned to the ACAP as a string.
+    When the `GetCredentials` method is invoked, it generates credentials with the specified username and a random password, which is returned to the ACAP as a string.
 
 ## Make a VAPIX call
 
@@ -118,8 +126,8 @@ Example call:
 ```bash
 gdbus call --system
             --dest com.axis.HTTPConf1
-            --object-path /com/axis/HttpConf1/Auth
-            --method com.axis.HTTPConf1.Auth1.GetVapixServiceAccountCredentials
+            --object-path /com/axis/HTTPConf1/VAPIXServiceAccounts1
+            --method com.axis.HTTPConf1.VAPIXServiceAccounts1.GetCredentials
             "testuser"
 ```
 
