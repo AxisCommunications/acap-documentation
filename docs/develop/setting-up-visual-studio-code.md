@@ -87,3 +87,39 @@ For detailed information on how to use the C/C++ extension and its features, loo
 - [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack) - Popular extensions for C++ development in Visual Studio Code.
 - [Makefile Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools) - Provides makefile support in VS Code: C/C++ IntelliSense, build, debug/run.
 - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) - Makes it easy to create, manage, and debug containerized applications.
+
+### Manifest validation
+
+With devcontainer support, you can validate the ACAP application manifest file in real time. This new feature ensures that the manifest follows the correct schema format, which improves development efficiency and reliability.
+
+1. In `.vscode`, create `settings.json` file with the following content:
+
+    ```json
+    {
+        "json.schemas":
+        [
+            {
+                "fileMatch": ["**/manifest.json*"],
+                "url": "/opt/axis/acapsdk/axis-acap-manifest-tools/schema/schemas/v1/*.json"
+            }
+        ]
+    }
+    ```
+
+2. Update `manifest.json` file of an ACAP application with the field `$schema`. Note that it must match the version in `schemaVersion`:
+
+    ```json
+    {
+        "$schema": "file:///opt/axis/acapsdk/axis-acap-manifest-tools/schema/schemas/v1/application-manifest-schema-v1.6.0.json",
+
+        "schemaVersion": "1.6.0"
+    }
+    ```
+
+3. Visual Studio Code will highlight errors in the manifest file. Have a look at the following examples to see how it works:
+
+    - Introduce a hyphen in the field `appName`. The error will be highlighted and displayed as follows in the _PROBLEMS_ section of VS Code:
+
+    ![Validation1](../../assets/images/vs-code-manifest-validation1-500x500.png)
+
+    - Change the data type of any field (i.e. enter an integer value like 346 in the field `appId` without putting it into double quotes) and the error will be highlighted and displayed in the _PROBLEMS_ section of VS Code.
