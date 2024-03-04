@@ -73,22 +73,31 @@ guide](https://www.axis.com/developer-community/product-interface-guide).
 Choose the appropriate SDK version based on what AXIS OS version you want
 supporting your ACAP application.
 
+How do I know if my device supports a specific AXIS OS version? Please check
+the web page for download of [device software](https://www.axis.com/support/device-software).
+
+> **Device Software** has previously been named **firmware**.
+
+### ACAP Computer Vision SDK software compatibility
+
 The **Image version** referred to in the
 table below is the Docker image release tag available from Docker Hub:
 
-- [ACAP Native SDK](https://hub.docker.com/r/axisecp/acap-native-sdk/tags)
 - [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk/tags)
 
-The tag format is **`<image-version>-<architecture>-<container-distribution>`**.
-An example of a tag is `acap-native-sdk:1.5-aarch64-ubuntu22.04` where `1.5`
-maps to the image version.
+The tag format is `<image-version>-<architecture>-<sdk_type>`.
+In the tag examples below, `1.5` maps to the image version.
 
-ACAP Release | ACAP Native SDK Image version<br>ACAP CV SDK Image version | Compatible with AXIS OS version
+- `axisecp/acap-computer-vision-sdk:1.5-aarch64`
+- `axisecp/acap-computer-vision-sdk:1.5-aarch64-devel`
+- `axisecp/acap-computer-vision-sdk:1.5-aarch64-runtime`
+
+ACAP Release | ACAP CV SDK Image version | Compatible with AXIS OS version
 :------------| :---------------------------- | :-------------------------------------------
 4.0          | 1.0                           | 10.7 and later
 4.1          | 1.1                           | 10.9 and later
 4.2          | 1.2                           | 10.10 and later
-4.3          | 1.3                           | 10.12 and later
+4.3          | 1.3                           | 10.12 (LTS)
 4.4          | 1.4                           | 11.0 and later
 4.5          | 1.5                           | 11.1 and later
 4.6          | 1.6                           | 11.2 and later
@@ -97,11 +106,38 @@ ACAP Release | ACAP Native SDK Image version<br>ACAP CV SDK Image version | Comp
 4.9          | 1.9                           | 11.5 and later
 4.10         | 1.10                          | 11.6 and later
 4.11         | 1.11                          | 11.7 and later
-4.12         | 1.12                          | 11.8 and later
+4.12         | 1.12                          | 11.8
 
-How do I know if my device supports a specific AXIS OS version? Please check
-[firmware releases for supported
-products](https://www.axis.com/support/firmware).
+### ACAP Native SDK software compatibility
+
+The **Image version** referred to in the
+table below is the Docker image release tag available from Docker Hub:
+
+- [ACAP Native SDK](https://hub.docker.com/r/axisecp/acap-native-sdk/tags)
+
+The tag format is `<image-version>-<architecture>-<container-distribution>`.
+An example of a tag is
+
+- `axisecp/acap-native-sdk:1.5-aarch64-ubuntu22.04`
+
+where `1.5` maps to the image version.
+
+ACAP Release | ACAP Native SDK Image version | Compatible with AXIS OS version
+:------------| :---------------------------- | :-------------------------------------------
+4.0          | 1.0                           | 10.7 and later until LTS
+4.1          | 1.1                           | 10.9 and later until LTS
+4.2          | 1.2                           | 10.10 and later until LTS
+4.3          | 1.3                           | 10.12 (LTS)
+4.4          | 1.4                           | 11.0 and later until LTS
+4.5          | 1.5                           | 11.1 and later until LTS
+4.6          | 1.6                           | 11.2 and later until LTS
+4.7          | 1.7                           | 11.3 and later until LTS
+4.8          | 1.8                           | 11.4 and later until LTS
+4.9          | 1.9                           | 11.5 and later until LTS
+4.10         | 1.10                          | 11.6 and later until LTS
+4.11         | 1.11                          | 11.7 and later until LTS
+4.12         | 1.12                          | 11.8 and later until LTS
+4.13         | 1.13                          | 11.9 and later until LTS
 
 ## Forward compatibility
 
