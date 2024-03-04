@@ -2,12 +2,13 @@
 layout: acap_sdk_version_3
 parent: Develop applications
 grand_parent: ACAP SDK version 3
-title: VAPIX access for ACAP applications - BETA
+title: VAPIX access for ACAP applications
 nav_order: 4
 ---
-# VAPIX access for ACAP applications - BETA
+# VAPIX access for ACAP applications
 
 From AXIS OS 11.6, ACAP applications can acquire VAPIX service account credentials in runtime. With these credentials, the ACAP application can call a local virtual host to make VAPIX requests on the device. A username and a password with high complexity are created for every credential acquisition. These credentials are only valid on the local virtual host (127.0.0.12) and aren't stored in any file. It should only be kept in memory by the ACAP application.
+You can jump to the [Vapix](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vapix) example or follow this guide for a more detailed walkthrough.
 
 The following steps show how to get VAPIX credentials in an ACAP application.
 

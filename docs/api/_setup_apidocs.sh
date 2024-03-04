@@ -111,7 +111,17 @@ replace_acap3_button() {
 #-------------------------------------------------------------------------------
 
 # Release settings
-apis="axevent axoverlay axserialport axstorage larod licensekey vdostream"
+apis="\
+  axevent \
+  axoverlay \
+  axparameter \
+  axserialport \
+  axstorage \
+  larod \
+  licensekey \
+  metadata-broker \
+  vdostream \
+"
 
 # Version strings
 apiver_minor="${apiver#*.}"

@@ -64,7 +64,9 @@ To create the manifest file for a simple Hello World ACAP application:
 Example
 
 ```json
-"schemaVersion": "1.3",
+{
+    "schemaVersion": "1.5.0",
+}
 ```
 
 **2. Add basic metadata:**
@@ -77,57 +79,47 @@ Example
 Example
 
 ```json
-"friendlyName": "Hello World",
-"appName": "hello_world",
-"vendor": "Axis Communications",
-"version": "1.0.0"
-```
-
-**3. Define how you want the applications to be executed:**
-
-- Running mode - the application will not start or restart automatically.
-- User and group for execution and file ownership, typically the sdk:sdk.
-- If needed, you could also define special start options for the execution of the binary.
-
-Example
-
-```json
-"runMode": "never",
-"user": {
-    "group": "sdk",
-    "username": "sdk"
+"acapPackageConf": {
+    "setup": {
+        "friendlyName": "Hello World",
+        "appName": "hello_world",
+        "vendor": "Axis Communications",
+        "version": "1.0.0",
+    }
 }
 ```
 
-> It's recommended to not run as a defined user, since it may be deprecated in the future.
+**3. Add options for running mode:**
 
-**4. Add the required embedded development version on the target device.**
+- Running mode - the option `never` means that the application will not start or restart automatically.
+- embeddedSdkVersion  - the required embedded development version on the target device. Should always be set to `3.0` for new releases.
 
 Example
 
 ```json
-"embeddedSdkVersion": "3.0"
+"acapPackageConf": {
+    "setup": {
+        "runMode": "never",
+        "embeddedSdkVersion": "3.0",
+    }
+}
 ```
 
-**5. The resulting file.**
+**4. The resulting file.**
 
 The finished manifest.json, compare to the [Hello World](https://github.com/AxisCommunications/acap-native-sdk-examples/blob/master/hello-world/app/manifest.json) example manifest of the ACAP Native SDK examples.
 
 ```json
 {
-    "schemaVersion": "1.3",
+    "schemaVersion": "1.5.0",
     "acapPackageConf": {
         "setup": {
             "friendlyName": "Hello World",
             "appName": "hello_world",
             "vendor": "Axis Communications",
             "version": "1.0.0",
-            "embeddedSdkVersion": "3.0",
             "runMode": "never",
-            "user": {
-                "group": "sdk",
-                "username": "sdk"
-            }
+            "embeddedSdkVersion": "3.0",
         }
     }
 }
@@ -163,8 +155,8 @@ see [Manifest schemas](manifest-schemas/).
 | Version for the ACAP application | acapPackageConf.<br>setup.<br>version | APPMAJORVERSION | A numerical value of the application’s major version. |
 |                                  |                               | APPMINORVERSION | A numerical value of the application’s minor version. |
 |                                  |                               | APPMICROVERSION | A numerical value of the application’s micro version. |
-| User and group for execution and file ownership | acapPackageConf.<br>setup.<br>user.username | APPUSR | The user that the application will run as. The recommended user is **sdk**. |
-|                                                 | acapPackageConf.<br>setup.<br>user.group   |  APPGRP | The group that the application will run as. The recommended group is **sdk**. |
+| User and group for execution and file ownership | acapPackageConf.<br>setup.<br>user.username | APPUSR | The user that the application will run as. It's recommended to use [dynamic user](#user-and-group) by not specifying user with this field.  |
+|                                                 | acapPackageConf.<br>setup.<br>user.group   |  APPGRP | The group that the application will run as.  It's recommended to use [dynamic user](#user-and-group) by not specifying group with this field. |
 | ID of the application in Axis ACAP portal | acapPackageConf.<br>setup.<br>appId  | APPID | The application copy protection identifier. Provided by Axis and required when using Axis copy protection solution. |
 | Application architecture | acapPackageConf.<br>setup.<br>architecture[^1] | APPTYPE | The automatically generated architecture of the application. For architecture-independent applications, this field can be set to `all`. |
 | The execution behavior of the application | acapPackageConf.<br>setup.<br>runMode | STARTMODE | Defines how the application is started. Possible values are:<br>- **respawn** Once started, the application starts automatically when the system starts (at boot). In case the application crashes, it restarts automatically.<br>- **once** Once started, the application starts automatically when the system starts (at boot). In case the application crashes, does not restart.<br>- **never** Application does not start or restart automatically. |
@@ -210,6 +202,37 @@ start.
 > Instead of the application forking the main process, the application is
 > started by systemd, which assumes failure if the main process dies, and writes
 > any output to stdout/stderr to the system log.
+
+## User and group
+
+- It's recommended to use **dynamic user** in ACAP applications.
+- Up until ACAP version 3 SDK, it was recommended to set `sdk` as user and group.
+
+### Dynamic user
+
+To get a dynamic user, simply leave out `acapPackageConf.user.group` and `acapPackageConf.user.username`. The dynamic user will belong to the group `addon`.
+
+An ACAP application with dynamic user will only have access to applications installed under `/usr/local/packages/<appName>` and resources requested in the manifest.
+
+The main advantage of using a dynamic user instead of `sdk` user is the higher level of security. The dynamic user does not have access to, and can not modify other ACAP applications.
+
+### Secondary groups
+
+If the user needs additional groups, this can be specified under `resources`.
+
+Example
+
+```json
+    "resources": {
+        "linux": {
+            "user": {
+                "groups": [
+                    "storage"
+                ]
+            }
+        }
+    }
+```
 
 ## License file
 
