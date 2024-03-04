@@ -25,3 +25,8 @@ or in the Beta API example if there is one available.
 
 Feedback on the service and API can be given in the [ACAP Computer Vision SDK
 examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/issues) issue tracker.
+
+### Metadata Broker API
+
+Feedback on the service and API can be given in the [ACAP Native SDK
+examples](https://github.com/AxisCommunications/acap-native-sdk-examples/issues) issue tracker

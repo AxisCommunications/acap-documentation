@@ -9,6 +9,7 @@ nav_order: 1
 
 The ACAP Native SDK provides the following APIs:
 
+<!-- markdownlint-disable MD033 -->
 - [Video capture API (VDO)](#video-capture-api-vdo)
 - [Machine learning API (Larod)](#machine-learning-api-larod)
 - [Overlay API](#overlay-api)
@@ -20,6 +21,7 @@ The ACAP Native SDK provides the following APIs:
 - [License Key API](#license-key-api)
 - [FastCGI](#fastcgi)
 - [Serial port API](#serial-port-api)
+- [Metadata Broker API](#metadata-broker-api) <a class="label label-blue">BETA</a>
 
 ## Compatibility
 
@@ -427,3 +429,33 @@ The Serial port API was introduced in Native SDK 1.11.
     - Enabling the serial port.
     - Configuring parameters using the API.
     - Establishing communication between two available ports in the Axis product using GLib IOChannel methods.
+
+## Metadata Broker API
+
+> This API is a [Beta version](./beta-api) and developers are encouraged to test and leave feedback.
+
+Go to the [ACAP API Documentation](src/api/metadata-broker/html/index.html) for detailed
+functional descriptions of this API.
+
+The Metadata Broker API allows an ACAP application to consume metadata from
+a producer in AXIS OS by subscribing to a `topic`.
+
+The API implements the Publish/Subscribe messaging paradigm.
+
+### Compatibility
+
+The Metadata Broker API supports products with the following chips:
+
+- ARTPEC-8
+- ARTPEC-7
+- Ambarella CV25
+
+### Version history
+
+The Metadata Broker API was introduced in Native SDK 1.13.
+
+### Code Examples
+
+- [analytics-scene-description-example](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/metadata-broker/consume-analytics-scene-description)
+  - The example is written in C and shows how to consume metadata stream
+    **Analytics Scene Description**.
