@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.2.85-dirty</span>
+   &#160;<span id="projectnumber">3.2.113-dirty</span>
    </div>
   </td>
  </tr>
@@ -79,6 +79,7 @@ $(function() {
 <li><a href="#ace">ACE</a></li>
 <li><a href="#vproc">VProc</a></li>
 <li><a href="#opencl">OpenCL</a></li>
+<li><a href="#remote-backends">Remote backends</a></li>
 </ul>
 </li>
 <li><a href="#supported-operations">Supported operations</a></li>
@@ -207,9 +208,16 @@ $(function() {
 <h4>Choosing a specific device</h4>
 <p>There are currently two available OpenCL backends; these are <code>"axis-a8-dlpu-proc"</code>, which runs on the DLPU on ARTPEC-8, and <code>"axis-a8-gpu-proc"</code>, which runs on the GPU on ARTPEC-8. A device handle to one of these backends can be retrieved by providing the respective device name to <code><a class="el" href="larod_8h.html#a29a9707a190c2d0c44f7e50f942b2621" title="Get an available device. ">larodGetDevice()</a></code>.</p>
 <h4>Supported buffer properties for running jobs</h4>
-<p>The backends only support the fd access type <code>LAROD_FD_PROP_READWRITE</code>.</p>
+<p>The backends supports the fd access types <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code>.</p>
 <h4>Allocation support</h4>
 <p>Tensors allocated using the calls <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> with a model loaded to this backend will have file descriptors that are readable, writable and mappable. Accordingly the tensors will have the fd props <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code> set.</p>
+<h3>Remote backends</h3>
+<p>The remote backends are used in devices built with multiple ARTPEC chips. Such multi-ARTPEC devices are composed of one ARTPEC chip (the "primary system") running the bulk of the system logic, and another ARTPEC chip ("secondary
+system") which can perform tasks on behalf of the primary system. The remote backends support executing pre-processing jobs on the secondary ARTPEC chip. The remote backends include <code>"remote-cpu-proc"</code>, <code>"remote-axis-a8-gpu-proc"</code> and <code>"remote-axis-a8-dlpu-proc"</code>. They function the same as their corresponding non-remote counterparts, but are instead run on the secondary ARTPEC system. See also the corresponding documentation for the respective non-remote backends.</p>
+<h4>Supported buffer properties for running jobs</h4>
+<p>All fd props are supported. The user is encouraged to use <code>LAROD_FD_PROP_DMABUF</code> for remote backends as it will yield optimal performance in terms of buffer handling.</p>
+<h4>Allocation support</h4>
+<p>Tensors allocated using the calls <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> with a model loaded to either of these backends will have file descriptors that are mappable. These file descriptors follow the rules and conventions of Linux's <a href="nn-inference.md#about-dma-buf">dma-buf</a> API. As such, these tensors will have the fd props <code>LAROD_FD_PROP_MAP</code> and <code>LAROD_FD_PROP_DMABUF</code> set.</p>
 <h2>Supported operations</h2>
 <p>The following table describes supported operations for each backend.</p>
 <table class="doxtable">
@@ -223,6 +231,10 @@ $(function() {
 <td>VProc </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 <tr>
 <td>OpenCL </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
+<tr>
+<td>Remote libyuv </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
+<tr>
+<td>Remote OpenCL </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 </table>
 <h2>Supported formats</h2>
 <h3>Operations requiring a color format conversion</h3>
@@ -238,6 +250,10 @@ $(function() {
 <td>VProc </td><td>Yes </td><td></td><td></td></tr>
 <tr>
 <td>OpenCL </td><td>Yes </td><td></td><td></td></tr>
+<tr>
+<td>Remote libyuv </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
+<tr>
+<td>Remote OpenCL </td><td>Yes </td><td></td><td></td></tr>
 </table>
 <p>The following table describes supported <em><b>output</b></em> formats for operations requiring a color format conversion.</p>
 <table class="doxtable">
@@ -251,6 +267,10 @@ $(function() {
 <td>VProc </td><td></td><td></td><td>Yes </td></tr>
 <tr>
 <td>OpenCL </td><td></td><td>Yes </td><td></td></tr>
+<tr>
+<td>Remote libyuv </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
+<tr>
+<td>Remote OpenCL </td><td></td><td>Yes </td><td></td></tr>
 </table>
 <h3>Operations <em>not</em> requiring a color format conversion</h3>
 <p>The following table describes supported image formats for operations <em>not</em> requiring a color format conversion, i.e. the input and output formats are identical. This could be e.g. a pure scaling operation.</p>
@@ -263,6 +283,10 @@ $(function() {
 <td>VProc </td><td>Yes </td><td></td><td>Yes </td></tr>
 <tr>
 <td>OpenCL </td><td>Yes </td><td></td><td>Yes </td></tr>
+<tr>
+<td>Remote libyuv </td><td>Yes </td><td>Yes </td><td></td></tr>
+<tr>
+<td>Remote OpenCL </td><td>Yes </td><td></td><td>Yes </td></tr>
 </table>
 <h2>Supported buffer properties</h2>
 <p>This is an overview of what file descriptor properties are supported by the various preprocessing backends. Note that the <code>LAROD_FD_PROP_</code> prefix have been omitted from the table headers in the interest of brevity. Please see <a href="../lib/larod.h"><code>larod.h</code></a> for more info about the <code>LAROD_FD_PROP_*</code> flags.</p>
@@ -279,7 +303,11 @@ $(function() {
 <tr>
 <td>VProc </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 <tr>
-<td>OpenCL </td><td>Yes </td><td></td><td></td></tr>
+<td>OpenCL </td><td>Yes </td><td>Yes </td><td></td></tr>
+<tr>
+<td>Remote libyuv </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
+<tr>
+<td>Remote OpenCL </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 </table>
 <h4>Output tensors</h4>
 <table class="doxtable">
@@ -292,7 +320,11 @@ $(function() {
 <tr>
 <td>VProc </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 <tr>
-<td>OpenCL </td><td>Yes </td><td></td><td></td></tr>
+<td>OpenCL </td><td>Yes </td><td>Yes </td><td></td></tr>
+<tr>
+<td>Remote libyuv </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
+<tr>
+<td>Remote OpenCL </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 </table>
 <h3>When allocating tensors</h3>
 <p>Please note that though several properties may be supported by a backend, it may not be possible to allocate buffers having all the properties at the same time.</p>
@@ -308,6 +340,10 @@ $(function() {
 <td>VProc </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 <tr>
 <td>OpenCL </td><td>Yes </td><td>Yes </td><td></td></tr>
+<tr>
+<td>Remote libyuv </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
+<tr>
+<td>Remote OpenCL </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 </table>
 <h4>Output tensors</h4>
 <table class="doxtable">
@@ -321,6 +357,10 @@ $(function() {
 <td>VProc </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 <tr>
 <td>OpenCL </td><td>Yes </td><td>Yes </td><td></td></tr>
+<tr>
+<td>Remote libyuv </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
+<tr>
+<td>Remote OpenCL </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 </table>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
