@@ -14,6 +14,7 @@ The ACAP Native SDK provides the following APIs:
 - [Overlay API](#overlay-api)
 - [Cairo](#cairo)
 - [OpenCL](#opencl)
+- [Parameter API](#parameter-api)
 - [Event API](#event-api)
 - [Edge storage API](#edge-storage-api)
 - [License Key API](#license-key-api)
@@ -186,6 +187,74 @@ The OpenCL 1.2 was introduced in Native SDK 1.0.
 
 - [vdo-opencl-filtering](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-opencl-filtering/)
   - This example illustrates how to capture frames from the vdo service, access the received buffer, and finally perform a GPU accelerated Sobel filtering with OpenCL.
+
+## Parameter API
+
+Go to the [ACAP API Documentation](src/api/axparameter/html/index.html) for
+detailed functional descriptions of this API.
+
+The AXParameter C library provides the following functionality:
+
+- Read and modify **application parameters** stated in `manifest.json`.
+- Add and remove **application parameters** in C code, in addition to the ones
+  already defined in `manifest.json`.
+- Set up **callbacks** so the application can act immediately on changes made
+  to the **application parameters** via the
+  [application settings web page](#application-settings-web-page) or VAPIX.
+- Read **system parameters**.
+
+**Application parameters** have the following properties:
+
+- They are preserved when an application is restarted or upgraded.
+- They are preserved when the device is restarted and when firmware is upgraded.
+- They are displayed and possible to set in the
+  [application settings web page](#application-settings-web-page).
+- They can be read and modified using VAPIX API
+  [param.cgi](https://www.axis.com/vapix-library/subjects/t10175981/section/t10036014/display).
+
+> The application parameters are **not private** to the application, they can
+> be:
+>
+> - *read* via VAPIX by a user with `operator` privileges.
+> - *read* and *modified* via VAPIX by a user with `admin` privileges.
+> - *read* and *modified* by another application if the application users belongs
+>   to the same group.
+
+### Application settings web page
+
+The application settings web page can be used to modify **application
+parameters**.
+
+In the Axis device web page:
+
+- Go to *Apps* tab
+- Open the application options
+- Click *Settings* to open a dialog where parameters can be set
+
+Note that a reload of the web page is required to display values set from C code
+or VAPIX.
+
+### Compatibility
+
+The Parameter API supports products with the following chips:
+
+- ARTPEC-8
+- ARTPEC-7
+- ARTPEC-6
+- Ambarella CV25
+- Ambarella S5L
+- Ambarella S5
+- i.MX 6SoloX
+- i.MX 6ULL
+
+### Version history
+
+The Parameter API was introduced in Native SDK 1.13.
+
+### Code Examples
+
+- [axparamter](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axparamter)
+  - An example in C that demonstrates how to manage application-defined parameters, allowing you to add, remove, set, get, and register callback functions for parameter value updates.
 
 ## Event API
 
