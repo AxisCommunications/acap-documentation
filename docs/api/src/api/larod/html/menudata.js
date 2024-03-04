@@ -1,5 +1,5 @@
 var menudata={children:[
-{text:"Larod Main Page",url:"index.html"},
+{text:"Main Page",url:"index.html"},
 {text:"Related Pages",url:"pages.html"},
 {text:"Data Structures",url:"annotated.html",children:[
 {text:"Data Structures",url:"annotated.html"},

@@ -37,7 +37,7 @@ All fields that are not marked as **Required** are optional
 
     - **friendlyName** `string`
 
-      User friendly package name. The name that will be displayed e.g. in the embedded web pages.
+      User-friendly package name. The name that will be displayed e.g. in the embedded web pages.
 
     - **user** `object` **Required**
 
@@ -53,7 +53,7 @@ All fields that are not marked as **Required** are optional
 
     - **runMode** `string` **Required**
 
-      If 'respawn' application will be restarted if exited. If 'never' application will never be restarted. If 'once' application will not be restarted if exited but will be restated on reboot of device if application is running.
+      If 'respawn' application will be restarted if exited. If 'never' application will never be restarted. If 'once' application will not be restarted if exited but will be restarted on reboot of device if application is running.
       _Possible values:_ `respawn`, `once`, `never`
 
     - **runOptions** `string`
