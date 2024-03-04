@@ -2,7 +2,7 @@
 layout: page
 grand_parent: Develop ACAP applications
 parent: Manifest schemas
-title: Manifest schema v1.1
+title: Manifest schema v1.6.0
 ---
 
 <h2 class="title-attention"><font color="red">This document is automatically generated from manifest schema</font></h2>
@@ -11,9 +11,13 @@ title: Manifest schema v1.1
 
 All fields that are not marked as **Required** are optional
 
+- **$schema** `string`
+
+  URI of the manifest schema for validation
+
 - **schemaVersion** `string` **Required**
 
-  Specifies the application manifest schema version using two dot-separated integer numbers, which follow the semantic versioning rules for MAJOR and MINOR version numbers.
+  Specifies the application manifest schema version using three dot-separated integer numbers, which follow the semantic versioning rules for MAJOR, MINOR and PATCH version numbers.
 
 - **resources** `object`
 
@@ -25,11 +29,11 @@ All fields that are not marked as **Required** are optional
 
     - **requiredMethods** `array`
 
-      A list of D-Bus methods (given as strings) that are required by the application to be part of an API of the host system. If the methods are not present, the application is considered incompatible and will be rejected at installation.
+      A list of D-Bus methods (given as strings) that are required by the application to be part of an API of the host system. If the methods are not present, the application is considered incompatible and will be rejected at installation. A wildcard '*' can be supplied at the end of a string, preceeded by a dot '.', to match all methods of a D-Bus interface.
 
     - **conditionalMethods** `array`
 
-      A list of D-Bus methods (given as strings) desired by the application that may or may not be part of an API of the host system. If the methods are not present the application will still be installed. It is up to the application to handle the absence of the methods appropriately.
+      A list of D-Bus methods (given as strings) desired by the application that may or may not be part of an API of the host system. If the methods are not present the application will still be installed. It is up to the application to handle the absence of the methods appropriately. A wildcard '*' can be supplied at the end of a string, preceeded by a dot '.', to match all methods of a D-Bus interface.
 
   - **linux** `object`
 
@@ -58,6 +62,11 @@ All fields that are not marked as **Required** are optional
     - **appId** `string`
 
       Application ID (provided by Axis). To retrieve an application ID, contact the Axis Technology Integration Partner Program support
+
+    - **architecture** `string`
+
+      The target architecture(s) that the ACAP application supports. Will be set at build time if missing.
+      _Possible values:_ `all`, `aarch64`, `armv7hf`
 
     - **embeddedSdkVersion** `string`
 
@@ -108,6 +117,14 @@ All fields that are not marked as **Required** are optional
 
       Optional script that will be run on the Axis product after ACAP package installation completion. This must be a shell script located in the package root.
 
+  - **uninstallation** `object`
+
+    ACAP application uninstallation settings
+
+    - **preUninstallScript** `string`
+
+      Optional script that will be run on the Axis product before uninstallation of the ACAP. This must be a shell script located in the package root.
+
   - **configuration** `object`
 
     ACAP application interaction setup.
@@ -115,6 +132,38 @@ All fields that are not marked as **Required** are optional
     - **settingPage** `string`
 
       The name of the main embedded web page of the ACAP application. To be refered to when listing installed ACAP applications. Must be located in directory 'html' relative to application package root.
+
+    - **httpConfig** `array`
+
+      A list of web server configuration objects.
+
+      A web server CGI configuration object.
+
+      - **type** `string` **Required**
+
+        CGI implementation type.
+        _Possible values:_ `transferCgi`, `fastCgi`
+
+      - **name** `string` **Required**
+
+        CGI path relative to application web root.
+
+      - **access** `string` **Required**
+
+        Access policy for calling the CGI.
+        _Possible values:_ `admin`, `operator`, `viewer`
+
+      A web content object.
+
+      - **type** `string` **Required**
+
+        Type of ACAP application web content. The type refers to the 'html' directory in the application package root.
+        _Possible values:_ `directory`
+
+      - **access** `string` **Required**
+
+        Access policy for viewing ACAP application web content, i.e. all files that are stored under 'html' directory in the application package root. Default access policy is 'admin'. Be aware that changing access policies will give general access to the web content.
+        _Possible values:_ `admin`, `operator`, `viewer`
 
     - **paramConfig** `array`
 
@@ -134,25 +183,44 @@ All fields that are not marked as **Required** are optional
 
         Parameter type definition string.
 
-    - **httpConfig** `array`
+    - **reverseProxy** `array`
 
-      A list of web server CGI configuration objects.
+      A list of reverse proxy configuration objects.
 
-      A web server CGI configuration object.
+      A reverse proxy unix domain socket object.
 
-      - **type** `string` **Required**
+      - **apiPath** `string` **Required**
 
-        CGI implementation type.
-        _Possible values:_ `transferCgi`, `fastCgi`
+        API path relative to the ACAP application home path.
 
-      - **name** `string` **Required**
+      - **apiType** `string` **Required**
 
-        CGI path relative to application web root.
+        API protocol (http, web socket or fast cgi).
+        _Possible values:_ `http`, `ws`, `fcgi`
+
+      - **target** `string` **Required**
+
+        Target path to a unix domain socket.
 
       - **access** `string` **Required**
 
-        Access policy for calling the CGI.
-        _Possible values:_ `admin`, `operator`, `viewer`
+        Access policy for calling the path.
+        _Possible values:_ `admin`, `operator`, `viewer`, `anonymous`
+
+      A reverse proxy tcp object.
+
+      - **apiPath** `string` **Required**
+
+        API path relative to the ACAP application home path.
+
+      - **target** `string` **Required**
+
+        Target path. FastCGI or URI (http or web socket).
+
+      - **access** `string` **Required**
+
+        Access policy for calling the path.
+        _Possible values:_ `admin`, `operator`, `viewer`, `anonymous`
 
   - **copyProtection** `object`
 
