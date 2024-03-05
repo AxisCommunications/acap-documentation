@@ -5,27 +5,34 @@ title: VAPIX access for ACAP applications
 nav_order: 7
 ---
 
-# VAPIX access for ACAP applications - BETA
+# VAPIX access for ACAP applications
 
 From AXIS OS 11.6, ACAP applications can acquire VAPIX service account credentials in runtime. With these credentials, the ACAP application can call a local virtual host to make VAPIX requests on the device. A username and a password with high complexity are created for every credential acquisition. These credentials are only valid on the local virtual host (127.0.0.12) and aren't stored in any file. It should only be kept in memory by the ACAP application.
 
-The following steps show how to get VAPIX credentials in an ACAP application.
-
-## Modify the manifest file
-
 > [!IMPORTANT]
 >
-> - In AXIS OS 11.6 and 11.7, a first beta version of VAPIX access was provided.
-> - From AXIS OS 11.8, the following updates have been made:
->   - The D-Bus object path has changed from `/com/axis/HTTPConf1/Auth1` to `/com/axis/HTTPConf1/VAPIXServiceAccounts1`.
->   - The D-Bus interface has changed from `com.axis.HTTPConf1.Auth1` to `com.axis.HTTPConf1.VAPIXServiceAccounts1`.
->   - The method name has changed from `GetVapixServiceAccountCredentials` to `GetCredentials`.
+> - In AXIS OS 11.6, a first beta version of VAPIX access was provided.
+> - In AXIS OS 11.8, the following updates were made:
+>   - The D-Bus object path changed from `/com/axis/HTTPConf1/Auth1` to `/com/axis/HTTPConf1/VAPIXServiceAccounts1`.
+>   - The D-Bus interface changed from `com.axis.HTTPConf1.Auth1` to `com.axis.HTTPConf1.VAPIXServiceAccounts1`.
+>   - The method name changed from `GetVapixServiceAccountCredentials` to `GetCredentials`.
+> - In AXIS OS 11.9 the VAPIX access feature reached General Availability.
+
+## Example application
+
+[vapix](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vapix)
+is an example in C that retrieves VAPIX credentials over D-Bus and makes VAPIX
+calls over a loopback interface.
+
+The following steps show details on how to get VAPIX credentials in an ACAP
+application and can be found implemented in the example.
+
+### Modify the manifest file
 
 - Add the required D-Bus method `com.axis.HTTPConf1.VAPIXServiceAccounts1.GetCredentials` in the manifest file under field `resources.dbus.requiredMethods`.
+- Use a dynamic user by removing the `user` section from the manifest. To use this D-Bus service, the ACAP application must run as a generated user and it is not available for the general SDK user.
 
-- Use a dynamic user by removing the `user` section from the manifest. To use this D-Bus service, the ACAP must run as a generated user and it is not available for the general SDK user.
-
-Example Manifest
+Example manifest
 
 ```json
 {
@@ -49,7 +56,7 @@ Example Manifest
 }
 ```
 
-## Acquire credentials
+### Acquire credentials
 
 An ACAP application can acquire VAPIX service account credentials through a D-Bus call. This example uses GDBus, a high-level D-Bus library for working with D-Bus.
 
@@ -83,11 +90,9 @@ An ACAP application can acquire VAPIX service account credentials through a D-Bu
 
     When the `GetCredentials` method is invoked, it generates credentials with the specified username and a random password, which is returned to the ACAP as a string.
 
-## Make a VAPIX call
+### Make a VAPIX call
 
 After obtaining the credentials, it's ready to make the actual VAPIX call. The ACAP application communicates with a local server, which then checks the given credentials (using basic access authentication) and forwards the VAPIX request.
-
-In this example, the [openssl_curl_example](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/utility-libraries/openssl_curl_example) has been used as a baseline and the libcurl C API is used to make the VAPIX call.
 
 1. Define a VAPIX endpoint:
 
