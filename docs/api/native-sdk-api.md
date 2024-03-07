@@ -255,7 +255,7 @@ The Parameter API was introduced in Native SDK 1.13.
 
 ### Code Examples
 
-- [axparamter](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axparamter)
+- [axparamter](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axparameter)
   - An example in C that demonstrates how to manage application-defined parameters, allowing you to add, remove, set, get, and register callback functions for parameter value updates.
 
 ## Event API
