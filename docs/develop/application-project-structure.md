@@ -31,7 +31,7 @@ Other optional files and directories to include:
 | :----------------- | :----------- | :---------- |
 | lib            | Directory    | Shared libraries custom to the application. |
 | Postinstall Script | Shell Script | Executed at the installation of the application. |
-| Preupgrade Script  | Shell Script | Executed before upgrading the application, available from firmware version 9.30. |
+| Preupgrade Script  | Shell Script | Executed before upgrading the application, available from AXIS OS version 9.30. |
 
 <!-- omit in toc -->
 ## Manifest file
@@ -178,7 +178,7 @@ see [Manifest schemas](manifest-schemas/).
 
 [^1]: This parameter is generated at the build step for architecture-dependent applications and should not be added. For architecture-independent applications, e.g. like a [shell script](https://github.com/AxisCommunications/acap-native-sdk-examples/blob/master/shell-script-example/app/manifest.json), the architecture can be set to `all` in the manifest.json file.
 
-[^2]: `2.0` for manifest.json schema version 1.0 and earlier (for firmware version 10.5 and earlier). `3.0` for manifest.json schema version 1.1 and later. The minor version may need to be stepped up for certain APIs. See [API](../api/) for more information.
+[^2]: `2.0` for manifest.json schema version 1.0 and earlier (for AXIS OS version 10.5 and earlier). `3.0` for manifest.json schema version 1.1 and later. The minor version may need to be stepped up for certain APIs. See [API](../api/) for more information.
 
 ### Manifest file schema
 
