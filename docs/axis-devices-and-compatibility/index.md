@@ -6,21 +6,21 @@ nav_order: 7
 
 # Axis devices & compatibility
 
-Compatibility means that if an ACAP can be installed and run on a specific
-device, then the ACAP is compatible with the device. Compatibility depends on
-both hardware and software (firmware).
+Compatibility means that if an ACAP application can be installed and run on a
+specific device, then the ACAP application is compatible with the device.
+Compatibility depends on both hardware and software.
 
 ## Hardware compatibility
 
-ACAP is supported on a large portion of all Axis devices. For an ACAP to be
-hardware compatible with a specific device, the ACAP must be compiled using the
-SDK corresponding to the chip architecture in the device.
+ACAP applications are supported on a large portion of all Axis devices. For an
+ACAP application to be hardware compatible with a specific device, it must be
+compiled using the SDK corresponding to the chip architecture in the device.
 
 ## Software compatibility
 
-An ACAP is software compatible with an AXIS OS firmware if the APIs and other
-ACAP Runtime features are available in the specific firmware release. The availability of
-APIs in a firmware depends on both the firmware version and the
+An ACAP application is software compatible with AXIS OS if the APIs and other
+ACAP Runtime features are available in the specific AXIS OS release. The
+availability of APIs in AXIS OS depends on both the AXIS OS version and the
 device itself since some APIs are only relevant for certain devices. For
 example, the Video capture API is only available on devices with an image
 sensor.
@@ -80,8 +80,8 @@ the web page for download of [device software](https://www.axis.com/support/devi
 
 ### ACAP Computer Vision SDK software compatibility
 
-The **Image version** referred to in the
-table below is the Docker image release tag available from Docker Hub:
+The **Image version** referred to in the table below is the Docker image
+release tag available from Docker Hub:
 
 - [ACAP Computer Vision SDK](https://hub.docker.com/r/axisecp/acap-computer-vision-sdk/tags)
 
@@ -110,8 +110,8 @@ ACAP Release | ACAP CV SDK Image version | Compatible with AXIS OS version
 
 ### ACAP Native SDK software compatibility
 
-The **Image version** referred to in the
-table below is the Docker image release tag available from Docker Hub:
+The **Image version** referred to in the table below is the Docker image
+release tag available from Docker Hub:
 
 - [ACAP Native SDK](https://hub.docker.com/r/axisecp/acap-native-sdk/tags)
 
@@ -141,15 +141,15 @@ ACAP Release | ACAP Native SDK Image version | Compatible with AXIS OS version
 
 ## Forward compatibility
 
-The ACAP is forward compatible for the firmware related to a specific SDK
-version. This means that the ACAP is compatible for the listed firmware version
-and future firmware versions until the next firmware LTS (Long Term Support).
-After an LTS, there may be changes that break compatibility, for
-example when a deprecated API is removed. Breaking changes are always announced
-in advance.
+An ACAP application is forward compatible for the AXIS OS related to a specific
+SDK version. This means that the ACAP application is compatible for the listed
+AXIS OS version and future versions until the next AXIS OS LTS (Long Term
+Support) version. After an LTS, there may be changes that break compatibility,
+for example when a deprecated API is removed. Breaking changes are always
+announced in advance.
 
-An ACAP built with an SDK that is based on an older firmware version should
-always work on a newer firmware version within the same LTS window.
+An ACAP application built with an SDK that is based on an older AXIS OS version
+should always work on a newer AXIS OS version within the same LTS window.
 
 ## Feature growth between LTS releases
 
@@ -163,12 +163,12 @@ of the SDK.
 Read more about AXIS OS release tracks and related information
 [here](https://www.axis.com/products/online-manual/00000).
 
-## Supporting older firmware
+## Supporting older AXIS OS
 
-If you want an ACAP to be compatible with older firmware, you need to choose an
-SDK for an older firmware.
+If you want an ACAP application to be compatible with older AXIS OS, you need
+to choose an SDK for an older AXIS OS.
 
-To support firmware older than AXIS OS 10.7, build your ACAP application with
+To support AXIS OS older than 10.7, build your ACAP application with
 [ACAP version 3](https://help.axis.com/acap-3-developer-guide).
 
 # Camera loan tool
