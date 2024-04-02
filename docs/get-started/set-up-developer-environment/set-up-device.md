@@ -13,7 +13,7 @@ To prepare a device for development:
 - [Find the device on the network](#find-the-device-on-the-network) to configure the IP address and the user credentials
 - [Setup the device on the network](#setup-the-device-on-the-network) to make sure it's ready to be connected to the network
 - [Check device compatibility](#check-device-compatibility) to make sure that you use a device that supports ACAP
-- [Check device properties](#check-device-properties) and update to the latest firmware if needed, see [How to upgrade](#how-to-upgrade)
+- [Check device properties](#check-device-properties) and update to the latest firmware (AXIS OS) if needed, see [How to upgrade](#how-to-upgrade)
 - [Check device properties](#check-device-properties) and identify the device architecture to be able to choose the correct toolchain
 
 ## Find the device on the network
@@ -66,7 +66,7 @@ Some extra steps can be followed to make sure the device is ready to be used and
 
 ### Verify that no one has tampered with the firmware
 
-To make sure that the device has its original Axis firmware, or to take full control of the device after a security attack:
+To make sure that the device has its original firmware (AXIS OS), or to take full control of the device after a security attack:
 
 1. Reset to factory default settings. See the product’s user manual for information on how to reset to factory default settings.
 After the reset, secure boot guarantees the state of the device.
@@ -116,7 +116,7 @@ Properties.EmbeddedDevelopment.EmbeddedDevelopment=yes
 
 ## Check device properties
 
-To get basic device information, such as firmware version and architecture, use VAPIX POST request and method **getAllProperties**:
+To get basic device information, such as AXIS OS version and architecture, use VAPIX POST request and method **getAllProperties**:
 
 ```html
 http://192.168.0.90/axis-cgi/basicdeviceinfo.cgi
@@ -128,7 +128,7 @@ To extract the messages, use the CGI from a terminal, using the credentials set 
 curl --anyauth '*' -u '<username>:<password>' 192.168.0.90/axis-cgi/basicdeviceinfo.cgi --data '{"apiVersion":"1.0","context":"Client defined request ID","method":"getAllProperties"}'
 ```
 
-The following response contains architecture `"Architecture": "armv7hf"`, and firmware version `"Version": "9.50.1"`:
+The following response contains architecture `"Architecture": "armv7hf"`, and AXIS OS version `"Version": "9.50.1"`:
 
 ```json
 {
@@ -156,7 +156,7 @@ The following response contains architecture `"Architecture": "armv7hf"`, and fi
 
 ## How to upgrade
 
-Axis offers product firmware management according to the active track or the long-term support (LTS) tracks. Regardless of the track chosen, it is recommended to upgrade the firmware regularly in order to get the latest security updates. The firmware can be upgraded using AXIS Device Manager, AXIS Camera Station, AXIS Companion, HTTP or FTP.
+Axis offers product firmware (AXIS OS) management according to the active track or the long-term support (LTS) tracks. Regardless of the track chosen, it is recommended to upgrade AXIS OS regularly in order to get the latest security updates. AXIS OS can be upgraded using AXIS Device Manager, AXIS Camera Station, AXIS Companion, HTTP or FTP.
 
 > If using AXIS A1001 in cluster mode, make sure to upgrade all controllers.
 > Either all at a time using AXIS Device Manager or straight after each other

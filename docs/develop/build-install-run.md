@@ -37,7 +37,7 @@ For help on using the build tool, run `acap-build -h`.
 > **manifest.json**. If any additional files were previously listed in **OTHERFILES**
 >   in the package.conf file, these now need to be listed as input to the acap-build
 >   command using the flag -a, for example `acap-build ./ -a file1 -a file2`.
-> - For the ACAP application package to be supported in older firmware, a
+> - For the ACAP application package to be supported in older AXIS OS, a
 > **package.conf** file is generated and included in the EAP file. Although it’s
 >   the manifest file that is the base setup file for the ACAP application when
 >   building an EAP package in the SDK.
