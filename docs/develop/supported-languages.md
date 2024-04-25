@@ -27,11 +27,12 @@ The build process requires a Makefile, even if nothing is being compiled. An emp
 
 ## ACAP Computer Vision SDKs
 
-### C++
-
-Most of the example applications built on Python are also built on C++ and can be found in the [acap-computer-vision-sdk-examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples) GitHub repository.
-The SDK uses g++ to compile C++ programs.
-
 ### Python
 
-Several examples are built using Python and can be found in the [acap-computer-vision-sdk-examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples) GitHub repository.
+All the examples are built using Python and can be found in the [acap-computer-vision-sdk-examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples) GitHub repository.
+
+### Other languages
+
+The ACAP Computer Vision SDK offers flexibility in language choice.
+Users are free to implement their applications in any programming language supported by their chosen container environment.
+To access frames and perform inferences in a different language, users need to compile the protofiles that can be found in the SDK accordingly for their desired language.

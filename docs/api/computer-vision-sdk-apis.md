@@ -23,7 +23,7 @@ refer to [Find the right SDK for software compatibility](../axis-devices-and-com
 **[SDK packages with AXIS-specific functionality](#sdk-packages-with-axis-specific-functionality)**
 
 - [ACAP Runtime APIs](#acap-runtime-apis)
-- [Video capture API](#video-capture-api): [OpenCV with VDO](#opencv-with-vdo)
+- [Video capture API](#video-capture-api)
 - [Machine learning API](#machine-learning-api): [TensorFlow Serving](#tensorflow-serving-inference-client)
 - [BETA - Parameter API](#beta---parameter-api)
 
@@ -38,7 +38,6 @@ refer to [Find the right SDK for software compatibility](../axis-devices-and-com
   - [OpenCV](#opencv)
   - [PyTesseract](#pytesseract)
   - [TensorFlow Serving inference client](#tensorflow-serving-inference-client)
-- [OpenCV with VDO](#opencv-with-vdo)
 - [Tesseract](#tesseract)
 - [OpenBLAS](#openblas)
 - [OpenCL](#opencl)
@@ -64,92 +63,32 @@ In order to use the ACAP Runtime APIs, it's required to install the ACAP Runtime
 
 The Video capture API is one of the services of ACAP Runtime.
 
-The [OpenCV package](#opencv-with-vdo) has been extended with functionality for capturing camera images and accessing and modifying video stream and image properties. This was done by making the [OpenCV VideoCapture-class](https://docs.opencv.org/4.5.3/d8/dfe/classcv_1_1VideoCapture.html) interface with the [AXIS VDO library](src/api/vdostream/html/index.html), which allows for treating the Axis camera like any other OpenCV-compatible camera.
+The ACAP Computer Vision SDK offers a mechanism for capturing frames using the ACAP Runtime. By sending a gRPC request to the ACAP runtime, users can establish a video stream and retrieve frames.
 
-The parts of the OpenCV API that are affected by this addition are documented below.
+The Python client is accessible within the ACAP Computer Vision SDK at /axis/python-vdoproto and is imported into Python as VideoCaptureClient, located within the vdo_proto_utils module. This client exposes the get_frame function, facilitating frame retrieval and parsing.
 
 #### The VideoCapture object
 
-Instantiation of a VideoCapture object takes one argument: the channel index, for example, `0`:
+To instantiate a VideoCaptureClient object, you need to provide the ACAP runtime communication socket, along with the desired stream dimensions and framerate.
+In some cases, this call could take up to two minutes, if the ACAP runtime is busy doing other tasks like loading a machine learning model on start up.
 
 ```python
-import cv2
-cap = cv2.VideoCapture(0)
+from vdo_proto_utils import VideoCaptureClient
+capture_client = VideoCaptureClient(socket="unix:///tmp/acap-runtime.sock", stream_width=224, stream_height=224, stream_framerate=10)
 ```
 
-Reading an image frame from the VideoCapture is done through the common OpenCV API:
+An image frame can be read with the following line of code
 
 ```python
-retval, frame = cap.read()
+frame = capture_client.get_frame()
 ```
-
-#### VideoCapture properties
-
-Configuration of the video stream can be done through the properties of the VideoCapture object. This includes setting resolution, image format, frames per second and such options. While similar results can be achieved by for example, resizing the retrieved image manually in OpenCV, the configuration done with VideoCapture properties is performed using hardware acceleration, which can be significantly faster and frees up CPU time.
-
-The properties are set or get using the standard VideoCapture `get(PROPERTY_ID)` and `set(PROPERTY_ID, VALUE)` functions. `PROPERTY_ID` is an OpenCV int enum and `VALUE` is a double. Some properties are only readable, while others are writable or both readable and writable. Additionally, certain properties can only be set before the video stream is _initialized_, which is after the first image has been retrieved. Below is an example on how to set a property on a video stream, in this case the frame rate:
-
-```python
-cap.set(cv2.CAP_PROP_FPS, 10)
-```
-
-Similarly, a property can be get by doing:
-
-```python
-fps = cap.get(cv2.CAP_PROP_FPS)
-```
-
-The native image format, which is also the default image format, is `NV12`. This format is hardware accelerated, along with the monochrome `Y800` format. The widely used RGB format is available through the `RGB3` FourCC, but this format is not hardware accelerated and as such, using it may limit the maximum frame rate and slow down the application. Video stream image format, in this case RGB, can be configured through setting the `CAP_PROP_FOURCC` property with the corresponding FourCC as:
-
-```python
-cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'RGB3'))
-```
-
-The table below describes properties that are either Axis-specific or common OpenCV properties that have been integrated with the VDO backend.
-
- |  Property ID                         | Operations | Default value    |  Description                                   |  Notes                                                           |
- |:-------------------------------------|:-----------|:-----------------|:-----------------------------------------------|:-----------------------------------------------------------------|
- | `CAP_PROP_FPS`                       | get, set   | 0                | Frames per second                              | Set before initialization.                                       |
- | `CAP_PROP_FOURCC`                    | get, set   | 842094158 (NV12) | The FourCC of the stream image format          | Value given as a FourCC. Set before initialization.              |
- | `CAP_PROP_CHANNEL`                   | get, set   | 0                | The index of the camera channel                | Set before initialization.                                       |
- | `CAP_PROP_FRAME_WIDTH`               | get, set   | N/A              | The image width                                | Set before initialization.                                       |
- | `CAP_PROP_FRAME_HEIGHT`              | get, set   | N/A              | The image height                               | Set before initialization.                                       |
- | `CAP_PROP_UNIMATRIX_MAX_BUFFERS`     | get, set   | 3                | Maximum buffers in-flight                      |                                                                  |
- | `CAP_PROP_ZOOM`                      | get        | N/A              | The camera zoom factor                         |                                                                  |
- | `CAP_PROP_FOCUS`                     | get        | N/A              | The focus dioptre                              |                                                                  |
- | `CAP_PROP_GAIN`                      | get        | N/A              | Gain in milli-dB                               |                                                                  |
- | `CAP_PROP_EXPOSURE`                  | get        | N/A              | The exposure in µs                             |                                                                  |
- | `CAP_PROP_POS_MSEC`                  | get        | N/A              | The last retrieved frame's internal timestamp  |                                                                  |
- | `CAP_PROP_POS_FRAMES`                | get        | N/A              | The number of frames retrieved                 |                                                                  |
- | `CAP_PROP_UNIMATRIX_FNUMBER`         | get        | N/A              | f-number                                       |                                                                  |
- | `CAP_PROP_UNIMATRIX_ROTATION`        | set        | N/A              | The image rotation                             | Accepted values are: 0, 90, 180, 270. Set before initialization. |
- | `CAP_PROP_UNIMATRIX_EXPOSURE_MODE`   | set        | N/A              | The exposure mode                              | One of `CAP_UNIMATRIX_EXPOSURE_MODE_AUTO` (automatic exposure), `CAP_UNIMATRIX_EXPOSURE_MODE_HOLD` (hold current exposure), `CAP_PROP_UNIMATRIX_MAX_EXPOSURE_us` (limit max automatic exposure time as µs)                                      |
- | `CAP_PROP_UNIMATRIX_TONEMAPPING`     | get, set   | 50               | The tonemapping                                | A value in the [0, 100] range                                    |
- | `CAP_PROP_UNIMATRIX_TEMPORAL_FILTER` | get, set   | 50               | The amount of temporal noise filtering         | A value in the [0, 100] range                                    |
- | `CAP_PROP_UNIMATRIX_FD`              | get        | N/A              | Buffer file descriptor                         |                                                                  |
- | `CAP_PROP_UNIMATRIX_FD_OFFSET`       | get        | N/A              | Buffer offset                                  |                                                                  |
- | `CAP_PROP_UNIMATRIX_FD_CAPACITY`     | get        | 3110400          | Buffer capacity                                |                                                                  |
 
 #### VideoCapture requirements
 
-For all of the Axis extensions of OpenCV to work properly, some requirements on the container must be satisfied. This is primarily in the form of file mounts and environment variables that need to be configured. A docker-compose file is a convenient way of making sure that the app container is always run with the correct setup. Such a setup, for a fictitious app called `my-opencv-app`, is shown below in `docker-compose.yml`, where the `ipc`, `environment`, `volumes` and `devices` keys and their corresponding values are needed for a fully functional OpenCV app:
-
-```yaml
-version: '3.3'
-
-services:
-  my-opencv-app:
-    image: my-opencv-image:latest
-    ipc: "host"
-    environment:
-      - DBUS_SYSTEM_BUS_ADDRESS=unix:path=/var/run/dbus/system_bus_socket
-    volumes:
-      - /usr/lib/libvdostream.so.1:/usr/lib/libvdostream.so.1
-      - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket:rw
-      - /var/run/statuscache:/var/run/statuscache:rw
-    devices:
-      - /dev/datacache0:/dev/datacache0:rw
-```
+For the video capture client to work, it is required that the ACAP runtime is installed and running, either as an ACAP application or as a Docker container.
+The application and the ACAP runtime need to share a socket file to allow the gRPC communication.
+In the case of the containerized ACAP runtime, it means there should be a volume mounted between the application and the containerized ACAP runtime.
+An example can be found in the [opencv-qr-decoder-python](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples-staging/blob/main/opencv-qr-decoder-python/docker-compose.yml)
 
 ---
 
@@ -164,7 +103,6 @@ The Python client is available in the ACAP Computer Vision SDK under `/axis/pyth
 #### Code Examples
 
 - [minimal-ml-inference](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/minimal-ml-inference) - A minimal, but complete, example of how a Python client and a model server running on the same camera.
-- [object-detector-cpp](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/object-detector-cpp) - A complete example of how a C++ client and a model server running on the same camera.
 
 ### BETA - Parameter API
 
@@ -186,7 +124,6 @@ root.Brand.ProdNbr
 
 #### Code Examples
 
-- [parameter-api-cpp](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/parameter-api-cpp) - A C++ example which reads device parameters using the Parameter API.
 - [parameter-api-python](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/parameter-api-python) - A Python example which reads device parameters using the Parameter API.
 
 ## SDK package index
@@ -229,9 +166,15 @@ A Python OpenCV package is included in the `/axis/opencv` package as a module ca
 
 ---
 
-### [OpenCV](https://github.com/opencv/opencv) with VDO
+### [Video capture client](https://github.com/AxisCommunications/acap-computer-vision-sdk/blob/main/sdk/vdoproto/vdo_proto_utils.py)
 
-`/axis/opencv`: A computer vision library with functionality that covers many different fields within computer vision. The VDO integration allows accessing the camera's video streams through the OpenCV VideoCapture class, as detailed in [Video capture API](#video-capture-api). Compiled with OpenBLAS.
+`/axis/python-vdoproto`: A Python video capture client for collecting frames using gRPC calls to the ACAP runtime.
+
+---
+
+### [OpenCV](https://github.com/opencv/opencv)
+
+`/axis/opencv`: A computer vision library with functionality that covers many different fields within computer vision.
 
 ---
 
