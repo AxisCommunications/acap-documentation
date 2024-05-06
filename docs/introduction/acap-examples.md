@@ -15,7 +15,7 @@ There are several AXIS Camera Application Platform (ACAP) code examples and tuto
 - how to build and run the code
 - expected output
 
-We are continuously adding new examples and tutorials for both existing as well as for new functionality. Keep checking the Axis [GitHub organization](https://github.com/AxisCommunications) to stay updated with the latest changes.
+We are continuously adding new examples and tutorials for both existing as well as for new functionality. Keep checking the Axis [GitHub organization](https://github.com/orgs/AxisCommunications/repositories?q=topic%3Aacap) to stay updated with the latest changes.
 
 ## Report issues
 

@@ -15,7 +15,7 @@ Before developing an application to run your model on a device, it's important t
 
 To test your model on the device, you can use the `larod-client` tool. Follow these steps:
 
-1. Connect to your device using ssh.
+1. Connect to your device using ssh ([see instructions](../get-started/set-up-developer-environment/set-up-device#access-the-device-through-ssh)).
 2. Run the following command:
 
 ```bash
