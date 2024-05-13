@@ -207,12 +207,13 @@ start.
 
 - It's recommended to use **dynamic user** in ACAP applications.
 - Up until ACAP version 3 SDK, it was recommended to set `sdk` as user and group.
+- At some point in the future, the `sdk` user will be deprecated and removed.
 
 ### Dynamic user
 
 To get a dynamic user, simply leave out `acapPackageConf.user.group` and `acapPackageConf.user.username`. The dynamic user will belong to the group `addon`.
 
-An ACAP application with dynamic user will only have access to applications installed under `/usr/local/packages/<appName>` and resources requested in the manifest.
+An ACAP application with dynamic user will only have access to files installed under `/usr/local/packages/<appName>` and resources requested in the manifest.
 
 The main advantage of using a dynamic user instead of `sdk` user is the higher level of security. The dynamic user does not have access to, and can not modify other ACAP applications.
 

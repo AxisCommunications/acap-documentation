@@ -131,4 +131,4 @@ If you encounter any errors with the commands mentioned above, you can retrieve 
 journalctl -u larod
 ```
 
-This command will provide you with the logs from the larod service, which can help you identify and understand the issue you are experiencing. Common messages you may encounter indicate that certain layers in your network are not supported. To ensure proper functionality, ensure that your network only includes supported layers. For more information, refer to the [supported-frameworks](./supported-frameworks.md) section.
+This command will provide you with the logs from the larod service, which can help you identify and understand the issue you are experiencing. Common messages you may encounter indicate that certain layers in your network are not supported. To ensure proper functionality, ensure that your network only includes supported layers. For more information, refer to the [supported-frameworks](./supported-frameworks) section.

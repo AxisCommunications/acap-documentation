@@ -97,6 +97,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a069c6140889e0b0aec24b8a1f9063ebc"><td class="memItemLeft" align="right" valign="top">gboolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ax__event__handler_8h.html#a069c6140889e0b0aec24b8a1f9063ebc">ax_event_handler_declare</a> (<a class="el" href="ax__event__handler_8h.html#ae40c17762e9ed663356e34c5a9ea05fe">AXEventHandler</a> *event_handler, <a class="el" href="ax__event__key__value__set_8h.html#a1c3eb1e83ed9837e00682a8d3f1ac2e0">AXEventKeyValueSet</a> *key_value_set, gboolean stateless, guint *declaration, <a class="el" href="ax__event__handler_8h.html#a16d563cbc9c8974b72f296f8dfbdff3a">AXDeclarationCompleteCallback</a> callback, gpointer user_data, GError **error)</td></tr>
 <tr class="memdesc:a069c6140889e0b0aec24b8a1f9063ebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declares a new event.  <a href="ax__event__handler_8h.html#a069c6140889e0b0aec24b8a1f9063ebc">More...</a><br /></td></tr>
 <tr class="separator:a069c6140889e0b0aec24b8a1f9063ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d1612f560dbdaed57305385b5a4a0f6"><td class="memItemLeft" align="right" valign="top">gboolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ax__event__handler_8h.html#a4d1612f560dbdaed57305385b5a4a0f6">ax_event_handler_declare2</a> (<a class="el" href="ax__event__handler_8h.html#ae40c17762e9ed663356e34c5a9ea05fe">AXEventHandler</a> *event_handler, <a class="el" href="ax__event__key__value__set_8h.html#a1c3eb1e83ed9837e00682a8d3f1ac2e0">AXEventKeyValueSet</a> *key_value_set, gboolean stateless, gchar *property_name, guint *declaration, <a class="el" href="ax__event__handler_8h.html#a16d563cbc9c8974b72f296f8dfbdff3a">AXDeclarationCompleteCallback</a> callback, gpointer user_data, GError **error)</td></tr>
+<tr class="memdesc:a4d1612f560dbdaed57305385b5a4a0f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declares a new event.  <a href="ax__event__handler_8h.html#a4d1612f560dbdaed57305385b5a4a0f6">More...</a><br /></td></tr>
+<tr class="separator:a4d1612f560dbdaed57305385b5a4a0f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7d1fd47acc735ded14835b1b2c693f3"><td class="memItemLeft" align="right" valign="top">gboolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ax__event__handler_8h.html#aa7d1fd47acc735ded14835b1b2c693f3">ax_event_handler_declare_from_template</a> (<a class="el" href="ax__event__handler_8h.html#ae40c17762e9ed663356e34c5a9ea05fe">AXEventHandler</a> *event_handler, const char *event_template, <a class="el" href="ax__event__key__value__set_8h.html#a1c3eb1e83ed9837e00682a8d3f1ac2e0">AXEventKeyValueSet</a> *key_value_set, guint *declaration, <a class="el" href="ax__event__handler_8h.html#a16d563cbc9c8974b72f296f8dfbdff3a">AXDeclarationCompleteCallback</a> callback, gpointer user_data, GError **error)</td></tr>
 <tr class="memdesc:aa7d1fd47acc735ded14835b1b2c693f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declares a new event based upon an event template.  <a href="ax__event__handler_8h.html#aa7d1fd47acc735ded14835b1b2c693f3">More...</a><br /></td></tr>
 <tr class="separator:aa7d1fd47acc735ded14835b1b2c693f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -289,6 +292,86 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>TRUE</code> if the declaration was successful otherwise <code>FALSE</code>. If <code>FALSE</code> and <code>error</code> is not <code>NULL</code>, then <code>error</code> contains a detailed description of the error. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ax_event_property_state_declaration_example_8c-example.html#a8">ax_event_property_state_declaration_example.c</a>, and <a class="el" href="ax_event_stateless_declaration_example_8c-example.html#a5">ax_event_stateless_declaration_example.c</a>.</dd>
 </dl>
+
+</div>
+</div>
+<a id="a4d1612f560dbdaed57305385b5a4a0f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d1612f560dbdaed57305385b5a4a0f6">&#9670;&nbsp;</a></span>ax_event_handler_declare2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gboolean ax_event_handler_declare2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ax__event__handler_8h.html#ae40c17762e9ed663356e34c5a9ea05fe">AXEventHandler</a> *&#160;</td>
+          <td class="paramname"><em>event_handler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ax__event__key__value__set_8h.html#a1c3eb1e83ed9837e00682a8d3f1ac2e0">AXEventKeyValueSet</a> *&#160;</td>
+          <td class="paramname"><em>key_value_set</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gboolean&#160;</td>
+          <td class="paramname"><em>stateless</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gchar *&#160;</td>
+          <td class="paramname"><em>property_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">guint *&#160;</td>
+          <td class="paramname"><em>declaration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ax__event__handler_8h.html#a16d563cbc9c8974b72f296f8dfbdff3a">AXDeclarationCompleteCallback</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gpointer&#160;</td>
+          <td class="paramname"><em>user_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GError **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Declares a new event. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event_handler</td><td>An <code>AXEventHandler</code>. </td></tr>
+    <tr><td class="paramname">key_value_set</td><td>An <code>AXEventKeyValueSet</code> describing the event. </td></tr>
+    <tr><td class="paramname">stateless</td><td><code>TRUE</code> if the event is a stateless event, otherwise <code>FALSE</code>. </td></tr>
+    <tr><td class="paramname">property_name</td><td>The name of the key that should be a stateful property. This is only used for stateful events. </td></tr>
+    <tr><td class="paramname">declaration</td><td>The return location for a unique handle associated with the resulting declaration. </td></tr>
+    <tr><td class="paramname">callback</td><td>A callback function that will be called when the declaration has been registered with the event system or <code>NULL</code>. </td></tr>
+    <tr><td class="paramname">user_data</td><td>A pointer that will be supplied with the call to the <code>callback</code> function. </td></tr>
+    <tr><td class="paramname">error</td><td>The return location for an error or <code>NULL</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>TRUE</code> if the declaration was successful otherwise <code>FALSE</code>. If <code>FALSE</code> and <code>error</code> is not <code>NULL</code>, then <code>error</code> contains a detailed description of the error. </dd></dl>
 
 </div>
 </div>
