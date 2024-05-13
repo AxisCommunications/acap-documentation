@@ -29,9 +29,9 @@ replace many of the APIs from ACAP version 3.
 | API | Future in ACAP version 4? |
 | :-- | :-- |
 | **axHTTP** | Replaced by the [web-server](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/web-server) and [web-server-using-fastcgi](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/web-server-using-fastcgi) examples which describe how to achieve the same functionality. |
-| **axSerialPort** | Added to ACAP Native SDK in 1.11 release as [Serial Port API](../api/native-sdk-api.md#serial-port-api). |
-| **axStorage** | Added to ACAP Native SDK in 1.11 release as [Edge Storage API](../api/native-sdk-api.md#edge-storage-api). |
-| **axParameter** | Added to ACAP Native SDK in 1.13 release as [Parameter API](../api/native-sdk-api.md#parameter-api). |
+| **axSerialPort** | Added to ACAP Native SDK in 1.11 release as [Serial Port API](../api/native-sdk-api#serial-port-api). |
+| **axStorage** | Added to ACAP Native SDK in 1.11 release as [Edge Storage API](../api/native-sdk-api#edge-storage-api). |
+| **axParameter** | Added to ACAP Native SDK in 1.13 release as [Parameter API](../api/native-sdk-api.#parameter-api). |
 | **axAudio** | Will get a new API in a later release. |
 | **axPTZ** | Not yet decided, i.e. may be replaced or moved as is to Native SDK. |
 | **Old Capture API<br>(Media capture)** | Will not be moved to Native SDK. |
