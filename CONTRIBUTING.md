@@ -80,9 +80,27 @@ In order to fasten up development, it's possible to run linters as part of your 
 
 #### Run super-linter locally
 
-Since super-linter is using a Docker image in GitHub Actions, users of other editors may run it locally to lint the codebase. For complete instructions and guidance, see super-linter page for [running locally](https://github.com/github/super-linter/blob/main/docs/run-linter-locally.md).
+Since super-linter is using a Docker image in GitHub Actions, users of other editors may run it locally to lint the codebase. For complete instructions and guidance, see super-linter page for [running locally](https://github.com/super-linter/super-linter/blob/main/docs/run-linter-locally.md).
 
-To run a number of linters on the codebase from command-line:
+To run all linters on the codebase from command-line, the same that would run
+when a Pull Request is opened, use command:
+
+```sh
+docker run --rm \
+  -v $PWD:/tmp/lint \
+  -e RUN_LOCAL=true \
+  --env-file ".github/super-linter.env" \
+  ghcr.io/super-linter/super-linter:slim-v5
+```
+
+For more details which linters that run and the settings, see the file
+`.github/super-linter.env`.
+
+To only test one specific linter, e.g. lint Markdown, see the variable name in
+`.github/super-linter.env` that in this case is `VALIDATE_MARKDOWN=true`.  Note
+that you also need to specify the linter configuration file if there is one.
+In this case `MARKDOWN_CONFIG_FILE=.markdownlint` together with the location
+via `LINTER_RULES_PATH=/`. Then run the single linter with this command:
 
 ```sh
 docker run --rm \
@@ -92,27 +110,30 @@ docker run --rm \
   -e FILTER_REGEX_EXCLUDE='docs/develop/manifest-schemas/schema-field-descriptions-v*' \
   -e VALIDATE_MARKDOWN=true \
   -e MARKDOWN_CONFIG_FILE=.markdownlint.yml \
-  -e VALIDATE_NATURAL_LANGUAGE=true \
-  github/super-linter:slim-v4
+  ghcr.io/super-linter/super-linter:slim-v5
 ```
 
 ##### Run super-linter interactively
 
-It might be more convenient to run super-linter interactively. Run container and enter command-line:
+It might be more convenient to run super-linter interactively. Run the container
+with your user to not change ownership of files.
 
 ```sh
 docker run --rm \
+  -u $(id -u):$(id -g) \
+  -e USER \
   -v $PWD:/tmp/lint \
   -w /tmp/lint \
   --entrypoint /bin/bash \
-  -it github/super-linter:slim-v4
+  -it ghcr.io/super-linter/super-linter:slim-v5
 ```
 
-Then from the container terminal, the following commands can lint the codebase for different file types:
+Then from the container terminal, the following commands can lint the codebase
+for different file types:
 
 ```sh
 # Lint Markdown files
-markdownlint -i docs/develop/schema-field-descriptions-v\* .
+markdownlint -i docs/release-notes/\* .
 ```
 
 ## Open a pull request
@@ -261,12 +282,14 @@ language in [pygments.org](https://pygments.org/docs/lexers/) and use the
 **Some common languages short names:**
 
 <!-- textlint-disable -->
+
 - bash, sh
 - make
 - dockerfile
 - json
 - c
 - html
+
 <!-- textlint-enable -->
 
 ### Change of layout

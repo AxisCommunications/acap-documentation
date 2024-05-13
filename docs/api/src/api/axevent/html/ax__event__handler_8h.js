@@ -6,6 +6,7 @@ var ax__event__handler_8h =
     [ "ax_event_handler_new", "ax__event__handler_8h.html#aeb60d443c4006c0deb4ea3763f896de2", null ],
     [ "ax_event_handler_free", "ax__event__handler_8h.html#ac8fa0ee5cba77fffffad4153833b040d", null ],
     [ "ax_event_handler_declare", "ax__event__handler_8h.html#a069c6140889e0b0aec24b8a1f9063ebc", null ],
+    [ "ax_event_handler_declare2", "ax__event__handler_8h.html#a4d1612f560dbdaed57305385b5a4a0f6", null ],
     [ "ax_event_handler_declare_from_template", "ax__event__handler_8h.html#aa7d1fd47acc735ded14835b1b2c693f3", null ],
     [ "ax_event_handler_undeclare", "ax__event__handler_8h.html#a61d4484571aacc5547f9e5bf524fd01d", null ],
     [ "ax_event_handler_send_event", "ax__event__handler_8h.html#ac45d53fe12862e3799e2abb133b50d7a", null ],

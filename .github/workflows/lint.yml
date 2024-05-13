@@ -9,7 +9,8 @@ jobs:
   run-linters:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Check that no private Docker Hub URLs are used
@@ -27,12 +28,9 @@ jobs:
               ret=1
           }
           exit $ret
-      - uses: github/super-linter/slim@v5
+      - run: cat .github/super-linter.env >> "$GITHUB_ENV"
+      - name: Lint Code Base
+        uses: super-linter/super-linter/slim@v5
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LINTER_RULES_PATH: /
-          FILTER_REGEX_EXCLUDE: docs/develop/manifest-schemas/schema-field-descriptions-v\d+(\.\d){1,2}(-[a-z0-9]*)*.md
-          VALIDATE_MARKDOWN: true
-          MARKDOWN_CONFIG_FILE: .markdownlint.yml
-          VALIDATE_NATURAL_LANGUAGE: true
