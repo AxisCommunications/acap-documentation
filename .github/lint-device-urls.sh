@@ -14,11 +14,13 @@ allowed_patterns="\
   $base_url<space> \
   $base_url/index.html \
   $base_url/axis-cgi \
+  @$base_url \
 "
 
 # Set +e to not having to handle the grep exit status
 __url_grep_list=$(grep -nir "$base_url" $exclude_dir_list | \
-  grep -vE "$base_url(\`| |/axis-cgi|/index.html#)" || :)
+  grep -vE "$base_url(\`| |/axis-cgi|/index.html#)" | \
+  grep -vE "@$base_url" || :)
 [ -z "$__url_grep_list" ] || {
     printf '\n%s\n%s\n\n' \
       "## Error - The following device URLs are not matching allowed patterns" \

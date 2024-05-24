@@ -43,3 +43,35 @@ This is exemplified using `curl`:
 ```sh
 curl -u '<username>:<password>' --anyauth "http://192.168.0.90/axis-cgi/admin/param.cgi?action=update&Network.SSH.Enabled=yes"
 ```
+
+### Create an SSH user
+
+> - Prior to AXIS OS 11.5 it's only possible to SSH as `root` user.
+> - From AXIS OS 11.5 it's possible to create a non-root SSH user.
+> - After AXIS OS 12.0 it will not be possible to SSH to an Axis device as
+>   `root` user.
+
+#### Through web interface
+
+1. Go to the following URL:
+    - AXIS OS < 11.6  `http://192.168.0.90/index.html#system/users`
+    - AXIS OS >= 11.6 `http://192.168.0.90/index.html#system/accounts`
+2. Find the field on the web page called:
+    - AXIS OS < 11.6  **SSH users**
+    - AXIS OS >= 11.6 **SSH accounts**
+3. Click the `+` icon with text **Add SSH user**
+4. Follow the instructions in the dialog to create an SSH user.
+
+### Connect to the device
+
+To connect to the Axis device through SSH, it's required to install a program
+that can communicate via SSH. This will be exemplified using `ssh` and a
+non-root SSH user called `my-ssh-user`.
+
+> The SSH user needs to be created on the device before connecting to the
+> device, see [Create an SSH user](create-an-ssh-user).
+
+```sh
+ssh my-ssh-user@192.168.0.90
+my-ssh-user@axis-aabbcc112233:~#
+```
