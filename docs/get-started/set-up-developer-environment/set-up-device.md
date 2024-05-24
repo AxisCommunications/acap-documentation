@@ -30,34 +30,6 @@ For more information about how to find and assign IP addresses, go to [How to as
 2. Enter the username and password. If you access the device for the first time, you must set the root password. See [Set a new password for the root account](#set-a-new-password-for-the-root-account).
 3. The live view page opens in your browser.
 
-### Access the device through SSH
-
-You can enable SSH on an Axis device either through the device's web interface or by calling a VAPIX API from command-line.
-
-#### Through old web interface
-
-1. Go to `http://192.168.0.90/index.html#settings/system/tools/plainconfig`
-2. Click on **Network** in the list
-3. Under **SSH** select **Enabled**
-4. Scroll to the bottom of the page and click button **Save**
-
-#### Through new web interface
-
-1. Go to `http://192.168.0.90/index.html#/system/plainConfig`
-2. Select the **Network** group from the drop-down menu
-3. Under **Network / SSH** select **Enabled**
-4. Scroll to the bottom of the page and click button **Save**
-
-#### Through command-line
-
-This is exemplified using `curl`:
-
-```sh
-curl -u '<username>:<password>' "http://192.168.0.90/axis-cgi/admin/param.cgi?action=update&Network.SSH.Enabled=yes"
-```
-
-> More options may be required depending on your network setup.
-
 ## Setup the device on the network
 
 Some extra steps can be followed to make sure the device is ready to be used and connected to the network.
