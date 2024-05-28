@@ -158,11 +158,6 @@ The following response contains architecture `"Architecture": "armv7hf"`, and AX
 
 Axis offers product firmware (AXIS OS) management according to the active track or the long-term support (LTS) tracks. Regardless of the track chosen, it is recommended to upgrade AXIS OS regularly in order to get the latest security updates. AXIS OS can be upgraded using AXIS Device Manager, AXIS Camera Station, AXIS Companion, HTTP or FTP.
 
-> If using AXIS A1001 in cluster mode, make sure to upgrade all controllers.
-> Either all at a time using AXIS Device Manager or straight after each other
-> using the web interface or FTP. The entire cluster should always be on the
-> same firmware
-
 ### AXIS Device Manager or AXIS Camera Station
 
 1. Go to the **Device Manager Tab** in Axis Device Manager or **Configuration Tab > Devices - Management** in AXIS Camera Station.
