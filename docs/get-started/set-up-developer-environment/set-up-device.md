@@ -36,16 +36,14 @@ You can enable SSH on an Axis device either through the device's web interface o
 
 #### Through old web interface
 
-1. Go to the following URL:
-    - AXIS OS < 10.6 `http://192.168.0.90/#settings/system/tools/plainconfig`
-    - AXIS OS >= 10.6 `http://192.168.0.90/aca/index.html#settings/system/tools/plainconfig`
+1. Go to `http://192.168.0.90/index.html#settings/system/tools/plainconfig`
 2. Click on **Network** in the list
 3. Under **SSH** select **Enabled**
 4. Scroll to the bottom of the page and click button **Save**
 
 #### Through new web interface
 
-1. Go to `http://192.168.0.90/camera/index.html#/system/plainConfig`
+1. Go to `http://192.168.0.90/index.html#/system/plainConfig`
 2. Select the **Network** group from the drop-down menu
 3. Under **Network / SSH** select **Enabled**
 4. Scroll to the bottom of the page and click button **Save**
