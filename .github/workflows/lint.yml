@@ -28,6 +28,9 @@ jobs:
               ret=1
           }
           exit $ret
+      - name: Check that device URLs have approved structure
+        run: |
+          .github/lint-device-urls.sh
       - run: cat .github/super-linter.env >> "$GITHUB_ENV"
       - name: Lint Code Base
         uses: super-linter/super-linter/slim@v5
