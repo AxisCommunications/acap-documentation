@@ -95,10 +95,13 @@ http://192.168.0.90/axis-cgi/basicdeviceinfo.cgi
 To extract the messages, use the CGI from a terminal, using the credentials set in the network configuration:
 
 ```sh
-curl --anyauth '*' -u '<username>:<password>' 192.168.0.90/axis-cgi/basicdeviceinfo.cgi --data '{"apiVersion":"1.0","context":"Client defined request ID","method":"getAllProperties"}'
+curl --anyauth -u <username>:<password> "http://192.168.0.90/axis-cgi/basicdeviceinfo.cgi" --data '{"apiVersion":"1.0","context":"Client defined request ID","method":"getAllProperties"}'
 ```
 
-The following response contains architecture `"Architecture": "armv7hf"`, and AXIS OS version `"Version": "9.50.1"`:
+> To get a pretty-print of the JSON response from the curl call, the program
+> `jq` can be used by appending the following snippet `<curl command> | jq`
+
+The following response contains architecture `"Architecture": "armv7hf"`, and firmware version `"Version": "9.50.1"`:
 
 ```json
 {

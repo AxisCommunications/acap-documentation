@@ -111,7 +111,7 @@ After obtaining the credentials, it's ready to make the actual VAPIX call. The A
 
 2. Generate and set credentials:
 
-    The credentials obtained from the D-Bus call are concatenated and then added to the cURL request.
+    The credentials obtained from the D-Bus call are concatenated and then added to the curl request.
 
     ```c
     curl_easy_setopt(curl, CURLOPT_USERPWD, credentials);
@@ -119,7 +119,7 @@ After obtaining the credentials, it's ready to make the actual VAPIX call. The A
 
 3. Set the authentication method and make the VAPIX call:
 
-    Here, basic access authentication is used, and then the actual cURL request is made.
+    Here, basic access authentication is used, and then the actual curl request is made.
 
     ```c
     curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
@@ -149,15 +149,15 @@ Example response:
 ('id:a0-testuser, pass:MH757eGZdsyBuAbhAQ3j2ZtRNg9xchEg',)
 ```
 
-Make a VAPIX request on local virtual host 127.0.0.12 with the given credentials using cURL.
+Make a VAPIX request on local virtual host 127.0.0.12 with the given credentials using `curl`.
 
 Example
 
 ```bash
-curl -s -u '<id:pass>' http://127.0.0.12/axis-cgi/applications/list.cgi
+curl -s -u <id>:<pass> http://127.0.0.12/axis-cgi/applications/list.cgi
 ```
 
-Where `id` and `pass` are the credentials obtained from the GDBus call. This cURL command sends an HTTP GET request to the specified VAPIX endpoint with the required authentication.
+Where `id` and `pass` are the credentials obtained from the GDBus call. This `curl` command sends an HTTP GET request to the specified VAPIX endpoint with the required authentication.
 
 ## Limitations
 
