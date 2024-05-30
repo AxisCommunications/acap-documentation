@@ -30,36 +30,6 @@ For more information about how to find and assign IP addresses, go to [How to as
 2. Enter the username and password. If you access the device for the first time, you must set the root password. See [Set a new password for the root account](#set-a-new-password-for-the-root-account).
 3. The live view page opens in your browser.
 
-### Access the device through SSH
-
-You can enable SSH on an Axis device either through the device's web interface or by calling a VAPIX API from command-line.
-
-#### Through old web interface
-
-1. Go to the following URL:
-    - AXIS OS < 10.6 `http://192.168.0.90/#settings/system/tools/plainconfig`
-    - AXIS OS >= 10.6 `http://192.168.0.90/aca/index.html#settings/system/tools/plainconfig`
-2. Click on **Network** in the list
-3. Under **SSH** select **Enabled**
-4. Scroll to the bottom of the page and click button **Save**
-
-#### Through new web interface
-
-1. Go to `http://192.168.0.90/camera/index.html#/system/plainConfig`
-2. Select the **Network** group from the drop-down menu
-3. Under **Network / SSH** select **Enabled**
-4. Scroll to the bottom of the page and click button **Save**
-
-#### Through command-line
-
-This is exemplified using `curl`:
-
-```sh
-curl -u '<username>:<password>' "http://192.168.0.90/axis-cgi/admin/param.cgi?action=update&Network.SSH.Enabled=yes"
-```
-
-> More options may be required depending on your network setup.
-
 ## Setup the device on the network
 
 Some extra steps can be followed to make sure the device is ready to be used and connected to the network.
@@ -125,10 +95,13 @@ http://192.168.0.90/axis-cgi/basicdeviceinfo.cgi
 To extract the messages, use the CGI from a terminal, using the credentials set in the network configuration:
 
 ```sh
-curl --anyauth '*' -u '<username>:<password>' 192.168.0.90/axis-cgi/basicdeviceinfo.cgi --data '{"apiVersion":"1.0","context":"Client defined request ID","method":"getAllProperties"}'
+curl --anyauth -u <username>:<password> "http://192.168.0.90/axis-cgi/basicdeviceinfo.cgi" --data '{"apiVersion":"1.0","context":"Client defined request ID","method":"getAllProperties"}'
 ```
 
-The following response contains architecture `"Architecture": "armv7hf"`, and AXIS OS version `"Version": "9.50.1"`:
+> To get a pretty-print of the JSON response from the curl call, the program
+> `jq` can be used by appending the following snippet `<curl command> | jq`
+
+The following response contains architecture `"Architecture": "armv7hf"`, and firmware version `"Version": "9.50.1"`:
 
 ```json
 {
@@ -157,11 +130,6 @@ The following response contains architecture `"Architecture": "armv7hf"`, and AX
 ## How to upgrade
 
 Axis offers product firmware (AXIS OS) management according to the active track or the long-term support (LTS) tracks. Regardless of the track chosen, it is recommended to upgrade AXIS OS regularly in order to get the latest security updates. AXIS OS can be upgraded using AXIS Device Manager, AXIS Camera Station, AXIS Companion, HTTP or FTP.
-
-> If using AXIS A1001 in cluster mode, make sure to upgrade all controllers.
-> Either all at a time using AXIS Device Manager or straight after each other
-> using the web interface or FTP. The entire cluster should always be on the
-> same firmware
 
 ### AXIS Device Manager or AXIS Camera Station
 
