@@ -69,7 +69,7 @@ that can communicate via SSH. This will be exemplified using `ssh` and a
 non-root SSH user called `my-ssh-user`.
 
 > The SSH user needs to be created on the device before connecting to the
-> device, see [Create an SSH user](create-an-ssh-user).
+> device, see [Create an SSH user](#create-an-ssh-user).
 
 ```sh
 ssh my-ssh-user@192.168.0.90
