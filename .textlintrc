@@ -5,12 +5,16 @@
   "rules": {
     "terminology": {
       "defaultTerms": true,
-      "exclude": ["bug[- ]fix(es)?", "bugfix$1"],
+      "exclude": [
+        "bug[- ]fix(es)?",
+        "walk-through"
+      ],
       "terms": [
         ["bug[-]fix(es)?", "bug fix$1"],
         ["bugfix(es)?", "bug fix$1"],
+        ["walkthrough", "walk-through"],
         ["ax(|is)(| )os", "AXIS OS"]
-      ],
-    },
+      ]
+    }
   }
 }
