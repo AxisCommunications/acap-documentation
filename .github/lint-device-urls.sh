@@ -12,18 +12,22 @@ print_section() {
 check_device_ip_paths() {
   local ret=0
   local __url_grep_list=
-  base_url="192.168.0.90"
-  exclude_dir_list="\
+  local base_url="192.168.0.90"
+  local exclude_dir_list="\
     --exclude-dir=.github \
+    --exclude-dir=.git \
     --exclude-dir=src \
     --exclude-dir=_site \
     --exclude-dir=capture \
   "
-  allowed_patterns="\
+  local allowed_patterns="\
     \`$base_url\` \
+    $base_url<end-of-line> \
     $base_url<space> \
-    $base_url/index.html[a-z] \
+    $base_url: \
+    $base_url/index.html#[a-z] \
     $base_url/axis-cgi \
+    $base_url/local \
     @$base_url \
   "
 
