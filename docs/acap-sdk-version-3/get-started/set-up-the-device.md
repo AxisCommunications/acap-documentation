@@ -40,7 +40,7 @@ You can enable SSH on an Axis device either through the device's web interface o
 
 #### In the new web interface
 
-1. Go to `http://192.168.0.90/index.html#/system/plainConfig`.
+1. Go to `http://192.168.0.90/index.html#system/plainConfig`.
 2. Select the **Network** group from the drop-down menu.
 3. Under **Network/SSH**, select **Enabled**.
 4. Scroll to the bottom of the page and click **Save**.
