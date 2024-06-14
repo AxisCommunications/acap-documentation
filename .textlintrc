@@ -8,7 +8,8 @@
       "exclude": ["bug[- ]fix(es)?", "bugfix$1"],
       "terms": [
         ["bug[-]fix(es)?", "bug fix$1"],
-        ["bugfix(es)?", "bug fix$1"]
+        ["bugfix(es)?", "bug fix$1"],
+        ["ax(|is)(| )os", "AXIS OS"]
       ],
     },
   }
