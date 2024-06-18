@@ -79,7 +79,7 @@ The API supports products with the following chips:
 
 The VdoStream API was introduced in API version 3.0.
 
-| Axis OS version | VdoStream API version | New functions added |
+| AXIS OS version | VdoStream API version | New functions added |
 | --------------- | --------------------- | ------------------- |
 | 10.2 | 2.3.13 | `vdo_stream_snapshot`<br>`vdo_stream_set_framerate`<br>`vdo_channel_get_filtered`|
 | 10.3 | 3.0.0 | - |

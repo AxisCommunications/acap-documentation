@@ -168,6 +168,7 @@ see [Manifest schemas](manifest-schemas/).
 | Required embedded development version    | acapPackageConf.<br>setup.<br>embeddedSdkVersion[^2]   | REQEMBDEVVERSION | Specifies the minimum required embedded development version that the device running the application must support. The version is dependent on the set APIs used in the application. |
 | Application specific setting page      | acapPackageConf.<br>configuration.<br>settingPage    | SETTINGSPAGEFILE |  Specifies the HTML page for custom settings, to be used by for instance device management software, allowing a user to browse the application settings page. The file must be in a directory called `html` in the application project. |
 | Supported CGI endpoints | acapPackageConf.<br>configuration.<br>httpConfig[].name  | HTTPCGIPATHS and file | CGI path relative to application web root |
+| Package custom files in application | N/A | OTHERFILES | This option in package.conf has been replaced by a [build tool](build-install-run#build-tool) option and is not part of manifest.json. An example `acap-build . -a file1 -a file2` |
 |             | acapPackageConf.<br>configuration.<br>httpConfig[].type  | | CGI implementation type, e.g. transferCgi |
 |             | acapPackageConf.<br>configuration.<br>httpConfig[].access | | Access policy for calling the CGI  |
 | Product integrated application parameters | acapPackageConf.<br>configuration.<br>paramConfig[].default | file: param.conf | Parameter default value |
