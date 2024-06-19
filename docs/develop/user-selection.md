@@ -100,7 +100,7 @@ Some of the [supported APIs][apis] require that the application user is a member
 
 ### Problem: Application can not GET or POST to VAPIX
 
-From AXIS OS 11.6 it is possible to directly access VAPIX for a dynamic user application. In order to do this the application needs to request VAPIX access credentials via D-bus. The D-bus method to use must be specified in `resources.dbus.requiredMethods` in the manifest as shown below. See [VAPIX access for ACAP applications][vapix_access] for a full descriptionand the application [vapix][vapix_example] for an example.
+From AXIS OS 11.6 it is possible to directly access VAPIX for a dynamic user application. In order to do this the application needs to request VAPIX access credentials via D-bus. The D-bus method to use must be specified in `resources.dbus.requiredMethods` in the manifest as shown below. See [VAPIX access for ACAP applications][vapix_access] for a full descriptionand the application [`vapix`][vapix_example] for an example.
 
 ```json
 {
