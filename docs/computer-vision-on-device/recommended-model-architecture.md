@@ -26,7 +26,7 @@ The ARTPEC-7 DLPU is based on the EdgeTPU, so you can use any model architecture
 For ARTPEC-8, we recommend models with `MobileNet v2` as the backbone. For object detection, you can consider using `SSD MobileNet v2` or `SSDLite MobileDet`. These models can be trained using the [TensorFlow Object Detection API](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1.md). `Resnet-18` is a better backbone than `MobileNet v2` for ARTPEC-8, it is a good idea to switch to it if you aim for better performance, however there are no ready to use configuration for that backbone in the TensorFlow Object Detection API.
 Please note that TensorFlow 1.15 should be used, as TensorFlow 2's default quantization is not optimized for ARTPEC-8.
 
-Another option for ARTPEC-8 is to use Yolov5. Refer to the [yolov5-on-Artpec-8](https://github.com/AxisCommunications/axis-model-zoo/blob/main/docs/yolov5-on-artpec8.md) tutorial for more information on training Yolov5 for ARTPEC-8.
+Another option for ARTPEC-8 is to use YOLOv5. Refer to the [yolov5-on-Artpec-8](https://github.com/AxisCommunications/axis-model-zoo/blob/main/docs/yolov5-on-artpec8.md) tutorial for more information on training YOLOv5 for ARTPEC-8.
 
 ## CV25
 

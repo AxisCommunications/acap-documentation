@@ -38,7 +38,7 @@ We recommend referring to the example on how to retrain and convert SSD MobileNe
 
 Axis also provides an example on how to train, quantize, and export an image classification model for ARTPEC-8 in the [acap-native-examples GitHub repository](https://github.com/AxisCommunications/acap-native-sdk-examples). The example is called [tensorflow-to-larod-artpec8](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/tensorflow-to-larod-artpec8).
 
-Finally, we have a guide on how to convert Yolov5 to tflite, optimizing it for ARTPEC-8. You can find this guide in the [Axis-model-zoo](https://github.com/AxisCommunications/axis-model-zoo/blob/main/docs/yolov5-on-artpec8.md) repository.
+Finally, we have a guide on how to convert YOLOv5 to tflite, optimizing it for ARTPEC-8. You can find this guide in the [Axis-model-zoo](https://github.com/AxisCommunications/axis-model-zoo/blob/main/docs/yolov5-on-artpec8.md) repository.
 
 ## CV25
 
