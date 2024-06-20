@@ -117,6 +117,7 @@ apis="\
   axparameter \
   axserialport \
   axstorage \
+  bbox \
   larod \
   licensekey \
   metadata-broker \
