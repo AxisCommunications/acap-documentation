@@ -20,7 +20,7 @@ From AXIS OS 11.6, ACAP applications can acquire VAPIX service account credentia
 
 ## Example application
 
-[vapix](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vapix)
+[`vapix`](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vapix)
 is an example in C that retrieves VAPIX credentials over D-Bus and makes VAPIX
 calls over a loopback interface.
 

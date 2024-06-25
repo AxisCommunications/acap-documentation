@@ -13,7 +13,20 @@
         ["bug[-]fix(es)?", "bug fix$1"],
         ["bugfix(es)?", "bug fix$1"],
         ["walkthrough", "walk-through"],
-        ["ax(is)?[ ]?os", "AXIS OS"]
+        ["ax(is)?[ ]?os", "AXIS OS"],
+        ["artpec[-_ ]?(\\d+)?", "ARTPEC-$1"],
+        ["vapix", "VAPIX"],
+        "ACAP application",
+        "ACAP app",
+        "ACAP documentation",
+        "ACAP Native SDK",
+        "ACAP SDK",
+        ["ACAPs", "ACAP applications"], // Note that it doesn't cover single
+                                        // use of ACAP instead of ACAP app or
+                                        // ACAP application
+        ["acap", "ACAP"],
+        ["yolo", "YOLO"],
+        ["yolo[ ]?v(\\d+)+", "YOLOv$1"]
       ]
     }
   }

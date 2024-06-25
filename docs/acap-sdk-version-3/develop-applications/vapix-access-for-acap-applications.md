@@ -22,7 +22,7 @@ From AXIS OS 11.6, ACAP applications can acquire VAPIX service account credentia
 ## Example application
 
 The
-[vapix](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vapix)
+[`vapix`](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vapix)
 example in acap-native-sdk-examples could be used as a starting point with the
 following differences:
 

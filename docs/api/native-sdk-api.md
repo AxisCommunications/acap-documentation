@@ -391,7 +391,7 @@ AXIS OS version | VdoStream API version | New functions added
 
 #### Known issues
 
-- A memory leak in VDO was found in firmware versions from 10.10 for Artpec chips, later fixed in 10.11.65. The issue affects function `vdo_buffer_get_data`.
+- A memory leak in VDO was found in firmware versions from 10.10 for ARTPEC chips, later fixed in 10.11.65. The issue affects function `vdo_buffer_get_data`.
 
 #### Code Examples
 
@@ -520,7 +520,7 @@ The Jansson API was introduced in Native SDK 1.14.
 
 #### Code Examples
 
-- [vapix](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vapix/)
+- [`vapix`](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vapix/)
   - The example code is written in C which illustrates calling VAPIX API with JSON request and response from within an ACAP application.
 
 ### Curl
@@ -548,7 +548,7 @@ The curl API was introduced in Native SDK 1.14.
 
 - [curl-openssl](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/curl-openssl/)
   - The example code is written in C which illustrates how to use curl and OpenSSL to retrieve a file securely from an external server for e.g. [example.com](<https://www.example.com>)
-- [vapix](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vapix/)
+- [`vapix`](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vapix/)
   - The example code is written in C which illustrates how ,using curl, an ACAP application can call [VAPIX APIs](https://www.axis.com/vapix-library/).
 
 ## Supplementary APIs
@@ -559,5 +559,5 @@ ACAP applications can request for VAPIX service account credentials in runtime. 
 
 #### Code Examples
 
-- [vapix](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vapix/)
+- [`vapix`](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vapix/)
   - The example code is written in C which illustrates how an ACAP application can call [VAPIX APIs](https://www.axis.com/vapix-library/).
