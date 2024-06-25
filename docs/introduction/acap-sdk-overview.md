@@ -19,7 +19,7 @@ Here is a summary of the difference between Native SDK and Computer Vision SDK:
 | Requirements | Minimum AXIS OS 10.7 | Minimum AXIS OS 10.7, SD card |
 | Programming Languages | C/C++ | C/C++, Python, .NET <br />  (and other mainstream languages) |
 | App Development | Docker | Docker |
-| App Deployment | Web GUI or Vapix API | Docker |
+| App Deployment | Web GUI or VAPIX API | Docker |
 | Examples | [Native SDK examples](https://github.com/AxisCommunications/acap-native-sdk-examples) | [Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples) |
 
 ## ACAP Native SDK
