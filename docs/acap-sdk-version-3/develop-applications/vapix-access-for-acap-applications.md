@@ -148,7 +148,7 @@ gdbus call --system
 Example response:
 
 ```bash
-('id:a0-testuser, pass:MH757eGZdsyBuAbhAQ3j2ZtRNg9xchEg',)
+('a0-testuser:MH757eGZdsyBuAbhAQ3j2ZtRNg9xchEg',)
 ```
 
 Make a VAPIX request on local virtual host 127.0.0.12 with the given credentials using `curl`.
