@@ -16,7 +16,9 @@ The ACAP Native SDK provides the following APIs:
   - [License Key API](#license-key-api)
   - [Machine learning API (Larod)](#machine-learning-api-larod)
   - [Metadata Broker API](#metadata-broker-api) <a class="label label-blue">BETA</a>
-  - [Overlay API](#overlay-api)
+  - [Overlay APIs](#overlay-apis)
+    - [Axoverlay API](#axoverlay-api)
+    - [Bounding Box API](#bounding-box-api)
   - [Parameter API](#parameter-api)
   - [Serial port API](#serial-port-api)
   - [Video capture API (VDO)](#video-capture-api-vdo)
@@ -35,16 +37,16 @@ The ACAP Native SDK provides the following APIs:
 To find compatibility between ACAP Native SDK and AXIS OS version,
 refer to [Find the right SDK for software compatibility](../axis-devices-and-compatibility/#find-the-right-sdk-for-software-compatibility).
 
-## Axis APIs
+# Axis APIs
 
-### Edge storage API
+## Edge storage API
 
 Go to the [ACAP API Documentation](src/api/axstorage/html/index.html) for detailed functional descriptions of this API.
 
 The Edge storage API allows the application to save and retrieve data on mounted storage devices such as SD cards and NAS (Network Attached Storage) units. An application can only modify its own files on the storage device.
 An application can both send and receive events.
 
-#### Compatibility
+### Compatibility
 
 The API is supported on products with the following chips:
 
@@ -57,11 +59,11 @@ The API is supported on products with the following chips:
 - i.MX 6SoloX
 - i.MX 6ULL
 
-#### Version history
+### Version history
 
 The Edge storage API was introduced in Native SDK 1.11.
 
-#### Code Examples
+### Code Examples
 
 - [axstorage](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axstorage)
   - This application demonstrates the usage of axstorage APIs, offering the following functionality:
@@ -71,7 +73,7 @@ The Edge storage API was introduced in Native SDK 1.11.
     - Continuously write data to two files on all available storage devices.
     - Automatically release any unmounted storage devices.
 
-### Event API
+## Event API
 
 Go to the [ACAP API Documentation](src/api/axevent/html/index.html) for detailed functional descriptions of this API.
 
@@ -82,7 +84,7 @@ The Axevent API provides:
 
 An application can both send and receive events.
 
-#### Event types
+### Event types
 
 **Stateless (Pulse)** – An event that indicates that something has occurred. Typically used to trigger some action rule.
 
@@ -90,7 +92,7 @@ An application can both send and receive events.
 
 **Data (Application Data)** – An event that includes data that needs to be processed by the consuming application such as transaction data, license plate or other dynamic data. A data event is normally not used to trigger generic action rules.
 
-#### Supported namespaces
+### Supported namespaces
 
 When declaring events it is required to set a namespace. Following are the supported namespaces:
 
@@ -98,7 +100,7 @@ When declaring events it is required to set a namespace. Following are the suppo
 
 **tns1** – ONVIF namespace to use with ONVIF events
 
-#### Compatibility
+### Compatibility
 
 The API is supported on products with the following chips:
 
@@ -111,11 +113,11 @@ The API is supported on products with the following chips:
 - i.MX 6SoloX
 - i.MX 6ULL
 
-#### Version history
+### Version history
 
 The Axevent API was introduced in Native SDK 1.0.
 
-#### Code Examples
+### Code Examples
 
 - [send_event](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axevent/send_event)
   - The example code is written in C which sends an ONVIF event periodically.
@@ -124,7 +126,7 @@ The Axevent API was introduced in Native SDK 1.0.
 - [subscribe_to_events](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axevent/subscribe_to_events)
   - The example code is written in C which subscribes to different predefined events.
 
-### License Key API
+## License Key API
 
 Go to the [ACAP API Documentation](src/api/licensekey/html/index.html) for detailed functional descriptions of this API.
 
@@ -132,7 +134,7 @@ Use the License Key API to validate an application license key.
 
 A license key is a signed file, generated for a specific device ID and application ID. The ACAP Service Portal maintains both license keys and application IDs.
 
-#### Compatibility
+### Compatibility
 
 The API is supported on products with the following chips:
 
@@ -145,22 +147,22 @@ The API is supported on products with the following chips:
 - i.MX 6SoloX
 - i.MX 6ULL
 
-#### Version history
+### Version history
 
 This API was introduced in Native SDK 1.0.
 
-#### Code Examples
+### Code Examples
 
 - [licensekey](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/licensekey/)
   - The example code is written in C which illustrates how to check the licensekey status.
 
-### Machine learning API (Larod)
+## Machine learning API (Larod)
 
 Go to the [ACAP API Documentation](src/api/larod/html/index.html) for detailed functional descriptions of this API.
 
 Larod is a service provides a simple unified C API for running machine learning and image preprocessing efficiently. The purpose of Larod is to provide a unified API for all hardware platforms with very little overhead and to arbitrate between different processes (apps) requesting access to the same hardware.
 
-#### Compatibility
+### Compatibility
 
 The Larod API is supported on products with the following chips:
 
@@ -171,11 +173,11 @@ The Larod API is supported on products with the following chips:
 
 For products with a DLPU (Deep Learning Processing Unit), inference runs on the DLPU otherwise it runs on the CPU.
 
-#### Version history
+### Version history
 
 The Machine learning API was introduced in Native SDK 1.0. All larod API versions are available.
 
-#### Code Examples
+### Code Examples
 
 - [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-larod/)
   - The example code is written in C and loads an image classification model to the [Machine learning API (Larod)](#machine-learning-api-larod) and then uses the [Video capture API (VDO)](#video-capture-api-vdo) to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format and then sent to larod for inference on MODEL.
@@ -183,7 +185,7 @@ The Machine learning API was introduced in Native SDK 1.0. All larod API version
   - The example code focus on object detection, cropping and saving detected objects into JPEG files.
   - A separate example is available for [CV25](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/object-detection-cv25) cameras.
 
-### Metadata Broker API
+## Metadata Broker API
 
 > This API is a [Beta version](./beta-api) and developers are encouraged to test and leave feedback.
 
@@ -195,7 +197,7 @@ a producer in AXIS OS by subscribing to a `topic`.
 
 The API implements the Publish/Subscribe messaging paradigm.
 
-#### Compatibility
+### Compatibility
 
 The Metadata Broker API is supported on products with the following chips:
 
@@ -203,17 +205,19 @@ The Metadata Broker API is supported on products with the following chips:
 - ARTPEC-7
 - Ambarella CV25
 
-#### Version history
+### Version history
 
 The Metadata Broker API was introduced in Native SDK 1.13.
 
-#### Code Examples
+### Code Examples
 
 - [analytics-scene-description-example](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/metadata-broker/consume-analytics-scene-description)
   - The example is written in C and shows how to consume metadata stream
     **Analytics Scene Description**.
 
-### Overlay API
+## Overlay APIs
+
+### Axoverlay API
 
 Go to the [ACAP API Documentation](src/api/axoverlay/html/index.html) for detailed functional descriptions of this API.
 
@@ -236,7 +240,31 @@ The Axoverlay API was introduced in Native SDK 1.0.
 - [axoverlay](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axoverlay/)
   - The example code is written in C which illustrates how to draw plain boxes and text as overlays in a stream.
 
-### Parameter API
+### Bounding Box API
+
+Go to the [ACAP API Documentation](src/api/bbox/html/index.html) for detailed functional descriptions of this API.
+
+The Bounding Box API allows for the simple drawing of boxes on a scene. It supports all new chips and utilizes the most optimized drawing mechanisms available for each chip.
+This API is recommended for adding basic box overlays. For more advanced features, refer to the Axoverlay API.
+
+#### Compatibility
+
+The API is supported on products with the following chips:
+
+- ARTPEC-8
+- ARTPEC-7
+- Ambarella CV25
+
+#### Version history
+
+The Bounding Box API was introduced in Native SDK 1.15.
+
+#### Code Examples
+
+- [bounding-box](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/bounding-box)
+  - An example in C that demonstrates how to portably draw burnt-in bounding boxes on selected video sources or channels.
+
+## Parameter API
 
 Go to the [ACAP API Documentation](src/api/axparameter/html/index.html) for
 detailed functional descriptions of this API.
@@ -268,7 +296,7 @@ The AXParameter C library provides the following functionality:
 > - *read* and *modified* by another application if the application users belongs
 >   to the same group.
 
-#### Application settings web page
+### Application settings web page
 
 The application settings web page can be used to modify **application
 parameters**.
@@ -282,7 +310,7 @@ In the Axis device web page:
 Note that a reload of the web page is required to display values set from C code
 or VAPIX.
 
-#### Compatibility
+### Compatibility
 
 The Parameter API is supported on products with the following chips:
 
@@ -295,22 +323,22 @@ The Parameter API is supported on products with the following chips:
 - i.MX 6SoloX
 - i.MX 6ULL
 
-#### Version history
+### Version history
 
 The Parameter API was introduced in Native SDK 1.13.
 
-#### Code Examples
+### Code Examples
 
 - [axparameter](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axparameter)
   - An example in C that demonstrates how to manage application-defined parameters, allowing you to add, remove, set, get, and register callback functions for parameter value updates.
 
-### Serial port API
+## Serial port API
 
 Go to the [ACAP API Documentation](src/api/axserialport/html/index.html) for detailed functional descriptions of this API.
 
 The Serial port API allows the application to configure and control the external serial port on selected Axis products.
 
-#### Compatibility
+### Compatibility
 
 - The API supports the following standards:
   - RS-232
@@ -321,11 +349,11 @@ The Serial port API allows the application to configure and control the external
   - ARTPEC-8
   - ARTPEC-7
 
-#### Version history
+### Version history
 
 The Serial port API was introduced in Native SDK 1.11.
 
-#### Code Examples
+### Code Examples
 
 - [axserialport](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axserialport)
   - This example details the creation of an ACAP application utilizing the axserialport API, showcasing the following actions:
@@ -333,7 +361,7 @@ The Serial port API was introduced in Native SDK 1.11.
     - Configuring parameters using the API.
     - Establishing communication between two available ports in the Axis product using GLib IOChannel methods.
 
-### Video capture API (VDO)
+## Video capture API (VDO)
 
 Go to the [ACAP API Documentation](src/api/vdostream/html/index.html) for detailed functional descriptions of this API.
 
@@ -343,7 +371,7 @@ The VdoStream API provides:
 - video and image capture
 - video and image configuration
 
-#### Available video compression formats through VDO
+### Available video compression formats through VDO
 
 The table below shows available subformats for corresponding YUV format.
 
@@ -354,7 +382,7 @@ y800 | YUV
 
 An application to start a vdo stream can be found at [vdostream](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdostream/), where the first argument is a string describing the video compression format. It takes `h264` (default), `h265`, `jpeg`, `nv12`, and `y800` as inputs. Both `nv12` and `y800` correspond to YUV format of VDO.
 
-#### Compatibility
+### Compatibility
 
 The API is supported on products with the following chips:
 
@@ -365,11 +393,11 @@ The API is supported on products with the following chips:
 - Ambarella S5L
 - Ambarella S5
 
-##### Compatibility limitations
+#### Compatibility limitations
 
 - **Global rotation** - All platforms except ARTPEC-6 support global image source rotation, this feature is designed to utilize the hardware more efficiently. When designing applications for multiple platforms this needs to be taken into consideration. The Video capture API on ARTPEC-6 allows specifying the desired rotation per stream in contrast to other chips where this is a global option chosen at camera installation time and any attempt to specify capture rotation will be ignored.
 
-#### Version history
+### Version history
 
 The Video capture API was introduced in Native SDK 1.0.
 
@@ -389,11 +417,11 @@ AXIS OS version | VdoStream API version | New functions added
 11.5 | 9.59.0 | -
 11.6 | 9.78.12 | `vdo_stream_set_gop_length`, `vdo_error_is_resource_limitation`
 
-#### Known issues
+### Known issues
 
 - A memory leak in VDO was found in firmware versions from 10.10 for ARTPEC chips, later fixed in 10.11.65. The issue affects function `vdo_buffer_get_data`.
 
-#### Code Examples
+### Code Examples
 
 - [vdostream](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdostream/)
   - The example code is written in C which starts a vdo stream and then illustrates how to continuously capture frames from the vdo service, access the received buffer contents as well as the frame metadata.
@@ -402,13 +430,13 @@ AXIS OS version | VdoStream API version | New functions added
 - [vdo-opencl-filtering](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-opencl-filtering/)
   - This example illustrates how to capture frames from the vdo service, access the received buffer, and finally perform a GPU accelerated Sobel filtering with OpenCL.
 
-## Open Source APIs
+# Open Source APIs
 
-### Cairo
+## Cairo
 
 Open-source rendering library for 2D vector graphics. See [Cairo documentation](https://www.cairographics.org/documentation/).
 
-#### Compatibility
+### Compatibility
 
 The Cairo API is supported on products with the following chips:
 
@@ -416,40 +444,40 @@ The Cairo API is supported on products with the following chips:
 - ARTPEC-7
 - ARTPEC-6
 
-#### Version history
+### Version history
 
 The Cairo API was introduced in Native SDK 1.0.
 
-#### Code Examples
+### Code Examples
 
 - [axoverlay](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axoverlay/)
   - The example code is written in C which illustrates how to draw plain boxes and text as overlays in a stream.
 
-### OpenCL
+## OpenCL
 
 Accelerate parallel compute with GPU. See [OpenCL documentation](https://www.khronos.org/opencl/).
 
-#### Compatibility
+### Compatibility
 
 The OpenCL API is supported on products with the following chips:
 
 - ARTPEC-8
 - ARTPEC-7
 
-#### Version history
+### Version history
 
 The OpenCL 1.2 was introduced in Native SDK 1.0.
 
-#### Code Examples
+### Code Examples
 
 - [vdo-opencl-filtering](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-opencl-filtering/)
   - This example illustrates how to capture frames from the vdo service, access the received buffer, and finally perform a GPU accelerated Sobel filtering with OpenCL.
 
-### FastCGI
+## FastCGI
 
 [FastCGI](https://wikipedia.org/wiki/FastCGI) is a protocol for interfacing interactive programs with a web server.
 
-#### Compatibility
+### Compatibility
 
 The FastCGI API is supported on products with the following chips:
 
@@ -462,20 +490,20 @@ The FastCGI API is supported on products with the following chips:
 - i.MX 6SoloX
 - i.MX 6ULL
 
-#### Version history
+### Version history
 
 The FastCGI API was introduced in Native SDK 1.6.
 
-#### Code Examples
+### Code Examples
 
 - [web-server-using-fastcgi](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/web-server-using-fastcgi)
   - This example is written in C and explains how to build an ACAP application that can handle HTTP requests sent to the Axis device, using the device's own web server and FastCGI.
 
-### OpenSSL
+## OpenSSL
 
 Open-source library for general-purpose cryptography and secure communication. See [OpenSSL documentation](https://www.openssl.org/docs/).
 
-#### Compatibility
+### Compatibility
 
 The OpenSSL API is supported on products with the following chips:
 
@@ -488,20 +516,20 @@ The OpenSSL API is supported on products with the following chips:
 - i.MX 6SoloX
 - i.MX 6ULL
 
-#### Version history
+### Version history
 
 The OpenSSL API was introduced in Native SDK 1.14.
 
-#### Code Examples
+### Code Examples
 
 - [curl-openssl](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/curl-openssl/)
   - The example code is written in C which illustrates how to use curl and OpenSSL to retrieve a file securely from an external server for e.g. [example.com](<https://www.example.com>)
 
-### Jansson
+## Jansson
 
 Open-source library for for encoding, decoding and manipulating JSON data. See [Jansson documentation](https://jansson.readthedocs.io/en/latest/).
 
-#### Compatibility
+### Compatibility
 
 The Jansson API is supported on products with the following chips:
 
@@ -514,20 +542,20 @@ The Jansson API is supported on products with the following chips:
 - i.MX 6SoloX
 - i.MX 6ULL
 
-#### Version history
+### Version history
 
 The Jansson API was introduced in Native SDK 1.14.
 
-#### Code Examples
+### Code Examples
 
 - [`vapix`](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vapix/)
   - The example code is written in C which illustrates calling VAPIX API with JSON request and response from within an ACAP application.
 
-### Curl
+## Curl
 
 Open-source library for transferring data with URLs. See [curl documentation](https://curl.se/docs/).
 
-#### Compatibility
+### Compatibility
 
 The curl API is supported on products with the following chips:
 
@@ -540,24 +568,24 @@ The curl API is supported on products with the following chips:
 - i.MX 6SoloX
 - i.MX 6ULL
 
-#### Version history
+### Version history
 
 The curl API was introduced in Native SDK 1.14.
 
-#### Code Examples
+### Code Examples
 
 - [curl-openssl](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/curl-openssl/)
   - The example code is written in C which illustrates how to use curl and OpenSSL to retrieve a file securely from an external server for e.g. [example.com](<https://www.example.com>)
 - [`vapix`](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vapix/)
   - The example code is written in C which illustrates how ,using curl, an ACAP application can call [VAPIX APIs](https://www.axis.com/vapix-library/).
 
-## Supplementary APIs
+# Supplementary APIs
 
-### VAPIX access for ACAP
+## VAPIX access for ACAP
 
 ACAP applications can request for VAPIX service account credentials in runtime. With these credentials, the ACAP application can call a local virtual host to make VAPIX requests on the device. See [VAPIX access for ACAP](../develop/VAPIX-access-for-ACAP-applications).
 
-#### Code Examples
+### Code Examples
 
 - [`vapix`](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vapix/)
   - The example code is written in C which illustrates how an ACAP application can call [VAPIX APIs](https://www.axis.com/vapix-library/).
