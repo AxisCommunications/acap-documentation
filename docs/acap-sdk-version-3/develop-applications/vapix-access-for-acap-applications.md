@@ -10,7 +10,7 @@ nav_order: 4
 
 From AXIS OS 11.6, ACAP applications can acquire VAPIX service account credentials in runtime. With these credentials, the ACAP application can call a local virtual host to make VAPIX requests on the device. A username and a password with high complexity are created for every credential acquisition. These credentials are only valid on the local virtual host (127.0.0.12) and aren't stored in any file. It should only be kept in memory by the ACAP application.
 
-> [!IMPORTANT]
+> **Important**
 >
 > - In AXIS OS 11.6, a first beta version of VAPIX access was provided.
 > - In AXIS OS 11.8, the following updates were made:
@@ -18,6 +18,8 @@ From AXIS OS 11.6, ACAP applications can acquire VAPIX service account credentia
 >   - The D-Bus interface changed from `com.axis.HTTPConf1.Auth1` to `com.axis.HTTPConf1.VAPIXServiceAccounts1`.
 >   - The method name changed from `GetVapixServiceAccountCredentials` to `GetCredentials`.
 > - In AXIS OS 11.9 the VAPIX access feature reached General Availability.
+> - Starting from AXIS OS 11.11, an ACAP application user can get SSH access by
+>   enabling [Developer Mode](../../get-started/set-up-developer-environment/set-up-device-advanced.md#developer-mode).
 
 ## Example application
 
