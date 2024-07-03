@@ -50,7 +50,7 @@ update_overlay_cb(gpointer data)
 
   /* Request a redraw of the overlay */
   axoverlay_redraw(&error);
-  if (error != NULL) {
+  if (error) {
     /*
      * If redraw fails then it is likely due to that overlayd has
      * crashed. Don't exit instead wait for overlayd to restart and
@@ -113,7 +113,7 @@ setup_palette_color(gint index, gint r, gint g, gint b, gint a)
   color.alpha = a;
   color.pixelate = FALSE;
   axoverlay_set_palette_color(index, &color, &error);
-  if (error != NULL) {
+  if (error) {
     g_error_free(error);
     return FALSE;
   }
@@ -146,7 +146,7 @@ main(int argc, char **argv)
   settings.select_callback = NULL;
   settings.backend = AXOVERLAY_CAIRO_IMAGE_BACKEND;
   axoverlay_init(&settings, &error);
-  if (error != NULL) {
+  if (error) {
     printf("Failed to initialize axoverlay: %s\n", error->message);
     g_error_free(error);
     return 1;
@@ -170,7 +170,7 @@ main(int argc, char **argv)
   data.height = OVERLAY_WIDTH;
   data.colorspace = AXOVERLAY_COLORSPACE_4BIT_PALETTE;
   overlay_id = axoverlay_create_overlay(&data, NULL, &error);
-  if (error != NULL) {
+  if (error) {
     printf("Failed to create first overlay: %s\n", error->message);
     g_error_free(error);
     return 1;
@@ -178,7 +178,7 @@ main(int argc, char **argv)
 
   /* Draw overlays */
   axoverlay_redraw(&error);
-  if (error != NULL) {
+  if (error) {
     printf("Failed to draw overlays: %s\n", error->message);
     axoverlay_destroy_overlay(overlay_id, &error);
     axoverlay_cleanup();
@@ -194,7 +194,7 @@ main(int argc, char **argv)
 
   /* Destroy the overlay */
   axoverlay_destroy_overlay(overlay_id, &error);
-  if (error != NULL) {
+  if (error) {
     printf("Failed to destroy first overlay: %s\n", error->message);
     g_error_free(error);
     return 1;

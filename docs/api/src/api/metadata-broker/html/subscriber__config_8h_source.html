@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Metadata Broker
-   &#160;<span id="projectnumber">0.23.2</span>
+   &#160;<span id="projectnumber">0.26.5</span>
    </div>
   </td>
  </tr>
@@ -79,7 +79,7 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="error_8h.html">mdb/error.h</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="metadata_8h.html">mdb/metadata.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="message_8h.html">mdb/message.h</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
@@ -87,12 +87,12 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>mdb_subscriber_config <a class="code" href="subscriber__config_8h.html#ac96fcf5f10acb30252749a3dea10514f">mdb_subscriber_config_t</a>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="subscriber__config_8h.html#a65bd3655079b5750cf6edcf6fddc0fe2">   36</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="subscriber__config_8h.html#a65bd3655079b5750cf6edcf6fddc0fe2">mdb_subscriber_on_metadata_t</a>)(<span class="keyword">const</span> <a class="code" href="metadata_8h.html#a6489d35a1094d6631e039a71b6867089">mdb_metadata_t</a> *metadata,</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="subscriber__config_8h.html#a6ab14d4aedcfb821eefcffd32b61b82c">   36</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="subscriber__config_8h.html#a6ab14d4aedcfb821eefcffd32b61b82c">mdb_subscriber_on_message_t</a>)(<span class="keyword">const</span> <a class="code" href="message_8h.html#a720c6a2148976f68b1bbce65e33390bb">mdb_message_t</a> *message,</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                             <span class="keywordtype">void</span> *user_data);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<a class="code" href="subscriber__config_8h.html#ac96fcf5f10acb30252749a3dea10514f">mdb_subscriber_config_t</a> *</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="subscriber__config_8h.html#a5d2affb95613fa642ff321844d56d232">   56</a></span>&#160;<a class="code" href="subscriber__config_8h.html#a5d2affb95613fa642ff321844d56d232">mdb_subscriber_config_create</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *topic, <span class="keyword">const</span> <span class="keywordtype">char</span> *source,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                             <a class="code" href="subscriber__config_8h.html#a65bd3655079b5750cf6edcf6fddc0fe2">mdb_subscriber_on_metadata_t</a> on_metadata,</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="subscriber__config_8h.html#a87a339903455cc21eb1d4427475c1504">   56</a></span>&#160;<a class="code" href="subscriber__config_8h.html#a87a339903455cc21eb1d4427475c1504">mdb_subscriber_config_create</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *topic, <span class="keyword">const</span> <span class="keywordtype">char</span> *source,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                             <a class="code" href="subscriber__config_8h.html#a6ab14d4aedcfb821eefcffd32b61b82c">mdb_subscriber_on_message_t</a> on_message,</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                             <span class="keywordtype">void</span> *user_data, <a class="code" href="structmdb__error__t.html">mdb_error_t</a> **error);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="subscriber__config_8h.html#a875d630a096dc02b44afa6f186c176bf">   67</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="subscriber__config_8h.html#a875d630a096dc02b44afa6f186c176bf">mdb_subscriber_config_destroy</a>(<a class="code" href="subscriber__config_8h.html#ac96fcf5f10acb30252749a3dea10514f">mdb_subscriber_config_t</a> **<span class="keyword">self</span>);</div>
@@ -103,12 +103,12 @@ $(function() {
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aerror_8h_html"><div class="ttname"><a href="error_8h.html">error.h</a></div></div>
-<div class="ttc" id="ametadata_8h_html"><div class="ttname"><a href="metadata_8h.html">metadata.h</a></div></div>
-<div class="ttc" id="ametadata_8h_html_a6489d35a1094d6631e039a71b6867089"><div class="ttname"><a href="metadata_8h.html#a6489d35a1094d6631e039a71b6867089">mdb_metadata_t</a></div><div class="ttdeci">struct mdb_metadata mdb_metadata_t</div><div class="ttdef"><b>Definition:</b> metadata.h:19</div></div>
+<div class="ttc" id="amessage_8h_html"><div class="ttname"><a href="message_8h.html">message.h</a></div></div>
+<div class="ttc" id="amessage_8h_html_a720c6a2148976f68b1bbce65e33390bb"><div class="ttname"><a href="message_8h.html#a720c6a2148976f68b1bbce65e33390bb">mdb_message_t</a></div><div class="ttdeci">struct mdb_message mdb_message_t</div><div class="ttdef"><b>Definition:</b> message.h:19</div></div>
 <div class="ttc" id="astructmdb__error__t_html"><div class="ttname"><a href="structmdb__error__t.html">mdb_error_t</a></div><div class="ttdef"><b>Definition:</b> error.h:41</div></div>
-<div class="ttc" id="asubscriber__config_8h_html_a5d2affb95613fa642ff321844d56d232"><div class="ttname"><a href="subscriber__config_8h.html#a5d2affb95613fa642ff321844d56d232">mdb_subscriber_config_create</a></div><div class="ttdeci">mdb_subscriber_config_t * mdb_subscriber_config_create(const char *topic, const char *source, mdb_subscriber_on_metadata_t on_metadata, void *user_data, mdb_error_t **error)</div></div>
-<div class="ttc" id="asubscriber__config_8h_html_a65bd3655079b5750cf6edcf6fddc0fe2"><div class="ttname"><a href="subscriber__config_8h.html#a65bd3655079b5750cf6edcf6fddc0fe2">mdb_subscriber_on_metadata_t</a></div><div class="ttdeci">void(* mdb_subscriber_on_metadata_t)(const mdb_metadata_t *metadata, void *user_data)</div><div class="ttdef"><b>Definition:</b> subscriber_config.h:36</div></div>
+<div class="ttc" id="asubscriber__config_8h_html_a6ab14d4aedcfb821eefcffd32b61b82c"><div class="ttname"><a href="subscriber__config_8h.html#a6ab14d4aedcfb821eefcffd32b61b82c">mdb_subscriber_on_message_t</a></div><div class="ttdeci">void(* mdb_subscriber_on_message_t)(const mdb_message_t *message, void *user_data)</div><div class="ttdef"><b>Definition:</b> subscriber_config.h:36</div></div>
 <div class="ttc" id="asubscriber__config_8h_html_a875d630a096dc02b44afa6f186c176bf"><div class="ttname"><a href="subscriber__config_8h.html#a875d630a096dc02b44afa6f186c176bf">mdb_subscriber_config_destroy</a></div><div class="ttdeci">void mdb_subscriber_config_destroy(mdb_subscriber_config_t **self)</div></div>
+<div class="ttc" id="asubscriber__config_8h_html_a87a339903455cc21eb1d4427475c1504"><div class="ttname"><a href="subscriber__config_8h.html#a87a339903455cc21eb1d4427475c1504">mdb_subscriber_config_create</a></div><div class="ttdeci">mdb_subscriber_config_t * mdb_subscriber_config_create(const char *topic, const char *source, mdb_subscriber_on_message_t on_message, void *user_data, mdb_error_t **error)</div></div>
 <div class="ttc" id="asubscriber__config_8h_html_ac96fcf5f10acb30252749a3dea10514f"><div class="ttname"><a href="subscriber__config_8h.html#ac96fcf5f10acb30252749a3dea10514f">mdb_subscriber_config_t</a></div><div class="ttdeci">struct mdb_subscriber_config mdb_subscriber_config_t</div><div class="ttdef"><b>Definition:</b> subscriber_config.h:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->

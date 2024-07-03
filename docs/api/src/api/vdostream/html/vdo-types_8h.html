@@ -338,6 +338,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Video formats. </p>
+<p>See <a class="el" href="vdo-buffer_8h.html#a3d39e2466d23b62e52a0fbfd10a968a3" title="Returns a pointer to the underlying buffer.">vdo_buffer_get_data</a> for data layout. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5ed136c302573571bf325c39d6d36246a071fb4606432bbeb185a0c5e383006ec"></a>VDO_FORMAT_NONE&#160;</td><td class="fielddoc"><p>None </p>
 </td></tr>
@@ -370,34 +371,17 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Video frame types. </p>
+<p>See <a class="el" href="vdo-buffer_8h.html#a3d39e2466d23b62e52a0fbfd10a968a3" title="Returns a pointer to the underlying buffer.">vdo_buffer_get_data</a> for data layout. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bdda5f941d95a7b82d394cff06458803dd9c"></a>VDO_FRAME_TYPE_NONE&#160;</td><td class="fielddoc"><p>None </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bdda419cdfca005fd0c08d26487721edfc90"></a>VDO_FRAME_TYPE_H264_SPS&#160;</td><td class="fielddoc"><p>H.264 Sequence Parameter Set (SPS) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bdda2dee2b72123b6fb836420d61508255ab"></a>VDO_FRAME_TYPE_H264_PPS&#160;</td><td class="fielddoc"><p>H.264 Picture Parameter Set (PPS) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bdda0e1d6bf366b69a3854a8157418d086e6"></a>VDO_FRAME_TYPE_H264_SEI&#160;</td><td class="fielddoc"><p>H.264 Supplemental Enhancement Information (SEI) </p>
-</td></tr>
 <tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bddac10b66d4f9118960384e427d76478672"></a>VDO_FRAME_TYPE_H264_IDR&#160;</td><td class="fielddoc"><p>H.264 Instantaneous Decoder Refresh (IDR) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bdda1c0f2a7787e8eee9e0e9b8b7bf9b45fe"></a>VDO_FRAME_TYPE_H264_I&#160;</td><td class="fielddoc"><p>H.264 I-slice </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bddaa0fb718a86e1cc5542cc3c24ecbecaaa"></a>VDO_FRAME_TYPE_H264_P&#160;</td><td class="fielddoc"><p>H.264 P-slice </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bddaf0a98dfb3f03c18e905273e0067faf21"></a>VDO_FRAME_TYPE_H264_B&#160;</td><td class="fielddoc"><p>H.264 B-slice </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bdda8b6857c92743c7fd7a0c1948dc5b6242"></a>VDO_FRAME_TYPE_H265_SPS&#160;</td><td class="fielddoc"><p>H.265 Sequence Parameter Set (SPS) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bddaa32ab656eabfd7d226da9651b2449fe9"></a>VDO_FRAME_TYPE_H265_PPS&#160;</td><td class="fielddoc"><p>H.265 Picture Parameter Set (PPS) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bddaec93bca4bd9f08a433085b9e664e53a0"></a>VDO_FRAME_TYPE_H265_VPS&#160;</td><td class="fielddoc"><p>H.265 Video Parameter Set (VPS) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bddae2ebee25c4ea760ed1423ba15f537751"></a>VDO_FRAME_TYPE_H265_SEI&#160;</td><td class="fielddoc"><p>H.265 Supplemental Enhancement Information (SEI) </p>
-</td></tr>
 <tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bdda2ded56d42ad2a351c83248f5ae35982d"></a>VDO_FRAME_TYPE_H265_IDR&#160;</td><td class="fielddoc"><p>H.265 Instantaneous Decoder Refresh (IDR) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bdda12634e8a4e0de153b69cb75d9bfdbf5c"></a>VDO_FRAME_TYPE_H265_I&#160;</td><td class="fielddoc"><p>H.265 I-slice </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bdda41b54d7209fff3c6f30c5314a396a2eb"></a>VDO_FRAME_TYPE_H265_P&#160;</td><td class="fielddoc"><p>H.265 P-slice </p>
 </td></tr>
@@ -406,8 +390,6 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bddafc8b9132ea65e9b285695b02659e3f3f"></a>VDO_FRAME_TYPE_JPEG&#160;</td><td class="fielddoc"><p>JPEG image </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bdda0f7eba258bdeeb6ac6a5ca61ee74e602"></a>VDO_FRAME_TYPE_YUV&#160;</td><td class="fielddoc"><p>YUV image </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bddaa0cb2f95dc847651da567ef2a22b71b1"></a>VDO_FRAME_TYPE_RAW&#160;</td><td class="fielddoc"><p>RAW image </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aecc7ad4ae90e505eea73c35dd4dd5bddabaaa2217a230b08f027a35f01b4f69d7"></a>VDO_FRAME_TYPE_RGBA&#160;</td><td class="fielddoc"><p>RGBA image </p>
 </td></tr>

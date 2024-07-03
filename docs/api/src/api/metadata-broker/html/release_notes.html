@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Metadata Broker
-   &#160;<span id="projectnumber">0.23.2</span>
+   &#160;<span id="projectnumber">0.26.5</span>
    </div>
   </td>
  </tr>
@@ -70,7 +70,25 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a href="https://keepachangelog.com/en/1.1.0/">Keep a Changelog</a>, and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
-<p><b>0.23.2</b></p><ul>
+<h2><a class="anchor" id="autotoc_md0"></a>
+[Unreleased]</h2>
+<h3><a class="anchor" id="autotoc_md1"></a>
+Changed</h3>
+<ul>
+<li>Breaking change: The terminology changed from metadata to message, with this<ul>
+<li>The header file <code>mdb/metadata.h</code> is changed to <code><a class="el" href="message_8h.html">mdb/message.h</a></code></li>
+<li><code>mdb_metadata_t</code> --&gt; <code>mdb_message_t</code></li>
+<li><code>mdb_metadata_payload_t</code> --&gt; <code>mdb_message_payload_t</code></li>
+<li><code>mdb_metadata_get_payload</code> --&gt; <code>mdb_message_get_payload</code></li>
+<li><code>mdb_metadata_get_timestamp</code> --&gt; <code>mdb_message_get_timestamp</code></li>
+<li><code>mdb_subscriber_on_metadata_t</code> --&gt; <code>mdb_subscriber_on_message_t</code></li>
+</ul>
+</li>
+<li>New topic com.axis.consolidated_track.v1.beta <a class="el" href="standard_topics.html">Standard Topics</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md2"></a>
+[0.23.2]</h2>
+<ul>
 <li>Consumer API in beta. </li>
 </ul>
 </div></div><!-- contents -->

@@ -779,6 +779,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Reads the width of the camera's base resolution.</p>
+<p>Note that this function should not be called in any of the callbacks: axoverlay_stream_select_function, axoverlay_adjustment_function, axoverlay_render_function, or axoverlay_synced_render_function.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">camera</td><td>The camera to get resolution for. </td></tr>
@@ -1006,6 +1007,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Reload all stream information. All information about running streams will be cleared and loaded again. The select callback will be invoked for each stream.</p>
 <p>Note that all overlays will disappear for a short while since they are destroyed and then created again.</p>
+<p>Note that this function should not be called in any of the callbacks: axoverlay_stream_select_function, axoverlay_adjustment_function, axoverlay_render_function, or axoverlay_synced_render_function.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">error</td><td>Location to store potential error at. </td></tr>
@@ -1105,6 +1107,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Updates the position of the overlay with the given id if it exists. Calling this function will not trigger the overlay to be redrawn. The new position will be applied the next time <a class="el" href="axoverlay_8h.html#ac73bea732951f6bdcead8ee248b35b0a">axoverlay_redraw()</a> is called.</p>
+<p>Note that this function should not be called in any of the callbacks: axoverlay_stream_select_function, axoverlay_adjustment_function, axoverlay_render_function, or axoverlay_synced_render_function.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>The id of the overlay. </td></tr>
@@ -1200,6 +1203,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Set the palette color with a specific index.</p>
+<p>Note that this function should not be called in any of the callbacks: axoverlay_stream_select_function, axoverlay_adjustment_function, axoverlay_render_function, or axoverlay_synced_render_function.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>The index of the color to set. </td></tr>
