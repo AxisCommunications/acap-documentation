@@ -209,6 +209,11 @@ The Metadata Broker API is supported on products with the following chips:
 
 The Metadata Broker API was introduced in Native SDK 1.13.
 
+AXIS OS version | Metadata Broker API version | New functions added
+-- | -- | --
+11.9 | 0.23.2 | New topic  `com.axis.analytics_scene_description.v0.beta`
+11.11 | 0.26.5 | New topic `com.axis.consolidated_track.v1.beta`
+
 ### Code Examples
 
 - [analytics-scene-description-example](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/metadata-broker/consume-analytics-scene-description)
