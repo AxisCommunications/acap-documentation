@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Metadata Broker
-   &#160;<span id="projectnumber">0.23.2</span>
+   &#160;<span id="projectnumber">0.26.5</span>
    </div>
   </td>
  </tr>
@@ -71,7 +71,7 @@ $(function() {
 <div class="fragment"><div class="line"><span class="comment">/*</span></div>
 <div class="line"><span class="comment"> * Copyright Axis Communications AB</span></div>
 <div class="line"><span class="comment"> *</span></div>
-<div class="line"><span class="comment"> * This example creates a subscriber and subscribes to metadata from a channel</span></div>
+<div class="line"><span class="comment"> * This example creates a subscriber and subscribes to messages from a channel</span></div>
 <div class="line"><span class="comment"> * with a given topic and source.</span></div>
 <div class="line"><span class="comment"> */</span></div>
 <div class="line"> </div>
@@ -101,19 +101,19 @@ $(function() {
 <div class="line">  abort();</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> on_metadata(<span class="keyword">const</span> <a class="code" href="metadata_8h.html#a6489d35a1094d6631e039a71b6867089">mdb_metadata_t</a> *metadata, <span class="keywordtype">void</span> *user_data)</div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> on_message(<span class="keyword">const</span> <a class="code" href="message_8h.html#a720c6a2148976f68b1bbce65e33390bb">mdb_message_t</a> *message, <span class="keywordtype">void</span> *user_data)</div>
 <div class="line">{</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">struct </span>timespec *timestamp = <a name="a2"></a><a class="code" href="metadata_8h.html#a1357864022e6e52e04b885484c9efb89">mdb_metadata_get_timestamp</a>(metadata);</div>
-<div class="line">  <span class="keyword">const</span> <a name="_a3"></a><a class="code" href="structmdb__metadata__payload.html">mdb_metadata_payload_t</a> *payload = <a name="a4"></a><a class="code" href="metadata_8h.html#aedbc76faa13aa57ec13ec71b4bdec805">mdb_metadata_get_payload</a>(metadata);</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">struct </span>timespec *timestamp = <a name="a2"></a><a class="code" href="message_8h.html#aa02a04937507e44778287d09e054e394">mdb_message_get_timestamp</a>(message);</div>
+<div class="line">  <span class="keyword">const</span> <a name="_a3"></a><a class="code" href="structmdb__message__payload.html">mdb_message_payload_t</a> *payload = <a name="a4"></a><a class="code" href="message_8h.html#a4df94a7b61be9a303b643893943baeaa">mdb_message_get_payload</a>(message);</div>
 <div class="line"> </div>
 <div class="line">  channel_identifier_t *expression = (channel_identifier_t *)user_data;</div>
 <div class="line"> </div>
-<div class="line">  <span class="comment">// Process the metadata.</span></div>
+<div class="line">  <span class="comment">// Process the message.</span></div>
 <div class="line">  syslog(LOG_INFO,</div>
-<div class="line">         <span class="stringliteral">&quot;metadata received from topic: %s on source: %s: Monotonic time - &quot;</span></div>
+<div class="line">         <span class="stringliteral">&quot;message received from topic: %s on source: %s: Monotonic time - &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;%lld.%.9ld. Data - %.*s&quot;</span>,</div>
 <div class="line">         expression-&gt;topic, expression-&gt;source, (<span class="keywordtype">long</span> <span class="keywordtype">long</span>)timestamp-&gt;tv_sec,</div>
-<div class="line">         timestamp-&gt;tv_nsec, (<span class="keywordtype">int</span>)payload-&gt;<a name="a5"></a><a class="code" href="structmdb__metadata__payload.html#ad83e355a7c264f13590fc8beb3fb0793">size</a>, (<span class="keywordtype">char</span> *)payload-&gt;<a name="a6"></a><a class="code" href="structmdb__metadata__payload.html#a5932ad31fcaae725b942bbb6b3e98aa9">data</a>);</div>
+<div class="line">         timestamp-&gt;tv_nsec, (<span class="keywordtype">int</span>)payload-&gt;<a name="a5"></a><a class="code" href="structmdb__message__payload.html#ad7617124f3feedd6c426a40f2f1c42d7">size</a>, (<span class="keywordtype">char</span> *)payload-&gt;<a name="a6"></a><a class="code" href="structmdb__message__payload.html#a032a38f30c1ec5e31eb661560cf87573">data</a>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> on_done_subscriber_create(<span class="keyword">const</span> <a class="code" href="structmdb__error__t.html">mdb_error_t</a> *error, <span class="keywordtype">void</span> *user_data)</div>
@@ -154,8 +154,8 @@ $(function() {
 <div class="line">    <span class="keywordflow">goto</span> end;</div>
 <div class="line">  }</div>
 <div class="line"> </div>
-<div class="line">  subscriber_config = <a name="a8"></a><a class="code" href="subscriber__config_8h.html#a5d2affb95613fa642ff321844d56d232">mdb_subscriber_config_create</a>(</div>
-<div class="line">      channel_identifier.topic, channel_identifier.source, on_metadata,</div>
+<div class="line">  subscriber_config = <a name="a8"></a><a class="code" href="subscriber__config_8h.html#a87a339903455cc21eb1d4427475c1504">mdb_subscriber_config_create</a>(</div>
+<div class="line">      channel_identifier.topic, channel_identifier.source, on_message,</div>
 <div class="line">      &amp;channel_identifier, &amp;error);</div>
 <div class="line">  <span class="keywordflow">if</span> (error != NULL) {</div>
 <div class="line">    <span class="keywordflow">goto</span> end;</div>
@@ -194,20 +194,20 @@ $(function() {
 <div class="ttc" id="aconnection_8h_html_ab720a235e474e720e0591a3beabe72d8"><div class="ttname"><a href="connection_8h.html#ab720a235e474e720e0591a3beabe72d8">mdb_connection_destroy</a></div><div class="ttdeci">void mdb_connection_destroy(mdb_connection_t **self)</div></div>
 <div class="ttc" id="aerror_8h_html"><div class="ttname"><a href="error_8h.html">error.h</a></div></div>
 <div class="ttc" id="aerror_8h_html_ac9429cca32c506161c9dbe2a0568287e"><div class="ttname"><a href="error_8h.html#ac9429cca32c506161c9dbe2a0568287e">mdb_error_destroy</a></div><div class="ttdeci">void mdb_error_destroy(mdb_error_t **error)</div></div>
-<div class="ttc" id="ametadata_8h_html_a1357864022e6e52e04b885484c9efb89"><div class="ttname"><a href="metadata_8h.html#a1357864022e6e52e04b885484c9efb89">mdb_metadata_get_timestamp</a></div><div class="ttdeci">const struct timespec * mdb_metadata_get_timestamp(const mdb_metadata_t *metadata)</div></div>
-<div class="ttc" id="ametadata_8h_html_a6489d35a1094d6631e039a71b6867089"><div class="ttname"><a href="metadata_8h.html#a6489d35a1094d6631e039a71b6867089">mdb_metadata_t</a></div><div class="ttdeci">struct mdb_metadata mdb_metadata_t</div><div class="ttdef"><b>Definition:</b> metadata.h:19</div></div>
-<div class="ttc" id="ametadata_8h_html_aedbc76faa13aa57ec13ec71b4bdec805"><div class="ttname"><a href="metadata_8h.html#aedbc76faa13aa57ec13ec71b4bdec805">mdb_metadata_get_payload</a></div><div class="ttdeci">const mdb_metadata_payload_t * mdb_metadata_get_payload(const mdb_metadata_t *metadata)</div></div>
+<div class="ttc" id="amessage_8h_html_a4df94a7b61be9a303b643893943baeaa"><div class="ttname"><a href="message_8h.html#a4df94a7b61be9a303b643893943baeaa">mdb_message_get_payload</a></div><div class="ttdeci">const mdb_message_payload_t * mdb_message_get_payload(const mdb_message_t *message)</div></div>
+<div class="ttc" id="amessage_8h_html_a720c6a2148976f68b1bbce65e33390bb"><div class="ttname"><a href="message_8h.html#a720c6a2148976f68b1bbce65e33390bb">mdb_message_t</a></div><div class="ttdeci">struct mdb_message mdb_message_t</div><div class="ttdef"><b>Definition:</b> message.h:19</div></div>
+<div class="ttc" id="amessage_8h_html_aa02a04937507e44778287d09e054e394"><div class="ttname"><a href="message_8h.html#aa02a04937507e44778287d09e054e394">mdb_message_get_timestamp</a></div><div class="ttdeci">const struct timespec * mdb_message_get_timestamp(const mdb_message_t *message)</div></div>
 <div class="ttc" id="astructmdb__error__t_html"><div class="ttname"><a href="structmdb__error__t.html">mdb_error_t</a></div><div class="ttdef"><b>Definition:</b> error.h:41</div></div>
 <div class="ttc" id="astructmdb__error__t_html_a034a9fa42de41229b57965cc50d53bec"><div class="ttname"><a href="structmdb__error__t.html#a034a9fa42de41229b57965cc50d53bec">mdb_error_t::message</a></div><div class="ttdeci">char * message</div><div class="ttdef"><b>Definition:</b> error.h:43</div></div>
-<div class="ttc" id="astructmdb__metadata__payload_html"><div class="ttname"><a href="structmdb__metadata__payload.html">mdb_metadata_payload</a></div><div class="ttdef"><b>Definition:</b> metadata.h:23</div></div>
-<div class="ttc" id="astructmdb__metadata__payload_html_a5932ad31fcaae725b942bbb6b3e98aa9"><div class="ttname"><a href="structmdb__metadata__payload.html#a5932ad31fcaae725b942bbb6b3e98aa9">mdb_metadata_payload::data</a></div><div class="ttdeci">uint8_t * data</div><div class="ttdef"><b>Definition:</b> metadata.h:25</div></div>
-<div class="ttc" id="astructmdb__metadata__payload_html_ad83e355a7c264f13590fc8beb3fb0793"><div class="ttname"><a href="structmdb__metadata__payload.html#ad83e355a7c264f13590fc8beb3fb0793">mdb_metadata_payload::size</a></div><div class="ttdeci">size_t size</div><div class="ttdef"><b>Definition:</b> metadata.h:24</div></div>
+<div class="ttc" id="astructmdb__message__payload_html"><div class="ttname"><a href="structmdb__message__payload.html">mdb_message_payload</a></div><div class="ttdef"><b>Definition:</b> message.h:23</div></div>
+<div class="ttc" id="astructmdb__message__payload_html_a032a38f30c1ec5e31eb661560cf87573"><div class="ttname"><a href="structmdb__message__payload.html#a032a38f30c1ec5e31eb661560cf87573">mdb_message_payload::data</a></div><div class="ttdeci">uint8_t * data</div><div class="ttdef"><b>Definition:</b> message.h:25</div></div>
+<div class="ttc" id="astructmdb__message__payload_html_ad7617124f3feedd6c426a40f2f1c42d7"><div class="ttname"><a href="structmdb__message__payload.html#ad7617124f3feedd6c426a40f2f1c42d7">mdb_message_payload::size</a></div><div class="ttdeci">size_t size</div><div class="ttdef"><b>Definition:</b> message.h:24</div></div>
 <div class="ttc" id="asubscriber_8h_html"><div class="ttname"><a href="subscriber_8h.html">subscriber.h</a></div></div>
 <div class="ttc" id="asubscriber_8h_html_a0c274a9660bb716b41bb38d3b970f1a6"><div class="ttname"><a href="subscriber_8h.html#a0c274a9660bb716b41bb38d3b970f1a6">mdb_subscriber_destroy</a></div><div class="ttdeci">void mdb_subscriber_destroy(mdb_subscriber_t **self)</div></div>
 <div class="ttc" id="asubscriber_8h_html_a39a644a12906969ebb78bea767be51db"><div class="ttname"><a href="subscriber_8h.html#a39a644a12906969ebb78bea767be51db">mdb_subscriber_t</a></div><div class="ttdeci">struct mdb_subscriber mdb_subscriber_t</div><div class="ttdef"><b>Definition:</b> subscriber.h:28</div></div>
 <div class="ttc" id="asubscriber_8h_html_a9f44692fc3bf9b0efb7a4b2c1ef04a50"><div class="ttname"><a href="subscriber_8h.html#a9f44692fc3bf9b0efb7a4b2c1ef04a50">mdb_subscriber_create_async</a></div><div class="ttdeci">mdb_subscriber_t * mdb_subscriber_create_async(mdb_connection_t *connection, mdb_subscriber_config_t *config, mdb_on_done_t on_done, void *user_data, mdb_error_t **error)</div></div>
-<div class="ttc" id="asubscriber__config_8h_html_a5d2affb95613fa642ff321844d56d232"><div class="ttname"><a href="subscriber__config_8h.html#a5d2affb95613fa642ff321844d56d232">mdb_subscriber_config_create</a></div><div class="ttdeci">mdb_subscriber_config_t * mdb_subscriber_config_create(const char *topic, const char *source, mdb_subscriber_on_metadata_t on_metadata, void *user_data, mdb_error_t **error)</div></div>
 <div class="ttc" id="asubscriber__config_8h_html_a875d630a096dc02b44afa6f186c176bf"><div class="ttname"><a href="subscriber__config_8h.html#a875d630a096dc02b44afa6f186c176bf">mdb_subscriber_config_destroy</a></div><div class="ttdeci">void mdb_subscriber_config_destroy(mdb_subscriber_config_t **self)</div></div>
+<div class="ttc" id="asubscriber__config_8h_html_a87a339903455cc21eb1d4427475c1504"><div class="ttname"><a href="subscriber__config_8h.html#a87a339903455cc21eb1d4427475c1504">mdb_subscriber_config_create</a></div><div class="ttdeci">mdb_subscriber_config_t * mdb_subscriber_config_create(const char *topic, const char *source, mdb_subscriber_on_message_t on_message, void *user_data, mdb_error_t **error)</div></div>
 <div class="ttc" id="asubscriber__config_8h_html_ac96fcf5f10acb30252749a3dea10514f"><div class="ttname"><a href="subscriber__config_8h.html#ac96fcf5f10acb30252749a3dea10514f">mdb_subscriber_config_t</a></div><div class="ttdeci">struct mdb_subscriber_config mdb_subscriber_config_t</div><div class="ttdef"><b>Definition:</b> subscriber_config.h:25</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->

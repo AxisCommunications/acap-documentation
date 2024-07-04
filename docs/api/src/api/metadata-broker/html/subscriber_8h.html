@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Metadata Broker
-   &#160;<span id="projectnumber">0.23.2</span>
+   &#160;<span id="projectnumber">0.26.5</span>
    </div>
   </td>
  </tr>
@@ -101,8 +101,8 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Copyright Axis Communications AB</p>
-<p>This is the subscriber header for the Metadata Broker client library. It implements functionality for subscribing to metadata published on a channel.</p>
-<p>In order to subscribe to a channel a subscriber must be created. The channel is identified by a source and is grouped under a topic. The unix user using the API must have permission to subscribe to metadata from channel(s) under a specific topic. </p>
+<p>This is the subscriber header for the Metadata Broker client library. It implements functionality for subscribing to messages published on a channel.</p>
+<p>In order to subscribe to a channel a subscriber must be created. The channel is identified by a source and is grouped under a topic. The unix user using the API must have permission to subscribe to messages from channel(s) under a specific topic. </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
 <a id="a39a644a12906969ebb78bea767be51db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a39a644a12906969ebb78bea767be51db">&#9670;&nbsp;</a></span>mdb_subscriber_t</h2>
@@ -166,14 +166,13 @@ Functions</h2></td></tr>
 <p>Create a subscriber for a specific channel</p>
 <p>It is possible to create a subscriber before the corresponding channel is registered.</p>
 <p>Creating a subscriber will signal the producer to start publishing on the channel, if it has not already been signaled to start by another subscriber. Don't create a subscriber until you intend to use the published data since it may consume producer resources.</p>
-<p>If the channel is unregistered and then re-registered will not affect the subscriber other than the fact that metadata will no longer be received in the on_metadata callback.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">connection</td><td>Connection. </td></tr>
     <tr><td class="paramname">config</td><td>Subscriber configuration. </td></tr>
     <tr><td class="paramname">on_done</td><td>Callback triggering when subscribed to the channel or on error. </td></tr>
     <tr><td class="paramname">user_data</td><td>Passed to the on_done callback. </td></tr>
-    <tr><td class="paramname">error</td><td>An <a class="el" href="structmdb__error__t.html">mdb_error_t</a> pointer reference or NULL. An <a class="el" href="structmdb__error__t.html">mdb_error_t</a> will be allocated on failure and must then be destroyed with mdb_destroy_error(). </td></tr>
+    <tr><td class="paramname">error</td><td>An <a class="el" href="structmdb__error__t.html">mdb_error_t</a> pointer reference or NULL. An <a class="el" href="structmdb__error__t.html">mdb_error_t</a> will be allocated on failure and must then be destroyed with <a class="el" href="error_8h.html#ac9429cca32c506161c9dbe2a0568287e">mdb_error_destroy()</a>. </td></tr>
   </table>
   </dd>
 </dl>

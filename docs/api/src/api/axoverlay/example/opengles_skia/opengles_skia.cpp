@@ -528,7 +528,7 @@ main(int argc, char **argv)
   settings.backend = AXOVERLAY_OPENGLES_BACKEND;
 
   axoverlay_init(&settings, &error);
-  if (error != NULL) {
+  if (error) {
     fprintf(stderr, "Failed to initialize axoverlay: %s", error->message);
     g_error_free(error);
     return 1;
@@ -545,7 +545,7 @@ main(int argc, char **argv)
   ax_data.colorspace = AXOVERLAY_COLORSPACE_ARGB32;
 
   overlay_id = axoverlay_create_overlay(&ax_data, NULL, &error);
-  if (error != NULL) {
+  if (error) {
     fprintf(stderr, "Failed to create first overlay: %s", error->message);
     g_error_free(error);
     return 1;
@@ -560,7 +560,7 @@ main(int argc, char **argv)
   g_main_loop_run(main_loop);
 
   axoverlay_destroy_overlay(overlay_id, &error);
-  if (error != NULL) {
+  if (error) {
     fprintf(stderr, "Failed to destroy first overlay: %s", error->message);
     g_error_free(error);
     return 0;

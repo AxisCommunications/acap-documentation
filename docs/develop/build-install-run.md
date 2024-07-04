@@ -106,11 +106,11 @@ eap-install.sh
 
 Run the command without any options to get help.
 
-To install a built application on a device, run the following command (you must enter the IP address and the root password of the device the first time):
+To install a built application on a device, run the following command (you must enter the IP address and username and password of the device the first time):
 
 ```bash
-eap-install.sh <device-ip> <password> install
-eap-install.sh 192.168.0.90 pass install
+eap-install.sh <axis_device_ip> <admin_account> <password> install
+eap-install.sh 192.168.0.90 admin-user admin-password install
 ```
 
 The command remembers the device-ip and password after the first successful execution. After this you can simply run:
@@ -202,25 +202,8 @@ docker-compose --tlsverify -H tcp://$CAMERA_IP:2376 down -v
 
 #### Configure network proxy settings
 
-You may need to run the following script on the Axis device depending upon your network requirements.
-
-```sh
-#!/bin/sh
-
-# Setup proxy for dockerd
-
-cat >> /etc/systemd/system/sdkrun_dockerd.service <<EOF
-[Service]
-Environment="HTTP_PROXY=http://<myproxy.com>:<port>"
-Environment="HTTPS_PROXY=http://<myproxy>:<port>"
-Environment="NO_PROXY=localhost,127.0.0.0/8,10.0.0.0/8,192.168.0.0/16,172.16.0.0/12,.<domain>"
-EOF
-
-systemctl daemon-reload
-systemctl restart sdkrun_dockerd
-
-exit
-```
+If the device is located behind a proxy the Docker daemon needs to be configured.
+Instructions can be found in the Docker ACAP repository under [Proxy Setup](https://github.com/AxisCommunications/docker-acap/tree/main?tab=readme-ov-file#proxy-setup).
 
 ## The Docker Compose ACAP
 

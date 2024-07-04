@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Metadata Broker
-   &#160;<span id="projectnumber">0.23.2</span>
+   &#160;<span id="projectnumber">0.26.5</span>
    </div>
   </td>
  </tr>
@@ -77,7 +77,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="error_8h_source.html">mdb/error.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="metadata_8h_source.html">mdb/metadata.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="message_8h_source.html">mdb/message.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for subscriber_config.h:</div>
 <div class="dyncontent">
@@ -95,13 +95,13 @@ This graph shows which files directly or indirectly include this file:</div>
 Typedefs</h2></td></tr>
 <tr class="memitem:ac96fcf5f10acb30252749a3dea10514f"><td class="memItemLeft" align="right" valign="top">typedef struct mdb_subscriber_config&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="subscriber__config_8h.html#ac96fcf5f10acb30252749a3dea10514f">mdb_subscriber_config_t</a></td></tr>
 <tr class="separator:ac96fcf5f10acb30252749a3dea10514f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65bd3655079b5750cf6edcf6fddc0fe2"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="subscriber__config_8h.html#a65bd3655079b5750cf6edcf6fddc0fe2">mdb_subscriber_on_metadata_t</a>) (const <a class="el" href="metadata_8h.html#a6489d35a1094d6631e039a71b6867089">mdb_metadata_t</a> *metadata, void *user_data)</td></tr>
-<tr class="separator:a65bd3655079b5750cf6edcf6fddc0fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ab14d4aedcfb821eefcffd32b61b82c"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="subscriber__config_8h.html#a6ab14d4aedcfb821eefcffd32b61b82c">mdb_subscriber_on_message_t</a>) (const <a class="el" href="message_8h.html#a720c6a2148976f68b1bbce65e33390bb">mdb_message_t</a> *message, void *user_data)</td></tr>
+<tr class="separator:a6ab14d4aedcfb821eefcffd32b61b82c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5d2affb95613fa642ff321844d56d232"><td class="memItemLeft" align="right" valign="top"><a class="el" href="subscriber__config_8h.html#ac96fcf5f10acb30252749a3dea10514f">mdb_subscriber_config_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="subscriber__config_8h.html#a5d2affb95613fa642ff321844d56d232">mdb_subscriber_config_create</a> (const char *topic, const char *source, <a class="el" href="subscriber__config_8h.html#a65bd3655079b5750cf6edcf6fddc0fe2">mdb_subscriber_on_metadata_t</a> on_metadata, void *user_data, <a class="el" href="structmdb__error__t.html">mdb_error_t</a> **error)</td></tr>
-<tr class="separator:a5d2affb95613fa642ff321844d56d232"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87a339903455cc21eb1d4427475c1504"><td class="memItemLeft" align="right" valign="top"><a class="el" href="subscriber__config_8h.html#ac96fcf5f10acb30252749a3dea10514f">mdb_subscriber_config_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="subscriber__config_8h.html#a87a339903455cc21eb1d4427475c1504">mdb_subscriber_config_create</a> (const char *topic, const char *source, <a class="el" href="subscriber__config_8h.html#a6ab14d4aedcfb821eefcffd32b61b82c">mdb_subscriber_on_message_t</a> on_message, void *user_data, <a class="el" href="structmdb__error__t.html">mdb_error_t</a> **error)</td></tr>
+<tr class="separator:a87a339903455cc21eb1d4427475c1504"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a875d630a096dc02b44afa6f186c176bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="subscriber__config_8h.html#a875d630a096dc02b44afa6f186c176bf">mdb_subscriber_config_destroy</a> (<a class="el" href="subscriber__config_8h.html#ac96fcf5f10acb30252749a3dea10514f">mdb_subscriber_config_t</a> **self)</td></tr>
 <tr class="separator:a875d630a096dc02b44afa6f186c176bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -124,22 +124,22 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a65bd3655079b5750cf6edcf6fddc0fe2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65bd3655079b5750cf6edcf6fddc0fe2">&#9670;&nbsp;</a></span>mdb_subscriber_on_metadata_t</h2>
+<a id="a6ab14d4aedcfb821eefcffd32b61b82c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ab14d4aedcfb821eefcffd32b61b82c">&#9670;&nbsp;</a></span>mdb_subscriber_on_message_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* mdb_subscriber_on_metadata_t) (const <a class="el" href="metadata_8h.html#a6489d35a1094d6631e039a71b6867089">mdb_metadata_t</a> *metadata, void *user_data)</td>
+          <td class="memname">typedef void(* mdb_subscriber_on_message_t) (const <a class="el" href="message_8h.html#a720c6a2148976f68b1bbce65e33390bb">mdb_message_t</a> *message, void *user_data)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Called when metadata is published on the channel.</p>
-<p>The metadata and its content is only valid during the callback, i.e. the associated memory is freed immediately following the return of callback.</p>
+<p>Called when a message published on the channel is received.</p>
+<p>The message and its content is only valid during the callback, i.e. the associated memory is freed immediately following the return of callback.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">metadata</td><td>The metadata. </td></tr>
+    <tr><td class="paramname">message</td><td>The message. </td></tr>
     <tr><td class="paramname">user_data</td><td>User data from mdb_subscriber_subscribe. </td></tr>
   </table>
   </dd>
@@ -148,8 +148,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a5d2affb95613fa642ff321844d56d232"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d2affb95613fa642ff321844d56d232">&#9670;&nbsp;</a></span>mdb_subscriber_config_create()</h2>
+<a id="a87a339903455cc21eb1d4427475c1504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87a339903455cc21eb1d4427475c1504">&#9670;&nbsp;</a></span>mdb_subscriber_config_create()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,8 +169,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="subscriber__config_8h.html#a65bd3655079b5750cf6edcf6fddc0fe2">mdb_subscriber_on_metadata_t</a>&#160;</td>
-          <td class="paramname"><em>on_metadata</em>, </td>
+          <td class="paramtype"><a class="el" href="subscriber__config_8h.html#a6ab14d4aedcfb821eefcffd32b61b82c">mdb_subscriber_on_message_t</a>&#160;</td>
+          <td class="paramname"><em>on_message</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -197,9 +197,9 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">topic</td><td>The topic is used to group similar channels. Permissions are set per topic. </td></tr>
     <tr><td class="paramname">source</td><td>The source or number of the channel. </td></tr>
-    <tr><td class="paramname">on_metadata</td><td>The metadata delivery callback function. </td></tr>
-    <tr><td class="paramname">user_data</td><td>Optional user data, will be argument to the on_metadata callback </td></tr>
-    <tr><td class="paramname">error</td><td>An <a class="el" href="structmdb__error__t.html">mdb_error_t</a> pointer reference or NULL. An <a class="el" href="structmdb__error__t.html">mdb_error_t</a> will be allocated on failure and must then be destroyed with mdb_destroy_error(). </td></tr>
+    <tr><td class="paramname">on_message</td><td>The message delivery callback function. </td></tr>
+    <tr><td class="paramname">user_data</td><td>Optional user data, will be argument to the on_message callback </td></tr>
+    <tr><td class="paramname">error</td><td>An <a class="el" href="structmdb__error__t.html">mdb_error_t</a> pointer reference or NULL. An <a class="el" href="structmdb__error__t.html">mdb_error_t</a> will be allocated on failure and must then be destroyed with <a class="el" href="error_8h.html#ac9429cca32c506161c9dbe2a0568287e">mdb_error_destroy()</a>. </td></tr>
   </table>
   </dd>
 </dl>

@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Metadata Broker
-   &#160;<span id="projectnumber">0.23.2</span>
+   &#160;<span id="projectnumber">0.26.5</span>
    </div>
   </td>
  </tr>
@@ -72,23 +72,25 @@ $(function() {
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Description    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><span id="client">client</span>   </td><td class="markdownTableBodyLeft">A producer or consumer of metadata.    </td></tr>
+<td class="markdownTableBodyLeft"><span id="channel">channel</span>   </td><td class="markdownTableBodyLeft">An object that publishes messages on a topic and source.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><span id="channel">channel</span>   </td><td class="markdownTableBodyLeft">A is an object on which metadata can be sent. Is created by instantiating a channel object and is uniquely identified by its topic and source.    </td></tr>
+<td class="markdownTableBodyLeft"><span id="client">client</span>   </td><td class="markdownTableBodyLeft">A producer or consumer of messages.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><span id="producer">producer</span>   </td><td class="markdownTableBodyLeft">A application that produces metadata over a channel on the metadata broker.    </td></tr>
+<td class="markdownTableBodyLeft"><span id="consumer">consumer</span>   </td><td class="markdownTableBodyLeft">An application that owns one or more subscriber objects.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><span id="consumer">consumer</span>   </td><td class="markdownTableBodyLeft">A application that subscribes to one or more channels.    </td></tr>
+<td class="markdownTableBodyLeft"><span id="info">info</span>   </td><td class="markdownTableBodyLeft">Channel information, e.g calibration tables and data structure.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><span id="subscriber">subscriber</span>   </td><td class="markdownTableBodyLeft">A subscriber is an object that makes it possible to subscribe to a channel and receive published metadata.    </td></tr>
+<td class="markdownTableBodyLeft"><span id="monitor">monitor</span>   </td><td class="markdownTableBodyLeft">An object that allows for finding <em>channels</em> and reading their <em>info</em>.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><span id="topic">topic</span>   </td><td class="markdownTableBodyLeft">A textual string that identifies a metadata channel. Access control is configured on the topic.    </td></tr>
+<td class="markdownTableBodyLeft"><span id="payload">payload</span>   </td><td class="markdownTableBodyLeft">The data published by producers on channels, and received by the consumers through subscribers.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><span id="source">source</span>   </td><td class="markdownTableBodyLeft">Similar metadata can be separated into several channels under one topic. The channels has a source, e.g. '0', '1', 'masked'. Access control can only be enforced on topic level, NOT on a source level.    </td></tr>
+<td class="markdownTableBodyLeft"><span id="producer">producer</span>   </td><td class="markdownTableBodyLeft">An application that owns one or more channel objects.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><span id="payload">payload</span>   </td><td class="markdownTableBodyLeft">The payload is the data published by producers to channels, and received by the consumers through subscribers.    </td></tr>
+<td class="markdownTableBodyLeft"><span id="source">source</span>   </td><td class="markdownTableBodyLeft">A topic can be divided into several sources. A channel is uniquely identified by the combination of a topic and a source. Access control is enforced on the topic level.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><span id="info">info</span>   </td><td class="markdownTableBodyLeft">Information that does not change during the lifetime of the channel object, such as calibration tables and how the metadata published by a producer is structured and what data it supports. A consumer can request the info from a producer.   </td></tr>
+<td class="markdownTableBodyLeft"><span id="subscriber">subscriber</span>   </td><td class="markdownTableBodyLeft">An object that receives messages on a topic and source.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><span id="topic">topic</span>   </td><td class="markdownTableBodyLeft">A textual string that identifies the messages sent/received. Access control is configured on the topic level.   </td></tr>
 </table>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

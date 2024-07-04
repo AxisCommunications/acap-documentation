@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Metadata Broker
-   &#160;<span id="projectnumber">0.23.2</span>
+   &#160;<span id="projectnumber">0.26.5</span>
    </div>
   </td>
  </tr>
@@ -69,26 +69,26 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><b>Note:</b> <em>Currently only the consumer part of the <code>libmdb</code> C API is supported.</em></p>
-<p><code>libmdb</code> is a C API used to interact with the feature called the Metadata Broker. It gives developers easy access to both consume and produce metadata. This is accomplished through an IPC mechanism using the Publish/Subscribe messaging paradigm.</p>
-<p>Features of the Metadata Broker:</p><ul>
-<li>Designed to remove the direct coupling between producers and consumers, removing any build time dependencies</li>
-<li>Adds the ability to distribute capabilities from producers to consumers</li>
-<li>Distribute data over different sources, e.g configurations of the stream or camera heads</li>
-<li>Smart start/stop of metadata production, producers can choose to only produce metadata when at least one consumer is present</li>
+<p><code>libmdb</code> is a C API used to interact with the feature called the Metadata Broker. It gives developers easy access to both consume and produce messages. This is accomplished through an IPC mechanism using the Publish/Subscribe messaging paradigm.</p>
+<p>Features of the metadata broker:</p><ul>
+<li>No direct coupling between producers and consumers, removes any build time dependencies.</li>
+<li>Channel info allows for distributing capabilities from producers to consumers.</li>
+<li>Distribution of data over different sources, e.g configurations of the stream or camera heads.</li>
+<li>Start/stop signaling to producers enables them to choose to only produce messages when consumers are present.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md0"></a>
+<h3><a class="anchor" id="autotoc_md3"></a>
 Getting started</h3>
 <ul>
 <li><a class="el" href="terminology.html">Terminology</a></li>
 <li><a class="el" href="standard_topics.html">Standard Topics</a></li>
 </ul>
-<h4><a class="anchor" id="autotoc_md1"></a>
+<h4><a class="anchor" id="autotoc_md4"></a>
 Consumer:</h4>
 <ul>
 <li><a class="el" href="subscriber_8h.html">Subscriber header</a></li>
 <li><a class="el" href="consumer_2main_8c-example.html">Simple example</a></li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2"></a>
+<h4><a class="anchor" id="autotoc_md5"></a>
 Producer:</h4>
 <ul>
 <li>Future release </li>

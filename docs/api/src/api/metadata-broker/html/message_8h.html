@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Metadata Broker: mdb/metadata.h File Reference</title>
+<title>Metadata Broker: mdb/message.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Metadata Broker
-   &#160;<span id="projectnumber">0.23.2</span>
+   &#160;<span id="projectnumber">0.26.5</span>
    </div>
   </td>
  </tr>
@@ -73,98 +73,98 @@ $(function() {
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">metadata.h File Reference</div>  </div>
+<div class="title">message.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;time.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for metadata.h:</div>
+Include dependency graph for message.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="metadata_8h__incl.png" border="0" usemap="#amdb_2metadata_8h" alt=""/></div>
+<div class="center"><img src="message_8h__incl.png" border="0" usemap="#amdb_2message_8h" alt=""/></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="metadata_8h__dep__incl.png" border="0" usemap="#amdb_2metadata_8hdep" alt=""/></div>
+<div class="center"><img src="message_8h__dep__incl.png" border="0" usemap="#amdb_2message_8hdep" alt=""/></div>
 </div>
 </div>
-<p><a href="metadata_8h_source.html">Go to the source code of this file.</a></p>
+<p><a href="message_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmdb__metadata__payload.html">mdb_metadata_payload</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmdb__message__payload.html">mdb_message_payload</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a6489d35a1094d6631e039a71b6867089"><td class="memItemLeft" align="right" valign="top">typedef struct mdb_metadata&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="metadata_8h.html#a6489d35a1094d6631e039a71b6867089">mdb_metadata_t</a></td></tr>
-<tr class="separator:a6489d35a1094d6631e039a71b6867089"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eee73ace17ccf07c5ea996012597223"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structmdb__metadata__payload.html">mdb_metadata_payload</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="metadata_8h.html#a6eee73ace17ccf07c5ea996012597223">mdb_metadata_payload_t</a></td></tr>
-<tr class="separator:a6eee73ace17ccf07c5ea996012597223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a720c6a2148976f68b1bbce65e33390bb"><td class="memItemLeft" align="right" valign="top">typedef struct mdb_message&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="message_8h.html#a720c6a2148976f68b1bbce65e33390bb">mdb_message_t</a></td></tr>
+<tr class="separator:a720c6a2148976f68b1bbce65e33390bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b38f36a233b3eb8908f2c281ebc9786"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structmdb__message__payload.html">mdb_message_payload</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="message_8h.html#a5b38f36a233b3eb8908f2c281ebc9786">mdb_message_payload_t</a></td></tr>
+<tr class="separator:a5b38f36a233b3eb8908f2c281ebc9786"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aedbc76faa13aa57ec13ec71b4bdec805"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="metadata_8h.html#a6eee73ace17ccf07c5ea996012597223">mdb_metadata_payload_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="metadata_8h.html#aedbc76faa13aa57ec13ec71b4bdec805">mdb_metadata_get_payload</a> (const <a class="el" href="metadata_8h.html#a6489d35a1094d6631e039a71b6867089">mdb_metadata_t</a> *metadata)</td></tr>
-<tr class="separator:aedbc76faa13aa57ec13ec71b4bdec805"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1357864022e6e52e04b885484c9efb89"><td class="memItemLeft" align="right" valign="top">const struct timespec *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="metadata_8h.html#a1357864022e6e52e04b885484c9efb89">mdb_metadata_get_timestamp</a> (const <a class="el" href="metadata_8h.html#a6489d35a1094d6631e039a71b6867089">mdb_metadata_t</a> *metadata)</td></tr>
-<tr class="separator:a1357864022e6e52e04b885484c9efb89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df94a7b61be9a303b643893943baeaa"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="message_8h.html#a5b38f36a233b3eb8908f2c281ebc9786">mdb_message_payload_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="message_8h.html#a4df94a7b61be9a303b643893943baeaa">mdb_message_get_payload</a> (const <a class="el" href="message_8h.html#a720c6a2148976f68b1bbce65e33390bb">mdb_message_t</a> *message)</td></tr>
+<tr class="separator:a4df94a7b61be9a303b643893943baeaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa02a04937507e44778287d09e054e394"><td class="memItemLeft" align="right" valign="top">const struct timespec *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="message_8h.html#aa02a04937507e44778287d09e054e394">mdb_message_get_timestamp</a> (const <a class="el" href="message_8h.html#a720c6a2148976f68b1bbce65e33390bb">mdb_message_t</a> *message)</td></tr>
+<tr class="separator:aa02a04937507e44778287d09e054e394"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Copyright Axis Communications AB</p>
-<p>This is the metadata header for the Metadata Broker client library. It contains type definitions and helper functions. </p>
+<p>This is the message header for the Metadata Broker client library. It contains type definitions and helper functions. </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="a6eee73ace17ccf07c5ea996012597223"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6eee73ace17ccf07c5ea996012597223">&#9670;&nbsp;</a></span>mdb_metadata_payload_t</h2>
+<a id="a5b38f36a233b3eb8908f2c281ebc9786"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b38f36a233b3eb8908f2c281ebc9786">&#9670;&nbsp;</a></span>mdb_message_payload_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="structmdb__metadata__payload.html">mdb_metadata_payload</a> <a class="el" href="metadata_8h.html#a6eee73ace17ccf07c5ea996012597223">mdb_metadata_payload_t</a></td>
+          <td class="memname">typedef struct <a class="el" href="structmdb__message__payload.html">mdb_message_payload</a> <a class="el" href="message_8h.html#a5b38f36a233b3eb8908f2c281ebc9786">mdb_message_payload_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The metadata payload type represents a payload data in the mdb_metadata_t message </p>
+<p>The message payload type represents a payload data in the mdb_message_t message </p>
 
 </div>
 </div>
-<a id="a6489d35a1094d6631e039a71b6867089"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6489d35a1094d6631e039a71b6867089">&#9670;&nbsp;</a></span>mdb_metadata_t</h2>
+<a id="a720c6a2148976f68b1bbce65e33390bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a720c6a2148976f68b1bbce65e33390bb">&#9670;&nbsp;</a></span>mdb_message_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct mdb_metadata <a class="el" href="metadata_8h.html#a6489d35a1094d6631e039a71b6867089">mdb_metadata_t</a></td>
+          <td class="memname">typedef struct mdb_message <a class="el" href="message_8h.html#a720c6a2148976f68b1bbce65e33390bb">mdb_message_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The metadata type is as a container for metadata </p>
+<p>The message type is as a container for a message </p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aedbc76faa13aa57ec13ec71b4bdec805"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedbc76faa13aa57ec13ec71b4bdec805">&#9670;&nbsp;</a></span>mdb_metadata_get_payload()</h2>
+<a id="a4df94a7b61be9a303b643893943baeaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4df94a7b61be9a303b643893943baeaa">&#9670;&nbsp;</a></span>mdb_message_get_payload()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="metadata_8h.html#a6eee73ace17ccf07c5ea996012597223">mdb_metadata_payload_t</a>* mdb_metadata_get_payload </td>
+          <td class="memname">const <a class="el" href="message_8h.html#a5b38f36a233b3eb8908f2c281ebc9786">mdb_message_payload_t</a>* mdb_message_get_payload </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="metadata_8h.html#a6489d35a1094d6631e039a71b6867089">mdb_metadata_t</a> *&#160;</td>
-          <td class="paramname"><em>metadata</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="message_8h.html#a720c6a2148976f68b1bbce65e33390bb">mdb_message_t</a> *&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Access payload associated with delivered metadata</p>
-<p>The data returned share lifetime with the metadata argument.</p>
+<p>Access payload associated with delivered message</p>
+<p>The data returned share lifetime with the message.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">metadata</td><td>Metadata container returned by on_metadata. </td></tr>
+    <tr><td class="paramname">message</td><td>Container returned by on_message. </td></tr>
   </table>
   </dd>
 </dl>
@@ -174,30 +174,30 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1357864022e6e52e04b885484c9efb89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1357864022e6e52e04b885484c9efb89">&#9670;&nbsp;</a></span>mdb_metadata_get_timestamp()</h2>
+<a id="aa02a04937507e44778287d09e054e394"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa02a04937507e44778287d09e054e394">&#9670;&nbsp;</a></span>mdb_message_get_timestamp()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const struct timespec* mdb_metadata_get_timestamp </td>
+          <td class="memname">const struct timespec* mdb_message_get_timestamp </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="metadata_8h.html#a6489d35a1094d6631e039a71b6867089">mdb_metadata_t</a> *&#160;</td>
-          <td class="paramname"><em>metadata</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="message_8h.html#a720c6a2148976f68b1bbce65e33390bb">mdb_message_t</a> *&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Access timestamp associated with delivered metadata</p>
-<p>The data returned share lifetime with the metadata argument.</p>
+<p>Access timestamp associated with delivered message</p>
+<p>The data returned share lifetime with the message.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">metadata</td><td>Metadata container returned by on_metadata. </td></tr>
+    <tr><td class="paramname">message</td><td>Container returned by on_message. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>timestamp of metadata. The timestamp is in monotonic time. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>timestamp of the message. The timestamp is in monotonic time. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="consumer_2main_8c-example.html#a2">consumer/main.c</a>.</dd>
 </dl>
 

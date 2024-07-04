@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Metadata Broker
-   &#160;<span id="projectnumber">0.23.2</span>
+   &#160;<span id="projectnumber">0.26.5</span>
    </div>
   </td>
  </tr>
@@ -162,7 +162,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">on_error</td><td>Will be called if any asynchronous error occurs during the lifecycle of the returned connection. Can be set to NULL. </td></tr>
     <tr><td class="paramname">user_data</td><td>Optional user data, will be argument to the callback on_error. </td></tr>
-    <tr><td class="paramname">error</td><td>An <a class="el" href="structmdb__error__t.html">mdb_error_t</a> pointer reference or NULL. An <a class="el" href="structmdb__error__t.html">mdb_error_t</a> will be allocated on failure and must then be destroyed with mdb_destroy_error(). </td></tr>
+    <tr><td class="paramname">error</td><td>An <a class="el" href="structmdb__error__t.html">mdb_error_t</a> pointer reference or NULL. An <a class="el" href="structmdb__error__t.html">mdb_error_t</a> will be allocated on failure and must then be destroyed with <a class="el" href="error_8h.html#ac9429cca32c506161c9dbe2a0568287e">mdb_error_destroy()</a>. </td></tr>
   </table>
   </dd>
 </dl>

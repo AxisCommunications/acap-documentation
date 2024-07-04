@@ -113,7 +113,7 @@ main(int argc, char **argv)
   settings.select_callback = NULL;
   settings.backend = AXOVERLAY_OPENGLES_BACKEND;
   axoverlay_init(&settings, &error);
-  if (error != NULL) {
+  if (error) {
     syslog(LOG_ERR, "Failed to initialize axoverlay: %s", error->message);
     g_error_free(error);
     return 1;
@@ -130,7 +130,7 @@ main(int argc, char **argv)
   data.height = OVERLAY_WIDTH;
   data.colorspace = AXOVERLAY_COLORSPACE_ARGB32;
   overlay_id = axoverlay_create_overlay(&data, NULL, &error);
-  if (error != NULL) {
+  if (error) {
     syslog(LOG_ERR, "Failed to create overlay: %s", error->message);
     g_error_free(error);
     return 1;
@@ -138,7 +138,7 @@ main(int argc, char **argv)
 
   /* Draw overlays */
   axoverlay_redraw(&error);
-  if (error != NULL) {
+  if (error) {
     syslog(LOG_ERR, "Failed to draw overlays: %s", error->message);
     g_error_free(error);
     return 1;
@@ -149,7 +149,7 @@ main(int argc, char **argv)
 
   /* Destroy the overlay */
   axoverlay_destroy_overlay(overlay_id, &error);
-  if (error != NULL) {
+  if (error) {
     syslog(LOG_ERR, "Failed to destroy overlay: %s", error->message);
     g_error_free(error);
     return 1;

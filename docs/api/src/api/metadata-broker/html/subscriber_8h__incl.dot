@@ -21,7 +21,7 @@ digraph "mdb/subscriber.h"
   Node7 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node7 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="mdb/metadata.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$metadata_8h.html",tooltip=" "];
+  Node8 [label="mdb/message.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$message_8h.html",tooltip=" "];
   Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 [label="stdint.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

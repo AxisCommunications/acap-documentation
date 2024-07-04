@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.2.113-dirty</span>
+   &#160;<span id="projectnumber">3.2.181-dirty</span>
    </div>
   </td>
  </tr>
@@ -206,7 +206,10 @@ $(function() {
 <p>OpenCL is a compute framework which enables programmers to write programs that execute across heterogeneous platforms such as CPUs, GPUs and more. larod contains predefined OpenCL programs which lets a larod user through its OpenCL backend conveniently run image crop, scale and format conversion.</p>
 <p>The platform larod runs on may have several devices supporting the OpenCL framework. larod can run its operations on any of these devices; each OpenCL device has a unique device name.</p>
 <h4>Choosing a specific device</h4>
-<p>There are currently two available OpenCL backends; these are <code>"axis-a8-dlpu-proc"</code>, which runs on the DLPU on ARTPEC-8, and <code>"axis-a8-gpu-proc"</code>, which runs on the GPU on ARTPEC-8. A device handle to one of these backends can be retrieved by providing the respective device name to <code><a class="el" href="larod_8h.html#a29a9707a190c2d0c44f7e50f942b2621" title="Get an available device. ">larodGetDevice()</a></code>.</p>
+<p>On ARTPEC-8 there are currently two available OpenCL backends; these are <code>"axis-a8-dlpu-proc"</code>, which runs on the DLPU, and <code>"axis-a8-gpu-proc"</code>, which runs on the GPU.</p>
+<p>On ARTPEC-9 there is only one OpenCL backend: <code>"a9-gpu-proc"</code>, which runs on the GPU.</p>
+<p>Other platforms do not have any OpenCL backends.</p>
+<p>A device handle to one of these backends can be retrieved by providing the respective device name to <code><a class="el" href="larod_8h.html#a29a9707a190c2d0c44f7e50f942b2621" title="Get an available device. ">larodGetDevice()</a></code>.</p>
 <h4>Supported buffer properties for running jobs</h4>
 <p>The backends supports the fd access types <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code>.</p>
 <h4>Allocation support</h4>
