@@ -41,4 +41,4 @@ var menudata={children:[
 {text:"Changelog",url:"release_notes.html"},
 {text:"ACAP Main Page",url:"../../../main/html/index.html"},
 {text:"SDK Main Page",url:"../../../sdk/html/index.html"},
-{text:"API Main Page",url:"../../../main/html/acap3_api.html"}]}
+{text:"API Main Page",url:"../../../main/html/acap_api.html"}]}

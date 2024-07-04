@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Metadata Broker: mdb_metadata_payload Struct Reference</title>
+<title>Metadata Broker: mdb_message_payload Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Metadata Broker
-   &#160;<span id="projectnumber">0.23.2</span>
+   &#160;<span id="projectnumber">0.26.5</span>
    </div>
   </td>
  </tr>
@@ -67,32 +67,32 @@ $(function() {
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">mdb_metadata_payload Struct Reference</div>  </div>
+<div class="title">mdb_message_payload Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="metadata_8h_source.html">metadata.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="message_8h_source.html">message.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:ad83e355a7c264f13590fc8beb3fb0793"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmdb__metadata__payload.html#ad83e355a7c264f13590fc8beb3fb0793">size</a></td></tr>
-<tr class="separator:ad83e355a7c264f13590fc8beb3fb0793"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5932ad31fcaae725b942bbb6b3e98aa9"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmdb__metadata__payload.html#a5932ad31fcaae725b942bbb6b3e98aa9">data</a></td></tr>
-<tr class="separator:a5932ad31fcaae725b942bbb6b3e98aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7617124f3feedd6c426a40f2f1c42d7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmdb__message__payload.html#ad7617124f3feedd6c426a40f2f1c42d7">size</a></td></tr>
+<tr class="separator:ad7617124f3feedd6c426a40f2f1c42d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a032a38f30c1ec5e31eb661560cf87573"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmdb__message__payload.html#a032a38f30c1ec5e31eb661560cf87573">data</a></td></tr>
+<tr class="separator:a032a38f30c1ec5e31eb661560cf87573"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The metadata payload type represents a payload data in the mdb_metadata_t message </p>
+<div class="textblock"><p>The message payload type represents a payload data in the mdb_message_t message </p>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="consumer_2main_8c-example.html#_a3">consumer/main.c</a>.</dd>
 </dl>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a5932ad31fcaae725b942bbb6b3e98aa9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5932ad31fcaae725b942bbb6b3e98aa9">&#9670;&nbsp;</a></span>data</h2>
+<a id="a032a38f30c1ec5e31eb661560cf87573"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a032a38f30c1ec5e31eb661560cf87573">&#9670;&nbsp;</a></span>data</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t* mdb_metadata_payload::data</td>
+          <td class="memname">uint8_t* mdb_message_payload::data</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -102,14 +102,14 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="ad83e355a7c264f13590fc8beb3fb0793"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad83e355a7c264f13590fc8beb3fb0793">&#9670;&nbsp;</a></span>size</h2>
+<a id="ad7617124f3feedd6c426a40f2f1c42d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7617124f3feedd6c426a40f2f1c42d7">&#9670;&nbsp;</a></span>size</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t mdb_metadata_payload::size</td>
+          <td class="memname">size_t mdb_message_payload::size</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -120,7 +120,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>mdb/<a class="el" href="metadata_8h_source.html">metadata.h</a></li>
+<li>mdb/<a class="el" href="message_8h_source.html">message.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->

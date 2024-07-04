@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Metadata Broker
-   &#160;<span id="projectnumber">0.23.2</span>
+   &#160;<span id="projectnumber">0.26.5</span>
    </div>
   </td>
  </tr>
@@ -87,19 +87,19 @@ $(function() {
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>mdb_subscriber <a class="code" href="subscriber_8h.html#a39a644a12906969ebb78bea767be51db">mdb_subscriber_t</a>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="subscriber_8h.html#a9f44692fc3bf9b0efb7a4b2c1ef04a50">   54</a></span>&#160;<a class="code" href="subscriber_8h.html#a39a644a12906969ebb78bea767be51db">mdb_subscriber_t</a> *<a class="code" href="subscriber_8h.html#a9f44692fc3bf9b0efb7a4b2c1ef04a50">mdb_subscriber_create_async</a>(<a class="code" href="connection_8h.html#a699ef9a88cc82008d70f5e67002834bb">mdb_connection_t</a> *connection,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                              <a class="code" href="subscriber__config_8h.html#ac96fcf5f10acb30252749a3dea10514f">mdb_subscriber_config_t</a> *config,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                              <a class="code" href="signatures_8h.html#a43948f3522f52478493bc59df7cbe0ec">mdb_on_done_t</a> on_done,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                              <span class="keywordtype">void</span> *user_data,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                              <a class="code" href="structmdb__error__t.html">mdb_error_t</a> **error);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="subscriber_8h.html#a0c274a9660bb716b41bb38d3b970f1a6">   68</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="subscriber_8h.html#a0c274a9660bb716b41bb38d3b970f1a6">mdb_subscriber_destroy</a>(<a class="code" href="subscriber_8h.html#a39a644a12906969ebb78bea767be51db">mdb_subscriber_t</a> **<span class="keyword">self</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="subscriber_8h.html#a9f44692fc3bf9b0efb7a4b2c1ef04a50">   50</a></span>&#160;<a class="code" href="subscriber_8h.html#a39a644a12906969ebb78bea767be51db">mdb_subscriber_t</a> *<a class="code" href="subscriber_8h.html#a9f44692fc3bf9b0efb7a4b2c1ef04a50">mdb_subscriber_create_async</a>(<a class="code" href="connection_8h.html#a699ef9a88cc82008d70f5e67002834bb">mdb_connection_t</a> *connection,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                              <a class="code" href="subscriber__config_8h.html#ac96fcf5f10acb30252749a3dea10514f">mdb_subscriber_config_t</a> *config,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                              <a class="code" href="signatures_8h.html#a43948f3522f52478493bc59df7cbe0ec">mdb_on_done_t</a> on_done,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                              <span class="keywordtype">void</span> *user_data,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                              <a class="code" href="structmdb__error__t.html">mdb_error_t</a> **error);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="subscriber_8h.html#a0c274a9660bb716b41bb38d3b970f1a6">   64</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="subscriber_8h.html#a0c274a9660bb716b41bb38d3b970f1a6">mdb_subscriber_destroy</a>(<a class="code" href="subscriber_8h.html#a39a644a12906969ebb78bea767be51db">mdb_subscriber_t</a> **<span class="keyword">self</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aconnection_8h_html"><div class="ttname"><a href="connection_8h.html">connection.h</a></div></div>
 <div class="ttc" id="aconnection_8h_html_a699ef9a88cc82008d70f5e67002834bb"><div class="ttname"><a href="connection_8h.html#a699ef9a88cc82008d70f5e67002834bb">mdb_connection_t</a></div><div class="ttdeci">struct mdb_connection mdb_connection_t</div><div class="ttdef"><b>Definition:</b> connection.h:29</div></div>
 <div class="ttc" id="aerror_8h_html"><div class="ttname"><a href="error_8h.html">error.h</a></div></div>

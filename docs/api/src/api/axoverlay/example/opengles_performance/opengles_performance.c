@@ -60,6 +60,7 @@ gboolean render_trigger_redraw(gpointer data)
   if (error) {
     syslog(LOG_ERR, "%s: Failed to trigger redraw using axoverlay: %s\n",
         __func__, error->message);
+    g_error_free(error);
     return FALSE;
   }
   return TRUE;
@@ -286,7 +287,7 @@ main(int argc, char **argv)
   settings.backend = AXOVERLAY_OPENGLES_BACKEND;
 
   axoverlay_init(&settings, &error);
-  if (error != NULL) {
+  if (error) {
     syslog(LOG_ERR, "Failed to initialize axoverlay: %s", error->message);
     g_error_free(error);
     return 1;
@@ -307,7 +308,7 @@ main(int argc, char **argv)
   data1.colorspace = AXOVERLAY_COLORSPACE_ARGB32;
 
   overlay_id1 = axoverlay_create_overlay(&data1, NULL, &error);
-  if (error != NULL) {
+  if (error) {
     syslog(LOG_ERR, "Failed to create first overlay: %s", error->message);
     g_error_free(error);
     return 1;
@@ -320,7 +321,7 @@ main(int argc, char **argv)
 
   /* Add cleanup code here */
   axoverlay_destroy_overlay(overlay_id1, &error);
-  if (error != NULL) {
+  if (error) {
     syslog(LOG_ERR, "Failed to destroy first overlay: %s", error->message);
     g_error_free(error);
     return 0;
