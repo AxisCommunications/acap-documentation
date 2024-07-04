@@ -21,7 +21,7 @@ From AXIS OS 11.6, ACAP applications can acquire VAPIX service account credentia
 >     - to   `('a0-testuser:MH757eGZdsyBuAbhAQ3j2ZtRNg9xchEg',)`
 > - In AXIS OS 11.9 the VAPIX access feature reached General Availability.
 > - Starting from AXIS OS 11.11, an ACAP application user can get SSH access by
->   enabling [Developer Mode](../../get-started/set-up-developer-environment/set-up-device-advanced.md#developer-mode).
+>   enabling [Developer Mode](../get-started/set-up-developer-environment/set-up-device-advanced#developer-mode).
 
 ## Example application
 
