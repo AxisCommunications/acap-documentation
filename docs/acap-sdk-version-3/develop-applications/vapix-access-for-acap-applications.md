@@ -14,9 +14,12 @@ From AXIS OS 11.6, ACAP applications can acquire VAPIX service account credentia
 >
 > - In AXIS OS 11.6, a first beta version of VAPIX access was provided.
 > - In AXIS OS 11.8, the following updates were made:
->   - The D-Bus object path changed from `/com/axis/HTTPConf1/Auth1` to `/com/axis/HTTPConf1/VAPIXServiceAccounts1`.
+>   - The D-Bus object path changed from `/com/axis/HTTPConf1/Auth` to `/com/axis/HTTPConf1/VAPIXServiceAccounts1`.
 >   - The D-Bus interface changed from `com.axis.HTTPConf1.Auth1` to `com.axis.HTTPConf1.VAPIXServiceAccounts1`.
 >   - The method name changed from `GetVapixServiceAccountCredentials` to `GetCredentials`.
+>   - The return format of the credentials changed.
+>     - from `('id:a0-testuser, pass:MH757eGZdsyBuAbhAQ3j2ZtRNg9xchEg',)`
+>     - to   `('a0-testuser:MH757eGZdsyBuAbhAQ3j2ZtRNg9xchEg',)`
 > - In AXIS OS 11.9 the VAPIX access feature reached General Availability.
 > - Starting from AXIS OS 11.11, an ACAP application user can get SSH access by
 >   enabling [Developer Mode](../../get-started/set-up-developer-environment/set-up-device-advanced.md#developer-mode).
@@ -135,6 +138,8 @@ After obtaining the credentials, it's ready to make the actual VAPIX call. The A
 
 SSH into a device and make a D-Bus call using a command-line to get VAPIX service account credentials.
 
+> - **Note** Starting from AXIS OS 11.11, an ACAP application user can get SSH access by enabling [Developer Mode](../get-started/set-up-developer-environment/set-up-device-advanced#developer-mode).
+
 Example call:
 
 ```bash
@@ -148,7 +153,7 @@ gdbus call --system
 Example response:
 
 ```bash
-('id:a0-testuser, pass:MH757eGZdsyBuAbhAQ3j2ZtRNg9xchEg',)
+('a0-testuser:MH757eGZdsyBuAbhAQ3j2ZtRNg9xchEg',)
 ```
 
 Make a VAPIX request on local virtual host 127.0.0.12 with the given credentials using `curl`.
