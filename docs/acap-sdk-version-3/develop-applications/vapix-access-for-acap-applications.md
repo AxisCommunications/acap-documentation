@@ -138,6 +138,8 @@ After obtaining the credentials, it's ready to make the actual VAPIX call. The A
 
 SSH into a device and make a D-Bus call using a command-line to get VAPIX service account credentials.
 
+> - **Note** Starting from AXIS OS 11.11, an ACAP application user can get SSH access by enabling [Developer Mode](../get-started/set-up-developer-environment/set-up-device-advanced#developer-mode).
+
 Example call:
 
 ```bash
