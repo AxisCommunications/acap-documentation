@@ -106,11 +106,11 @@ eap-install.sh
 
 Run the command without any options to get help.
 
-To install a built application on a device, run the following command (you must enter the IP address and the root password of the device the first time):
+To install a built application on a device, run the following command (you must enter the IP address and username and password of the device the first time):
 
 ```bash
-eap-install.sh <device-ip> <password> install
-eap-install.sh 192.168.0.90 pass install
+eap-install.sh <axis_device_ip> <admin_account> <password> install
+eap-install.sh 192.168.0.90 admin-user admin-password install
 ```
 
 The command remembers the device-ip and password after the first successful execution. After this you can simply run:
