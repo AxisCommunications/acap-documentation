@@ -136,11 +136,12 @@ SSH into a device and make a D-Bus call using a command-line to get VAPIX servic
 Example call:
 
 ```bash
-gdbus call --system
-            --dest com.axis.HTTPConf1
-            --object-path /com/axis/HTTPConf1/VAPIXServiceAccounts1
-            --method com.axis.HTTPConf1.VAPIXServiceAccounts1.GetCredentials
-            "testuser"
+gdbus call \
+        --system \
+        --dest com.axis.HTTPConf1 \
+        --object-path /com/axis/HTTPConf1/VAPIXServiceAccounts1 \
+        --method com.axis.HTTPConf1.VAPIXServiceAccounts1.GetCredentials \
+        "testuser"
 ```
 
 Example response:
