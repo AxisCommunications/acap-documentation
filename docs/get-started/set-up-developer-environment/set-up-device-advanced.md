@@ -42,7 +42,10 @@ This is exemplified using `curl`:
 > More options may be required depending on your network setup.
 
 ```sh
-curl -u '<username>:<password>' --anyauth "http://192.168.0.90/axis-cgi/admin/param.cgi?action=update&Network.SSH.Enabled=yes"
+curl \
+  -u <username>:<password> \
+  --anyauth \
+  "http://192.168.0.90/axis-cgi/admin/param.cgi?action=update&Network.SSH.Enabled=yes"
 ```
 
 ### Create an SSH user
