@@ -49,7 +49,7 @@ refer to [Find the right SDK for software compatibility](../axis-devices-and-com
 
 ### ACAP Runtime APIs
 
-The ACAP Runtime service is an installable ACAP application that provides:
+The ACAP Runtime service provides the following APIs:
 
 - [Video capture API](#video-capture-api): Enables capture of images from a camera
 - [Machine learning API](#machine-learning-api): Tensorflow Serving for inference service
@@ -57,7 +57,7 @@ The ACAP Runtime service is an installable ACAP application that provides:
 
 ACAP Runtime acts as a server that exposes the above APIs as gRPC APIs by using [gRPC](https://grpc.io) and a [UNIX domain socket (UDS)](https://grpc.github.io/grpc/cpp/md_doc_naming.html) for access. The access is restricted to applications in the device that belongs to the `sdk` user group.
 
-In order to use the ACAP Runtime APIs, it's required to install the ACAP Runtime application on the Axis network device. The application is distributed both as an ACAP Native SDK application and as a Docker container, detailed instructions for installation can be found [here](https://github.com/AxisCommunications/acap-runtime/tree/main#installation).
+The recommended way to use ACAP Runtime is to install Docker ACAP or Docker Compose ACAP on the device, and then load and run the ACAP Runtime Docker image. Detailed instructions for installation can be found [here](https://github.com/AxisCommunications/acap-runtime/?tab=readme-ov-file#containerized-version).
 
 ### Video capture API
 
