@@ -34,6 +34,11 @@ The ACAP Native SDK provides the following APIs:
 
 ## Compatibility
 
+> APIs on this page list which chips they are supported on, but note that the
+> underlying feature also needs to be found and supported on the product. For
+> example, the Video capture API is only available on devices with an image
+> sensor.
+
 To find compatibility between ACAP Native SDK and AXIS OS version,
 refer to [Find the right SDK for software compatibility](../axis-devices-and-compatibility/#find-the-right-sdk-for-software-compatibility).
 

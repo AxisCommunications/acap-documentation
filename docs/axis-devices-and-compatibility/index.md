@@ -19,7 +19,7 @@ compiled using the SDK corresponding to the chip architecture in the device.
 ## Software compatibility
 
 An ACAP application is software compatible with AXIS OS if the APIs and other
-ACAP Runtime features are available in the specific AXIS OS release. The
+runtime features are available in the specific AXIS OS release. The
 availability of APIs in AXIS OS depends on both the AXIS OS version and the
 device itself since some APIs are only relevant for certain devices. For
 example, the Video capture API is only available on devices with an image
