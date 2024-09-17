@@ -48,9 +48,9 @@ More than one filter can be combined in a search, for example in the mentioned *
 
 For convenience, here are direct links to a few specific filters you can apply:
 
-- [Container support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B4%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
-- [DLPU support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B4%2C1%5D%2C%22value%22%3A%22DLPU%22%7D%5D)
-- [Container + DLPU support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B4%2C1%5D%2C%22value%22%3A%22DLPU%22%7D%2C%7B%22index%22%3A%5B4%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
+- [Container support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
+- [DLPU support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C1%5D%2C%22value%22%3A%22DLPU%22%7D%5D)
+- [Container + DLPU support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C1%5D%2C%22value%22%3A%22DLPU%22%7D%2C%7B%22index%22%3A%5B10%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
 
 ### ACAP Native SDK hardware compatibility
 
