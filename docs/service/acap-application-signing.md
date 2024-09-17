@@ -31,20 +31,19 @@ With [AXIS OS 9.20](https://help.axis.com/en-us/axis-os-release-notes#active-201
 
 With [AXIS OS 11.2](https://help.axis.com/en-us/axis-os-release-notes#axis-os-11-2), an [interface is added to VAPIX](https://www.axis.com/vapix-library/subjects/t10102231/section/t10036126/display?section=t10036126-t10185050) to control whether an Axis device only accepts signed ACAP applications or not, improving the device's security posture.
 
+In AXIS OS 12.0, the default value has changed to only allow signed applications by default. For more information regarding the reasoning for this change,
+see the [article](https://www.axis.com/developer-community/news/axis-os-root-acap-signing) on Developer Community. If developers want to install unsigned applications, they can do so by either using the VAPIX interface to allow unsigned applications or by manually toggling the **Allow unsigned apps** toggle through the web interface.
+
 | AXIS OS      | Signing requirement (default value) | Change signing requirement |
 | ------------ | ------------- | ----------- |
 | 9.20 - 11.1  | Both signed and unsigned applications are allowed to be installed. | Not possible to change. |
 | 11.2 - 11.11 | Both signed and unsigned applications are allowed to be installed. | The VAPIX interface can be used to configure the device to only allow signed applications. |
+| 12.0 -       | Only signed applications are allowed to be installed. | The VAPIX interface can be used to configure the device to allow both signed and unsigned applications. |
 
 Axis recommends that you allow unsigned applications to be installed during the
 development of your ACAP application.
 
 #### Planned changes
-
-With AXIS OS 12.0, the default value is planned to change to only allow signed
-applications by default. For more information regarding the reasoning for this
-change, see the [article](https://www.axis.com/developer-community/news/axis-os-root-acap-signing)
-on Developer Community.
 
 The VAPIX interface introduced in AXIS OS 11.2 is planned to be removed in a
 future version of AXIS OS, only allowing signed ACAP applications to be
@@ -52,7 +51,6 @@ installed on a device.
 
 | AXIS OS      | Signing requirement (default value) | Change signing requirement |
 | ------------ | ------------- | ----------- |
-| 12.0 -       | Only signed applications are allowed to be installed. | The VAPIX interface can be used to configure the device to allow both signed and unsigned applications. |
 | Future       | Only signed applications are allowed to be installed. | Not possible to change, VAPIX interface removed. |
 
 ### Get help

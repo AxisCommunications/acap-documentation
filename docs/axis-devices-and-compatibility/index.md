@@ -19,7 +19,7 @@ compiled using the SDK corresponding to the chip architecture in the device.
 ## Software compatibility
 
 An ACAP application is software compatible with AXIS OS if the APIs and other
-ACAP Runtime features are available in the specific AXIS OS release. The
+runtime features are available in the specific AXIS OS release. The
 availability of APIs in AXIS OS depends on both the AXIS OS version and the
 device itself since some APIs are only relevant for certain devices. For
 example, the Video capture API is only available on devices with an image
@@ -48,9 +48,9 @@ More than one filter can be combined in a search, for example in the mentioned *
 
 For convenience, here are direct links to a few specific filters you can apply:
 
-- [Container support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B4%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
-- [DLPU support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B4%2C1%5D%2C%22value%22%3A%22DLPU%22%7D%5D)
-- [Container + DLPU support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B4%2C1%5D%2C%22value%22%3A%22DLPU%22%7D%2C%7B%22index%22%3A%5B4%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
+- [Container support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
+- [DLPU support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C1%5D%2C%22value%22%3A%22DLPU%22%7D%5D)
+- [Container + DLPU support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C1%5D%2C%22value%22%3A%22DLPU%22%7D%2C%7B%22index%22%3A%5B10%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
 
 ### ACAP Native SDK hardware compatibility
 
