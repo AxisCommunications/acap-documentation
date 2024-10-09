@@ -119,7 +119,7 @@ apis="\
   axstorage \
   larod \
   licensekey \
-  metadata-broker \
+  message-broker \
   vdostream \
 "
 

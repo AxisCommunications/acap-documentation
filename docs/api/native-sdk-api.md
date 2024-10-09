@@ -15,7 +15,7 @@ The ACAP Native SDK provides the following APIs:
   - [Event API](#event-api)
   - [License Key API](#license-key-api)
   - [Machine learning API (Larod)](#machine-learning-api-larod)
-  - [Metadata Broker API](#metadata-broker-api) <a class="label label-blue">BETA</a>
+  - [Message Broker API](#message-broker-api) <a class="label label-blue">BETA</a>
   - [Overlay APIs](#overlay-apis)
     - [Axoverlay API](#axoverlay-api)
     - [Bounding Box API](#bounding-box-api)
@@ -190,21 +190,23 @@ The Machine learning API was introduced in Native SDK 1.0. All larod API version
   - The example code focus on object detection, cropping and saving detected objects into JPEG files.
   - A separate example is available for [CV25](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/object-detection-cv25) cameras.
 
-## Metadata Broker API
+## Message Broker API
 
 > This API is a [Beta version](./beta-api) and developers are encouraged to test and leave feedback.
 
-Go to the [ACAP API Documentation](src/api/metadata-broker/html/index.html) for detailed
+> This API was formerly known as Metadata Broker.
+
+Go to the [ACAP API Documentation](src/api/message-broker/html/index.html) for detailed
 functional descriptions of this API.
 
-The Metadata Broker API allows an ACAP application to consume metadata from
+The Message Broker API allows an ACAP application to consume metadata from
 a producer in AXIS OS by subscribing to a `topic`.
 
 The API implements the Publish/Subscribe messaging paradigm.
 
 ### Compatibility
 
-The Metadata Broker API is supported on products with the following chips:
+The Message Broker API is supported on products with the following chips:
 
 - ARTPEC-8
 - ARTPEC-7
@@ -212,16 +214,16 @@ The Metadata Broker API is supported on products with the following chips:
 
 ### Version history
 
-The Metadata Broker API was introduced in Native SDK 1.13.
+The Message Broker API was introduced in Native SDK 1.13.
 
-AXIS OS version | Metadata Broker API version | New functions added
+AXIS OS version | Message Broker API version | New functions added
 -- | -- | --
-11.9 | 0.23.2 | New topic  `com.axis.analytics_scene_description.v0.beta`
+11.9 | 0.23.2 | New topic `com.axis.analytics_scene_description.v0.beta`
 11.11 | 0.26.5 | New topic `com.axis.consolidated_track.v1.beta`
 
 ### Code Examples
 
-- [analytics-scene-description-example](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/metadata-broker/consume-analytics-scene-description)
+- [analytics-scene-description-example](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/message-broker/consume-analytics-scene-description)
   - The example is written in C and shows how to consume metadata stream
     **Analytics Scene Description**.
 
