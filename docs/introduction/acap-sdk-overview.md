@@ -15,7 +15,7 @@ Here is a summary of the difference between Native SDK and Computer Vision solut
 
 | | Native SDK | Computer Vision solution (Deprecated) |
 |--|--|--|
-| Supported Products | ARTPEC-8, ARTPEC-7, ARTPEC-6, CV25, i.MX 6SoloX, i.MX 6ULL, S5L, S5 (see the [full compatibility list](../axis-devices-and-compatibility/#acap-native-sdk-software-compatibility)) | ARTPEC-8 (see the [full compatibility list](../axis-devices-and-compatibility/#acap-computer-vision-solution-software-compatibility)) |
+| Supported Products | (see the [full compatibility list](../axis-devices-and-compatibility/#acap-native-sdk-hardware-compatibility)) | (see the [full compatibility list](../axis-devices-and-compatibility/#acap-computer-vision-sdk-hardware-compatibility)) |
 | Requirements | Minimum AXIS OS 10.7 | Minimum AXIS OS 10.7, SD card |
 | Programming Languages | C/C++ | C/C++, Python, .NET <br />  (and other mainstream languages) |
 | App Development | Docker | Docker |

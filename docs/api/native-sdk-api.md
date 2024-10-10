@@ -59,10 +59,7 @@ The API is supported on products with the following chips:
 - ARTPEC-7
 - ARTPEC-6
 - Ambarella CV25
-- Ambarella S5L
-- Ambarella S5
 - i.MX 6SoloX
-- i.MX 6ULL
 
 ### Version history
 
@@ -113,10 +110,7 @@ The API is supported on products with the following chips:
 - ARTPEC-7
 - ARTPEC-6
 - Ambarella CV25
-- Ambarella S5L
-- Ambarella S5
 - i.MX 6SoloX
-- i.MX 6ULL
 
 ### Version history
 
@@ -147,10 +141,7 @@ The API is supported on products with the following chips:
 - ARTPEC-7
 - ARTPEC-6
 - Ambarella CV25
-- Ambarella S5L
-- Ambarella S5
 - i.MX 6SoloX
-- i.MX 6ULL
 
 ### Version history
 
@@ -174,7 +165,6 @@ The Larod API is supported on products with the following chips:
 - ARTPEC-8
 - ARTPEC-7
 - Ambarella CV25
-- Ambarella S5L
 
 For products with a DLPU (Deep Learning Processing Unit), inference runs on the DLPU otherwise it runs on the CPU.
 
@@ -330,10 +320,7 @@ The Parameter API is supported on products with the following chips:
 - ARTPEC-7
 - ARTPEC-6
 - Ambarella CV25
-- Ambarella S5L
-- Ambarella S5
 - i.MX 6SoloX
-- i.MX 6ULL
 
 ### Version history
 
@@ -402,8 +389,6 @@ The API is supported on products with the following chips:
 - ARTPEC-7
 - ARTPEC-6
 - Ambarella CV25
-- Ambarella S5L
-- Ambarella S5
 
 #### Compatibility limitations
 
@@ -497,10 +482,7 @@ The FastCGI API is supported on products with the following chips:
 - ARTPEC-7
 - ARTPEC-6
 - Ambarella CV25
-- Ambarella S5L
-- Ambarella S5
 - i.MX 6SoloX
-- i.MX 6ULL
 
 ### Version history
 
@@ -523,10 +505,7 @@ The OpenSSL API is supported on products with the following chips:
 - ARTPEC-7
 - ARTPEC-6
 - Ambarella CV25
-- Ambarella S5L
-- Ambarella S5
 - i.MX 6SoloX
-- i.MX 6ULL
 
 ### Version history
 
@@ -549,10 +528,7 @@ The Jansson API is supported on products with the following chips:
 - ARTPEC-7
 - ARTPEC-6
 - Ambarella CV25
-- Ambarella S5L
-- Ambarella S5
 - i.MX 6SoloX
-- i.MX 6ULL
 
 ### Version history
 
@@ -575,10 +551,7 @@ The curl API is supported on products with the following chips:
 - ARTPEC-7
 - ARTPEC-6
 - Ambarella CV25
-- Ambarella S5L
-- Ambarella S5
 - i.MX 6SoloX
-- i.MX 6ULL
 
 ### Version history
 

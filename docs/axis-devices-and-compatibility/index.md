@@ -61,9 +61,6 @@ ARTPEC-7    | armv7hf
 ARTPEC-8    | aarch64
 CV25        | aarch64
 i.MX 6SoloX | armv7hf
-i.MX 6ULL   | armv7hf
-S5          | aarch64
-S5L         | aarch64
 
 See detailed information in the [product interface
 guide](https://www.axis.com/developer-community/product-interface-guide).
