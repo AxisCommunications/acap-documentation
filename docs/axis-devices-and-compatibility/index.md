@@ -29,10 +29,6 @@ sensor.
 
 Device compatibility differs depending on which SDK you want to use.
 
-The *ACAP Computer Vision SDK* is supported on a limited set of devices.
-So, for this SDK, it's important to select one of the products listed
-in the [hardware compatibility](#acap-computer-vision-sdk-hardware-compatibility) section.
-
 The *ACAP Native SDK* is supported on all products for the chips listed in the
 [hardware compatibility](#acap-native-sdk-hardware-compatibility) table that support the minimum AXIS
 OS version required. So, for this SDK it is important to make sure that
@@ -40,9 +36,13 @@ the selected product or products support the minimum required AXIS OS version.
 See [software compatibility](#find-the-right-sdk-for-software-compatibility)
 table.
 
-### ACAP Computer Vision SDK hardware compatibility
+For containerized applications using the ACAP Computer Vision solution, compatibility is limited to specific devices and AXIS OS versions. See the [ACAP Computer Vision solution compatibility](#acap-computer-vision-solution-compatibility) section for more details.
 
-To get a list of devices that are compatible with the ACAP Computer Vision SDK, you can use Axis [Product Selector](https://www.axis.com/support/tools/product-selector). In the left menu under **Hardware platform**, check the **Container support** checkbox.
+### ACAP Computer Vision solution compatibility
+
+> **Important Note:** The containerized ACAP Computer Vision solution is deprecated from AXIS OS 12.0. Support for containerized applications using `aarch64` will continue until the end of the AXIS OS 12 LTS cycle.
+
+To get a list of devices that are compatible with the ACAP Computer Vision solution, you can use Axis [Product Selector](https://www.axis.com/support/tools/product-selector). In the left menu under **Hardware platform**, check the **Container support** checkbox.
 
 More than one filter can be combined in a search, for example in the mentioned **Hardware platform** section it's also possible to filter on products equipped with `DLPU` using the field **Compute capabilities**.
 
@@ -78,7 +78,11 @@ the web page for download of [device software](https://www.axis.com/support/devi
 
 > **Device Software** has previously been named **firmware**.
 
-### ACAP Computer Vision SDK software compatibility
+### ACAP Computer Vision solution software compatibility
+
+> **Note:** From AXIS OS 12.0, the ACAP Computer Vision SDK container image is removed. For containerized applications, refer to the [ACAP Runtime](https://github.com/AxisCommunications/acap-runtime) for utility libraries and scripts.
+
+The following information and compatibility table are provided for reference and to support legacy applications using versions prior to AXIS OS 12.0:
 
 The **Image version** referred to in the table below is the Docker image
 release tag available from Docker Hub:
