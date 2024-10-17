@@ -25,10 +25,11 @@ Usage:
     $SCRIPT -v ver [--help]
 
 General options:
-    -v,--version ver      The new ACAP SDK version, e.g. 4.0
+    -v,--version ver      The new ACAP SDK version, e.g. 12.0 or 4.0
     -h, --help            Show this help
 
 Example:
+    $SCRIPT -v 12.0
     $SCRIPT -v 4.0
 
 --------------------------------------------------------------------------------
@@ -119,9 +120,15 @@ apis="\
   axstorage \
   larod \
   licensekey \
-  message-broker \
   vdostream \
 "
+
+regexp='^[4][.][0-9]{1,2}$'
+if [[ $apiver =~ $regexp ]]; then
+  apis+="  metadata-broker "
+else
+  apis+="  message-broker "
+fi
 
 # Version strings
 apiver_minor="${apiver#*.}"
@@ -132,9 +139,10 @@ printf "New minor:        $apiver_minor\n"
 printf "APIs to update:   $apis\n"
 
 # Control version format
-if [ "${apiver%%.*}" != 4 ]; then
-  error "Version $apiver needs to have major equal to '4'"
-fi
+regexp='^([4]|[1-9][0-9])[.][0-9]{1,3}$'
+[[ $apiver =~ $regexp ]] || {
+  error "Version $apiver is not allowed, see regexp '$regexp'"
+}
 
 # Check API dirs
 nativepage=native-sdk-api
