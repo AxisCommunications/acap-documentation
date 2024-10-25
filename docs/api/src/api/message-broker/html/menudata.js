@@ -23,7 +23,7 @@
  @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var menudata={children:[
-{text:"Metadata Broker Main Page",url:"index.html"},
+{text:"Message Broker Main Page",url:"index.html"},
 {text:"Data Structures",url:"annotated.html",children:[
 {text:"Data Structures",url:"annotated.html"},
 {text:"Data Structure Index",url:"classes.html"},
@@ -31,14 +31,8 @@ var menudata={children:[
 {text:"All",url:"functions.html"},
 {text:"Variables",url:"functions_vars.html"}]}]},
 {text:"Files",url:"files.html",children:[
-{text:"File List",url:"files.html"},
-{text:"Globals",url:"globals.html",children:[
-{text:"All",url:"globals.html"},
-{text:"Functions",url:"globals_func.html"},
-{text:"Typedefs",url:"globals_type.html"},
-{text:"Enumerations",url:"globals_enum.html"}]}]},
+{text:"File List",url:"files.html"}]},
 {text:"Examples",url:"examples.html"},
-{text:"Changelog",url:"release_notes.html"},
 {text:"ACAP Main Page",url:"../../../main/html/index.html"},
 {text:"SDK Main Page",url:"../../../sdk/html/index.html"},
-{text:"API Main Page",url:"../../../main/html/acap_api.html"}]}
+{text:"API Main Page",url:"../../../main/html/acap3_api.html"}]}

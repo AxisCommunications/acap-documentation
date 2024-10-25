@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Metadata Broker: mdb/subscriber.h Source File</title>
+<title>Message Broker: mdb/subscriber.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,8 +23,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Metadata Broker
-   &#160;<span id="projectnumber">0.26.5</span>
+   <div id="projectname">Message Broker
+   &#160;<span id="projectnumber">0.29.2</span>
    </div>
   </td>
  </tr>
@@ -72,45 +72,42 @@ $(function() {
 <div class="title">subscriber.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="subscriber_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="subscriber_8h.html#a39a644a12906969ebb78bea767be51db">    1</a></span>&#160; </div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifndef MDB_SUBSCRIBER_H</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define MDB_SUBSCRIBER_H</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="connection_8h.html">mdb/connection.h</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="error_8h.html">mdb/error.h</a>&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="signatures_8h.html">mdb/signatures.h</a>&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="subscriber__config_8h.html">mdb/subscriber_config.h</a>&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>mdb_subscriber <a class="code" href="subscriber_8h.html#a39a644a12906969ebb78bea767be51db">mdb_subscriber_t</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="subscriber_8h.html#a9f44692fc3bf9b0efb7a4b2c1ef04a50">   50</a></span>&#160;<a class="code" href="subscriber_8h.html#a39a644a12906969ebb78bea767be51db">mdb_subscriber_t</a> *<a class="code" href="subscriber_8h.html#a9f44692fc3bf9b0efb7a4b2c1ef04a50">mdb_subscriber_create_async</a>(<a class="code" href="connection_8h.html#a699ef9a88cc82008d70f5e67002834bb">mdb_connection_t</a> *connection,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                              <a class="code" href="subscriber__config_8h.html#ac96fcf5f10acb30252749a3dea10514f">mdb_subscriber_config_t</a> *config,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                              <a class="code" href="signatures_8h.html#a43948f3522f52478493bc59df7cbe0ec">mdb_on_done_t</a> on_done,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                              <span class="keywordtype">void</span> *user_data,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                              <a class="code" href="structmdb__error__t.html">mdb_error_t</a> **error);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="subscriber_8h.html#a0c274a9660bb716b41bb38d3b970f1a6">   64</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="subscriber_8h.html#a0c274a9660bb716b41bb38d3b970f1a6">mdb_subscriber_destroy</a>(<a class="code" href="subscriber_8h.html#a39a644a12906969ebb78bea767be51db">mdb_subscriber_t</a> **<span class="keyword">self</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aconnection_8h_html"><div class="ttname"><a href="connection_8h.html">connection.h</a></div></div>
-<div class="ttc" id="aconnection_8h_html_a699ef9a88cc82008d70f5e67002834bb"><div class="ttname"><a href="connection_8h.html#a699ef9a88cc82008d70f5e67002834bb">mdb_connection_t</a></div><div class="ttdeci">struct mdb_connection mdb_connection_t</div><div class="ttdef"><b>Definition:</b> connection.h:29</div></div>
-<div class="ttc" id="aerror_8h_html"><div class="ttname"><a href="error_8h.html">error.h</a></div></div>
-<div class="ttc" id="asignatures_8h_html"><div class="ttname"><a href="signatures_8h.html">signatures.h</a></div></div>
-<div class="ttc" id="asignatures_8h_html_a43948f3522f52478493bc59df7cbe0ec"><div class="ttname"><a href="signatures_8h.html#a43948f3522f52478493bc59df7cbe0ec">mdb_on_done_t</a></div><div class="ttdeci">void(* mdb_on_done_t)(const mdb_error_t *error, void *user_data)</div><div class="ttdef"><b>Definition:</b> signatures.h:17</div></div>
-<div class="ttc" id="astructmdb__error__t_html"><div class="ttname"><a href="structmdb__error__t.html">mdb_error_t</a></div><div class="ttdef"><b>Definition:</b> error.h:41</div></div>
-<div class="ttc" id="asubscriber_8h_html_a0c274a9660bb716b41bb38d3b970f1a6"><div class="ttname"><a href="subscriber_8h.html#a0c274a9660bb716b41bb38d3b970f1a6">mdb_subscriber_destroy</a></div><div class="ttdeci">void mdb_subscriber_destroy(mdb_subscriber_t **self)</div></div>
-<div class="ttc" id="asubscriber_8h_html_a39a644a12906969ebb78bea767be51db"><div class="ttname"><a href="subscriber_8h.html#a39a644a12906969ebb78bea767be51db">mdb_subscriber_t</a></div><div class="ttdeci">struct mdb_subscriber mdb_subscriber_t</div><div class="ttdef"><b>Definition:</b> subscriber.h:28</div></div>
-<div class="ttc" id="asubscriber_8h_html_a9f44692fc3bf9b0efb7a4b2c1ef04a50"><div class="ttname"><a href="subscriber_8h.html#a9f44692fc3bf9b0efb7a4b2c1ef04a50">mdb_subscriber_create_async</a></div><div class="ttdeci">mdb_subscriber_t * mdb_subscriber_create_async(mdb_connection_t *connection, mdb_subscriber_config_t *config, mdb_on_done_t on_done, void *user_data, mdb_error_t **error)</div></div>
-<div class="ttc" id="asubscriber__config_8h_html"><div class="ttname"><a href="subscriber__config_8h.html">subscriber_config.h</a></div></div>
-<div class="ttc" id="asubscriber__config_8h_html_ac96fcf5f10acb30252749a3dea10514f"><div class="ttname"><a href="subscriber__config_8h.html#ac96fcf5f10acb30252749a3dea10514f">mdb_subscriber_config_t</a></div><div class="ttdeci">struct mdb_subscriber_config mdb_subscriber_config_t</div><div class="ttdef"><b>Definition:</b> subscriber_config.h:25</div></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;mdb/connection.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;mdb/error.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;mdb/signatures.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;mdb/subscriber_config.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>mdb_subscriber mdb_subscriber_t;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;mdb_subscriber_t *mdb_subscriber_create_async(mdb_connection_t *connection,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                              mdb_subscriber_config_t *config,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                              mdb_on_done_t on_done,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                              <span class="keywordtype">void</span> *user_data,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                              <a class="code" href="structmdb__error__t.html">mdb_error_t</a> **error);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">bool</span> mdb_subscriber_manual_subscribe_async(mdb_subscriber_t *<span class="keyword">self</span>,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                           mdb_on_done_t on_done,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                           <span class="keywordtype">void</span> *user_data,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                           <a class="code" href="structmdb__error__t.html">mdb_error_t</a> **error);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keywordtype">void</span> mdb_subscriber_destroy(mdb_subscriber_t **<span class="keyword">self</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="astructmdb__error__t_html"><div class="ttname"><a href="structmdb__error__t.html">mdb_error_t</a></div><div class="ttdef"><b>Definition:</b> error.h:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

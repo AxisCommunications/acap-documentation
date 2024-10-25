@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Metadata Broker: Changelog</title>
+<title>Message Broker: Changelog</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,8 +23,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Metadata Broker
-   &#160;<span id="projectnumber">0.26.5</span>
+   <div id="projectname">Message Broker
+   &#160;<span id="projectnumber">0.29.2</span>
    </div>
   </td>
  </tr>
@@ -70,13 +70,13 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a href="https://keepachangelog.com/en/1.1.0/">Keep a Changelog</a>, and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
-<h2><a class="anchor" id="autotoc_md0"></a>
-[Unreleased]</h2>
-<h3><a class="anchor" id="autotoc_md1"></a>
-Changed</h3>
+<h2><a class="anchor" id="autotoc_md3"></a>
+[0.29.2]</h2>
 <ul>
+<li>Rename metadata-broker to message-broker</li>
+<li>Improved error messages</li>
 <li>Breaking change: The terminology changed from metadata to message, with this<ul>
-<li>The header file <code>mdb/metadata.h</code> is changed to <code><a class="el" href="message_8h.html">mdb/message.h</a></code></li>
+<li>The header file <code>mdb/metadata.h</code> is changed to <code><a class="el" href="message_8h_source.html">mdb/message.h</a></code></li>
 <li><code>mdb_metadata_t</code> --&gt; <code>mdb_message_t</code></li>
 <li><code>mdb_metadata_payload_t</code> --&gt; <code>mdb_message_payload_t</code></li>
 <li><code>mdb_metadata_get_payload</code> --&gt; <code>mdb_message_get_payload</code></li>
@@ -86,7 +86,7 @@ Changed</h3>
 </li>
 <li>New topic com.axis.consolidated_track.v1.beta <a class="el" href="standard_topics.html">Standard Topics</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md2"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
 [0.23.2]</h2>
 <ul>
 <li>Consumer API in beta. </li>

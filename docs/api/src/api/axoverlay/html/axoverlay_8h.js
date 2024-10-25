@@ -52,7 +52,9 @@ var axoverlay_8h =
       [ "AXOVERLAY_STREAM_H265", "axoverlay_8h.html#a79534991a1ffa36aa47493e703795f60aeca66fbd45e07d9e0b72428483c05ea0", null ],
       [ "AXOVERLAY_STREAM_YCBCR", "axoverlay_8h.html#a79534991a1ffa36aa47493e703795f60afcb5c81e97977cc40382446a21eb2aa3", null ],
       [ "AXOVERLAY_STREAM_VOUT", "axoverlay_8h.html#a79534991a1ffa36aa47493e703795f60a1fb9c962db18f76ff0c572a8d117b58d", null ],
-      [ "AXOVERLAY_STREAM_OTHER", "axoverlay_8h.html#a79534991a1ffa36aa47493e703795f60a6337608f3d6a7faea5ad26ca5b6152a3", null ]
+      [ "AXOVERLAY_STREAM_OTHER", "axoverlay_8h.html#a79534991a1ffa36aa47493e703795f60a6337608f3d6a7faea5ad26ca5b6152a3", null ],
+      [ "AXOVERLAY_STREAM_RGB", "axoverlay_8h.html#a79534991a1ffa36aa47493e703795f60adc1cd679a4731ba9d16fdf513792def2", null ],
+      [ "AXOVERLAY_STREAM_AV1", "axoverlay_8h.html#a79534991a1ffa36aa47493e703795f60a31fa249a08c9c4901730da42e260a1a5", null ]
     ] ],
     [ "axoverlay_cleanup", "axoverlay_8h.html#a3510c0ea4e04846864603505b3994cf5", null ],
     [ "axoverlay_create_overlay", "axoverlay_8h.html#a95a791a9f63d0c5bad2d403b0d8c7ba3", null ],

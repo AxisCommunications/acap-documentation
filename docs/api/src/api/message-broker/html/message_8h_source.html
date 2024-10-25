@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Metadata Broker: mdb/message.h Source File</title>
+<title>Message Broker: mdb/message.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,8 +23,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Metadata Broker
-   &#160;<span id="projectnumber">0.26.5</span>
+   <div id="projectname">Message Broker
+   &#160;<span id="projectnumber">0.29.2</span>
    </div>
   </td>
  </tr>
@@ -72,41 +72,46 @@ $(function() {
 <div class="title">message.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="message_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="message_8h.html#a720c6a2148976f68b1bbce65e33390bb">    1</a></span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef MDB_MESSAGE_H</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define MDB_MESSAGE_H</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef MDB_MESSAGE_HPP</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define MDB_MESSAGE_HPP</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>mdb_message <a class="code" href="message_8h.html#a720c6a2148976f68b1bbce65e33390bb">mdb_message_t</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structmdb__message__payload.html">   23</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmdb__message__payload.html">mdb_message_payload</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structmdb__message__payload.html#ad7617124f3feedd6c426a40f2f1c42d7">   24</a></span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="structmdb__message__payload.html#ad7617124f3feedd6c426a40f2f1c42d7">size</a>;   </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structmdb__message__payload.html#a032a38f30c1ec5e31eb661560cf87573">   25</a></span>&#160;  uint8_t *<a class="code" href="structmdb__message__payload.html#a032a38f30c1ec5e31eb661560cf87573">data</a>; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="message_8h.html#a5b38f36a233b3eb8908f2c281ebc9786">   26</a></span>&#160;} <a class="code" href="message_8h.html#a5b38f36a233b3eb8908f2c281ebc9786">mdb_message_payload_t</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">const</span> <a class="code" href="structmdb__message__payload.html">mdb_message_payload_t</a> *</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="message_8h.html#a4df94a7b61be9a303b643893943baeaa">   37</a></span>&#160;<a class="code" href="message_8h.html#a4df94a7b61be9a303b643893943baeaa">mdb_message_get_payload</a>(<span class="keyword">const</span> <a class="code" href="message_8h.html#a720c6a2148976f68b1bbce65e33390bb">mdb_message_t</a> *message);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="message_8h.html#aa02a04937507e44778287d09e054e394">   47</a></span>&#160;<span class="keyword">const</span> <span class="keyword">struct </span>timespec *<a class="code" href="message_8h.html#aa02a04937507e44778287d09e054e394">mdb_message_get_timestamp</a>(<span class="keyword">const</span> <a class="code" href="message_8h.html#a720c6a2148976f68b1bbce65e33390bb">mdb_message_t</a> *message);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="amessage_8h_html_a4df94a7b61be9a303b643893943baeaa"><div class="ttname"><a href="message_8h.html#a4df94a7b61be9a303b643893943baeaa">mdb_message_get_payload</a></div><div class="ttdeci">const mdb_message_payload_t * mdb_message_get_payload(const mdb_message_t *message)</div></div>
-<div class="ttc" id="amessage_8h_html_a5b38f36a233b3eb8908f2c281ebc9786"><div class="ttname"><a href="message_8h.html#a5b38f36a233b3eb8908f2c281ebc9786">mdb_message_payload_t</a></div><div class="ttdeci">struct mdb_message_payload mdb_message_payload_t</div></div>
-<div class="ttc" id="amessage_8h_html_a720c6a2148976f68b1bbce65e33390bb"><div class="ttname"><a href="message_8h.html#a720c6a2148976f68b1bbce65e33390bb">mdb_message_t</a></div><div class="ttdeci">struct mdb_message mdb_message_t</div><div class="ttdef"><b>Definition:</b> message.h:19</div></div>
-<div class="ttc" id="amessage_8h_html_aa02a04937507e44778287d09e054e394"><div class="ttname"><a href="message_8h.html#aa02a04937507e44778287d09e054e394">mdb_message_get_timestamp</a></div><div class="ttdeci">const struct timespec * mdb_message_get_timestamp(const mdb_message_t *message)</div></div>
-<div class="ttc" id="astructmdb__message__payload_html"><div class="ttname"><a href="structmdb__message__payload.html">mdb_message_payload</a></div><div class="ttdef"><b>Definition:</b> message.h:23</div></div>
-<div class="ttc" id="astructmdb__message__payload_html_a032a38f30c1ec5e31eb661560cf87573"><div class="ttname"><a href="structmdb__message__payload.html#a032a38f30c1ec5e31eb661560cf87573">mdb_message_payload::data</a></div><div class="ttdeci">uint8_t * data</div><div class="ttdef"><b>Definition:</b> message.h:25</div></div>
-<div class="ttc" id="astructmdb__message__payload_html_ad7617124f3feedd6c426a40f2f1c42d7"><div class="ttname"><a href="structmdb__message__payload.html#ad7617124f3feedd6c426a40f2f1c42d7">mdb_message_payload::size</a></div><div class="ttdeci">size_t size</div><div class="ttdef"><b>Definition:</b> message.h:24</div></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;mdb/error.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>mdb_message mdb_message_t;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structmdb__message__payload.html">   25</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmdb__message__payload.html">mdb_message_payload</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structmdb__message__payload.html#ad7617124f3feedd6c426a40f2f1c42d7">   26</a></span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="structmdb__message__payload.html#ad7617124f3feedd6c426a40f2f1c42d7">size</a>;   </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structmdb__message__payload.html#a032a38f30c1ec5e31eb661560cf87573">   27</a></span>&#160;  uint8_t *<a class="code" href="structmdb__message__payload.html#a032a38f30c1ec5e31eb661560cf87573">data</a>; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;} <a class="code" href="structmdb__message__payload.html">mdb_message_payload_t</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">const</span> <a class="code" href="structmdb__message__payload.html">mdb_message_payload_t</a> *</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;mdb_message_get_payload(<span class="keyword">const</span> mdb_message_t *message);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">const</span> <span class="keyword">struct </span>timespec *mdb_message_get_timestamp(<span class="keyword">const</span> mdb_message_t *message);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;mdb_message_t *mdb_message_create(<span class="keyword">struct</span> timespec timestamp,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                  <span class="keyword">const</span> uint8_t *payload, <span class="keywordtype">size_t</span> payload_size,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                  <a class="code" href="structmdb__error__t.html">mdb_error_t</a> **error);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> mdb_message_destroy(mdb_message_t **<span class="keyword">self</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="astructmdb__error__t_html"><div class="ttname"><a href="structmdb__error__t.html">mdb_error_t</a></div><div class="ttdef"><b>Definition:</b> error.h:40</div></div>
+<div class="ttc" id="astructmdb__message__payload_html"><div class="ttname"><a href="structmdb__message__payload.html">mdb_message_payload</a></div><div class="ttdef"><b>Definition:</b> message.h:25</div></div>
+<div class="ttc" id="astructmdb__message__payload_html_a032a38f30c1ec5e31eb661560cf87573"><div class="ttname"><a href="structmdb__message__payload.html#a032a38f30c1ec5e31eb661560cf87573">mdb_message_payload::data</a></div><div class="ttdeci">uint8_t * data</div><div class="ttdef"><b>Definition:</b> message.h:27</div></div>
+<div class="ttc" id="astructmdb__message__payload_html_ad7617124f3feedd6c426a40f2f1c42d7"><div class="ttname"><a href="structmdb__message__payload.html#ad7617124f3feedd6c426a40f2f1c42d7">mdb_message_payload::size</a></div><div class="ttdeci">size_t size</div><div class="ttdef"><b>Definition:</b> message.h:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
