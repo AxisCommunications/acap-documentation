@@ -40,17 +40,32 @@ For containerized applications using the ACAP Computer Vision solution, compatib
 
 ### ACAP Computer Vision solution compatibility
 
-> **Important Note:** The containerized ACAP Computer Vision solution is deprecated from AXIS OS 12.0. Support for containerized applications using `aarch64` will continue until the end of the AXIS OS 12 LTS cycle.
+> **Note:**
+>
+> - Support for containerized applications using `armv7hf` are no longer
+>   supported after AXIS OS 11.11.
 
-To get a list of devices that are compatible with the ACAP Computer Vision solution, you can use Axis [Product Selector](https://www.axis.com/support/tools/product-selector). In the left menu under **Hardware platform**, check the **Container support** checkbox.
+> **Note:**
+>
+> - New Axis products released on AXIS OS 12.x will not have container support.
+> - [All products with existing container support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C0%5D%2C%22value%22%3A%22ARTPEC-8%22%7D%2C%7B%22index%22%3A%5B10%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
+>   will be supported until end of 2031 when [AXIS OS 2026 LTS](https://help.axis.com/en-us/axis-os) reaches end of life.
 
-More than one filter can be combined in a search, for example in the mentioned **Hardware platform** section it's also possible to filter on products equipped with `DLPU` using the field **Compute capabilities**.
+To get a list of devices that are compatible with the ACAP Computer Vision
+solution, you can use Axis [Product Selector](https://www.axis.com/support/tools/product-selector).
 
-For convenience, here are direct links to a few specific filters you can apply:
+More than one filter can be combined in a search, for example in the **Hardware
+platform** section it's possible to filter on:
 
-- [Container support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
-- [DLPU support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C1%5D%2C%22value%22%3A%22DLPU%22%7D%5D)
-- [Container + DLPU support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C1%5D%2C%22value%22%3A%22DLPU%22%7D%2C%7B%22index%22%3A%5B10%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
+- Products equipped with `DLPU` using the field **Compute capabilities**
+- Products with `aarch64` by choosing `ARTPEC-8` in field **System-on-chip**
+- Products with container support by checking the **Container support** checkbox.
+
+For convenience, here are direct links to a few specific filters you can apply
+to list supported products for `aarch64`:
+
+- [Container support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C0%5D%2C%22value%22%3A%22ARTPEC-8%22%7D%2C%7B%22index%22%3A%5B10%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
+- [Container + DLPU support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C0%5D%2C%22value%22%3A%22ARTPEC-8%22%7D%2C%7B%22index%22%3A%5B10%2C1%5D%2C%22value%22%3A%22DLPU%22%7D%2C%7B%22index%22%3A%5B10%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
 
 ### ACAP Native SDK hardware compatibility
 
@@ -77,9 +92,16 @@ the web page for download of [device software](https://www.axis.com/support/devi
 
 ### ACAP Computer Vision solution software compatibility
 
-> **Note:** From AXIS OS 12.0, the ACAP Computer Vision SDK container image is removed. For containerized applications, refer to the [ACAP Runtime](https://github.com/AxisCommunications/acap-runtime) for utility libraries and scripts.
+> **Note:**
+>
+> - From AXIS OS 12.0, the ACAP Computer Vision SDK has been archived as its
+>   components have been refactored: utility libraries and scripts are now
+>   available in [ACAP Runtime](https://github.com/AxisCommunications/acap-runtime).
+>   For usage of the new setup, see the [examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples)
+>   repository.
 
-The following information and compatibility table are provided for reference and to support legacy applications using versions prior to AXIS OS 12.0:
+The following information and compatibility table are provided for reference
+and to support legacy applications using versions prior to AXIS OS 12.0:
 
 The **Image version** referred to in the table below is the Docker image
 release tag available from Docker Hub:
