@@ -142,11 +142,14 @@ release tag available from Docker Hub:
 - [ACAP Native SDK](https://hub.docker.com/r/axisecp/acap-native-sdk/tags)
 
 The tag format is `<image-version>-<architecture>-<container-distribution>`.
-An example of a tag is
+An example of a tag is `axisecp/acap-native-sdk:12.0.0-aarch64-ubuntu24.04`
+where `12.0.0` maps to the image version.
 
-- `axisecp/acap-native-sdk:1.5-aarch64-ubuntu22.04`
+ACAP Release | ACAP Native SDK Image version | Compatible with AXIS OS version
+:------------| :---------------------------- | :-------------------------------------------
+12.0         | 12.0.0                        | 12.0 and later until LTS
 
-where `1.5` maps to the image version.
+#### ACAP version 4 releases
 
 ACAP Release | ACAP Native SDK Image version | Compatible with AXIS OS version
 :------------| :---------------------------- | :-------------------------------------------
