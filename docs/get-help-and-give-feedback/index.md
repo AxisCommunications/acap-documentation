@@ -10,7 +10,6 @@ The best way to interact with our team is through GitHub. You can get help and p
 
 - [ACAP Native SDK](https://github.com/AxisCommunications/acap-native-sdk)
 - [ACAP Native SDK examples](https://github.com/AxisCommunications/acap-native-sdk-examples)
-- [ACAP Computer Vision SDK](https://github.com/AxisCommunications/acap-computer-vision-sdk)
 - [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples)
 
 For questions unrelated to the existing repositories we have the [general ACAP discussions](https://github.com/orgs/AxisCommunications/discussions/categories/acap). Feel free to ask your question there.

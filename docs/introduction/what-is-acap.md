@@ -18,10 +18,10 @@ ACAP makes it possible to develop applications for a wide range of use cases:
 
 ## Key features
 
-- Access to most common product features, including video, audio, the event system, I/O ports, PTZ control, and more.
+- Access to most common product features, including video, the event and parameter systems, I/O ports, and more.
 - Enables hardware acceleration on specific functions such as image analysis computations and overlay graphics.
 - Toolchain with support for multiple architectures to build applications for all ACAP-enabled Axis products.
-- Documentation, tutorials and example applications for all APIs to kickstart your development.
+- Documentation, tutorials and example applications for all APIs to kick-start your development.
 
 ## ACAP SDK Docker images
 
@@ -29,4 +29,4 @@ From ACAP version 3.1, the SDK format relies on the [Docker](https://www.docker.
 
 If you're new to Docker and its many features, check out their [Getting Started guide](https://www.docker.com/get-started).
 
-Find all ACAP SDK images on the [Axis organization account](https://hub.docker.com/u/axisecp) and follow the instructions in [Get started](../get-started) to start developing your ACAP using Docker and our containerized SDK.
+Find all ACAP SDK images on the [Axis organization account](https://hub.docker.com/u/axisecp) and follow the instructions in [Get started](../get-started) to start developing your ACAP application using Docker and our containerized SDK.

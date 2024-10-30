@@ -11,6 +11,6 @@ nav_order: 3
 
 Create your first ACAP application from the [Hello World](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/hello-world) example on GitHub which is a part of the [ACAP Native SDK examples](https://github.com/AxisCommunications/acap-native-sdk-examples).
 
-## ACAP Computer Vision SDK
+## ACAP Computer Vision solution
 
 Create and build a docker container with your first hello-world application in Python from the [Hello World](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/hello-world-python) example on GitHub which is a part of the [ACAP Computer Vision SDK examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples).

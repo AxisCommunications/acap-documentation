@@ -1,4 +1,4 @@
-# Contribute to the ACAP SDK documentation
+# Contribute to the ACAP documentation
 
 ## Types of contributions
 
