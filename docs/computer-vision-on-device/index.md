@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Computer vision on device
-nav_order: 5
+nav_order: 6
 permalink: docs/computer-vision-on-device
 ---
 # Computer vision on device
