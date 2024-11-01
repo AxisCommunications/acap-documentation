@@ -6,7 +6,7 @@ nav_order: 1
 
 # ACAP documentation
 
-![ACAP SDK](assets/logos/acap_sdk_symbol_200x200.png){: .float-right }
+![ACAP](assets/logos/acap_312x200.png){: .float-right .pt-3 .pl-2 .pb-10}
 
 Welcome to the AXIS Camera Application Platform (ACAP) documentation. This
 documentation primarily focuses on the latest released version. For
@@ -17,5 +17,3 @@ with the [Introduction](docs/introduction).
 
 To start developing ACAP applications, continue to [Get
 started](docs/get-started).
-
-{: .pb-8 }
