@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.2.181-dirty</span>
+   &#160;<span id="projectnumber">3.2.207-dirty</span>
    </div>
   </td>
  </tr>
@@ -73,7 +73,7 @@ $(function() {
 <li><a href="#tflite-cpu">TFLite CPU</a></li>
 <li><a href="#tflite-edgetpu">TFLite EdgeTPU</a></li>
 <li><a href="#ambarella-cvflownn">Ambarella CVFlowNN</a></li>
-<li><a href="#tflite-glgpu">TFLite GLGPU</a></li>
+<li><a href="#tflite-gpu">TFLite GPU</a></li>
 <li><a href="#tflite-artpec-7-gpu">TFLite ARTPEC-7 GPU</a></li>
 <li><a href="#tflite-artpec-9-gpu">TFLite ARTPEC-9 GPU</a></li>
 <li><a href="#tflite-artpec-8-dlpu">TFLite ARTPEC-8 DLPU</a></li>
@@ -142,7 +142,7 @@ $(function() {
 <p>The access type <code>LAROD_FD_PROP_READWRITE</code> will introduce a memory copy and <code>read()</code>/<code>write()</code> calls for each input and output tensor buffer - these extra operations will degrade performance.</p>
 <h4>Allocation support</h4>
 <p>By using the calls <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> with a model loaded to this backend, two kinds of tensor buffers can be allocated. If the <code>LAROD_FD_PROP_READWRITE</code> is <em>not</em> set as required in the call, then tensors with mappable file descriptors based on Cavalry Mem dma-bufs will be returned. As such these tensors will have the fd props <code>LAROD_FD_PROP_MAP</code> and <code>LAROD_FD_PROP_DMABUF</code> set. If however <code>LAROD_FD_PROP_READWRITE</code> is required, then tensors with readable, writable and mappable file descriptors will be returned. As such these tensors will have the fd props <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code> set.</p>
-<h3>TFLite GLGPU</h3>
+<h3>TFLite GPU</h3>
 <p>This backend executes TFLite models on an OpenGL capable HW accelerator.</p>
 <p>The device name of this backend is <code>"gpu-tflite"</code>; a device handle can be retrieved by providing this device name to <code><a class="el" href="larod_8h.html#a29a9707a190c2d0c44f7e50f942b2621" title="Get an available device. ">larodGetDevice()</a></code>.</p>
 <p><b>NOTE</b> This is an experimental feature and could be removed or changed at any time.</p>
@@ -310,7 +310,7 @@ system") which can perform tasks on behalf of the primary system. The remote bac
 <tr>
 <td>CVFlowNN </td><td>Yes </td><td></td><td>Yes </td></tr>
 <tr>
-<td>TFLite GLGPU </td><td>Yes </td><td>Yes </td><td></td></tr>
+<td>TFLite GPU </td><td>Yes </td><td>Yes </td><td></td></tr>
 <tr>
 <td>TFLite ARTPEC-7 GPU </td><td>Yes </td><td>Yes </td><td></td></tr>
 <tr>
@@ -345,7 +345,7 @@ system") which can perform tasks on behalf of the primary system. The remote bac
 <tr>
 <td>CVFlowNN </td><td>Yes </td><td></td><td>Yes </td></tr>
 <tr>
-<td>TFLite GLGPU </td><td>Yes </td><td>Yes </td><td></td></tr>
+<td>TFLite GPU </td><td>Yes </td><td>Yes </td><td></td></tr>
 <tr>
 <td>TFLite ARTPEC-7 GPU </td><td>Yes </td><td>Yes </td><td></td></tr>
 <tr>
@@ -382,7 +382,7 @@ system") which can perform tasks on behalf of the primary system. The remote bac
 <tr>
 <td>CVFlowNN </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 <tr>
-<td>TFLite GLGPU </td><td>Yes </td><td>Yes </td><td></td></tr>
+<td>TFLite GPU </td><td>Yes </td><td>Yes </td><td></td></tr>
 <tr>
 <td>TFLite ARTPEC-7 GPU </td><td>Yes </td><td>Yes </td><td></td></tr>
 <tr>
@@ -417,7 +417,7 @@ system") which can perform tasks on behalf of the primary system. The remote bac
 <tr>
 <td>CVFlowNN </td><td>Yes </td><td>Yes </td><td>Yes </td></tr>
 <tr>
-<td>TFLite GLGPU </td><td>Yes </td><td>Yes </td><td></td></tr>
+<td>TFLite GPU </td><td>Yes </td><td>Yes </td><td></td></tr>
 <tr>
 <td>TFLite ARTPEC-7 GPU </td><td>Yes </td><td>Yes </td><td></td></tr>
 <tr>

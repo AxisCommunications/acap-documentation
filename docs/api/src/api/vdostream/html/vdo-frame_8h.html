@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('vdo-frame_8h.html',''); initResizable(
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="vdo-map_8h_source.html">vdo-map.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="vdo-types_8h_source.html">vdo-types.h</a>&quot;</code><br />
-<code>#include &lt;gio/gio.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &lt;glib-object.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for vdo-frame.h:</div>
@@ -113,6 +113,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a25ed8a15875a85a12b88b2cbabcbd9cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vdo-types_8h.html#aecc7ad4ae90e505eea73c35dd4dd5bdd">VdoFrameType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-frame_8h.html#a25ed8a15875a85a12b88b2cbabcbd9cb">vdo_frame_get_frame_type</a> (<a class="el" href="classVdoFrame.html">VdoFrame</a> *self)</td></tr>
 <tr class="memdesc:a25ed8a15875a85a12b88b2cbabcbd9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of this frame.  <a href="vdo-frame_8h.html#a25ed8a15875a85a12b88b2cbabcbd9cb">More...</a><br /></td></tr>
 <tr class="separator:a25ed8a15875a85a12b88b2cbabcbd9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18f8c2cd4eb42666c0782ebbd11e982a"><td class="memItemLeft" align="right" valign="top">gboolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-frame_8h.html#a18f8c2cd4eb42666c0782ebbd11e982a">vdo_frame_is_key</a> (<a class="el" href="classVdoFrame.html">VdoFrame</a> *self)</td></tr>
+<tr class="memdesc:a18f8c2cd4eb42666c0782ebbd11e982a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if this is a keyframe.  <a href="vdo-frame_8h.html#a18f8c2cd4eb42666c0782ebbd11e982a">More...</a><br /></td></tr>
+<tr class="separator:a18f8c2cd4eb42666c0782ebbd11e982a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ac5c0ea4f8e0447f888e6d4653a76ed"><td class="memItemLeft" align="right" valign="top">guint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-frame_8h.html#a4ac5c0ea4f8e0447f888e6d4653a76ed">vdo_frame_get_sequence_nbr</a> (<a class="el" href="classVdoFrame.html">VdoFrame</a> *self)</td></tr>
 <tr class="memdesc:a4ac5c0ea4f8e0447f888e6d4653a76ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sequence number of this frame.  <a href="vdo-frame_8h.html#a4ac5c0ea4f8e0447f888e6d4653a76ed">More...</a><br /></td></tr>
 <tr class="separator:a4ac5c0ea4f8e0447f888e6d4653a76ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,7 +129,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a1313d50080954d7d9930617cf2413564"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of this frame.  <a href="vdo-frame_8h.html#a1313d50080954d7d9930617cf2413564">More...</a><br /></td></tr>
 <tr class="separator:a1313d50080954d7d9930617cf2413564"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d465baa94a94919b0090a18ff71f418"><td class="memItemLeft" align="right" valign="top">gssize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-frame_8h.html#a7d465baa94a94919b0090a18ff71f418">vdo_frame_get_header_size</a> (<a class="el" href="classVdoFrame.html">VdoFrame</a> *self)</td></tr>
-<tr class="memdesc:a7d465baa94a94919b0090a18ff71f418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of any H264/H265 headers contained in this frame.  <a href="vdo-frame_8h.html#a7d465baa94a94919b0090a18ff71f418">More...</a><br /></td></tr>
+<tr class="memdesc:a7d465baa94a94919b0090a18ff71f418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of any H264/H265/AV1 headers contained in this frame.  <a href="vdo-frame_8h.html#a7d465baa94a94919b0090a18ff71f418">More...</a><br /></td></tr>
 <tr class="separator:a7d465baa94a94919b0090a18ff71f418"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4bb3b7b0775ce6caee5172af24a16fd"><td class="memItemLeft" align="right" valign="top">gint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-frame_8h.html#ab4bb3b7b0775ce6caee5172af24a16fd">vdo_frame_get_fd</a> (<a class="el" href="classVdoFrame.html">VdoFrame</a> *self)</td></tr>
 <tr class="memdesc:ab4bb3b7b0775ce6caee5172af24a16fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a file descriptor for this frame.  <a href="vdo-frame_8h.html#ab4bb3b7b0775ce6caee5172af24a16fd">More...</a><br /></td></tr>
@@ -210,7 +213,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aclassVdoStream_html"><div class="ttname"><a href="classVdoStream.html">VdoStream</a></div><div class="ttdoc">A video stream.</div></div>
 <div class="ttc" id="avdo-map_8h_html_a98b0e304d19d397003f2cc0c774cc33f"><div class="ttname"><a href="vdo-map_8h.html#a98b0e304d19d397003f2cc0c774cc33f">vdo_map_new</a></div><div class="ttdeci">VdoMap * vdo_map_new(void)</div><div class="ttdoc">Constructs an new empty VdoMap.</div></div>
 <div class="ttc" id="avdo-stream_8h_html_a36fa0021eb58d482c494163db9b22b61"><div class="ttname"><a href="vdo-stream_8h.html#a36fa0021eb58d482c494163db9b22b61">vdo_stream_new</a></div><div class="ttdeci">VdoStream * vdo_stream_new(VdoMap *settings, VdoBufferFinalizer fin, GError **error)</div><div class="ttdoc">Create a new VdoStream.</div></div>
-<div class="ttc" id="avdo-types_8h_html_a021421f945451240ceba49813b38196da2363918b518db7dfbbdfcde2b0dad179"><div class="ttname"><a href="vdo-types_8h.html#a021421f945451240ceba49813b38196da2363918b518db7dfbbdfcde2b0dad179">VDO_TIMESTAMP_MONO_SERVER</a></div><div class="ttdeci">@ VDO_TIMESTAMP_MONO_SERVER</div><div class="ttdef"><b>Definition:</b> vdo-types.h:274</div></div>
+<div class="ttc" id="avdo-types_8h_html_a021421f945451240ceba49813b38196da2363918b518db7dfbbdfcde2b0dad179"><div class="ttname"><a href="vdo-types_8h.html#a021421f945451240ceba49813b38196da2363918b518db7dfbbdfcde2b0dad179">VDO_TIMESTAMP_MONO_SERVER</a></div><div class="ttdeci">@ VDO_TIMESTAMP_MONO_SERVER</div><div class="ttdef"><b>Definition:</b> vdo-types.h:281</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">self</td><td>A <a class="el" href="classVdoFrame.html" title="A video frame.">VdoFrame</a></td></tr>
@@ -323,7 +326,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the size of any H264/H265 headers contained in this frame. </p>
+<p>Returns the size of any H264/H265/AV1 headers contained in this frame. </p>
 <p>This can be used as an offset into the frame data buffer to get the frame data without headers.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -331,7 +334,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The combined size of the H264/H265 headers, or -1 if the header size is unknown. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The combined size of the H264/H265/AV1 headers, or -1 if the header size is unknown. </dd></dl>
 
 </div>
 </div>
@@ -470,6 +473,34 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The timestamp of this frame in µs. </dd></dl>
+
+</div>
+</div>
+<a id="a18f8c2cd4eb42666c0782ebbd11e982a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18f8c2cd4eb42666c0782ebbd11e982a">&#9670;&nbsp;</a></span>vdo_frame_is_key()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gboolean vdo_frame_is_key </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classVdoFrame.html">VdoFrame</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determines if this is a keyframe. </p>
+<p>For motion-encoded formats, such as H.26x and AV1, this function returns <code>TRUE</code> only for IDR / KEY frames. For simpler formats like JPEG / YUV, this function always returns <code>TRUE</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>A <a class="el" href="classVdoFrame.html" title="A video frame.">VdoFrame</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>TRUE</code> if this is a keyframe, otherwise <code>FALSE</code> </dd></dl>
 
 </div>
 </div>
@@ -830,7 +861,7 @@ Functions</h2></td></tr>
 <div class="line">  <span class="keywordflow">if</span> (!chunk.size)</div>
 <div class="line">    <span class="keywordflow">break</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="astructVdoChunk_html"><div class="ttname"><a href="structVdoChunk.html">VdoChunk</a></div><div class="ttdoc">A video chunk.</div><div class="ttdef"><b>Definition:</b> vdo-types.h:201</div></div>
+<div class="ttc" id="astructVdoChunk_html"><div class="ttname"><a href="structVdoChunk.html">VdoChunk</a></div><div class="ttdoc">A video chunk.</div><div class="ttdef"><b>Definition:</b> vdo-types.h:215</div></div>
 <div class="ttc" id="avdo-frame_8h_html_adb25e7f390f3e708a9fbc7508b5e0b45"><div class="ttname"><a href="vdo-frame_8h.html#adb25e7f390f3e708a9fbc7508b5e0b45">vdo_frame_take_chunk</a></div><div class="ttdeci">VdoChunk vdo_frame_take_chunk(VdoFrame *self, GError **error)</div><div class="ttdoc">Iterate buffer contents by chunks (with mmap)</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -883,7 +914,7 @@ Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">break</span>;</div>
 <div class="line">}</div>
 <div class="ttc" id="avdo-frame_8h_html_afa475eeba1bfd653e7eff90a217cc43a"><div class="ttname"><a href="vdo-frame_8h.html#afa475eeba1bfd653e7eff90a217cc43a">vdo_frame_take_chunk_ex</a></div><div class="ttdeci">VdoChunk vdo_frame_take_chunk_ex(VdoFrame *self, VdoChunkOption options, GError **error)</div><div class="ttdoc">Iterate buffer contents by chunks (optional mmap)</div></div>
-<div class="ttc" id="avdo-types_8h_html_ad0ba1560f1b1a09bbbc195de70899e9eac9477d1c8878d3b7272a0fbf96698182"><div class="ttname"><a href="vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9eac9477d1c8878d3b7272a0fbf96698182">VDO_CHUNK_OPTION_NONE</a></div><div class="ttdeci">@ VDO_CHUNK_OPTION_NONE</div><div class="ttdef"><b>Definition:</b> vdo-types.h:194</div></div>
+<div class="ttc" id="avdo-types_8h_html_ad0ba1560f1b1a09bbbc195de70899e9eac9477d1c8878d3b7272a0fbf96698182"><div class="ttname"><a href="vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9eac9477d1c8878d3b7272a0fbf96698182">VDO_CHUNK_OPTION_NONE</a></div><div class="ttdeci">@ VDO_CHUNK_OPTION_NONE</div><div class="ttdef"><b>Definition:</b> vdo-types.h:208</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">self</td><td>A <a class="el" href="classVdoFrame.html" title="A video frame.">VdoFrame</a> </td></tr>

@@ -1,6 +1,7 @@
 var vdo_map_8h =
 [
     [ "vdo_map_get_printf", "vdo-map_8h.html#a7b8c50168ed43f068a1eaf66472f7301", null ],
+    [ "vdo_map_remove_printf", "vdo-map_8h.html#a3720285f74efd6c93ddb7694b21276c0", null ],
     [ "vdo_map_set_printf", "vdo-map_8h.html#a1a65512384e0991bfc2dc0e04e92d182", null ],
     [ "vdo_map_clear", "vdo-map_8h.html#ab942ab99d8733221a504807227c55c78", null ],
     [ "vdo_map_contains", "vdo-map_8h.html#afba46021d63a6747ecd968146a8bfc93", null ],

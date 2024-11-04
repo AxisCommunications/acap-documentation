@@ -115,6 +115,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a1a65512384e0991bfc2dc0e04e92d182"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-map_8h.html#a1a65512384e0991bfc2dc0e04e92d182">vdo_map_set_printf</a>(self,  type,  value,  len,  format, ...)</td></tr>
 <tr class="memdesc:a1a65512384e0991bfc2dc0e04e92d182"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value using a printf-style format string to specify a key.  <a href="vdo-map_8h.html#a1a65512384e0991bfc2dc0e04e92d182">More...</a><br /></td></tr>
 <tr class="separator:a1a65512384e0991bfc2dc0e04e92d182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3720285f74efd6c93ddb7694b21276c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-map_8h.html#a3720285f74efd6c93ddb7694b21276c0">vdo_map_remove_printf</a>(self,  len,  format, ...)</td></tr>
+<tr class="memdesc:a3720285f74efd6c93ddb7694b21276c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an entry using a printf-style format string to specify a key.  <a href="vdo-map_8h.html#a3720285f74efd6c93ddb7694b21276c0">More...</a><br /></td></tr>
+<tr class="separator:a3720285f74efd6c93ddb7694b21276c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -269,6 +272,61 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value associated with the specified key, or default value. </dd></dl>
+
+</div>
+</div>
+<a id="a3720285f74efd6c93ddb7694b21276c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3720285f74efd6c93ddb7694b21276c0">&#9670;&nbsp;</a></span>vdo_map_remove_printf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define vdo_map_remove_printf</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">self, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">len, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">format, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    {\</div>
+<div class="line">    gchar name[len];\</div>
+<div class="line">    g_snprintf(name, len, format, __VA_ARGS__);\</div>
+<div class="line">    vdo_map_remove(<span class="keyword">self</span>, name);\</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Removes an entry using a printf-style format string to specify a key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>A <a class="el" href="classVdoMap.html" title="A class representing a dictionary mapping keys to values.">VdoMap</a>. </td></tr>
+    <tr><td class="paramname">len</td><td>Maximum string length. </td></tr>
+    <tr><td class="paramname">format</td><td>A printf-style format string to use as a key. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

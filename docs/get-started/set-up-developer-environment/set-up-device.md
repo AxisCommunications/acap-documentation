@@ -13,8 +13,10 @@ To prepare a device for development:
 - [Find the device on the network](#find-the-device-on-the-network) to configure the IP address and the user credentials
 - [Setup the device on the network](#setup-the-device-on-the-network) to make sure it's ready to be connected to the network
 - [Check device compatibility](#check-device-compatibility) to make sure that you use a device that supports ACAP
-- [Check device properties](#check-device-properties) and update to the latest firmware (AXIS OS) if needed, see [How to upgrade](#how-to-upgrade)
+- [Check device properties](#check-device-properties) and update to the latest AXIS OS version, see [How to upgrade](#how-to-upgrade)
 - [Check device properties](#check-device-properties) and identify the device architecture to be able to choose the correct toolchain
+
+> **AXIS OS** and **device software** were previously called **firmware**.
 
 ## Find the device on the network
 
@@ -34,13 +36,13 @@ For more information about how to find and assign IP addresses, go to [How to as
 
 Some extra steps can be followed to make sure the device is ready to be used and connected to the network.
 
-### Verify that no one has tampered with the firmware
+### Verify that no one has tampered with the AXIS OS
 
-To make sure that the device has its original firmware (AXIS OS), or to take full control of the device after a security attack:
+To make sure that the device has its original AXIS OS, or to take full control of the device after a security attack:
 
 1. Reset to factory default settings. See the product’s user manual for information on how to reset to factory default settings.
 After the reset, secure boot guarantees the state of the device.
-2. Configure and install the device.
+1. Configure and install the device.
 
 ### Set a secure password
 
@@ -86,7 +88,9 @@ Properties.EmbeddedDevelopment.EmbeddedDevelopment=yes
 
 ## Check device properties
 
-To get basic device information, such as AXIS OS version and architecture, use VAPIX POST request and method **getAllProperties**:
+To get
+[basic device information](https://www.axis.com/vapix-library/subjects/t10175981/section/t10132180/display),
+such as AXIS OS version and architecture, use a VAPIX POST request and method **getAllProperties**:
 
 ```html
 http://192.168.0.90/axis-cgi/basicdeviceinfo.cgi
@@ -98,127 +102,144 @@ To extract the messages, use the CGI from a terminal, using the credentials set 
 curl \
   -u <username>:<password> \
   --anyauth \
-  --data '{"apiVersion":"1.0","context":"Client defined request ID","method":"getAllProperties"}' \
+  --data '{"apiVersion":"1.3","context":"Client defined request ID","method":"getAllProperties"}' \
   "http://192.168.0.90/axis-cgi/basicdeviceinfo.cgi"
 ```
 
 > To get a pretty-print of the JSON response from the curl call, the program
 > `jq` can be used by appending the following snippet `<curl command> | jq`
 
-The following response contains architecture `"Architecture": "armv7hf"`, and firmware version `"Version": "9.50.1"`:
+The following response contains architecture `"Architecture": "aarch64"`, and AXIS OS version `"Version": "12.0.91"`:
 
 ```json
 {
-    "apiVersion": "1.0",
-    "context": "Client defined request ID",
-    "data": {
-        "propertyList": {
-            "Architecture": "armv7hf",
-            "Brand": "AXIS",
-            "BuildDate": "Nov 07 2019 11:16",
-            "HardwareID": "764",
-            "ProdFullName": "AXIS P1448-LE Network Camera",
-            "ProdNbr": "P1448-LE",
-            "ProdShortName": "AXIS P1448-LE",
-            "ProdType": "Network Camera",
-            "SerialNumber": "ACCC8ED0C9EC",
-            "Soc": "Axis Artpec-6",
-            "SocSerialNumber": "00000000-00000000-442C2402-87C00153",
-            "Version": "9.50.1",
-            "WebURL": "http://www.axis.com"
-        }
+  "apiVersion": "1.3",
+  "data": {
+    "propertyList": {
+      "Architecture": "aarch64",
+      "ProdNbr": "Q1656",
+      "HardwareID": "900",
+      "ProdFullName": "AXIS Q1656 Box Camera",
+      "Version": "12.0.91",
+      "ProdType": "Box Camera",
+      "SocSerialNumber": "4E78C475-010102B7",
+      "Soc": "Axis Artpec-8",
+      "Brand": "AXIS",
+      "WebURL": "http://www.axis.com",
+      "ProdVariant": "",
+      "SerialNumber": "B8A44F7D507D",
+      "ProdShortName": "AXIS Q1656",
+      "BuildDate": "Sep 26 2024 18:22"
     }
+  },
+  "context": "Client defined request ID"
 }
 ```
 
 ## How to upgrade
 
-Axis offers product firmware (AXIS OS) management according to the active track or the long-term support (LTS) tracks. Regardless of the track chosen, it is recommended to upgrade AXIS OS regularly in order to get the latest security updates. AXIS OS can be upgraded using AXIS Device Manager, AXIS Camera Station, AXIS Companion, HTTP or FTP.
+Axis offers management of device software (AXIS OS) according to the active track or the long-term
+support (LTS) tracks. Regardless of the track chosen, it is recommended to upgrade AXIS OS regularly
+in order to get the latest security updates.
 
-### AXIS Device Manager or AXIS Camera Station
+To manage AXIS OS upgrades in production sites it's recommended to use a
+[Video Management Software](https://www.axis.com/products/video-management-software) (VMS) like the
+AXIS Camera Station product family or a
+[Device Management Software](https://www.axis.com/products/device-management-software). AXIS OS can
+also be upgraded manually via web interface (see
+[Upgrade via device web interface](#upgrade-via-device-web-interface)) or making a VAPIX call (see
+[Upgrade with VAPIX](#upgrade-with-vapix)). Note that the new AXIS OS software file needs to be
+available on the developer machine before making the upgrade, go to
+[Download device software](https://www.axis.com/support/device-software).
 
-1. Go to the **Device Manager Tab** in Axis Device Manager or **Configuration Tab > Devices - Management** in AXIS Camera Station.
-2. Select all devices that should be upgraded.
-3. Right click and select **Upgrade Firmware**, which will open a dialog with a list of device models and the current firmware version installed in each device.
-4. In the **Upgrade Firmware** dialog there are two options:
-    - **Check for Updates** which requires internet access.
-    - **Browse** to locate firmware file e.g. on hard drive or memory stick.
-5. Check for updates:
-    - Select **Check for Updates** to download a list of all firmware available for all device models.
-6. Browse:
-    - Select **browse** to locate firmware files and import them. It is possible to select and import several files at the same time.
-7. Each device model will show a dropdown containing all available firmware for a model. Firmware will be sorted by “Long Term Support” (LTS) and “Active” software tracks in the dropdown.
-8. Select the firmware to install for each device model.
-9. Click **OK** to start upgrading the devices.
+### Upgrade via device web interface
 
-> By default, firmware upgrade is done for all the selected devices at the same
-> time. The upgrade order can be changed in **Configuration > Connected
-> services > Firmware upgrade settings**. Once a firmware update has been
-> started, the devices will be unavailable until the installation and restart
-> of the devices has completed successfully.
+> The procedure to update AXIS OS differs slightly depending on the version of the current device
+> web interface.
 
-For more information, see the help in AXIS Device Manager/AXIS Camera Station.
+#### Upgrade instructions for AXIS OS 10.0 and later
 
-### Device web interface
-
-> The procedure to update firmware differs slightly depending on the version of
-> the installed web interface (before and after 7.10.1). For AXIS Q1659, the
-> new web interface was introduced in firmware version 6.55.1.
-
-#### Upgrade instructions when using the old web interface
-
-1. Download the upgrade file to a directory that is accessible from your local computer.
-2. Open the product's start page (e.g. `http://192.168.0.90`) in a web browser.
-3. Click the **Setup** link and log in as "root" (or any other user with administrator privileges). You must be logged in as an administrator to upgrade the unit.
-4. Click **System Options** in the menu to the left.
-5. Click Maintenance.
-6. Click the **Browse** button in the **Upgrade Server** section.
-7. Select the upgrade file you downloaded (and maybe decompressed) from our site. This file is typically named after the product and firmware version.
-8. Click the **Open** button.
-9. Click the **Upgrade** button in the **Upgrade Server** section.
-10. Wait for the flash load to complete, which may take 1-10 minutes. The upgrade procedure occurs in four steps:
+1. Open the product's start page (e.g. `http://192.168.0.90`) in a web browser.
+2. Log in as user with administrator privileges.
+3. Click **Maintenance** in the left menu.
+4. In the **AXIS OS upgrade** (**Firmware upgrade** in AXIS OS 10) section, click the **Upgrade**
+   button.
+5. Click **Next**.
+6. Select the AXIS OS software file you downloaded and click **Next**.
+7. Select upgrade type and click **Next**.
+8. Click **Upgrade**.
+9. Wait for the flash load to complete, which may take 1-10 minutes. The upgrade procedure occurs
+    in four steps:
     - Step 1: Shut down. Running applications are shut down and active connections are terminated.
-    - Step 2: Uploading firmware. The old firmware will be erased and the new firmware will be saved. During this step, the power LED will blink green/amber. After a while the progress of the upgrade will be displayed in the web browser.
+    - Step 2: Uploading AXIS OS. The old AXIS OS will be erased and the new AXIS OS will be
+      saved. During this step, the power LED will blink green/amber. After a while the progress of
+      the upgrade will be displayed in the web browser.
     - Step 3: Reboot. The system restarts automatically.
-    - Step 4: Reconfiguration. The new firmware settings are configured to match the previous settings. The color of the status LED will be amber during this step.
-11. After the upgrade has completed, the unit will automatically initiate the system, during which the status LED blinks amber. When initiation is complete and the system is ready for use, the status LED will be green.
+    - Step 4: Reconfiguration. The new AXIS OS settings are configured to match the previous
+      settings. The color of the status LED will be amber during this step.
+10. After the upgrade has completed, the unit will automatically initiate the system, during which
+    the status LED blinks amber. When initiation is complete and the system is ready for use, the
+    status LED will be green.
 
-#### Upgrade instructions when using the new web interface
+#### Upgrade instructions for AXIS OS 7.10 to 9.80
 
-1. Download the upgrade file to a directory that is accessible from your local computer.
-2. Open the product's start page (e.g. `http://192.168.0.90`) in a web browser.
-3. Log in as "root" (or any other user with administrator privileges).
-4. Click **Settings** to the right.
-5. Click **System-tab**.
-6. Click **Maintenance**.
-7. Select the upgrade file you downloaded (and maybe decompressed) from our site. This file is typically named after the product and firmware version.
-8. Click the **Open** button.
-9. Click the **Upgrade** button in the **Upgrade Server** section.
-10. Wait for the flash load to complete, which may take 1-10 minutes. The upgrade procedure occurs in four steps:
+1. Open the product's start page (e.g. `http://192.168.0.90`) in a web browser.
+2. Log in as user with administrator privileges.
+3. Click **Settings** to the right.
+4. Click **System-tab**.
+5. Click **Maintenance**.
+6. Select the AXIS OS software file you downloaded.
+7. Click the **Open** button.
+8. Click the **Upgrade** button in the **Upgrade Server** section.
+9. Wait for the flash load to complete, which may take 1-10 minutes. The upgrade procedure occurs in four steps:
     - Step 1: Shut down. Running applications are shut down and active connections are terminated.
-    - Step 2: Uploading firmware. The old firmware will be erased and the new firmware will be saved. During this step, the power LED will blink green/amber. After a while the progress of the upgrade will be displayed in the web browser.
+    - Step 2: Uploading AXIS OS. The old AXIS OS will be erased and the new AXIS OS will be saved. During this step, the power LED will blink green/amber. After a while the progress of the upgrade will be displayed in the web browser.
     - Step 3: Reboot. The system restarts automatically.
-    - Step 4: Reconfiguration. The new firmware settings are configured to match the previous settings. The color of the status LED will be amber during this step.
-11 . After the upgrade has completed, the unit will automatically initiate the system, during which the status LED blinks amber. When initiation is complete and the system is ready for use, the status LED will be green.
+    - Step 4: Reconfiguration. The new AXIS OS settings are configured to match the previous settings. The color of the status LED will be amber during this step.
+10. After the upgrade has completed, the unit will automatically initiate the system, during which the status LED blinks amber. When initiation is complete and the system is ready for use, the status LED will be green.
 
-### FTP
+#### Upgrade instructions for versions prior to AXIS OS 7.10
 
-> - Starting with firmware version 7.30.1 and onwards, the FTP server is
->     disabled by default. In order to use the instructions below it first
->     needs to be enabled via the web interface: ***Settings > System >
->     PlainConfig > Network > NetworkFTP***
-> - This section is not applicable for AXIS Companion Line cameras.
-
-1. You must be at the command prompt and in the directory that contains the upgrade file. Example: `C:\Axis\Product\Firmware`
-2. From the command prompt, open an FTP connection to the unit you wish to upgrade.
-(Do not use a Windows based FTP program to do this, use command-line FTP programs only.)
-3. Log in as “root”. You must be logged in as the root user to upgrade the unit.
-4. Change to binary transfer mode by typing "bin" and press enter.
-5. Type "hash" and press enter. This will allow you to see how the upgrade progresses.
-6. Type the command "put XXX.bin flash" where XXX.bin is the name of the upgrade file you downloaded (and maybe decompressed) from our site. This file is typically named after the product and firmware version.
-7. Wait for the flash load to complete, which may take 1-10 minutes. The upgrade procedure occurs in four steps:
+1. Open the product's start page (e.g. `http://192.168.0.90`) in a web browser.
+2. Click the **Setup** link and log in as user with administrator privileges.
+3. Click **System Options** in the menu to the left.
+4. Click Maintenance.
+5. Click the **Browse** button in the **Upgrade Server** section.
+6. Select the AXIS OS software file you downloaded.
+7. Click the **Open** button.
+8. Click the **Upgrade** button in the **Upgrade Server** section.
+9. Wait for the flash load to complete, which may take 1-10 minutes. The upgrade procedure occurs in four steps:
     - Step 1: Shut down. Running applications are shut down and active connections are terminated.
-    - Step 2: Uploading firmware. The old firmware will be erased and the new firmware will be saved. During this step, the power LED will blink green/amber. After a while, the progress of the upgrade will be displayed in the command prompt.
-    - Step 3: Reboot. The FTP session terminates and the system starts automatically.
-    - Step 4: Reconfiguration. The new firmware settings are configured to match the previous settings. The color of the status LED will be amber during this step.
-8. After the upgrade has completed, the unit will automatically initiate the system, during which the status LED blinks amber. When initiation is complete and the system is ready for use, the color of the status LED will be green.
+    - Step 2: Uploading AXIS OS. The old AXIS OS will be erased and the new AXIS OS will be saved. During this step, the power LED will blink green/amber. After a while the progress of the upgrade will be displayed in the web browser.
+    - Step 3: Reboot. The system restarts automatically.
+    - Step 4: Reconfiguration. The new AXIS OS settings are configured to match the previous settings. The color of the status LED will be amber during this step.
+10. After the upgrade has completed, the unit will automatically initiate the system, during which the status LED blinks amber. When initiation is complete and the system is ready for use, the status LED will be green.
+
+### Upgrade with VAPIX
+
+To upgrade with the
+[VAPIX Firmware management API](https://www.axis.com/vapix-library/subjects/t10175981/section/t10118139/display?section=t10118139-t10118145),
+use a VAPIX POST request and method **upgrade**. To call this CGI from a terminal using the
+credentials set in the network configuration and the downloaded AXIS OS software file:
+
+```sh
+curl \
+  -u <username>:<password> \
+  --anyauth \
+  -F json='{"apiVersion": "1.5", "context": "Client defined request ID", "method": "upgrade"}' \
+  -F file=@<PATH_TO_SOFTWARE_FILE> \
+  "http://192.168.0.90/axis-cgi/firmwaremanagement.cgi"
+```
+
+The JSON response will look like this:
+
+```json
+{
+  "apiVersion": "1.5",
+  "method": "upgrade",
+  "context": "Client defined request ID",
+  "data": {
+    "firmwareVersion": "12.0.91"
+  }
+}
+```
