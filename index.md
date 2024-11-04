@@ -1,21 +1,19 @@
 ---
 layout: default
-title: ACAP SDK
+title: ACAP documentation
 nav_order: 1
 ---
 
-# ACAP SDK Documentation
+# ACAP documentation
 
-![ACAP SDK](assets/logos/acap_sdk_symbol_200x200.png){: .float-right }
+![ACAP](assets/logos/acap_312x200.png){: .float-right .pt-3 .pl-2 .pb-10}
 
-Welcome to the AXIS Camera Application Platform (ACAP) SDK documentation. This documentation primarily focuses on the latest version of ACAP, version 4. For information in previous versions of ACAP, see [ACAP SDK version 3](./docs/acap-sdk-version-3/).
+Welcome to the AXIS Camera Application Platform (ACAP) documentation. This
+documentation primarily focuses on the latest released version. For
+more information of released versions of ACAP, see [Version history](./docs/version-history).
 
-For information about ACAP and the two new SDKs, start out with the [Introduction](docs/introduction).
+For information about the ACAP offering and the developer environment, start out
+with the [Introduction](docs/introduction).
 
-To start developing ACAP applications, continue to [Get started](docs/get-started).
-
-Examples applications are available in
-[ACAP Native SDK Examples](https://github.com/AxisCommunications/acap-native-sdk-examples)
-and
-[ACAP Computer Vision SDK Examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples)
-{: .pb-8 }
+To start developing ACAP applications, continue to [Get
+started](docs/get-started).

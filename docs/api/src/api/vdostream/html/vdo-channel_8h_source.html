@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('vdo-channel_8h_source.html',''); initR
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vdo-map_8h.html">vdo-map.h</a>&quot;</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vdo-types_8h.html">vdo-types.h</a>&quot;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &lt;gio/gio.h&gt;</span>     <span class="comment">// Removed in AXIS-OS 12+</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &lt;glib-object.h&gt;</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;G_BEGIN_DECLS</div>
@@ -106,52 +106,52 @@ $(document).ready(function(){initNavTree('vdo-channel_8h_source.html',''); initR
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#ae5223c6a11ae8f3583457c4917a0b820">   78</a></span>&#160;<a class="code" href="classVdoChannel.html">VdoChannel</a>* <a class="code" href="vdo-channel_8h.html#ae5223c6a11ae8f3583457c4917a0b820">vdo_channel_get</a>(guint channel_nbr, GError** error);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#aa2edc605a6118b377c44d189beb62853">  108</a></span>&#160;<a class="code" href="classVdoChannel.html">VdoChannel</a>* <a class="code" href="vdo-channel_8h.html#aa2edc605a6118b377c44d189beb62853">vdo_channel_get_ex</a>(<a class="code" href="classVdoMap.html">VdoMap</a>* desc, GError** error);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#ab1032730452f1617fd004f9aa46ded70">  121</a></span>&#160;GList* <a class="code" href="vdo-channel_8h.html#ab1032730452f1617fd004f9aa46ded70">vdo_channel_get_all</a>(GError** error);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#a045ce99305ee3e07ce2a243a6fd28861">  135</a></span>&#160;GList* <a class="code" href="vdo-channel_8h.html#a045ce99305ee3e07ce2a243a6fd28861">vdo_channel_get_filtered</a>(<a class="code" href="classVdoMap.html">VdoMap</a>* filter, GError** error);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#a19ca10165dba07f8295cd0933bfcaa49">  160</a></span>&#160;<a class="code" href="classVdoMap.html">VdoMap</a>* <a class="code" href="vdo-channel_8h.html#a19ca10165dba07f8295cd0933bfcaa49">vdo_channel_get_info</a>(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>, GError** error);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#a13a6f7939f63317f8b8798e9f3a75ea0">  181</a></span>&#160;<a class="code" href="classVdoMap.html">VdoMap</a>* <a class="code" href="vdo-channel_8h.html#a13a6f7939f63317f8b8798e9f3a75ea0">vdo_channel_get_settings</a>(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>, GError** error);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#a3e17d1d5abf72b3c826a70284eb1ae99">  204</a></span>&#160;gboolean <a class="code" href="vdo-channel_8h.html#a3e17d1d5abf72b3c826a70284eb1ae99">vdo_channel_set_settings</a>(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>, <a class="code" href="classVdoMap.html">VdoMap</a>* settings, GError** error);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#a69e3ce84ef7bf204417794aeb8651ce0">  220</a></span>&#160;<a class="code" href="classVdoMap.html">VdoMap</a>* <a class="code" href="vdo-channel_8h.html#a69e3ce84ef7bf204417794aeb8651ce0">vdo_channel_get_stream_profile</a>(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>,</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                                       <span class="keyword">const</span> gchar* profile,</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                                       <a class="code" href="vdo-types_8h.html#a5ed136c302573571bf325c39d6d36246">VdoFormat</a> format,</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                                       GError** error);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#ab95177576e046dd6a42c9f87013089ec">  243</a></span>&#160;<a class="code" href="structVdoResolutionSet.html">VdoResolutionSet</a>* <a class="code" href="vdo-channel_8h.html#ab95177576e046dd6a42c9f87013089ec">vdo_channel_get_resolutions</a>(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>, <a class="code" href="classVdoMap.html">VdoMap</a>* filter, GError** error);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#a2ba1def293a637c15586eb871a586596">  251</a></span>&#160;guint <a class="code" href="vdo-channel_8h.html#a2ba1def293a637c15586eb871a586596">vdo_channel_get_id</a>(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>);</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;gboolean vdo_channel_set_stream_profile(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>,</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                                        <span class="keyword">const</span> gchar* profile,</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                                        <a class="code" href="vdo-types_8h.html#a5ed136c302573571bf325c39d6d36246">VdoFormat</a> format,</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                                        <a class="code" href="classVdoMap.html">VdoMap</a>* settings,</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                                        GError** error);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;gboolean vdo_channel_set_crop_dptz(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>,</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                                   guint x, guint y,</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                                   guint width, guint height,</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                                   GError** error);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;gboolean</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;vdo_channel_apply_alpha_blending(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>,</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                                 gint fd,</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                                 GError** error);</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00329"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#a44e1103d8690783c53103d326e9da5e0">  329</a></span>&#160;gboolean <a class="code" href="vdo-channel_8h.html#a44e1103d8690783c53103d326e9da5e0">vdo_channel_set_framerate</a>(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>, gdouble framerate,</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                                   GError** error);</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;G_END_DECLS</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#aa2edc605a6118b377c44d189beb62853">  109</a></span>&#160;<a class="code" href="classVdoChannel.html">VdoChannel</a>* <a class="code" href="vdo-channel_8h.html#aa2edc605a6118b377c44d189beb62853">vdo_channel_get_ex</a>(<a class="code" href="classVdoMap.html">VdoMap</a>* desc, GError** error);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#ab1032730452f1617fd004f9aa46ded70">  122</a></span>&#160;GList* <a class="code" href="vdo-channel_8h.html#ab1032730452f1617fd004f9aa46ded70">vdo_channel_get_all</a>(GError** error);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#a045ce99305ee3e07ce2a243a6fd28861">  136</a></span>&#160;GList* <a class="code" href="vdo-channel_8h.html#a045ce99305ee3e07ce2a243a6fd28861">vdo_channel_get_filtered</a>(<a class="code" href="classVdoMap.html">VdoMap</a>* filter, GError** error);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#a19ca10165dba07f8295cd0933bfcaa49">  161</a></span>&#160;<a class="code" href="classVdoMap.html">VdoMap</a>* <a class="code" href="vdo-channel_8h.html#a19ca10165dba07f8295cd0933bfcaa49">vdo_channel_get_info</a>(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>, GError** error);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#a13a6f7939f63317f8b8798e9f3a75ea0">  182</a></span>&#160;<a class="code" href="classVdoMap.html">VdoMap</a>* <a class="code" href="vdo-channel_8h.html#a13a6f7939f63317f8b8798e9f3a75ea0">vdo_channel_get_settings</a>(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>, GError** error);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#a3e17d1d5abf72b3c826a70284eb1ae99">  205</a></span>&#160;gboolean <a class="code" href="vdo-channel_8h.html#a3e17d1d5abf72b3c826a70284eb1ae99">vdo_channel_set_settings</a>(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>, <a class="code" href="classVdoMap.html">VdoMap</a>* settings, GError** error);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#a69e3ce84ef7bf204417794aeb8651ce0">  221</a></span>&#160;<a class="code" href="classVdoMap.html">VdoMap</a>* <a class="code" href="vdo-channel_8h.html#a69e3ce84ef7bf204417794aeb8651ce0">vdo_channel_get_stream_profile</a>(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>,</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                                       <span class="keyword">const</span> gchar* profile,</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                                       <a class="code" href="vdo-types_8h.html#a5ed136c302573571bf325c39d6d36246">VdoFormat</a> format,</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                       GError** error);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#ab95177576e046dd6a42c9f87013089ec">  244</a></span>&#160;<a class="code" href="structVdoResolutionSet.html">VdoResolutionSet</a>* <a class="code" href="vdo-channel_8h.html#ab95177576e046dd6a42c9f87013089ec">vdo_channel_get_resolutions</a>(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>, <a class="code" href="classVdoMap.html">VdoMap</a>* filter, GError** error);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#a2ba1def293a637c15586eb871a586596">  252</a></span>&#160;guint <a class="code" href="vdo-channel_8h.html#a2ba1def293a637c15586eb871a586596">vdo_channel_get_id</a>(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;gboolean vdo_channel_set_stream_profile(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>,</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                                        <span class="keyword">const</span> gchar* profile,</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                                        <a class="code" href="vdo-types_8h.html#a5ed136c302573571bf325c39d6d36246">VdoFormat</a> format,</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                                        <a class="code" href="classVdoMap.html">VdoMap</a>* settings,</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                                        GError** error);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;gboolean vdo_channel_set_crop_dptz(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>,</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                                   guint x, guint y,</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                                   guint width, guint height,</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                                   GError** error);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;gboolean</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;vdo_channel_apply_alpha_blending(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>,</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                                 gint fd,</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                                 GError** error);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno"><a class="line" href="vdo-channel_8h.html#a44e1103d8690783c53103d326e9da5e0">  330</a></span>&#160;gboolean <a class="code" href="vdo-channel_8h.html#a44e1103d8690783c53103d326e9da5e0">vdo_channel_set_framerate</a>(<a class="code" href="classVdoChannel.html">VdoChannel</a>* <span class="keyword">self</span>, gdouble framerate,</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                                   GError** error);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;G_END_DECLS</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassVdoChannel_html"><div class="ttname"><a href="classVdoChannel.html">VdoChannel</a></div><div class="ttdoc">A channel.</div></div>
 <div class="ttc" id="aclassVdoMap_html"><div class="ttname"><a href="classVdoMap.html">VdoMap</a></div><div class="ttdoc">A class representing a dictionary mapping keys to values.</div></div>
-<div class="ttc" id="astructVdoResolutionSet_html"><div class="ttname"><a href="structVdoResolutionSet.html">VdoResolutionSet</a></div><div class="ttdoc">A set of resolutions.</div><div class="ttdef"><b>Definition:</b> vdo-types.h:423</div></div>
+<div class="ttc" id="astructVdoResolutionSet_html"><div class="ttname"><a href="structVdoResolutionSet.html">VdoResolutionSet</a></div><div class="ttdoc">A set of resolutions.</div><div class="ttdef"><b>Definition:</b> vdo-types.h:430</div></div>
 <div class="ttc" id="avdo-channel_8h_html_a045ce99305ee3e07ce2a243a6fd28861"><div class="ttname"><a href="vdo-channel_8h.html#a045ce99305ee3e07ce2a243a6fd28861">vdo_channel_get_filtered</a></div><div class="ttdeci">GList * vdo_channel_get_filtered(VdoMap *filter, GError **error)</div><div class="ttdoc">Gets all existing channels matching a filter.</div></div>
 <div class="ttc" id="avdo-channel_8h_html_a13a6f7939f63317f8b8798e9f3a75ea0"><div class="ttname"><a href="vdo-channel_8h.html#a13a6f7939f63317f8b8798e9f3a75ea0">vdo_channel_get_settings</a></div><div class="ttdeci">VdoMap * vdo_channel_get_settings(VdoChannel *self, GError **error)</div><div class="ttdoc">Get the settings for this channel.</div></div>
 <div class="ttc" id="avdo-channel_8h_html_a19ca10165dba07f8295cd0933bfcaa49"><div class="ttname"><a href="vdo-channel_8h.html#a19ca10165dba07f8295cd0933bfcaa49">vdo_channel_get_info</a></div><div class="ttdeci">VdoMap * vdo_channel_get_info(VdoChannel *self, GError **error)</div><div class="ttdoc">Get the info for this channel.</div></div>
@@ -165,7 +165,7 @@ $(document).ready(function(){initNavTree('vdo-channel_8h_source.html',''); initR
 <div class="ttc" id="avdo-channel_8h_html_ae5223c6a11ae8f3583457c4917a0b820"><div class="ttname"><a href="vdo-channel_8h.html#ae5223c6a11ae8f3583457c4917a0b820">vdo_channel_get</a></div><div class="ttdeci">VdoChannel * vdo_channel_get(guint channel_nbr, GError **error)</div><div class="ttdoc">Get an existing channel.</div></div>
 <div class="ttc" id="avdo-map_8h_html"><div class="ttname"><a href="vdo-map_8h.html">vdo-map.h</a></div><div class="ttdoc">A class representing a dictionary mapping keys to values.</div></div>
 <div class="ttc" id="avdo-types_8h_html"><div class="ttname"><a href="vdo-types_8h.html">vdo-types.h</a></div><div class="ttdoc">Vdo common type definitions.</div></div>
-<div class="ttc" id="avdo-types_8h_html_a5ed136c302573571bf325c39d6d36246"><div class="ttname"><a href="vdo-types_8h.html#a5ed136c302573571bf325c39d6d36246">VdoFormat</a></div><div class="ttdeci">VdoFormat</div><div class="ttdoc">Video formats.</div><div class="ttdef"><b>Definition:</b> vdo-types.h:46</div></div>
+<div class="ttc" id="avdo-types_8h_html_a5ed136c302573571bf325c39d6d36246"><div class="ttname"><a href="vdo-types_8h.html#a5ed136c302573571bf325c39d6d36246">VdoFormat</a></div><div class="ttdeci">VdoFormat</div><div class="ttdoc">Video formats.</div><div class="ttdef"><b>Definition:</b> vdo-types.h:47</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.13-->

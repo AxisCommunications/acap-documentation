@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Axis devices & compatibility
-nav_order: 7
+nav_order: 8
 ---
 
 # Axis devices & compatibility
@@ -29,10 +29,6 @@ sensor.
 
 Device compatibility differs depending on which SDK you want to use.
 
-The *ACAP Computer Vision SDK* is supported on a limited set of devices.
-So, for this SDK, it's important to select one of the products listed
-in the [hardware compatibility](#acap-computer-vision-sdk-hardware-compatibility) section.
-
 The *ACAP Native SDK* is supported on all products for the chips listed in the
 [hardware compatibility](#acap-native-sdk-hardware-compatibility) table that support the minimum AXIS
 OS version required. So, for this SDK it is important to make sure that
@@ -40,17 +36,7 @@ the selected product or products support the minimum required AXIS OS version.
 See [software compatibility](#find-the-right-sdk-for-software-compatibility)
 table.
 
-### ACAP Computer Vision SDK hardware compatibility
-
-To get a list of devices that are compatible with the ACAP Computer Vision SDK, you can use Axis [Product Selector](https://www.axis.com/support/tools/product-selector). In the left menu under **Hardware platform**, check the **Container support** checkbox.
-
-More than one filter can be combined in a search, for example in the mentioned **Hardware platform** section it's also possible to filter on products equipped with `DLPU` using the field **Compute capabilities**.
-
-For convenience, here are direct links to a few specific filters you can apply:
-
-- [Container support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
-- [DLPU support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C1%5D%2C%22value%22%3A%22DLPU%22%7D%5D)
-- [Container + DLPU support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C1%5D%2C%22value%22%3A%22DLPU%22%7D%2C%7B%22index%22%3A%5B10%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
+For containerized applications using the ACAP Computer Vision solution, compatibility is limited to specific devices and AXIS OS versions. See the [ACAP Computer Vision solution compatibility](#acap-computer-vision-solution-compatibility) section for more details.
 
 ### ACAP Native SDK hardware compatibility
 
@@ -61,12 +47,38 @@ ARTPEC-7    | armv7hf
 ARTPEC-8    | aarch64
 CV25        | aarch64
 i.MX 6SoloX | armv7hf
-i.MX 6ULL   | armv7hf
-S5          | aarch64
-S5L         | aarch64
 
 See detailed information in the [product interface
 guide](https://www.axis.com/developer-community/product-interface-guide).
+
+### ACAP Computer Vision solution compatibility
+
+> **Note:**
+>
+> - Support for containerized applications using `armv7hf` are no longer
+>   supported after AXIS OS 11.11.
+
+> **Note:**
+>
+> - New Axis products released on AXIS OS 12.x will not have container support.
+> - [All products with existing container support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C0%5D%2C%22value%22%3A%22ARTPEC-8%22%7D%2C%7B%22index%22%3A%5B10%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
+>   will be supported until end of 2031 when [AXIS OS 2026 LTS](https://help.axis.com/en-us/axis-os) reaches end of life.
+
+To get a list of devices that are compatible with the ACAP Computer Vision
+solution, you can use Axis [Product Selector](https://www.axis.com/support/tools/product-selector).
+
+More than one filter can be combined in a search, for example in the **Hardware
+platform** section it's possible to filter on:
+
+- Products equipped with `DLPU` using the field **Compute capabilities**
+- Products with `aarch64` by choosing `ARTPEC-8` in field **System-on-chip**
+- Products with container support by checking the **Container support** checkbox.
+
+For convenience, here are direct links to a few specific filters you can apply
+to list supported products for `aarch64`:
+
+- [Container support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C0%5D%2C%22value%22%3A%22ARTPEC-8%22%7D%2C%7B%22index%22%3A%5B10%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
+- [Container + DLPU support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C0%5D%2C%22value%22%3A%22ARTPEC-8%22%7D%2C%7B%22index%22%3A%5B10%2C1%5D%2C%22value%22%3A%22DLPU%22%7D%2C%7B%22index%22%3A%5B10%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
 
 ## Find the right SDK for software compatibility
 
@@ -76,9 +88,58 @@ supporting your ACAP application.
 How do I know if my device supports a specific AXIS OS version? Please check
 the web page for download of [device software](https://www.axis.com/support/device-software).
 
-> **Device Software** has previously been named **firmware**.
+> **Device software** has previously been named **firmware**.
 
-### ACAP Computer Vision SDK software compatibility
+### ACAP Native SDK software compatibility
+
+The **Image version** referred to in the table below is the Docker image
+release tag available from Docker Hub:
+
+- [ACAP Native SDK](https://hub.docker.com/r/axisecp/acap-native-sdk/tags)
+
+The tag format is `<image-version>-<architecture>-<container-distribution>`.
+An example of a tag is `axisecp/acap-native-sdk:12.0.0-aarch64-ubuntu24.04`
+where `12.0.0` maps to the image version.
+
+#### ACAP version 12 releases
+
+ACAP Release | ACAP Native SDK Image version | Compatible with AXIS OS version
+:------------| :---------------------------- | :-------------------------------------------
+12.0         | 12.0.0                        | 12.0 and later until LTS
+
+#### ACAP version 4 releases
+
+ACAP Release | ACAP Native SDK Image version | Compatible with AXIS OS version
+:------------| :---------------------------- | :-------------------------------------------
+4.0          | 1.0                           | 10.7 and later until LTS
+4.1          | 1.1                           | 10.9 and later until LTS
+4.2          | 1.2                           | 10.10 and later until LTS
+4.3          | 1.3                           | 10.12 (LTS)
+4.4          | 1.4                           | 11.0 and later until LTS
+4.5          | 1.5                           | 11.1 and later until LTS
+4.6          | 1.6                           | 11.2 and later until LTS
+4.7          | 1.7                           | 11.3 and later until LTS
+4.8          | 1.8                           | 11.4 and later until LTS
+4.9          | 1.9                           | 11.5 and later until LTS
+4.10         | 1.10                          | 11.6 and later until LTS
+4.11         | 1.11                          | 11.7 and later until LTS
+4.12         | 1.12                          | 11.8 and later until LTS
+4.13         | 1.13                          | 11.9 and later until LTS
+4.14         | 1.14                          | 11.10 and later until LTS
+4.15         | 1.15                          | 11.11 (planned LTS)
+
+### ACAP Computer Vision solution software compatibility
+
+> **Note:**
+>
+> - From AXIS OS 12.0, the ACAP Computer Vision SDK has been archived as its
+>   components have been refactored: utility libraries and scripts are now
+>   available in [ACAP Runtime](https://github.com/AxisCommunications/acap-runtime).
+>   For usage of the new setup, see the [examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples)
+>   repository.
+
+The following information and compatibility table are provided for reference
+and to support legacy applications using versions prior to AXIS OS 12.0:
 
 The **Image version** referred to in the table below is the Docker image
 release tag available from Docker Hub:
@@ -109,39 +170,6 @@ ACAP Release | ACAP CV SDK Image version | Compatible with AXIS OS version
 4.12         | 1.12                          | 11.8 (breaking change)
 4.13         | 1.13                          | 11.9 and later
 4.14         | 1.14                          | 11.10 and later
-4.15         | 1.15                          | 11.11 (planned LTS)
-
-### ACAP Native SDK software compatibility
-
-The **Image version** referred to in the table below is the Docker image
-release tag available from Docker Hub:
-
-- [ACAP Native SDK](https://hub.docker.com/r/axisecp/acap-native-sdk/tags)
-
-The tag format is `<image-version>-<architecture>-<container-distribution>`.
-An example of a tag is
-
-- `axisecp/acap-native-sdk:1.5-aarch64-ubuntu22.04`
-
-where `1.5` maps to the image version.
-
-ACAP Release | ACAP Native SDK Image version | Compatible with AXIS OS version
-:------------| :---------------------------- | :-------------------------------------------
-4.0          | 1.0                           | 10.7 and later until LTS
-4.1          | 1.1                           | 10.9 and later until LTS
-4.2          | 1.2                           | 10.10 and later until LTS
-4.3          | 1.3                           | 10.12 (LTS)
-4.4          | 1.4                           | 11.0 and later until LTS
-4.5          | 1.5                           | 11.1 and later until LTS
-4.6          | 1.6                           | 11.2 and later until LTS
-4.7          | 1.7                           | 11.3 and later until LTS
-4.8          | 1.8                           | 11.4 and later until LTS
-4.9          | 1.9                           | 11.5 and later until LTS
-4.10         | 1.10                          | 11.6 and later until LTS
-4.11         | 1.11                          | 11.7 and later until LTS
-4.12         | 1.12                          | 11.8 and later until LTS
-4.13         | 1.13                          | 11.9 and later until LTS
-4.14         | 1.14                          | 11.10 and later until LTS
 4.15         | 1.15                          | 11.11 (planned LTS)
 
 ## Forward compatibility

@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('vdo-channel_8h.html',''); initResizabl
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="vdo-map_8h_source.html">vdo-map.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="vdo-types_8h_source.html">vdo-types.h</a>&quot;</code><br />
-<code>#include &lt;gio/gio.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &lt;glib-object.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for vdo-channel.h:</div>
@@ -286,17 +286,18 @@ Functions</h2></td></tr>
 <p>Get an existing channel matching a description. </p>
 <p>Create a new <a class="el" href="classVdoChannel.html" title="A channel.">VdoChannel</a> object representing an existing channel session matching a description.</p>
 <p>The description map must contain exactly one the following keys:</p><ul>
-<li>channel</li>
+<li>view</li>
+<li>warp</li>
 <li>input</li>
-<li>virtual</li>
+<li>channel</li>
+<li>virtual (deprecated)</li>
 </ul>
 <p>where the value is the suffix for the specified type.</p>
 <p>For example, get channel object for 'input1':</p>
-<div class="fragment"><div class="line"><a class="code" href="classVdoMap.html">VdoMap</a>* desc = <a class="code" href="vdo-map_8h.html#a98b0e304d19d397003f2cc0c774cc33f">vdo_map_new</a>();</div>
+<div class="fragment"><div class="line">g_autoptr(<a class="code" href="classVdoMap.html">VdoMap</a>) desc = <a class="code" href="vdo-map_8h.html#a98b0e304d19d397003f2cc0c774cc33f">vdo_map_new</a>();</div>
 <div class="line">vdo_map_set_uint32(desc, <span class="stringliteral">&quot;input&quot;</span>, 1);</div>
-<div class="line"><a class="code" href="classVdoChannel.html">VdoChannel</a>* channel = <a class="code" href="vdo-channel_8h.html#aa2edc605a6118b377c44d189beb62853">vdo_channel_get_ex</a>(desc, &amp;error);</div>
-<div class="line">g_object_unref(desc);</div>
-<div class="line">g_object_unref(channel);</div>
+<div class="line"> </div>
+<div class="line">g_autoptr(<a class="code" href="classVdoChannel.html">VdoChannel</a>) channel = <a class="code" href="vdo-channel_8h.html#aa2edc605a6118b377c44d189beb62853">vdo_channel_get_ex</a>(desc, &amp;error);</div>
 <div class="ttc" id="aclassVdoChannel_html"><div class="ttname"><a href="classVdoChannel.html">VdoChannel</a></div><div class="ttdoc">A channel.</div></div>
 <div class="ttc" id="aclassVdoMap_html"><div class="ttname"><a href="classVdoMap.html">VdoMap</a></div><div class="ttdoc">A class representing a dictionary mapping keys to values.</div></div>
 <div class="ttc" id="avdo-channel_8h_html_aa2edc605a6118b377c44d189beb62853"><div class="ttname"><a href="vdo-channel_8h.html#aa2edc605a6118b377c44d189beb62853">vdo_channel_get_ex</a></div><div class="ttdeci">VdoChannel * vdo_channel_get_ex(VdoMap *desc, GError **error)</div><div class="ttdoc">Get an existing channel matching a description.</div></div>
@@ -308,7 +309,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classVdoChannel.html" title="A channel.">VdoChannel</a> or <code>NULL</code> on error. Free with <code>g_object_unref()</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classVdoChannel.html" title="A channel.">VdoChannel</a> or <code>NULL</code> on error. Free with <code>g_object_unref()</code> or g_autoptr. </dd></dl>
 
 </div>
 </div>

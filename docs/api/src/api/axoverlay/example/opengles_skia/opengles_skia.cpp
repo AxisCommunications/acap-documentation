@@ -26,9 +26,6 @@
 #include <include/gpu/gl/GrGLInterface.h>
 #include <include/gpu/GrDirectContext.h>
 
-#ifndef GL_GLEXT_PROTOTYPES
-#define GL_GLEXT_PROTOTYPES 1
-#endif
 #include <GLES2/gl2.h>
 #include <EGL/egl.h>
 #include <GLES2/gl2ext.h>

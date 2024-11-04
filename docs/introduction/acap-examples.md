@@ -7,7 +7,7 @@ nav_order: 5
 
 # ACAP examples
 
-There are several AXIS Camera Application Platform (ACAP) code examples and tutorials available with an open-source license for both the ACAP Native SDK and ACAP Computer Vision SDK. Each example has a well-defined README file and example structure which will help you execute the examples on an Axis camera. The README file structure is comprised of:
+There are several AXIS Camera Application Platform (ACAP) code examples and tutorials available with an open-source license for both the ACAP Native SDK and ACAP Computer Vision solution. Each example has a well-defined README file and example structure which will help you execute the examples on an Axis device. The README file structure is comprised of:
 
 - example description
 - repository structure

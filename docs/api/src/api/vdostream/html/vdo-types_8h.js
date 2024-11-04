@@ -7,6 +7,11 @@ var vdo_types_8h =
     [ "VdoRect", "structVdoRect.html", null ],
     [ "VdoPair32i", "unionVdoPair32i.html", null ],
     [ "VdoPair32u", "unionVdoPair32u.html", null ],
+    [ "VdoAV1Profile", "vdo-types_8h.html#aaa4e20c4b0f8b8ac6b6244ceb955fd94", [
+      [ "VDO_AV1_PROFILE_NONE", "vdo-types_8h.html#aaa4e20c4b0f8b8ac6b6244ceb955fd94a0c8ea32f71ecc1836646716e031951bd", null ],
+      [ "VDO_AV1_PROFILE_MAIN", "vdo-types_8h.html#aaa4e20c4b0f8b8ac6b6244ceb955fd94a550d3e5d66cceb8dd5ef54fc67202919", null ],
+      [ "VDO_AV1_PROFILE_MAIN_10", "vdo-types_8h.html#aaa4e20c4b0f8b8ac6b6244ceb955fd94a44d10bd5ec2d376f2b56dfa05d1616da", null ]
+    ] ],
     [ "VdoBufferAccess", "vdo-types_8h.html#aad3ddf92456cf91539f2f21814083ecf", [
       [ "VDO_BUFFER_ACCESS_NONE", "vdo-types_8h.html#aad3ddf92456cf91539f2f21814083ecfad9fa9e9db15d55cfca1ecf2a48fe481d", null ],
       [ "VDO_BUFFER_ACCESS_CPU_RD", "vdo-types_8h.html#aad3ddf92456cf91539f2f21814083ecfad8fd4e66962a1c9b1406edf26eddbafe", null ],
@@ -41,7 +46,8 @@ var vdo_types_8h =
       [ "VDO_FORMAT_JPEG", "vdo-types_8h.html#a5ed136c302573571bf325c39d6d36246a49d90b0fb2c39b24e59efc4e4a0cc947", null ],
       [ "VDO_FORMAT_YUV", "vdo-types_8h.html#a5ed136c302573571bf325c39d6d36246a1e0fbf315a5a12d276716d929f4cacb3", null ],
       [ "VDO_FORMAT_RGB", "vdo-types_8h.html#a5ed136c302573571bf325c39d6d36246a4d3104370154eb8bb3e941954263067e", null ],
-      [ "VDO_FORMAT_PLANAR_RGB", "vdo-types_8h.html#a5ed136c302573571bf325c39d6d36246a7f6886218d029fed304e3a9406f0be38", null ]
+      [ "VDO_FORMAT_PLANAR_RGB", "vdo-types_8h.html#a5ed136c302573571bf325c39d6d36246a7f6886218d029fed304e3a9406f0be38", null ],
+      [ "VDO_FORMAT_AV1", "vdo-types_8h.html#a5ed136c302573571bf325c39d6d36246a1dfe492665b21d4f28e6b1f0aaa44dce", null ]
     ] ],
     [ "VdoFrameType", "vdo-types_8h.html#aecc7ad4ae90e505eea73c35dd4dd5bdd", [
       [ "VDO_FRAME_TYPE_NONE", "vdo-types_8h.html#aecc7ad4ae90e505eea73c35dd4dd5bdda5f941d95a7b82d394cff06458803dd9c", null ],
@@ -55,7 +61,10 @@ var vdo_types_8h =
       [ "VDO_FRAME_TYPE_YUV", "vdo-types_8h.html#aecc7ad4ae90e505eea73c35dd4dd5bdda0f7eba258bdeeb6ac6a5ca61ee74e602", null ],
       [ "VDO_FRAME_TYPE_RGBA", "vdo-types_8h.html#aecc7ad4ae90e505eea73c35dd4dd5bddabaaa2217a230b08f027a35f01b4f69d7", null ],
       [ "VDO_FRAME_TYPE_RGB", "vdo-types_8h.html#aecc7ad4ae90e505eea73c35dd4dd5bdda32563cb4bc14abd000de0fcd99dd1d98", null ],
-      [ "VDO_FRAME_TYPE_PLANAR_RGB", "vdo-types_8h.html#aecc7ad4ae90e505eea73c35dd4dd5bddaa0286ba6789fdad050ecad3ac6bda920", null ]
+      [ "VDO_FRAME_TYPE_PLANAR_RGB", "vdo-types_8h.html#aecc7ad4ae90e505eea73c35dd4dd5bddaa0286ba6789fdad050ecad3ac6bda920", null ],
+      [ "VDO_FRAME_TYPE_AV1_KEY", "vdo-types_8h.html#aecc7ad4ae90e505eea73c35dd4dd5bddaa11f5407b25252d0a6b64aecaf62de2b", null ],
+      [ "VDO_FRAME_TYPE_AV1_INTER", "vdo-types_8h.html#aecc7ad4ae90e505eea73c35dd4dd5bddaebf49145452c842698d82a30a46d66bf", null ],
+      [ "VDO_FRAME_TYPE_AV1_BIDI", "vdo-types_8h.html#aecc7ad4ae90e505eea73c35dd4dd5bdda671e479422ca28f4cde59a5cde229bba", null ]
     ] ],
     [ "VdoH264Profile", "vdo-types_8h.html#a33e0f9a928494b4bd711a5265776b5e0", [
       [ "VDO_H264_PROFILE_NONE", "vdo-types_8h.html#a33e0f9a928494b4bd711a5265776b5e0a77ce3f9da1b244de8ea76a7f2a995801", null ],
@@ -131,6 +140,7 @@ var vdo_types_8h =
       [ "VDO_ZIPSTREAM_PROFILE_STORAGE", "vdo-types_8h.html#a7d42c863f85fae6169685874dbbde1b3acffec4fb1fc61e4a450eaf35768eecd6", null ],
       [ "VDO_ZIPSTREAM_PROFILE_LIVE", "vdo-types_8h.html#a7d42c863f85fae6169685874dbbde1b3a9a1a2a2f7d8ed7c295562301248d59ad", null ]
     ] ],
+    [ "vdo_av1_profile_get_type", "vdo-types_8h.html#a343ac34a3a74851486cba8ef7555b764", null ],
     [ "vdo_format_get_type", "vdo-types_8h.html#aefe5c21b8a48b6b2cac1892878841711", null ],
     [ "vdo_frame_type_get_type", "vdo-types_8h.html#a0c497b2402527915dd522ab5754967e4", null ],
     [ "vdo_h264_profile_get_type", "vdo-types_8h.html#ad4d880aa1e63aac12f6f1f50a5240cc4", null ],
