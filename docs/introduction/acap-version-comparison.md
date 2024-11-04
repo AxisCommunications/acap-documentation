@@ -9,16 +9,17 @@ nav_order: 3
 
 ## ACAP version 12
 
-Starting with version 12.0, the ACAP release version and the SDK version
-align with the [AXIS OS version](https://help.axis.com/en-us/axis-os) to
-provide clearer compatibility mapping and simpler version tracking.
+Starting with version 12.0, the ACAP release version and the ACAP Native SDK
+version align with the major and minor of the [AXIS OS
+versioning](https://help.axis.com/en-us/axis-os#axis-os-versioning) to provide
+clearer compatibility mapping and simpler version tracking.
 
 * ACAP version 12.0 contains acap-native-sdk 12.0.0 and maps to AXIS OS 12.0.
 
 ACAP applications built with ACAP 12.0 will be forward compatible with all 12.x
-releases where the last one is the LTS release. After the LTS release planned
-breaking changes will be implemented which is indicated with the step in major.
-The ACAP version major show the LTS scope.
+releases where the last one is the long-term support (LTS) release. After the
+LTS release, planned breaking changes will be implemented which is indicated
+with the step in major. The ACAP version major shows the LTS scope.
 
 Note that the step in major from 4 to 12 is not marking a new generation with a
 leap in technology or in the ACAP offering. This is a change from ACAP 3 and 4
