@@ -38,6 +38,19 @@ table.
 
 For containerized applications using the ACAP Computer Vision solution, compatibility is limited to specific devices and AXIS OS versions. See the [ACAP Computer Vision solution compatibility](#acap-computer-vision-solution-compatibility) section for more details.
 
+### ACAP Native SDK hardware compatibility
+
+Chip        | Architecture
+:---------- | :-----------
+ARTPEC-6    | armv7hf
+ARTPEC-7    | armv7hf
+ARTPEC-8    | aarch64
+CV25        | aarch64
+i.MX 6SoloX | armv7hf
+
+See detailed information in the [product interface
+guide](https://www.axis.com/developer-community/product-interface-guide).
+
 ### ACAP Computer Vision solution compatibility
 
 > **Note:**
@@ -67,19 +80,6 @@ to list supported products for `aarch64`:
 - [Container support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C0%5D%2C%22value%22%3A%22ARTPEC-8%22%7D%2C%7B%22index%22%3A%5B10%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
 - [Container + DLPU support](https://www.axis.com/support/tools/product-selector/shared/%5B%7B%22index%22%3A%5B10%2C0%5D%2C%22value%22%3A%22ARTPEC-8%22%7D%2C%7B%22index%22%3A%5B10%2C1%5D%2C%22value%22%3A%22DLPU%22%7D%2C%7B%22index%22%3A%5B10%2C2%5D%2C%22value%22%3A%22Yes%22%7D%5D)
 
-### ACAP Native SDK hardware compatibility
-
-Chip        | Architecture
-:---------- | :-----------
-ARTPEC-6    | armv7hf
-ARTPEC-7    | armv7hf
-ARTPEC-8    | aarch64
-CV25        | aarch64
-i.MX 6SoloX | armv7hf
-
-See detailed information in the [product interface
-guide](https://www.axis.com/developer-community/product-interface-guide).
-
 ## Find the right SDK for software compatibility
 
 Choose the appropriate SDK version based on what AXIS OS version you want
@@ -89,6 +89,44 @@ How do I know if my device supports a specific AXIS OS version? Please check
 the web page for download of [device software](https://www.axis.com/support/device-software).
 
 > **Device software** has previously been named **firmware**.
+
+### ACAP Native SDK software compatibility
+
+The **Image version** referred to in the table below is the Docker image
+release tag available from Docker Hub:
+
+- [ACAP Native SDK](https://hub.docker.com/r/axisecp/acap-native-sdk/tags)
+
+The tag format is `<image-version>-<architecture>-<container-distribution>`.
+An example of a tag is `axisecp/acap-native-sdk:12.0.0-aarch64-ubuntu24.04`
+where `12.0.0` maps to the image version.
+
+#### ACAP version 12 releases
+
+ACAP Release | ACAP Native SDK Image version | Compatible with AXIS OS version
+:------------| :---------------------------- | :-------------------------------------------
+12.0         | 12.0.0                        | 12.0 and later until LTS
+
+#### ACAP version 4 releases
+
+ACAP Release | ACAP Native SDK Image version | Compatible with AXIS OS version
+:------------| :---------------------------- | :-------------------------------------------
+4.0          | 1.0                           | 10.7 and later until LTS
+4.1          | 1.1                           | 10.9 and later until LTS
+4.2          | 1.2                           | 10.10 and later until LTS
+4.3          | 1.3                           | 10.12 (LTS)
+4.4          | 1.4                           | 11.0 and later until LTS
+4.5          | 1.5                           | 11.1 and later until LTS
+4.6          | 1.6                           | 11.2 and later until LTS
+4.7          | 1.7                           | 11.3 and later until LTS
+4.8          | 1.8                           | 11.4 and later until LTS
+4.9          | 1.9                           | 11.5 and later until LTS
+4.10         | 1.10                          | 11.6 and later until LTS
+4.11         | 1.11                          | 11.7 and later until LTS
+4.12         | 1.12                          | 11.8 and later until LTS
+4.13         | 1.13                          | 11.9 and later until LTS
+4.14         | 1.14                          | 11.10 and later until LTS
+4.15         | 1.15                          | 11.11 (planned LTS)
 
 ### ACAP Computer Vision solution software compatibility
 
@@ -132,42 +170,6 @@ ACAP Release | ACAP CV SDK Image version | Compatible with AXIS OS version
 4.12         | 1.12                          | 11.8 (breaking change)
 4.13         | 1.13                          | 11.9 and later
 4.14         | 1.14                          | 11.10 and later
-4.15         | 1.15                          | 11.11 (planned LTS)
-
-### ACAP Native SDK software compatibility
-
-The **Image version** referred to in the table below is the Docker image
-release tag available from Docker Hub:
-
-- [ACAP Native SDK](https://hub.docker.com/r/axisecp/acap-native-sdk/tags)
-
-The tag format is `<image-version>-<architecture>-<container-distribution>`.
-An example of a tag is `axisecp/acap-native-sdk:12.0.0-aarch64-ubuntu24.04`
-where `12.0.0` maps to the image version.
-
-ACAP Release | ACAP Native SDK Image version | Compatible with AXIS OS version
-:------------| :---------------------------- | :-------------------------------------------
-12.0         | 12.0.0                        | 12.0 and later until LTS
-
-#### ACAP version 4 releases
-
-ACAP Release | ACAP Native SDK Image version | Compatible with AXIS OS version
-:------------| :---------------------------- | :-------------------------------------------
-4.0          | 1.0                           | 10.7 and later until LTS
-4.1          | 1.1                           | 10.9 and later until LTS
-4.2          | 1.2                           | 10.10 and later until LTS
-4.3          | 1.3                           | 10.12 (LTS)
-4.4          | 1.4                           | 11.0 and later until LTS
-4.5          | 1.5                           | 11.1 and later until LTS
-4.6          | 1.6                           | 11.2 and later until LTS
-4.7          | 1.7                           | 11.3 and later until LTS
-4.8          | 1.8                           | 11.4 and later until LTS
-4.9          | 1.9                           | 11.5 and later until LTS
-4.10         | 1.10                          | 11.6 and later until LTS
-4.11         | 1.11                          | 11.7 and later until LTS
-4.12         | 1.12                          | 11.8 and later until LTS
-4.13         | 1.13                          | 11.9 and later until LTS
-4.14         | 1.14                          | 11.10 and later until LTS
 4.15         | 1.15                          | 11.11 (planned LTS)
 
 ## Forward compatibility
