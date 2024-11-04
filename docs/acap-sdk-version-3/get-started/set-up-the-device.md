@@ -85,7 +85,7 @@ To protect your data we strongly recommend that you:
 > Important
 > The default administrator username is root. If the password for root is lost, reset the device to factory default settings.
 
-[![Support tip: Password security confirmation check](https://img.youtube.com/vi/yZkKTrGelao/maxresdefault.jpg)](https://youtu.be/yZkKTrGelao)
+[![Support tip: Password security confirmation check](https://img.youtube.com/vi/yZkKTrGelao/maxresdefault.jpg)](https://youtu.be/yZkKTrGelao){:target="_blank"}
 
 1. Type a password. Follow the instructions about secure passwords. See [Secure passwords](#secure-passwords).
 2. Retype the password to confirm the spelling.
