@@ -88,7 +88,7 @@ supporting your ACAP application.
 How do I know if my device supports a specific AXIS OS version? Please check
 the web page for download of [device software](https://www.axis.com/support/device-software).
 
-> **Device Software** has previously been named **firmware**.
+> **Device software** has previously been named **firmware**.
 
 ### ACAP Computer Vision solution software compatibility
 
