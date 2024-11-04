@@ -16,6 +16,8 @@ ACAP makes it possible to develop applications for a wide range of use cases:
 - Product feature plug-ins that add value beyond the Axis product's core functionality.
 - Address customer specific use cases that can't be solved with off-the-shelf products.
 
+[![What is ACAP?](https://img.youtube.com/vi/vDgC11sXuwE/hqdefault.jpg)](https://www.youtube.com/watch?v=vDgC11sXuwE){:target="_blank"}
+
 ## Key features
 
 - Access to most common product features, including video, the event and parameter systems, I/O ports, and more.
