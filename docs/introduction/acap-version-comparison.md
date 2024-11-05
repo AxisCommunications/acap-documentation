@@ -17,7 +17,7 @@ clearer compatibility mapping and simpler version tracking.
 * ACAP version 12.0 contains acap-native-sdk 12.0.0 and maps to AXIS OS 12.0.
 
 ACAP applications built with ACAP 12.0 will be forward compatible with all 12.x
-releases where the last one is the long-term support (LTS) release. After the
+releases where the last one in the series is the long-term support (LTS) release. After the
 LTS release, planned breaking changes will be implemented which is indicated
 with the step in major. The ACAP version major shows the LTS scope.
 
