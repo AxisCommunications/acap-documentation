@@ -59,7 +59,7 @@ The ACAP Runtime service provides the Axis APIs:
 - [Machine learning API](#machine-learning-api): Tensorflow Serving for inference service
 - [BETA - Parameter API](#beta---parameter-api): Axis parameter service
 
-ACAP Runtime acts as a server that exposes the above APIs as gRPC APIs by using [gRPC](https://grpc.io) and a [UNIX domain socket (UDS)](https://grpc.github.io/grpc/cpp/md_doc_naming.html) for access.
+ACAP Runtime acts as a server that exposes the above APIs as gRPC APIs by using [gRPC](https://grpc.io) and a [Unix domain socket (UDS)](https://grpc.github.io/grpc/cpp/md_doc_naming.html) for access.
 
 When using ACAP Runtime in a Docker ACAP environment:
 

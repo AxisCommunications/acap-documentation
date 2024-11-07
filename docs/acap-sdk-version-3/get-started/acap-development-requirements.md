@@ -13,5 +13,5 @@ To develop ACAP applications, you need the following:
 - Docker. [Get Docker](https://docs.docker.com/get-docker/).
   - For Windows and macOS, use the automatically upgradable **Docker desktop stable**.
   - For Linux, use **Docker community edition** version 18.09 or later.
-- GIT scm. [GIT downloads](https://git-scm.com/downloads).
+- Git scm. [Git downloads](https://git-scm.com/downloads).
 - We also recommend using **Microsoft Visual Studio Code**. But you are free to choose your favorite editor.
