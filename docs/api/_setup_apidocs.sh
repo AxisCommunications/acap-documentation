@@ -118,6 +118,7 @@ apis="\
   axparameter \
   axserialport \
   axstorage \
+  bbox \
   larod \
   licensekey \
   vdostream \
