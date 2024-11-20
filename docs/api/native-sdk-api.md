@@ -213,7 +213,7 @@ AXIS OS version | Message Broker API version | New functions added
 
 ### Code Examples
 
-- [analytics-scene-description-example](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/message-broker/consume-analytics-scene-description)
+- [consume-scene-metadata](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/message-broker/consume-scene-metadata)
   - The example is written in C and shows how to consume metadata stream
     **Analytics Scene Description**.
 

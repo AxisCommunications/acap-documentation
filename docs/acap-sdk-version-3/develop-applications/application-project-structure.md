@@ -79,7 +79,7 @@ To create the manifest file for a simple Hello Glib ACAP application:
 
 2. Define how you want the applications to be executed:
     - Running mode - the application keeps running at a reboot.
-    - User and group for execution and file ownership, typically the sdk:sdk.
+    - User and group for execution and file ownership, typically the `sdk:sdk`.
     - If needed, you could also define special start options for the execution of the binary.
 
     Example
@@ -173,8 +173,8 @@ The table below shows the package configuration with manifest file, in relations
 | Version for the ACAP application | acapPackageConf.<br>setup.<br>version | APPMAJORVERSION | A numerical value of the application’s major version. |
 | | | APPMINORVERSION | A numerical value of the application’s minor version. |
 | | | APPMICROVERSION | A numerical value of the application’s micro version. |
-| User for execution and file ownership | acapPackageConf.<br>setup.<br>user.<br>username | APPUSR | The user that the application will run as. The recommended user is sdk. |
-| Group for execution and file ownership | acapPackageConf.<br>setup.<br>user.<br>group | APPGRP | The group that the application will run as. The recommended group is sdk. |
+| User for execution and file ownership | acapPackageConf.<br>setup.<br>user.<br>username | APPUSR | The user that the application will run as. The recommended user is `sdk`. |
+| Group for execution and file ownership | acapPackageConf.<br>setup.<br>user.<br>group | APPGRP | The group that the application will run as. The recommended group is `sdk`. |
 | ID of the application in Axis ACAP portal | acapPackageConf.<br>setup.<br>appId | APPID | The application copy protection identifier. Provided by Axis and required when using Axis copy protection solution. |
 | Application architecture | acapPackageConf.<br>setup.<br>architecture[^1] | APPTYPE | The automatically generated architecture of the application. For architecture-independent applications, this field can be set to `all`. |
 | The execution behavior of the application | acapPackageConf.<br>setup.<br>runMode | STARTMODE | Defines how the application is started. Possible values are:<br>- **respawn** Once started, the application starts automatically when the system starts (at boot). In case the application crashes, it restarts automatically.<br>- **once** Once started, the application starts automatically when the system starts (at boot). In case the application crashes, does not restart.<br>- **never** Application does not start or restart automatically. |
@@ -205,7 +205,7 @@ You can find the schema `application-manifest-schema-v1.3.json` in the acap-sdk 
 | 1.0    | 10.6     | 3.4 | Initial basic version |
 | 1.1    | 10.6     | 3.4 | Additional fields, mainly for technical reasons |
 | 1.2    | 10.7     | 3.5 | Enables uninstall functionality which is required by, for example, docker-compose-acap |
-| 1.3    | 10.9     | 3.5 | Architecture is automatically generated and added to manifest at packaging step
+| 1.3    | 10.9     | 3.5 | Architecture is automatically generated and added to manifest at packaging step |
 
 ### Discontinued support when using manifest file
 
@@ -227,7 +227,7 @@ Below are descriptions of the mandatory parameters in the `package.conf` file.
 
 | Parameter | Description |
 | --------- | ----------- |
-| APPGRP | The group that the application will run as. The recommended group is *sdk*. |
+| APPGRP | The group that the application will run as. The recommended group is `sdk`. |
 | APPID | The application copy protection identifier. Provided by Axis and required when using Axis copy protection solution. |
 | APPMICROVERSION | A numerical value of the application's micro version. |
 | APPMINORVERSION | A numerical value of the application's minor version. |
@@ -235,7 +235,7 @@ Below are descriptions of the mandatory parameters in the `package.conf` file.
 | APPNAME | The name of the application's executable binary file. |
 | APPOPTS | Contains the application command-line options (may be empty). |
 | APPTYPE | The (generated) architecture for which the package is built. |
-| APPUSR | The user that the application will run as. The recommended user is sdk. |
+| APPUSR | The user that the application will run as. The recommended user is `sdk`. |
 | LICENSENAME | Specifies `LICENSE` file information text. |
 | LICENSEPAGE | Specifies if a copy protection solution is used by the application. Possible values are:<br>- `axis` Protected by Axis copy protection license solution.<br>- `custom` Protected by a custom copy protection license solution, not provided by Axis.<br>- `none` Not protected by any license copy protection license solution. |
 | OTHERFILES | A space-separated list (may be empty) of other files and/or directories to be included in the package. Files listed here are copied to the application directory during installation. OTHERFILES can be used if separate libraries or configuration files are used by the main program. |

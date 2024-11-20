@@ -90,28 +90,11 @@ docker run --rm \
   -v $PWD:/tmp/lint \
   -e RUN_LOCAL=true \
   --env-file ".github/super-linter.env" \
-  ghcr.io/super-linter/super-linter:slim-v5
+  ghcr.io/super-linter/super-linter:slim-v7
 ```
 
 For more details which linters that run and the settings, see the file
 `.github/super-linter.env`.
-
-To only test one specific linter, e.g. lint Markdown, see the variable name in
-`.github/super-linter.env` that in this case is `VALIDATE_MARKDOWN=true`.  Note
-that you also need to specify the linter configuration file if there is one.
-In this case `MARKDOWN_CONFIG_FILE=.markdownlint` together with the location
-via `LINTER_RULES_PATH=/`. Then run the single linter with this command:
-
-```sh
-docker run --rm \
-  -v $PWD:/tmp/lint \
-  -e RUN_LOCAL=true \
-  -e LINTER_RULES_PATH=/ \
-  -e FILTER_REGEX_EXCLUDE='docs/develop/manifest-schemas/schema-field-descriptions-v*' \
-  -e VALIDATE_MARKDOWN=true \
-  -e MARKDOWN_CONFIG_FILE=.markdownlint.yml \
-  ghcr.io/super-linter/super-linter:slim-v5
-```
 
 ##### Run super-linter interactively
 
@@ -125,7 +108,7 @@ docker run --rm \
   -v $PWD:/tmp/lint \
   -w /tmp/lint \
   --entrypoint /bin/bash \
-  -it ghcr.io/super-linter/super-linter:slim-v5
+  -it ghcr.io/super-linter/super-linter:slim-v7
 ```
 
 Then from the container terminal, the following commands can lint the codebase
