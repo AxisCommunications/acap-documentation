@@ -24,7 +24,7 @@ but in the [CONTRIBUTING](./CONTRIBUTING.md#build-and-serve-documentation) page
 the instruction is much longer, why?
 
 The Jekyll image has permission to change the directory and sub-directories that
-gets mounted with `-v "$PWD":/srv/jekyll`. On UNIX systems it's common to
+gets mounted with `-v "$PWD":/srv/jekyll`. On Unix systems it's common to
 search the command history to run a recurring command and here's the nasty
 thing; running the above command from home directory `~/` instead of
 `acap-documentation` directory will change ownership of certain directories,

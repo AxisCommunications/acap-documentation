@@ -265,7 +265,7 @@ Executing the command would produce the following output describing a successful
 
 ### Deploy ACAP application using a programming language
 
-There are only three things to consider when deploying an ACAP application using Python, NodeJS, or any other programming language:
+There are only three things to consider when deploying an ACAP application using Python, Node.js, or any other programming language:
 
 - **Authentication** - Axis devices use [digest access authentication](https://en.wikipedia.org/wiki/Digest_access_authentication). All HTTP requests sent to the device must use this authentication protocol.
 - **Uploading the ACAP application** - Use the `upload.cgi` to upload the application. The CGI is also used when updating an existing application, see the [VAPIX documentation](https://www.axis.com/vapix-library/subjects/t10102231/section/t10036126/display?section=t10036126-t10010609) for more information.

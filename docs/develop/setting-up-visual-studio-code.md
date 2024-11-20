@@ -85,7 +85,7 @@ After the container is built, you can use features like IntelliSense and code br
 For detailed information on how to use the C/C++ extension and its features, look at the extension's documentation:
 
 - [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack) - Popular extensions for C++ development in Visual Studio Code.
-- [Makefile Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools) - Provides makefile support in VS Code: C/C++ IntelliSense, build, debug/run.
+- [Makefile Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools) - Provides makefile support in Visual Studio Code: C/C++ IntelliSense, build, debug/run.
 - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) - Makes it easy to create, manage, and debug containerized applications.
 
 ### Manifest validation
@@ -118,8 +118,8 @@ With devcontainer support, you can validate the ACAP application manifest file i
 
 3. Visual Studio Code will highlight errors in the manifest file. Have a look at the following examples to see how it works:
 
-    - Introduce a hyphen in the field `appName`. The error will be highlighted and displayed as follows in the _PROBLEMS_ section of VS Code:
+    - Introduce a hyphen in the field `appName`. The error will be highlighted and displayed as follows in the _PROBLEMS_ section of Visual Studio Code:
 
     ![Validation1](../../assets/images/vs-code-manifest-validation1-500x500.png)
 
-    - Change the data type of any field (i.e. enter an integer value like 346 in the field `appId` without putting it into double quotes) and the error will be highlighted and displayed in the _PROBLEMS_ section of VS Code.
+    - Change the data type of any field (i.e. enter an integer value like 346 in the field `appId` without putting it into double quotes) and the error will be highlighted and displayed in the _PROBLEMS_ section of Visual Studio Code.
