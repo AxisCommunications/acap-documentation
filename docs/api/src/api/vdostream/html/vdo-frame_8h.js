@@ -20,6 +20,7 @@ var vdo_frame_8h =
     [ "vdo_frame_set_sequence_nbr", "vdo-frame_8h.html#ae0cbabed403313a18724a9d61627ed49", null ],
     [ "vdo_frame_set_size", "vdo-frame_8h.html#aa0511604695f0987937f90ac6362d8a7", null ],
     [ "vdo_frame_set_timestamp", "vdo-frame_8h.html#a4b1f09ca2e8af5c1e1ecea070fa94ccc", null ],
+    [ "vdo_frame_shown", "vdo-frame_8h.html#a50ee4e5234bab40b88ad66186da3e612", null ],
     [ "vdo_frame_take_chunk", "vdo-frame_8h.html#adb25e7f390f3e708a9fbc7508b5e0b45", null ],
     [ "vdo_frame_take_chunk_ex", "vdo-frame_8h.html#afa475eeba1bfd653e7eff90a217cc43a", null ],
     [ "vdo_frame_unmap", "vdo-frame_8h.html#a595c8a65aceaa01ddcf25de7c2061553", null ]

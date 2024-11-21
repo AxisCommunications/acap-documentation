@@ -5,6 +5,8 @@ var bbox_8h =
     [ "bbox_color_from_rgb", "bbox_8h.html#a754959ec9753db997867f92749fb9ae0", null ],
     [ "bbox_color_from_rgba", "bbox_8h.html#abb400e8a2a0849e43c42252642e563db", null ],
     [ "bbox_commit", "bbox_8h.html#a4ad40a618cba025fd62083b69b95f9ec", null ],
+    [ "bbox_coordinates_frame_normalized", "bbox_8h.html#a33f78b623bcd946a078378d57fbec61f", null ],
+    [ "bbox_coordinates_scene_normalized", "bbox_8h.html#aa5f4fc125238cbaf365d3c17a0b54a4c", null ],
     [ "bbox_destroy", "bbox_8h.html#a3c355605ed60f45f49369fb2959d8ac6", null ],
     [ "bbox_draw_path", "bbox_8h.html#af614c4a1f8a2a0e7a44943cacb7954f2", null ],
     [ "bbox_line", "bbox_8h.html#aa398d040f56c60b4189709f71ee72230", null ],

@@ -509,13 +509,14 @@ Functions</h2></td></tr>
 <p>Create a buffer with custom buffer properties. </p>
 <p>Default: VDO_BUFFER_ACCESS_ANY_RW (suitable for producers) The <code>fd</code> will not be closed by g_object_unref.</p>
 <div class="fragment"><div class="line"><a class="code" href="classVdoMap.html">VdoMap</a> *settings = <a class="code" href="vdo-map_8h.html#a98b0e304d19d397003f2cc0c774cc33f">vdo_map_new</a>();</div>
-<div class="line">vdo_map_set_uint32(settings, <span class="stringliteral">&quot;buffer.access&quot;</span>, <a class="code" href="vdo-types_8h.html#aad3ddf92456cf91539f2f21814083ecfa7205d31a0292710ba7fd7122ade39fbe">VDO_BUFFER_ACCESS_ANY_RW</a>);</div>
+<div class="line"><a class="code" href="vdo-map_8h.html#a9e24ccb5febdf517e6bd0fc9e6eef708">vdo_map_set_uint32</a>(settings, <span class="stringliteral">&quot;buffer.access&quot;</span>, <a class="code" href="vdo-types_8h.html#aad3ddf92456cf91539f2f21814083ecfa7205d31a0292710ba7fd7122ade39fbe">VDO_BUFFER_ACCESS_ANY_RW</a>);</div>
 <div class="line"> </div>
 <div class="line">VdoBuffer *buffer = <a class="code" href="vdo-buffer_8h.html#a097843481f6052a45fa46a6ca359750a">vdo_buffer_new_full</a>(fd, capacity, 0, NULL, settings);</div>
 <div class="ttc" id="aclassVdoMap_html"><div class="ttname"><a href="classVdoMap.html">VdoMap</a></div><div class="ttdoc">A class representing a dictionary mapping keys to values.</div></div>
 <div class="ttc" id="avdo-buffer_8h_html_a097843481f6052a45fa46a6ca359750a"><div class="ttname"><a href="vdo-buffer_8h.html#a097843481f6052a45fa46a6ca359750a">vdo_buffer_new_full</a></div><div class="ttdeci">VdoBuffer * vdo_buffer_new_full(gint fd, gsize capacity, guint64 offset, gpointer opaque, VdoMap *settings)</div><div class="ttdoc">Create a buffer with custom buffer properties.</div></div>
 <div class="ttc" id="avdo-map_8h_html_a98b0e304d19d397003f2cc0c774cc33f"><div class="ttname"><a href="vdo-map_8h.html#a98b0e304d19d397003f2cc0c774cc33f">vdo_map_new</a></div><div class="ttdeci">VdoMap * vdo_map_new(void)</div><div class="ttdoc">Constructs an new empty VdoMap.</div></div>
-<div class="ttc" id="avdo-types_8h_html_aad3ddf92456cf91539f2f21814083ecfa7205d31a0292710ba7fd7122ade39fbe"><div class="ttname"><a href="vdo-types_8h.html#aad3ddf92456cf91539f2f21814083ecfa7205d31a0292710ba7fd7122ade39fbe">VDO_BUFFER_ACCESS_ANY_RW</a></div><div class="ttdeci">@ VDO_BUFFER_ACCESS_ANY_RW</div><div class="ttdef"><b>Definition:</b> vdo-types.h:382</div></div>
+<div class="ttc" id="avdo-map_8h_html_a9e24ccb5febdf517e6bd0fc9e6eef708"><div class="ttname"><a href="vdo-map_8h.html#a9e24ccb5febdf517e6bd0fc9e6eef708">vdo_map_set_uint32</a></div><div class="ttdeci">void vdo_map_set_uint32(VdoMap *self, const gchar *name, guint32 value)</div><div class="ttdoc">Sets the value associated with the specified key.</div></div>
+<div class="ttc" id="avdo-types_8h_html_aad3ddf92456cf91539f2f21814083ecfa7205d31a0292710ba7fd7122ade39fbe"><div class="ttname"><a href="vdo-types_8h.html#aad3ddf92456cf91539f2f21814083ecfa7205d31a0292710ba7fd7122ade39fbe">VDO_BUFFER_ACCESS_ANY_RW</a></div><div class="ttdeci">@ VDO_BUFFER_ACCESS_ANY_RW</div><div class="ttdef"><b>Definition:</b> vdo-types.h:383</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fd</td><td>A mmap compatible file descriptor </td></tr>

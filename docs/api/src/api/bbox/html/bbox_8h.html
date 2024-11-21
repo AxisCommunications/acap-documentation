@@ -113,6 +113,12 @@ Functions</h2></td></tr>
 <tr class="memdesc:a3c355605ed60f45f49369fb2959d8ac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the bbox object.  <a href="bbox_8h.html#a3c355605ed60f45f49369fb2959d8ac6">More...</a><br /></td></tr>
 <tr class="separator:a3c355605ed60f45f49369fb2959d8ac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Functions</div></td></tr>
+<tr class="memitem:aa5f4fc125238cbaf365d3c17a0b54a4c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bbox_8h.html#aa5f4fc125238cbaf365d3c17a0b54a4c">bbox_coordinates_scene_normalized</a> (bbox_t *self)</td></tr>
+<tr class="memdesc:aa5f4fc125238cbaf365d3c17a0b54a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switch to scene normalized coordinate space [Default].  <a href="bbox_8h.html#aa5f4fc125238cbaf365d3c17a0b54a4c">More...</a><br /></td></tr>
+<tr class="separator:aa5f4fc125238cbaf365d3c17a0b54a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33f78b623bcd946a078378d57fbec61f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bbox_8h.html#a33f78b623bcd946a078378d57fbec61f">bbox_coordinates_frame_normalized</a> (bbox_t *self)</td></tr>
+<tr class="memdesc:a33f78b623bcd946a078378d57fbec61f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switch to frame normalized coordinate space.  <a href="bbox_8h.html#a33f78b623bcd946a078378d57fbec61f">More...</a><br /></td></tr>
+<tr class="separator:a33f78b623bcd946a078378d57fbec61f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae90970820d6e036471c9bca9a130164a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bbox_8h.html#ae90970820d6e036471c9bca9a130164a">bbox_video_output</a> (bbox_t *self, bool enabled)</td></tr>
 <tr class="memdesc:ae90970820d6e036471c9bca9a130164a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control drawing on video-output.  <a href="bbox_8h.html#ae90970820d6e036471c9bca9a130164a">More...</a><br /></td></tr>
 <tr class="separator:ae90970820d6e036471c9bca9a130164a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -362,6 +368,62 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">self</td><td>The bbox object </td></tr>
     <tr><td class="paramname">when_us</td><td>Synchronization time in µs. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Success, check <code>errno</code> on error. </dd></dl>
+
+</div>
+</div>
+<a id="a33f78b623bcd946a078378d57fbec61f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33f78b623bcd946a078378d57fbec61f">&#9670;&nbsp;</a></span>bbox_coordinates_frame_normalized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bbox_coordinates_frame_normalized </td>
+          <td>(</td>
+          <td class="paramtype">bbox_t *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Switch to frame normalized coordinate space. </p>
+<p>This coordinate system is normalized and aligned with the camera frame, i.e. top-left is [0,0] and bottom-right is [1,1].</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>The bbox object</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Success, check <code>errno</code> on error. </dd></dl>
+
+</div>
+</div>
+<a id="aa5f4fc125238cbaf365d3c17a0b54a4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5f4fc125238cbaf365d3c17a0b54a4c">&#9670;&nbsp;</a></span>bbox_coordinates_scene_normalized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bbox_coordinates_scene_normalized </td>
+          <td>(</td>
+          <td class="paramtype">bbox_t *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Switch to scene normalized coordinate space [Default]. </p>
+<p>This coordinate system is normalized to [0,0]-[1,1] and follows the filmed scene, i.e. static objects in the world have the same coordinates regardless of global rotation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>The bbox object</td></tr>
   </table>
   </dd>
 </dl>

@@ -116,6 +116,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a18f8c2cd4eb42666c0782ebbd11e982a"><td class="memItemLeft" align="right" valign="top">gboolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-frame_8h.html#a18f8c2cd4eb42666c0782ebbd11e982a">vdo_frame_is_key</a> (<a class="el" href="classVdoFrame.html">VdoFrame</a> *self)</td></tr>
 <tr class="memdesc:a18f8c2cd4eb42666c0782ebbd11e982a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if this is a keyframe.  <a href="vdo-frame_8h.html#a18f8c2cd4eb42666c0782ebbd11e982a">More...</a><br /></td></tr>
 <tr class="separator:a18f8c2cd4eb42666c0782ebbd11e982a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50ee4e5234bab40b88ad66186da3e612"><td class="memItemLeft" align="right" valign="top">gboolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-frame_8h.html#a50ee4e5234bab40b88ad66186da3e612">vdo_frame_shown</a> (<a class="el" href="classVdoFrame.html">VdoFrame</a> *self)</td></tr>
+<tr class="memdesc:a50ee4e5234bab40b88ad66186da3e612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this frame is shown or not.  <a href="vdo-frame_8h.html#a50ee4e5234bab40b88ad66186da3e612">More...</a><br /></td></tr>
+<tr class="separator:a50ee4e5234bab40b88ad66186da3e612"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ac5c0ea4f8e0447f888e6d4653a76ed"><td class="memItemLeft" align="right" valign="top">guint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-frame_8h.html#a4ac5c0ea4f8e0447f888e6d4653a76ed">vdo_frame_get_sequence_nbr</a> (<a class="el" href="classVdoFrame.html">VdoFrame</a> *self)</td></tr>
 <tr class="memdesc:a4ac5c0ea4f8e0447f888e6d4653a76ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sequence number of this frame.  <a href="vdo-frame_8h.html#a4ac5c0ea4f8e0447f888e6d4653a76ed">More...</a><br /></td></tr>
 <tr class="separator:a4ac5c0ea4f8e0447f888e6d4653a76ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -826,6 +829,34 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a50ee4e5234bab40b88ad66186da3e612"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50ee4e5234bab40b88ad66186da3e612">&#9670;&nbsp;</a></span>vdo_frame_shown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gboolean vdo_frame_shown </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classVdoFrame.html">VdoFrame</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns whether this frame is shown or not. </p>
+<p>For most formats this will always be <code>TRUE</code>, one notable exception is AV1 where it corresponds to the 'show_frame' bit.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>A <a class="el" href="classVdoFrame.html" title="A video frame.">VdoFrame</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>TRUE</code> if this frame is shown, otherwise <code>FALSE</code> </dd></dl>
 
 </div>
 </div>
