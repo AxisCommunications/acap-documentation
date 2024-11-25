@@ -72,24 +72,26 @@ $(function() {
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Description    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><span id="channel">channel</span>   </td><td class="markdownTableBodyLeft">An object that publishes messages on a topic and source.    </td></tr>
+<td class="markdownTableBodyLeft"><span id="channel">channel</span>   </td><td class="markdownTableBodyLeft">An object that publishes messages on a <em>topic</em> and <em>source</em>.    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"><span id="client">client</span>   </td><td class="markdownTableBodyLeft">A producer or consumer of messages.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><span id="consumer">consumer</span>   </td><td class="markdownTableBodyLeft">An application that owns one or more subscriber objects.    </td></tr>
+<td class="markdownTableBodyLeft"><span id="consumer">consumer</span>   </td><td class="markdownTableBodyLeft">An application that owns one or more <em>subscriber</em> objects.    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"><span id="info">info</span>   </td><td class="markdownTableBodyLeft">Channel information, e.g calibration tables and data structure.    </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><span id="message">message</span>   </td><td class="markdownTableBodyLeft">Opaque data structure which contains the <em>payload</em> sent by a producer on a channel.    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"><span id="monitor">monitor</span>   </td><td class="markdownTableBodyLeft">An object that allows for finding <em>channels</em> and reading their <em>info</em>.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><span id="payload">payload</span>   </td><td class="markdownTableBodyLeft">The data published by producers on channels, and received by the consumers through subscribers.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><span id="producer">producer</span>   </td><td class="markdownTableBodyLeft">An application that owns one or more channel objects.    </td></tr>
+<td class="markdownTableBodyLeft"><span id="payload">payload</span>   </td><td class="markdownTableBodyLeft">The data published by producers on channel objects, and received by consumers through subscriber objects.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><span id="source">source</span>   </td><td class="markdownTableBodyLeft">A topic can be divided into several sources. A channel is uniquely identified by the combination of a topic and a source. Access control is enforced on the topic level.    </td></tr>
+<td class="markdownTableBodyLeft"><span id="producer">producer</span>   </td><td class="markdownTableBodyLeft">An application that owns one or more <em>channel</em> objects.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><span id="subscriber">subscriber</span>   </td><td class="markdownTableBodyLeft">An object that receives messages on a topic and source.    </td></tr>
+<td class="markdownTableBodyLeft"><span id="source">source</span>   </td><td class="markdownTableBodyLeft">A <em>topic</em> can be divided into several sources. A <em>channel</em> is uniquely identified by the combination of a topic and a source. Access control is enforced on the topic level.    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><span id="subscriber">subscriber</span>   </td><td class="markdownTableBodyLeft">An object that receives messages on a <em>topic</em> and <em>source</em>.    </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft"><span id="topic">topic</span>   </td><td class="markdownTableBodyLeft">A textual string that identifies the messages sent/received. Access control is configured on the topic level.   </td></tr>
 </table>
 </div></div><!-- contents -->

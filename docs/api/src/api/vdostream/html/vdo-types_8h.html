@@ -380,9 +380,9 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a5ed136c302573571bf325c39d6d36246a1e0fbf315a5a12d276716d929f4cacb3"></a>VDO_FORMAT_YUV&#160;</td><td class="fielddoc"><p>YUV </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a5ed136c302573571bf325c39d6d36246a4d3104370154eb8bb3e941954263067e"></a>VDO_FORMAT_RGB&#160;</td><td class="fielddoc"><p>RGB (Not Artpec) </p>
+<tr><td class="fieldname"><a id="a5ed136c302573571bf325c39d6d36246a4d3104370154eb8bb3e941954263067e"></a>VDO_FORMAT_RGB&#160;</td><td class="fielddoc"><p>RGB (Ambarella CV, Artpec-9) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a5ed136c302573571bf325c39d6d36246a7f6886218d029fed304e3a9406f0be38"></a>VDO_FORMAT_PLANAR_RGB&#160;</td><td class="fielddoc"><p>Planar RGB (Artpec-8) </p>
+<tr><td class="fieldname"><a id="a5ed136c302573571bf325c39d6d36246a7f6886218d029fed304e3a9406f0be38"></a>VDO_FORMAT_PLANAR_RGB&#160;</td><td class="fielddoc"><p>Planar RGB (Ambarella CV, Artpec-8) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a5ed136c302573571bf325c39d6d36246a1dfe492665b21d4f28e6b1f0aaa44dce"></a>VDO_FORMAT_AV1&#160;</td><td class="fielddoc"><p>AV1 (Artpec-9) </p>
 </td></tr>
@@ -617,6 +617,8 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a9bba040fd7d1f8b5d5a104500f136c16a7e4affcc02ec829fa6bf40edf66b1b34"></a>VDO_STREAM_EVENT_CLOSED&#160;</td><td class="fielddoc"><p>Private/Internal </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a9bba040fd7d1f8b5d5a104500f136c16ac37ba04975f6c1a5b8098d472597ccf1"></a>VDO_STREAM_EVENT_EXISTING&#160;</td><td class="fielddoc"><p>Private/Internal </p>
+</td></tr>
 <tr><td class="fieldname"><a id="a9bba040fd7d1f8b5d5a104500f136c16ac25c671243a29698ba3c3bcf6f11166e"></a>VDO_STREAM_EVENT_INVALID&#160;</td><td class="fielddoc"><p>Invalid event </p>
 </td></tr>
 </table>
@@ -754,7 +756,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get vdo format type. </p>
-<dl class="section return"><dt>Returns</dt><dd>GType: none,h264,h265,jpeg,yuv,bayer,raw </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>GType: none,h264,h265,jpeg,yuv,rgba,rgb,rgbp,av1 </dd></dl>
 
 </div>
 </div>
@@ -775,7 +777,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get vdo frame type. </p>
-<dl class="section return"><dt>Returns</dt><dd>GType: none,h264-sps,h264-pps,h264-sei,h264-i,h264-p,h264-b, h265-sps,h265-pps,h265-vps,h265-sei,h265-i,h265-p,h265-b, jpeg,yuv,raw </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>GType: none, h264-idr,h264-p,h264-b, h265-idr,h265-p,h265-b, jpeg,yuv,rgba,rgb,rgbp, av1-key,av1-inter,av1-bidi </dd></dl>
 
 </div>
 </div>
@@ -838,7 +840,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get rate control mode type. </p>
-<dl class="section return"><dt>Returns</dt><dd>GType: none,cbr,vbr,mbr </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>GType: none,cbr,vbr,mbr,abr </dd></dl>
 
 </div>
 </div>
@@ -859,7 +861,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get rate control priority type. </p>
-<dl class="section return"><dt>Returns</dt><dd>GType: none,framerate,quality </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>GType: none,framerate,quality,full_framerate </dd></dl>
 
 </div>
 </div>
@@ -901,7 +903,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get zipstream profile type. </p>
-<dl class="section return"><dt>Returns</dt><dd>GType: none,classic, storage and live </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>GType: none,classic,storage,live </dd></dl>
 
 </div>
 </div>

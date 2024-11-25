@@ -71,6 +71,11 @@ $(function() {
 <div class="textblock"><p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a href="https://keepachangelog.com/en/1.1.0/">Keep a Changelog</a>, and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
 <h2><a class="anchor" id="autotoc_md3"></a>
+[0.32.0]</h2>
+<ul>
+<li>API breaking change of error callback signature changing the <code><a class="el" href="structmdb__error__t.html">mdb_error_t</a></code> -&gt; <code>const <a class="el" href="structmdb__error__t.html">mdb_error_t</a></code> to make it clear that it should not be changed or destroyed and that the error string must be copied if it is needed after the callback has returned.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md4"></a>
 [0.29.2]</h2>
 <ul>
 <li>Rename metadata-broker to message-broker</li>
@@ -86,7 +91,7 @@ $(function() {
 </li>
 <li>New topic com.axis.consolidated_track.v1.beta <a class="el" href="standard_topics.html">Standard Topics</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 [0.23.2]</h2>
 <ul>
 <li>Consumer API in beta. </li>

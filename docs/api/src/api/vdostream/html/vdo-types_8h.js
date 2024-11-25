@@ -113,6 +113,7 @@ var vdo_types_8h =
       [ "VDO_STREAM_EVENT_BUFFERING_FAIL", "vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16afc8a96bcc7cab361368ba270c42eff76", null ],
       [ "VDO_STREAM_EVENT_CREATED", "vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16a564510709cb24c37c1061091ae015322", null ],
       [ "VDO_STREAM_EVENT_CLOSED", "vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16a7e4affcc02ec829fa6bf40edf66b1b34", null ],
+      [ "VDO_STREAM_EVENT_EXISTING", "vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16ac37ba04975f6c1a5b8098d472597ccf1", null ],
       [ "VDO_STREAM_EVENT_INVALID", "vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16ac25c671243a29698ba3c3bcf6f11166e", null ]
     ] ],
     [ "VdoStreamTimestamp", "vdo-types_8h.html#a021421f945451240ceba49813b38196d", [

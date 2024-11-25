@@ -380,13 +380,14 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line">g_autoptr(<a class="code" href="classVdoMap.html">VdoMap</a>)    intent = <a class="code" href="vdo-map_8h.html#a98b0e304d19d397003f2cc0c774cc33f">vdo_map_new</a>();</div>
 <div class="line">g_autoptr(<a class="code" href="classVdoStream.html">VdoStream</a>) stream = <a class="code" href="vdo-stream_8h.html#a07e12d4c5d79563413711dcdc6085171">vdo_stream_get</a>(<span class="keywordtype">id</span>, NULL);</div>
 <div class="line"> </div>
-<div class="line">vdo_map_set_uint32(intent, <span class="stringliteral">&quot;intent&quot;</span>, <a class="code" href="vdo-types_8h.html#acaa9291dd03e128aa2097c75b0d65ab8a5765cb5e5a8f8bb598818850bd91f9ba">VDO_INTENT_EVENTFD</a>);</div>
+<div class="line"><a class="code" href="vdo-map_8h.html#a9e24ccb5febdf517e6bd0fc9e6eef708">vdo_map_set_uint32</a>(intent, <span class="stringliteral">&quot;intent&quot;</span>, <a class="code" href="vdo-types_8h.html#acaa9291dd03e128aa2097c75b0d65ab8a5765cb5e5a8f8bb598818850bd91f9ba">VDO_INTENT_EVENTFD</a>);</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordflow">if</span> (!<a class="code" href="vdo-stream_8h.html#aba5b4264502272caae02a621f3bad63c">vdo_stream_attach</a>(stream, intent, &amp;error))</div>
 <div class="line">    g_error(<span class="stringliteral">&quot;Error: %s&quot;</span>, error-&gt;message);</div>
 <div class="ttc" id="aclassVdoMap_html"><div class="ttname"><a href="classVdoMap.html">VdoMap</a></div><div class="ttdoc">A class representing a dictionary mapping keys to values.</div></div>
 <div class="ttc" id="aclassVdoStream_html"><div class="ttname"><a href="classVdoStream.html">VdoStream</a></div><div class="ttdoc">A video stream.</div></div>
 <div class="ttc" id="avdo-map_8h_html_a98b0e304d19d397003f2cc0c774cc33f"><div class="ttname"><a href="vdo-map_8h.html#a98b0e304d19d397003f2cc0c774cc33f">vdo_map_new</a></div><div class="ttdeci">VdoMap * vdo_map_new(void)</div><div class="ttdoc">Constructs an new empty VdoMap.</div></div>
+<div class="ttc" id="avdo-map_8h_html_a9e24ccb5febdf517e6bd0fc9e6eef708"><div class="ttname"><a href="vdo-map_8h.html#a9e24ccb5febdf517e6bd0fc9e6eef708">vdo_map_set_uint32</a></div><div class="ttdeci">void vdo_map_set_uint32(VdoMap *self, const gchar *name, guint32 value)</div><div class="ttdoc">Sets the value associated with the specified key.</div></div>
 <div class="ttc" id="avdo-stream_8h_html_a07e12d4c5d79563413711dcdc6085171"><div class="ttname"><a href="vdo-stream_8h.html#a07e12d4c5d79563413711dcdc6085171">vdo_stream_get</a></div><div class="ttdeci">VdoStream * vdo_stream_get(guint id, GError **error)</div><div class="ttdoc">Get an existing video stream.</div></div>
 <div class="ttc" id="avdo-stream_8h_html_aba5b4264502272caae02a621f3bad63c"><div class="ttname"><a href="vdo-stream_8h.html#aba5b4264502272caae02a621f3bad63c">vdo_stream_attach</a></div><div class="ttdeci">gboolean vdo_stream_attach(VdoStream *self, VdoMap *intent, GError **error)</div><div class="ttdoc">Attach to a Stream.</div></div>
 <div class="ttc" id="avdo-types_8h_html_acaa9291dd03e128aa2097c75b0d65ab8a5765cb5e5a8f8bb598818850bd91f9ba"><div class="ttname"><a href="vdo-types_8h.html#acaa9291dd03e128aa2097c75b0d65ab8a5765cb5e5a8f8bb598818850bd91f9ba">VDO_INTENT_EVENTFD</a></div><div class="ttdeci">@ VDO_INTENT_EVENTFD</div><div class="ttdef"><b>Definition:</b> vdo-types.h:319</div></div>
@@ -718,7 +719,7 @@ Functions</h2></td></tr>
 <p>See <code>VdoStreamEvent</code> for the list of possible events, the current event is returned in the <code><a class="el" href="classVdoMap.html" title="A class representing a dictionary mapping keys to values.">VdoMap</a></code> "event" field.</p>
 <p>The following errors are transient: <code>VDO_ERROR_NO_EVENT</code> The equivalent of EAGAIN, i.e. there's currently no event. The following errors are expected to occur during maintenance: <code>VDO_ERROR_INTERFACE_DOWN</code> Recover by waiting for the service to restart. Complete <a class="el" href="classVdoStream.html" title="A video stream.">VdoStream</a> reinitialization is necessary. All remaining errors are fatal: Complete <a class="el" href="classVdoStream.html" title="A video stream.">VdoStream</a> reinitialization is necessary.</p>
 <div class="fragment"><div class="line">g_autoptr(<a class="code" href="classVdoMap.html">VdoMap</a>) settings = <a class="code" href="vdo-map_8h.html#a98b0e304d19d397003f2cc0c774cc33f">vdo_map_new</a>();</div>
-<div class="line">vdo_map_set_uint32(settings, <span class="stringliteral">&quot;intent&quot;</span>, <a class="code" href="vdo-types_8h.html#acaa9291dd03e128aa2097c75b0d65ab8ac4285a061f1f32323096a3609ef7e14e">VDO_INTENT_DEFAULT</a> | <a class="code" href="vdo-types_8h.html#acaa9291dd03e128aa2097c75b0d65ab8a5765cb5e5a8f8bb598818850bd91f9ba">VDO_INTENT_EVENTFD</a>);</div>
+<div class="line"><a class="code" href="vdo-map_8h.html#a9e24ccb5febdf517e6bd0fc9e6eef708">vdo_map_set_uint32</a>(settings, <span class="stringliteral">&quot;intent&quot;</span>, <a class="code" href="vdo-types_8h.html#acaa9291dd03e128aa2097c75b0d65ab8ac4285a061f1f32323096a3609ef7e14e">VDO_INTENT_DEFAULT</a> | <a class="code" href="vdo-types_8h.html#acaa9291dd03e128aa2097c75b0d65ab8a5765cb5e5a8f8bb598818850bd91f9ba">VDO_INTENT_EVENTFD</a>);</div>
 <div class="line"> </div>
 <div class="line">g_autoptr(<a class="code" href="classVdoStream.html">VdoStream</a>) stream = <a class="code" href="vdo-stream_8h.html#a36fa0021eb58d482c494163db9b22b61">vdo_stream_new</a>(settings, NULL, &amp;error);</div>
 <div class="line"><span class="keywordflow">if</span> (!stream)</div>
@@ -743,12 +744,13 @@ Functions</h2></td></tr>
 <div class="line">  g_autoptr(<a class="code" href="classVdoMap.html">VdoMap</a>) <span class="keyword">event</span> = <a class="code" href="vdo-stream_8h.html#af416bd3ec1edf4055c554e0f78b7b9f9">vdo_stream_get_event</a>(stream, &amp;error);</div>
 <div class="line">  <span class="keywordflow">if</span> (!event)</div>
 <div class="line">    <span class="keywordflow">return</span>;</div>
-<div class="line">  <span class="keywordflow">switch</span>(vdo_map_get_uint32(event, <span class="stringliteral">&quot;event&quot;</span>, <a class="code" href="vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16a2eaecdfa56507e4edc41d734cbced832">VDO_STREAM_EVENT_NONE</a>)) {</div>
+<div class="line">  <span class="keywordflow">switch</span>(<a class="code" href="vdo-map_8h.html#a1e4c091e8cf4c637d059d68af6e3d287">vdo_map_get_uint32</a>(event, <span class="stringliteral">&quot;event&quot;</span>, <a class="code" href="vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16a2eaecdfa56507e4edc41d734cbced832">VDO_STREAM_EVENT_NONE</a>)) {</div>
 <div class="line">  <span class="keywordflow">case</span> <a class="code" href="vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16a6b59450d51e3f36e9e00cfe941ea77ee">VDO_STREAM_EVENT_STARTED</a>: <span class="keywordflow">break</span>;</div>
 <div class="line">  <span class="keywordflow">case</span> <a class="code" href="vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16a5a26e14f380c40f3e59f55fc741cd7b9">VDO_STREAM_EVENT_STOPPED</a>: <span class="keywordflow">break</span>;</div>
 <div class="line">  <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
 <div class="line">  }</div>
 <div class="line">}</div>
+<div class="ttc" id="avdo-map_8h_html_a1e4c091e8cf4c637d059d68af6e3d287"><div class="ttname"><a href="vdo-map_8h.html#a1e4c091e8cf4c637d059d68af6e3d287">vdo_map_get_uint32</a></div><div class="ttdeci">guint32 vdo_map_get_uint32(const VdoMap *self, const gchar *name, guint32 def)</div><div class="ttdoc">Returns the value which the key name is associated with.</div></div>
 <div class="ttc" id="avdo-stream_8h_html_a36fa0021eb58d482c494163db9b22b61"><div class="ttname"><a href="vdo-stream_8h.html#a36fa0021eb58d482c494163db9b22b61">vdo_stream_new</a></div><div class="ttdeci">VdoStream * vdo_stream_new(VdoMap *settings, VdoBufferFinalizer fin, GError **error)</div><div class="ttdoc">Create a new VdoStream.</div></div>
 <div class="ttc" id="avdo-stream_8h_html_a5a366f51af1a7171a6739d191ca1e113"><div class="ttname"><a href="vdo-stream_8h.html#a5a366f51af1a7171a6739d191ca1e113">vdo_stream_start</a></div><div class="ttdeci">gboolean vdo_stream_start(VdoStream *self, GError **error)</div><div class="ttdoc">Start this video stream.</div></div>
 <div class="ttc" id="avdo-stream_8h_html_a81faad176c49398f0a0b9826fb7c31f8"><div class="ttname"><a href="vdo-stream_8h.html#a81faad176c49398f0a0b9826fb7c31f8">vdo_stream_get_fd</a></div><div class="ttdeci">gint vdo_stream_get_fd(VdoStream *self, GError **error)</div><div class="ttdoc">Returns a file descriptor representing the underlying socket connection.</div></div>
@@ -902,7 +904,7 @@ Functions</h2></td></tr>
 <p>Get the info for this video stream. </p>
 <p>This function is called in order to get a pointer to the info map for this video stream. The returned pointer is a pointer to a newly allocated <a class="el" href="classVdoMap.html" title="A class representing a dictionary mapping keys to values.">VdoMap</a> owned by the caller of this function. For example:</p>
 <div class="fragment"><div class="line"><a class="code" href="classVdoMap.html">VdoMap</a> *info = <a class="code" href="vdo-stream_8h.html#a6368c8c989cbea997947d433dce6a3cb">vdo_stream_get_info</a>(stream, &amp;error);</div>
-<div class="line">guint value = vdo_map_get_uint32(info, <span class="stringliteral">&quot;name&quot;</span>, 0);</div>
+<div class="line">guint value = <a class="code" href="vdo-map_8h.html#a1e4c091e8cf4c637d059d68af6e3d287">vdo_map_get_uint32</a>(info, <span class="stringliteral">&quot;name&quot;</span>, 0);</div>
 <div class="line">g_object_unref(info);</div>
 <div class="ttc" id="avdo-stream_8h_html_a6368c8c989cbea997947d433dce6a3cb"><div class="ttname"><a href="vdo-stream_8h.html#a6368c8c989cbea997947d433dce6a3cb">vdo_stream_get_info</a></div><div class="ttdeci">VdoMap * vdo_stream_get_info(VdoStream *self, GError **error)</div><div class="ttdoc">Get the info for this video stream.</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
@@ -945,7 +947,7 @@ Functions</h2></td></tr>
 <p>Get the settings for this video stream. </p>
 <p>This function is called in order to get a pointer to the settings map for this video stream. The returned pointer is a pointer to a newly allocated <a class="el" href="classVdoMap.html" title="A class representing a dictionary mapping keys to values.">VdoMap</a> owned by the caller of this function. For example:</p>
 <div class="fragment"><div class="line"><a class="code" href="classVdoMap.html">VdoMap</a> *settings = <a class="code" href="vdo-stream_8h.html#ad1279257f13b9a406a0df2558f10123e">vdo_stream_get_settings</a>(stream, &amp;error);</div>
-<div class="line">guint value = vdo_map_get_uint32(settings, <span class="stringliteral">&quot;name&quot;</span>, 0);</div>
+<div class="line">guint value = <a class="code" href="vdo-map_8h.html#a1e4c091e8cf4c637d059d68af6e3d287">vdo_map_get_uint32</a>(settings, <span class="stringliteral">&quot;name&quot;</span>, 0);</div>
 <div class="line">g_object_unref(settings);</div>
 <div class="ttc" id="avdo-stream_8h_html_ad1279257f13b9a406a0df2558f10123e"><div class="ttname"><a href="vdo-stream_8h.html#ad1279257f13b9a406a0df2558f10123e">vdo_stream_get_settings</a></div><div class="ttdeci">VdoMap * vdo_stream_get_settings(VdoStream *self, GError **error)</div><div class="ttdoc">Get the settings for this video stream.</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
@@ -1138,7 +1140,7 @@ Functions</h2></td></tr>
 <p>Update the settings for this video stream. </p>
 <p>This function is invoked in order to update the settings of a video stream. The caller owns the <a class="el" href="classVdoMap.html" title="A class representing a dictionary mapping keys to values.">VdoMap</a> containing the new/updated settings.</p>
 <div class="fragment"><div class="line"><a class="code" href="classVdoMap.html">VdoMap</a> *settings = <a class="code" href="vdo-map_8h.html#a98b0e304d19d397003f2cc0c774cc33f">vdo_map_new</a>();</div>
-<div class="line">vdo_map_set_uint32(settings, <span class="stringliteral">&quot;name&quot;</span>, value);</div>
+<div class="line"><a class="code" href="vdo-map_8h.html#a9e24ccb5febdf517e6bd0fc9e6eef708">vdo_map_set_uint32</a>(settings, <span class="stringliteral">&quot;name&quot;</span>, value);</div>
 <div class="line"><span class="keywordflow">if</span> (!<a class="code" href="vdo-stream_8h.html#affa9aec868d9c2fd1f39f44aa63adaf2">vdo_stream_set_settings</a>(stream, settings, &amp;error)) {</div>
 <div class="line">    g_error(<span class="stringliteral">&quot;Error: %s&quot;</span>, error-&gt;message);</div>
 <div class="line">}</div>
@@ -1184,8 +1186,14 @@ Functions</h2></td></tr>
 
 <p>Fetches a single VdoBuffer containing a frame. </p>
 <p>Convenience function for fetching a single frame. The setup and teardown overhead is too high for continuous streaming.</p>
-<p>Free the buffer with g_object_unref.</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Free the buffer with <code>g_autoptr</code>, <code>g_object_unref</code> or <code>g_clear_object</code>.</p>
+<div class="fragment"><div class="line">g_autoptr(<a class="code" href="classVdoMap.html">VdoMap</a>)  settings = <a class="code" href="vdo-map_8h.html#a98b0e304d19d397003f2cc0c774cc33f">vdo_map_new</a>();</div>
+<div class="line"><a class="code" href="vdo-map_8h.html#a9e24ccb5febdf517e6bd0fc9e6eef708">vdo_map_set_uint32</a>(settings, <span class="stringliteral">&quot;format&quot;</span>, <a class="code" href="vdo-types_8h.html#a5ed136c302573571bf325c39d6d36246a49d90b0fb2c39b24e59efc4e4a0cc947">VDO_FORMAT_JPEG</a>);</div>
+<div class="line"> </div>
+<div class="line">g_autoptr(VdoBuffer) buffer = <a class="code" href="vdo-stream_8h.html#a4b4c0f2124280bde265491c08bd2f47c">vdo_stream_snapshot</a>(settings, NULL);</div>
+<div class="ttc" id="avdo-stream_8h_html_a4b4c0f2124280bde265491c08bd2f47c"><div class="ttname"><a href="vdo-stream_8h.html#a4b4c0f2124280bde265491c08bd2f47c">vdo_stream_snapshot</a></div><div class="ttdeci">VdoBuffer * vdo_stream_snapshot(VdoMap *settings, GError **error)</div><div class="ttdoc">Fetches a single VdoBuffer containing a frame.</div></div>
+<div class="ttc" id="avdo-types_8h_html_a5ed136c302573571bf325c39d6d36246a49d90b0fb2c39b24e59efc4e4a0cc947"><div class="ttname"><a href="vdo-types_8h.html#a5ed136c302573571bf325c39d6d36246a49d90b0fb2c39b24e59efc4e4a0cc947">VDO_FORMAT_JPEG</a></div><div class="ttdeci">@ VDO_FORMAT_JPEG</div><div class="ttdef"><b>Definition:</b> vdo-types.h:51</div></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">settings</td><td>A map of stream settings </td></tr>
     <tr><td class="paramname">error</td><td>Location to store an error or <code>NULL</code> </td></tr>

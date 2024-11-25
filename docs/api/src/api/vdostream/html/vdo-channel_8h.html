@@ -142,9 +142,6 @@ Functions</h2></td></tr>
 <tr class="separator:ab95177576e046dd6a42c9f87013089ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ba1def293a637c15586eb871a586596"><td class="memItemLeft" align="right" valign="top">guint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-channel_8h.html#a2ba1def293a637c15586eb871a586596">vdo_channel_get_id</a> (<a class="el" href="classVdoChannel.html">VdoChannel</a> *self)</td></tr>
 <tr class="separator:a2ba1def293a637c15586eb871a586596"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44e1103d8690783c53103d326e9da5e0"><td class="memItemLeft" align="right" valign="top">gboolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdo-channel_8h.html#a44e1103d8690783c53103d326e9da5e0">vdo_channel_set_framerate</a> (<a class="el" href="classVdoChannel.html">VdoChannel</a> *self, gdouble framerate, GError **error)</td></tr>
-<tr class="memdesc:a44e1103d8690783c53103d326e9da5e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the framerate for the specified channel.  <a href="vdo-channel_8h.html#a44e1103d8690783c53103d326e9da5e0">More...</a><br /></td></tr>
-<tr class="separator:a44e1103d8690783c53103d326e9da5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class representing a channel. </p>
@@ -188,7 +185,7 @@ Functions</h2></td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">"available_rotations"   </td><td class="markdownTableBodyNone">string   </td><td class="markdownTableBodyNone">Available rotations for this channel   </td></tr>
 </table>
-<p>Copyright (C) 2016-2018, Axis Communications AB, Lund </p>
+<p>Copyright (C) 2016-2024, Axis Communications AB, Lund </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="ae5223c6a11ae8f3583457c4917a0b820"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae5223c6a11ae8f3583457c4917a0b820">&#9670;&nbsp;</a></span>vdo_channel_get()</h2>
@@ -295,13 +292,14 @@ Functions</h2></td></tr>
 <p>where the value is the suffix for the specified type.</p>
 <p>For example, get channel object for 'input1':</p>
 <div class="fragment"><div class="line">g_autoptr(<a class="code" href="classVdoMap.html">VdoMap</a>) desc = <a class="code" href="vdo-map_8h.html#a98b0e304d19d397003f2cc0c774cc33f">vdo_map_new</a>();</div>
-<div class="line">vdo_map_set_uint32(desc, <span class="stringliteral">&quot;input&quot;</span>, 1);</div>
+<div class="line"><a class="code" href="vdo-map_8h.html#a9e24ccb5febdf517e6bd0fc9e6eef708">vdo_map_set_uint32</a>(desc, <span class="stringliteral">&quot;input&quot;</span>, 1);</div>
 <div class="line"> </div>
 <div class="line">g_autoptr(<a class="code" href="classVdoChannel.html">VdoChannel</a>) channel = <a class="code" href="vdo-channel_8h.html#aa2edc605a6118b377c44d189beb62853">vdo_channel_get_ex</a>(desc, &amp;error);</div>
 <div class="ttc" id="aclassVdoChannel_html"><div class="ttname"><a href="classVdoChannel.html">VdoChannel</a></div><div class="ttdoc">A channel.</div></div>
 <div class="ttc" id="aclassVdoMap_html"><div class="ttname"><a href="classVdoMap.html">VdoMap</a></div><div class="ttdoc">A class representing a dictionary mapping keys to values.</div></div>
 <div class="ttc" id="avdo-channel_8h_html_aa2edc605a6118b377c44d189beb62853"><div class="ttname"><a href="vdo-channel_8h.html#aa2edc605a6118b377c44d189beb62853">vdo_channel_get_ex</a></div><div class="ttdeci">VdoChannel * vdo_channel_get_ex(VdoMap *desc, GError **error)</div><div class="ttdoc">Get an existing channel matching a description.</div></div>
 <div class="ttc" id="avdo-map_8h_html_a98b0e304d19d397003f2cc0c774cc33f"><div class="ttname"><a href="vdo-map_8h.html#a98b0e304d19d397003f2cc0c774cc33f">vdo_map_new</a></div><div class="ttdeci">VdoMap * vdo_map_new(void)</div><div class="ttdoc">Constructs an new empty VdoMap.</div></div>
+<div class="ttc" id="avdo-map_8h_html_a9e24ccb5febdf517e6bd0fc9e6eef708"><div class="ttname"><a href="vdo-map_8h.html#a9e24ccb5febdf517e6bd0fc9e6eef708">vdo_map_set_uint32</a></div><div class="ttdeci">void vdo_map_set_uint32(VdoMap *self, const gchar *name, guint32 value)</div><div class="ttdoc">Sets the value associated with the specified key.</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">desc</td><td>A <a class="el" href="classVdoMap.html" title="A class representing a dictionary mapping keys to values.">VdoMap</a> specifying a description. </td></tr>
@@ -401,10 +399,28 @@ Functions</h2></td></tr>
 <p>Get the info for this channel. </p>
 <p>This function is called in order to get a pointer to the info map for this channel. The returned pointer is a pointer to a newly allocated <a class="el" href="classVdoMap.html" title="A class representing a dictionary mapping keys to values.">VdoMap</a> owned by the caller of this function. For example:</p>
 <div class="fragment"><div class="line">g_autoptr(<a class="code" href="classVdoMap.html">VdoMap</a>) info = <a class="code" href="vdo-channel_8h.html#a19ca10165dba07f8295cd0933bfcaa49">vdo_channel_get_info</a>(channel, &amp;error);</div>
-<div class="line">guint value = vdo_map_get_uint32(info, <span class="stringliteral">&quot;name&quot;</span>, 0);</div>
+<div class="line">guint value = <a class="code" href="vdo-map_8h.html#a1e4c091e8cf4c637d059d68af6e3d287">vdo_map_get_uint32</a>(info, <span class="stringliteral">&quot;name&quot;</span>, 0);</div>
 <div class="ttc" id="avdo-channel_8h_html_a19ca10165dba07f8295cd0933bfcaa49"><div class="ttname"><a href="vdo-channel_8h.html#a19ca10165dba07f8295cd0933bfcaa49">vdo_channel_get_info</a></div><div class="ttdeci">VdoMap * vdo_channel_get_info(VdoChannel *self, GError **error)</div><div class="ttdoc">Get the info for this channel.</div></div>
-</div><!-- fragment --><div class="fragment"><div class="line">g_autoptr(<a class="code" href="classVdoMap.html">VdoMap</a>) info = <a class="code" href="vdo-channel_8h.html#a19ca10165dba07f8295cd0933bfcaa49">vdo_channel_get_info</a>(<a class="code" href="vdo-channel_8h.html#ab364b357cef90100a312a14ff945b95d">VDO_CHANNEL_GLOBAL</a>, &amp;error);</div>
-<div class="line">guint count = vdo_map_get_uint32(info, <span class="stringliteral">&quot;input.count&quot;</span>, 0);</div>
+<div class="ttc" id="avdo-map_8h_html_a1e4c091e8cf4c637d059d68af6e3d287"><div class="ttname"><a href="vdo-map_8h.html#a1e4c091e8cf4c637d059d68af6e3d287">vdo_map_get_uint32</a></div><div class="ttdeci">guint32 vdo_map_get_uint32(const VdoMap *self, const gchar *name, guint32 def)</div><div class="ttdoc">Returns the value which the key name is associated with.</div></div>
+</div><!-- fragment --><p>AXIS OS 12.1 supports <code>VDO_CHANNEL_GLOBAL</code> with the following info.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Type   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">"view.count"   </td><td class="markdownTableBodyNone">uint32   </td><td class="markdownTableBodyNone">The amount of view area channels    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">"warp.count"   </td><td class="markdownTableBodyNone">uint32   </td><td class="markdownTableBodyNone">The amount of warp/dewarp channels    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">"input.count"   </td><td class="markdownTableBodyNone">uint32   </td><td class="markdownTableBodyNone">The amount of sensor/input channels    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">"channel.count"   </td><td class="markdownTableBodyNone">uint32   </td><td class="markdownTableBodyNone">The total channel count   </td></tr>
+</table>
+<div class="fragment"><div class="line"><span class="comment">// AXIS OS 12.1</span></div>
+<div class="line">g_autoptr(<a class="code" href="classVdoMap.html">VdoMap</a>) info = <a class="code" href="vdo-channel_8h.html#a19ca10165dba07f8295cd0933bfcaa49">vdo_channel_get_info</a>(<a class="code" href="vdo-channel_8h.html#ab364b357cef90100a312a14ff945b95d">VDO_CHANNEL_GLOBAL</a>, &amp;error);</div>
+<div class="line">guint view_count    = <a class="code" href="vdo-map_8h.html#a1e4c091e8cf4c637d059d68af6e3d287">vdo_map_get_uint32</a>(info, <span class="stringliteral">&quot;view.count&quot;</span>, 0);</div>
+<div class="line">guint warp_count    = <a class="code" href="vdo-map_8h.html#a1e4c091e8cf4c637d059d68af6e3d287">vdo_map_get_uint32</a>(info, <span class="stringliteral">&quot;warp.count&quot;</span>, 0);</div>
+<div class="line">guint input_count   = <a class="code" href="vdo-map_8h.html#a1e4c091e8cf4c637d059d68af6e3d287">vdo_map_get_uint32</a>(info, <span class="stringliteral">&quot;input.count&quot;</span>, 0);</div>
+<div class="line">guint channel_count = <a class="code" href="vdo-map_8h.html#a1e4c091e8cf4c637d059d68af6e3d287">vdo_map_get_uint32</a>(info, <span class="stringliteral">&quot;channel.count&quot;</span>, 0);</div>
 <div class="ttc" id="avdo-channel_8h_html_ab364b357cef90100a312a14ff945b95d"><div class="ttname"><a href="vdo-channel_8h.html#ab364b357cef90100a312a14ff945b95d">VDO_CHANNEL_GLOBAL</a></div><div class="ttdeci">#define VDO_CHANNEL_GLOBAL</div><div class="ttdoc">Used for accessing info which is global for all channels.</div><div class="ttdef"><b>Definition:</b> vdo-channel.h:65</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -505,7 +521,7 @@ Functions</h2></td></tr>
 <p>Get the settings for this channel. </p>
 <p>This function is called in order to get a pointer to the settings map for this channel. The returned pointer is a pointer to a newly allocated <a class="el" href="classVdoMap.html" title="A class representing a dictionary mapping keys to values.">VdoMap</a> owned by the caller of this function. For example:</p>
 <div class="fragment"><div class="line"><a class="code" href="classVdoMap.html">VdoMap</a>* settings = <a class="code" href="vdo-channel_8h.html#a13a6f7939f63317f8b8798e9f3a75ea0">vdo_channel_get_settings</a>(channel, &amp;error);</div>
-<div class="line">guint value = vdo_map_get_uint32(settings, <span class="stringliteral">&quot;name&quot;</span>, 0);</div>
+<div class="line">guint value = <a class="code" href="vdo-map_8h.html#a1e4c091e8cf4c637d059d68af6e3d287">vdo_map_get_uint32</a>(settings, <span class="stringliteral">&quot;name&quot;</span>, 0);</div>
 <div class="line">g_object_unref(settings);</div>
 <div class="ttc" id="avdo-channel_8h_html_a13a6f7939f63317f8b8798e9f3a75ea0"><div class="ttname"><a href="vdo-channel_8h.html#a13a6f7939f63317f8b8798e9f3a75ea0">vdo_channel_get_settings</a></div><div class="ttdeci">VdoMap * vdo_channel_get_settings(VdoChannel *self, GError **error)</div><div class="ttdoc">Get the settings for this channel.</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
@@ -572,52 +588,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a44e1103d8690783c53103d326e9da5e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44e1103d8690783c53103d326e9da5e0">&#9670;&nbsp;</a></span>vdo_channel_set_framerate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">gboolean vdo_channel_set_framerate </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classVdoChannel.html">VdoChannel</a> *&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">gdouble&#160;</td>
-          <td class="paramname"><em>framerate</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">GError **&#160;</td>
-          <td class="paramname"><em>error</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Update the framerate for the specified channel. </p>
-<p>This function is invoked in order to update the framerate of a channel. All streams that are connected to this channel may be changed. Only streams with a higher fps set than the channel framerate will be affected.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">self</td><td>The <a class="el" href="classVdoChannel.html" title="A channel.">VdoChannel</a> to set framerate on. </td></tr>
-    <tr><td class="paramname">framerate</td><td>A framerate. </td></tr>
-    <tr><td class="paramname">error</td><td>A location to return an error.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>TRUE</code> on success, <code>FALSE</code> if error is set. </dd></dl>
-
-</div>
-</div>
 <a id="a3e17d1d5abf72b3c826a70284eb1ae99"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3e17d1d5abf72b3c826a70284eb1ae99">&#9670;&nbsp;</a></span>vdo_channel_set_settings()</h2>
 
@@ -653,7 +623,7 @@ Functions</h2></td></tr>
 <p>Update the settings for this channel. </p>
 <p>This function is invoked in order to update the settings of a channel. The caller owns the <a class="el" href="classVdoMap.html" title="A class representing a dictionary mapping keys to values.">VdoMap</a> containing the new/updated settings.</p>
 <div class="fragment"><div class="line"><a class="code" href="classVdoMap.html">VdoMap</a>* settings = <a class="code" href="vdo-map_8h.html#a98b0e304d19d397003f2cc0c774cc33f">vdo_map_new</a>();</div>
-<div class="line">vdo_map_set_uint32(settings, <span class="stringliteral">&quot;name&quot;</span>, value);</div>
+<div class="line"><a class="code" href="vdo-map_8h.html#a9e24ccb5febdf517e6bd0fc9e6eef708">vdo_map_set_uint32</a>(settings, <span class="stringliteral">&quot;name&quot;</span>, value);</div>
 <div class="line"><span class="keywordflow">if</span> (!<a class="code" href="vdo-channel_8h.html#a3e17d1d5abf72b3c826a70284eb1ae99">vdo_channel_set_settings</a>(channel, settings, &amp;error)) {</div>
 <div class="line">    g_error(<span class="stringliteral">&quot;Error: %s&quot;</span>, error-&gt;message);</div>
 <div class="line">}</div>
