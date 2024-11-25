@@ -202,9 +202,6 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 <li>VDO_CHANNEL_GLOBAL
 : <a class="el" href="vdo-channel_8h.html#ab364b357cef90100a312a14ff945b95d">vdo-channel.h</a>
 </li>
-<li>vdo_channel_set_framerate()
-: <a class="el" href="vdo-channel_8h.html#a44e1103d8690783c53103d326e9da5e0">vdo-channel.h</a>
-</li>
 <li>vdo_channel_set_settings()
 : <a class="el" href="vdo-channel_8h.html#a3e17d1d5abf72b3c826a70284eb1ae99">vdo-channel.h</a>
 </li>
@@ -270,6 +267,9 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 </li>
 <li>VDO_ERROR_NO_EVENT
 : <a class="el" href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a9cd8a8a6ef280e192aeece78ff1ab0fa">vdo-error.h</a>
+</li>
+<li>VDO_ERROR_NO_VIDEO
+: <a class="el" href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a886da3e7d6c334911f867001182fe7af">vdo-error.h</a>
 </li>
 <li>VDO_ERROR_NOT_CONTROLLED
 : <a class="el" href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a67c27d18bfa33f2984912adac8b849f3">vdo-error.h</a>
@@ -372,6 +372,9 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 </li>
 <li>vdo_frame_set_timestamp()
 : <a class="el" href="vdo-frame_8h.html#a4b1f09ca2e8af5c1e1ecea070fa94ccc">vdo-frame.h</a>
+</li>
+<li>vdo_frame_shown()
+: <a class="el" href="vdo-frame_8h.html#a50ee4e5234bab40b88ad66186da3e612">vdo-frame.h</a>
 </li>
 <li>vdo_frame_take_chunk()
 : <a class="el" href="vdo-frame_8h.html#adb25e7f390f3e708a9fbc7508b5e0b45">vdo-frame.h</a>
@@ -499,6 +502,9 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 <li>vdo_map_dump()
 : <a class="el" href="vdo-map_8h.html#a98b42a54524038a2067ef2c7015c070b">vdo-map.h</a>
 </li>
+<li>vdo_map_dup_string()
+: <a class="el" href="vdo-map_8h.html#a5a3a68da9451f14230f44afc00864474">vdo-map.h</a>
+</li>
 <li>vdo_map_empty()
 : <a class="el" href="vdo-map_8h.html#a41324ec82e93a622f9073cf708a8545e">vdo-map.h</a>
 </li>
@@ -526,20 +532,41 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 <li>vdo_map_filter_va()
 : <a class="el" href="vdo-map_8h.html#ae3ef19a1de979e9cebf07bab998fdbbb">vdo-map.h</a>
 </li>
+<li>vdo_map_get_boolean()
+: <a class="el" href="vdo-map_8h.html#a3095ff4da4b35d02c52bfc4fe08d849b">vdo-map.h</a>
+</li>
+<li>vdo_map_get_double()
+: <a class="el" href="vdo-map_8h.html#abb30f0e71e0a252bd1ac822c2b6ef20b">vdo-map.h</a>
+</li>
+<li>vdo_map_get_int32()
+: <a class="el" href="vdo-map_8h.html#a3058bce089ae82cf1e6d1de862889b3c">vdo-map.h</a>
+</li>
+<li>vdo_map_get_int64()
+: <a class="el" href="vdo-map_8h.html#ad3ac3cf230b4174c3b927c70ec72357c">vdo-map.h</a>
+</li>
+<li>vdo_map_get_pair32i()
+: <a class="el" href="vdo-map_8h.html#a86693bc57274e59c4d9ff279cc042b9b">vdo-map.h</a>
+</li>
+<li>vdo_map_get_pair32u()
+: <a class="el" href="vdo-map_8h.html#abcfce0ee18c1ffc6037d4ed1decd265e">vdo-map.h</a>
+</li>
 <li>vdo_map_get_printf
 : <a class="el" href="vdo-map_8h.html#a7b8c50168ed43f068a1eaf66472f7301">vdo-map.h</a>
 </li>
-<li>vdo_map_get_variant()
-: <a class="el" href="vdo-map_8h.html#aabc08661f5f0694f7c1abeff6fd36e8a">vdo-map.h</a>
+<li>vdo_map_get_string()
+: <a class="el" href="vdo-map_8h.html#a6f827d8be089ae52f5fdcedf331048d9">vdo-map.h</a>
+</li>
+<li>vdo_map_get_uint32()
+: <a class="el" href="vdo-map_8h.html#a1e4c091e8cf4c637d059d68af6e3d287">vdo-map.h</a>
+</li>
+<li>vdo_map_get_uint64()
+: <a class="el" href="vdo-map_8h.html#a2200e4f2cc6cee1be8253a5bc41572d1">vdo-map.h</a>
 </li>
 <li>vdo_map_merge()
 : <a class="el" href="vdo-map_8h.html#ae3d064d00161bf66423fa7f86b8b1d87">vdo-map.h</a>
 </li>
 <li>vdo_map_new()
 : <a class="el" href="vdo-map_8h.html#a98b0e304d19d397003f2cc0c774cc33f">vdo-map.h</a>
-</li>
-<li>vdo_map_new_from_variant()
-: <a class="el" href="vdo-map_8h.html#a0ad8cdd1aba3ec6625fb869616fae7f4">vdo-map.h</a>
 </li>
 <li>vdo_map_remove()
 : <a class="el" href="vdo-map_8h.html#a6f649828e6de0e8147db2a0e741de978">vdo-map.h</a>
@@ -556,17 +583,38 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 <li>vdo_map_set_boolean()
 : <a class="el" href="vdo-map_8h.html#a8f15d4792608faaf3cae9534c71d2ba8">vdo-map.h</a>
 </li>
+<li>vdo_map_set_double()
+: <a class="el" href="vdo-map_8h.html#a9935a4908b92c2c20245480f7966c82b">vdo-map.h</a>
+</li>
+<li>vdo_map_set_int32()
+: <a class="el" href="vdo-map_8h.html#abb7d338aa047f5659c20b5e7ade73d53">vdo-map.h</a>
+</li>
+<li>vdo_map_set_int64()
+: <a class="el" href="vdo-map_8h.html#ac433a5fc40767836327efa40a9c75c46">vdo-map.h</a>
+</li>
+<li>vdo_map_set_pair32i()
+: <a class="el" href="vdo-map_8h.html#a357bd3483b386a02063c21b890a37f2f">vdo-map.h</a>
+</li>
+<li>vdo_map_set_pair32u()
+: <a class="el" href="vdo-map_8h.html#a9eee9a045240e6f6c141607bc433f19d">vdo-map.h</a>
+</li>
 <li>vdo_map_set_printf
 : <a class="el" href="vdo-map_8h.html#a1a65512384e0991bfc2dc0e04e92d182">vdo-map.h</a>
+</li>
+<li>vdo_map_set_string()
+: <a class="el" href="vdo-map_8h.html#aa9e1aee63227df281a53191d22d58777">vdo-map.h</a>
+</li>
+<li>vdo_map_set_uint32()
+: <a class="el" href="vdo-map_8h.html#a9e24ccb5febdf517e6bd0fc9e6eef708">vdo-map.h</a>
+</li>
+<li>vdo_map_set_uint64()
+: <a class="el" href="vdo-map_8h.html#a428c91b909fb02d50551fe009bb8e189">vdo-map.h</a>
 </li>
 <li>vdo_map_size()
 : <a class="el" href="vdo-map_8h.html#aa4f3655d8be32e7082f0a8b820ec0651">vdo-map.h</a>
 </li>
 <li>vdo_map_swap()
 : <a class="el" href="vdo-map_8h.html#a3d7c695daa085566e776e5c96dc3d7ee">vdo-map.h</a>
-</li>
-<li>vdo_map_to_variant()
-: <a class="el" href="vdo-map_8h.html#ab9f13fade87567e16bc0b60d801282a7">vdo-map.h</a>
 </li>
 <li>VDO_RATE_CONTROL_MODE_ABR
 : <a class="el" href="vdo-types_8h.html#a90d9899f6a1e0fd09ab95647410df2e5a6275e14bf635a286ccface84b33b62f4">vdo-types.h</a>
@@ -627,6 +675,9 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 </li>
 <li>VDO_STREAM_EVENT_CREATED
 : <a class="el" href="vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16a564510709cb24c37c1061091ae015322">vdo-types.h</a>
+</li>
+<li>VDO_STREAM_EVENT_EXISTING
+: <a class="el" href="vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16ac37ba04975f6c1a5b8098d472597ccf1">vdo-types.h</a>
 </li>
 <li>VDO_STREAM_EVENT_INVALID
 : <a class="el" href="vdo-types_8h.html#a9bba040fd7d1f8b5d5a104500f136c16ac25c671243a29698ba3c3bcf6f11166e">vdo-types.h</a>

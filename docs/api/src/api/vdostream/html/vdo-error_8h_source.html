@@ -117,22 +117,23 @@ $(document).ready(function(){initNavTree('vdo-error_8h_source.html',''); initRes
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a32964f0d3ac47ad3d9226ac6b2ecf880">   42</a></span>&#160;    <a class="code" href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a32964f0d3ac47ad3d9226ac6b2ecf880">VDO_ERROR_FATAL</a>             = 18, </div>
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a67c27d18bfa33f2984912adac8b849f3">   43</a></span>&#160;    <a class="code" href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a67c27d18bfa33f2984912adac8b849f3">VDO_ERROR_NOT_CONTROLLED</a>    = 19, </div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a9cd8a8a6ef280e192aeece78ff1ab0fa">   44</a></span>&#160;    <a class="code" href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a9cd8a8a6ef280e192aeece78ff1ab0fa">VDO_ERROR_NO_EVENT</a>          = 20, </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;GQuark vdo_error_quark(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="vdo-error_8h.html#ac748fae792da6c96a4cba4619a3a3d90">   61</a></span>&#160;gboolean <a class="code" href="vdo-error_8h.html#ac748fae792da6c96a4cba4619a3a3d90">vdo_error_is_expected</a>(GError **error);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;gboolean vdo_error_is_resource_limitation(GError **error);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// Combine g_set_error(..., domain: VDO_ERROR, ...) with &quot;goto exit_failure&quot;</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#ifndef exit_failure</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#define exit_failure(error, ...) \</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">    *__extension__({g_set_error(error, VDO_ERROR, ##__VA_ARGS__); &amp;&amp;exit_failure;})</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;G_END_DECLS</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a886da3e7d6c334911f867001182fe7af">   45</a></span>&#160;    <a class="code" href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a886da3e7d6c334911f867001182fe7af">VDO_ERROR_NO_VIDEO</a>          = 21, </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;GQuark vdo_error_quark(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="vdo-error_8h.html#ac748fae792da6c96a4cba4619a3a3d90">   62</a></span>&#160;gboolean <a class="code" href="vdo-error_8h.html#ac748fae792da6c96a4cba4619a3a3d90">vdo_error_is_expected</a>(GError **error);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;gboolean vdo_error_is_resource_limitation(GError **error);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// Combine g_set_error(..., domain: VDO_ERROR, ...) with &quot;goto exit_failure&quot;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#ifndef exit_failure</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#define exit_failure(error, ...) \</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">    *__extension__({g_set_error(error, VDO_ERROR, ##__VA_ARGS__); &amp;&amp;exit_failure;})</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;G_END_DECLS</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="avdo-error_8h_html_ac36f475ca5b446f4fde4c9b90bec77c8a074571aa9c712946cdf410a391261587"><div class="ttname"><a href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a074571aa9c712946cdf410a391261587">VDO_ERROR_OOM</a></div><div class="ttdeci">@ VDO_ERROR_OOM</div><div class="ttdef"><b>Definition:</b> vdo-error.h:35</div></div>
 <div class="ttc" id="avdo-error_8h_html_ac36f475ca5b446f4fde4c9b90bec77c8a1e785885934567b2c64673fb93edd594"><div class="ttname"><a href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a1e785885934567b2c64673fb93edd594">VDO_ERROR_NO_BUFFER_SPACE</a></div><div class="ttdeci">@ VDO_ERROR_NO_BUFFER_SPACE</div><div class="ttdef"><b>Definition:</b> vdo-error.h:38</div></div>
 <div class="ttc" id="avdo-error_8h_html_ac36f475ca5b446f4fde4c9b90bec77c8a32964f0d3ac47ad3d9226ac6b2ecf880"><div class="ttname"><a href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a32964f0d3ac47ad3d9226ac6b2ecf880">VDO_ERROR_FATAL</a></div><div class="ttdeci">@ VDO_ERROR_FATAL</div><div class="ttdef"><b>Definition:</b> vdo-error.h:42</div></div>
@@ -144,6 +145,7 @@ $(document).ready(function(){initNavTree('vdo-error_8h_source.html',''); initRes
 <div class="ttc" id="avdo-error_8h_html_ac36f475ca5b446f4fde4c9b90bec77c8a71bc0f390c1e5afe29a6b2b4aad05c1e"><div class="ttname"><a href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a71bc0f390c1e5afe29a6b2b4aad05c1e">VDO_ERROR_BUFFER_FAILURE</a></div><div class="ttdeci">@ VDO_ERROR_BUFFER_FAILURE</div><div class="ttdef"><b>Definition:</b> vdo-error.h:39</div></div>
 <div class="ttc" id="avdo-error_8h_html_ac36f475ca5b446f4fde4c9b90bec77c8a73de6c505d8856dc754501cbf7274e9f"><div class="ttname"><a href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a73de6c505d8856dc754501cbf7274e9f">VDO_ERROR_INTERFACE_DOWN</a></div><div class="ttdeci">@ VDO_ERROR_INTERFACE_DOWN</div><div class="ttdef"><b>Definition:</b> vdo-error.h:40</div></div>
 <div class="ttc" id="avdo-error_8h_html_ac36f475ca5b446f4fde4c9b90bec77c8a8101dbfcf1cb0f5623f5381a6196ad88"><div class="ttname"><a href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a8101dbfcf1cb0f5623f5381a6196ad88">VDO_ERROR_CLOSED</a></div><div class="ttdeci">@ VDO_ERROR_CLOSED</div><div class="ttdef"><b>Definition:</b> vdo-error.h:30</div></div>
+<div class="ttc" id="avdo-error_8h_html_ac36f475ca5b446f4fde4c9b90bec77c8a886da3e7d6c334911f867001182fe7af"><div class="ttname"><a href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a886da3e7d6c334911f867001182fe7af">VDO_ERROR_NO_VIDEO</a></div><div class="ttdeci">@ VDO_ERROR_NO_VIDEO</div><div class="ttdef"><b>Definition:</b> vdo-error.h:45</div></div>
 <div class="ttc" id="avdo-error_8h_html_ac36f475ca5b446f4fde4c9b90bec77c8a8cfed0ddabc1dab1f1742e73f16f4d94"><div class="ttname"><a href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a8cfed0ddabc1dab1f1742e73f16f4d94">VDO_ERROR_BUSY</a></div><div class="ttdeci">@ VDO_ERROR_BUSY</div><div class="ttdef"><b>Definition:</b> vdo-error.h:31</div></div>
 <div class="ttc" id="avdo-error_8h_html_ac36f475ca5b446f4fde4c9b90bec77c8a8f453e570f61c07ce52092f9aebed870"><div class="ttname"><a href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a8f453e570f61c07ce52092f9aebed870">VDO_ERROR_EXISTS</a></div><div class="ttdeci">@ VDO_ERROR_EXISTS</div><div class="ttdef"><b>Definition:</b> vdo-error.h:26</div></div>
 <div class="ttc" id="avdo-error_8h_html_ac36f475ca5b446f4fde4c9b90bec77c8a9cd8a8a6ef280e192aeece78ff1ab0fa"><div class="ttname"><a href="vdo-error_8h.html#ac36f475ca5b446f4fde4c9b90bec77c8a9cd8a8a6ef280e192aeece78ff1ab0fa">VDO_ERROR_NO_EVENT</a></div><div class="ttdeci">@ VDO_ERROR_NO_EVENT</div><div class="ttdef"><b>Definition:</b> vdo-error.h:44</div></div>

@@ -142,7 +142,8 @@ Source keys and Data keys</h2>
 <p>The source key can be omitted, for example if source information is of no use for the consumer. The data key can also be omitted, although most event will have data of some kind. See ax_event_handler_declare_event for a detailed description about how to declare an event.</p>
 <h2><a class="anchor" id="ax_event_handler_declaration_templates"></a>
 Event declaration templates</h2>
-<p>The recommended method to declare events is to use event declaration templates. An event declaration template is an XML representation of the declaration's key/value set. The template is then referenced when declaring a new event.</p>
+<p>N.b. from AXIS OS 12.0, templates for events are deprecated and are planned for removal.</p>
+<p>An event declaration template is an XML representation of the declaration's key/value set. The template is then referenced when declaring a new event.</p>
 <dl class="section user"><dt>Event declaration template schema</dt><dd><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 
 &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFromDefault="qualified" attributeFormDefault="unqualified"&gt;

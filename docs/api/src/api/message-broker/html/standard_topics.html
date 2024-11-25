@@ -69,14 +69,15 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>To read about the <b>topic</b> and <b>source</b> see <a class="el" href="terminology.html">Terminology</a></p>
-<p>The currently available default topics are:</p>
-<h3><a class="anchor" id="autotoc_md5"></a>
-com.axis.analytics_scene_description.v0.beta:</h3>
-<p>A frame-based description of what the camera sees. One message will contain all objects with attributes observed at a single point in time. Multichannel cameras with support for analytics will have multiple sources. Separate subscriptions with the video_channel_number as source can then be used. <a href="#bsenable">Enabling Best Snapshot feature</a></p>
-<h4><a class="anchor" id="autotoc_md6"></a>
-Example data:</h4>
-<p><b>Note:</b> <em>This is a beta format and will change in the coming releases.</em> <br  />
-</p><div class="fragment"><div class="line">{</div>
+<p>The currently available default topics are described below.</p>
+<h3><a class="anchor" id="autotoc_md6"></a>
+com.axis.analytics_scene_description.v0.beta</h3>
+<p>A frame-based description of what the camera sees. One message will contain all objects with attributes observed at a single point in time. Multichannel cameras with support for analytics will have multiple sources. Separate subscriptions with the video_channel_number as source can then be used.</p>
+<p>To include a cropped image of detected objects in the metadata output see <a href="#bsenable">Enabling Best Snapshot feature</a>.</p>
+<h4><a class="anchor" id="autotoc_md7"></a>
+Example data</h4>
+<p><b>Note:</b> <em>This is a beta format and will change in future releases.</em></p>
+<div class="fragment"><div class="line">{</div>
 <div class="line">  &quot;frame&quot;: {</div>
 <div class="line">    &quot;timestamp&quot;: &quot;2023-03-08T09:00:19.320111Z&quot;,</div>
 <div class="line">    &quot;observations&quot;: [</div>
@@ -151,13 +152,14 @@ Example data:</h4>
 <div class="line">    ]</div>
 <div class="line">  }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md7"></a>
-com.axis.consolidated_track.v1.beta:</h3>
-<p>An object-based description of what the camera has seen over time. One message will contain a single object with consolidation of attributes over the frames it was observed. Multichannel cameras with support for analytics will have multiple sources. Separate subscriptions with the video_channel_number as source can then be used. <a href="#bsenable">Enabling Best Snapshot feature</a></p>
-<h4><a class="anchor" id="autotoc_md8"></a>
-Example data:</h4>
-<p><b>Note:</b> <em>This is a beta format and might change in the coming releases.</em> <br  />
-</p><div class="fragment"><div class="line">{</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md8"></a>
+com.axis.consolidated_track.v1.beta</h3>
+<p>An object-based description of what the camera has seen over time. One message will contain a single object with consolidation of attributes over the frames it was observed. Multichannel cameras with support for analytics will have multiple sources. Separate subscriptions with the video_channel_number as source can then be used.</p>
+<p>To include a cropped image of detected objects in the metadata output see <a href="#bsenable">Enabling Best Snapshot feature</a>.</p>
+<h4><a class="anchor" id="autotoc_md9"></a>
+Example data</h4>
+<p><b>Note:</b> <em>This is a beta format and will change in future releases.</em></p>
+<div class="fragment"><div class="line">{</div>
 <div class="line">    &quot;classes&quot;: [</div>
 <div class="line">        {</div>
 <div class="line">            &quot;lower_clothing_colors&quot;: [</div>
@@ -250,12 +252,12 @@ Example data:</h4>
 <div class="line">    ],</div>
 <div class="line">    &quot;start_time&quot;: &quot;2024-05-13T15:21:39.320982Z&quot;</div>
 <div class="line">}</div>
-</div><!-- fragment --><p> <a class="anchor" id="bsenable"></a> </p>
-<h3><a class="anchor" id="autotoc_md9"></a>
-Enabling Best Snapshot feature for above topics:</h3>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md10"></a>
+Enabling Best Snapshot feature in the metadata output</h3>
+<p><a class="anchor" id="bsenable"></a></p>
 <p>The Best Snapshot feature is enabled by sending the following command to the camera: </p><div class="fragment"><div class="line">curl --noproxy &#39;*&#39; --digest --user &lt;user&gt;:&lt;password&gt; &quot;http://&lt;camera-ip&gt;/config/rest/best-snapshot/v1/enabled&quot; -H &quot;Content-Type: application/json&quot; -X PUT --data &quot;{\&quot;data\&quot;:true}&quot;</div>
 </div><!-- fragment --><p> Or use the Swagger UI: </p><div class="fragment"><div class="line">http://&lt;camera-ip&gt;/config/web-ui/swagger-ui/?url=/config/discover/apis/best-snapshot/v1/openapi.json#/best-snapshot.v1beta/patch_best_snapshot_v1beta_enabled</div>
-</div><!-- fragment --><p> to set the /best-snapshot/v1beta/enabled to true </p>
+</div><!-- fragment --><p> to set the /best-snapshot/v1beta/enabled to true. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.13-->
