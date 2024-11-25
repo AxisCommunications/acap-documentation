@@ -58,32 +58,32 @@ First, create a file named `deploy.ps1` and add the following content:
   manifest.
 #>
 param (
-    [Parameter(Mandatory)] [string] $Devices,
-    [Parameter(Mandatory)] [string] $App,
-    [Parameter(Mandatory)] [string] $AppName
+    [Parameter(Mandatory)] [string] $Devices,
+    [Parameter(Mandatory)] [string] $App,
+    [Parameter(Mandatory)] [string] $AppName
 )
- 
+
 foreach ($device in Import-Csv -Path $Devices -Header "IP", "Username", "Password")
 {
-    $ip = $device.IP
-    $username = $device.Username
-    $password = $device.Password | ConvertTo-SecureString -AsPlainText -Force
-    $credential = New-Object PSCredential -ArgumentList $username, $password
-    $content = Get-Item $app
- 
-    Write-Host $ip
-    Write-Host -NoNewline "  Install: "
-    Write-Host -NoNewline $(Invoke-RestMethod -Credential $credential `
-        -AllowUnencryptedAuthentication `
-        -Method Post `
-        -Uri "http://$ip/axis-cgi/applications/upload.cgi" `
-        -ContentType "multipart/form-data" `
-        -Form @{ file = $content })
-    Write-Host -NoNewline "  Start:   "
-    Write-Host -NoNewline $(Invoke-RestMethod -Credential $credential `
-        -AllowUnencryptedAuthentication `
-        -Method Post `
-        -Uri "http://$ip/axis-cgi/applications/control.cgi?package=$AppName&action=start")
+    $ip = $device.IP
+    $username = $device.Username
+    $password = $device.Password | ConvertTo-SecureString -AsPlainText -Force
+    $credential = New-Object PSCredential -ArgumentList $username, $password
+    $content = Get-Item $app
+
+    Write-Host $ip
+    Write-Host -NoNewline "  Install: "
+    Write-Host -NoNewline $(Invoke-RestMethod -Credential $credential `
+        -AllowUnencryptedAuthentication `
+        -Method Post `
+        -Uri "http://$ip/axis-cgi/applications/upload.cgi" `
+        -ContentType "multipart/form-data" `
+        -Form @{ file = $content })
+    Write-Host -NoNewline "  Start:   "
+    Write-Host -NoNewline $(Invoke-RestMethod -Credential $credential `
+        -AllowUnencryptedAuthentication `
+        -Method Post `
+        -Uri "http://$ip/axis-cgi/applications/control.cgi?package=$AppName&action=start")
 }
 ```
 
