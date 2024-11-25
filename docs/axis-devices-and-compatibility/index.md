@@ -106,6 +106,7 @@ where `12.0.0` maps to the image version.
 ACAP Release | ACAP Native SDK Image version | Compatible with AXIS OS version
 :------------| :---------------------------- | :-------------------------------------------
 12.0         | 12.0.0                        | 12.0 and later until LTS
+12.1         | 12.1.0                        | 12.1 and later until LTS
 
 #### ACAP version 4 releases
 
