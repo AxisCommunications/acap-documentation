@@ -541,7 +541,7 @@ The Jansson API was introduced in Native SDK 1.14.
 
 ## Curl
 
-Open-source library for transferring data with URLs. See [curl documentation](https://curl.se/docs/).
+Open-source library for transferring data with URLs. See [curl documentation](https://curl.se/docs/). For proxy configuration see [Global device proxy](../develop/global-device-proxy).
 
 ### Compatibility
 
