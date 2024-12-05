@@ -99,6 +99,10 @@ An ACAP application can acquire VAPIX service account credentials through a D-Bu
 
 After obtaining the credentials, it's ready to make the actual VAPIX call. The ACAP application communicates with a local server, which then checks the given credentials (using basic access authentication) and forwards the VAPIX request.
 
+> - **NOTE** If the device has set global device proxy, reaching the local virtual host (127.0.0.12)
+> is only possible if 127.0.0.12 is added to the `No proxy` list, as described in
+> [Configure-global-device-proxy](./global-device-proxy#configure-global-device-proxy).
+
 1. Define a VAPIX endpoint:
 
     VAPIX calls are essentially HTTP requests and require a URL.
