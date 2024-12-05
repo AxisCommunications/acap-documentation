@@ -20,8 +20,16 @@ a sub-section means it's only required if the section above is chosen.
 
 Mapping table for manifest schema, AXIS OS and ACAP Native SDK version.
 
-> It's recommended to use the latest manifest version available for the minimum
-> AXIS OS version targeted.
+> It's recommended to use the latest manifest schema version available in the
+> SDK. When [signing an ACAP
+> application](../../service/acap-application-signing), the ACAP Portal will
+> validate the manifest against the latest released manifest schema version
+> within the same major version, which may contain bug fixes to the version
+> included in the SDK.
+
+> Note: To sign an ACAP application the minimum manifest schema version
+> possible to use is 1.3 that introduced the for signing mandatory field
+> `architecture`.
 
 | Schema | AXIS OS | SDK  | Description |
 | :----- | :------ | :--  | :---------- |
