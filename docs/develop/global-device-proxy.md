@@ -2,7 +2,7 @@
 layout: page
 parent: Develop ACAP applications
 title: Global device proxy
-nav_order: 10
+nav_order: 11
 ---
 
 # Global device proxy
