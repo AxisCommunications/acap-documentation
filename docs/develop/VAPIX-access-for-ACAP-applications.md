@@ -101,7 +101,7 @@ After obtaining the credentials, it's ready to make the actual VAPIX call. The A
 
 > - **NOTE** If the device has set global device proxy, reaching the local virtual host (127.0.0.12)
 > is only possible if 127.0.0.12 is added to the `No proxy` list, as described in
-> [Configure-global-device-proxy](./global-device-proxy#configure-global-device-proxy).
+> [Configure global device proxy](./proxy#configure-global-device-proxy).
 
 1. Define a VAPIX endpoint:
 
