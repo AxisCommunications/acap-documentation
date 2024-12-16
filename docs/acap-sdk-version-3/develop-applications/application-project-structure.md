@@ -7,7 +7,11 @@ nav_order: 1
 ---
 # Application project structure
 
-An application project contains several files and directories for an application. The mandatory files are:
+An application project contains a combination of mandatory and optional files
+and directories that are built into an EAP (Embedded Application Package) file
+with suffix `.eap` — the ACAP application.
+
+The mandatory files are:
 
 | Filename | Description |
 | --------- | ----------- |
@@ -20,7 +24,7 @@ Note
 
 - Use `manifest.json` for ACAP SDK version 3.3 and later.
 - Use `package.conf` for ACAP SDK version 3.2 and earlier
-- An eap package based on `manifest.json` is similar to one based on
+- An ACAP application based on `manifest.json` is similar to one based on
    `package.conf`. The features previously configured using `package.conf` and
    special configuration files are now included in `manifest.json`.
 
@@ -35,7 +39,7 @@ application, available from firmware version 9.30.
 
 `manifest.json` defines the application and its configuration.
 
-An eap package based on `manifest.json` is similar to one based on a `package.conf`. The features previously configured using the `package.conf` and special configuration files are now included in `manifest.json`.
+An ACAP application based on `manifest.json` is similar to one based on a `package.conf`. The features previously configured using the `package.conf` and special configuration files are now included in `manifest.json`.
 
 Use `manifest.json` for ACAP SDK version 3.3 and later.
 
