@@ -104,7 +104,7 @@ To create the manifest file for a simple Hello Glib ACAP application:
     "embeddedSdkVersion": "3.0"
     ```
 
-4. Add any supported cgi endpoints.
+4. Add any supported CGI endpoints.
 
     Example
 
@@ -188,7 +188,7 @@ The table below shows the package configuration with manifest file, in relations
 | Application specific installation script | acapPackageConf.<br>installation.<br>postInstallScript | POSTINSTALLSCRIPT | A script that runs on the device when the installation is completed. |
 | Required embedded development version | acapPackageConf.<br>setup.<br>embeddedSdkVersion[^2] | REQEMBDEVVERSION | Specifies the minimum required embedded development version that the device running the application must support. The version is dependent on the set APIs used in the application. |
 | Application specific setting page | acapPackageConf.<br>configuration.<br>settingPage | SETTINGSPAGEFILE | Specifies the HTML page for custom settings, to be used by for instance device management software, allowing a user to browse the application settings page. The file must be in a directory called `html` in the application project. |
-| Supported cgi endpoints | acapPackageConf.<br>configuration.<br>httpConfig[].name | HTTPCGIPATHS and file | CGI path relative to application web root |
+| Supported CGI endpoints | acapPackageConf.<br>configuration.<br>httpConfig[].name | HTTPCGIPATHS and file | CGI path relative to application web root |
 | | acapPackageConf.<br>configuration.<br>httpConfig[].type | HTTPCGIPATHS and file | CGI implementation type, e.g. transferCgi |
 | | acapPackageConf.<br>configuration.<br>httpConfig[].access | HTTPCGIPATHS and file | Access policy for calling the CGI |
 | Product integrated application parameters | acapPackageConf.<br>configuration.<br>paramConfig[].<br>default | file: param.conf | Parameter default value |

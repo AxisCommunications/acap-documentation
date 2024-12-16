@@ -112,7 +112,9 @@ file you will need to install on your device.
 
 1. Use the [basicdeviceinfo API](https://www.axis.com/vapix-library/subjects/t10175981/section/t10132180/display?section=t10132180-t10132179) to retrieve:
    - **SerialNumber**: The serial number of the device.
-   - **Soc**: The name of the device's SoC (System-on-Chip), e.g., `artpec-7`, `artpec-8`, `ambarella-cv25`, etc.
+    <!-- textlint-disable -->
+   - **Soc**: The name of the device's SoC (system-on-chip), e.g., `artpec-7`, `artpec-8`, `ambarella-cv25`, etc.
+    <!-- textlint-enable -->
    - **SocSerialNumber**: The unique identifier of the SoC, also referred to as **Processor Serial Number**.
 
 2. Use the [OAK API](https://www.axis.com/vapix-library/subjects/t10175981/section/t10162047/display?section=t10162047-t10162047) to retrieve the Owner Authentication Key (OAK).
@@ -120,7 +122,9 @@ file you will need to install on your device.
 #### Using the device web interface
 
 1. Navigate to the device's plain configuration page, typically at `http://192.168.0.90/index.html#system/plainConfig`.
+    <!-- textlint-disable -->
 2. Search for the **SerialNumber** and **Soc** values.
+    <!-- textlint-enable -->
 3. To get the OAK, navigate to the device's network configuration page, typically at `http://192.168.0.90/index.html#system/network`.
 4. Scroll down to the **Owner authentication key (OAK)** section and press the **Get key** button.
 
