@@ -5,6 +5,9 @@
   "rules": {
     "terminology": {
       "defaultTerms": true,
+      // Syntax elements to skip, e.g. Link, Table etc. Overrides the default
+      // that doesn't check blockquotes, we want to check everything.
+      "skip": [""],
       "exclude": [
         "bug[- ]fix(es)?",
         "walk-through",
@@ -14,20 +17,29 @@
         ["bug[-]fix(es)?", "bug fix$1"],
         ["bugfix(es)?", "bug fix$1"],
         ["walkthrough", "walk-through"],
-        ["readme", "README"],
+        ["readme['’:]?(s)?", "README$1"],
         ["ax(is)?[ ]?os", "AXIS OS"],
         ["artpec[-_ ]?(\\d+)?", "ARTPEC-$1"],
-        ["vapix", "VAPIX"],
-        "ACAP application",
-        "ACAP app",
+        "VAPIX",
         "ACAP documentation",
         "ACAP Native SDK",
         "ACAP SDK",
+        ["acap app(lication)?(s)?", "ACAP app$1$2"],
         ["ACAPs", "ACAP applications"], // Note that it doesn't cover single
                                         // use of ACAP instead of ACAP app or
                                         // ACAP application
-        ["acap", "ACAP"],
-        ["yolo", "YOLO"],
+        "ACAP",
+        "EAP",
+        "RGB",
+        "YUV",
+        ["dlpu['’:]?(s)?", "DLPU$1"],
+        ["cpu['’:]?(s)?", "CPU$1"],
+        ["gpu['’:]?(s)?", "GPU$1"],
+        ["tpu['’:]?(s)?", "TPU$1"],
+        ["cgi['’:]?(s)?", "CGI$1"],
+        ["soc['’:]?(s)?","SoC$1"],
+        ["system(-| )on(-| )(a-|a )?chip(s)?", "system$1on$2chip$4"],
+        "YOLO",
         ["yolo[ ]?v(\\d+)+", "YOLOv$1"]
       ]
     }

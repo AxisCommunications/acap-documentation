@@ -175,7 +175,7 @@ The Machine learning API was introduced in Native SDK 1.0. All larod API version
 ### Code Examples
 
 - [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-larod/)
-  - The example code is written in C and loads an image classification model to the [Machine learning API (Larod)](#machine-learning-api-larod) and then uses the [Video capture API (VDO)](#video-capture-api-vdo) to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format and then sent to larod for inference on MODEL.
+  - The example code is written in C and loads an image classification model to the [Machine learning API (Larod)](#machine-learning-api-larod) and then uses the [Video capture API (VDO)](#video-capture-api-vdo) to fetch frames of size WIDTH x HEIGHT in YUV format which are converted to interleaved RGB format and then sent to larod for inference on MODEL.
 - [object-detection](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/object-detection/)
   - The example code focus on object detection, cropping and saving detected objects into JPEG files.
   - A separate example is available for [CV25](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/object-detection-cv25) cameras.
@@ -423,7 +423,7 @@ AXIS OS version | VdoStream API version | New functions added
 - [vdostream](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdostream/)
   - The example code is written in C which starts a vdo stream and then illustrates how to continuously capture frames from the vdo service, access the received buffer contents as well as the frame metadata.
 - [vdo-larod](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-larod/)
-  - The example code is written in C and loads an image classification model to the [Machine learning API (Larod)](#machine-learning-api-larod) and then uses the [Video capture API (VDO)](#video-capture-api-vdo) to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format and then sent to larod for inference on MODEL.
+  - The example code is written in C and loads an image classification model to the [Machine learning API (Larod)](#machine-learning-api-larod) and then uses the [Video capture API (VDO)](#video-capture-api-vdo) to fetch frames of size WIDTH x HEIGHT in YUV format which are converted to interleaved RGB format and then sent to larod for inference on MODEL.
 - [vdo-opencl-filtering](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-opencl-filtering/)
   - This example illustrates how to capture frames from the vdo service, access the received buffer, and finally perform a GPU accelerated Sobel filtering with OpenCL.
 

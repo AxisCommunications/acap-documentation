@@ -106,7 +106,7 @@ This code example on [GitHub](https://github.com/AxisCommunications/acap3-exampl
 
 #### libvdo and larod combined
 
-This code example on [GitHub](https://github.com/AxisCommunications/acap3-examples/tree/master/vdo-larod) loads an image classification model to larod and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format and then sent to larod for inference on MODEL.
+This code example on [GitHub](https://github.com/AxisCommunications/acap3-examples/tree/master/vdo-larod) loads an image classification model to larod and then uses vdo to fetch frames of size WIDTH x HEIGHT in YUV format which are converted to interleaved RGB format and then sent to larod for inference on MODEL.
 
 ## Media Capture API (deprecated)
 
@@ -163,7 +163,7 @@ This code example on [GitHub](https://github.com/AxisCommunications/acap3-exampl
 
 #### libvdo and larod combined
 
-This code example on [GitHub](https://github.com/AxisCommunications/acap3-examples/tree/master/vdo-larod) loads an image classification model to larod and then uses vdo to fetch frames of size WIDTH x HEIGHT in yuv format which are converted to interleaved rgb format and then sent to larod for inference on MODEL.
+This code example on [GitHub](https://github.com/AxisCommunications/acap3-examples/tree/master/vdo-larod) loads an image classification model to larod and then uses vdo to fetch frames of size WIDTH x HEIGHT in YUV format which are converted to interleaved RGB format and then sent to larod for inference on MODEL.
 
 ## Overlay API
 
