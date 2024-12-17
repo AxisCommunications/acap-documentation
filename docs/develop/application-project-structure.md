@@ -8,7 +8,11 @@ nav_order: 1
 <!-- omit in toc -->
 # Application project structure
 
-An application project contains several files and directories for an application. The mandatory files are:
+An application project contains a combination of mandatory and optional files
+and directories that are built into an EAP (Embedded Application Package) file
+with suffix `.eap` — the ACAP application.
+
+The mandatory files are:
 
 | Filename          | Description|
 | :------------------------- | :--------- |
@@ -17,7 +21,7 @@ An application project contains several files and directories for an application
 | Makefile           | Defines how the source code is compiled, includes dependencies and sets compilation error levels. |
 | manifest.json        | Defines the application and its configuration.<br>Used at installation of the package.<br>See [Create a manifest file from scratch](#create-a-manifest-file-from-scratch) and [Create a manifest file from existing package.conf](#create-a-manifest-file-from-existing-packageconf) for more information. |
 
-> - An eap package based on **manifest.json** is similar to one based on
+> - An ACAP application based on **manifest.json** is similar to one based on
 > **package.conf**. The features previously configured using **package.conf** and
 > special configuration files are now included in **manifest.json**.
 > - Underneath, **package.conf** is generated from **manifest.json** and you

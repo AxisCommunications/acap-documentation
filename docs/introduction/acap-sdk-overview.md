@@ -50,7 +50,7 @@ ACAP Native SDK is supported by most Axis products from ARTPEC-6 and up. See mor
 >   will be supported until end of 2031 when [AXIS OS 2026 LTS](https://help.axis.com/en-us/axis-os) reaches end of life.
 > - The recommended way to build analytics, computer vision and machine learning applications on Axis devices with ACAP support,
 >   is to use the ACAP Native SDK. For usage see the [acap-native-sdk-examples](https://github.com/AxisCommunications/acap-native-sdk-examples)
->   repo.
+>   repository.
 > - The ACAP Computer Vision SDK has been archived as its components have been refactored:
 >   utility libraries and scripts are now available in [ACAP Runtime](https://github.com/AxisCommunications/acap-runtime).
 >   For usage of the new setup, see the [examples](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples)

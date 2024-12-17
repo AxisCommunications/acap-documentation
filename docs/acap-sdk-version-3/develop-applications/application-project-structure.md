@@ -7,7 +7,11 @@ nav_order: 1
 ---
 # Application project structure
 
-An application project contains several files and directories for an application. The mandatory files are:
+An application project contains a combination of mandatory and optional files
+and directories that are built into an EAP (Embedded Application Package) file
+with suffix `.eap` — the ACAP application.
+
+The mandatory files are:
 
 | Filename | Description |
 | --------- | ----------- |
@@ -20,7 +24,7 @@ Note
 
 - Use `manifest.json` for ACAP SDK version 3.3 and later.
 - Use `package.conf` for ACAP SDK version 3.2 and earlier
-- An eap package based on `manifest.json` is similar to one based on
+- An ACAP application based on `manifest.json` is similar to one based on
    `package.conf`. The features previously configured using `package.conf` and
    special configuration files are now included in `manifest.json`.
 
@@ -35,7 +39,7 @@ application, available from firmware version 9.30.
 
 `manifest.json` defines the application and its configuration.
 
-An eap package based on `manifest.json` is similar to one based on a `package.conf`. The features previously configured using the `package.conf` and special configuration files are now included in `manifest.json`.
+An ACAP application based on `manifest.json` is similar to one based on a `package.conf`. The features previously configured using the `package.conf` and special configuration files are now included in `manifest.json`.
 
 Use `manifest.json` for ACAP SDK version 3.3 and later.
 
@@ -100,7 +104,7 @@ To create the manifest file for a simple Hello Glib ACAP application:
     "embeddedSdkVersion": "3.0"
     ```
 
-4. Add any supported cgi endpoints.
+4. Add any supported CGI endpoints.
 
     Example
 
@@ -184,7 +188,7 @@ The table below shows the package configuration with manifest file, in relations
 | Application specific installation script | acapPackageConf.<br>installation.<br>postInstallScript | POSTINSTALLSCRIPT | A script that runs on the device when the installation is completed. |
 | Required embedded development version | acapPackageConf.<br>setup.<br>embeddedSdkVersion[^2] | REQEMBDEVVERSION | Specifies the minimum required embedded development version that the device running the application must support. The version is dependent on the set APIs used in the application. |
 | Application specific setting page | acapPackageConf.<br>configuration.<br>settingPage | SETTINGSPAGEFILE | Specifies the HTML page for custom settings, to be used by for instance device management software, allowing a user to browse the application settings page. The file must be in a directory called `html` in the application project. |
-| Supported cgi endpoints | acapPackageConf.<br>configuration.<br>httpConfig[].name | HTTPCGIPATHS and file | CGI path relative to application web root |
+| Supported CGI endpoints | acapPackageConf.<br>configuration.<br>httpConfig[].name | HTTPCGIPATHS and file | CGI path relative to application web root |
 | | acapPackageConf.<br>configuration.<br>httpConfig[].type | HTTPCGIPATHS and file | CGI implementation type, e.g. transferCgi |
 | | acapPackageConf.<br>configuration.<br>httpConfig[].access | HTTPCGIPATHS and file | Access policy for calling the CGI |
 | Product integrated application parameters | acapPackageConf.<br>configuration.<br>paramConfig[].<br>default | file: param.conf | Parameter default value |

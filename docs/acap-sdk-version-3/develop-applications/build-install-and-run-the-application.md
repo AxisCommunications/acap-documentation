@@ -25,7 +25,7 @@ The script does the following:
 - Checks that the file `package.conf` exists and does not contain any errors.
 - Asks for missing or invalid parameters and creates `package.conf`.
 - Executes make in the current directory to compile the application source code into an application binary file.
-- Creates an eap (embedded application package) package including the application binary, HTML files (if any) and configuration files.
+- Creates an EAP (Embedded Application Package) file with suffix `.eap` including the application binary, HTML files (if any) and configuration files.
 - Creates a copy of `LICENSE` file.
 
 The created application package filename has the following format:
