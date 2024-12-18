@@ -110,14 +110,14 @@ file you will need to install on your device.
 
 #### Using VAPIX APIs
 
-1. Use the [basicdeviceinfo API](https://www.axis.com/vapix-library/subjects/t10175981/section/t10132180/display?section=t10132180-t10132179) to retrieve:
+1. Use the [basicdeviceinfo API](https://developer.axis.com/vapix/network-video/basic-device-information#description) to retrieve:
    - **SerialNumber**: The serial number of the device.
     <!-- textlint-disable -->
    - **Soc**: The name of the device's SoC (system-on-chip), e.g., `artpec-7`, `artpec-8`, `ambarella-cv25`, etc.
     <!-- textlint-enable -->
    - **SocSerialNumber**: The unique identifier of the SoC, also referred to as **Processor Serial Number**.
 
-2. Use the [OAK API](https://www.axis.com/vapix-library/subjects/t10175981/section/t10162047/display?section=t10162047-t10162047) to retrieve the Owner Authentication Key (OAK).
+2. Use the [OAK API](https://developer.axis.com/vapix/network-video/oak-api) to retrieve the Owner Authentication Key (OAK).
 
 #### Using the device web interface
 
