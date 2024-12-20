@@ -568,7 +568,7 @@ The curl API was introduced in Native SDK 1.14.
 
 ## VAPIX access for ACAP
 
-ACAP applications can request for VAPIX service account credentials in runtime. With these credentials, the ACAP application can call a local virtual host to make VAPIX requests on the device. See [VAPIX access for ACAP](../develop/VAPIX-access-for-ACAP-applications).
+ACAP applications can request for VAPIX service account credentials with "admin" access level in runtime. With these credentials, the ACAP application can call a local virtual host to make VAPIX requests on the device. See [VAPIX access for ACAP](../develop/VAPIX-access-for-ACAP-applications).
 
 ### Code Examples
 
