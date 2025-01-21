@@ -129,7 +129,7 @@ ACAP Release | ACAP Native SDK Image version | Compatible with AXIS OS version
 4.12         | 1.12                          | 11.8 and later until LTS
 4.13         | 1.13                          | 11.9 and later until LTS
 4.14         | 1.14                          | 11.10 and later until LTS
-4.15         | 1.15                          | 11.11 (planned LTS)
+4.15         | 1.15                          | 11.11 (LTS)
 
 ### ACAP Computer Vision solution software compatibility
 
@@ -173,7 +173,7 @@ ACAP Release | ACAP CV SDK Image version | Compatible with AXIS OS version
 4.12         | 1.12                          | 11.8 (breaking change)
 4.13         | 1.13                          | 11.9 and later
 4.14         | 1.14                          | 11.10 and later
-4.15         | 1.15                          | 11.11 (planned LTS)
+4.15         | 1.15                          | 11.11 (LTS)
 
 ## Forward compatibility
 
