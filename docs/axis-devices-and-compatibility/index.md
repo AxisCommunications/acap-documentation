@@ -45,6 +45,7 @@ Chip        | Architecture
 ARTPEC-6    | armv7hf
 ARTPEC-7    | armv7hf
 ARTPEC-8    | aarch64
+ARTPEC-9    | aarch64
 CV25        | aarch64
 i.MX 6SoloX | armv7hf
 
@@ -107,6 +108,7 @@ ACAP Release | ACAP Native SDK Image version | Compatible with AXIS OS version
 :------------| :---------------------------- | :-------------------------------------------
 12.0         | 12.0.0                        | 12.0 and later until LTS
 12.1         | 12.1.0                        | 12.1 and later until LTS
+12.2         | 12.2.0                        | 12.2 and later until LTS
 
 #### ACAP version 4 releases
 

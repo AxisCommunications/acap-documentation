@@ -12,6 +12,7 @@ var NAVTREEINDEX1 =
 "vdo-types_8h.html#ad0ba1560f1b1a09bbbc195de70899e9eac9477d1c8878d3b7272a0fbf96698182":[2,0,6,10,0],
 "vdo-types_8h.html#ad4d880aa1e63aac12f6f1f50a5240cc4":[2,0,6,26],
 "vdo-types_8h.html#ae575c780c555d7914290feae719fa2a3":[2,0,6,21],
+"vdo-types_8h.html#ae575c780c555d7914290feae719fa2a3a19cd4a3421225b47c03f914d14cc3ff7":[2,0,6,21,7],
 "vdo-types_8h.html#ae575c780c555d7914290feae719fa2a3a544ed8cc91cf9b1f2706101811097b36":[2,0,6,21,0],
 "vdo-types_8h.html#ae575c780c555d7914290feae719fa2a3a686227e49fd1e489c0bdd3ef8961522d":[2,0,6,21,1],
 "vdo-types_8h.html#ae575c780c555d7914290feae719fa2a3a6c76a6b34b64789bfcb4758659790a4e":[2,0,6,21,5],

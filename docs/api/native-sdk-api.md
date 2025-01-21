@@ -55,6 +55,7 @@ An application can both send and receive events.
 
 The API is supported on products with the following chips:
 
+- ARTPEC-9
 - ARTPEC-8
 - ARTPEC-7
 - ARTPEC-6
@@ -106,6 +107,7 @@ When declaring events it is required to set a namespace. Following are the suppo
 
 The API is supported on products with the following chips:
 
+- ARTPEC-9
 - ARTPEC-8
 - ARTPEC-7
 - ARTPEC-6
@@ -137,6 +139,7 @@ A license key is a signed file, generated for a specific device ID and applicati
 
 The API is supported on products with the following chips:
 
+- ARTPEC-9
 - ARTPEC-8
 - ARTPEC-7
 - ARTPEC-6
@@ -162,6 +165,7 @@ Larod is a service provides a simple unified C API for running machine learning 
 
 The Larod API is supported on products with the following chips:
 
+- ARTPEC-9
 - ARTPEC-8
 - ARTPEC-7
 - Ambarella CV25
@@ -198,6 +202,7 @@ The API implements the Publish/Subscribe messaging paradigm.
 
 The Message Broker API is supported on products with the following chips:
 
+- ARTPEC-9
 - ARTPEC-8
 - ARTPEC-7
 - Ambarella CV25
@@ -229,6 +234,7 @@ The Axoverlay API is a helper library that enables an ACAP to draw overlays in s
 
 The API is supported on products with the following chips:
 
+- ARTPEC-9
 - ARTPEC-8
 - ARTPEC-7
 - ARTPEC-6
@@ -253,6 +259,7 @@ This API is recommended for adding basic box overlays. For more advanced feature
 
 The API is supported on products with the following chips:
 
+- ARTPEC-9
 - ARTPEC-8
 - ARTPEC-7
 - Ambarella CV25
@@ -316,6 +323,7 @@ or VAPIX.
 
 The Parameter API is supported on products with the following chips:
 
+- ARTPEC-9
 - ARTPEC-8
 - ARTPEC-7
 - ARTPEC-6
@@ -345,6 +353,7 @@ The Serial port API allows the application to configure and control the external
   - RS-485
 - The API is product dependent since not all Axis products are equipped with a serial port.
 - The API is supported on products with the following chips:
+  - ARTPEC-9
   - ARTPEC-8
   - ARTPEC-7
 
@@ -385,6 +394,7 @@ An application to start a vdo stream can be found at [vdostream](https://github.
 
 The API is supported on products with the following chips:
 
+- ARTPEC-9
 - ARTPEC-8
 - ARTPEC-7
 - ARTPEC-6
@@ -437,6 +447,7 @@ Open-source rendering library for 2D vector graphics. See [Cairo documentation](
 
 The Cairo API is supported on products with the following chips:
 
+- ARTPEC-9
 - ARTPEC-8
 - ARTPEC-7
 - ARTPEC-6
@@ -458,6 +469,7 @@ Accelerate parallel compute with GPU. See [OpenCL documentation](https://www.khr
 
 The OpenCL API is supported on products with the following chips:
 
+- ARTPEC-9
 - ARTPEC-8
 - ARTPEC-7
 
@@ -478,6 +490,7 @@ The OpenCL 1.2 was introduced in Native SDK 1.0.
 
 The FastCGI API is supported on products with the following chips:
 
+- ARTPEC-9
 - ARTPEC-8
 - ARTPEC-7
 - ARTPEC-6
@@ -501,6 +514,7 @@ Open-source library for general-purpose cryptography and secure communication. S
 
 The OpenSSL API is supported on products with the following chips:
 
+- ARTPEC-9
 - ARTPEC-8
 - ARTPEC-7
 - ARTPEC-6
@@ -524,6 +538,7 @@ Open-source library for for encoding, decoding and manipulating JSON data. See [
 
 The Jansson API is supported on products with the following chips:
 
+- ARTPEC-9
 - ARTPEC-8
 - ARTPEC-7
 - ARTPEC-6
@@ -547,6 +562,7 @@ Open-source library for transferring data with URLs. See [curl documentation](ht
 
 The curl API is supported on products with the following chips:
 
+- ARTPEC-9
 - ARTPEC-8
 - ARTPEC-7
 - ARTPEC-6

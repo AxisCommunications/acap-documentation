@@ -148,9 +148,9 @@ Functions</h2></td></tr>
 <p>Note that it is not an error if this method gets called when it appears none of the (known) events have changed state!</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">storage_id</td><td>The storage that triggered this callback. </td></tr>
+    <tr><td class="paramname">storage_id</td><td>The storage that triggered this callback. The callback must not free this memory. Never NULL. </td></tr>
     <tr><td class="paramname">user_data</td><td>User data from ax_storage_subscribe. </td></tr>
-    <tr><td class="paramname">error</td><td>Return location for error, or NULL. </td></tr>
+    <tr><td class="paramname">error</td><td>Return location for error, or NULL. The callback is responsible for freeing this memory. </td></tr>
   </table>
   </dd>
 </dl>
@@ -170,11 +170,12 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Callback for setup. When the storage is setup for use, an application specific directory has been created on the storage. The path can be retrieved by the ax_storage_get_path method, using the AXStorage that is received in this callback as input parameter.</p>
 <p>The AXStorage that is received in this callback is the one to use in every method which takes an AXStorage pointer as input parameter.</p>
+<p>Either storage or error will be NULL, but never both.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">storage</td><td>The storage to use. </td></tr>
+    <tr><td class="paramname">storage</td><td>The storage to use. The callback must not free this memory. </td></tr>
     <tr><td class="paramname">user_data</td><td>User data from ax_storage_setup_async. </td></tr>
-    <tr><td class="paramname">error</td><td>Return location for error, or NULL. </td></tr>
+    <tr><td class="paramname">error</td><td>Return location for error, or NULL. The callback is responsible for freeing this memory. </td></tr>
   </table>
   </dd>
 </dl>
@@ -196,7 +197,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">user_data</td><td>User data from ax_storage_release_async. </td></tr>
-    <tr><td class="paramname">error</td><td>Return location for error, or NULL. </td></tr>
+    <tr><td class="paramname">error</td><td>Return location for error, or NULL. The callback is responsible for freeing this memory. </td></tr>
   </table>
   </dd>
 </dl>
@@ -645,7 +646,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="ax__storage_8h.html">ax_storage.h</a></li>
-    <li class="footer">Copyright &copy; 2009-2024 Axis Communications AB. All rights reserved.</li>
+    <li class="footer">Copyright &copy; 2009-2025 Axis Communications AB. All rights reserved.</li>
   </ul>
 </div>
 </body>

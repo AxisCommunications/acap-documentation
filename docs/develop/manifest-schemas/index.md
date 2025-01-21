@@ -44,3 +44,4 @@ Mapping table for manifest schema, AXIS OS and ACAP Native SDK version.
 | 1.7.0  | 11.10    | 1.14 | Make preparations on the host system so the application can run containers, and create symbolic links from various system-wide locations to Docker CLIs provided by the application. |
 | 1.7.1  | 12.0     | 12.0.0 | - Allow `user` and `group` names to contain hyphens `-`. <br> - Force `appName` to start with a regular letter and have length of at least 2. |
 | 1.7.2  | 12.1     | 12.1.0 | Add restrictions to `friendlyName`:<br> - Disallow newline characters `\n` and `\r`.<br> - Set maximum length to 256 characters. |
+| 1.7.3  | 12.2     | 12.2.0 | Allow reverse proxy `apiPath` of length 1. |
