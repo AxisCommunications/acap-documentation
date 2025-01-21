@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.2.233-dirty</span>
+   &#160;<span id="projectnumber">3.2.254-dirty</span>
    </div>
   </td>
  </tr>
@@ -169,6 +169,22 @@ $(function() {
 <p>The access type <code>LAROD_FD_PROP_READWRITE</code> will introduce a memory copy and <code>read()</code>/<code>write()</code> calls for each input and output tensor buffer - these extra operations will degrade performance.</p>
 <h4>Allocation support</h4>
 <p>Tensors allocated using the calls <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> with a model loaded to this backend will have file descriptors that are readable, writable and mappable. Accordingly the tensors will have the fd props <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code> set.</p>
+<h4>Model compilation and caching</h4>
+<p>When a model is loaded on the ARTPEC-7 GPU backend it is compiled into a different format native to the accelerator, the <code>.nb</code> format, also referred to NBG. The .nb files are cached in flash after the compilation is complete. Once a file is cached the corresponding <code>.tflite</code> model will be loaded faster, as the entire compilation step will be skipped.</p>
+<p>The cached NBG files are stored in <code>/var/lib/larod/nbg-cache</code>. Whenever a new model file is compiled, a new NBG file will be created in this location. If the maximum number of models is exceeded, or if the accumulated size of all the cached models exceeds the storage limit, older models will be removed to make space for the new one.</p>
+<h3>Native ARTPEC-7 GPU</h3>
+<p>This backend executes models compiled to run natively on the GPU accelerator in ARTPEC-7.</p>
+<p>The device name of this backend is <code>"a7-gpu-native"</code>; a device handle can be retrieved by providing this device name to <code><a class="el" href="larod_8h.html#a29a9707a190c2d0c44f7e50f942b2621" title="Get an available device. ">larodGetDevice()</a></code>.</p>
+<h4>Supported format of model data</h4>
+<p>A compiled model format native for the ARTPEC-7 GPU, usually identified by a <code>.nb</code> or <code>.nbg</code> file extension. This is the same model file that is created by the backend device <code>"a7-gpu-tflite"</code>, see the corresponding <a href="#model-compilation-and-caching">compilation and cache section</a> for more information.</p>
+<h4>Supported buffer properties for running jobs</h4>
+<p>This backend only supports the fd access types <code>LAROD_FD_PROP_MAP</code> and <code>LAROD_FD_PROP_READWRITE</code>.</p>
+<p>As the name indicates the former fd prop will allow the backend to map (using <code>mmap</code>) the tensor's file descriptor instead of reading or writing from them. Combined with tensor tracking (e.g. using <code><a class="el" href="larod_8h.html#a4c84b8df7f3efc94276ba8cdaf940f85" title="Start tracking a tensor in the service. ">larodTrackTensor()</a></code>) the backend may be able to cache a tensor's mapping and thus allow for a very efficient map-once memory access pattern.</p>
+<p>The access type <code>LAROD_FD_PROP_READWRITE</code> will introduce a memory copy and <code>read()</code>/<code>write()</code> calls for each input and output tensor buffer - these extra operations will degrade performance.</p>
+<h4>Allocation support</h4>
+<p>Tensors allocated using the calls <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> with a model loaded to this backend will have file descriptors that are readable, writable and mappable. Accordingly the tensors will have the fd props <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code> set.</p>
+<h4>Optional parameter support</h4>
+<p>This backend supports the <code>skip-input-dma-sync</code> and <code>skip-output-dma-sync</code> parameters, see the documentation for dma-buf for more details.</p>
 <h3>TFLite ARTPEC-9 GPU</h3>
 <p>This backend executes TFLite models on the GPU in ARTPEC-9.</p>
 <p>The device name of this backend is <code>"armnn-gpu-tflite"</code>; a device handle can be retrieved by providing this device name to <code><a class="el" href="larod_8h.html#a29a9707a190c2d0c44f7e50f942b2621" title="Get an available device. ">larodGetDevice()</a></code>.</p>
@@ -256,7 +272,18 @@ $(function() {
 <p>Tensors allocated using the calls <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> with a model loaded to this backend will have file descriptors that are readable, writable and mappable. Accordingly the tensors will have the fd props <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code> set.</p>
 <h3>Remote backends</h3>
 <p>The remote backends are used in devices built with multiple ARTPEC chips. Such multi-ARTPEC devices are composed of one ARTPEC chip (the "primary system") running the bulk of the system logic, and another ARTPEC chip ("secondary
-system") which can perform tasks on behalf of the primary system. The remote backends support executing jobs on the secondary ARTPEC chip. The remote backends include <code>"remote-axis-a8-dlpu-native"</code>, <code>"remote-axis-a8-dlpu-tflite"</code> and <code>"remote-cpu-tflite"</code>. They function the same as their corresponding non-remote counterparts, but are instead run on the secondary ARTPEC system. See also the corresponding documentation for the respective non-remote backends.</p>
+system") which can perform tasks on behalf of the primary system. The remote backends support executing jobs on the secondary ARTPEC chip. They function the same as their corresponding non-remote counterparts, but are instead run on the secondary ARTPEC system. See also the corresponding documentation for the respective non-remote backends.</p>
+<h4>Available remote inference backends</h4>
+<table class="doxtable">
+<tr>
+<th>ARTPEC-8 remote backends  </th></tr>
+<tr>
+<td>remote-axis-a8-dlpu-native </td></tr>
+<tr>
+<td>remote-axis-a8-dlpu-tflite </td></tr>
+<tr>
+<td>remote-cpu-tflite </td></tr>
+</table>
 <h4>Supported buffer properties for running jobs</h4>
 <p>All fd props are supported. The user is encouraged to use <code>LAROD_FD_PROP_DMABUF</code> for remote backends as it will yield optimal performance in terms of buffer handling.</p>
 <h4>Allocation support</h4>
@@ -400,7 +427,7 @@ system") which can perform tasks on behalf of the primary system. The remote bac
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Copyright &copy; 2009-2024 Axis Communications AB. All rights reserved.
+Copyright &copy; 2009-2025 Axis Communications AB. All rights reserved.
 </small></address>
 </body>
 </html>
