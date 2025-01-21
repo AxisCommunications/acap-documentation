@@ -89,30 +89,30 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>mdb_subscriber mdb_subscriber_t;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;mdb_subscriber_t *mdb_subscriber_create_async(mdb_connection_t *connection,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                              mdb_subscriber_config_t *config,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                              mdb_on_done_t on_done,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                              <span class="keywordtype">void</span> *user_data,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                              <a class="code" href="structmdb__error__t.html">mdb_error_t</a> **error);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">bool</span> mdb_subscriber_manual_subscribe_async(mdb_subscriber_t *<span class="keyword">self</span>,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                           mdb_on_done_t on_done,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                           <span class="keywordtype">void</span> *user_data,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                           <a class="code" href="structmdb__error__t.html">mdb_error_t</a> **error);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keywordtype">void</span> mdb_subscriber_destroy(mdb_subscriber_t **<span class="keyword">self</span>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;mdb_subscriber_t *mdb_subscriber_create_async(mdb_connection_t *connection,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                              mdb_subscriber_config_t *config,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                              mdb_on_done_t on_done,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                              <span class="keywordtype">void</span> *user_data,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                              <a class="code" href="structmdb__error__t.html">mdb_error_t</a> **error);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">bool</span> mdb_subscriber_manual_subscribe_async(mdb_subscriber_t *<span class="keyword">self</span>,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                           mdb_on_done_t on_done,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                           <span class="keywordtype">void</span> *user_data,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                           <a class="code" href="structmdb__error__t.html">mdb_error_t</a> **error);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">void</span> mdb_subscriber_destroy(mdb_subscriber_t **<span class="keyword">self</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="astructmdb__error__t_html"><div class="ttname"><a href="structmdb__error__t.html">mdb_error_t</a></div><div class="ttdef"><b>Definition:</b> error.h:43</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Copyright &copy; 2009-2024 Axis Communications AB. All rights reserved.
+Copyright &copy; 2009-2025 Axis Communications AB. All rights reserved.
 </small></address>
 </body>
 </html>

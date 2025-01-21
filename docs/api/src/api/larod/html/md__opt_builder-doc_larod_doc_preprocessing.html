@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="axis-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">liblarod
-   &#160;<span id="projectnumber">3.2.233-dirty</span>
+   &#160;<span id="projectnumber">3.2.254-dirty</span>
    </div>
   </td>
  </tr>
@@ -77,7 +77,7 @@ $(function() {
 <li><a href="#supported-backends">Supported backends</a><ul>
 <li><a href="#libyuv">libyuv</a></li>
 <li><a href="#ace">ACE</a></li>
-<li><a href="#vproc">VProc</a></li>
+<li><a href="#vproc-ambarella-cvflow-proc">VProc ambarella-cvflow-proc</a></li>
 <li><a href="#opencl">OpenCL</a></li>
 <li><a href="#remote-backends">Remote backends</a></li>
 </ul>
@@ -182,24 +182,26 @@ $(function() {
 <p>Tensors allocated using the calls <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> with a model loaded to this backend will have file descriptors that are readable, writable and mappable. Accordingly the tensors will have the fd props <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code> set.</p>
 <h4>Optional parameter support</h4>
 <p>This backend supports the <code>skip-input-dma-sync</code> and <code>skip-output-dma-sync</code> parameters, see the documentation for dma-buf for more details.</p>
-<h3>VProc</h3>
+<h3>VProc ambarella-cvflow-proc</h3>
 <p>The VProc backend uses VPROC in Ambarella CV series chips. It supports image crop, scale and format conversion.</p>
 <p>The device name of this backend is <code>"ambarella-cvflow-proc"</code>; a device handle can be retrieved by providing this device name to <code><a class="el" href="larod_8h.html#a29a9707a190c2d0c44f7e50f942b2621" title="Get an available device. ">larodGetDevice()</a></code>.</p>
 <h4>VProc backend constraints</h4>
 <ul>
 <li>The input image width must be a multiple of 2 when input format is nv12.</li>
 <li>The input image height must be a multiple of 2 when input format is nv12.</li>
-<li>The input image row pitch must be a multiple of 32.</li>
 <li>The output image width must be a multiple of 2 when output format is nv12.</li>
 <li>The output image height must be a multiple of 2 when output format is nv12.</li>
+<li>For scaling operations, the scale factor must be at most 256 for each individual dimension.</li>
+<li>The input image row pitch must be a multiple of 32.</li>
 <li>The output image row pitch must be a multiple of 32.</li>
-<li>For operations requiring both color format conversion and scaling the scale factor must be at most 4.</li>
-<li>For operations <em>not</em> requiring color format conversion the scale factor must be at most 256.</li>
 </ul>
+<h4>VProc backend optimizations</h4>
+<p>If the input and output format does not match, the operation will be significantly faster if the output width and height are both even. The performance gain is directly correlated to how large the difference is between the output's and the input's width and height.</p>
 <h4>Supported buffer properties for running jobs</h4>
-<p>This backend supports the fd access types <code>LAROD_FD_PROP_DMABUF</code> and <code>LAROD_FD_PROP_READWRITE</code>.</p>
+<p>This backend supports the fd access types <code>LAROD_FD_PROP_DMABUF</code>, <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code>.</p>
 <p>The access type <code>LAROD_FD_PROP_DMABUF</code> provides less overhead since the buffer will be passed directly the underlying processing framework without extra copies in larod. When using <code>LAROD_FD_PROP_DMABUF</code>, the application is responsible for ensuring that the external RAM is up to date with CPU cache before the inference is started (the service will <em>not</em> initiate any cache flush operations). Refer to <a href="nn-inference.md#about-dma-buf">About dma-buf</a> for more information about dma-buf and user space synchronization.</p>
 <p>The access type <code>LAROD_FD_PROP_READWRITE</code> will introduce a memory copy and <code>read()</code>/<code>write()</code> calls for each input and output tensor buffer - these extra operations will degrade performance.</p>
+<p>As the name indicates <code>LAROD_FD_PROP_MAP</code> will allow the VProc backend to map (using <code>mmap</code>) the tensor's file descriptor instead of reading or writing directly from it. Combined with tensor tracking (e.g. using <code><a class="el" href="larod_8h.html#a4c84b8df7f3efc94276ba8cdaf940f85" title="Start tracking a tensor in the service. ">larodTrackTensor()</a></code>) the VProc backend may be able to cache a tensor's mapping. The backend does not support zero copy, meaning that data will still be copied from the memory mapping to the actual buffer for the job.</p>
 <h4>Allocation support</h4>
 <p>Using the calls <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> with a model loaded to this backend two kinds of tensor buffers can be allocated. If the <code>LAROD_FD_PROP_READWRITE</code> is <em>not</em> set as required in the call, then tensors with mappable file descriptors based on Cavalry Mem dma-bufs will be returned. As such these tensors will have the fd props <code>LAROD_FD_PROP_MAP</code> and <code>LAROD_FD_PROP_DMABUF</code> set. If however <code>LAROD_FD_PROP_READWRITE</code> is required, then tensors with readable, writable and mappable file descriptors will be returned. As such these tensors will have the fd props <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code> set.</p>
 <h3>OpenCL</h3>
@@ -216,7 +218,16 @@ $(function() {
 <p>Tensors allocated using the calls <code><a class="el" href="larod_8h.html#ad8be991c1295938b95df0c2dbd6d1ad7" title="Create and allocate input tensors from a model. ">larodAllocModelInputs()</a></code> and <code><a class="el" href="larod_8h.html#a39c2cd5fb8f2395f976cc49220e96888" title="Create and allocate output tensors from a model. ">larodAllocModelOutputs()</a></code> with a model loaded to this backend will have file descriptors that are readable, writable and mappable. Accordingly the tensors will have the fd props <code>LAROD_FD_PROP_READWRITE</code> and <code>LAROD_FD_PROP_MAP</code> set.</p>
 <h3>Remote backends</h3>
 <p>The remote backends are used in devices built with multiple ARTPEC chips. Such multi-ARTPEC devices are composed of one ARTPEC chip (the "primary system") running the bulk of the system logic, and another ARTPEC chip ("secondary
-system") which can perform tasks on behalf of the primary system. The remote backends support executing pre-processing jobs on the secondary ARTPEC chip. The remote backends include <code>"remote-cpu-proc"</code>, <code>"remote-axis-a8-gpu-proc"</code> and <code>"remote-axis-a8-dlpu-proc"</code>. They function the same as their corresponding non-remote counterparts, but are instead run on the secondary ARTPEC system. See also the corresponding documentation for the respective non-remote backends.</p>
+system") which can perform tasks on behalf of the primary system. The remote backends support executing pre-processing jobs on the secondary ARTPEC chip. They function the same as their corresponding non-remote counterparts, but are instead run on the secondary ARTPEC system. See also the corresponding documentation for the respective non-remote backends.</p>
+<h4>Available remote preprocessing backends</h4>
+<table class="doxtable">
+<tr>
+<th>ARTPEC-8  </th></tr>
+<tr>
+<td>remote-cpu-proc </td></tr>
+<tr>
+<td>remote-axis-a8-gpu-proc </td></tr>
+</table>
 <h4>Supported buffer properties for running jobs</h4>
 <p>All fd props are supported. The user is encouraged to use <code>LAROD_FD_PROP_DMABUF</code> for remote backends as it will yield optimal performance in terms of buffer handling.</p>
 <h4>Allocation support</h4>
@@ -369,7 +380,7 @@ system") which can perform tasks on behalf of the primary system. The remote bac
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Copyright &copy; 2009-2024 Axis Communications AB. All rights reserved.
+Copyright &copy; 2009-2025 Axis Communications AB. All rights reserved.
 </small></address>
 </body>
 </html>
