@@ -76,6 +76,8 @@ The Edge storage API was introduced in Native SDK 1.11.
     - Continuously write data to two files on all available storage devices.
     - Automatically release any unmounted storage devices.
 
+---
+
 ## Event API
 
 Go to the [ACAP API Documentation](src/api/axevent/html/index.html) for detailed functional descriptions of this API.
@@ -127,6 +129,8 @@ The Axevent API was introduced in Native SDK 1.0.
 - [subscribe_to_events](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axevent/subscribe_to_events)
   - The example code is written in C which subscribes to different predefined events.
 
+---
+
 ## License Key API
 
 Go to the [ACAP API Documentation](src/api/licensekey/html/index.html) for detailed functional descriptions of this API.
@@ -154,6 +158,8 @@ This API was introduced in Native SDK 1.0.
 
 - [licensekey](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/licensekey/)
   - The example code is written in C which illustrates how to check the licensekey status.
+
+---
 
 ## Machine learning API (Larod)
 
@@ -183,6 +189,8 @@ The Machine learning API was introduced in Native SDK 1.0. All larod API version
 - [object-detection](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/object-detection/)
   - The example code focus on object detection, cropping and saving detected objects into JPEG files.
   - A separate example is available for [CV25](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/object-detection-cv25) cameras.
+
+---
 
 ## Message Broker API
 
@@ -221,6 +229,8 @@ AXIS OS version | Message Broker API version | New functions added
 - [consume-scene-metadata](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/message-broker/consume-scene-metadata)
   - The example is written in C and shows how to consume metadata stream
     **Analytics Scene Description**.
+
+---
 
 ## Overlay APIs
 
@@ -272,6 +282,8 @@ The Bounding Box API was introduced in Native SDK 1.15.
 
 - [bounding-box](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/bounding-box)
   - An example in C that demonstrates how to portably draw burnt-in bounding boxes on selected video sources or channels.
+
+---
 
 ## Parameter API
 
@@ -339,6 +351,8 @@ The Parameter API was introduced in Native SDK 1.13.
 - [axparameter](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axparameter)
   - An example in C that demonstrates how to manage application-defined parameters, allowing you to add, remove, set, get, and register callback functions for parameter value updates.
 
+---
+
 ## Serial port API
 
 Go to the [ACAP API Documentation](src/api/axserialport/html/index.html) for detailed functional descriptions of this API.
@@ -368,6 +382,8 @@ The Serial port API was introduced in Native SDK 1.11.
     - Enabling the serial port.
     - Configuring parameters using the API.
     - Establishing communication between two available ports in the Axis product using GLib IOChannel methods.
+
+---
 
 ## Video capture API (VDO)
 
@@ -437,6 +453,8 @@ AXIS OS version | VdoStream API version | New functions added
 - [vdo-opencl-filtering](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-opencl-filtering/)
   - This example illustrates how to capture frames from the vdo service, access the received buffer, and finally perform a GPU accelerated Sobel filtering with OpenCL.
 
+---
+
 # Open Source APIs
 
 ## Cairo
@@ -461,6 +479,8 @@ The Cairo API was introduced in Native SDK 1.0.
 - [axoverlay](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/axoverlay/)
   - The example code is written in C which illustrates how to draw plain boxes and text as overlays in a stream.
 
+---
+
 ## OpenCL
 
 Accelerate parallel compute with GPU. See [OpenCL documentation](https://www.khronos.org/opencl/).
@@ -481,6 +501,8 @@ The OpenCL 1.2 was introduced in Native SDK 1.0.
 
 - [vdo-opencl-filtering](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vdo-opencl-filtering/)
   - This example illustrates how to capture frames from the vdo service, access the received buffer, and finally perform a GPU accelerated Sobel filtering with OpenCL.
+
+---
 
 ## FastCGI
 
@@ -506,6 +528,8 @@ The FastCGI API was introduced in Native SDK 1.6.
 - [web-server-using-fastcgi](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/web-server-using-fastcgi)
   - This example is written in C and explains how to build an ACAP application that can handle HTTP requests sent to the Axis device, using the device's own web server and FastCGI.
 
+---
+
 ## OpenSSL
 
 Open-source library for general-purpose cryptography and secure communication. See [OpenSSL documentation](https://www.openssl.org/docs/).
@@ -530,6 +554,8 @@ The OpenSSL API was introduced in Native SDK 1.14.
 - [curl-openssl](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/curl-openssl/)
   - The example code is written in C which illustrates how to use curl and OpenSSL to retrieve a file securely from an external server for e.g. [example.com](<https://www.example.com>)
 
+---
+
 ## Jansson
 
 Open-source library for for encoding, decoding and manipulating JSON data. See [Jansson documentation](https://jansson.readthedocs.io/en/latest/).
@@ -553,6 +579,8 @@ The Jansson API was introduced in Native SDK 1.14.
 
 - [`vapix`](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vapix/)
   - The example code is written in C which illustrates calling VAPIX API with JSON request and response from within an ACAP application.
+
+---
 
 ## Curl
 
@@ -579,6 +607,8 @@ The curl API was introduced in Native SDK 1.14.
   - The example code is written in C which illustrates how to use curl and OpenSSL to retrieve a file securely from an external server for e.g. [example.com](<https://www.example.com>)
 - [`vapix`](https://github.com/AxisCommunications/acap-native-sdk-examples/tree/main/vapix/)
   - The example code is written in C which illustrates how ,using curl, an ACAP application can call [VAPIX APIs](https://www.axis.com/vapix-library/).
+
+---
 
 # Supplementary APIs
 

@@ -73,6 +73,8 @@ Additionally, the ACAP Runtime repository provides pre-built gRPC Python wrapper
 By utilizing these wrappers, you can avoid building the gRPC client-side code for Python yourself, streamlining the process of integrating and using the ACAP Runtime APIs in your application.
 
 ### Video capture API
+---
+
 
 The Video capture API is one of the services of ACAP Runtime.
 
@@ -130,6 +132,8 @@ The Python client is available in the ACAP runtime proto image under `/build/tf/
 - [pose-estimator-with-flask](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/pose-estimator-with-flask) - An example written in Python that implements a pose estimator, that publishes the output using Flask.
 
 ### BETA - Parameter API
+---
+
 
 **This API is a [Beta version](./beta-api) and developers are encouraged to test and leave feedback.**
 
@@ -152,6 +156,8 @@ root.Brand.ProdNbr
 - [parameter-api-python](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/parameter-api-python) - A Python example which reads device parameters using the Parameter API.
 
 ## Python packages
+---
+
 
 The ACAP Computer Vision solution allows for the installation and use of Python packages that support the ACAP architecture `aarch64`. This includes, but is not limited to:
 
