@@ -51,7 +51,7 @@ For practical examples of applications using the Computer Vision APIs, refer to 
 To find compatibility between the ACAP Computer Vision solution and AXIS OS version,
 refer to [Find the right SDK for software compatibility](../axis-devices-and-compatibility/#find-the-right-sdk-for-software-compatibility).
 
-## Axis APIs
+# Axis APIs
 
 The ACAP Runtime service provides the Axis APIs:
 
@@ -72,7 +72,9 @@ Additionally, the ACAP Runtime repository provides pre-built gRPC Python wrapper
 
 By utilizing these wrappers, you can avoid building the gRPC client-side code for Python yourself, streamlining the process of integrating and using the ACAP Runtime APIs in your application.
 
-### Video capture API
+---
+
+## Video capture API
 
 The Video capture API is one of the services of ACAP Runtime.
 
@@ -80,7 +82,7 @@ The ACAP Computer Vision solution offers a mechanism for capturing frames using 
 
 The Python client is accessible within the ACAP Runtime proto image at `/build/vdo/proto_utils` and is imported into Python as `VideoCaptureClient`, located within the `vdo_proto_utils` module. This client exposes the `get_frame` function, facilitating frame retrieval and parsing.
 
-#### The VideoCapture object
+### The VideoCapture object
 
 To instantiate a VideoCaptureClient object, you need to provide the ACAP runtime communication socket, along with the desired stream dimensions and framerate.
 In some cases, this call could take up to two minutes, if the ACAP runtime is busy doing other tasks like loading a machine learning model on start up.
@@ -96,13 +98,13 @@ An image frame can be read with the following line of code
 frame = capture_client.get_frame()
 ```
 
-#### VideoCapture requirements
+### VideoCapture requirements
 
 For the video capture client to work, it is required that the ACAP runtime is installed and running.
 The application and the ACAP runtime need to share a socket file to allow the gRPC communication.
 To achieve this, a volume needs to be mounted between the application and the ACAP runtime container.
 
-#### Code Examples
+### Code Examples
 
 - [opencv-qr-decoder-python](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples-staging/blob/main/opencv-qr-decoder-python/docker-compose.yml) - A minimal example of a QR code detector and decoder application written in Python.
 - [minimal-ml-inference](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/minimal-ml-inference) - A minimal, but complete, example of how a Python client and a model server running on the same camera.
@@ -113,7 +115,7 @@ To achieve this, a volume needs to be mounted between the application and the AC
 
 ---
 
-### Machine learning API
+## Machine learning API
 
 The Machine learning API is one of the services of ACAP Runtime.
 
@@ -121,7 +123,7 @@ The ACAP Computer Vision solution provides a flexible way of allowing machine le
 
 The Python client is available in the ACAP runtime proto image under `/build/tf/proto_utils` and imported in Python as `InferenceClient`, which is available in the `tf_proto_utils` module. The client exposes a single `infer(inputs, model_name)` function that enables an easy inference from the main application that will also be connected to the model server.
 
-#### Code Examples
+### Code Examples
 
 - [minimal-ml-inference](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/minimal-ml-inference) - A minimal, but complete, example of how a Python client and a model server running on the same camera.
 - [object-detector-python](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/object-detector-python) - An example written in Python that implements the following object detection scenarios:
@@ -129,7 +131,9 @@ The Python client is available in the ACAP runtime proto image under `/build/tf/
   - Run a still image inference on camera.
 - [pose-estimator-with-flask](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/pose-estimator-with-flask) - An example written in Python that implements a pose estimator, that publishes the output using Flask.
 
-### BETA - Parameter API
+---
+
+## BETA - Parameter API
 
 **This API is a [Beta version](./beta-api) and developers are encouraged to test and leave feedback.**
 
@@ -147,11 +151,13 @@ root.Brand.ProdFullName
 root.Brand.ProdNbr
 ```
 
-#### Code Examples
+### Code Examples
 
 - [parameter-api-python](https://github.com/AxisCommunications/acap-computer-vision-sdk-examples/tree/main/parameter-api-python) - A Python example which reads device parameters using the Parameter API.
 
-## Python packages
+---
+
+# Python packages
 
 The ACAP Computer Vision solution allows for the installation and use of Python packages that support the ACAP architecture `aarch64`. This includes, but is not limited to:
 

@@ -244,7 +244,7 @@ Example
 
 The LICENSE file is included in the application package. It shall contain all
 required open source license information for open source code distributed with
-the application package. Note
+the application package.
 
 > If LICENSE is empty the build fails.
 
