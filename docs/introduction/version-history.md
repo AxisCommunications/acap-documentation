@@ -3,6 +3,7 @@ layout: page
 parent: Introduction
 title: Version history
 nav_order: 2
+redirect_to: https://developer.axis.com/acap/introduction/version-history
 ---
 
 # Version history

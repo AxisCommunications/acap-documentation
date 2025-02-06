@@ -4,6 +4,7 @@ parent: Services for partners
 grand_parent: ACAP SDK version 3
 title: Accept or deny unsigned ACAP applications
 nav_order: 3
+redirect_to: https://developer.axis.com/acap/acap-sdk-version-3/services-for-partners/accept-or-deny-unsigned-acap-applications
 ---
 # Accept or deny unsigned ACAP applications
 

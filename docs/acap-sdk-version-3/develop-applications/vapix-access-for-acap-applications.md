@@ -4,6 +4,7 @@ parent: Develop applications
 grand_parent: ACAP SDK version 3
 title: VAPIX access for ACAP applications
 nav_order: 4
+redirect_to: https://developer.axis.com/acap/acap-sdk-version-3/develop-applications/vapix-access-for-acap-applications
 ---
 
 # VAPIX access for ACAP applications

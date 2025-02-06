@@ -4,6 +4,7 @@ parent: Develop applications
 grand_parent: ACAP SDK version 3
 title: Application project structure
 nav_order: 1
+redirect_to: https://developer.axis.com/acap/acap-sdk-version-3/develop-applications/application-project-structure
 ---
 # Application project structure
 

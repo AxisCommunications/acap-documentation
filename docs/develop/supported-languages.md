@@ -3,6 +3,7 @@ layout: page
 parent: Develop ACAP applications
 title: Supported languages
 nav_order: 9
+redirect_to: https://developer.axis.com/acap/develop/supported-languages
 ---
 
 # Supported languages

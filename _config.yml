@@ -54,6 +54,7 @@ kramdown:
 plugins:
   - jekyll-remote-theme
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 # ------------------------------------------------------------------------------
 # Theme settings
@@ -69,9 +70,6 @@ aux_links:
 
 search_enabled: true
 heading_anchors: true
-
-# Google Analytics Tracking
-ga_tracking: UA-266925-56
 
 # Back to top link
 back_to_top: true

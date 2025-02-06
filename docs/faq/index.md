@@ -3,6 +3,7 @@ layout: default
 title: FAQ
 has_children: true
 nav_order: 11
+redirect_to: https://developer.axis.com/acap/faq/
 ---
 
 # Frequently Asked Questions (FAQ)

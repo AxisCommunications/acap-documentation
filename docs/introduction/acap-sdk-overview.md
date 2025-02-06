@@ -3,6 +3,7 @@ layout: page
 parent: Introduction
 title: ACAP SDK overview
 nav_order: 4
+redirect_to: https://developer.axis.com/acap/introduction/acap-sdk-overview
 ---
 
 # ACAP SDK overview

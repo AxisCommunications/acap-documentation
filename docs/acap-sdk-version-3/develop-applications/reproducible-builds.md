@@ -4,6 +4,7 @@ parent: Develop applications
 grand_parent: ACAP SDK version 3
 title: Reproducible builds
 nav_order: 3
+redirect_to: https://developer.axis.com/acap/acap-sdk-version-3/develop-applications/reproducible-builds
 ---
 # Reproducible builds
 

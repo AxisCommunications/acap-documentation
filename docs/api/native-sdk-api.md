@@ -3,6 +3,7 @@ layout: page
 title: Native SDK API
 parent: API
 nav_order: 1
+redirect_to: https://developer.axis.com/acap/api/native-sdk-api
 ---
 
 # Native SDK API

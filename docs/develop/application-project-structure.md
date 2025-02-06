@@ -3,6 +3,7 @@ layout: page
 parent: Develop ACAP applications
 title: Application project structure
 nav_order: 1
+redirect_to: https://developer.axis.com/acap/develop/application-project-structure
 ---
 
 <!-- omit in toc -->

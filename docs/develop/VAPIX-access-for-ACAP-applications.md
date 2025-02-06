@@ -3,6 +3,7 @@ layout: page
 parent: Develop ACAP applications
 title: VAPIX access for ACAP applications
 nav_order: 7
+redirect_to: https://developer.axis.com/acap/develop/VAPIX-access-for-ACAP-applications
 ---
 
 # VAPIX access for ACAP applications

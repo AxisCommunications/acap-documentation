@@ -3,6 +3,7 @@ layout: page
 parent: Develop ACAP applications
 title: Include third party libraries
 nav_order: 4
+redirect_to: https://developer.axis.com/acap/develop/include-third-party-libraries
 ---
 
 # Include third party libraries

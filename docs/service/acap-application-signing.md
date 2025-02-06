@@ -3,6 +3,7 @@ layout: page
 parent: Service for partners
 title: ACAP application signing
 nav_order: 2
+redirect_to: https://developer.axis.com/acap/service/acap-application-signing
 ---
 
 ## ACAP application signing
