@@ -3,6 +3,7 @@ layout: acap_container_applications_deprecation_page
 parent: Develop container applications
 title: Web server via Reverse Proxy
 nav_order: 5
+redirect_to: https://developer.axis.com/acap/develop-container-applications/web-server-via-reverse-proxy
 ---
 
 # Web server via Reverse Proxy

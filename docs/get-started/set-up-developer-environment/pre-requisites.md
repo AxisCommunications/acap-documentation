@@ -4,6 +4,7 @@ grand_parent: Get started
 parent: Set up developer environment
 title: Pre-requisites
 nav_order: 1
+redirect_to: https://developer.axis.com/acap/get-started/set-up-developer-environment/pre-requisites
 ---
 
 # Pre-requisites

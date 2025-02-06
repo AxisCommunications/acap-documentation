@@ -4,6 +4,7 @@ parent: ACAP SDK version 3
 title: Get started
 nav_order: 2
 has_children: true
+redirect_to: https://developer.axis.com/acap/acap-sdk-version-3/get-started/
 ---
 # Get started
 

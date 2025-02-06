@@ -3,6 +3,7 @@ layout: acap_container_applications_deprecation_page
 parent: Develop container applications
 title: Include third party libraries
 nav_order: 2
+redirect_to: https://developer.axis.com/acap/develop-container-applications/include-third-party-libraries
 ---
 
 # Include third party libraries

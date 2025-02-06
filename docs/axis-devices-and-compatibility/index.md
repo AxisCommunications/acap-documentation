@@ -2,6 +2,7 @@
 layout: page
 title: Axis devices & compatibility
 nav_order: 8
+redirect_to: https://developer.axis.com/acap/axis-devices-and-compatibility/
 ---
 
 # Axis devices & compatibility

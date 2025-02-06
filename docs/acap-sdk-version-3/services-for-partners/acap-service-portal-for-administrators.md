@@ -4,6 +4,7 @@ parent: Services for partners
 grand_parent: ACAP SDK version 3
 title: ACAP Service Portal for administrators
 nav_order: 2
+redirect_to: https://developer.axis.com/acap/acap-sdk-version-3/services-for-partners/acap-service-portal-for-administrators
 ---
 # ACAP Service Portal for administrators
 

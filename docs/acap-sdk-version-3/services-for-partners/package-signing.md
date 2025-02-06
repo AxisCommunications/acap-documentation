@@ -4,6 +4,7 @@ parent: Services for partners
 grand_parent: ACAP SDK version 3
 title: Package signing
 nav_order: 1
+redirect_to: https://developer.axis.com/acap/acap-sdk-version-3/services-for-partners/package-signing
 ---
 # Package signing
 

@@ -2,6 +2,7 @@
 layout: page
 title: Cloud integrations
 nav_order: 9
+redirect_to: https://developer.axis.com/acap/cloud-integrations/
 ---
 
 # Cloud integrations

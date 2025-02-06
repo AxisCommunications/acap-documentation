@@ -3,6 +3,7 @@ layout: acap_sdk_version_3
 parent: ACAP SDK version 3
 title: More resources
 nav_order: 4
+redirect_to: https://developer.axis.com/acap/acap-sdk-version-3/more-resources/
 ---
 # More resources
 

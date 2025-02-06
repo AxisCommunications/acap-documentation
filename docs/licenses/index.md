@@ -2,6 +2,7 @@
 layout: page
 title: Licenses
 nav_order: 14
+redirect_to: https://developer.axis.com/acap/
 ---
 
 # Web page licenses

@@ -3,6 +3,7 @@ layout: page
 parent: Introduction
 title: ACAP examples
 nav_order: 5
+redirect_to: https://developer.axis.com/acap/introduction/acap-examples
 ---
 
 # ACAP examples
