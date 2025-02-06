@@ -3,6 +3,7 @@ layout: page
 parent: Develop ACAP applications
 title: Setting up Visual Studio Code
 nav_order: 8
+redirect_to: https://developer.axis.com/acap/develop/setting-up-visual-studio-code
 ---
 
 # Setting up Visual Studio Code

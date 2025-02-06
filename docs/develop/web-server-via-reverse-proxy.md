@@ -3,6 +3,7 @@ layout: page
 parent: Develop ACAP applications
 title: Web server via Reverse Proxy
 nav_order: 5
+redirect_to: https://developer.axis.com/acap/develop/web-server-via-reverse-proxy
 ---
 
 # Web server via Reverse Proxy

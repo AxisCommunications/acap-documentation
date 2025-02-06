@@ -4,6 +4,7 @@ parent: Get started
 grand_parent: ACAP SDK version 3
 title: Find out which SDK to use
 nav_order: 3
+redirect_to: https://developer.axis.com/acap/acap-sdk-version-3/get-started/find-out-which-sdk-to-use
 ---
 # Find out which SDK to use
 

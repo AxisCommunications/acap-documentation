@@ -3,6 +3,7 @@ layout: acap_container_applications_deprecation_page
 parent: Develop container applications
 title: Supported languages
 nav_order: 3
+redirect_to: https://developer.axis.com/acap/develop-container-applications/supported-languages
 ---
 
 # Supported languages

@@ -4,6 +4,7 @@ parent: Develop applications
 grand_parent: ACAP SDK version 3
 title: Build, install and run the application
 nav_order: 2
+redirect_to: https://developer.axis.com/acap/acap-sdk-version-3/develop-applications/build-install-and-run-the-application
 ---
 # Build, install and run the application
 

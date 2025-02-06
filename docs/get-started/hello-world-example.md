@@ -3,6 +3,7 @@ layout: page
 parent: Get started
 title: Hello World example
 nav_order: 3
+redirect_to: https://developer.axis.com/acap/get-started/hello-world-example
 ---
 
 # Hello world example

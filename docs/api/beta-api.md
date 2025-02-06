@@ -3,6 +3,7 @@ layout: default
 title: Beta API
 parent: API
 nav_order: 3
+redirect_to: https://developer.axis.com/acap/api/beta-api
 ---
 
 # Beta API

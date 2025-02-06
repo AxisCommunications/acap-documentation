@@ -3,6 +3,7 @@ layout: page
 parent: FAQ
 title: Security
 nav_order: 2
+redirect_to: https://developer.axis.com/acap/faq/security
 ---
 
 <!-- omit in toc -->

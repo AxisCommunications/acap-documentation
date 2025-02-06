@@ -4,6 +4,7 @@ parent: Get started
 grand_parent: ACAP SDK version 3
 title: Set up the device
 nav_order: 4
+redirect_to: https://developer.axis.com/acap/acap-sdk-version-3/get-started/set-up-the-device
 ---
 # Set up the device
 

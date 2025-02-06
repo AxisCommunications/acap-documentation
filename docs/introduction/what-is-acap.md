@@ -3,6 +3,7 @@ layout: page
 parent: Introduction
 title: What is ACAP?
 nav_order: 1
+redirect_to: https://developer.axis.com/acap/introduction/what-is-acap
 ---
 
 # What is ACAP?

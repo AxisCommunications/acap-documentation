@@ -3,6 +3,7 @@ layout: page
 parent: Develop ACAP applications
 title: Camera calibration
 nav_order: 6
+redirect_to: https://developer.axis.com/acap/develop/camera-calibration
 ---
 
 # Camera calibration

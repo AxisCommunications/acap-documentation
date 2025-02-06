@@ -3,6 +3,7 @@ layout: page
 parent: FAQ
 title: Machine learning
 nav_order: 1
+redirect_to: https://developer.axis.com/acap/faq/machine-learning
 ---
 
 <!-- omit in toc -->

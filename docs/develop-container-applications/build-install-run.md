@@ -3,6 +3,7 @@ layout: acap_container_applications_deprecation_page
 parent: Develop container applications
 title: Build, install, run
 nav_order: 1
+redirect_to: https://developer.axis.com/acap/develop-container-applications/build-install-run
 ---
 
 # Build, install, run

@@ -3,6 +3,7 @@ layout: default
 title: Computer vision on device
 nav_order: 6
 permalink: docs/computer-vision-on-device
+redirect_to: https://developer.axis.com/acap/computer-vision-on-device/
 ---
 # Computer vision on device
 

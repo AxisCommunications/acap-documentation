@@ -4,6 +4,7 @@ parent: Get started
 grand_parent: ACAP SDK version 3
 title: Set up and verify the SDK
 nav_order: 5
+redirect_to: https://developer.axis.com/acap/acap-sdk-version-3/get-started/set-up-and-verify-the-sdk
 ---
 # Set up and verify the SDK
 

@@ -4,6 +4,7 @@ grand_parent: Get started
 parent: Set up developer environment
 title: Set up device
 nav_order: 2
+redirect_to: https://developer.axis.com/acap/get-started/set-up-developer-environment/set-up-device
 ---
 
 # Set up device

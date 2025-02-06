@@ -2,6 +2,7 @@
 layout: page
 title: Get help & give feedback
 nav_order: 12
+redirect_to: https://developer.axis.com/acap/get-help-and-give-feedback/
 ---
 
 # Get help & give feedback

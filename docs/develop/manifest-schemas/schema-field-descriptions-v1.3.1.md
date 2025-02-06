@@ -3,6 +3,7 @@ layout: page
 grand_parent: Develop ACAP applications
 parent: Manifest schemas
 title: Manifest schema v1.3.1
+redirect_to: https://developer.axis.com/acap/develop/manifest-schemas/schema-field-descriptions-v1.3.1
 ---
 
 <h2 class="title-attention"><font color="red">This document is automatically generated from manifest schema</font></h2>

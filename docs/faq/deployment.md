@@ -3,6 +3,7 @@ layout: page
 parent: FAQ
 title: Deployment
 nav_order: 3
+redirect_to: https://developer.axis.com/acap/faq/deployment
 ---
 
 <!-- omit in toc -->

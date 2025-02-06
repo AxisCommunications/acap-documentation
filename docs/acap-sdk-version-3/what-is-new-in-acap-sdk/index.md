@@ -3,6 +3,7 @@ layout: acap_sdk_version_3
 parent: ACAP SDK version 3
 title: What's new in ACAP SDK
 nav_order: 7
+redirect_to: https://developer.axis.com/acap/acap-sdk-version-3/what-is-new-in-acap-sdk/
 ---
 # What's new in ACAP SDK
 

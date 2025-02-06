@@ -3,6 +3,7 @@ layout: acap_sdk_version_3
 parent: ACAP SDK version 3
 title: API
 nav_order: 6
+redirect_to: https://developer.axis.com/acap/acap-sdk-version-3/api/
 ---
 # API
 
